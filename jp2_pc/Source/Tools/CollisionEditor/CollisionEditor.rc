@@ -1,0 +1,378 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\CollisionEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CollisionEditor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Trespasser Sound Effect Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "Trespasser Sound Effect Editor Version 3.00",IDC_STATIC,
+                    45,15,159,10,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,178,34,32,14,WS_GROUP
+    LTEXT           "March 4th 1998",IDC_STATIC,45,26,119,10,SS_NOPREFIX
+END
+
+IDD_COLLISIONEDITOR_DIALOG DIALOGEX 0, 0, 337, 295
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Trespasser Sound Effect Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "English (default)",IDC_RADIO_ENG,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,25,243,66,8
+    CONTROL         "French",IDC_RADIO_FRN,"Button",BS_AUTORADIOBUTTON,100,
+                    243,62,8
+    CONTROL         "German",IDC_RADIO_GER,"Button",BS_AUTORADIOBUTTON,175,
+                    243,62,8
+    CONTROL         "Spanish",IDC_RADIO_SPN,"Button",BS_AUTORADIOBUTTON,250,
+                    243,62,8
+    CONTROL         "Portugese",IDC_RADIO_PRT,"Button",BS_AUTORADIOBUTTON,25,
+                    255,62,8
+    CONTROL         "Japanese",IDC_RADIO_JAP,"Button",BS_AUTORADIOBUTTON,100,
+                    255,62,8
+    CONTROL         "Chinese",IDC_RADIO_CHN,"Button",BS_AUTORADIOBUTTON,175,
+                    255,62,8
+    LISTBOX         IDC_MATERIAL_LIST,74,172,119,52,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_DISABLED | WS_VSCROLL | 
+                    WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Add New",IDC_ADD,202,154,58,15,WS_DISABLED
+    PUSHBUTTON      "Delete Selected",IDC_DELETE,264,172,58,15,WS_DISABLED
+    PUSHBUTTON      "Edit Seleted",IDC_EDIT,202,172,58,15,WS_DISABLED
+    PUSHBUTTON      "Load",IDC_LOADFILE,209,274,58,15
+    PUSHBUTTON      "Save",IDC_WRITEFILE,146,274,58,15
+    EDITTEXT        IDC_ADD_EDIT,74,154,119,14,ES_MULTILINE | ES_UPPERCASE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_DISABLED
+    LTEXT           "New Material",IDC_TEXT_NEW_MAT,11,157,60,11,WS_DISABLED | 
+                    NOT WS_GROUP
+    LTEXT           "Current Materials",IDC_TEXT_CUR_MAT,11,174,60,11,
+                    WS_DISABLED | NOT WS_GROUP
+    PUSHBUTTON      "Save Pack File",IDC_WRITEBINFILE,272,274,58,15
+    GROUPBOX        "Collisions",IDC_STATIC,7,143,323,85
+    GROUPBOX        "Samples",IDC_STATIC,7,7,323,132
+    CONTROL         "List1",IDC_EFFECT_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SORTASCENDING | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,13,18,248,81,WS_EX_LEFTSCROLLBAR
+    PUSHBUTTON      "Test Sample",IDC_TEST_EFFECT,265,17,58,15
+    EDITTEXT        IDC_EFFECT_FILE_EDIT,45,120,195,15,ES_MULTILINE | 
+                    ES_LOWERCASE | ES_AUTOHSCROLL | ES_WANTRETURN
+    RTEXT           "Filename",IDC_STATIC,10,122,32,10
+    EDITTEXT        IDC_EFFECT_ID_EDIT,45,102,216,15,ES_MULTILINE | 
+                    ES_UPPERCASE | ES_AUTOHSCROLL | ES_WANTRETURN
+    RTEXT           "Identifier",IDC_STATIC,10,105,32,10
+    PUSHBUTTON      "...",IDC_BROWSE,243,120,17,15
+    PUSHBUTTON      "Add Sample",IDC_NEW_EFFECT,266,120,58,15
+    PUSHBUTTON      "Adjust",IDC_RENAME_EFFECT,266,102,58,15
+    PUSHBUTTON      "Delete",IDC_DELETE_EFFECT,266,83,58,15
+    PUSHBUTTON      "Rename",IDC_RENAME,264,154,58,15,WS_DISABLED
+    CONTROL         "Enable Collisions",IDC_CHECK_COLLISIONS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,279,81,10
+    PUSHBUTTON      "Stop Sample",IDC_STOP_EFFECT,265,36,58,15
+    PUSHBUTTON      "Properties",IDC_SAMPLE_PROP,265,55,58,15
+    PUSHBUTTON      "Copy Selected",IDC_COPY,202,190,58,15,WS_DISABLED
+    GROUPBOX        "Language",IDC_STATIC,7,232,323,37
+END
+
+IDD_EDITMATERIAL_DIALOG DIALOGEX 0, 0, 419, 337
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "Edit Collision"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SM_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,16,19,10,11
+    CONTROL         "",IDC_SM_RADIO2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,16,36,10,11
+    CONTROL         "",IDC_SM_RADIO4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,15,80,10,11
+    GROUPBOX        "Collision Samples",IDC_STATIC,7,7,278,59,WS_GROUP
+    LISTBOX         IDC_MSET_LIST,298,17,108,158,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Transfer Function",IDC_TRANSFER,7,185,405,122
+    DEFPUSHBUTTON   "Close",IDOK,361,314,51,16
+    CONTROL         "",IDC_GRAPH_PIT,"Static",SS_BLACKFRAME | SS_SUNKEN,311,
+                    200,95,77
+    CONTROL         "",IDC_GRAPH_VOL,"Static",SS_BLACKFRAME | SS_SUNKEN,108,
+                    200,95,77
+    PUSHBUTTON      "Test Single Collision",IDC_TEST_SAMPLE,223,285,92,16
+    CONTROL         "Slider1",IDC_SM_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,197,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Slope = 0.00",IDC_VOL_SLOPE_TEXT,13,205,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,214,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Intersect = 0.00",IDC_VOL_INTS_TEXT,13,222,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,231,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Minimum volume = 0.00",IDC_VOL_MIN_TEXT,13,239,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,249,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Maximum volume = 0.00",IDC_VOL_MAX_TEXT,13,257,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,203,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Slope = 0.00",IDC_PIT_SLOPE_TEXT,216,211,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER6,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,221,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Intersect = 0.00",IDC_PIT_INTS_TEXT,216,230,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER7,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,238,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Minimum Pitch = 0.00",IDC_PIT_MIN_TEXT,216,247,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER8,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,256,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Maximum Pitch = 0.00",IDC_PIT_MAX_TEXT,216,266,84,8
+    GROUPBOX        "Test Spatial Collision",IDC_STATIC1,7,113,278,66
+    CONTROL         "",IDC_GRAPH_WORLD,"Static",SS_BLACKFRAME | SS_SUNKEN,
+                    187,122,80,46
+    CONTROL         "Slider11",IDC_SM_SLIDER11,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,271,120,9,50
+    CONTROL         "Slider11",IDC_SM_SLIDER12,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,185,169,84,9
+    CONTROL         "Slider9",IDC_SM_SLIDER13,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,147,101,10
+    CTEXT           "World Scale = xxx",IDC_WORLD_SCALE_TEXT,32,157,84,8
+    PUSHBUTTON      "Center Position",IDC_EM_CENTER,124,150,58,18,0,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "Slider10",IDC_SM_SLIDER14,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,11,267,95,9
+    CTEXT           "Attenuation = x.xx",IDC_ATTENUATE_TEXT,21,275,75,8
+    PUSHBUTTON      "Test Raw",IDC_REFWF_TEST_S1,217,20,53,13
+    PUSHBUTTON      "Test Raw",IDC_REFWF_TEST_S2,217,36,53,13
+    RTEXT           "(xxx.xx, xxx.xx)",IDC_WORLD_POS_TEXT,129,123,49,10
+    CONTROL         "Dual Sample Collision",IDC_DUAL_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,145,52,81,10
+    CONTROL         "Slider9",IDC_SM_SLIDER9,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,126,101,10
+    CTEXT           "Test Velocity = xxx",IDC_TEST_VELOCITY_TEXT,32,135,84,8
+    GROUPBOX        "Collision With",IDC_STATIC2,291,7,121,175
+    COMBOBOX        IDC_COMBO1,36,20,171,257,CBS_DROPDOWNLIST | CBS_SORT | 
+                    CBS_UPPERCASE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,36,36,171,259,CBS_DROPDOWNLIST | CBS_SORT | 
+                    CBS_UPPERCASE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Stop All Sounds",IDC_STOP_COLLIDE,7,314,62,16
+    GROUPBOX        "Slide Sample",IDC_STATIC,7,68,278,41
+    PUSHBUTTON      "Test Raw",IDC_REFWF_TEST_S3,217,80,53,13
+    COMBOBOX        IDC_COMBO3,35,80,171,259,CBS_DROPDOWNLIST | CBS_SORT | 
+                    CBS_UPPERCASE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Test Dual Collision",IDC_COLLIDE,327,285,79,16
+    CONTROL         "Collisions Enabled",IDC_COLLISION_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,52,81,10
+    CONTROL         "Sliding Enabled",IDC_SLIDE_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,35,96,81,10
+    EDITTEXT        IDC_DELAY_TIME,165,282,40,17,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    RTEXT           "Minimum Delay",IDC_STATIC,103,282,57,10
+    RTEXT           "(0 to 60 sec)",IDC_STATIC,103,291,57,10
+    CONTROL         "Slider10",IDC_SM_SLIDER15,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,11,284,95,9
+    CTEXT           "Minimum Collision = 0.00",IDC_MIN_VEL_TEXT,14,292,89,8
+END
+
+IDD_SAMPLE_PROP DIALOG DISCARDABLE  0, 0, 254, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Sample Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,197,50,50,14
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,70,17,122,10
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,70,30,122,10
+    GROUPBOX        "Properties",IDC_STATIC,7,7,240,38
+    RTEXT           "Attenuation",IDC_STATIC,20,18,46,8
+    RTEXT           "Master volume",IDC_STATIC,16,31,50,8
+    LTEXT           "- xx dB / m",IDC_ATTEN_TEXT,197,17,45,8
+    LTEXT           "- xx dB ",IDC_VOL_TEXT,197,31,45,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,7,0
+ PRODUCTVERSION 1,1,7,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "COLLISIONEDITOR MFC Application\0"
+            VALUE "FileVersion", "1, 1, 7, 0\0"
+            VALUE "InternalName", "COLLISIONEDITOR\0"
+            VALUE "LegalCopyright", "Copyright © 1996\0"
+            VALUE "OriginalFilename", "COLLISIONEDITOR.EXE\0"
+            VALUE "ProductName", "COLLISIONEDITOR Application\0"
+            VALUE "ProductVersion", "1, 1, 7, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_COLLISIONEDITOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 330
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 289
+    END
+
+    IDD_EDITMATERIAL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 330
+    END
+
+    IDD_SAMPLE_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About CollisionEditor..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\CollisionEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

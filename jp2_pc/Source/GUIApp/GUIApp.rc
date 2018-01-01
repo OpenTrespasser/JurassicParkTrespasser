@@ -1,0 +1,2432 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\GUIApp.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GUIApp.ico"
+ICON_RAPTOR2            ICON    DISCARDABLE     "res\\icon_rap.ico"
+ICON_TREX               ICON    DISCARDABLE     "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GUIAPP_DIALOG DIALOGEX 0, 0, 230, 158
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GUInterface"
+MENU MENU_TESTAPP
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_LIGHT_PROPERTIES DIALOGEX 0, 0, 116, 185
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Light Properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    SCROLLBAR       IDC_SCROLL_AMBIENT,10,41,65,8
+    LTEXT           "Static",IDC_STATIC_AMBIENT,80,41,30,8
+    GROUPBOX        "&Intensity",IDC_STATIC,4,31,108,24
+    CTEXT           "Type",IDC_STATIC_LIGHTTYPE,28,14,60,10
+    SCROLLBAR       IDC_SCROLL_ORIGINDISTANCE,10,68,65,8
+    LTEXT           "Unused",IDC_STATIC_ORIGINDISTANCE,80,68,30,8
+    GROUPBOX        "&Radius",IDC_STATIC_ORIGINDISTANCE_START,4,58,108,24
+    RTEXT           "I&nner Angle",IDC_STATIC,12,98,51,8
+    RTEXT           "&Outer Angle",IDC_STATIC,12,113,51,8
+    EDITTEXT        IDC_EDIT_COS_FULL,66,95,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COS_ZERO,66,110,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Light Cone",IDC_STATIC_POINTDIR_START,4,86,108,44
+    GROUPBOX        "Place Holder",IDC_STATIC_LAST_START,7,143,109,35
+    GROUPBOX        "Light Type",IDC_STATIC,4,3,108,24
+END
+
+IDD_FLOATTOOLS DIALOGEX 0, 0, 78, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Tools"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Add",IDC_STATIC,3,4,72,72
+    PUSHBUTTON      "&Delete",IDC_BUTTON_DELETE,7,132,61,12
+    PUSHBUTTON      "O&bject",IDC_BUTTON_ADDOBJECT,8,15,61,12
+    PUSHBUTTON      "&Properties",IDC_BUTTON_EDIT,7,90,61,12
+    PUSHBUTTON      "&Directional Light",IDC_BUTTON_ADDDIRLIGHT,8,30,61,12
+    PUSHBUTTON      "&Point Light",IDC_BUTTON_ADDPTLIGHT,8,43,61,12
+    PUSHBUTTON      "Poin&t Dir Light",IDC_BUTTON_ADDPTDIRLIGHT,8,57,61,12
+    GROUPBOX        "Edit",IDC_STATIC,3,79,72,71
+    PUSHBUTTON      "&Ambient Light",IDC_BUTTON_EDITAMBIENT,7,105,61,12
+    PUSHBUTTON      "Ca&mera",IDC_BUTTON_EDITCAMERA,7,118,61,12
+END
+
+IDD_CAMERA_PROPERTIES DIALOGEX 0, 0, 182, 47
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_RIGHT
+CAPTION "Camera Properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Zoom:",IDC_STATIC,5,5,65,8,0,WS_EX_RIGHT
+    LTEXT           "Near Clipping Plane:",IDC_STATIC,5,25,65,8,0,
+                    WS_EX_RIGHT
+    LTEXT           "Far Clipping Plane:",IDC_STATIC,5,35,65,8,0,WS_EX_RIGHT
+    LTEXT           "View Angle:",IDC_STATIC,5,15,65,8,0,WS_EX_RIGHT
+    SCROLLBAR       IDC_SCROLL_CAM_ZOOM,75,5,65,8
+    SCROLLBAR       IDC_SCROLL_CAM_ANGLE,75,15,65,8
+    SCROLLBAR       IDC_SCROLL_CAM_NEAR,75,25,65,8
+    SCROLLBAR       IDC_SCROLL_CAM_FAR,75,35,65,8
+    LTEXT           "Static",IDC_STATIC_CAM_ZOOM,145,5,32,8
+    LTEXT           "Static",IDC_STATIC_CAM_ANGLE,145,15,32,8
+    LTEXT           "Static",IDC_STATIC_CAM_NEAR,145,25,32,8
+    LTEXT           "Static",IDC_STATIC_CAM_FAR,145,35,32,8
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 210, 104
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&All righty then...",IDOK,78,83,65,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,16,10,18,20
+    CTEXT           "Another Smegging 3D Game\nby W. Raoul Shed Et Al",
+                    IDC_STATIC,50,7,116,19
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,49,59,119,1
+    CTEXT           "© 1996, 1997, 1998 by DreamWorks Interactive",
+                    IDC_STATIC,27,66,160,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,49,28,119,1
+    CTEXT           "Build Date",IDC_STATIC_ABOUT_DATE,48,46,120,8
+    CTEXT           "Version",IDC_STATIC_ABOUT_VERSION,48,34,120,8
+END
+
+IDD_BACKGROUND DIALOGEX 0, 0, 157, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Background Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "E&xit",IDOK,101,71,50,12
+    RTEXT           "Red",IDC_STATIC,16,17,19,8
+    GROUPBOX        "Static",IDC_STATIC,5,5,146,47
+    RTEXT           "Green",IDC_STATIC,16,27,19,8
+    RTEXT           "Blue",IDC_STATIC,16,37,19,8
+    SCROLLBAR       IDC_SCROLL_RED,41,17,80,8
+    SCROLLBAR       IDC_SCROLL_GREEN,41,27,80,8
+    SCROLLBAR       IDC_SCROLL_BLUE,41,37,80,8
+    LTEXT           "Static",IDC_STATIC_RED,126,17,19,8
+    LTEXT           "Static",IDC_STATIC_GREEN,126,27,19,8
+    LTEXT           "Static",IDC_STATIC_BLUE,126,37,19,8
+    CONTROL         "&Greyscale",IDC_CHECK_GRAYSCALE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,56,54,10
+    PUSHBUTTON      "Set to &Fog",BUTTON_BACK_TOFOGBACK,101,56,50,12
+END
+
+IDD_FOG DIALOG DISCARDABLE  0, 0, 179, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ShedView Fog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "E&xit",IDOK,67,72,45,14
+    SCROLLBAR       IDC_SCROLL_FOGCONSTANT,56,15,82,8
+    SCROLLBAR       IDC_SCROLL_FOGPOWER,56,25,82,8
+    RTEXT           "Z-Half:",IDC_STATIC,14,15,31,8
+    RTEXT           "Exponent:",IDC_STATIC,14,26,31,8
+    LTEXT           "Static",IDC_STATIC_FOGCONSTANT,140,15,32,8
+    LTEXT           "Static",IDC_STATIC_FOGPOWER,140,25,32,8
+    CONTROL         "&Linear",IDC_RADIO_LINEAR,"Button",BS_AUTORADIOBUTTON,
+                    27,51,36,10
+    CONTROL         "&Exponential",IDC_RADIO_EXPONENTIAL,"Button",
+                    BS_AUTORADIOBUTTON,107,51,50,10
+    GROUPBOX        "Table Type",IDC_STATIC,13,41,153,25
+END
+
+IDD_OBJECT_PROPERTIES DIALOGEX 0, 0, 302, 310
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Object Properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,245,289,50,14
+    RTEXT           "Name:",IDC_STATIC,7,17,23,8
+    CTEXT           "Error in retrieving name.",IDC_STATIC_NAME,11,28,119,8
+    RTEXT           "Type:",IDC_STATIC,7,41,22,8
+    LTEXT           "Error in retrieving type.",IDC_STATIC_TYPE,36,41,82,12
+    GROUPBOX        "Instance Information",IDC_STATIC,7,7,125,50
+    GROUPBOX        "Mesh Information",IDC_STATIC,7,60,125,54
+    LTEXT           "# Faces:",IDC_STATIC,11,75,38,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info.",IDC_STATIC_FACES,57,75,60,8
+    LTEXT           "# Vertices:",IDC_STATIC,11,102,38,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info.",IDC_STATIC_VERTICES,57,102,
+                    60,8
+    LTEXT           "Type:",IDC_STATIC,21,171,22,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving name.",IDC_STATIC_PHYSICS_TYPE,45,
+                    171,99,8
+    GROUPBOX        "Physics Information",IDC_STATIC,7,159,125,140
+    GROUPBOX        "Static",IDC_STATIC_PHYSICS_BV,7,184,125,37
+    LTEXT           "Dim:",IDC_STATIC,14,197,15,8,0,WS_EX_RIGHT
+    LTEXT           "Pos:",IDC_STATIC,14,207,15,8,0,WS_EX_RIGHT
+    LTEXT           "Static",IDC_PHYSICS_BV_DIM_X,34,197,30,8
+    LTEXT           "Static",IDC_PHYSICS_BV_DIM_Y,64,197,30,8
+    LTEXT           "Static",IDC_PHYSICS_BV_DIM_Z,94,197,30,8
+    LTEXT           "Static",IDC_PHYSICS_BV_POS_X,34,207,30,8
+    LTEXT           "Static",IDC_PHYSICS_BV_POS_Y,64,207,30,8
+    LTEXT           "Static",IDC_PHYSICS_BV_POS_Z,94,207,30,8
+    LTEXT           "Sound Material:",IDC_STATIC,7,227,50,8,0,WS_EX_RIGHT
+    LTEXT           "Static",IDC_PHYSICS_SOUND_MATERIAL,62,227,70,8
+    LTEXT           "Flags:",IDC_STATIC,7,238,20,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info",IDC_PHYSICS_FLAGS,36,238,70,8
+    GROUPBOX        "Box Model Information",IDC_STATIC,7,250,125,50
+    LTEXT           "Density:",IDC_STATIC,32,259,45,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info",IDC_PHYSICS_BOX_DENSITY,82,
+                    259,50,8
+    LTEXT           "Friction:",IDC_STATIC,32,269,45,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info",IDC_PHYSICS_BOX_ELASTICITY,82,
+                    279,45,8
+    LTEXT           "Elasticity:",IDC_STATIC,32,279,45,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info",IDC_PHYSICS_BOX_FRICTION,82,
+                    269,50,8
+    GROUPBOX        "Presence Information",IDC_STATIC,7,116,125,40
+    LTEXT           "Pos:",IDC_STATIC,17,131,15,8,0,WS_EX_RIGHT
+    LTEXT           "Static",IDC_PRES_POS_X,37,131,30,8
+    LTEXT           "Static",IDC_PRES_POS_Y,67,131,30,8
+    LTEXT           "Static",IDC_PRES_POS_Z,97,131,19,8
+    LTEXT           "Scale:",IDC_STATIC,13,141,20,8,0,WS_EX_RIGHT
+    LTEXT           "Static",IDC_PRES_SCALE,37,141,30,8
+    LTEXT           "# Points:",IDC_STATIC,11,93,38,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info.",IDC_STATIC_POINTS,57,93,60,8
+    LTEXT           "# Triangles:",IDC_STATIC,11,84,38,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info.",IDC_STATIC_TRIANGLES,57,84,
+                    60,8
+    LTEXT           "No info available",IDC_STATIC_DESCRIPTION,147,7,148,275,
+                    WS_BORDER
+    LTEXT           "Static",IDC_PRES_DISTANCE,97,141,30,8
+    LTEXT           "Dist:",IDC_STATIC,71,141,16,8,0,WS_EX_RIGHT
+    LTEXT           "Error in retrieving info",IDC_PHYSICS_BOX_MASS,82,289,
+                    45,8
+    LTEXT           "Mass",IDC_STATIC,32,289,45,8,0,WS_EX_RIGHT
+END
+
+IDD_GAMMA DIALOGEX 0, 0, 169, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gamma Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,59,84,50,14
+    LTEXT           "E&xponent:",IDC_STATIC,7,20,57,8,0,WS_EX_RIGHT
+    SCROLLBAR       IDC_SCROLL_GAMMA,63,20,65,8
+    LTEXT           "Static",IDC_STATIC_GAMMA,132,20,30,9
+    CONTROL         "&Enable:",IDC_ENABLE_GAMMA,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,31,7,42,10
+    LTEXT           "Adjust gamma exponent until grey patch matches patterned patch in brightness.",
+                    IDC_STATIC,19,61,131,19
+    LTEXT           "Min Ambient:",IDC_STATIC,7,33,57,8,0,WS_EX_RIGHT
+    SCROLLBAR       IDC_SCROLL_MIN_AMBIENT,63,33,65,8
+    LTEXT           "Static",IDC_STATIC_MIN_AMBIENT,132,33,19,8
+END
+
+IDD_GORE DIALOGEX 0, 0, 169, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gore Level"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Gore:",IDC_STATIC,7,20,19,8,0,WS_EX_RIGHT
+    SCROLLBAR       IDC_SCROLL_GORE,35,20,65,8
+    LTEXT           "Static",IDC_STATIC_GORE,104,20,58,9
+END
+
+IDD_DIALOG_PHYSICS DIALOG DISCARDABLE  0, 0, 332, 153
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Physics"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Ok",IDOK,84,132,50,14
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_0,12,8,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_1,12,20,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_2,12,32,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_3,12,44,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_4,12,56,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_5,12,68,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_6,12,80,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_7,12,92,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_8,12,104,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_9,12,116,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_10,164,8,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_11,164,20,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_12,164,32,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_13,164,44,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_14,164,56,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_15,164,68,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_16,164,80,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_17,164,92,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_18,164,104,39,8
+    RTEXT           "Unused:",IDC_STATIC_PHYSICS_LABEL_19,164,116,39,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_0,56,8,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_1,56,20,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_2,56,32,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_3,56,44,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_4,56,56,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_5,56,68,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_6,56,80,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_7,56,92,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_8,56,104,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_9,56,116,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_10,208,8,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_11,208,20,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_12,208,32,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_13,208,44,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_14,208,56,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_15,208,68,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_16,208,80,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_17,208,92,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_18,208,104,58,8
+    SCROLLBAR       IDC_SCROLL_PHYSICS_19,208,116,58,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_0,116,8,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_1,116,20,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_2,116,32,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_3,116,44,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_4,116,56,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_5,116,68,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_6,116,80,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_7,116,92,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_8,116,104,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_9,116,116,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_10,268,8,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_11,268,20,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_12,268,32,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_13,268,44,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_14,268,56,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_15,268,68,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_16,268,80,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_17,268,92,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_18,268,104,49,8
+    LTEXT           "n/a",IDC_STATIC_PHYSICS_VALUE_19,268,116,49,8
+    PUSHBUTTON      "Cancel",IDCANCEL,196,132,50,14
+    PUSHBUTTON      "Reset",IDRESET,140,132,50,14
+END
+
+IDD_PERSPECTIVE DIALOG DISCARDABLE  0, 0, 234, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Perspective Correction"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Exit",IDOK,91,209,50,14
+    RTEXT           "Pixel Error:",IDC_STATIC,20,22,80,8
+    RTEXT           "#Pixels to Subdivide Over:",IDC_STATIC,16,34,84,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_ERROR,104,22,64,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_SUBDIVIDE,104,34,64,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_ERROR,172,22,40,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_SUBDIVIDE,172,34,40,8
+    RTEXT           "Y Minimum:",IDC_STATIC,8,177,83,8
+    SCROLLBAR       IDC_SCROLL_INVZDX,96,177,64,8
+    LTEXT           "Not done.",IDC_STATIC_INVZDX,164,177,40,8
+    CONTROL         "Adaptive Subdivision Length",IDC_CHECK_ADAPTIVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,57,192,114,10
+    RTEXT           "Pixel Error:",IDC_STATIC,19,77,80,8
+    RTEXT           "#Pixels to Subdivide Over:",IDC_STATIC,15,88,84,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_ERROR2,103,77,64,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_SUBDIVIDE2,103,88,64,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_ERROR2,171,77,40,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_SUBDIVIDE2,171,88,40,
+                    8
+    GROUPBOX        "Main Settings",IDC_STATIC,13,7,208,46
+    GROUPBOX        "Alternate Settings",IDC_STATIC,13,62,208,45
+    GROUPBOX        "Adaptive Settings",IDC_STATIC,13,111,208,60
+    RTEXT           "Minimum Subdivision",IDC_STATIC,15,123,84,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_MINSUBDIVIDE,103,123,64,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_MINSUBDIVIDE,171,123,
+                    40,8
+    RTEXT           "Maximum Subdivision",IDC_STATIC,15,134,84,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_MAXSUBDIVIDE,103,134,64,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_MAXSUBDIVIDE,171,134,
+                    40,8
+    RTEXT           "1/Z for Maximum",IDC_STATIC,15,145,84,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_INVZFORMAX,103,145,64,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_INVZFORMAX,171,145,40,
+                    8
+    RTEXT           "1/Z Scale Factor",IDC_STATIC,15,156,84,8
+    SCROLLBAR       IDC_SCROLL_PERSPECTIVE_INVZSCALE,103,156,64,8
+    LTEXT           "Not done.",IDC_STATIC_PERSPECTIVE_INVZSCALE,171,156,40,
+                    8
+END
+
+IDD_RENDERCACHE DIALOG DISCARDABLE  0, 0, 290, 236
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RenderCache Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Caching Efficiency",IDC_STATIC,9,7,187,63
+    GROUPBOX        "Scheduler Wieghts",IDC_STATIC,9,177,187,29
+    DEFPUSHBUTTON   "E&xit",IDOK,145,211,50,14
+    RTEXT           "Detail Reduction:",IDC_STATIC,26,154,58,8
+    SCROLLBAR       IDC_SCROLL_DETAILREDUCE,86,154,76,8
+    LTEXT           "Error",IDC_STATIC_DETAILREDUCE,166,154,23,8
+    SCROLLBAR       IDC_SCROLL_AREA,85,92,76,8
+    RTEXT           "Area:",IDC_STATIC,41,93,41,8
+    LTEXT           "Error",IDC_STATIC_AREA,165,93,26,8
+    RTEXT           "Line:",IDC_STATIC,43,104,40,8
+    SCROLLBAR       IDC_SCROLL_LINE,85,103,76,8
+    LTEXT           "Error",IDC_STATIC_LINE,165,104,24,8
+    RTEXT           "Min Area for Poly:",IDC_STATIC,25,115,58,8
+    SCROLLBAR       IDC_SCROLL_POLYAREA,85,114,76,8
+    LTEXT           "Error",IDC_STATIC_POLYAREA,165,115,23,8
+    CONTROL         "&Predict Movement",IDC_CHECK_PREDICTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,207,197,75,10
+    SCROLLBAR       IDC_SCROLL_CYLINDERDEG,85,30,76,8
+    RTEXT           "Max cylinder degrees:",IDC_STATIC,13,30,69,8
+    LTEXT           "Error",IDC_STATIC_CYLINDERDEG,165,30,22,8
+    RTEXT           "Distortion:",IDC_STATIC,36,190,46,10
+    SCROLLBAR       IDC_SCROLL_DISTORTION,85,190,76,8
+    LTEXT           "Error",IDC_STATIC_DISTORTION,165,190,35,8
+    LTEXT           "Oversampling: Higher texel to pixel ratio.\n\nUndersampling: Lower texel to pixel ratio.\n\nReduce Memory: Sets a weight for reducing the amount of memory used by non-visible caches.",
+                    IDC_STATIC,204,11,78,83
+    RTEXT           "Max Objects:",IDC_STATIC,33,41,49,10
+    RTEXT           "Area Efficiency:",IDC_STATIC,28,18,54,10
+    SCROLLBAR       IDC_SCROLL_MAXOBJECTS,85,41,76,8
+    LTEXT           "Error",IDC_STATIC_MAXOBJECTS,165,41,27,8
+    SCROLLBAR       IDC_SCROLL_AREAEFFICIENCY,85,18,76,8
+    LTEXT           "Error",IDC_STATIC_AREAEFFICIENCY,165,18,27,8
+    GROUPBOX        "Physics",IDC_STATIC,202,113,84,65
+    CONTROL         "&Faster...",IDC_CHECK_FASTERPHYSICS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,127,58,10
+    LTEXT           "...but less accurate handling of moving physics objects by the image caching system.",
+                    IDC_STATIC,208,140,73,35
+    GROUPBOX        "Polygonal Caching",IDC_STATIC,9,80,187,51
+    GROUPBOX        "Detail Reduction",IDC_STATIC,9,139,187,32
+    GROUPBOX        "Other",IDC_STATIC,202,183,84,44
+    CONTROL         "F&orce Caching",IDC_CHECK_FORCECACHING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,207,209,59,10
+    RTEXT           "Parallax Shear:",IDC_STATIC,33,53,49,10
+    SCROLLBAR       IDC_SCROLL_PARALLAXSHEAR,85,53,76,8
+    LTEXT           "Error",IDC_STATIC_PARALLAXSHEAR,165,54,27,8
+END
+
+IDD_DUMMY DIALOGEX 0, 0, 251, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "Dummy"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_TERRAIN DIALOGEX 0, 0, 246, 302
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Terrain Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "E&xit",IDOK,101,287,50,12,BS_CENTER
+    RTEXT           "Pix tolerance",IDC_STATIC,7,13,56,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_PIX_TOLERANCE_START,67,13,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_PIX_TOLERANCE_START,203,
+                    13,34,8
+    RTEXT           "Pix tol @500m",IDC_STATIC,7,24,56,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_PIX_TOLERANCE_END,67,24,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_PIX_TOLERANCE_END,203,24,
+                    34,8
+    RTEXT           "Quantisation bits",IDC_STATIC,9,209,53,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_QUANTISATION_BITS,66,209,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_QUANTISATION_BITS,202,209,
+                    36,8
+    GROUPBOX        "Texture node placement",IDC_STATIC,6,56,233,56,
+                    BS_CENTER
+    CONTROL         "Disable",IDC_CHECK_TERRAIN_DYNAMIC,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,73,
+                    180,40,10
+    RTEXT           "Freq cutoff",IDC_STATIC,14,220,48,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_FREQ_CUTOFF,66,220,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_FREQ_CUTOFF,202,220,36,8
+    RTEXT           "Eval delay factor",IDC_STATIC,7,35,56,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_DEFER_EVAL,67,35,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_DEFER_EVAL,203,35,33,8
+    GROUPBOX        "Geometry",IDC_STATIC,6,4,233,47,BS_CENTER
+    GROUPBOX        "Conversion",IDC_STATIC,6,199,233,45,BS_CENTER
+    GROUPBOX        "View",IDC_STATIC,6,248,233,35,BS_CENTER
+    RTEXT           "Wire zoom",IDC_STATIC,12,258,50,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_WIREZOOM,66,258,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_WIREZOOM,202,258,36,8
+    CONTROL         "Tris",IDC_CHECK_TERRAIN_WIRETRIS,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,
+                    162,269,23,10
+    CONTROL         "Quad",IDC_CHECK_TERRAIN_WIREQUADS,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,
+                    192,269,30,10
+    RTEXT           "Max dist ratio",IDC_STATIC,12,66,50,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_MAX_DIST_RATIO,66,66,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_MAX_DIST_RATIO,202,66,36,
+                    8
+    RTEXT           "Min node size",IDC_STATIC,12,77,50,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_MIN_NODE_SIZE,66,77,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_MIN_NODE_SIZE,202,77,36,8
+    RTEXT           "Tri node diff scale",IDC_STATIC,6,88,56,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_TRI_NODE_DIFF_SHIFT,66,88,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_TRI_NODE_DIFF_SHIFT,202,
+                    88,36,8
+    RTEXT           "Texel scale",IDC_STATIC,16,126,46,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_TEXEL_SCALE_START,66,126,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_TEXEL_SCALE_START,202,126,
+                    36,8
+    RTEXT           "Tex scale end",IDC_STATIC,7,137,57,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_TEXEL_SCALE_END,66,137,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_TEXEL_SCALE_END,202,137,
+                    36,8
+    GROUPBOX        "Texture node rendering",IDC_STATIC,6,116,233,77,
+                    BS_CENTER
+    RTEXT           "No shadow dist",IDC_STATIC,11,148,53,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_DISABLE_SHADOW_DIST,66,148,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_DISABLE_SHADOW_DIST,202,
+                    148,36,8
+    RTEXT           "No texture dist",IDC_STATIC,12,169,52,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_DISABLE_TEXTURE_DIST,66,169,130,8
+    LTEXT           "Not done.",IDC_STATIC_TERRAIN_DISABLE_TEXTURE_DIST,202,
+                    169,36,8
+    CONTROL         "Clears",IDC_CHECK_TERRAIN_CLEARS,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,
+                    123,180,36,10
+    CONTROL         "Freq cutoff as ratio",IDC_CHECK_TERRAIN_FREQ_AS_RATIO,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | 
+                    WS_TABSTOP,85,231,76,10
+    CONTROL         "Freeze",IDC_CHECK_TERRAIN_FREEZE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,22,
+                    269,37,10
+    CONTROL         "Show Constrained",IDC_CHECK_TERRAIN_SHOW_CONSTRAINED,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | 
+                    WS_TABSTOP,73,269,73,10
+    RTEXT           "No dyn tex dist",IDC_STATIC,12,159,48,8
+    SCROLLBAR       IDC_SCROLL_TERRAIN_DISABLE_DYNAMIC_TEXTURE_DIST,66,159,
+                    130,8
+    LTEXT           "Not done.",
+                    IDC_STATIC_TERRAIN_DISABLE_DYNAMIC_TEXTURE_DIST,202,159,
+                    36,8
+    CONTROL         "Proj nearest",IDC_CHECK_TERRAIN_PROJ_NEAREST,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,10,
+                    181,53,10
+    CONTROL         "Conform constraint",
+                    IDC_CHECK_TERRAIN_CONFORM_CONSTRAINT,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,86,
+                    99,72,10
+END
+
+IDD_DEPTHSORT_SETTINGS DIALOG DISCARDABLE  0, 0, 215, 245
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Depth Sort Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    SCROLLBAR       IDC_SCROLL_NEARTOL,60,20,88,8
+    RTEXT           "Near Tol:",IDC_STATIC,19,20,37,8
+    LTEXT           "Static",IDC_STATIC_NEARTOL,151,20,39,8
+    SCROLLBAR       IDC_SCROLL_FARTOL,60,31,88,8
+    RTEXT           "Far Tol:",IDC_STATIC,19,31,37,8
+    LTEXT           "Static",IDC_STATIC_FARTOL,151,31,39,8
+    SCROLLBAR       IDC_SCROLL_NEARZ,60,42,88,8
+    RTEXT           "Near Z:",IDC_STATIC,19,42,37,8
+    LTEXT           "Static",IDC_STATIC_NEARZ,151,42,40,8
+    SCROLLBAR       IDC_SCROLL_FARZ,60,54,88,8
+    RTEXT           "Far Z:",IDC_STATIC,19,54,37,8
+    LTEXT           "Static",IDC_STATIC_FARZ,151,54,40,8
+    SCROLLBAR       IDC_SCROLL_FARZ_NO,60,65,88,8
+    RTEXT           "Far Z No:",IDC_STATIC,17,65,39,8
+    LTEXT           "Static",IDC_STATIC_FARZ_NO,151,65,40,8
+    CONTROL         "&Linear",ID_RADIO_LINEAR,"Button",BS_AUTORADIOBUTTON,69,
+                    220,35,10
+    CONTROL         "&Inverse",ID_RADIO_INVERSE,"Button",BS_AUTORADIOBUTTON,
+                    106,220,39,10
+    SCROLLBAR       IDC_SCROLL_PIXELTOL,60,76,88,8
+    RTEXT           "Pix Tol:",IDC_STATIC,17,76,39,8
+    LTEXT           "Static",IDC_STATIC_PIXELTOL,151,76,40,8
+    SCROLLBAR       IDC_SCROLL_MAXNUM,60,87,88,8
+    RTEXT           "Max Num:",IDC_STATIC,17,87,39,8
+    LTEXT           "Static",IDC_STATIC_MAXNUM,151,87,40,8
+    GROUPBOX        "General Tolerances",IDC_STATIC,9,7,186,120
+    SCROLLBAR       IDC_SCROLL_NEARTOL_TERRAIN,60,146,88,8
+    RTEXT           "Near Tol:",IDC_STATIC,19,146,37,8
+    LTEXT           "Static",IDC_STATIC_NEARTOL_TERRAIN,151,146,39,8
+    SCROLLBAR       IDC_SCROLL_FARTOL_TERRAIN,60,157,88,8
+    RTEXT           "Far Tol:",IDC_STATIC,19,157,37,8
+    LTEXT           "Static",IDC_STATIC_FARTOL_TERRAIN,151,157,39,8
+    SCROLLBAR       IDC_SCROLL_NEARZ_TERRAIN,60,169,88,8
+    RTEXT           "Near Z:",IDC_STATIC,19,169,37,8
+    LTEXT           "Static",IDC_STATIC_NEARZ_TERRAIN,151,169,40,8
+    SCROLLBAR       IDC_SCROLL_FARZ_TERRAIN,60,180,88,8
+    RTEXT           "Far Z:",IDC_STATIC,19,180,37,8
+    LTEXT           "Static",IDC_STATIC_FARZ_TERRAIN,151,180,40,8
+    GROUPBOX        "Terrain Tolerances",IDC_STATIC,9,133,186,79
+    CONTROL         "Use &Separate Tolerances",IDC_CHECK_TERRAIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,194,97,10
+    SCROLLBAR       IDC_SCROLL_BINARYAT,60,98,88,8
+    RTEXT           "2-part at:",IDC_STATIC,18,98,39,8
+    LTEXT           "Static",IDC_STATIC_BINARYAT,152,98,40,8
+    SCROLLBAR       IDC_SCROLL_QUADAT,60,109,88,8
+    RTEXT           "4-part at:",IDC_STATIC,17,109,39,8
+    LTEXT           "Static",IDC_STATIC_QUADAT,151,109,40,8
+END
+
+IDD_SOUND_PROPERTIES DIALOG DISCARDABLE  0, 0, 360, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sound Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Speaker Setup",IDC_STATIC,7,55,190,42
+    CONTROL         "Mono",IDC_SPEAKER_MONO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,30,65,44,9
+    CONTROL         "Quadraphonic",IDC_SPEAKER_QUAD,"Button",
+                    BS_AUTORADIOBUTTON,30,75,59,9
+    CONTROL         "Stereo Headphones",IDC_SPEAKER_PHONES,"Button",
+                    BS_AUTORADIOBUTTON,30,85,79,9
+    CONTROL         "Stereo",IDC_SPEAKER_STEREO,"Button",BS_AUTORADIOBUTTON,
+                    112,65,44,9
+    CONTROL         "Surround",IDC_SPEAKER_SURROUND,"Button",
+                    BS_AUTORADIOBUTTON,112,75,44,9
+    DEFPUSHBUTTON   "Exit",IDOK,165,242,50,14,WS_GROUP
+    CONTROL         "Mono",IDC_SOUND_MONO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,94,29,40,9
+    CONTROL         "Stereo",IDC_SOUND_STEREO,"Button",BS_AUTORADIOBUTTON,94,
+                    40,44,9
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",WS_GROUP | 
+                    WS_TABSTOP,14,16,108,10
+    LTEXT           "ccccccccccccccccc",IDC_TEXT_FREQ,126,16,62,9
+    CONTROL         "Disable effects && collisions",IDC_CHECK2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,112,96,8
+    CONTROL         "8 Bit",IDC_SOUND_8BIT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,48,29,33,9
+    CONTROL         "16 bit",IDC_SOUND_16BIT,"Button",BS_AUTORADIOBUTTON,48,
+                    40,36,9
+    CONTROL         "Disable voiceovers",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,114,112,69,8
+    CONTROL         "Disable ambient sounds",IDC_CHECK4,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,124,84,8
+    CONTROL         "Disable music",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,114,124,66,8
+    GROUPBOX        "Audio Output Quality",IDC_STATIC,7,7,190,46
+    GROUPBOX        "Features Enabled",IDC_STATIC,7,100,190,35
+    LTEXT           "3D Hardware Found:",IDC_STATIC,34,205,91,8
+    LTEXT           "No",IDC_A3D_HARDWARE,129,205,31,8
+    GROUPBOX        "Subtitles",IDC_STATIC,7,138,190,55
+    CONTROL         "Show subtitles",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,64,147,61,8
+    CONTROL         "Top",IDC_SUBTITLE_TOP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,38,158,28,8
+    CONTROL         "Bottom",IDC_SUBTITLE_BOTTOM,"Button",BS_AUTORADIOBUTTON,
+                    38,168,39,8
+    CONTROL         "Small Text",IDC_SUB_SIZE1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,112,158,67,9
+    CONTROL         "MediumText",IDC_SUB_SIZE2,"Button",BS_AUTORADIOBUTTON,
+                    112,169,67,9
+    CONTROL         "Large Text",IDC_SUB_SIZE3,"Button",BS_AUTORADIOBUTTON,
+                    112,180,67,9
+    CONTROL         "Fill background",IDC_SUB_SYSMEM,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,180,94,9
+    CONTROL         "Use 3D hardware",IDC_CHECK_HW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,57,218,77,10
+    GROUPBOX        "Hardware",IDC_STATIC,7,195,190,39
+    GROUPBOX        "EAX Extentions",IDC_STATIC,203,7,150,227
+    CONTROL         "Generic",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,213,20,41,10
+    CONTROL         "Padded Cell",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,213,
+                    30,54,10
+    CONTROL         "Room",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,213,40,35,
+                    10
+    CONTROL         "Bathroom",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,213,50,
+                    46,10
+    CONTROL         "Living Room",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,213,
+                    60,55,10
+    CONTROL         "Stone Room",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,213,
+                    70,55,10
+    CONTROL         "Auditorium",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON,213,
+                    80,49,10
+    CONTROL         "Concert Hall",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,
+                    213,90,55,10
+    CONTROL         "Cave",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON,213,100,33,
+                    10
+    CONTROL         "Arena",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON,213,110,
+                    35,10
+    CONTROL         "Hangar",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON,213,121,
+                    39,10
+    CONTROL         "Carpeted Hallway",IDC_RADIO12,"Button",
+                    BS_AUTORADIOBUTTON,213,131,71,10
+    CONTROL         "Hallway",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON,213,
+                    141,41,10
+    CONTROL         "Stone corridor",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON,
+                    294,20,60,10
+    CONTROL         "Alley",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,294,30,
+                    31,10
+    CONTROL         "Forest",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON,294,40,
+                    35,10
+    CONTROL         "City",IDC_RADIO17,"Button",BS_AUTORADIOBUTTON,294,50,27,
+                    10
+    CONTROL         "Mountains",IDC_RADIO18,"Button",BS_AUTORADIOBUTTON,294,
+                    60,49,10
+    CONTROL         "Quarry",IDC_RADIO19,"Button",BS_AUTORADIOBUTTON,294,70,
+                    37,10
+    CONTROL         "Plain",IDC_RADIO20,"Button",BS_AUTORADIOBUTTON,294,80,
+                    31,10
+    CONTROL         "Parking Lot",IDC_RADIO21,"Button",BS_AUTORADIOBUTTON,
+                    294,90,52,10
+    CONTROL         "Sewer Pipe",IDC_RADIO22,"Button",BS_AUTORADIOBUTTON,294,
+                    100,52,10
+    CONTROL         "Underwater",IDC_RADIO23,"Button",BS_AUTORADIOBUTTON,294,
+                    110,53,10
+    CONTROL         "Drugged",IDC_RADIO24,"Button",BS_AUTORADIOBUTTON,294,
+                    120,43,10
+    CONTROL         "Dizzy",IDC_RADIO25,"Button",BS_AUTORADIOBUTTON,294,130,
+                    33,10
+    CONTROL         "Psychotic",IDC_RADIO26,"Button",BS_AUTORADIOBUTTON,294,
+                    140,47,10
+    CONTROL         "Slider2",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_GROUP | WS_TABSTOP,215,165,122,8
+    CTEXT           "Reverb Mix Volume: xxxxxx",IDC_VOLUME_TEXT,219,173,115,
+                    8
+    CONTROL         "Slider2",IDC_SLIDER8,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,215,186,122,8
+    CTEXT           "Reverb Decay Time: xxxxxx",IDC_DECAY_TEXT,219,194,116,8
+    CONTROL         "Slider2",IDC_SLIDER9,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,216,207,122,8
+    CTEXT           "Damping: xxxxxx",IDC_DAMPING_TEXT,219,215,116,8
+END
+
+IDD_MIPMAP DIALOG DISCARDABLE  0, 0, 173, 23
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mipmapping"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Threshold:",IDC_STATIC,7,7,36,9
+    LTEXT           "Error",IDC_STATIC_MIP_THRESHOLD,127,7,39,9
+    SCROLLBAR       IDC_SCROLL_MIP_THRESHOLD,47,7,77,9
+END
+
+IDD_ALPHA_COLOUR DIALOG DISCARDABLE  0, 0, 186, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Alpha Colour"
+FONT 8, "MS Sans Serif"
+BEGIN
+    SCROLLBAR       IDC_SCROLL_COLOUR,57,15,74,8
+    RTEXT           "Colour:",IDC_STATIC,7,15,48,8
+    LTEXT           "Error",IDC_STATIC_COLOUR,134,15,45,8
+    SCROLLBAR       IDC_SCROLL_RED,57,42,74,8
+    RTEXT           "Red:",IDC_STATIC,23,42,32,8
+    LTEXT           "Error",IDC_STATIC_RED,134,42,34,8
+    SCROLLBAR       IDC_SCROLL_GREEN,57,52,74,8
+    RTEXT           "Green:",IDC_STATIC,22,52,33,8
+    LTEXT           "Error",IDC_STATIC_GREEN,134,52,33,8
+    SCROLLBAR       IDC_SCROLL_BLUE,57,63,74,8
+    RTEXT           "Blue:",IDC_STATIC,25,63,30,8
+    LTEXT           "Error",IDC_STATIC_BLUE,134,63,32,8
+    SCROLLBAR       IDC_SCROLL_BLEND,57,73,74,8
+    RTEXT           "Blend %:",IDC_STATIC,23,73,32,8
+    LTEXT           "Error",IDC_STATIC_BLEND,134,73,35,8
+    GROUPBOX        "Colour Settings",IDC_STATIC,7,28,172,60
+    PUSHBUTTON      "&View",IDC_BUTTON_VIEW,129,93,50,14
+END
+
+IDD_TEXTUREPACK DIALOG DISCARDABLE  0, 0, 355, 342
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Texture Pack Surfaces"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,298,321,50,14
+    LISTBOX         IDC_TEXTURE_BOX,228,7,120,292,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "xxxx",IDC_TEXT_MIP,228,306,120,10
+END
+
+IDD_DIALOG_MEMSTATS DIALOGEX 0, 0, 343, 216
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Memory Usage Statistics"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,286,195,50,14
+    CONTROL         "List2",IDC_LOG_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,7,7,329,183,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Calculate Fragmentation",IDC_FRAGMENT,7,195,83,14
+    PUSHBUTTON      "Clear Selected",IDC_CLEAR,97,195,56,14
+END
+
+IDD_PARTITION DIALOG DISCARDABLE  0, 0, 174, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Partition Generation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "E&xit",IDOK,117,42,50,14
+    PUSHBUTTON      "&Load",ID_LOAD,7,42,50,14
+    PUSHBUTTON      "&Save",ID_SAVE,62,42,50,14,WS_DISABLED
+    PUSHBUTTON      "&Create Best",ID_CREATE,37,61,50,14
+    RTEXT           "% Done:",IDC_STATIC,33,17,49,8
+    RTEXT           "Remaining:",IDC_STATIC,33,27,49,8
+    LTEXT           "Error",IDC_PERCENT_DONE,87,17,49,8
+    LTEXT           "Error",IDC_REMAINING,87,27,49,8
+    RTEXT           "Action:",IDC_STATIC,33,7,49,8
+    LTEXT           "Error",IDC_ACTION,87,7,49,8
+    PUSHBUTTON      "Create &Fast",ID_CREATEFAST,92,61,50,14
+END
+
+IDD_OCCLUDE DIALOG DISCARDABLE  0, 0, 186, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Occlusion Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,68,31,50,14
+    RTEXT           "Area Threshold:",IDC_STATIC,7,7,54,8
+    SCROLLBAR       IDC_SCROLL_OCCLUDE_THRESHOLD,64,7,59,8
+    LTEXT           "Error",IDC_STATIC_OCCLUDE_THRESHOLD,126,7,53,8
+    RTEXT           "Max in View:",IDC_STATIC,7,16,54,8
+    SCROLLBAR       IDC_SCROLL_OCCLUDE_MAXINVIEW,64,17,59,8
+    LTEXT           "Error",IDC_STATIC_OCCLUDE_MAXINVIEW,126,16,53,8
+END
+
+IDD_STRING DIALOG DISCARDABLE  0, 0, 187, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter String"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    EDITTEXT        IDC_TEXT1,7,13,115,15,ES_AUTOHSCROLL
+END
+
+IDD_SKY DIALOG DISCARDABLE  0, 0, 234, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sky Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,177,127,50,14
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,51,18,123,9
+    RTEXT           "Height",IDC_STATIC,14,17,36,9
+    LTEXT           "0000 m",IDC_TEXT1,177,17,40,9
+    GROUPBOX        "Sky",IDC_STATIC,7,7,220,72
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,51,42,123,9
+    RTEXT           "Near Fog",IDC_STATIC,14,41,36,9
+    LTEXT           "0000 m",IDC_TEXT2,177,41,40,9
+    CONTROL         "Slider1",IDC_SLIDER3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,51,54,123,9
+    RTEXT           "Far Fog",IDC_STATIC,14,53,36,9
+    LTEXT           "0000 m",IDC_TEXT3,177,53,40,9
+    CONTROL         "Slider1",IDC_SLIDER4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,51,30,123,9
+    RTEXT           "Pixel Scale",IDC_STATIC,14,29,36,9
+    LTEXT           "0 Pixels/Meter",IDC_TEXT4,177,29,46,9
+    GROUPBOX        "Wind",IDC_STATIC,7,81,220,39
+    CONTROL         "Slider1",IDC_SLIDER5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,52,93,123,9
+    RTEXT           "Wind X",IDC_STATIC,13,92,36,9
+    LTEXT           "0 m/s",IDC_TEXT5,178,92,40,9
+    CONTROL         "Slider1",IDC_SLIDER6,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,52,105,123,9
+    RTEXT           "Wind Y",IDC_STATIC,13,104,36,9
+    LTEXT           "0 m/s",IDC_TEXT6,178,104,40,9
+    CONTROL         "Slider1",IDC_SLIDER7,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,51,66,123,9
+    RTEXT           "Sub-Division",IDC_STATIC,10,65,40,9
+    LTEXT           "32 pixels",IDC_TEXT7,177,65,40,9
+END
+
+IDD_GUN DIALOG DISCARDABLE  0, 0, 186, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gun Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,68,90,50,14
+    RTEXT           "Extension (m):",IDC_STATIC,13,18,44,8
+    RTEXT           "Impulse (kgm/s):",IDC_STATIC,13,29,44,8
+    LTEXT           "Error",IDC_STATIC_GUN_EXTENSION,129,18,44,8
+    LTEXT           "Error",IDC_STATIC_GUN_MOMENT,129,30,44,8
+    SCROLLBAR       IDC_SCROLL_GUN_EXTENSION,62,18,64,8
+    SCROLLBAR       IDC_SCROLL_GUN_MOMENT,62,29,64,8
+    GROUPBOX        "Push",IDC_STATIC,7,7,172,36
+    RTEXT           "Extension (m):",IDC_STATIC,13,60,44,8
+    RTEXT           "Impulse (kgm/s):",IDC_STATIC,13,70,44,8
+    LTEXT           "Error",IDC_STATIC_GUN_EXTENSION_PULL,129,60,41,8
+    LTEXT           "Error",IDC_STATIC_GUN_IMPULSE_PULL,129,71,43,8
+    SCROLLBAR       IDC_SCROLL_GUN_EXTENSION_PULL,62,59,64,8
+    SCROLLBAR       IDC_SCROLL_GUN_IMPULSE_PULL,62,70,64,8
+    GROUPBOX        "Pull",IDC_STATIC,7,48,172,36
+END
+
+IDD_SCHEDULER DIALOG DISCARDABLE  0, 0, 166, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scheduler"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,45,50,14
+    RTEXT           "Img cache (ms):",IDC_STATIC,7,7,57,8
+    LTEXT           "Error",IDC_STATIC_TIME,134,7,25,8
+    SCROLLBAR       IDC_SCROLL_SCHEDULER,69,7,54,8
+    RTEXT           "Terrain tex (ms):",IDC_STATIC,7,18,57,8
+    LTEXT           "Error",IDC_STATIC_TIME_TERRAIN,134,18,25,8
+    SCROLLBAR       IDC_SCROLL_SCHEDULER_TERRAIN,69,18,54,8
+    RTEXT           "Threshold (m):",IDC_STATIC,7,29,57,8
+    LTEXT           "Error",IDC_STATIC_SCHEDULER_THRESHOLD,134,29,25,8
+    SCROLLBAR       IDC_SCROLL_SCHEDULER_THRESHOLD,69,29,54,8
+END
+
+IDD_VIRTUALMEM DIALOG DISCARDABLE  0, 0, 230, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Virtual Memory Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "4K Page",IDC_RADIOA,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,13,54,40,10
+    CONTROL         "8K Page",IDC_RADIOB,"Button",BS_AUTORADIOBUTTON,64,54,
+                    43,10
+    CONTROL         "16K Page",IDC_RADIOC,"Button",BS_AUTORADIOBUTTON,118,54,
+                    43,10
+    CONTROL         "32K Page",IDC_RADIOD,"Button",BS_AUTORADIOBUTTON,172,54,
+                    43,10
+    CONTROL         "64K Page",IDC_RADIOE,"Button",BS_AUTORADIOBUTTON,13,68,
+                    43,10
+    CONTROL         "128K Page",IDC_RADIOF,"Button",BS_AUTORADIOBUTTON,64,68,
+                    43,10
+    CONTROL         "256K Page",IDC_RADIOG,"Button",BS_AUTORADIOBUTTON,118,
+                    68,43,10
+    CONTROL         "512K Page",IDC_RADIOH,"Button",BS_AUTORADIOBUTTON,172,
+                    68,43,10
+    PUSHBUTTON      "Close",IDCANCEL,171,125,50,14,WS_GROUP
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,50,28,131,10
+    GROUPBOX        "Virtual Memory",IDC_STATIC,7,7,217,113
+    PUSHBUTTON      "Go Virtual",IDC_GOVIRTUAL,9,125,50,14
+    LTEXT           "Maximum Physical Memory",IDC_STATIC,12,20,35,26
+    LTEXT           "XX Mb",IDC_VM_COUNT,187,28,31,10
+    PUSHBUTTON      "Decommit all",IDC_DECOMMIT,63,125,50,14,WS_DISABLED
+    PUSHBUTTON      "Commit All",IDC_COMMITALL,117,125,50,14,WS_DISABLED
+    CONTROL         "Use Conventional Loader",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,70,83,101,8
+    CONTROL         "Commit All on Load",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,70,95,101,8
+    CONTROL         "Suspend Load Thread",IDC_CHECK6,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,70,107,101,8
+END
+
+IDD_DIALOG_BUMPPACK DIALOG DISCARDABLE  0, 0, 539, 309
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Pack Bump Maps"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Close",IDOK,482,288,50,14,BS_NOTIFY
+    CONTROL         "",IDC_MAP0,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,47,209,48,48
+    CONTROL         "",IDC_MAP1,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,102,209,48,48
+    CONTROL         "",IDC_MAP2,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,157,209,48,48
+    CONTROL         "",IDC_MAP3,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,212,209,48,48
+    CONTROL         "",IDC_MAP4,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,267,209,48,48
+    CONTROL         "",IDC_MAP5,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,322,209,48,48
+    CONTROL         "",IDC_MAP6,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,377,209,48,48
+    CONTROL         "",IDC_MAP7,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,432,209,48,48
+    GROUPBOX        "Pack Bump Maps",IDC_STATIC,7,7,525,272
+    SCROLLBAR       IDC_SCROLLBAR1,73,262,378,10
+    CONTROL         "",IDC_PACK_FRAME,"Static",SS_ETCHEDFRAME | SS_SUNKEN,14,
+                    18,240,184
+    LISTBOX         IDC_LIST1,260,19,94,116,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Surface 1",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_CENTER | WS_DISABLED | WS_GROUP,262,138,43,10
+    CONTROL         "Surface 2",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | 
+                    BS_CENTER | WS_DISABLED,309,138,43,10
+    PUSHBUTTON      "Set Position",IDC_SET,301,154,49,14,WS_GROUP
+    RTEXT           "X Size:",IDC_STATIC,365,27,51,9
+    RTEXT           "Y Size:",IDC_STATIC,365,36,51,9
+    RTEXT           "Mip Level:",IDC_STATIC,365,45,51,9
+    RTEXT           "Packed:",IDC_STATIC,451,24,38,9
+    RTEXT           "Curved (unique):",IDC_STATIC,451,33,38,9
+    LTEXT           "xxxx",IDC_TEXT_XSIZE,421,27,26,9
+    LTEXT           "xxxx",IDC_TEXT_YSIZE,421,36,26,9
+    LTEXT           "xxxx",IDC_TEXT_MIPLEVEL,421,45,26,9
+    LTEXT           "xxxx",IDC_TEXT_PACKED,494,24,26,9
+    LTEXT           "xxxx",IDC_TEXT_CURVED,494,33,26,9
+    CTEXT           "00000",IDC_TEXT_MAXIMUM,456,263,24,9
+    CTEXT           "00000",IDC_TEXT_MINIMUM,47,263,24,9
+    CONTROL         "",IDC_STATE,"Static",SS_BLACKFRAME | SS_SUNKEN,265,154,
+                    30,14
+    PUSHBUTTON      "Up",IDC_UP,424,92,35,13
+    PUSHBUTTON      "Down",IDC_DOWN,424,114,35,13
+    PUSHBUTTON      "Left",IDC_LEFT,384,103,35,13
+    PUSHBUTTON      "Right",IDC_RIGHT,464,103,35,13
+    GROUPBOX        "Move",IDC_STATIC,360,82,166,52
+    CTEXT           "(000,000)",IDC_TEXT_POSITION,366,121,47,9
+    PUSHBUTTON      "New Bump Map Page (Pageable)",IDC_NEW_SURFACE2,383,138,
+                    132,14,WS_GROUP
+    GROUPBOX        "Map/Surface Details",IDC_STATIC,360,16,166,62
+    RTEXT           "Surface Mip",IDC_STATIC,365,60,40,9
+    LTEXT           "xxxx",IDC_TEXT_XSIZE2,411,60,111,15
+    PUSHBUTTON      "New Bump Map Page (Non Pageable)",IDC_NEW_SURFACE3,383,
+                    156,132,14,WS_GROUP
+END
+
+IDD_PARAMETER_DIALOG DIALOG DISCARDABLE  0, 0, 188, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,3,128,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,128,50,14
+    CONTROL         "Slider1",IDC_PARAMETER0,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,9,100,10
+    CONTROL         "Slider1",IDC_PARAMETER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,23,100,10
+    CONTROL         "Slider1",IDC_PARAMETER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,35,100,10
+    CONTROL         "Slider1",IDC_PARAMETER3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,48,100,10
+    CONTROL         "Slider1",IDC_PARAMETER4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,61,100,10
+    CONTROL         "Slider1",IDC_PARAMETER5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,73,100,10
+    CONTROL         "Slider1",IDC_PARAMETER6,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,86,100,10
+    CONTROL         "Slider1",IDC_PARAMETER7,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,99,100,10
+    RTEXT           "Fear",IDC_STATIC_PARAMETER1,19,8,21,8
+    RTEXT           "Love",IDC_STATIC_PARAMETER2,19,23,20,8
+    RTEXT           "Anger",IDC_STATIC_PARAMETER3,17,34,22,8
+    RTEXT           "Curiosity",IDC_STATIC_PARAMETER4,11,47,28,8
+    RTEXT           "Hunger",IDC_STATIC_PARAMETER5,5,60,33,8
+    RTEXT           "Thirst",IDC_STATIC_PARAMETER6,9,72,30,8
+    RTEXT           "Fatigue",IDC_STATIC_PARAMETER7,9,84,30,8
+    RTEXT           "Pain",IDC_STATIC_PARAMETER8,11,97,28,8
+    EDITTEXT        IDC_EDIT_PARAMETER1,141,20,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER2,141,33,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER3,141,46,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER4,141,59,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER5,141,72,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER6,141,85,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER7,141,98,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_EDIT_PARAMETER8,141,111,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    CONTROL         "Slider1",IDC_PARAMETER8,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,41,112,100,10
+    RTEXT           "Solidity",IDC_STATIC_PARAMETER9,3,110,35,8
+    EDITTEXT        IDC_EDIT_PARAMETER0,141,7,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+END
+
+IDD_AIDIALOGS2_DIALOG DIALOGEX 0, 0, 228, 319
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "AI Dialogs2"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,298,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,66,298,50,14
+    LISTBOX         IDC_ACTIVITIES,7,27,109,266,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "None",ID_NONE,66,7,50,14
+    DEFPUSHBUTTON   "All",ID_ALL,7,7,50,14
+    LTEXT           "No activity selected",ID_AI_TEXT,123,7,98,305
+END
+
+IDD_DIALOG_PACKOPTIONS DIALOG DISCARDABLE  0, 0, 187, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Texture Packing Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,130,45,50,14
+    SCROLLBAR       IDC_SCROLLBAR1,17,21,127,10
+    LTEXT           "xx",IDC_TEXT_MIP_DIFF,150,22,22,9
+    GROUPBOX        "Mip Level Packing",IDC_STATIC,7,7,173,33
+    CONTROL         "Pack Curved Bump Maps",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,49,106,10
+END
+
+IDD_MAGNET DIALOGEX 0, 0, 186, 223
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Magnet Properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,30,202,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,100,202,50,14
+    LTEXT           "Slave Obj",IDC_STATIC,7,26,32,8
+    CONTROL         "Master Obj",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,7,7,35,8
+    EDITTEXT        IDC_EDIT_MASTER,55,7,124,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_SLAVE,55,23,124,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "X Axis Free",IDC_CHECK_XFREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,55,62,51,10
+    CONTROL         "Y Axis Free",IDC_CHECK_YFREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,55,71,51,10
+    CONTROL         "Z Axis Free",IDC_CHECK_ZFREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,55,80,51,10
+    CONTROL         "Hand Pickup",IDC_CHECK_PICKUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,55,39,61,10
+    CONTROL         "Hand Hold",IDC_CHECK_ORIENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,39,61,10
+    CONTROL         "Breakable",IDC_CHECK_BREAKABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,55,98,51,10
+    EDITTEXT        IDC_EDIT_MAG_STRENGTH,110,96,69,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER,WS_EX_RIGHT
+    LTEXT           "Type",IDC_STATIC,7,39,17,8
+    LTEXT           "Properties",IDC_STATIC,7,98,32,8
+    EDITTEXT        IDC_EDIT_MAG_RESTORE,110,110,70,14,ES_NUMBER,WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_MAG_FRICTION,110,125,70,14,ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "Restoring",IDC_STATIC,67,113,31,8
+    LTEXT           "Friction",IDC_STATIC,67,128,24,8
+    CONTROL         "Angle Limits",IDC_CHECK_LIMITS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,55,154,51,10
+    EDITTEXT        IDC_EDIT_MAG_MIN,109,153,70,14,0,WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_MAG_MAX,109,167,70,14,0,WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_MAG_DRIVE,109,139,70,14,0,WS_EX_RIGHT
+    LTEXT           "Drive",IDC_STATIC,67,142,18,8
+    CONTROL         "X Trans Free",IDC_CHECK_XTFREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,62,57,10
+    CONTROL         "Y Trans Free",IDC_CHECK_YTFREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,70,57,10
+    CONTROL         "Z Trans Free",IDC_CHECK_ZTFREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,80,57,10
+    LTEXT           "Freedom",IDC_STATIC,7,63,28,8
+END
+
+IDD_DIALOG_OBJECTCULLING DIALOG DISCARDABLE  0, 0, 232, 258
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Object Culling"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Objects",IDC_STATIC,7,7,218,46
+    DEFPUSHBUTTON   "E&xit",IDOK,91,233,50,14
+    SCROLLBAR       IDC_SCROLL_CULLING,95,23,80,8
+    LTEXT           "Error",IDC_STATIC_CULLING,180,23,28,8
+    RTEXT           "Cull Max at Distance (m):",IDC_STATIC,13,23,78,12
+    SCROLLBAR       IDC_SCROLL_RADIUS,95,34,80,8
+    LTEXT           "Error",IDC_STATIC_RADIUS,180,34,25,8
+    RTEXT           "Max Radius (m):",IDC_STATIC,14,34,77,12
+    GROUPBOX        "Shadows",IDC_STATIC,7,61,218,47
+    SCROLLBAR       IDC_SCROLL_CULLINGSHADOW,95,78,80,8
+    LTEXT           "Error",IDC_STATIC_CULLINGSHADOW,180,78,28,8
+    RTEXT           "Cull Max at Distance (m):",IDC_STATIC,13,78,78,12
+    SCROLLBAR       IDC_SCROLL_RADIUSSHADOW,95,89,80,8
+    LTEXT           "Error",IDC_STATIC_RADIUSSHADOW,180,89,25,8
+    RTEXT           "Max Radius (m):",IDC_STATIC,22,89,69,12
+    LTEXT           "The first set of sliders represents the culling of objects in the renderer and the second set of sliders represent the culling of objects as they cast shadows in the terrain system.",
+                    IDC_STATIC,7,162,218,28
+    LTEXT           "The first slider of each set represents the distance at which an object (or its shadow) of maximum radius disappears.",
+                    IDC_STATIC,7,190,218,21
+    LTEXT           "The second slider represents the maximum (cylindrical) radius of an object.",
+                    IDC_STATIC,7,210,218,19
+    GROUPBOX        "Both",IDC_STATIC,8,116,217,34
+    SCROLLBAR       IDC_SCROLL_PRIORITY,96,130,80,8
+    LTEXT           "Error",IDC_STATIC_PRIORITY,181,130,25,8
+    RTEXT           "Priority:",IDC_STATIC,23,130,69,12
+END
+
+IDD_PLAYER DIALOG DISCARDABLE  0, 0, 266, 298
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Player Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT21,215,10,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_SPIN_HAND_OFFSET_Z,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,245,10,9,
+                    14
+    EDITTEXT        IDC_EDIT17,125,10,35,15,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HAND_OFFSET_X,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,10,9,
+                    14
+    EDITTEXT        IDC_EDIT22,170,10,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HAND_OFFSET_Y,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,10,9,
+                    14
+    GROUPBOX        "Hand Properties",IDC_STATIC,5,0,254,204
+    EDITTEXT        IDC_EDIT26,125,25,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HAND_RANGE_MIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,25,9,
+                    14
+    EDITTEXT        IDC_EDIT25,170,25,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HAND_RANGE_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,25,9,
+                    14
+    EDITTEXT        IDC_EDIT29,125,40,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HAND_REACH_DIST,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,40,9,
+                    14
+    EDITTEXT        IDC_EDIT28,170,40,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HAND_REACH_WIDTH,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,40,9,
+                    14
+    EDITTEXT        IDC_EDIT1,215,40,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HAND_PICKUP_DIST,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,245,40,10,
+                    14
+    EDITTEXT        IDC_EDIT32,125,55,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HAND_BODY_MAX_X,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,55,9,
+                    14
+    EDITTEXT        IDC_EDIT31,170,55,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HAND_BODY_MAX_Y,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,55,9,
+                    14
+    EDITTEXT        IDC_EDIT35,125,70,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HAND_VIEW_X_MIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,70,9,
+                    14
+    EDITTEXT        IDC_EDIT34,170,70,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HAND_VIEW_X_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,70,9,
+                    14
+    EDITTEXT        IDC_EDIT38,125,85,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HAND_VIEW_Y_MIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,85,9,
+                    14
+    EDITTEXT        IDC_EDIT37,170,85,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HAND_VIEW_Y_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,85,9,
+                    14
+    EDITTEXT        IDC_EDIT20,125,220,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HEAD_X,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,156,220,9,14
+    EDITTEXT        IDC_EDIT19,170,220,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HEAD_Y,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,201,220,9,14
+    EDITTEXT        IDC_EDIT18,215,220,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_SPIN_HEAD_Z,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,246,220,9,14
+    EDITTEXT        IDC_EDIT41,170,248,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HEAD_BODY_X_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,201,248,9,
+                    14
+    EDITTEXT        IDC_EDIT40,215,248,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_HEAD_BODY_Y_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,246,248,9,
+                    14
+    EDITTEXT        IDC_EDIT44,125,248,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HEAD_TURN_X,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,156,248,9,
+                    14
+    CONTROL         "Hand Adjusts Actual",IDC_CHECK_HAND_ACTUAL,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,170,161,85,10
+    CONTROL         "Head Follows Actual",IDC_CHECK_HEAD_ACTUAL,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,9,263,125,10
+    EDITTEXT        IDC_EDIT45,125,273,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_HEAD_FOLLOW,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,156,272,9,
+                    14
+    LTEXT           "Head Position (X, Y, Z)",IDC_STATIC,10,223,89,8
+    LTEXT           "Hand Control Offset (X, Y, Z)",IDC_STATIC,10,12,111,8
+    LTEXT           "Hand Extend Range (Min, Max)",IDC_STATIC,10,27,105,8
+    LTEXT           "Hand Reach (Dist, Width, Pickup)",IDC_STATIC,7,42,115,8
+    LTEXT           "Hand View Angle X (Min, Max)",IDC_STATIC,10,72,104,8
+    LTEXT           "Y (Min, Max)",IDC_STATIC,67,87,49,8
+    LTEXT           "Hand Angle Max (X, Y)",IDC_STATIC,10,57,109,8
+    LTEXT           "Head Angle (Turn X, Max X, Max Y)",IDC_STATIC,10,251,
+                    113,8
+    LTEXT           "Head Follow Rate",IDC_STATIC,10,276,69,8
+    GROUPBOX        "Head Properties",IDC_STATIC,7,208,254,83
+    CONTROL         "Empty",IDC_CHECK_CENTRE_EMPTY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,126,181,35,10
+    CONTROL         "Holding",IDC_CHECK_CENTRE_HOLDING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,171,181,40,10
+    LTEXT           "Centre Hand on Activate",IDC_STATIC,10,181,85,8
+    CONTROL         "Allow Drop",IDC_CHECK_ALLOW_DROP,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,9,171,125,10
+    LTEXT           "Hand Rotate        X (Min, Max)",IDC_STATIC,10,100,110,
+                    10
+    EDITTEXT        IDC_EDIT2,125,100,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HAND_ROT_X_MIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,100,
+                    10,14
+    EDITTEXT        IDC_EDIT3,170,100,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_HAND_ROT_X_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,100,
+                    10,14
+    LTEXT           "Y (Min, Max)",IDC_STATIC,66,115,40,8
+    EDITTEXT        IDC_EDIT4,125,115,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_HAND_ROT_Y_MIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,115,
+                    10,14
+    EDITTEXT        IDC_EDIT5,170,115,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_SPIN_HAND_ROT_Y_MAX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,115,
+                    10,14
+    CONTROL         "Normal",IDC_CHECK_AUTO_CROTCH_NORMAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,126,192,38,10
+    CONTROL         "Special",IDC_CHECK_AUTO_CROTCH_SPECIAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,171,192,45,10
+    LTEXT           "Auto Crouch",IDC_STATIC,10,192,48,8
+    CONTROL         "Hand Follows Head",IDC_CHECK_HEAD_FOLLOW_HAND,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,9,161,125,10
+    EDITTEXT        IDC_EDIT6,125,130,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_FLAIL_VELOCITY,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,130,
+                    10,14
+    LTEXT           "Flail Velocity Threshold",IDC_STATIC,10,130,73,8
+    CONTROL         "Reverse Throw",IDC_CHECK_REVERSE_THROW,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,170,171,85,10
+    EDITTEXT        IDC_EDIT8,125,144,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_THROW_TORQUE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,144,
+                    10,14
+    LTEXT           "Throw Torque Ratio",IDC_STATIC,10,145,91,8
+    LTEXT           "NeckPosition (X, Y, Z)",IDC_STATIC,10,237,89,8
+    EDITTEXT        IDC_EDIT24,125,234,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_SPIN_NECK_X,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,155,234,9,14
+    EDITTEXT        IDC_EDIT27,169,234,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_NECK_Y,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,201,234,9,14
+    EDITTEXT        IDC_EDIT30,215,234,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_SPIN_NECK_Z,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,245,234,9,14
+END
+
+IDD_MATERIAL DIALOG DISCARDABLE  0, 0, 186, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Object Material Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,90,57,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_DIFFUSE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,123,57,9,
+                    14
+    EDITTEXT        IDC_EDIT2,90,72,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_SPECULAR,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,121,73,10,
+                    14
+    EDITTEXT        IDC_EDIT3,90,87,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_ANGLE,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,121,88,10,14
+    EDITTEXT        IDC_EDIT4,90,102,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_SPIN_EMISSIVE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,121,103,
+                    10,14
+    LTEXT           "Diffuse Reflectance",IDC_STATIC,10,60,64,8
+    LTEXT           "Specular Reflectance",IDC_STATIC,10,75,70,8
+    LTEXT           "Specular Angle Width",IDC_STATIC,10,90,70,8
+    LTEXT           "Emissive",IDC_STATIC,10,105,28,8
+    EDITTEXT        IDC_EDIT7,90,7,20,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_SPIN_MATERIAL_INDEX,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,101,7,9,
+                    14
+    LTEXT           "Texture Index",IDC_STATIC,10,10,45,8
+    CTEXT           "These affect all all objects that share this material/palette combination.",
+                    IDC_STATIC,15,38,158,18
+    CHECKBOX        "Bump-mapped",IDC_CHECK_BUMP,9,174,90,10,BS_LEFTTEXT | 
+                    NOT WS_TABSTOP
+    LTEXT           "Texture Size",IDC_STATIC,10,138,40,8
+    EDITTEXT        IDC_EDIT_TEXTURE,90,136,88,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CHECKBOX        "Textured",IDC_CHECK_TEXTURE,9,152,90,10,BS_LEFTTEXT | 
+                    NOT WS_TABSTOP
+    CHECKBOX        "Transparent",IDC_CHECK_TRANSPARENT,9,163,90,10,
+                    BS_LEFTTEXT | NOT WS_TABSTOP
+    GROUPBOX        "Texture Properties",IDC_STATIC,7,126,174,84
+    GROUPBOX        "Material Properties",IDC_STATIC,7,26,174,96
+    LTEXT           "",IDC_STATIC_TEX_COUNT,117,10,20,8
+    CHECKBOX        "Alpha",IDC_CHECK_ALPHA,9,185,90,10,BS_LEFTTEXT | NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Screen-Format",IDC_CHECK_COPY,9,196,90,10,BS_LEFTTEXT | 
+                    NOT WS_TABSTOP
+END
+
+IDD_WATER DIALOG DISCARDABLE  0, 0, 246, 62
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "E&xit",IDOK,97,42,50,12,BS_CENTER
+    RTEXT           "Max screen res",IDC_STATIC,7,13,56,8
+    SCROLLBAR       IDC_SCROLL_WATER_MAX_SCREEN_RES,67,13,130,8
+    LTEXT           "Not done.",IDC_STATIC_WATER_MAX_SCREEN_RES,203,13,34,8
+    RTEXT           "Max world res",IDC_STATIC,7,24,56,8
+    SCROLLBAR       IDC_SCROLL_WATER_MAX_WORLD_RES,67,24,130,8
+    LTEXT           "Not done.",IDC_STATIC_WATER_MAX_WORLD_RES,203,24,34,8
+    GROUPBOX        "Water resolution",IDC_STATIC,6,4,233,33,BS_CENTER
+END
+
+IDD_EDITMATERIAL_DIALOG DIALOGEX 0, 0, 419, 337
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "Edit Collision"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SM_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,16,19,10,11
+    CONTROL         "",IDC_SM_RADIO2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,16,36,10,11
+    CONTROL         "",IDC_SM_RADIO4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,15,80,10,11
+    GROUPBOX        "Collision Samples",IDC_STATIC,7,7,278,59,WS_GROUP
+    LISTBOX         IDC_MSET_LIST,298,17,108,158,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Transfer Function",IDC_TRANSFER,7,185,405,122
+    DEFPUSHBUTTON   "Close",IDOK,361,314,51,16
+    CONTROL         "",IDC_GRAPH_PIT,"Static",SS_BLACKFRAME | SS_SUNKEN,311,
+                    200,95,77
+    CONTROL         "",IDC_GRAPH_VOL,"Static",SS_BLACKFRAME | SS_SUNKEN,108,
+                    200,95,77
+    PUSHBUTTON      "Test Single Collision",IDC_TEST_SAMPLE,155,285,92,16
+    CONTROL         "Slider1",IDC_SM_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,203,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Slope = 0.00",IDC_VOL_SLOPE_TEXT,13,211,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,221,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Intersect = 0.00",IDC_VOL_INTS_TEXT,13,230,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,238,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Minimum volume = 0.00",IDC_VOL_MIN_TEXT,13,247,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,256,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Maximum volume = 0.00",IDC_VOL_MAX_TEXT,13,266,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,203,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Slope = 0.00",IDC_PIT_SLOPE_TEXT,216,211,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER6,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,221,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Intersect = 0.00",IDC_PIT_INTS_TEXT,216,230,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER7,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,238,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Minimum Pitch = 0.00",IDC_PIT_MIN_TEXT,216,247,84,8
+    CONTROL         "Slider1",IDC_SM_SLIDER8,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,213,256,95,9,WS_EX_TRANSPARENT
+    CTEXT           "Maximum Pitch = 0.00",IDC_PIT_MAX_TEXT,216,266,84,8
+    GROUPBOX        "Test Spatial Collision",IDC_STATIC1,7,113,278,66
+    CONTROL         "",IDC_GRAPH_WORLD,"Static",SS_BLACKFRAME | SS_SUNKEN,
+                    187,122,80,46
+    CONTROL         "Slider11",IDC_SM_SLIDER11,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,271,120,9,50
+    CONTROL         "Slider11",IDC_SM_SLIDER12,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,185,169,84,9
+    CONTROL         "Slider9",IDC_SM_SLIDER13,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,147,101,10
+    CTEXT           "World Scale = xxx",IDC_WORLD_SCALE_TEXT,32,157,84,8
+    PUSHBUTTON      "Center Position",IDC_EM_CENTER,124,150,58,18,0,
+                    WS_EX_CLIENTEDGE
+    CONTROL         "Slider10",IDC_SM_SLIDER14,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,11,275,95,9
+    CTEXT           "Attenuation = x.xx",IDC_ATTENUATE_TEXT,21,285,75,8
+    PUSHBUTTON      "Test Raw",IDC_REFWF_TEST_S1,217,20,53,13
+    PUSHBUTTON      "Test Raw",IDC_REFWF_TEST_S2,217,36,53,13
+    RTEXT           "(xxx.xx, xxx.xx)",IDC_WORLD_POS_TEXT,129,123,49,10
+    CONTROL         "Dual Sample Collision",IDC_DUAL_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,145,52,81,10
+    CONTROL         "Slider9",IDC_SM_SLIDER9,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,126,101,10
+    CTEXT           "Test Velocity = xxx",IDC_TEST_VELOCITY_TEXT,32,135,84,8
+    GROUPBOX        "Collision With",IDC_STATIC2,291,7,121,175
+    COMBOBOX        IDC_COMBO1,36,20,171,61,CBS_DROPDOWNLIST | CBS_UPPERCASE | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,36,36,171,67,CBS_DROPDOWNLIST | CBS_UPPERCASE | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Stop All Sounds",IDC_STOP_COLLIDE,7,314,62,16
+    GROUPBOX        "Slide Sample",IDC_STATIC,7,68,278,41
+    PUSHBUTTON      "Test Raw",IDC_REFWF_TEST_S3,217,80,53,13
+    COMBOBOX        IDC_COMBO3,35,80,171,67,CBS_DROPDOWNLIST | CBS_UPPERCASE | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Test Dual Collision",IDC_COLLIDE,259,285,79,16
+    CONTROL         "Collisions Enabled",IDC_COLLISION_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,52,81,10
+    CONTROL         "Sliding Enabled",IDC_SLIDE_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,35,96,81,10
+END
+
+IDD_QUALITY DIALOG DISCARDABLE  0, 0, 223, 42
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Render Quality"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,23,18,154,10
+    LTEXT           "x",IDC_QUALITY_TEXT,189,17,16,11
+    GROUPBOX        "Render Quality",IDC_STATIC,7,5,209,29
+END
+
+IDD_TELEPORT DIALOG DISCARDABLE  0, 0, 186, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Teleport Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "Current Location:",IDC_STATIC,4,4,55,8
+    LTEXT           "X",IDC_STATIC,68,4,8,8
+    LTEXT           "Y",IDC_STATIC,68,12,8,8
+    LTEXT           "Z",IDC_STATIC,68,20,8,8
+    LTEXT           "Static",IDC_CURR_X,80,4,19,8
+    LTEXT           "Static",IDC_CURR_Y,80,12,19,8
+    LTEXT           "Static",IDC_CURR_Z,80,20,19,8
+    LTEXT           "Teleport Location:",IDC_STATIC,4,40,58,8
+    LTEXT           "X",IDC_STATIC,68,40,8,8
+    LTEXT           "Y",IDC_STATIC,68,56,8,8
+    LTEXT           "Z",IDC_STATIC,68,72,8,8
+    EDITTEXT        IDC_TELE_X,80,36,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TELE_Y,80,52,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TELE_Z,80,68,40,12,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,3,0,0
+ PRODUCTVERSION 1,3,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "GUIAPP MFC Application\0"
+            VALUE "FileVersion", "1, 3, 0, 0\0"
+            VALUE "InternalName", "GUIAPP\0"
+            VALUE "LegalCopyright", "Copyright © 1996\0"
+            VALUE "OriginalFilename", "GUIAPP.EXE\0"
+            VALUE "ProductName", "GUIAPP Application\0"
+            VALUE "ProductVersion", "1, 3, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_GUIAPP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_LIGHT_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 109
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_FLOATTOOLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 71
+        TOPMARGIN, 48
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_CAMERA_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 179
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_BACKGROUND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_FOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_OBJECT_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 303
+    END
+
+    IDD_GAMMA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_GORE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_DIALOG_PHYSICS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 325
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_PERSPECTIVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_RENDERCACHE, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_DUMMY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_TERRAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 239
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 293
+    END
+
+    IDD_DEPTHSORT_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
+
+    IDD_SOUND_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 353
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_MIPMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 166
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 16
+    END
+
+    IDD_ALPHA_COLOUR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_TEXTUREPACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 348
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 335
+    END
+
+    IDD_DIALOG_MEMSTATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 336
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_PARTITION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_OCCLUDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_STRING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_SKY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_GUN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_SCHEDULER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_VIRTUALMEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_DIALOG_BUMPPACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 532
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 302
+    END
+
+    IDD_PARAMETER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 142
+    END
+
+    IDD_AIDIALOGS2_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 221
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 312
+    END
+
+    IDD_DIALOG_PACKOPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_MAGNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_DIALOG_OBJECTCULLING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 291
+    END
+
+    IDD_MATERIAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_WATER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_EDITMATERIAL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 330
+    END
+
+    IDD_QUALITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 35
+    END
+
+    IDD_TELEPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU_TESTAPP MENU DISCARDABLE 
+BEGIN
+    POPUP "&Game"
+    BEGIN
+        MENUITEM "&Pause",                      MENU_PAUSE
+        MENUITEM "P&lay",                       MENU_PLAY
+        MENUITEM "&Debug",                      MENU_DEBUG
+        MENUITEM SEPARATOR
+        MENUITEM "&Open...",                    MENU_OPEN_SCENE
+        MENUITEM "&Save",                       MENU_SAVE_SCENE
+        MENUITEM "Save &As...",                 MENU_SAVE_AS_SCENE
+        MENUITEM "&Text Save",                  MENU_TEXTSAVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Reset",                      MENU_RESET
+        MENUITEM "Reset Selected",              MENU_RESET_SELECTED
+        MENUITEM "&Preload",                    MENU_PRELOAD
+        MENUITEM "Save Replay",                 MENU_REPLAYSAVE
+        MENUITEM "Playback Replay",             MENU_REPLAYLOAD
+        MENUITEM "Load anim script",            MENU_LOADANIM
+        MENUITEM SEPARATOR
+        MENUITEM "Ph&ysics",                    MENU_PHYSICS
+        MENUITEM "A&I",                         MENU_AI
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                      MENU_ABOUT
+        MENUITEM "Processor",                   MENU_PROCESSOR
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Add"
+    BEGIN
+        MENUITEM "&Add Object",                 MENU_ADDOBJECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Add &Other",                 65535
+        POPUP "Add &Light"
+        BEGIN
+            MENUITEM "&Directional",                MENU_DIRECTIONAL
+            MENUITEM "&Point",                      MENU_POINT
+            MENUITEM "P&oint Directional",          MENU_POINTDIRECTIONAL
+        END
+        MENUITEM "Add &Skeleton",               MENU_ADD_SKELETON
+        MENUITEM SEPARATOR
+        MENUITEM "&Delete Object",              MENU_DELETE
+    END
+    POPUP "&Settings"
+    BEGIN
+        POPUP "A&I"
+        BEGIN
+            MENUITEM "&AI",                         MENU_EDIT_AI
+            MENUITEM "AI &Emotions",                MENU_EDIT_AI_EMOTIONS
+            MENUITEM "&Draw Influences",            MENU_DRAWAI
+        END
+        POPUP "&Game"
+        BEGIN
+            MENUITEM "&Player Properties",          MENU_PLAYER_PROP
+            MENUITEM "&Gore",                       MENU_GORE
+        END
+        POPUP "Object &Properties"
+        BEGIN
+            MENUITEM "&Object/Light Properties",    MENU_PROPERTIES
+            MENUITEM "&Material Properties",        MENU_MATERIAL_PROP
+            MENUITEM "P&hysics Properties",         MENU_PHYSICS_PROP
+            MENUITEM "Object Sound Properties",     MENU_SOUND_MATERIAL
+            MENUITEM "Change Object Sound Material", MENU_CHANGE_SMAT
+        END
+        POPUP "&Rendering"
+        BEGIN
+            MENUITEM "Quality",                     MENU_SETTINGS_RENDERQUALITY
+
+            MENUITEM "&Perspective Correction",     MENU_EDIT_PERSPECTIVE
+            MENUITEM "&Mipmapping",                 MENU_SET_MIPMAP
+            MENUITEM "D&epth Sort ",                MENU_DEPTHSORT_SETTINGS
+            MENUITEM "C&ulling",                    MENU_CULLING
+            MENUITEM "&Render Cache",               MENU_RENDERCACHE_SETTINGS
+
+            MENUITEM SEPARATOR
+            MENUITEM "&Camera",                     MENU_CAMERAPROPERTIES
+            MENUITEM "&Alpha",                      MENU_ALPHA_SETTINGS
+            MENUITEM "&Fog",                        MENU_EDIT_FOG
+            MENUITEM "&Background",                 MENU_BACKGROUND
+            MENUITEM "&Gamma",                      MENU_EDIT_GAMMA
+            MENUITEM "Sky Settings",                MENU_SKY_SETTINGS
+            MENUITEM "&Ambient Light",              MENU_AMBIENT
+        END
+        POPUP "S&cheduler"
+        BEGIN
+            MENUITEM "&Settings...",                MENU_SCHEDULER_SETTINGS
+            MENUITEM "&Use Scheduler",              MENU_SCHEDULER_USE
+        END
+        POPUP "S&ound"
+        BEGIN
+            MENUITEM "Sound Output Properties",     MENU_SOUND
+        END
+        POPUP "&System"
+        BEGIN
+            MENUITEM "Virtual Memory Settings",     MENU_VM_SETTINGS
+            MENUITEM "Texture Pack Settings",       MENU_PACK_OPTIONS
+            MENUITEM "BumpMap Packing",             MENU_BUMP_PACK
+            MENUITEM "&Save Scenes on Asserts",     MENU_ASSERTSAVE
+            MENUITEM "Ignore msg recipients",       MENU_IGNORE_MSG_RECIPIENTS
+
+        END
+        POPUP "Terrain"
+        BEGIN
+            MENUITEM "&Terrain Settings",           MENU_TERRAIN_SETTINGS
+            MENUITEM SEPARATOR
+            MENUITEM "&Convert",                    MENU_LOAD_TERRAIN
+            MENUITEM "Export triangulation",        MENU_EXPORT_TERRAIN_TRI
+            MENUITEM SEPARATOR
+            MENUITEM "&Terrain Test",               MENU_TERRAINTEST
+            MENUITEM SEPARATOR
+            MENUITEM "Terrain Sounds",              ID_EDIT_TERRAIN_TERRAINSOUNDS
+            , CHECKED
+        END
+        POPUP "Stats"
+        BEGIN
+            MENUITEM "Use Clock Ticks",             MENU_STAT_CLOCKS
+            MENUITEM "Use MSR Event 0",             MENU_STAT_MSR0
+            MENUITEM "Use MSR Event 1",             MENU_STAT_MSR1
+            MENUITEM SEPARATOR
+            MENUITEM "Ring 0",                      MENU_STAT_RING0
+            MENUITEM "Ring 3",                      MENU_STAT_RING3
+            MENUITEM SEPARATOR
+            MENUITEM "Set Event 0",                 MENU_STAT_SETMSR0
+            MENUITEM "Set Event 1",                 MENU_STAT_SETMSR1
+        END
+        POPUP "Water"
+        BEGIN
+            MENUITEM "&Water Settings",             MENU_WATER_SETTINGS
+            MENUITEM SEPARATOR
+        END
+        MENUITEM "Restore Defaults",            MENU_RESTORE_DEFAULTS
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Art Stats",                  MENU_ARTSTATS
+        POPUP "Consoles"
+        BEGIN
+            MENUITEM "&AI",                         MENU_CONAI
+            MENUITEM "&Depth Sort",                 MENU_STATS_DEPTHSORT
+            MENUITEM "&Occlusion",                  MENU_OCCLUSION_CONSOLE
+            MENUITEM "&Physics",                    MENU_CONPHYSICS
+            MENUITEM "&Predict Movement",           MENU_PREDICTMOVEMENT
+            MENUITEM "S&hadows",                    MENU_CONSHADOWS
+            MENUITEM "&Terrain",                    MENU_CONTERRAIN
+            MENUITEM SEPARATOR
+            MENUITEM "&Standard",                   MENU_CONSOLE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Stats",                      MENU_STATS
+        MENUITEM "&FPS",                        MENU_FPS
+        MENUITEM "&Hardware Stats",             MENU_HARDWARE_STATS
+        MENUITEM "Cac&he Stats",                MENU_CACHE_STATS
+        MENUITEM "Ph&ysics Stats",              MENU_STATPHYSICS
+        MENUITEM "Texture Packing",             MENU_TEXTUREPACK
+        MENUITEM "Memory Usage",                MENU_MEMLOG_STATS
+        MENUITEM SEPARATOR
+        MENUITEM "&Average Stats",              MENU_AVG_STATS
+        MENUITEM SEPARATOR
+        POPUP "&Crosshair"
+        BEGIN
+            MENUITEM "&Crosshairs Always",          MENU_VIEW_HAIRS
+            MENUITEM "&Static Objects",             MENU_STATIC_HANDLES
+            MENUITEM "&Radius",                     MENU_VIEW_CROSSHAIR_RADIUS
+
+            MENUITEM "&Vegetation",                 MENU_VIEW_CROSSHAIR_VEGETATION
+
+            MENUITEM "&Terrain Textures",           MENU_VIEW_CROSSHAIR_TERRAINTEXTURES
+
+        END
+        MENUITEM "Bounding &Volumes",           MENU_VIEW_SPHERES
+        MENUITEM "Spatial &Partitions",         MENU_VIEW_PARTITIONS
+        MENUITEM "&Wires",                      MENU_VIEW_WIRE
+        MENUITEM "&Pinhead",                    MENU_VIEW_PINHEAD
+        MENUITEM "Bones",                       MENU_VIEW_BONES
+        POPUP "&Which Bones"
+        BEGIN
+            MENUITEM "&Bounding Volumes",           MENU_VIEW_BONES_BOXES
+            MENUITEM "&Physics Volumes",            MENU_VIEW_BONES_PHYSICS
+            MENUITEM "Wa&ke-up Volumes",            MENU_VIEW_BONES_WAKE
+            MENUITEM "&Query Volumes",              MENU_VIEW_BONES_QUERY
+            MENUITEM "&Magnets",                    MENU_VIEW_BONES_MAGNETS
+            MENUITEM "&Skeletons",                  MENU_VIEW_BONES_SKELETONS
+
+            MENUITEM "Vertex &Attachments",         MENU_VIEW_BONES_ATTACH
+            MENUITEM "&Water",                      MENU_VIEW_BONES_WATER
+            MENUITEM "&Raycasts",                   MENU_VIEW_BONES_RAYCAST
+        END
+        MENUITEM "Terrain &Quads",              MENU_VIEW_QUADS
+        MENUITEM "T&riggers",                   MENU_VIEW_TRIGGERS
+        MENUITEM "&Toolbar",                    MENU_SHOWTOOLBAR
+    END
+    POPUP "A&ction"
+    BEGIN
+        MENUITEM "Teleport",                    IDM_TELEPORT
+        MENUITEM SEPARATOR
+        MENUITEM "Give me a &Light       L",    MENU_GIVEMEALIGHTL
+        MENUITEM "&Name Select",                MENU_NAMESELECT
+        MENUITEM "T&est Spin",                  MENU_FPS_ESTIMATE
+        MENUITEM SEPARATOR
+        MENUITEM "&Smack Selected",             MENU_SMACKSELECTED
+        POPUP "&Magnet"
+        BEGIN
+            MENUITEM "&Unbreakable",                MENU_MAGNET_NOBREAK
+            MENUITEM "&Breakable",                  MENU_MAGNET_BREAK
+            MENUITEM "&De-Magnet",                  MENU_DEMAGNET
+        END
+        MENUITEM "Redraw &Terrain",             MENU_REDRAW_TERRAIN
+        MENUITEM SEPARATOR
+        MENUITEM "Camera on &Player",           MENU_CAMERAPLAYER
+        MENUITEM "Camera on &Selected",         MENU_CAMERASELECTED
+        MENUITEM "Camera on Selected &Head",    MENU_CAMERASELECTEDHEAD
+        MENUITEM "Camera &Free",                MENU_CAMERAFREE
+        MENUITEM "Camera &2m",                  MENU_CAMERA2M
+        MENUITEM "Turn About World &Z",         MENU_ROTATE_WORLDZ
+        MENUITEM SEPARATOR
+        MENUITEM "&Partitions...",              MENU_PARTITIONS
+        MENUITEM "Dump &Fixed Heap",            MENU_DUMP_FIXEDHEAP
+        MENUITEM "&Grab",                       MENU_GRAB
+        MENUITEM "Grab continous",              MENU_GRABCONTINOUS
+        POPUP "Triggers"
+        BEGIN
+            MENUITEM "Reset Start Triggers",        MENU_RESET_START_TRIGGERS
+
+        END
+        MENUITEM "&Freeze Image Caches",        MENU_FREEZECACHES
+    END
+    POPUP "&Options"
+    BEGIN
+        POPUP "&Controls"
+        BEGIN
+            MENUITEM "Default Controls",            MENU_CONTROLS_DEFAULTCONTROLS
+
+            MENUITEM "Standard Joystick",           MENU_CONTROLS_STANDARDJOYSTICK
+
+            MENUITEM "Define Controls",             ID_OPTIONS_CONTROLS_DEFINECONTROLS
+            , GRAYED
+            MENUITEM "&Small Move Steps",           MENU_SMALLMOVESTEPS
+            MENUITEM "&Z Only Object Edit",         MENU_ZONLYEDIT
+        END
+        POPUP "P&hysics"
+        BEGIN
+            MENUITEM "Player &Active",              MENU_PLAYERPHYSICS
+            MENUITEM "Player &Invulnerable",        MENU_PLAYERINVULNERABLE
+            MENUITEM SEPARATOR
+            MENUITEM "Allow &Sleep",                MENU_PHYSICS_SLEEP
+            MENUITEM "&Put All to Sleep",           MENU_PHYSICS_PUTTOSLEEP
+            MENUITEM "Physics S&tep",               MENU_PHYSICS_STEP
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Screen"
+        BEGIN
+            MENUITEM "&Z Buffer",                   MENU_ZBUFFER
+            MENUITEM "&Clip in Screen",             MENU_SCREENCLIP
+            MENUITEM "Cu&ll in Screen",             MENU_SCREENCULL
+        END
+        POPUP "&Lighting"
+        BEGIN
+            MENUITEM "&Light",                      MENU_LIGHT
+            MENUITEM "Ligh&t Shading",              MENU_LIGHT_SHADE
+            MENUITEM SEPARATOR
+            MENUITEM "&Fog",                        MENU_FOG
+            MENUITEM "Fo&g Shading",                MENU_FOG_SHADE
+            MENUITEM SEPARATOR
+            MENUITEM "&Specular",                   MENU_SPECULAR
+            MENUITEM "&Coloured lighting",          MENU_COLOURED
+        END
+        POPUP "Sh&adows"
+        BEGIN
+            MENUITEM "&Terrain",                    MENU_SHADOW_TERRAIN
+            MENUITEM "Terrain &Moving",             MENU_SHADOW_TERRAIN_MOVING
+
+            MENUITEM "&Object",                     MENU_SHADOWS
+        END
+        POPUP "&Textures"
+        BEGIN
+            MENUITEM "&Textures",                   MENU_TEXTURE
+            MENUITEM "Trans&parency",               MENU_TRANSPARENT
+            MENUITEM "&Bump",                       MENU_BUMP
+            MENUITEM "&Wireframe",                  MENU_WIREFRAME
+            MENUITEM "&MipMaps",                    MENU_MIPMAP
+            MENUITEM "&Alpha Colour",               MENU_ALPHA_COLOUR
+            MENUITEM SEPARATOR
+            POPUP "M&impmap Use"
+            BEGIN
+                MENUITEM "&Normal",                     MENU_MIPMAP_NORMAL
+                MENUITEM "Disable &Largest",            MENU_MIPMAP_NO_LARGEST
+
+                MENUITEM "&Smallest only",              MENU_MIPMAP_SMALLEST
+            END
+        END
+        POPUP "&Pixels"
+        BEGIN
+            MENUITEM "&Trapezoids",                 MENU_TRAPEZOIDS
+            MENUITEM "&Subpixel",                   MENU_SUBPIXEL
+            MENUITEM "&Perspective",                MENU_PERSPECTIVE
+            , CHECKED
+            MENUITEM "&Dither",                     MENU_DITHER
+            MENUITEM "&Filter",                     MENU_FILTER
+            MENUITEM "Filter &Edges",               MENU_FILTER_EDGES
+            MENUITEM "Filter &Image Caches",        MENU_FILTER_CACHES
+            MENUITEM "&Alpha",                      MENU_WATER_ALPHA
+        END
+        POPUP "S&orting"
+        BEGIN
+            MENUITEM "&None",                       MENU_PRESORT_NONE
+            MENUITEM SEPARATOR
+            MENUITEM "&Depth Sort",                 MENU_DEPTHSORT
+            MENUITEM SEPARATOR
+            MENUITEM "Presort &Front to Back",      MENU_PRESORT_FTOB
+            MENUITEM "Presort &Back to Front",      MENU_PRESORT_BTF
+        END
+        POPUP "&Image Cache"
+        BEGIN
+            MENUITEM "&Cached Render",              MENU_RENDER_CACHE
+            , CHECKED
+            MENUITEM "Cache &Intersecting Objects", MENU_CACHE_INTERSECT
+            MENUITEM "Use Con&vex Caches",          MENU_CONVEXCACHES
+            MENUITEM "&Force Intersecting Objects", MENU_FORCEINTERSECTING
+        END
+        POPUP "&Detail Reduction"
+        BEGIN
+            MENUITEM "&Enable",                     MENU_DETAIL
+        END
+        POPUP "&Occlusion"
+        BEGIN
+            MENUITEM "&Settings...",                MENU_OCCLUDE_SETTINGS
+            MENUITEM SEPARATOR
+            MENUITEM "Occlude O&bjects",            MENU_OCCLUDE_OBJECTS
+            MENUITEM "Occlude &Polygons",           MENU_OCCLUDE_POLYGONS
+            MENUITEM "Occlude &Occluding Objects",  MENU_OCCLUDE_OCCLUDE
+            MENUITEM "&Camera View Test",           MENU_OCCLUDE_CAMERAVIEWTEST
+
+        END
+        POPUP "Sky"
+        BEGIN
+            MENUITEM "Draw Enabled",                MENU_SKY_DISABLE
+            MENUITEM "Texture Sky",                 MENU_SKY_TEXTURE
+            MENUITEM "Fill Screen",                 MENU_SKY_FILL
+            MENUITEM SEPARATOR
+            MENUITEM "Remove Sky",                  MENU_SKY_REMOVE
+        END
+        POPUP "&Water"
+        BEGIN
+            MENUITEM "&Interpolate",                MENU_WATER_INTERPOLATE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Fast Mode",                   MENU_FASTMODE
+    END
+    POPUP "Sc&reen"
+    BEGIN
+        MENUITEM "&Hardware Acceleration",      MENU_ACCELERATION
+        MENUITEM "&System Memory",              MENU_SYSTEM_MEM
+        MENUITEM SEPARATOR
+        POPUP "Window &Preset"
+        BEGIN
+            MENUITEM "Mode &1: 320x240",            MENU_MODE1
+            MENUITEM "Mode &2: 400x300",            MENU_MODE2
+            MENUITEM "Mode 3: 512x384",             MENU_MODE_3
+            MENUITEM "Mode 4: 640x480",             MENU_MODE_4
+        END
+        MENUITEM "&Windowed",                   MENU_WINDOW
+    END
+END
+
+MENU_E3 MENU DISCARDABLE 
+BEGIN
+    POPUP "&Game"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PALETTE             BITMAP  DISCARDABLE     "res\\Palette.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_LIGHTING           "Apply light values to polygons"
+    MENU_LIGHT_SHADE        "Shade light values across polygons"
+    MENU_FOG                "Apply fog values to polygons"
+    MENU_FOG_SHADE          "Shade fog values across polygons"
+    MENU_COLOURED           "Enable coloured lighting values"
+    MENU_BUMP               "Enable bump mapping"
+    MENU_FILTER             "Filter (interpolate) texels"
+    MENU_FILTER_EDGES       "Filter (anti-alias) polygon edges"
+    MENU_PERSPECTIVE        "Perform perspective-correct rendering"
+    MENU_SUBPIXEL           "Perform subpixel-correct rendering"
+    MENU_DITHER             "Dither colours simulate greater colour resolution"
+    MENU_ZBUFFER            "Enable Z-buffering for pixel-level sorting"
+    MENU_RASTERCLIP         "Enable clipping in 2D screen routines"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_SHOWTOOLBAR        "Show editing toolbar"
+    MENU_TEXTURE            "Enable texture mapping"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STR_HINTS           "Overlay ID 0"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_SCREENCULL         "Enable backface culling in 2D screen routines"
+    MENU_TRANSPARENT        "Enable transparent (masked) textures"
+    MENU_SPECULAR           "Enable specular highlights"
+    MENU_STATS              "Show timing stats window"
+    MENU_WATER              "Add a rectangular solid-coloured pond"
+    MENU_FPS_ESTIMATE       "Take a test spin around the world, show stats"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ACTION_SHOWFPS       "Show frames-per-second in lower-left corner"
+    MENU_FPS                "View frames-per-second on screen"
+    ID_EDIT_GAMMA           "Edit gamma-correction parameter"
+    MENU_AVG_STATS          "Average stats over time"
+    MENU_RENDER_CACHE       "Enable caching of rendered objects"
+    MENU_CACHE_STATS        "View image caching stats on screen"
+    MENU_SYSTEM_MEM         "Put drawing surface in system (not video) memory"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_CONSOLE            "Show general console output window"
+    MENU_TERRAIN            "Add the height-map terrain mesh"
+    MENU_SHADOWS            "Render some shadows, babe."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_BOUNDINGSPHERES "Show outline of objects' bounding spheres"
+    MENU_VIEW_BOUNDINGSPHERES "View shapes' bounding spheres"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_CAMERAPLAYER       "Attach the camera to the player object"
+    MENU_CAMERASELECTED     "Attach the camera to the selected object"
+    MENU_CAMERAFREE         "Detach the camera from object"
+    MENU_VIEW_PINHEAD       "View selected shape's vertex normals"
+    MENU_VIEW_WIRE          "View selected shape's wireframe."
+    MENU_VIEW_BONES         "View all objects' physics info"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_RESET              "Reset from last scene file"
+    MENU_DETAIL             "Enable multi-level objects"
+    MENU_TRAPEZOIDS         "Rasterise by trapezoids rather than triangles."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_DEMAGNET           "De-magnet all selected objects"
+    MENU_PHYSICS_SLEEP      "Put restful objects to sleep"
+    MENU_PHYSICS_PUTTOSLEEP "Put all objects to sleep"
+    MENU_SET                "Set current positions as the Reset position"
+    MENU_SAVE_SCENE         "Save to current scene file"
+    MENU_SAVE_AS_SCENE      "Save to new scene file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_VIEW_HAIRS         "View cross-hairs always, else only when clicked"
+    IDS_ERROR_DDRAW_NOTFOUND 
+                            "The Direct Draw DLL was not found.  Please reinstall."
+    IDS_ERROR_DDRAW_FATAL   "Fatal Error Initializing Direct Draw.  Please reinstall."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_SLOW               "Run or playback slow (physics time-step)"
+    MENU_PHYSICS_STEP       "Run or playback in physics time-steps"
+    MENU_MATERIAL_PROP      "Edit the object's rendering materials"
+    MENU_PHYSICS_PROP       "Edit the object's physical properties"
+    MENU_WATER_TEXTURED     "Render using a source texture"
+    MENU_WATER_ALPHA        "Render using an alpha (translucent) surface"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MENU_WATER_INTERPOLATE  "Render at double resolution"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\GUIApp.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

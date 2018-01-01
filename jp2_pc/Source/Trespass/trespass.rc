@@ -1,0 +1,229 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""..\\gblinc\\config.hpp""\r\n"
+    "#include ""version.rc2""\r\n"
+    "#include ""res\\usa_keyremap.rc2""\r\n"
+    "#include ""res\\usa_hints.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APP                 ICON    DISCARDABLE     "res\\icon_rap.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DEF_PAL             BITMAP  DISCARDABLE     "res\\smallPal.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INITIALIZATION DIALOG DISCARDABLE  0, 0, 272, 185
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Trespasser 3D Video Driver Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_CARD,16,24,142,52,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_RESOLUTION,184,24,72,78,CBS_DROPDOWNLIST | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,7,131,48,18
+    PUSHBUTTON      "Cancel",IDCANCEL,63,131,48,18
+    GROUPBOX        "Screen Resolution",IDC_STATIC,176,8,88,36
+    LTEXT           "Unknown",IDC_STATIC_D3D,77,93,78,15
+    GROUPBOX        "Select 3D Video Driver",IDC_STATIC,5,8,163,113
+    LTEXT           "Error",IDC_STATIC_VIDEODRIVER,77,83,78,8
+    RTEXT           "3D Driver Name:",IDC_STATIC,17,83,56,8
+    RTEXT           "Description:",IDC_STATIC,33,92,40,8
+    GROUPBOX        "Features",IDC_STATIC,176,88,88,65
+    CONTROL         "Hardware Water",IDC_CHECK_HARDWAREWATER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,100,68,10
+    COMBOBOX        IDC_COMBO_TEXTURESIZE,184,64,72,78,CBS_DROPDOWN | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Texture Resolution",IDC_STATIC,176,48,88,36
+    PUSHBUTTON      "Help",IDHELP,119,131,48,18
+    CONTROL         "Triple Buffer",IDC_CHECK_TRIPLEBUFFER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,112,54,10
+    CTEXT           "For notes on maximizing performance on hardware, click on the 'Help' button and view the hardware section in the 'Readme.txt' file.",
+                    IDC_STATIC,8,160,253,17
+    CONTROL         "Dither",IDC_CHECK_DITHER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,184,124,35,10
+    CONTROL         "Page Manager",IDC_CHECK_PAGEMANAGED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,136,63,10
+END
+
+IDD_DXERROR DIALOG DISCARDABLE  0, 0, 252, 101
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,190,60,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,190,78,50,14
+    LTEXT           "Your sound card does not have certified DirectX drivers.  Please contact your sound card manufacturer for updated drivers.  The game may not work properly.  Look in Readme.TXT for more information about contacting your hardware manufacturer.",
+                    IDC_MESSAGE,10,10,225,40
+    LTEXT           "Press OK to continue playing the game.\r\nPress Cancel to Quit.",
+                    IDC_STATIC,10,55,130,20
+    CONTROL         "Don't display this message again.",IDC_NODISPLAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,80,160,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INITIALIZATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_DXERROR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TITLE               "Trespasser"
+    IDS_ERROR_TITLE         "Trespasser Error"
+    IDS_PROCESSORDETECT     "Processor Detect"
+    IDS_ERROR_PROCESSORDETECT "Error Detecting Processor"
+    IDS_NEWSAVE             "New Save Game"
+    IDS_OVERWRITE_SAVEGAME  "Do you wish to overwrite\r\n""%s""?"
+    IDS_DELETE_SAVEGAME     "Do you wish to delete the game\r\n""%s""?"
+    IDS_EXIT_TRESPASSER     "Do you wish to exit Trespasser?"
+    IDS_EXIT_GAME           "Do you wish to exit this game?"
+    IDS_SAVEGAMEPREFIX      "SAVEGAME"
+    IDS_SAFEMODE            "Trespasser was unstable the last time it ran. Do you wish\r\nto launch Trespasser in 'Safe Mode'?\n\nSafe mode uses conservative settings for Trespasser to\navoid the most common causes of instability. For more\ninformation select Cancel, open up the 'Readme.txt' file\nand then view the section on safe mode."
+    IDS_RESTARTLEVEL        "Do you wish to restart this level?"
+    IDS_AUDIO_ERROR         "Your sound card does not have certified DirectX drivers.  This game may work just fine, but if you have sound problems, please contact your sound card manufacturer for updated drivers."
+    IDS_DISPLAY_ERROR       "Your video card does not have certified DirectX drivers.  This game may work just fine, but if you have video problems, please contact your video card manufacturer for updated drivers."
+    IDS_NOHARDWARE_ERROR    "Your video card does not have Hardware Support. This game may work just fine, but if you have video problems, please contact your video card manufacturer for updated drivers."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_AUDIO_NOT_CERTIFIED "Direct Sound NOT certified"
+    IDS_ERR_VIDEO_NOT_CERTIFIED "Direct Draw NOT certified"
+    IDS_ERR_VIDEO_NO_HARDWARE "No Hardware Support"
+    IDS_ERROR_DDRAW_NOTFOUND 
+                            "DirectDraw not found.  Please ensure that DirectDraw is installed."
+    IDS_ERROR_DDRAW_FATAL   "Error Initializing DirectDraw."
+    IDS_NOT_INSTALLED       "Trespasser does not appear to be installed properly.  Please run the Setup program again.  If this problem appears again try uninstalling then installing."
+    IDS_DATA_DRIVE_NOT_FOUND 
+                            "Please Insert the Trespasser CD into %s.  \r\n\r\nPress the OK button to continue.\r\nPress Cancel to Quit."
+    IDS_ERROR_FATAL         "A fatal error has been detected.  Press OK to exit"
+    IDS_STR_KEY_MAP_UNKNOWN "????"
+    IDS_RENDER_QUALITY_CHANGING "Render Quality Changing"
+    IDS_GORE_0              "Less"
+    IDS_GORE_1              "More"
+    IDS_GORE_2              "Extreme"
+    IDS_ERROR_DISKSPACE_SAVE 
+                            "There is not enough disk space to save a game.  Free some disk space and try again."
+    IDS_ERROR_LOAD_UNKNOWN  "Unknown loading Error."
+    IDS_ERROR_LOAD_INALID_SCENE "Scene File Invalid."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_NOT_ENOUGH_HD "There is not enough free hard drive space to load the level.  Free up some space and try again."
+    IDS_ERROR_DISKSPACE     "Trespasser Requires %i MB of free disk space.  Press OK to exit the game."
+    IDS_SOFTWARE_DRIVER     "Trespasser's software driver"
+    IDS_DISPLAY             "display"
+    IDS_SOFTWARE            "Software"
+    IDS_LOADING_LEVEL       "Loading Level.  Please Wait."
+    IDS_ERR_NEED_P6         "This version of Trespasser requires a processor that is compatible with an Intel PentiumPro/PentiumII."
+    IDS_ERR_NEED_3DNOW      "This version of Trespasser requires a processor with 3D Now!"
+    IDS_ERR_PDETECT_FAILED  "Failed to detect local processor. Do you want to continue?"
+    IDS_ERR_NO_ACCELERATORS "No hardware accelerators compatible with Trespasser have been found.\r\nConsult the 'Readme.txt' file for more information on supported\r\nhardware accelerators."
+    IDS_ERR_DISPLAY_README  "Unable to display the 'Readme.txt' file. Please open the file\nmanually from the 'Setup' directory on your distribution CD-ROM\nusing a program like Notepad or Wordpad."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "..\gblinc\config.hpp"
+#include "version.rc2"
+#include "res\usa_keyremap.rc2"
+#include "res\usa_hints.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

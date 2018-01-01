@@ -1,0 +1,15 @@
+*******************************************************************************
+
+    Jurassic Part 'Trespasser' File  Session:
+    Wed Oct 07 15:39:29 1998
+
+*******************************************************************************
+
+Loading file J:\Users\Wyatt\TestObjects\VO Test\VO Test.GRF...
+
+VO_1 (Loaded).
+VO_6 (Loaded).
+
+Finished loading!
+
+Session finished.

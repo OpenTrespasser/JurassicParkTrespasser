@@ -1,0 +1,229 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "AIResource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "/jp2_pc/source/Shell/ShellResource.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "AIResource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""/jp2_pc/source/Shell/ShellResource.h""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""/jp2_pc/source/Shell/WinShell.rc""\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "ShellResources.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""Lib/W95/Errors.rc""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "ShellResource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""Lib/W95/Errors.rc""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""\\JP2_PC\\Source\\Lib\\W95\\Errors.rc""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "airesource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""Shell/WinShell.rc""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+AI_MAIN_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Load &GROFF",                 ID_FILE_LOADGROFF
+        MENUITEM "Load &Scene",                 ID_FILE_SCENE
+        MENUITEM "E&xit",                       MENU_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Select &All",                 ID_EDIT_SELECT_ALL
+        MENUITEM "&Unselect All",               ID_EDIT_UNSELECT_ALL
+    END
+    POPUP "&Object"
+    BEGIN
+        MENUITEM "&Remove",                     ID_OBJECT_REMOVE
+        MENUITEM "&Select",                     ID_OBJECT_SELECT
+        MENUITEM "&Facing",                     ID_OBJECT_FACING
+    END
+    POPUP "&Add"
+    BEGIN
+        MENUITEM "&Dinosaur",                   ID_ADD_DINO
+        MENUITEM "&Tree",                       ID_ADD_TREE
+        MENUITEM "&Wolf",                       ID_ADD_WOLF
+        MENUITEM "&Sheep",                      ID_ADD_SHEEP
+        MENUITEM "Wa&ll",                       ID_ADD_WALL
+        MENUITEM "&Meat",                       ID_ADD_MEAT
+        MENUITEM "&Grass",                      ID_ADD_GRASS
+        MENUITEM "&Hint",                       ID_ADD_HINT
+    END
+    POPUP "Debu&g"
+    BEGIN
+        MENUITEM "&Influences",                 ID_DEBUG_INFLUENCES
+        MENUITEM "&Destinations",               ID_DEBUG_DESTINATIONS
+        MENUITEM "&Strings",                    ID_DEBUG_STRINGS
+        MENUITEM "In&vulneraboble",             ID_DEBUG_INVULNERABOBLE
+        MENUITEM "Ste&p Mode",                  ID_DEBUG_STEPMODE
+        MENUITEM "&Graph",                      ID_DEBUG_GRAPH
+        MENUITEM "&Mouse Player",               ID_DEBUG_MOUSEPLAYER
+    END
+    POPUP "A&ction"
+    BEGIN
+        MENUITEM "&Club",                       ID_ACTION_CLUB
+        MENUITEM "&Step   (space)",             ID_ACTION_STEP
+        MENUITEM "&Goto",                       ID_ACTION_GOTO
+        MENUITEM "&Move",                       ID_ACTION_MOVE
+    END
+    POPUP "&Graph"
+    BEGIN
+        MENUITEM "&Show all links",             ID_GRAPH_SHOWALLLINKS
+        MENUITEM "&Jump links",                 ID_GRAPH_JUMPLINKS
+        MENUITEM SEPARATOR
+        MENUITEM "&Place Test Node",            ID_GRAPH_PLACETESTNODE
+        MENUITEM "&Delete Test Node",           ID_GRAPH_DELETENODE
+        MENUITEM "Select Star&t Node",          ID_GRAPH_SELECTSTARTNODE
+        MENUITEM "Select Sto&p Node",           ID_GRAPH_SELECTSTOPNODE
+    END
+    POPUP "&Render"
+    BEGIN
+        MENUITEM "&Selected Only",              ID_RENDER_SELECTEDONLY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+ID_CURSOR_DINO1         CURSOR  DISCARDABLE     "AddDino.cur"
+ID_CURSOR_DINO_FACING   CURSOR  DISCARDABLE     "FaceDino.cur"
+ID_CURSOR_DINO_REMOVE   CURSOR  DISCARDABLE     "RemoveDino.cur"
+ID_CURSOR_TREE_ADD      CURSOR  DISCARDABLE     "AddTree.cur"
+ID_CURSOR_ADD_SHEEP     CURSOR  DISCARDABLE     "Sheep.cur"
+ID_CURSOR_ADD_WOLF      CURSOR  DISCARDABLE     "Wolf.cur"
+ID_CURSOR_GRASS         CURSOR  DISCARDABLE     "grass.cur"
+ID_CURSOR_MEAT          CURSOR  DISCARDABLE     "meat.cur"
+ID_CURSOR_CLUB          CURSOR  DISCARDABLE     "club.cur"
+ID_CURSOR_PLAYER        CURSOR  DISCARDABLE     "cursor2.cur"
+ID_CURSOR_HAND          CURSOR  DISCARDABLE     "cur00001.cur"
+ID_CURSOR_X             CURSOR  DISCARDABLE     "cur00002.cur"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "/jp2_pc/source/Shell/WinShell.rc"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

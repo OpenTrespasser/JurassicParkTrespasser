@@ -1,0 +1,1 @@
+// Metrowerks Build uses built-in 'bool' type

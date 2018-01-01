@@ -1,0 +1,559 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource_audio.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource_audio.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\AudioTest.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\AudioTest.ico"
+IDR_AUDIOTTYPE          ICON    DISCARDABLE     "res\\AudioTestDoc.ico"
+IDI_BLUEDOT             ICON    DISCARDABLE     "res\\bluedot.ico"
+IDI_REDDOT              ICON    DISCARDABLE     "res\\reddot.ico"
+IDI_CROSS               ICON    DISCARDABLE     "res\\cross.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_CONTROL_PLAY
+    BUTTON      ID_CONTROL_STOP
+    SEPARATOR
+    BUTTON      ID_CONTROL_ZOOMUP
+    BUTTON      ID_CONTROL_ZOOMDOWN
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW, GRAYED
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Audio"
+    BEGIN
+        MENUITEM "&Create Scene",               ID_AUDIO_CREATESCENE
+        MENUITEM "&Delete Scene",               ID_AUDIO_DELETESCENE
+        MENUITEM "Environmental &Attributes ...", ID_AUDIO_ENVIRONMENT
+        MENUITEM "Add &Listener ...",           ID_AUDIO_ADDLISTENER
+        MENUITEM SEPARATOR
+        POPUP "&Game Sounds"
+        BEGIN
+            MENUITEM "Add Sound ...",               ID_AUDIO_GAME_ADDSOUND
+        END
+        POPUP "&Music Sounds"
+        BEGIN
+            MENUITEM "Add Sound ...",               ID_AUDIO_MUSIC_ADDSOUND
+        END
+        POPUP "&Environmental Loops"
+        BEGIN
+            MENUITEM "&Create",                     ID_AUDIO_ENVIRONMENTALLOOPS_CREATE
+
+            MENUITEM "&Add Sound ...",              ID_AUDIO_ENVIRONMENTALLOOPS_ADDSOUND
+
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About AudioTest...",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About AudioTest"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "AudioTest Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright © 1996",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_POSSOUNDATTRIBUTES DIALOG DISCARDABLE  0, 0, 235, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Positional Sound Attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,167,112,50,14
+    GROUPBOX        "Sound Model",IDC_STATIC,7,23,145,78
+    EDITTEXT        IDC_INTENSITY,89,32,49,12,ES_AUTOHSCROLL
+    RTEXT           "Intensity:",IDC_STATIC,13,34,71,8
+    EDITTEXT        IDC_MINBACK,89,45,49,12,ES_AUTOHSCROLL
+    RTEXT           "Min Back Distance:",IDC_STATIC,13,47,71,8
+    EDITTEXT        IDC_MINFRONT,89,58,49,12,ES_AUTOHSCROLL
+    RTEXT           "Min Front Distance:",IDC_STATIC,13,60,71,8
+    EDITTEXT        IDC_MAXBACK,89,71,49,12,ES_AUTOHSCROLL
+    RTEXT           "Max Back Distance:",IDC_STATIC,13,72,71,8
+    EDITTEXT        IDC_MAXFRONT,89,84,49,12,ES_AUTOHSCROLL
+    RTEXT           "Max Front Distance:",IDC_STATIC,13,85,71,8
+    GROUPBOX        "Orientation",IDC_STATIC,7,102,145,25
+    LTEXT           "x:",IDC_STATIC,15,113,8,8
+    LTEXT           "y:",IDC_STATIC,59,113,8,8
+    LTEXT           "z:",IDC_STATIC,103,113,8,8
+    EDITTEXT        IDC_ORIENTX,25,112,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORIENTY,69,112,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORIENTZ,113,112,27,12,ES_AUTOHSCROLL
+    GROUPBOX        "Position",IDC_STATIC,7,128,145,25
+    LTEXT           "x:",IDC_STATIC,15,140,8,8
+    LTEXT           "y:",IDC_STATIC,59,140,8,8
+    LTEXT           "z:",IDC_STATIC,103,140,8,8
+    EDITTEXT        IDC_POSX,25,137,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POSY,69,137,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POSZ,113,137,27,12,ES_AUTOHSCROLL
+    LTEXT           "FileName.wav",IDC_FILENAME,7,7,221,8
+    GROUPBOX        "Creation Flags",IDC_STATIC,160,23,68,78
+    CONTROL         "Attenuate",IDC_FATTENUATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,165,36,57,8
+    CONTROL         "Spatilize",IDC_FSPATIALIZE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,165,52,57,8
+    CONTROL         "Doppler",IDC_FDOPPLER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,165,68,57,8
+    CONTROL         "Reverb",IDC_FREVERB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,165,84,57,8
+    PUSHBUTTON      "Cancel",IDCANCEL,167,131,50,14
+END
+
+IDD_LISTENERATTRIBUTES DIALOG DISCARDABLE  0, 0, 159, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Listener Attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,92,50,14
+    GROUPBOX        "Direction",IDC_STATIC,7,7,145,25
+    LTEXT           "x:",IDC_STATIC,15,18,8,8
+    LTEXT           "y:",IDC_STATIC,59,18,8,8
+    LTEXT           "z:",IDC_STATIC,103,18,8,8
+    EDITTEXT        IDC_DIRX,25,17,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DIRY,69,17,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DIRZ,113,17,27,12,ES_AUTOHSCROLL
+    GROUPBOX        "Up",IDC_STATIC,7,33,145,25
+    LTEXT           "x:",IDC_STATIC,15,44,8,8
+    LTEXT           "y:",IDC_STATIC,59,44,8,8
+    LTEXT           "z:",IDC_STATIC,103,44,8,8
+    EDITTEXT        IDC_UPX,25,42,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_UPY,69,42,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_UPZ,113,42,27,12,ES_AUTOHSCROLL
+    GROUPBOX        "Position",IDC_STATIC,7,60,145,25
+    LTEXT           "x:",IDC_STATIC,15,73,8,8
+    LTEXT           "y:",IDC_STATIC,59,73,8,8
+    LTEXT           "z:",IDC_STATIC,103,73,8,8
+    EDITTEXT        IDC_POSX,25,70,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POSY,69,70,27,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POSZ,113,70,27,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Cancel",IDCANCEL,87,92,50,14
+END
+
+IDD_ENVATTRIBUTES DIALOG DISCARDABLE  0, 0, 244, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Environment Attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,64,103,50,14
+    GROUPBOX        "Reverb",IDC_STATIC,125,7,112,84
+    CONTROL         "Use Reverb",IDC_USEREVERB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,24,58,8
+    EDITTEXT        IDC_REVDECAY,180,41,41,12,ES_AUTOHSCROLL
+    LTEXT           "Decay:",IDC_STATIC,136,43,32,8
+    LTEXT           "Intensity:",IDC_STATIC,136,63,32,8
+    EDITTEXT        IDC_REVINTENSITY,180,61,41,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Cancel",IDCANCEL,130,103,50,14
+    GROUPBOX        "CPU Localization Budget",IDC_STATIC,7,7,112,52
+    CONTROL         "None",IDC_CPULOC_NONE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,14,22,82,8
+    CONTROL         "Low",IDC_CPULOC_LOW,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,14,33,82,8
+    CONTROL         "Medium",IDC_CPULOC_MED,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,14,44,82,8
+    EDITTEXT        IDC_SPEEDOFSOUND,61,73,41,12,ES_AUTOHSCROLL
+    LTEXT           "Speed:",IDC_STATIC,17,74,24,8
+    GROUPBOX        "Speed of Sound",IDC_STATIC,7,62,112,29
+END
+
+IDD_MUSICSOUNDATTRIBUTES DIALOG DISCARDABLE  0, 0, 145, 69
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Music Sound Attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,48,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,48,50,14
+    GROUPBOX        "Creation Flags",IDC_STATIC,7,7,131,31
+    CONTROL         "Doppler",IDC_FDOPPLER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,20,43,8
+    CONTROL         "Reverb",IDC_FREVERB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,76,20,43,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "AUDIOTEST MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "AUDIOTEST\0"
+            VALUE "LegalCopyright", "Copyright © 1996\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "AUDIOTEST.EXE\0"
+            VALUE "ProductName", "AUDIOTEST Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_POSSOUNDATTRIBUTES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_LISTENERATTRIBUTES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_ENVATTRIBUTES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_MUSICSOUNDATTRIBUTES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "AudioTest\n\nAudioT\n\n\nAudioTest.Document\nAudioT Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "AudioTest"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CONTROL_PLAY         "Play"
+    ID_CONTROL_STOP         "Stop"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CONTROL_ZOOMDOWN     "Zoom Down"
+    ID_CONTROL_ZOOMUP       "Zoom Up"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\AudioTest.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

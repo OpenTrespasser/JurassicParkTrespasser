@@ -1,0 +1,168 @@
+//    Boolean values can be on, true, yes, off, false, no.
+
+// To load a groff file, can use multiple times:
+//GROFF: FILENAME
+// To load a save file:
+//Load SaveGame: FILENAME
+
+// To set window size:
+//Window Size: WIDTH HEIGHT
+
+
+// Bumpmap loading.
+Load Bumpmaps: true
+
+
+// Shrink wrap loading.  If false, will use a simple box shrinkwrap.
+Load Shrinkwrap: true
+
+
+// Partition rebuild on load.
+Rebuild Partitions: false
+
+
+// Extra douts on load.
+Load Verbose: false
+
+
+// True if mesh polygons are split on load.
+Mesh Splitting: false
+Curve Bumps: false
+
+// Menu: false
+
+// Debug Movement: false
+System Memory: true
+
+// Camera Settings.
+Near Clipping Plane: 0.025000
+Far Clipping Plane: 600.000000
+View Angle: 75.000000
+Zoom: 1.000000
+
+// Fog Settings.
+Fog Z-half: 0.280000
+Fog Exponent: 1.200000
+Fog Linear: true
+
+// Water Settings.
+Water Screen Res: 0.200000
+Water World Res: 8.000000
+
+
+// Background color, R G B each 0-255
+Background: 0 0 0
+
+
+//  Render flags (octal).
+Render Flags: 2747474577 4
+
+
+// Colors, R G B each 0-255
+Clut Start Color: 0 0 0
+Clut Stop Color: 255 255 255
+Fog Color: 215 230 255
+Metal Color: 166 222 245
+
+
+// Alpha Channels-  channel R G B opacity
+Alpha Channel:	0	201	221	255	0.400000
+Alpha Channel:	1	201	221	255	0.200000
+Alpha Channel:	2	201	221	255	0.100000
+Alpha Channel:	3	201	221	255	0.050000
+Alpha Channel:	4	255	255	237	0.200000
+Alpha Channel:	5	255	255	237	0.100000
+Alpha Channel:	6	255	255	237	0.050000
+Alpha Channel:	7	224	255	255	0.200000
+Alpha Channel:	8	224	255	255	0.100000
+Alpha Channel:	9	224	255	255	0.050000
+Alpha Channel:	10	255	255	255	0.200000
+Alpha Channel:	11	255	255	255	0.100000
+Alpha Channel:	12	255	255	255	0.050000
+Alpha Channel:	13	128	128	0	0.500000
+Alpha Channel:	14	128	128	0	0.500000
+Alpha Channel:	15	128	128	0	0.500000
+// TRUE when doing asset checking and official area release testing
+Verify Hashing: false
+
+Ambient: 0.200000
+
+//Load player position. ***** NOTE ***** this might get 
+//confusing if Anne is loaded.
+Player Position: -0.738251 26.064800 1.400000
+
+//  Num objects selected when loading.
+Load Auto-select: 0
+
+//  Debug Movement parameters.
+Step Distance: 6.700000
+Turn Angle: 120.000000
+
+//Full Screen: 640 480 16
+
+
+// GAME menu flag settings.
+Play: true
+Physics: true
+AI: true
+
+
+// EDIT menu flag settings.
+Test Terrain: false
+
+
+// VIEW menu flag settings.
+AI Console: false
+Physics Console: false
+Terrain Console: false
+Depth Sort Console: false
+Shadows Console: false
+Art Stats Console: false
+Occlusion Console: false
+
+//Toolbar: off
+Stats: false
+Cache Stats: false
+FPS: false
+Average Stats: false
+Hairs: true
+Vegetation +: true
+Radius +: false
+Radius + Distance: 50.000000
+Globules: false
+Wires: false
+Pinhead: false
+Bones: false
+Triggers: true
+
+
+// ACTION menu flag settings.
+Camera Free: false
+Camera 2m: false
+Turn About World Z: true
+
+
+// Image caching flags.
+Cache: true
+Cache Intersecting: true
+Cache Max Age: 200
+
+
+// Virtual loader flags.
+Virtual Loader: false
+
+
+// How bumpy are the unspecified bumpmaps?
+Bumpiness: 0.025000
+
+
+// In seconds, greater than zero if wandering desired.
+Wander Duration: -1.000000
+
+
+// 'true' if wandering duration is in seconds, otherwise in # of frames.
+Wander Time Secs: true
+
+
+// To set a breakpoint on a particular memory allocation-
+//_CrtSetBreakAlloc: 666

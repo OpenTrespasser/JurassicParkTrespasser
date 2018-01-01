@@ -1,0 +1,40 @@
+// mw-k6-t-F.pch
+
+#pragma precompile_target "mw-k6-T-F.mch"
+
+
+#define CODEWARRIOR 1
+#define ARS_IPTEX_OVERRIDE
+#define _WIN32
+#define _WINDOWS
+#define PROFILE_95
+#define MSIPL_PARTIAL_SPECIALIZATION
+#define D3D_OVERLOADS
+#define NOMINMAX		// prevent min and max macros from being defined
+
+
+#define MODE_FINAL			1
+#define MODE_RELEASE		2
+#define MODE_DEBUG			3
+#define MODE_DEBUG_NOASM	4
+#define BUILDVER_MODE MODE_FINAL
+#define TARGET_PROCESSOR 5
+
+
+#define strcmpi(a,b) _stricmp(a,b)
+#define _strcmpi(a,b) _stricmp(a,b)
+#define stricmp(a,b) _stricmp(a,b)
+#define _finite(x) (isfinite(x))
+#define strdup(x) _strdup(x)
+#define itoa(x,y,z) _itoa(x,y,z)
+#define _emit emit
+typedef unsigned int	size_t;
+extern "C" size_t _msize(void* ptr);
+#define _S_IWRITE S_IWRITE
+
+// Optimization helpers
+
+float fabs(float);
+float sqrt(float);
+
+#pragma float_constants on

@@ -1,0 +1,408 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "Errors.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Errors.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_UNDEFINED         "Undefined application error. Please refer to your ""Lost World"" manual, dude."
+    ERROR_TIMER             "Windows is unable to start the timer. Please close down all other applications and retry."
+    ERROR_CREATEWINDOW      "Could not create the main window."
+    ERROR_NODEVICECONTEXT   "The application was not able to create a valid device context for the window."
+    ERROR_ASSERTFAIL        "Assertion failed!"
+    ERROR_NOMEMORY          "Your computer is out of memory.  Please buy more."
+    ERROR_DIRECTDRAW        "Direct Draw error."
+    ERROR_D3D               "Direct3D Error"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_INVALIDPARAMS  "One or more of the parameters passed to the function are incorrect."
+    ERROR_DD_ALREADYINITIALIZED "This object is already initialized."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOCLIPPERATTACHED 
+                            "No clipper object attached to surface object."
+    ERROR_DD_NOHWND         "Clipper notification requires an HWND or no HWND has previously been set as the CooperativeLevel HWND."
+    ERROR_DD_HWNDSUBCLASSED "HWND used by DirectDraw CooperativeLevel has been subclassed, this prevents DirectDraw from restoring state."
+    ERROR_DD_HWNDALREADYSET "The CooperativeLevel HWND has already been set. It can not be reset while the process has surfaces or palettes created."
+    ERROR_DD_NOPALETTEATTACHED "No palette object attached to this surface."
+    ERROR_DD_NOPALETTEHW    "No hardware support for 16 or 256 color palettes."
+    ERROR_DD_BLTFASTCANTCLIP 
+                            "Return if a clipper object is attached to the source surface passed into a BltFast call."
+    ERROR_DD_NOBLTHW        "No blitter hardware present."
+    ERROR_DD_NODDROPSHW     "No DirectDraw ROP hardware."
+    ERROR_DD_OVERLAYNOTVISIBLE 
+                            "Returned when GetOverlayPosition is called on a hidden overlay."
+    ERROR_DD_NOOVERLAYDEST  "Returned when GetOverlayPosition is called on an overlay that UpdateOverlay has never been called on to establish a destination."
+    ERROR_DD_INVALIDPOSITION 
+                            "Returned when the position of the overlay on the destination is no longer legal for that destination."
+    ERROR_DD_NOTAOVERLAYSURFACE 
+                            "Returned when an overlay member is called for a non-overlay surface."
+    ERROR_DD_EXCLUSIVEMODEALREADYSET 
+                            "An attempt was made to set the cooperative level when it was already set to exclusive."
+    ERROR_DD_NOTFLIPPABLE   "An attempt has been made to flip a surface that is not flippable."
+    ERROR_DD_CANTDUPLICATE  "Can't duplicate primary & 3D surfaces, or surfaces that are implicitly created."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_CANNOTATTACHSURFACE 
+                            "This surface can not be attached to the requested surface."
+    ERROR_DD_OUTOFMEMORY    "DirectDraw does not have enough memory to perform the operation."
+    ERROR_DD_CANNOTDETACHSURFACE 
+                            "This surface can not be detached from the requested surface."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOTLOCKED      "Surface was not locked.  An attempt to unlock a surface that was not locked at all, or by this process, has been attempted."
+    ERROR_DD_CANTCREATEDC   "Windows cannot create any more DCs."
+    ERROR_DD_NODC           "No DC was ever created for this surface."
+    ERROR_DD_WRONGMODE      "This surface can not be restored because it was created in a different mode."
+    ERROR_DD_IMPLICITLYCREATED 
+                            "This surface can not be restored because it is an implicitly created surface."
+    ERROR_DD_NOTPALETTIZED  "The surface being used is not a palette-based surface."
+    ERROR_DD_UNSUPPORTEDMODE 
+                            "The display is currently in an unsupported mode."
+    ERROR_DD_NOMIPMAPHW     "There is no mip-pam texture hardware present."
+    ERROR_DD_INVALIDSURFACETYPE 
+                            "Action could not be performed because the surface was of the wrong type."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_XALIGN         "Rectangle provided was not horizontally aligned on required boundary."
+    ERROR_DD_INVALIDDIRECTDRAWGUID 
+                            "The GUID passed to DirectDrawCreate is not a valid DirectDraw driver identifier."
+    ERROR_DD_DIRECTDRAWALREADYCREATED 
+                            "A DirectDraw object representing this driver has already been created for this process."
+    ERROR_DD_NODIRECTDRAWHW "A hardware-only DirectDraw object creation was attempted but the driver did not support any hardware."
+    ERROR_DD_PRIMARYSURFACEALREADYEXISTS 
+                            "This process already has created a primary surface."
+    ERROR_DD_NOEMULATION    "Software emulation not available."
+    ERROR_DD_REGIONTOOSMALL "Region passed to Clipper               ist is too small."
+    ERROR_DD_CLIPPERISUSINGHWND 
+                            "An attempt was made to set a cliplist for a clipper object that is already monitoring an hwnd."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_COLORKEYNOTSET "No src color key specified for this operation."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_CURRENTLYNOTAVAIL "Support is currently not available."
+    ERROR_DD_EXCEPTION      "An exception was encountered while performing the requested operation."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_UNSUPPORTED    "Action not supported."
+    ERROR_DD_GENERIC        "Generic failure."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_FASTHEAP_OUTOFMEMORY "The fast heap is out of memory."
+    ERROR_FASTHEAP_UNABLETOCREATE "Unable to allocate the fast heap."
+    ERROR_INVALID_GAMMA     "Invalid /G gamma correction command-line argument.\nGamma correction value must be greater than 0."
+    ERROR_UNABLETOLOAD_MESH "Unable to load mesh: "
+    ERROR_UNABLETOLOAD_TEXTURE "Unable to load texture: "
+    ERROR_UNABLETO_OPENGROFF "Unable to open the Groff file: "
+    ERROR_UNABLETO_READGROFFINFO 
+                            "Unable to read the object information from the Groff file: "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_HEIGHTALIGN    "Height of rectangle provided is not a multiple of reqd alignment."
+    ERROR_DD_INCOMPATIBLEPRIMARY 
+                            "Unable to match primary surface creation request with existing primary surface."
+    ERROR_DD_INVALIDCAPS    "One or more of the caps bits passed to the callback are incorrect."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_INVALIDCLIPLIST 
+                            "DirectDraw does not support the provided cliplist."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_INVALIDMODE    "DirectDraw does not support the requested mode."
+    ERROR_DD_INVALIDOBJECT  "DirectDraw received a pointer that was an invalid DIRECTDRAW object."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_INVALIDPIXELFORMAT "The pixel format was invalid as specified."
+    ERROR_DD_INVALIDRECT    "Rectangle provided was invalid."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_LOCKEDSURFACES "Operation could not be carried out because one or more surfaces are locked."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NO3D           "There is no 3D present."
+    ERROR_DD_NOALPHAHW      "Operation could not be carried out because there is no alpha accleration hardware present or available."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOCLIPLIST     "No cliplist available."
+    ERROR_DD_NOCOLORCONVHW  "Operation could not be carried out because there is no color conversion hardware present or available."
+    ERROR_DD_NOCOOPERATIVELEVELSET 
+                            "Create function called without DirectDraw object method SetCooperativeLevel being called."
+    ERROR_DD_NOCOLORKEY     "Surface doesn't currently have a color key"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOCOLORKEYHW   "Operation could not be carried out because there is no hardware support of the destination color key."
+    ERROR_DD_NODIRECTDRAWSUPPORT 
+                            "No DirectDraw support possible with current display driver."
+    ERROR_DD_NOEXCLUSIVEMODE 
+                            "Operation requires the application to have exclusive mode but the application does not have exclusive mode."
+    ERROR_DD_NOFLIPHW       "Flipping visible surfaces is not supported."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOGDI          "There is no GDI present."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOMIRRORHW     "Operation could not be carried out because there is no hardware present or available."
+    ERROR_DD_NOTFOUND       "Requested item was not found."
+    ERROR_DD_NOOVERLAYHW    "Operation could not be carried out because there is no overlay hardware present or available."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NORASTEROPHW   "Operation could not be carried out because there is no appropriate raster op hardware present or available."
+    ERROR_DD_NOROTATIONHW   "Operation could not be carried out because there is no rotation hardware present or available."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOSTRETCHHW    "Operation could not be carried out because there is no hardware support for stretching."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOT4BITCOLOR   "DirectDrawSurface is not in 4 bit color palette and the requested operation requires 4 bit color palette."
+    ERROR_DD_NOT4BITCOLORINDEX 
+                            "DirectDrawSurface is not in 4 bit color index palette and the requested operation requires 4 bit color index palette."
+    ERROR_DD_NOT8BITCOLOR   "DirectDrawSurface is not in 8 bit color mode and the requested operation requires 8 bit color."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOTEXTUREHW    "Operation could not be carried out because there is no texture mapping hardware present or available."
+    ERROR_DD_NOVSYNCHW      "Operation could not be carried out because there is no hardware support for vertical blank synchronized operations."
+    ERROR_DD_NOZBUFFERHW    "Operation could not be carried out because there is no hardware support for zbuffer blitting."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_NOZOVERLAYHW   "Overlay surfaces could not be z layered based on their BltOrder because the hardware does not support z layering of overlays."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_OUTOFCAPS      "The hardware needed for the requested operation has already been allocated."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_OUTOFVIDEOMEMORY 
+                            "DirectDraw does not have enough memory to perform the operation."
+    ERROR_DD_OVERLAYCANTCLIP 
+                            "The hardware does not support clipped overlays."
+    ERROR_DD_OVERLAYCOLORKEYONLYONEACTIVE 
+                            "Can only have ony color key active at one time for overlays."
+    ERROR_DD_PALETTEBUSY    "Access to this palette is being refused because the palette is already locked by another thread."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_SURFACEALREADYATTACHED 
+                            "This surface is already attached to the surface it is being attached to."
+    ERROR_DD_SURFACEALREADYDEPENDENT 
+                            "This surface is already a dependency of the surface it is being made a dependency of."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_SURFACEBUSY    "Access to this surface is being refused because the surface is already locked by another thread."
+    ERROR_DD_CANTLOCKSURFACE 
+                            "There is no driver which can supply a pointer to the surface."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_SURFACEISOBSCURED 
+                            "Access to surface refused because the surface is obscured."
+    ERROR_DD_SURFACELOST    "Access to this surface is being refused because the surface memory is gone. The DirectDrawSurface object representing this surface should have Restore called on it."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_SURFACENOTATTACHED "The requested surface is not attached."
+    ERROR_DD_TOOBIGHEIGHT   "Height requested by DirectDraw is too large."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_TOOBIGSIZE     "Size requested by DirectDraw is too large, but the individual height and width are OK."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_TOOBIGWIDTH    "Width requested by DirectDraw is too large."
+    ERROR_DD_NOTINITIALIZED "A DirectDraw object was used before it was initialized."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_UNSUPPORTEDFORMAT 
+                            "FOURCC format requested is unsupported by DirectDraw."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_UNSUPPORTEDMASK 
+                            "Bitmask in the pixel format requested is unsupported by DirectDraw."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_VERTICALBLANKINPROGRESS "Vertical blank is in progress."
+    ERROR_DD_WASSTILLDRAWING 
+                            "Informs DirectDraw that the previous Blt which is transfering information to or from this Surface is incomplete."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_DCALREADYCREATED 
+                            "A DC has already been returned for this surface."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_CANTPAGELOCK   "The attempt to page lock a surface failed."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_DD_CANTPAGEUNLOCK "The attempt to page unlock a surface failed."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_D3D_REFERENCECOUNT 
+                            "Reference count not returned to zero after ""Release"" was called."
+    ERROR_D3D_INVALIDPARAMS "Invalid parameters."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_D3D_INVALIDOBJECT "Invalid object."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_D3D_TEXTURE_BADSIZE "Bad texture size."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_D3D_TEXTURE_NO_SUPPORT "No support for texture."
+    ERROR_D3D_TEXTURE_CREATE_FAILED "Texture create failed."
+    ERROR_D3D_TEXTURE_DESTROY_FAILED "Texture surface destroy failed."
+    ERROR_D3D_TEXTURE_LOCK_FAILED "Texture lock failed."
+    ERROR_D3D_TEXTURE_UNLOCK_FAILED "Texture unlock failed"
+    ERROR_D3D_TEXTURE_LOAD_FAILED "Texture load failed."
+    ERROR_D3D_TEXTURE_SWAP_FAILED "Texture swap failed."
+    ERROR_D3D_TEXTURE_LOCKED "Texture locked."
+    ERROR_D3D_TEXTURE_NOT_LOCKED "Texture not locked."
+    ERROR_D3D_TEXTURE_GETSURF_FAILED "Get surface for texture failed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_D3D_INITIALIZATION_FAILED "D3D initialization failed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

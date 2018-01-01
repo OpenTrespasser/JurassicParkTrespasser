@@ -1,0 +1,180 @@
+Cache heap size: 12288Kb
+>>>>>>Reloading DirectDraw library.
+>>>>>>New direct draw created
+>>>>>>New direct draw 2 interface created
+>>>>>>DirectDraw2 interface released
+Global - new palette/material pair (256).
+Thread Create: CAudio [Thread handle 0xb4]
+Setting VM max physical mem: 59Mb
+Thread Create: CVirtualMem [Thread handle 0xae]
+Memory used for spatial partitions: 0Kb
+Memory used for instances: 0Kb
+
+***D3D Error***: Registry entries incorrect.
+LOCAL PROCESSOR: Intel Pentium Pro Processor
+TARGET PROCESSOR: Intel Pentium
+Warning: Scene file is version 9, latest version is 21
+Memory used for spatial partitions: 0Kb
+Memory used for instances: 19Kb
+Global - new palette/material pair (256).
+VM load thread resumed.
+CVirtualMem Thread Enter
+CVirtualMem Thread Leave
+Setting VM max physical mem: 59Mb
+Thread Create: CVirtualMem [Thread handle 0xaf]
+Memory used for spatial partitions: 0Kb
+Memory used for instances: 0Kb
+Warning: Scene file is version 9, latest version is 21
+Open File: J:\Users\Wyatt\TestObjects\VO Test\VO Test.GRF
+Open File: 	0.00992421 seconds.
+Image Loader:  J:\Users\Wyatt\TestObjects\VO Test\VO Test.GRF
+No SPZ file (compressed swap file) with GRF file. (J:\Users\Wyatt\TestObjects\VO Test\VO Test-130.spz)
+No SPP file (old compressed swap file) with GRF file. (J:\Users\Wyatt\TestObjects\VO Test\VO Test-130.spp)
+No SWP file (uncompressed swap file) with GRF file. (J:\Users\Wyatt\TestObjects\VO Test\VO Test-130.swp)
+Image Loader: 	0.00900243 seconds.
+GROFF version: 15
+Load Object Info and vtable: 
+Load Object Info and vtable: 	0.00430894 seconds.
+Miscellaneous:
+Miscellaneous:	0.161431 seconds.
+Objects: 
+Cannot instance VO_6, no ideal name.
+Cannot instance VO_5, no ideal name.
+Cannot instance VO_4, no ideal name.
+Cannot instance VO_3, no ideal name.
+Cannot instance VO_2, no ideal name.
+Cannot instance VO_1, no ideal name.
+LOAD PASS 0
+Cannot instance VO_6, no ideal name.
+Cannot instance VO_5, no ideal name.
+Cannot instance VO_4, no ideal name.
+Cannot instance VO_3, no ideal name.
+Cannot instance VO_2, no ideal name.
+LOAD PASS 1
+Cannot instance VO_6, no ideal name.
+Cannot instance VO_5, no ideal name.
+Cannot instance VO_4, no ideal name.
+Cannot instance VO_3, no ideal name.
+Cannot instance VO_2, no ideal name.
+LOAD PASS 2
+Objects: 	0.0427822 seconds.
+Building partitions:
+Partitions:	0.00285298 seconds.
+Pack bump maps:	Pack bump maps:	0.00147643 seconds.
+Total:	0.23822 seconds.
+# Instances Loaded: 5 
+# Terrain Instances Loaded: 0 
+Time in find obj: 0 secs.
+Loader          :    238.2           1.00      4.2
+ Audio          :               
+ RAM the GROFF  :      9.9           1.00    100.8
+ Image          :      9.0           1.00    111.1
+ Objects        :     42.8           1.00     23.4
+  Add to World  :      2.0           1.00    489.9
+  pinsCreate    :     23.9           1.00     41.8
+   Mesh         :      8.8           1.00    113.9
+    Printing    :      0.4           1.00     2.8K
+    Misc.       :      3.3           1.00    303.8
+    GROFF Geom  :                    1.00
+    Curve Bumps :      4.0           1.00    247.8
+     Matrix     :                    1.00
+    Alloc Verts :                    1.00
+    Make Faces  :      0.0           1.00    30.2K
+    Mesh Const. :      4.5           1.00    219.9
+     Merge      :                    1.00
+     Poly Setup :                    1.00
+     Vert Norms :                    1.00
+    Textures    :      0.0           1.00   295.8K
+     Lookup     :                    1.00
+     Constructor:      1.0           1.00    955.3
+      Cluts     :                    1.00
+    Mip Map     :      0.0           1.00    67.7K
+     new CRaster:                    1.00
+     pre image stuff:                    1.00
+    Shrink Wrap :      0.0           1.00   367.9K
+    ptexImageTexture:                    1.00
+     Image Palette:                    1.00
+     Image Raster:                    1.00
+     New Texture:                    1.00
+ Obj Info/Vtable:      4.3           1.00    232.1
+  Name Lookup   :      0.1           1.00    12.7K
+ Partitions     :      2.9           1.00    350.5
+ Bumpmap pack   :      1.5           1.00    677.6
+Loader          :    238.2           1.00      4.2
+ Audio          :               
+ RAM the GROFF  :      9.9           1.00    100.8
+ Image          :      9.0           1.00    111.1
+ Objects        :     42.8           1.00     23.4
+  Add to World  :      2.0           1.00    489.9
+  pinsCreate    :     23.9           1.00     41.8
+   Mesh         :      8.8           1.00    113.9
+    Printing    :      0.4           1.00     2.8K
+    Misc.       :      3.3           1.00    303.8
+    GROFF Geom  :                    1.00
+    Curve Bumps :      4.0           1.00    247.8
+     Matrix     :                    1.00
+    Alloc Verts :                    1.00
+    Make Faces  :      0.0           1.00    30.2K
+    Mesh Const. :      4.5           1.00    219.9
+     Merge      :                    1.00
+     Poly Setup :                    1.00
+     Vert Norms :                    1.00
+    Textures    :      0.0           1.00   295.8K
+     Lookup     :                    1.00
+     Constructor:      1.0           1.00    955.3
+      Cluts     :                    1.00
+    Mip Map     :      0.0           1.00    67.7K
+     new CRaster:                    1.00
+     pre image stuff:                    1.00
+    Shrink Wrap :      0.0           1.00   367.9K
+    ptexImageTexture:                    1.00
+     Image Palette:                    1.00
+     Image Raster:                    1.00
+     New Texture:                    1.00
+ Obj Info/Vtable:      4.3           1.00    232.1
+  Name Lookup   :      0.1           1.00    12.7K
+ Partitions     :      2.9           1.00    350.5
+ Bumpmap pack   :      1.5           1.00    677.6
+Waiting for local copy..
+Found 0 blood splat objects.
+Found 0 blood streak objects.
+Total unique meshes: 2
+Discarded Meshes: 0
+Total unique textures: 0
+Discarded Textures: 0
+Total CLUT dbase entries    : 1
+Total CLUT memory           : 128KB
+Total bumpmapped entries    : 0
+Total bumpmapped CLUT memory: 0KB
+Total prelit entries        : 0
+Total prelit CLUT memory    : 0KB
+Memory used for spatial partitions: 0Kb
+Sample has a subtitle...
+Sample has a subtitle...
+615925238 Identifier not found in pack file
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Sample has a subtitle...
+Memory used for spatial partitions: 0Kb
+Memory used for instances: 21Kb
+Global - new palette/material pair (256).
+Leftover CMeshes:       0
+Leftover CPhysicsInfos: -2
+Leftover CAIInfos:      0
+Leftover CInfos:        0
+
+Maximum D3D Textures allocated     : 0 Kb
+Maximum D3D Textures used per frame: 0 Kb
+
+>>>>>>DirectDraw interface released.
+>>>>>>Reloading DirectDraw library.
+VM load thread resumed.
+CVirtualMem Thread Enter
+CVirtualMem Thread Leave
+0 rptrs not deleted: 

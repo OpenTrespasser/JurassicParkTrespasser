@@ -1,0 +1,418 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "GroffExp.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EXPORT_OPTIONS DIALOG DISCARDABLE  0, 0, 147, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GROFF Exporter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Quantize Bitmaps",IDC_QUANTIZE_BMP,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,22,16,103,14
+    CONTROL         "Create GROFF File",IDC_GEN_GROFF,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,22,30,103,14
+    PUSHBUTTON      "Cancel",IDCANCEL,77,100,50,14
+    PUSHBUTTON      "OK",IDOK,19,100,50,14
+    GROUPBOX        "File Export Options",IDC_STATIC,8,8,131,40
+    GROUPBOX        "Information Options",IDC_STATIC,8,51,131,28
+    CONTROL         "Generate Logfiles",IDC_GEN_LOGFILES,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,22,60,103,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "GroffExp.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,4,0
+ PRODUCTVERSION 1,1,4,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Written by Greg Stull, Jurassic Park II PC - Trespasser. [17-April-1997, C++ 4.1, Sdk 1.2].\0"
+            VALUE "CompanyName", "DreamWorks Interactive L.L.E.\0"
+            VALUE "FileDescription", "GroffExp\0"
+            VALUE "FileVersion", "1, 1, 4, 0\0"
+            VALUE "InternalName", "GroffExp\0"
+            VALUE "LegalCopyright", "Copyright © 1996, 1997 DreamWorks Interactive\0"
+            VALUE "OriginalFilename", "GroffExp.dle\0"
+            VALUE "ProductName", "GroffExp.dle - Jurassic Park II - Trespasser. Copyright © 1996, 1997 DreamWorks Interactive\0"
+            VALUE "ProductVersion", "1, 1, 4, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EXPORT_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 139
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 114
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_JP2_CLASSNAME       "Groff Export"
+    IDS_JP2_LONGDESC        "GroffExp.dle: Jurassic Park II - PC Groff File Exporter. Copyright 1996 DreamWorks Interactive."
+    IDS_JP2_SHORTDESC       "JP2 PC Groff Exporter"
+    IDS_JP2_AUTHOR          "JP2 Exporter written by Greg Stull"
+    IDS_JP2_COPYRIGHT       "Groff File Exporter - Copyright 1996-1997 DreamWorks Interactive L.L.C."
+    IDS_JP2_EXTENSION       "GRF"
+    IDS_JP2_EXPORTER        "Export"
+    IDS_SCENEENUM_START     "Beginning scene enumeration...\n"
+    IDS_SCENEENUM_END       "\nScene enumeration complete.\n"
+    IDS_SCENEENUM_INODE     "\nEnumerating iNode: 0x%X, Object %s:\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONV_TO_TRIMESH     "   Convertable to tri-mesh? "
+    IDS_YES                 "Yes\n"
+    IDS_NO                  "No\n"
+    IDS_MATERIAL_CONFIG     "\n----- MATERIAL CONFIGURATION -----\n\n"
+    IDS_FACE_MAP_ENABLED    "Face mapping: ENABLED\n"
+    IDS_FACE_MAP_DISABLED   "Face mapping: DISABLED\n"
+    IDS_FACE_MODE_DOUBLE    "Face mode   : Double-sided.\n"
+    IDS_FACE_MODE_SINGLE    "Face mode   : Single-sided.\n"
+    IDS_SHININESS           "\nShininess value   : %.2f\n"
+    IDS_SHININESS_STRENGTH  "Shininess strength: %.2f\n"
+    IDS_SELF_ILLUMINATION   "Self Illumination : %.2f\n\n"
+    IDS_AMBIENT_MAP         "Ambient map detected with strength: %.2f\n"
+    IDS_DIFFUSE_MAP         "Diffuse map detected with strength: %.2f\n"
+    IDS_SPECULAR_MAP        "Specular map detected with strength: %.2f\n"
+    IDS_SHININESS_MAP       "Shininess map detected with strength: %.2f\n"
+    IDS_SHININESS_STR_MAP   "Shininess strength map detected with strength: %.2f\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SELF_ILLUM_MAP      "Self-illumination map detected with strength: %.2f\n"
+    IDS_OPACITY_MAP         "Opacity map detected with strength: %.2f\n"
+    IDS_FILTER_MAP          "Filter color map detected with strength: %.2f\n"
+    IDS_BUMP_MAP            "Bump map detected with strength: %.2f\n"
+    IDS_REFLECTION_MAP      "Reflection map detected with strength: %.2f\n"
+    IDS_REFRACTION_MAP      "Refraction map detected with strength: %.2f\n"
+    IDS_MATRIX_SEPARATOR    "--------------------------------"
+    IDS_OBJECT_SEPARATOR    "======================================================================="
+    IDS_TMBeforeWSM         "TMBeforeWSM:"
+    IDS_TMAfterWSM          "TMAfterWSM:"
+    IDS_ObjectTM            "ObjectTM:"
+    IDS_ParentTM            "ParentTM:"
+    IDS_NodeTM              "NodeTM:"
+    IDS_RelativeTM          "RelativeTM:"
+    IDS_SCALE               "Scale:"
+    IDS_ROTATION            "Rotation:"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TRANSLATION         "Translation:"
+    IDS_NO_GROFF_GEN        "Errors operation completed with errors.  No\nexport GROFF file was generated."
+    IDS_GROFF_GEN           "Export operation completed successfully.  A\nGROFF file was created."
+    IDS_ERR_CONST_EXP_HIER  "Unable to construct export file hierarchy. Aborting export."
+    IDS_FILENAME_EXPORT     "Export.log"
+    IDS_UNKNOWN_CHUNK       "<<<<< UNIDENTIFIED CHUNK DETECTED (ID = %d) >>>>>\n\n"
+    IDS_EQ_SEPARATOR        "======================================================================="
+    IDS_INDENT              "   "
+    IDS_NEWLINE             "\n"
+    IDS_STR_CRLF            "%s\n"
+    IDS_PT3_CRLF            "Point: (%9.5f, %9.5f, %9.5f)\n"
+    IDS_FV3_CRLF            "%9.5f  %9.5f  %9.5f\n"
+    IDS_QUAT                "Pure: %9.5f, Complex: (%9.5f  %9.5f  %9.5f)\n"
+    IDS_ANGLE_AXIS          "Angle: %.1f, Direction: <%9.5f  %9.5f  %9.5f>\n"
+    IDS_MAT_SEPARATOR       "--------------------------------"
+    IDS_DECOMP_TITLE1       "----- Decomposed matrix -----"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCALE_ROTATION      "Scale Rotation:"
+    IDS_SCALE_FACTOR        "Scale factors:"
+    IDS_DETERMINANT_SIGN    "Determinant Sign: %f\n"
+    IDS_DECOMP_TITLE2       "------------------------------\n"
+    IDS_DASH_SEPARATOR      "-----------------------------------------------------------------------"
+    IDS_ABORT_OP            "Abort export operation?"
+    IDS_ROOT_OBJECT         "Object Name: ""%s"", Node Class: ROOT,  Children: %d\n"
+    IDS_CHILD_OBJECT        "Object Name: ""%s"", Node Class: CHILD, Children: %d\n"
+    IDS_LEAF_OBJECT         "Object Name: ""%s"", Node Class: LEAF\n"
+    IDS_OAL_SOURCE          "----- OBJECT PROPERTY BUFFER -----\n%s\n----- END PROPERTY BUFFER -----\n"
+    IDS_WORLD_COORDS        "\nObject coordinates are in the WORLD coordinate system.\n"
+    IDS_LOCAL_COORDS        "\nObject coordinates are in the LOCAL coordinate system.\n"
+    IDS_OBJ_OFF_TITLE1      "\n----- OBJECT OFFSET INFORMATION -----"
+    IDS_PIVOT_OFF           "Pivot offset:"
+    IDS_PIVOT_ROT           "\nPivot rotation:"
+    IDS_NONUNI_SCALE_FMT    "Non-uniform scaling detected in object: ""%s"""
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLACE_TITLE         "\n----- OBJECT PLACEMENT INFORMATION -----"
+    IDS_OBJ_SCALING         "\nObject scaling:"
+    IDS_OBJ_POS             "\nObject world position:"
+    IDS_OBJ_ROT_QUAT        "\nObject orientation quaternion:"
+    IDS_F3_EULER            "\nEuler angles: %.1f  %.1f  %.1f\n\n"
+    IDS_MTL_TITLE           "\n----- PROCESSING MATERIALS -----"
+    IDS_MULTI_MTL           "Multi-material object detected with %d materials.\n"
+    IDS_SINGLE_MTL          "Single-material object detected.\n"
+    IDS_ERR_NO_MTLS         "Object %s has no associated materials."
+    IDS_WORLD_SPACE_TITLE   "\n----- WORLD SPACE VERTICES -----"
+    IDS_WORLD_VERTEX_FMT    "World vertex: %3d: %9.5f  %9.5f  %9.5f\n"
+    IDS_ERR_NO_GEOMETRY     "Object %s has no associated geometry."
+    IDS_VERTEX_TITLE        "\n----- VERTEX DEFINITIONS (%d) -----\n"
+    IDS_VERTEX_DEFS         "Vertex: %3d: %9.5f  %9.5f  %9.5f\n"
+    IDS_FACES_TITLE         "\n----- FACE DEFINITIONS (%d)-----\n"
+    IDS_FACE_DEFS           "Face: %3d, Vertex indices:  %3d  %3d  %3d \n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FACE_NORMAL_TITLE   "\n----- FACE NORMALS (%d) -----\n"
+    IDS_FACE_NORMAL_DEFS    "Face: %3d, Normal: %9.7f  %9.7f  %9.7f\n"
+    IDS_VERTEX_NORMAL_TITLE "\n----- VERTEX NORMALS (%d) -----\n"
+    IDS_VERTEX_NORMAL_DEFS  "Face: %3d, Vertex: %3d, Normal: %9.5f  %9.5f  %9.5f\n"
+    IDS_FACE_MTL_TITLE      "\n----- FACE-MATERIAL INDICES (%d) -----\n"
+    IDS_FACE_MTL_DEFS       "Face: %3d,  Material index: %3d\n"
+    IDS_TVERT_TITLE         "\n----- TEXTURE VERTICES (%d) -----\n"
+    IDS_TVERT_DEFS          "Texture vertex: %3d, %6.3f  %6.3f\n"
+    IDS_TFACE_TITLE         "\n----- TEXTURE FACES (%d) -----\n"
+    IDS_TFACE_DEFS          "Texture face(%3d) => Vertex Index(%3d,%3d,%3d)\n"
+    IDS_QUANTIZE_BM         "Quantizing bitmap: %s"
+    IDS_INFO_MSG            "Info message"
+    IDS_WARNING_MSG         "Warning message"
+    IDS_ERROR_MSG           "Error message"
+    IDS_QUESTION            "Question"
+    IDS_BITMAP_PATH         "Map\\"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LOGFILE_PATH        "Log\\"
+    IDS_PB_CANT_LOAD_DIF_BMP 
+                            "ProcessBitmap: Unable to load diffuse bitmap: %s"
+    IDS_QB_TEX_BMP_NOT_TRUECOLOR 
+                            "QuantizeBitmap: The diffuse bitmap must be a true-color (24 bit) bitmap: %s"
+    IDS_QB_CANT_ALLOC_PXL_BUFFER 
+                            "QuantizeBitmap: Unable to allocate a pixel buffer."
+    IDS_PXL_LOOP_READ_ERR   "ProcessBitmap: Problem encountered reading pixels in quantization loop."
+    IDS_BITMAP_FMT          "Bitmap: %s"
+    IDS_BMP_TITLE           "\nSource bitmap name: %s\n\n"
+    IDS_BMP_WIDTH_FMT       "   Width         %d\n"
+    IDS_BMP_HEIGHT_FMT      "   Height        %d\n"
+    IDS_BMP_FLAGS_FMT       "   Flags         %X\n"
+    IDS_BMP_MAX_RGB_LVL_FMT "   Max RGB Level %d\n\n"
+    IDS_PB_DIF_BMP_NOT_TRUECOLOR 
+                            "ProcessBitmap: Diffuse bitmap type is paletted (8 bit). The diffuse bitmap is required\n to be a true-color (24 bit) bitmap."
+    IDS_PB_DIF_BMP_TRUECOLOR 
+                            "ProcessBitmap: Diffuse bitmap type is true-color (24 bit).\n"
+    IDS_PB_CANT_CREATE_DST_TXT_BMP 
+                            "ProcessBitmap: Unable to create destination texture bitmap: %s"
+    IDS_PB_CANT_ALLOC_PXL_BUFFER 
+                            "ProcessBitmap: Unable to allocate a pixel buffer."
+    IDS_PB_CANT_CFG_NEW_IMG_PAL 
+                            "ProcessBitmap: Unable to configure the new image palette."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PB_CANT_WR_PPXL_TO_BMP 
+                            "ProcessBitmap: Unable to write paletted pixels into the bitmap."
+    IDS_PB_CANT_LOAD_OP_BMP "ProcessBitmap: Unable to load opacity bitmap: %s"
+    IDS_PB_BMP_DIMS_INCOMPAT 
+                            "ProcessBitmap: Unable to combine two bitmaps because their dimensions\ndon't match exactly.  The bitmaps have the following dimensions\n%s: (%d, %d)\n%s: (%d, %d)"
+    IDS_PB_OP_BMP_NOT_PAL   "ProcessBitmap: Opacity bitmap must be paletted (8 bit): %s"
+    IDS_PB_CANT_RD_OP_BMP_PAL 
+                            "ProcessBitmap: Unable to read opacity map palette: %s"
+    IDS_PB_CANT_FIND_XPAR_PXL 
+                            "ProcessBitmap: Unable to locate palette entry value (0,0,0) in opacity bitmap\nfor transparent pixels: %s"
+    IDS_PB_CANT_RD_OP_BMP_SCANLINE 
+                            "ProcessBitmap: Unable to read scanline from opacity bitmap: %s"
+    IDS_PB_CANT_RD_DIF_BMP_SCANLINE 
+                            "ProcessBitmap: Unable to read scanline from diffuse bitmap: %s"
+    IDS_PB_CANT_WR_SCANLINE_2_DIF_BMP 
+                            "ProcessBitmap: Unable to write the scanline to the destination texture bitmap: %s"
+    IDS_PB_PXL_PRCS_STATS   "Post bitmap processing pixel statistics:\n    Total pixels processed: %d\n    Tranparent pixels encountered: %d\n    %.2f%% of this bitmap's pixels are transparent.\n"
+    IDS_PB_CANT_LOAD_BU_BMP "ProcessBitmap: Unable to load bump bitmap: %s"
+    IDS_PB_CANT_UPDATE_DST_BU_NAME 
+                            "ProcessBitmap: Unable to update the bump bitmap file name: %s"
+    IDS_PB_BU_BMP_NOT_PAL   "ProcessBitmap: Bump bitmap must be paletted (8 bit): %s"
+    IDS_PB_CANT_RD_BU_BMP_SCANLINE 
+                            "ProcessBitmap: Unable to read scanline from bump bitmap: %s"
+    IDS_PB_CANT_WR_SCANLINE_2_BU_BMP 
+                            "ProcessBitmap: Unable to write the scanline to the destination bump bitmap: %s"
+    IDS_PB_CANT_WR_BU_BMP_2_DSK 
+                            "ProcessBitmap: Unable to write the bump bitmap to disk: %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PB_UNKNOWN_BMP_TYPE "ProcessBitmap: Encountered an unsupported basic bitmap type: (%d)"
+    IDS_POB_CANT_ALLOC_QUANT 
+                            "ProcessObjectBitmaps: Unable to construct a color-quantizer profile."
+    IDS_POB_CANT_ALLOC_HIST "ProcessObjectBitmaps: Unable to allocate a histogram for this color-quantizer profile."
+    IDS_QUANTIZING          "Quantizing bitmaps..."
+    IDS_POB_MISSING_QUANTIZED_BMP 
+                            "ProcessObjectBitmaps: The exporter has been instructed to skip diffuse bitmap\nquantization.  A check of the target directory has revealed that a diffuse bitmap\nreferenced by this object is not present in the destination directory, which could result\nin improper loading of the GROFF file.\n    Object: %s\n    Bitmap: %s\n    Directory: %s"
+    IDS_POB_MISSING_BU_BMP  "ProcessObjectBitmaps: The exporter has been instructed to skip diffuse bitmap\nquantization.  A check of the target directory has revealed that a bump bitmap\nreferenced by this object is not present in the destination directory, which could result\nin improper loading of the GROFF file.\n    Object: %s\n    Bitmap: %s\n    Directory: %s"
+    IDS_QB_CANT_LOAD_DIF_BMP 
+                            "QuantizeBitmap: Unable to load diffuse bitmap: %s"
+    IDS_SM_MISSING_MTL      "SingleMaterial: An object has been encountered without a material definition.\n"
+    IDS_SINGLE_MTL_DEF      "Object has a single-material definition.\n"
+    IDS_MTL_CLASS_ID        "Material class ID: High part: 0x%X, Low part: 0x%X\n"
+    IDS_SM_MUST_USE_SM      "SingleMaterial: Single materials must be standard materials."
+    IDS_SM_DIF_BMP_ID       "\nSingleMaterial: Diffuse channel bitmap class ID: High part: 0x%X, Low part: 0x%X\n"
+    IDS_SM_DIF_MTL_INVALID_BMP 
+                            "SingleMaterial: Diffuse channel bitmap name is not a valid bitmap.\n"
+    IDS_SM_DIF_BMP_MISSING  "SingleMaterial: A diffuse bitmap is required in a single material definition."
+    IDS_PB_CANT_LOAD_DIF_BMP2 
+                            "ProcessBitmap: Unable to load diffuse bitmap: %s"
+    IDS_BMP_MISSING_NAME    "SingleMaterial: No name associated with bitmap.\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIF_BMP_NAME        "Diffuse channel bitmap name: %s\n"
+    IDS_SM_OP_BMP_ID        "\nSingleMaterial: Opacity channel bitmap class ID: High part: 0x%X, Low part: 0x%X\n"
+    IDS_SM_OP_MTL_INVALID_BMP 
+                            "SingleMaterial: Opacity channel bitmap name is not a valid bitmap.\n"
+    IDS_OP_BMP_NAME         "Opacity channel bitmap name: %s\n"
+    IDS_BU_BMP_NAME         "Bump channel bitmap name: %s\n"
+    IDS_SM_BU_BMP_ID        "\nSingleMaterial: Bump channel bitmap class ID: High part: 0x%X, Low part: 0x%X\n"
+    IDS_SM_BU_MTL_INVALID_BMP 
+                            "SingleMaterial: Bump channel bitmap name is not a valid bitmap.\n"
+    IDS_BU_STRENGTH         "\nBumpiness factor for bumpmap strength: %f\n"
+    IDS_MULTI_MTL_DEF       "Object has a multi-material definition.\n"
+    IDS_MM_MUST_USE_MM      "MultiMaterial: Multiple material definitions may must use multi-material type."
+    IDS_SUB_MTL_COUNT       "\nSub-material count: %d\n\n"
+    IDS_SUB_MTL_NUM         "Sub-material number %d\n"
+    IDS_MM_DIF_BMP_MISSING  "MultiMaterial: Slot %d of the multi-material definition was found to be missing a\ndiffuse bitmap.  A diffuse bitmap is required in each every slot of a multi-material definition."
+    IDS_MM_DIF_MTL_INVALID_BMP 
+                            "MultiMaterial: Slot %d of the multi-material definition contains a diffuse bitmap name\nwhich is not a valid bitmap.\n"
+    IDS_EXP_FILENAME        "\nExport file name: %s\n"
+    IDS_MM_DIF_BMP_ID       "\nMultiMaterial: Slot %d, diffuse channel bitmap class ID: High part: 0x%X, Low part: 0x%X\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MM_OP_BMP_ID        "\nMultiMaterial: Slot %d, opacity channel bitmap class ID: High part: 0x%X, Low part: 0x%X\n"
+    IDS_MM_OP_MTL_INVALID_BMP 
+                            "MultiMaterial: Slot %d of the multi-material definition contains an opacity bitmap name\nwhich is not a valid bitmap.\n"
+    IDS_MM_BU_BMP_ID        "\nMultiMaterial: Slot %d, bump channel bitmap class ID: High part: 0x%X, Low part: 0x%X\n"
+    IDS_MM_BU_MTL_INVALID_BMP 
+                            "MultiMaterial: Slot %d of the multi-material definition contains a bump bitmap name\nwhich is not a valid bitmap.\n"
+    IDS_INVALID_EXP_OBJ_TYPE 
+                            "Unrecognized internal object type detected in exporter."
+    IDS_NO_ENUMERATED_INODES "No enumerated objects exist for exporting."
+    IDS_JP2_ABOUT_BOX       "Jurassic Park II: Trespasser Scene Exporter Plugin\nWritten by: Greg Stull 3D Sudio conscript 1997."
+    IDS_JP2_ABOUT_TITLE     "About..."
+    IDS_GEN_LOGFILES        "Export operation completed successfully.  All logfiles were\nsuccessfully generated for this scene."
+    IDS_QUANTIZE_BMPS       "Export operation completed successfully. Quantization of all\nbitmaps in this scene completed successfully."
+    IDS_QUANT_AND_GEN_LOGS  "Export operation completed successfully.  Quantization of all bitmaps in the\nscene completed successfully and logfiles were successfully generated."
+    IDS_BBOX_TITLE          "\n----- BOUNDING BOX INFORMATION -----"
+    IDS_BBOX_LOWER_COORD    "Bounding box lower coordinate:"
+    IDS_BBOX_UPPER_COORD    "\nBounding box upper coordinate:"
+    IDS_BBOX_CENTER_COORD   "\nBounding box center of extents:"
+    IDS_OBJ_BBOX            "Object bounding box:"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,202 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOG DISCARDABLE  0, 0, 406, 230
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Groff Builder"
+MENU IDR_MAIN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_FILELIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,5,46,394,174
+    LTEXT           "Base Directory:",IDC_STATIC,10,30,49,10,WS_DISABLED
+    CONTROL         "Static",IDC_DIRECTORY,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_SUNKEN | WS_DISABLED | WS_GROUP,65,30,180,10
+    PUSHBUTTON      "&Browse",IDC_BROWSE,255,25,50,14,WS_DISABLED
+    LTEXT           "Groff Name:",IDC_STATIC,10,10,50,8
+    LTEXT           "Static",IDC_NAME,65,10,180,8
+    PUSHBUTTON      "&Groff Name",IDC_GROFFNAME,255,5,50,14
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 202, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,164,7,32,13,WS_GROUP
+    ICON            "IDI_APP",IDB_BITMAP1,3,2,18,22
+    LTEXT           "CompanyName",IDC_COMPANYNAME,30,2,100,9
+    LTEXT           "FileDescription",IDC_FILEDESCRIPTION,30,11,82,9
+    LTEXT           "ProductVersion",IDC_PRODUCTVERSION,114,11,16,9
+    LTEXT           "LegalCopyright",IDC_LEGALCOPYRIGHT,30,20,137,9
+    LTEXT           "LegalTrademarks",IDC_LEGALTRADEMARKS,30,34,136,29
+    CONTROL         "",501,"Static",SS_BLACKRECT,28,31,156,1
+    LTEXT           "FileVersion",IDC_FILEVERSION,130,11,34,9
+END
+
+IDD_GROFFBUILD DIALOG DISCARDABLE  0, 0, 212, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Building Groff"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,155,130,50,14,WS_DISABLED
+    LISTBOX         IDC_INFOLIST,5,20,200,105,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_FILE,5,5,200,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 399
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_GROFFBUILD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open",                       IDM_OPEN
+        MENUITEM "&Close",                      IDM_CLOSE
+        MENUITEM "&Save",                       IDM_SAVE
+        MENUITEM "Save &As",                    IDM_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "",                            ID_FILE_MRU1
+        MENUITEM "",                            ID_FILE_MRU2
+        MENUITEM "",                            ID_FILE_MRU3
+        MENUITEM "",                            ID_FILE_MRU4
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    MENUITEM "!&Generate Groff",            IDM_GENERATE, GRAYED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_GENERIC ACCELERATORS DISCARDABLE 
+BEGIN
+    "X",            IDM_EXIT,               VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+IDI_ICON2               ICON    DISCARDABLE     "icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP2             BITMAP  DISCARDABLE     "bitmap2.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

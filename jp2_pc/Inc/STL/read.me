@@ -1,0 +1,93 @@
+NOTICE:
+
+(1) STL is the container, iterator, algorithm part of the C++ standard 
+    library, it is not the complete standard library. (I/O streams, strings,
+    etc. are not included in this package.)
+
+(2) Minor changes to the STL is expected during the completion of the standard.
+
+(3) The allocator files (defalloc.h, faralloc.h, hugalloc.h, lngalloc.h and
+    neralloc.h) in the package are sample files. They are not designed for
+    any specific machine and compiler system. For example, the assumption that
+    type size_t and type ptrdiff_t used in the default allocator are of the 
+    same size, it is not true with Borland compiler. Each compiler vendor 
+    has to supply their own allocation files to support the machine models 
+    they deal with.
+
+
+This release (dated February 7, 1995) is a bug fix release with noticeable
+changes in associative container implementation. A change note is attached at
+the end of this file.
+
+The postscript files of the document doc.ps and docbar.ps (with change bars
+from the previous version) should print on both US letter and A4 page sizes.
+
+The code difference from the previous version (December 6, 1994) is in
+file files.dif.
+
+-------------------------------------------------------------------------
+--- by D. Musser (musser@cs.rpi.edu)
+
+     Changes to the HP implementation of STL associative containers
+
+The purpose of these changes is to improve the performance of certain
+operations on STL associative containers.  Empirical tests of the
+performance have been made in all cases and they mostly confirm that
+times are improved, although in one case (the find operation, see
+item 3) the tests are ambiguous and more testing should be done.  The
+revisions to the internal class rb_tree affect the corresponding
+operations in all of the user-level associative classes (set,
+multiset, map, multimap).  The files affected are tree.h, set.h,
+multiset.h, and projectn.h.
+
+1. The copy constructor and operator= for class rb_tree are revised to
+use a private function __copy that does a structural copy rather than
+creating the new tree using insertions.  This substantially speeds up copying
+and assignment since no comparisons or tree balancing need to be done.
+
+2. The erase operation for rb_tree now checks for the case that the
+entire tree is being erased, and in that case does the erasure by a
+simple pre-order traversal of the tree.  This speeds up erasure since
+there is no need for any of the tree balancing that happens when nodes
+are erased one by one.
+
+3. The search operations, find, lower_bound, and upper_bound, in
+rb_tree have been revised. The find operation searches all the way
+down to a leaf node, using a single comparison at each level of the
+tree.  Formerly it used two comparisons on each level at which the
+first comparison was false.  The old algorithm was simple and would
+detect a match with fewer comparisons in some cases, because the match
+was detected at an interior node, but the average number of
+comparisons is lower with the revised algorithm.  However the new
+algorithm has to climb back up in the tree and the overhead of doing
+so offsets some of the savings from doing fewer comparisons.  The
+revised algorithm is now basically the same as is used (and was
+already used) in lower_bound and upper_bound.  The algorithms for
+lower_bound and upper_bound have also been revised slightly, to
+eliminate one extra comparison they were doing.
+
+4. The algorithm for insert(const value_type&) is similarly revised to
+search all the way down to a leaf node using a single comparison at
+each level; the old algorithm was similar to the old algorithm for
+find.  The new algorithm is similar to that of upper_bound.  Basing it
+on upper_bound rather than lower_bound results in a stability property
+when associative containers are used to sort (by starting with an
+empty container, inserting values, then traversing through the
+container with an iterator): items that compare equal keep the
+relative order in which they were inserted.
+
+5. The set and multiset implementations are revised to eliminate the need
+to use singleton<const Key> as their value_type.  Using singleton worked
+correctly but had the performance drawback of an extra call to the
+copy constructor for type Key when creating a singleton<const Key>
+value.  In the new version the value type is just Key, and changes to
+Key via *i = ...  are prevented by defining both iterator and
+const_iterator as the const_iterator type for the underlying red-black
+tree class.  This requires a few type coercions, but actually fewer
+than when singleton was used.  Thanks to Fabrice Clerc for pointing
+out the copy-constructor problem with singleton.  (Mr. Clerc also
+points out that there is a related problem with map and multimap
+caused by using pair<const Key, T> as value_type, but so far I don't
+see a way of avoiding the problem without changing the interface to
+include an insert operation with separate Key and Value arguments.)
+

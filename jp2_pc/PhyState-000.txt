@@ -1,0 +1,10 @@
+Last time=0
+OurKappa=0 OurDelta=0 OurMu=0
+anne_this_terrain_bit=0 anne_last_terrain_bit=0
+
+
+
+ControlArm: PosUrge=0 OrientUrge=0 Curl=0 UnderControl=0
+Pelvis_Set_Crouch=-100 Pelvis_Jump=0 0 0 
+
+

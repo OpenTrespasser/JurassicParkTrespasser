@@ -1,0 +1,87 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Loader - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP2D.tmp" with contents
+[
+/nologo /G5 /MD /W3 /GR /Zi /O2 /I "D:\jp2_pc\inc\directx" /I "D:\jp2_pc\source" /I "D:\jp2_pc\source\gblinc" /I "D:\jp2_pc\inc" /I "D:\jp2_pc\inc\stl" /D BUILDVER_MODE=MODE_OPTIMISE /D "_WINDOWS" /D "VC_EXTRALEAN" /D "NDEBUG" /D "WIN32" /D BUILDVER_MODE=MODE_RELEASE /Fo".\Build\Release\Loader/" /Fd".\Build\Release\Loader/" /FD /c 
+"D:\jp2_pc\Source\Lib\Loader\AsyncLoader.cpp"
+"D:\jp2_pc\Source\Lib\Loader\DataDaemon.cpp"
+"D:\jp2_pc\Source\Lib\Groff\EasyString.cpp"
+"D:\jp2_pc\Source\Lib\Groff\FileIO.cpp"
+"D:\jp2_pc\Source\Lib\Groff\Groff.cpp"
+"D:\jp2_pc\Source\Lib\Groff\GroffIO.cpp"
+"D:\jp2_pc\Source\Lib\Groff\GroffLoader.cpp"
+"D:\jp2_pc\Source\Lib\Loader\ImageLoader.cpp"
+"D:\jp2_pc\Source\Lib\Loader\Loader.cpp"
+"D:\jp2_pc\Source\Lib\Loader\LoadTexture.cpp"
+"D:\jp2_pc\Source\Lib\Groff\ObjectHandle.cpp"
+"D:\jp2_pc\Source\Lib\Loader\PlatonicInstance.cpp"
+"D:\jp2_pc\Source\Lib\Loader\PVA.cpp"
+"D:\jp2_pc\Source\Lib\Loader\SaveFile.cpp"
+"D:\jp2_pc\Source\Lib\Sys\SmartBuffer.cpp"
+"D:\jp2_pc\Source\Lib\Groff\SymbolTable.cpp"
+"D:\jp2_pc\Source\Lib\Sys\Symtab.cpp"
+"D:\jp2_pc\Source\Lib\Sys\SysLog.cpp"
+"D:\jp2_pc\Source\Lib\Loader\TextureManager.cpp"
+"D:\jp2_pc\Source\Lib\Loader\TexturePackSurface.cpp"
+"D:\jp2_pc\Source\Lib\Groff\ValueTable.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSP2D.tmp" 
+Creating temporary file "C:\TEMP\RSP2E.tmp" with contents
+[
+/nologo /out:".\Build\Release\Loader\Loader.lib" 
+.\Build\Release\Loader\AsyncLoader.obj
+.\Build\Release\Loader\DataDaemon.obj
+.\Build\Release\Loader\EasyString.obj
+.\Build\Release\Loader\FileIO.obj
+.\Build\Release\Loader\Groff.obj
+.\Build\Release\Loader\GroffIO.obj
+.\Build\Release\Loader\GroffLoader.obj
+.\Build\Release\Loader\ImageLoader.obj
+.\Build\Release\Loader\Loader.obj
+.\Build\Release\Loader\LoadTexture.obj
+.\Build\Release\Loader\ObjectHandle.obj
+.\Build\Release\Loader\PlatonicInstance.obj
+.\Build\Release\Loader\PVA.obj
+.\Build\Release\Loader\SaveFile.obj
+.\Build\Release\Loader\SmartBuffer.obj
+.\Build\Release\Loader\SymbolTable.obj
+.\Build\Release\Loader\Symtab.obj
+.\Build\Release\Loader\SysLog.obj
+.\Build\Release\Loader\TextureManager.obj
+.\Build\Release\Loader\TexturePackSurface.obj
+.\Build\Release\Loader\ValueTable.obj
+]
+Creating command line "link.exe -lib @C:\TEMP\RSP2E.tmp"
+<h3>Output Window</h3>
+Compiling...
+AsyncLoader.cpp
+DataDaemon.cpp
+EasyString.cpp
+FileIO.cpp
+Groff.cpp
+GroffIO.cpp
+GroffLoader.cpp
+ImageLoader.cpp
+Loader.cpp
+LoadTexture.cpp
+ObjectHandle.cpp
+PlatonicInstance.cpp
+PVA.cpp
+SaveFile.cpp
+SmartBuffer.cpp
+SymbolTable.cpp
+Symtab.cpp
+SysLog.cpp
+TextureManager.cpp
+TexturePackSurface.cpp
+Generating Code...
+Compiling...
+ValueTable.cpp
+Generating Code...
+Creating library...

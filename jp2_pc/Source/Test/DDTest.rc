@@ -1,0 +1,146 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+APPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&About..\tF1",                MENU_ABOUT
+        MENUITEM "Show &Stats\tTab",            MENU_STATS
+        MENUITEM "Pause when &Inactive",        MENU_PAUSEONINACTIVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Pause\tPause",               MENU_PAUSE
+        MENUITEM "E&xit\tESC",                  MENU_EXIT
+    END
+    POPUP "&Modes"
+    BEGIN
+        MENUITEM "&Window\tAlt+Enter",          MENU_WINDOWED
+        MENUITEM SEPARATOR
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+APPACCEL ACCELERATORS DISCARDABLE 
+BEGIN
+    "A",            MENU_ANTIALIAS,         VIRTKEY, CONTROL, NOINVERT
+    "D",            MENU_DITHERING,         VIRTKEY, CONTROL, NOINVERT
+    "F",            MENU_FOG,               VIRTKEY, CONTROL, NOINVERT
+    "L",            MENU_LINEAR_FILTER,     VIRTKEY, CONTROL, NOINVERT
+    "M",            MENU_MONO_LIGHT,        VIRTKEY, CONTROL, NOINVERT
+    "O",            MENU_POINT_FILTER,      VIRTKEY, CONTROL, NOINVERT
+    "P",            MENU_POINT,             VIRTKEY, CONTROL, NOINVERT
+    "R",            MENU_RGB_LIGHT,         VIRTKEY, CONTROL, NOINVERT
+    "S",            MENU_SOLID,             VIRTKEY, CONTROL, NOINVERT
+    VK_ESCAPE,      MENU_EXIT,              VIRTKEY, NOINVERT
+    VK_F1,          MENU_ABOUT,             VIRTKEY, NOINVERT
+    VK_F10,         MENU_PERSPCORRECT,      VIRTKEY, NOINVERT
+    VK_F2,          MENU_FLAT,              VIRTKEY, NOINVERT
+    VK_F3,          MENU_GOURAUD,           VIRTKEY, NOINVERT
+    VK_F4,          MENU_PHONG,             VIRTKEY, NOINVERT
+    VK_F5,          MENU_ZBUFFER,           VIRTKEY, NOINVERT
+    VK_F6,          MENU_CLEARS,            VIRTKEY, NOINVERT
+    VK_F7,          MENU_SPECULAR,          VIRTKEY, NOINVERT
+    VK_F8,          MENU_TEXTURE_TOGGLE,    VIRTKEY, NOINVERT
+    VK_F9,          MENU_TEXTURE_SWAP,      VIRTKEY, NOINVERT
+    VK_NEXT,        MENU_NEXT_MODE,         VIRTKEY, ALT, NOINVERT
+    VK_PAUSE,       MENU_PAUSE,             VIRTKEY, NOINVERT
+    VK_PRIOR,       MENU_PREVIOUS_MODE,     VIRTKEY, ALT, NOINVERT
+    VK_RETURN,      MENU_GO,                VIRTKEY, NOINVERT
+    VK_RETURN,      MENU_FULLSCREEN,        VIRTKEY, ALT, NOINVERT
+    VK_SPACE,       MENU_STEP,              VIRTKEY, NOINVERT
+    VK_TAB,         MENU_STATS,             VIRTKEY, NOINVERT
+    "W",            MENU_WIREFRAME,         VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+APPABOUT DIALOG DISCARDABLE  0, 0, 188, 96
+STYLE DS_MODALFRAME | WS_POPUP
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,76,75,35,14
+    CTEXT           "Direct3D Example",IDC_STATIC,61,5,65,15
+    CTEXT           "Copyright (c) 1995 Microsoft Corp.",IDC_STATIC,21,55,
+                    145,12
+    ICON            "AppIcon",IDC_STATIC,86,25,16,16
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resources.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

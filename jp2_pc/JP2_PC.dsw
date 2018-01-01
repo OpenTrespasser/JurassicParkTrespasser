@@ -1,0 +1,808 @@
+Microsoft Developer Studio Workspace File, Format Version 5.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "AI"=.\AI.DSP - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "AI Test"=.\JP2_PC.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name WinShell
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Audio"=.\Audio.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Bugs"=.\Bugs.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CollisionEditor"=.\CollisionEditor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "EntityDBase"=.\EntityDBase.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "File"=.\File.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "File Test"=".\File Test.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name File
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "GUIApp"=.\GUIApp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Game"=.\Game.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "GeomDBase"=.\GeomDBase.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "GroffBuild"=.\GroffBuild.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name File
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name WinShell
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "GroffExp"=.\GroffExp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Loader"=.\Loader.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Math"=.\Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MathTest"=.\MathTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name WinShell
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Physics"=.\Physics.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PhysicsTest"=.\PhysicsTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name WinShell
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MathTest
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "PipeLineTest"=.\PipeLineTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name WinShell
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ProcessorDetect"=.\ProcessorDetect.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "QuantizerTool"=.\QuantizerTool.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Render3D"=.\Render3D.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ScreenRenderDWI"=.\ScreenRenderDWI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Std"=.\Std.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "System"=.\System.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "View"=.\View.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "WaveTest"=.\WaveTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name WinShell
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "WinShell"=.\WinShell.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "trespass"=.\trespass.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/JP2_PC", WUBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name AI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Audio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GeomDBase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Loader
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Physics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name View
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Render3D
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ScreenRenderDWI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Std
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name System
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EntityDBase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

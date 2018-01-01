@@ -1,0 +1,5 @@
+# Files to ignore when considering what GIT should commit.
+
+# OSX Hidden Files
+.DS_Store
+._*
