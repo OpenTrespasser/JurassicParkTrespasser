@@ -11,10 +11,14 @@ A git-based fork of the Jurassic Park: Trespasser source code.
 <p align="center">Link: https://discord.gg/5EngSvu</p>
 
 ## Solution Overview
-![](https://github.com/GamerDude27/JurassicParkTrespasser/blob/master/images/SolutionOverview.png)
+<p align="center">
+  <img src="https://github.com/GamerDude27/JurassicParkTrespasser/blob/master/images/SolutionOverview.png">
+</p>
 
 ## Production Pipeline
-![](https://github.com/GamerDude27/JurassicParkTrespasser/blob/master/images/ProductionPipeline.png)
+<p align="center">
+  <img src="https://github.com/GamerDude27/JurassicParkTrespasser/blob/master/images/ProductionPipeline.png">
+</p>
 
 #
 
