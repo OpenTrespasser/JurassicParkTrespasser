@@ -30,7 +30,7 @@
 
 CSectionDB::~CSectionDB()
 {
-	vector<CSection*, allocator<CSection*> >::iterator i;
+	std::vector<CSection*, std::allocator<CSection*> >::iterator i;
 
 	for (i = db.begin(); i != db.end(); ++i)
 	{
@@ -54,7 +54,7 @@ void* CSectionDB::get_data(CFileImage* file_image, const SMemRef& memref, bool r
 		return 0;
 	
 	// Get section that memref refers to.
-	vector<CSection*, allocator<CSection*> >::iterator i;
+	std::vector<CSection*, std::allocator<CSection*> >::iterator i;
 	for (i = db.begin(); i != db.end(); ++i)
 		if (**i == memref)
 			break;
@@ -82,7 +82,7 @@ unsigned int CSectionDB::write_out(HANDLE hfile)
 
 	TRelAddr FR_start = SetFilePointer(hfile, 0, NULL, FILE_CURRENT);
 	
-	vector<CSection*, allocator<CSection*> >::iterator i;
+	std::vector<CSection*, std::allocator<CSection*> >::iterator i;
 	
 	// Write out sections first, since the sections fill in (partly) their own headers.
 	// Seek to raw section start.
@@ -123,9 +123,9 @@ unsigned int CSectionDB::write_out(HANDLE hfile)
 #ifdef _DEBUG
 void CSectionDB::dump()
 {
-	cout << "Section Database:\n";
-	cout << "<Sections>(list):\n";
-	vector<CSection*, allocator<CSection*> >::iterator i;
+	std::cout << "Section Database:\n";
+	std::cout << "<Sections>(list):\n";
+	std::vector<CSection*, std::allocator<CSection*> >::iterator i;
 	for (i = db.begin(); i != db.end(); ++i)
 	{
 		(*i)->dump();
@@ -141,7 +141,7 @@ void CSectionDB::dump()
 CSection::~CSection()
 {
 	// Delete section areas.
-	vector<CArea*, allocator<CArea*> >::iterator i;
+	std::vector<CArea*, std::allocator<CArea*> >::iterator i;
 	for (i = areas.begin(); i != areas.end(); ++i)
 	{
 		delete (*i);
@@ -244,9 +244,9 @@ unsigned int CSection::write_out(HANDLE hfile, TSectionHandle handle)
 	section_info.header.RelocationCount = 0;
 	
 	// Relocation list.
-	vector<SRelocationEntry, allocator<SRelocationEntry> > relos;
+	std::vector<SRelocationEntry, std::allocator<SRelocationEntry> > relos;
 
-	vector<CArea*, allocator<CArea*> >::iterator i;
+	std::vector<CArea*, std::allocator<CArea*> >::iterator i;
 
 	// First we fill in offset in section where areas will begin and
 	//  we fix up symbol since we now know the memref.
@@ -276,7 +276,7 @@ unsigned int CSection::write_out(HANDLE hfile, TSectionHandle handle)
 		section_info.header.SectionSize += bytes+align;
 		
 		// Build section area relocations list.
-		vector<CArea::SAreaRelocation, allocator<CArea::SAreaRelocation> >::iterator j;
+		std::vector<CArea::SAreaRelocation, std::allocator<CArea::SAreaRelocation> >::iterator j;
 		for (j = (*i)->AB_relocations.begin(); j != (*i)->AB_relocations.end(); ++j)
 		{
 			SRelocationEntry relo_entry;
@@ -328,7 +328,7 @@ unsigned int CSection::write_out(HANDLE hfile, TSectionHandle handle)
 	section_info.header.RelocationOffset = section_info.header.SectionSize;
 
 	// Write out relocations.
-	vector<SRelocationEntry, allocator<SRelocationEntry> >::iterator j;
+	std::vector<SRelocationEntry, std::allocator<SRelocationEntry> >::iterator j;
 	for (j = relos.begin(); j != relos.end(); ++j)
 	{
 		WriteFile(hfile, &(*j), sizeof(SRelocationEntry), &lbytes, NULL);
@@ -345,10 +345,10 @@ unsigned int CSection::write_out(HANDLE hfile, TSectionHandle handle)
 #ifdef _DEBUG
 void CSection::dump()
 {
-	cout << "Section @" << (void*)this << ":\n";
+	std::cout << "Section @" << (void*)this << ":\n";
 	section_info.dump();
-	cout << "<Areas>(list):\n";
-	vector<CArea*, allocator<CArea*> >::iterator i;
+	std::cout << "<Areas>(list):\n";
+	std::vector<CArea*, std::allocator<CArea*> >::iterator i;
 	for (i = areas.begin(); i != areas.end(); ++i)
 		(*i)->dump();
 }
@@ -379,22 +379,22 @@ bool CSection::SSectionInfo::operator==(const SMemRef& memref)
 #ifdef _DEBUG
 void CSection::SSectionInfo::dump()
 {
-	cout << "Section Info:\n";
+	std::cout << "Section Info:\n";
 	// Dump header.
-	cout << " <SectionHandle>" << header.SectionHandle << '\n';
-	cout << " <Flags>0x";
-	cout.setf(ios::hex, ios::basefield);
-	cout << header.Flags << '\n';
-	cout.setf(ios::dec, ios::basefield);
-	cout << " <SectionOffset>" << header.SectionOffset << '\n';
-	cout << " <SectionSize>" << header.SectionSize << '\n';
-	cout << " <RelocationOffset>" << header.RelocationOffset << '\n';
-	cout << " <RelocationCount>" << header.RelocationCount<< '\n';
+	std::cout << " <SectionHandle>" << header.SectionHandle << '\n';
+	std::cout << " <Flags>0x";
+	std::cout.setf(std::ios::hex, std::ios::basefield);
+	std::cout << header.Flags << '\n';
+	std::cout.setf(std::ios::dec, std::ios::basefield);
+	std::cout << " <SectionOffset>" << header.SectionOffset << '\n';
+	std::cout << " <SectionSize>" << header.SectionSize << '\n';
+	std::cout << " <RelocationOffset>" << header.RelocationOffset << '\n';
+	std::cout << " <RelocationCount>" << header.RelocationCount<< '\n';
 
 	// Dump rest.
-	cout << " <image addr>@" << (void*)image_addr;
-	cout << " <relocations addr>@" << relocations;
-	cout << " <resolve to symbols>" << resolve_to_symbols << '\n';
+	std::cout << " <image addr>@" << (void*)image_addr;
+	std::cout << " <relocations addr>@" << relocations;
+	std::cout << " <resolve to symbols>" << resolve_to_symbols << '\n';
 }
 #endif
 
@@ -433,16 +433,16 @@ int CArea::write_reference(TSymbol* sym)
 #ifdef _DEBUG
 void CArea::dump()
 {
-	cout << "Area @" << (void*)this << ":\n";
+	std::cout << "Area @" << (void*)this << ":\n";
 	memory.dump();
-	cout << "<SR offset>" << SR_offset << '\n';
-	cout << "<Symbol> ";
+	std::cout << "<SR offset>" << SR_offset << '\n';
+	std::cout << "<Symbol> ";
 	if (symbol)
 		symbol->dump();
 	else
-		cout << "0\n";
-	cout << "<Area relocations>(list):\n";
-	vector<SAreaRelocation, allocator<SAreaRelocation> >::iterator i;
+		std::cout << "0\n";
+	std::cout << "<Area relocations>(list):\n";
+	std::vector<SAreaRelocation, std::allocator<SAreaRelocation> >::iterator i;
 	for (i = AB_relocations.begin(); i != AB_relocations.end(); ++i)
 		(*i).dump();
 }
@@ -455,14 +455,14 @@ void CArea::dump()
 #ifdef _DEBUG
 void CArea::SAreaRelocation::dump()
 {
-	cout << "Area Relocation:";
-	cout << " <AB fixup offset>" << AB_fixup;
-	cout << " <Area of fixup>@" << (void*)area;
-	cout << " <Symbol of fixup> ";
+	std::cout << "Area Relocation:";
+	std::cout << " <AB fixup offset>" << AB_fixup;
+	std::cout << " <Area of fixup>@" << (void*)area;
+	std::cout << " <Symbol of fixup> ";
 	if (symbol)
 		symbol->dump();
 	else
-		cout << "0\n";
+		std::cout << "0\n";
 }
 #endif
 
@@ -506,9 +506,9 @@ void CArea::SAreaMemory::write(const void* pbuf, int size)
 #ifdef _DEBUG
 void CArea::SAreaMemory::dump()
 {
-	cout << "Area Memory:";
-	cout << " <start address>@" << (void*)pstart;
-	cout << " <free offset>" << off_free;
-	cout << " <end offset>" << off_end;
+	std::cout << "Area Memory:";
+	std::cout << " <start address>@" << (void*)pstart;
+	std::cout << " <free offset>" << off_free;
+	std::cout << " <end offset>" << off_end;
 }
 #endif

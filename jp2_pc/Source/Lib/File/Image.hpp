@@ -88,7 +88,7 @@ private:
 
 	unsigned int write_out(HANDLE hfile);					// Write out symbol table to file.
 
-	vector<SSymbol*, allocator<SSymbol*> > table;			// The table itself is just a list of SSymbols.
+	std::vector<SSymbol*, std::allocator<SSymbol*> > table;	// The table itself is just a list of SSymbols.
 #ifdef _DEBUG
 	void dump();
 #endif

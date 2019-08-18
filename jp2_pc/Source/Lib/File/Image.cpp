@@ -181,22 +181,22 @@ void CFileImage::write_out()
 #ifdef _DEBUG
 void CFileImage::dump()
 {
-	cout << "CFileImage: \n";
-	cout << " <writing>" << writing << '\n';
-	cout << " <hfile>" << hfile << '\n';
-	cout << " <Magic Number>" << header.MagicNumber << '\n';
-	cout << " <Version Number>" << header.VersionNumber << '\n';
-	cout << " <Size of File>" << header.SizeOfFile << '\n';
-	cout << " <Section Table Offset>" << header.SectTabOffset << '\n';
-	cout << " <Section Count>" << header.SectionCount << '\n';
-	cout << " <Symbol Table Offset>" << header.SymTabOffset << '\n';
-	cout << " <Symbol Table Entry Count>" << header.SymTabEntryCount << '\n';
-	cout << " <Symbol Table Size>" << header.SymTabSize << '\n';
-	cout << " <Time Stamp>" << header.TimeStamp << '\n';
-	cout << " <Flags>0x";
-	cout.setf(ios::hex, ios::basefield);
-	cout << header.Flags << '\n';
-	cout.setf(ios::dec, ios::basefield);
+	std::cout << "CFileImage: \n";
+	std::cout << " <writing>" << writing << '\n';
+	std::cout << " <hfile>" << hfile << '\n';
+	std::cout << " <Magic Number>" << header.MagicNumber << '\n';
+	std::cout << " <Version Number>" << header.VersionNumber << '\n';
+	std::cout << " <Size of File>" << header.SizeOfFile << '\n';
+	std::cout << " <Section Table Offset>" << header.SectTabOffset << '\n';
+	std::cout << " <Section Count>" << header.SectionCount << '\n';
+	std::cout << " <Symbol Table Offset>" << header.SymTabOffset << '\n';
+	std::cout << " <Symbol Table Entry Count>" << header.SymTabEntryCount << '\n';
+	std::cout << " <Symbol Table Size>" << header.SymTabSize << '\n';
+	std::cout << " <Time Stamp>" << header.TimeStamp << '\n';
+	std::cout << " <Flags>0x";
+	std::cout.setf(std::ios::hex, std::ios::basefield);
+	std::cout << header.Flags << '\n';
+	std::cout.setf(std::ios::dec, std::ios::basefield);
 	
 	symbol_table->dump();
 	section_db->dump();
@@ -244,7 +244,7 @@ TSymbol* CSymbolTable::create_symbol(const char* name)
 
 TSymbol* CSymbolTable::get_symbol(const TSymbolHandle symbol_handle)
 {
-	vector<SSymbol*, allocator<SSymbol*> >::iterator i;
+	std::vector<SSymbol*, std::allocator<SSymbol*> >::iterator i;
 	for (i = table.begin(); i != table.end(); ++i)
 		if ((*i)->handle == symbol_handle)
 			break;
@@ -257,7 +257,7 @@ TSymbol* CSymbolTable::get_symbol(const TSymbolHandle symbol_handle)
 
 TSymbol* CSymbolTable::get_symbol(const char* symbol_name)
 {
-	vector<SSymbol*, allocator<SSymbol*> >::iterator i;
+	std::vector<SSymbol*, std::allocator<SSymbol*> >::iterator i;
 	for (i = table.begin(); i != table.end(); ++i)
 		if (!strcmp((*i)->name, symbol_name))
 			break;
@@ -274,7 +274,7 @@ unsigned int CSymbolTable::write_out(HANDLE hfile)
 	unsigned int size = 0;
 	SSymbolEntry entry;
 
-	vector<SSymbol*, allocator<SSymbol*> >::iterator i;
+	std::vector<SSymbol*, std::allocator<SSymbol*> >::iterator i;
 
 	for (i = table.begin(); i != table.end(); ++i)
 	{
@@ -299,9 +299,9 @@ unsigned int CSymbolTable::write_out(HANDLE hfile)
 #ifdef _DEBUG
 void CSymbolTable::dump()
 {
-	cout << "Symbol Table:\n";
+	std::cout << "Symbol Table:\n";
 
-	vector<SSymbol*, allocator<SSymbol*> >::iterator i;
+	std::vector<SSymbol*, std::allocator<SSymbol*> >::iterator i;
 	for (i = table.begin(); i != table.end(); ++i)
 	{
 		(*i)->dump();
@@ -390,9 +390,9 @@ TSymbol& CSymbolTable::SSymbol::operator=(const TSymbol& symbol)
 #ifdef _DEBUG
 void CSymbolTable::SSymbol::dump()
 {
-	cout << "Symbol: " << "<handle>" << handle;
-	cout << " <name>" << name;
-	cout << " <memref>(" << memref.handle << ", " << memref.offset << ")";
-	cout << " <word>:" << word << '\n';
+	std::cout << "Symbol: " << "<handle>" << handle;
+	std::cout << " <name>" << name;
+	std::cout << " <memref>(" << memref.handle << ", " << memref.offset << ")";
+	std::cout << " <word>:" << word << '\n';
 }
 #endif

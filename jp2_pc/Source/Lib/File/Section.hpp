@@ -48,6 +48,7 @@ class CSectionDB
 //  CSection types to file images.
 //**************************************
 {
+public:
 	friend CFileImage;
 
 	// Create a new section database.
@@ -68,7 +69,7 @@ class CSectionDB
 	unsigned int number_of_sections();
 
 	// The database consists of section info structures.
-	vector<CSection*, allocator<CSection*> > db;
+	std::vector<CSection*, std::allocator<CSection*> > db;
 
 #ifdef _DEBUG
 	void dump();
@@ -116,8 +117,8 @@ private:
 	// Is this memref in this section?
 	bool operator==(const SMemRef& memref);
 
-	SSectionInfo section_info;					// Data in memory.
-	vector<CArea*, allocator<CArea*> > areas;	// All areas in this section.
+	SSectionInfo section_info;							// Data in memory.
+	std::vector<CArea*, std::allocator<CArea*> > areas;	// All areas in this section.
 
 	// Write out section data.
 	unsigned int write_out(HANDLE hfile, TSectionHandle handle);
@@ -201,7 +202,7 @@ private:
 	TSymbol* symbol;		// Symbol name for this area, this is optional since all areas aren't named.
 
 	// List of all the relocations for this area.
-	vector<SAreaRelocation, allocator<SAreaRelocation> > AB_relocations;
+	std::vector<SAreaRelocation, std::allocator<SAreaRelocation> > AB_relocations;
 #ifdef _DEBUG
 	void dump();
 #endif
