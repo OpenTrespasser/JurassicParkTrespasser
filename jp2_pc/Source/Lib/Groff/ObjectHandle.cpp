@@ -59,7 +59,7 @@ uint			 	 CHandleManager::uClassCount = 0;
 uint				 CHandleManager::uHandleBase = 0;
 
 // Setup the STL list for tracking the object handle records for each registered handle class.
-deque<CObjectHandle> CHandleManager::aobjhObjectHandle;
+std::deque<CObjectHandle> CHandleManager::aobjhObjectHandle;
 
 
 //******************************************************************************************
@@ -238,18 +238,18 @@ CHandle& CHandle::operator-=
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		os_stream, 
+	std::ostream&		os_stream, 
 	const CHandle&	h_handle
 )
 {
 	// Display the string.
-	os_stream.setf(ios::uppercase|ios::hex);
+	os_stream.setf(std::ios::uppercase|std::ios::hex);
 
 #if 1
-	os_stream << "h<" << h_handle.uHandleID << "#" << dec
-		<< h_handle.uReferenceCount << ">" << flush;
+	os_stream << "h<" << h_handle.uHandleID << "#" << std::dec
+		<< h_handle.uReferenceCount << ">" << std::flush;
 #else
 	cout << "CHandle(0x" << h_handle.uHandleID << ", " << dec << flush;
 	cout << h_handle.uReferenceCount << ")" << flush;
@@ -262,17 +262,17 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream& is_stream,
+	std::istream& is_stream,
 	CHandle& h_handle
 )
 {
 	// Display the string.
-	cout << "CHandle...\nHandle: " << flush;
-	cin >> hex >> h_handle.uHandleID;
-	cout << "Ref Count: " << flush;
-	cin >> dec >> h_handle.uReferenceCount;
+	std::cout << "CHandle...\nHandle: " << std::flush;
+	std::cin >> std::hex >> h_handle.uHandleID;
+	std::cout << "Ref Count: " << std::flush;
+	std::cin >> std::dec >> h_handle.uReferenceCount;
 
 	return is_stream;
 }
@@ -409,26 +409,26 @@ CObjectHandle& CObjectHandle::operator=
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			 os_stream, 
+	std::ostream&			 os_stream, 
 	const CObjectHandle& objh_handle
 )
 {
 	// Display the string.
-	os_stream.setf(ios::uppercase|ios::hex);
-	os_stream << "CObjectHandle(\"" << objh_handle.estrClassName << "\", Base:" << hex
+	os_stream.setf(std::ios::uppercase|std::ios::hex);
+	os_stream << "CObjectHandle(\"" << objh_handle.estrClassName << "\", Base:" << std::hex
 		<< objh_handle.uHandleBase << ", Next:" << objh_handle.uNextHandle << ", #" 
-		<< dec << objh_handle.uHandleCount;
+		<< std::dec << objh_handle.uHandleCount;
 
 	// Is this handle in use?
 	if (objh_handle.bInUse)
 	{
-		cout << ", Busy)";
+		std::cout << ", Busy)";
 	}
 	else
 	{
-		cout << ", Free)";
+		std::cout << ", Free)";
 	}
 
 	// Return the stream.
@@ -438,24 +438,24 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&		is_stream,
+	std::istream&		is_stream,
 	CObjectHandle&	objh_handle
 )
 {
 	// Display the string.
-	cout << "CObjectHandle...\n" << flush;
-	cin >> objh_handle.estrClassName;
+	std::cout << "CObjectHandle...\n" << std::flush;
+	std::cin >> objh_handle.estrClassName;
 
-	cout << "Base: 0x" << flush;
-	cin >> hex >> objh_handle.uHandleBase;
+	std::cout << "Base: 0x" << std::flush;
+	std::cin >> std::hex >> objh_handle.uHandleBase;
 
-	cout << "Next: 0x" << flush;
-	cin >> objh_handle.uNextHandle;
+	std::cout << "Next: 0x" << std::flush;
+	std::cin >> objh_handle.uNextHandle;
 
-	cout << "Count: " << flush;
-	cin >> dec >> objh_handle.uHandleCount;
+	std::cout << "Count: " << std::flush;
+	std::cin >> std::dec >> objh_handle.uHandleCount;
 
 	return is_stream;
 }
@@ -620,15 +620,15 @@ uint CObjectHandle::uRead
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			  os_stream, 
+	std::ostream&			  os_stream, 
 	const CHandleManager& hmgr_handle
 )
 {
 	// Display the string.
-	return os_stream << "CHandleManager(Count: " << hmgr_handle.uClassCount << hex << ", Base: 0x" 
-		<< hmgr_handle.uHandleBase << ")" << dec;
+	return os_stream << "CHandleManager(Count: " << hmgr_handle.uClassCount << std::hex << ", Base: 0x" 
+		<< hmgr_handle.uHandleBase << ")" << std::dec;
 }
 
 
@@ -702,7 +702,7 @@ bool CHandleManager::bDelete
 	const CEasyString& estr_classname
 )
 {
-	deque<CObjectHandle>::iterator i = aobjhObjectHandle.begin();
+	std::deque<CObjectHandle>::iterator i = aobjhObjectHandle.begin();
 
 	// Look through the list to make sure the Search the list to see if the class is active.
 	for (; i != aobjhObjectHandle.end(); i++)
@@ -825,15 +825,15 @@ void CHandleManager::Dump
 )
 {
 	// Display the banner.
-	cout << *this << endl;
+	std::cout << *this << std::endl;
 
 	// Loop through each of the entries.
 	for (uint u_index = 0; u_index < aobjhObjectHandle.size(); u_index++)
 	{
 		// Dump the handle entry records.
-		cout << "Object Handle(" << dec << u_index << "), " << aobjhObjectHandle[u_index] << endl;
+		std::cout << "Object Handle(" << std::dec << u_index << "), " << aobjhObjectHandle[u_index] << std::endl;
 	}
 
 	// Add a carriage return and spill the output to the console.
-	cout << endl;
+	std::cout << std::endl;
 }

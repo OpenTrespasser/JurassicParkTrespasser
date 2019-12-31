@@ -118,7 +118,7 @@ void AddToIdealList
 #ifdef __MWERKS__
 	tmPlatonicIdeal.insert(pair<const uint32, const CInstance*>(u4_hash, pins));
 #else
-	tmPlatonicIdeal.insert(pair<uint32, const CInstance*>(u4_hash, pins));
+	tmPlatonicIdeal.insert(std::pair<uint32, const CInstance*>(u4_hash, pins));
 #endif
 	MEMLOG_SET_COUNTER(emlUniqueInstances, tmPlatonicIdeal.size() );
 }

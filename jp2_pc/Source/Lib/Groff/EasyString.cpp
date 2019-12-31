@@ -420,7 +420,7 @@ CEasyString& CEasyString::operator+=
 
 //**********************************************************************************************
 //
-CEasyString::operator[]
+uint CEasyString::operator[]
 (
 	uint u_index
 ) const
@@ -441,7 +441,7 @@ CEasyString::operator[]
 
 //**********************************************************************************************
 //
-CEasyString::operator[]
+int CEasyString::operator[]
 (
 	int i_index
 ) const
@@ -651,9 +651,9 @@ void CEasyString::Puts
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			os_stream, 
+	std::ostream&			os_stream, 
 	const CEasyString&	estr_string
 )
 {
@@ -664,16 +664,16 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	 is_stream,
+	std::istream&	 is_stream,
 	CEasyString& estr_string
 )
 {
 	char strBuffer[__ESTR_INPUT_BUFFER_SIZE__];
 
 	// Read in the string.
-	cin.getline(strBuffer, __ESTR_INPUT_BUFFER_SIZE__, '\n');
+	std::cin.getline(strBuffer, __ESTR_INPUT_BUFFER_SIZE__, '\n');
 
 	// Assign the string to the string.
 	estr_string = strBuffer;
@@ -1003,5 +1003,5 @@ void CEasyString::Dump
 )
 {
 	// Display the string information in a dump format.
-	cout << "CEasyString :" << strString << ":, Length = " << uStringLength << endl;
+	std::cout << "CEasyString :" << strString << ":, Length = " << uStringLength << std::endl;
 }
