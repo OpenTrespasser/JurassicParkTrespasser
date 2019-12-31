@@ -579,10 +579,10 @@ void CMainDlg::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
                 // Setup the appropriate pointer information
                 // 
 
-                vector<GBUILDINFO>::iterator    i;
+                std::vector<GBUILDINFO>::iterator    i;
 
                 for (i = m_vGBuildInfo.begin(); 
-                     i && i < m_vGBuildInfo.end(); 
+                     i != m_vGBuildInfo.end(); 
                      i++)
                 {
                     gb.pszSection = &(*i->szName);
@@ -739,7 +739,7 @@ void CGroffBuildDlg::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
             UpdateWindow(hwnd);
             GBuild_SetupCallbacks(GeneratorPump, GeneratorInfo, (LPARAM)this);
 
-            GBuild_Build(m_szGroffFile, m_vGBuild.size(), m_vGBuild.begin());
+            GBuild_Build(m_szGroffFile, m_vGBuild.size(), m_vGBuild.data());
 
             EnableWindow(GetDlgItem(m_hwnd, IDOK), TRUE);
             break;
