@@ -50,8 +50,8 @@
  * 
  **********************************************************************************************/
 
-#include <list.h>
-#include <multimap.h>
+#include <list>
+//#include <multimap.h>
 #include "Common.hpp"
 #include "RasterPool.hpp"
 
@@ -75,7 +75,7 @@
 
 //**********************************************************************************************
 //
-class CPoolMap : public multimap< uint32, rptr<CRaster>, less<uint32> >
+class CPoolMap : public std::multimap< uint32, rptr<CRaster>, std::less<uint32> >
 //
 // 
 //
@@ -153,7 +153,7 @@ public:
 	#ifdef __MWERKS__
 		insert( pair< const uint32, rptr<CRaster> >(pras->u4GetTypeID(), pras));
 	#else
-		insert( pair< uint32, rptr<CRaster> >(pras->u4GetTypeID(), pras));
+		insert(std::pair< uint32, rptr<CRaster> >(pras->u4GetTypeID(), pras));
 	#endif
 		CRasterPool::iBytesUsed += pras->iSurfaceMemBytes();
 	}
@@ -192,7 +192,7 @@ public:
 
 //**********************************************************************************************
 //
-class CPoolLRU : public list<uint32>
+class CPoolLRU : public std::list<uint32>
 //
 // Object to maintain a least recently used (LRU) list.
 //

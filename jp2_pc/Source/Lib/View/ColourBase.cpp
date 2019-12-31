@@ -364,7 +364,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		// Reset the clut count for stats.
 		psCluts.Reset();
 
-		set<CPalClut, CPalClutLess>::iterator it_palclut_db;
+		std::set<CPalClut, CPalClutLess>::iterator it_palclut_db;
 
 		// Iterate through list of palette-clut objects.
 		for (it_palclut_db = psetPalClut->begin(); it_palclut_db != psetPalClut->end(); it_palclut_db++)
@@ -393,7 +393,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		// Reset the clut count for stats.
 		psCluts.Reset();
 
-		set<CPalClut, CPalClutLess>::iterator it_palclut_db;
+		std::set<CPalClut, CPalClutLess>::iterator it_palclut_db;
 
 		// Iterate through list of palette-clut objects.
 		for (it_palclut_db = psetPalClut->begin(); it_palclut_db != psetPalClut->end(); it_palclut_db++)
@@ -414,7 +414,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 	//*****************************************************************************************
 	CPalClut* CPalClutDatabase::ppceFindColourMatch(CColour clr, int& i_index) const
 	{
-		set<CPalClut, CPalClutLess>::iterator it_palclut_db;
+		std::set<CPalClut, CPalClutLess>::iterator it_palclut_db;
 		CPalClut* ppce_current;
 		CPalClut* ppce_best;
 		int       i_current_difference;
@@ -480,7 +480,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		if (i_index < 0 || i_index >= psetPalClut->size())
 			return 0;
 
-		set<CPalClut, CPalClutLess>::iterator it_palclut_db;
+		std::set<CPalClut, CPalClutLess>::iterator it_palclut_db;
 		it_palclut_db = psetPalClut->begin();
 
 		while (i_index > 0)
@@ -498,7 +498,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		AlwaysAssert(ppalMain);
 
 		// Delete the palettes we own.
-		set<class CPal*,class CPalPtrLess>::iterator it_palptr;
+		std::set<class CPal*,class CPalPtrLess>::iterator it_palptr;
 		for (it_palptr = psetOwnedPals->begin(); it_palptr != psetOwnedPals->end(); it_palptr++)
 			delete *it_palptr;
 
@@ -508,8 +508,8 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		pceMainPalClut = 0;
 		delete psetPalClut;
 		delete psetOwnedPals;
-		psetPalClut = new set<class CPalClut,class CPalClutLess>;
-		psetOwnedPals = new set<class CPal*,class CPalPtrLess>;
+		psetPalClut = new std::set<class CPalClut,class CPalClutLess>;
+		psetOwnedPals = new std::set<class CPal*,class CPalPtrLess>;
 		CreateMainClut();
 	}
 
@@ -537,7 +537,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		int i_num_prelit_clut_entries   = 0;
 
 		// Iterate through list of palette-clut objects.
-		for (set<CPalClut, CPalClutLess>::iterator it_palclut_db = psetPalClut->begin(); it_palclut_db != psetPalClut->end(); ++it_palclut_db)
+		for (std::set<CPalClut, CPalClutLess>::iterator it_palclut_db = psetPalClut->begin(); it_palclut_db != psetPalClut->end(); ++it_palclut_db)
 		{
 			uint32 u4_size = (*it_palclut_db).pclutClut->u4GetMemSize();
 

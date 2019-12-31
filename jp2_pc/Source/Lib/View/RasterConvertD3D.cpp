@@ -41,8 +41,9 @@
 //
 // Necessary includes.
 //
-#include "Set.h"
-#include "Memory.h"
+#include <set>
+#include <memory>
+#include <algorithm>
 #include "Common.hpp"
 #include "RasterConvertD3D.hpp"
 
@@ -321,7 +322,7 @@ public:
 //
 
 // Type of set used to store conversion table pointers.
-typedef set<CRasterConvert, CRasterConvertLess> TSetConv;
+typedef std::set<CRasterConvert, CRasterConvertLess> TSetConv;
 
 
 //
@@ -387,8 +388,8 @@ void ConvertRasterAlpha
 	int i_d3d_stride = pras_d3d->iLinePixels;
 	int i_mem_stride = pras_mem->iLinePixels;
 
-	int i_width  = min(pras_d3d->iWidth,  pras_mem->iWidth);
-	int i_height = min(pras_d3d->iHeight, pras_mem->iHeight);
+	int i_width  = std::min(pras_d3d->iWidth,  pras_mem->iWidth);
+	int i_height = std::min(pras_d3d->iHeight, pras_mem->iHeight);
 
 	// Dumb conversion for now.
 	for (int j = 0; j < i_height; ++j)
@@ -434,8 +435,8 @@ void ConvertRaster(CRasterD3D* pras_d3d, rptr<CRaster> pras_mem, CColour clr)
 	int i_d3d_stride = pras_d3d->iLinePixels;
 	int i_mem_stride = pras_mem->iLinePixels;
 
-	int i_width      = min(pras_d3d->iWidth,  pras_mem->iWidth);
-	int i_height     = min(pras_d3d->iHeight, pras_mem->iHeight);
+	int i_width      = std::min(pras_d3d->iWidth,  pras_mem->iWidth);
+	int i_height     = std::min(pras_d3d->iHeight, pras_mem->iHeight);
 
 	// Dumb conversion for now.
 	for (int j = 0; j < i_height; ++j)
