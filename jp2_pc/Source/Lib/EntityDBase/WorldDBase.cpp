@@ -170,7 +170,7 @@ extern bool bIsTrespasser;
 extern CConsoleBuffer conPreLoader;
 
 // Extern to allow proper clearing of world dbase.
-typedef multimap<CInstance*, CMagnetPair*, less<CInstance*> >   TMagnetTable;
+typedef std::multimap<CInstance*, CMagnetPair*, std::less<CInstance*> >   TMagnetTable;
 namespace NMagnetSystem
 {
 //	extern TMagnetTable	mtSlaveLookup;		// A table to find magnets pairs from the slave side.
@@ -183,7 +183,7 @@ namespace NMagnetSystem
 	// to be const, as specified by the STL standard.
 	typedef pair<const uint32, CPartition*> THandlePair;
 #else
-	typedef pair<uint32, CPartition*> THandlePair;
+	typedef std::pair<uint32, CPartition*> THandlePair;
 #endif
 
 
@@ -835,7 +835,7 @@ CRenderDB*  ps_renderDB = 0;
 		}
 
 		{
-			list<CInstance*>::iterator it_psub;
+			std::list<CInstance*>::iterator it_psub;
 
 			// Iterate through the subsystem object list.
 			con_out.Print("\n\nSubsystems...\n\n");\
@@ -1085,7 +1085,7 @@ CRenderDB*  ps_renderDB = 0;
 					bool b_already_have_it = false;
 
 					// Need this GROFF file.  Do we already have it?
-					list<const char*>::iterator i;
+					std::list<const char*>::iterator i;
 					for (i = plsstrGroffsLoaded->begin(); i != plsstrGroffsLoaded->end(); ++i)
 					{
 						// Is this the GROFF we are looking for?
@@ -1698,7 +1698,7 @@ CRenderDB*  ps_renderDB = 0;
 		Assert(ppartPartitions);
 		Assert(ppartPartitions->ppartChildren());
 
-		list<CPartition*> list_part;	// List of spatial partitions.
+		std::list<CPartition*> list_part;	// List of spatial partitions.
 		int i_count = 0;
 
 		// Construct a list of spatial partitions.
@@ -1734,7 +1734,7 @@ CRenderDB*  ps_renderDB = 0;
 		if (i_count == 2)
 		{
 			CPartitionVol<2> partvol;				// Partition set.
-			list<CPartition*>::iterator it_partlist;	// Partition list iterator.
+			std::list<CPartition*>::iterator it_partlist;	// Partition list iterator.
 
 			// Add partitions.
 			it_partlist = list_part.begin();
@@ -1883,7 +1883,7 @@ CRenderDB*  ps_renderDB = 0;
 #define ERASE(foo) foo.erase(foo.begin(), foo.end())
 
 		// tsaiAIInfo
- 		typedef set<CAIInfo, less<CAIInfo> > TSAI;
+ 		typedef std::set<CAIInfo, std::less<CAIInfo> > TSAI;
 		extern TSAI tsaiAIInfo;	// A set containing all shared AI infos, for instancing.
 		ERASE(tsaiAIInfo);
 
@@ -1896,23 +1896,23 @@ CRenderDB*  ps_renderDB = 0;
 		// Not necessary- setHandles is part of CSaveFile
 
 		// tsmMagnet
-		typedef set<CMagnet, less<CMagnet> > TSMagnet;
+		typedef std::set<CMagnet, std::less<CMagnet> > TSMagnet;
 		extern TSMagnet tsmMagnet;	// A set containing all shared magnets, for instancing.
 		ERASE(tsmMagnet);
 
 		// tsmMaterialInstances
-		typedef set<CMaterial, less<CMaterial> > TSM;
+		typedef std::set<CMaterial, std::less<CMaterial> > TSM;
 		extern TSM tsmMaterialInstances;
 		ERASE(tsmMaterialInstances);
 
 		// tspbPhysicsInfoBox
-		typedef set<CPhysicsInfoBox, less<CPhysicsInfoBox> > TSPB;
+		typedef std::set<CPhysicsInfoBox, std::less<CPhysicsInfoBox> > TSPB;
 		extern TSPB tspbPhysicsInfoBox;	// A set containing all shared box infos, for instancing.
 		ERASE(tspbPhysicsInfoBox);
 
 		// Track the skeletons for deletion.
-		extern list<CPhysicsInfoSkeleton*> lppisPhysicsSkeletons;
-		list<CPhysicsInfoSkeleton*>::iterator itskel;
+		extern std::list<CPhysicsInfoSkeleton*> lppisPhysicsSkeletons;
+		std::list<CPhysicsInfoSkeleton*>::iterator itskel;
 		for (itskel = lppisPhysicsSkeletons.begin(); itskel != lppisPhysicsSkeletons.end(); ++itskel)
 		{
 			delete *itskel;
@@ -1921,13 +1921,13 @@ CRenderDB*  ps_renderDB = 0;
 
 
 		// setinsprIgnore
-		typedef pair<CInstance*, CInstance*> TInstancePair;
-		typedef set<TInstancePair, CLessInstancePair> TSetInstancePair; 
+		typedef std::pair<CInstance*, CInstance*> TInstancePair;
+		typedef std::set<TInstancePair, CLessInstancePair> TSetInstancePair; 
 		extern TSetInstancePair setinsprIgnore;
 		ERASE(setinsprIgnore);
 
 		// mapTextures
-		extern map< uint32, rptr<CTexture>, less<uint32> > mapTextures;
+		extern std::map< uint32, rptr<CTexture>, std::less<uint32> > mapTextures;
 		ERASE(mapTextures);
 
 		// mapTextureNames
@@ -1935,11 +1935,11 @@ CRenderDB*  ps_renderDB = 0;
 		//ERASE(mapTextureNames);
 
 		// mapMeshInstances
-		extern map<uint32, SMeshInstance, less<uint32> > mapMeshInstances;
+		extern std::map<uint32, SMeshInstance, std::less<uint32> > mapMeshInstances;
 		ERASE(mapMeshInstances);
 
 		// tmspPlatonicIdeal
-		typedef map<string, const CInstance*, less<string> >	TMapStrPins;
+		typedef std::map<std::string, const CInstance*, std::less<std::string> >	TMapStrPins;
 		extern TMapHashPins  tmPlatonicIdeal;
 		ERASE(tmPlatonicIdeal);
 
@@ -1967,7 +1967,7 @@ CRenderDB*  ps_renderDB = 0;
 		pinfoSphericalTrigger = 0;
 
 #if VER_TEST
-		extern set<uint32, less<uint32> > setSubmodels;
+		extern std::set<uint32, std::less<uint32> > setSubmodels;
 		ERASE(setSubmodels);
 #endif
 
@@ -2280,7 +2280,7 @@ CRenderDB*  ps_renderDB = 0;
 	//*****************************************************************************************
 	bool CWorld::bSaveAsText(const char *str_filename)
 	{
-		ofstream ofs(str_filename);
+		std::ofstream ofs(str_filename);
 
 		if (!ofs.is_open())
 			// Some sort of failure.
@@ -2306,7 +2306,7 @@ CRenderDB*  ps_renderDB = 0;
 
 				ofs << ' ' << pins->fGetScale();
 
-				ofs << endl;
+				ofs << std::endl;
 			}
 		}
 
@@ -2324,7 +2324,7 @@ CRenderDB*  ps_renderDB = 0;
 	{
 		Assert( (uint32)(plsstrGroffsLoaded->size())>u4_index );
 
-		list<const char*>::iterator i;
+		std::list<const char*>::iterator i;
 		uint32						u4_count = 0;
 
 		for (i = plsstrGroffsLoaded->begin(); i != plsstrGroffsLoaded->end(); ++i)
@@ -2522,7 +2522,7 @@ CRenderDB*  ps_renderDB = 0;
 
 	//*****************************************************************************************
 	//
-	const string& CWorld::strGetPendingLoad
+	const std::string& CWorld::strGetPendingLoad
 	(
 	)
 	//
@@ -2564,7 +2564,7 @@ CRenderDB*  ps_renderDB = 0;
 
 	//*****************************************************************************************
 	//
-	const string& CWorld::strGetPendingSave
+	const std::string& CWorld::strGetPendingSave
 	(
 	)
 	//

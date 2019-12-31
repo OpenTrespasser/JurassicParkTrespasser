@@ -374,7 +374,7 @@ TSymbolHandle CFileIO::syhInsert(const char* str_name)
 	else
 	{
 		// Check if this symbol is in the list.
-		set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.find(str_name);
+		std::set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.find(str_name);
 		if (it == fsFile.pstSymbols.setName.end())
 		{
 			// Add to list.
@@ -399,7 +399,7 @@ TSymbolHandle CFileIO::syhInsert(const char* str_name)
 bool CFileIO::bDelete(const char* str_name)
 {
 	// Lookup the symbol by name.
-	set<SSymbolEntry*, SSymbolNameLess>::iterator it_name = fsFile.pstSymbols.find(str_name);
+	std::set<SSymbolEntry*, SSymbolNameLess>::iterator it_name = fsFile.pstSymbols.find(str_name);
 
 	// Was the symbol found?
 	if (it_name != fsFile.pstSymbols.setName.end())
@@ -413,7 +413,7 @@ bool CFileIO::bDelete(const char* str_name)
 			fsFile.pstSymbols.setName.erase(it_name);
 
 			// Remove it from the handle set as well.
-			set<SSymbolEntry*, SSymbolHandleLess>::iterator it_handle = fsFile.pstSymbols.find(pse_symbol->syhHandle);
+			std::set<SSymbolEntry*, SSymbolHandleLess>::iterator it_handle = fsFile.pstSymbols.find(pse_symbol->syhHandle);
 			Assert(it_handle != fsFile.pstSymbols.setHandle.end());
 			fsFile.pstSymbols.setHandle.erase(it_handle);
 
@@ -453,7 +453,7 @@ bool CFileIO::bDelete(const char* str_name)
 bool CFileIO::bDelete(TSymbolHandle syh_handle)
 {
 	// Lookup the symbol by handle.
-	set<SSymbolEntry*, SSymbolHandleLess>::iterator it_handle = fsFile.pstSymbols.find(syh_handle);
+	std::set<SSymbolEntry*, SSymbolHandleLess>::iterator it_handle = fsFile.pstSymbols.find(syh_handle);
 
 	// Was the symbol found?
 	if (it_handle != fsFile.pstSymbols.setHandle.end())
@@ -467,7 +467,7 @@ bool CFileIO::bDelete(TSymbolHandle syh_handle)
 			fsFile.pstSymbols.setHandle.erase(it_handle);
 
 			// Remove it from the name set as well.
-			set<SSymbolEntry*, SSymbolNameLess>::iterator it_name = fsFile.pstSymbols.find(pse_symbol->strName);
+			std::set<SSymbolEntry*, SSymbolNameLess>::iterator it_name = fsFile.pstSymbols.find(pse_symbol->strName);
 			Assert(it_name != fsFile.pstSymbols.setName.end());
 			fsFile.pstSymbols.setName.erase(it_name);
 
@@ -507,7 +507,7 @@ bool CFileIO::bDelete(TSymbolHandle syh_handle)
 TSymbolHandle CFileIO::syhLookup(const char* str_name)
 {
 	// Lookup the symbol by name.
-	set<SSymbolEntry*, SSymbolNameLess>::iterator it_name = fsFile.pstSymbols.find(str_name);
+	std::set<SSymbolEntry*, SSymbolNameLess>::iterator it_name = fsFile.pstSymbols.find(str_name);
 
 	// Was the symbol found?
 	if (it_name != fsFile.pstSymbols.setName.end())
@@ -569,7 +569,7 @@ TSectionHandle CFileIO::sehLookup(const char* str_name)
 const char* CFileIO::strLookup(TSymbolHandle syh_handle)
 {
 	// Lookup the symbol by handle.
-	set<SSymbolEntry*, SSymbolHandleLess>::iterator it_handle = fsFile.pstSymbols.find(syh_handle);
+	std::set<SSymbolEntry*, SSymbolHandleLess>::iterator it_handle = fsFile.pstSymbols.find(syh_handle);
 
 	// Was the symbol found?
 	if (it_handle != fsFile.pstSymbols.setHandle.end())
@@ -814,7 +814,7 @@ bool CFileIO::bWriteImage()
 	if (!fsFile.pstSymbols.empty())
 	{
 		// Calculate the size of the symbol table.
-		set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
+		std::set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
 		while (it != fsFile.pstSymbols.setName.end())
 		{
 			// Count the amount of information.
@@ -882,7 +882,7 @@ bool CFileIO::bWriteImage()
 	if (!fsFile.pstSymbols.empty())
 	{
 		// Calculate the size of the symbol table.
-		set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
+		std::set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
 		while (it != fsFile.pstSymbols.setName.end())
 		{
 			// Write out the symbol entry information.
@@ -1114,7 +1114,7 @@ bool CFileIO::bDeleteImage()
 	}
 
 	// Loop through the symbol table an delete all the symbol entries.
-	set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
+	std::set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
 	while (it != fsFile.pstSymbols.setName.end())
 	{
 		// Delete the symbol name and symbol entry.
@@ -1895,7 +1895,7 @@ void CFileIO::Dump()
 	else
 	{
 		// Begin dumping the symbol table.
-		set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
+		std::set<SSymbolEntry*, SSymbolNameLess>::iterator it = fsFile.pstSymbols.setName.begin();
 		while (it != fsFile.pstSymbols.setName.end())
 		{
 			// Dump the symbol information to the logfile.

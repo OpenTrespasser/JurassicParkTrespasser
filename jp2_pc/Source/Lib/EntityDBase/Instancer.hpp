@@ -105,7 +105,7 @@ public:
 
 //*********************************************************************************************
 //
-class CInstanceCont : public CContainer < set<CInstancer, CInstancer> >
+class CInstanceCont : public CContainer < std::set<CInstancer, CInstancer> >
 //
 // Container class for CInstance.
 //
@@ -136,7 +136,7 @@ public:
 	//
 	//**************************
 	{
-		pair<iterator, bool> pair_inst = insert(inst);
+		std::pair<iterator, bool> pair_inst = insert(inst);
 		itContainer = pair_inst.first;
 
 		Assert(bIsNotEnd());

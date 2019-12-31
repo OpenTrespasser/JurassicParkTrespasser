@@ -189,7 +189,7 @@ static rptr<CRaster> prasGetBitmap
 	if (!pras)
 	{
 		// Try ignoring leading path components.
-		char* str_new;
+		const char* str_new;
 
 		while (str_new = strpbrk(str_filename, ":/\\"))
 		{

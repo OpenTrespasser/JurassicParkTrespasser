@@ -129,7 +129,7 @@ char* CTeleport::pcSave(char* pc_buffer) const
 	// Save sequence number.
 	int i_seq_num = 0;
 
-	for (list<CTeleport*>::iterator it = listTeleports.begin(); it != listTeleports.end(); it++)
+	for (std::list<CTeleport*>::iterator it = listTeleports.begin(); it != listTeleports.end(); it++)
 	{
 		if (it == itCurrent)
 			break;

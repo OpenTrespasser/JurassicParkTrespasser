@@ -130,7 +130,7 @@ extern CProfileStat		psWaterStep;
 //
 // Keep a list of currently active water.
 //
-typedef list<CEntityWater*> TWaterList;
+typedef std::list<CEntityWater*> TWaterList;
 TWaterList wlWaters;
 
 
@@ -195,7 +195,7 @@ namespace
 
 	//*********************************************************************************************
 	//
-	class CReflectTable: public CFloatTableRound<int, 512, -1.0, +1.0>
+	class CReflectTable: public CFloatTableRound<int, 512, -1, +1>
 	//
 	// Prefix: rfltab
 	//
@@ -241,7 +241,7 @@ namespace
 
 	//*********************************************************************************************
 	//
-	class CPixelReflectTable: public CFloatTableRound<uint16, 512, -1.0, +1.0>
+	class CPixelReflectTable: public CFloatTableRound<uint16, 512, -1, +1>
 	//
 	// Prefix: rfltaba
 	//

@@ -165,7 +165,7 @@ THREE:	All magnets and triggers
 // Module variables.
 //
 
-map<uint32, SMeshInstance, less<uint32> > mapMeshInstances;
+std::map<uint32, SMeshInstance, std::less<uint32> > mapMeshInstances;
 float fDefaultBumpiness = 0.025f;
 
 
@@ -710,7 +710,7 @@ CProfileStat psBumpPack("Bumpmap pack", &psLoader);
 
 		dout << "Total unique meshes: " << mapMeshInstances.size() << "\n";
 
-		map<uint32, SMeshInstance, less<uint32> >::iterator i;
+		std::map<uint32, SMeshInstance, std::less<uint32> >::iterator i;
 
 		while(!b_done)
 		{
@@ -732,7 +732,7 @@ CProfileStat psBumpPack("Bumpmap pack", &psLoader);
 
 		dout << "Discarded Meshes: " << i_discarded_meshes << "\n";
 
-		extern map< uint32, rptr<CTexture>, less<uint32> > mapTextures;
+		extern std::map< uint32, rptr<CTexture>, std::less<uint32> > mapTextures;
 		dout << "Total unique textures: " << mapTextures.size() << "\n";
 		
 		// Write the names of the loaded textures.
@@ -740,7 +740,7 @@ CProfileStat psBumpPack("Bumpmap pack", &psLoader);
 		
 		int i_discarded_textures = 0;
 
-		map< uint32, rptr<CTexture>, less<uint32> >::iterator i_tex;
+		std::map< uint32, rptr<CTexture>, std::less<uint32> >::iterator i_tex;
 		b_done = false;
 		
 		while(!b_done)

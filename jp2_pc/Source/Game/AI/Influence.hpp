@@ -396,7 +396,7 @@ public:
 		virtual const char * pcLoad(const char *  pc_buffer);
 	
 
-		operator< (const CInfluence& inf) const
+		bool operator< (const CInfluence& inf) const
 		{
 			return pinsTarget < inf.pinsTarget;
 		}

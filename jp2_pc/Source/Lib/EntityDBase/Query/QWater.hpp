@@ -80,7 +80,7 @@ public:
 	CWDbQueryWaterHeight
 	(
 		const CVector2<>& v2_world,		// World point to test water height at.
-		const list<CEntityWater*>& lspetw = CWDbQueryWater::lspetWater		
+		const std::list<CEntityWater*>& lspetw = CWDbQueryWater::lspetWater		
 										// Water list to use; default is world list.
 	);
 };

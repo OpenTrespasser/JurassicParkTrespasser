@@ -124,7 +124,7 @@ namespace
 	}
 
 	//******************************************************************************************
-	void ToLower(string& str)
+	void ToLower(std::string& str)
 	// Convert given string to lowercase.
 	{
 		for (int i = 0; i < str.length(); i++)
@@ -142,7 +142,7 @@ class NoCaseCmp
 //**************************************
 {
 public:
-	bool operator()(const string& s1, const string& s2) const;
+	bool operator()(const std::string& s1, const std::string& s2) const;
 };
 
 //**********************************************************************************************
@@ -155,9 +155,9 @@ class CScriptParser
 //
 //**************************************
 {
-	ifstream streamScript;
+	std::ifstream streamScript;
 
-	set<string, NoCaseCmp> setKeywords;
+	std::set<std::string, NoCaseCmp> setKeywords;
 
 	//******************************************************************************************
 	//
@@ -194,7 +194,7 @@ private:
 
 	//******************************************************************************************
 	//
-	bool bIsKeyword(const string& token) const;
+	bool bIsKeyword(const std::string& token) const;
 	//
 	// Returns:
 	//		'true' if token is a keyword.
@@ -203,7 +203,7 @@ private:
 
 	//******************************************************************************************
 	//
-	bool bReadKeyword(string& token, const char* token_match = 0);
+	bool bReadKeyword(std::string& token, const char* token_match = 0);
 	//
 	// Read next token or find next named token in stream. On return, stream will point after
 	// token. The token is converted to lowercase.
@@ -215,7 +215,7 @@ private:
 
 	//******************************************************************************************
 	//
-	bool bReadIdentifier(string& token);
+	bool bReadIdentifier(std::string& token);
 	//
 	// Read next identifier in stream. On return, stream will point after token.
 	//
@@ -237,7 +237,7 @@ private:
 
 	//******************************************************************************************
 	//
-	void OutputError(const char* str_text, const string* str_token = 0) const;
+	void OutputError(const char* str_text, const std::string* str_token = 0) const;
 	//
 	// Output script parse failure, in VER_TEST mode only.
 	//
@@ -299,13 +299,13 @@ private:
 	CAnimationScript::CAnimationScript(const char* str_name, const char* str_base_dir)
 		: fPlaybackRate(0), bDisableAutoGrab(false), bScriptHasMovedCamera(false)
 	{
-		string str_dir = str_base_dir;
+		std::string str_dir = str_base_dir;
 		str_dir += '/';
 	
 		// First, determine if a binary version of the requested animation script exists.
-		string str_bin_filename = str_dir + str_name + ".asb";
+		std::string str_bin_filename = str_dir + str_name + ".asb";
 
-		ifstream stream_file(str_bin_filename.c_str(), ios::in | ios::nocreate | ios::binary);
+		std::ifstream stream_file(str_bin_filename.c_str(), std::ios::in | std::ios::_Nocreate | std::ios::binary);
 
 		if (stream_file.good())
 		{
@@ -316,7 +316,7 @@ private:
 		else
 		{
 			// Load the ASCII version.
-			string str_asc_filename = str_dir + "anim/"+ str_name + ".asa";
+			std::string str_asc_filename = str_dir + "anim/"+ str_name + ".asa";
 
 			CScriptParser sp(str_asc_filename.c_str());
 			sp.Parse(*this);
@@ -333,8 +333,8 @@ private:
 	CAnimationScript::CAnimationScript(const char* str_filename, bool b_disable_autograb)
 		: fPlaybackRate(0), bDisableAutoGrab(b_disable_autograb), bScriptHasMovedCamera(false)
 	{
-		string str_file = str_filename;
-		string str_ext  = str_file.substr(str_file.find_last_of('.') + 1);
+		std::string str_file = str_filename;
+		std::string str_ext  = str_file.substr(str_file.find_last_of('.') + 1);
 
 		ToLower(str_ext);
 
@@ -545,7 +545,7 @@ private:
 	{
 		Assert(paiaiAnimation.uLen == 0 && paiapPlayback.uLen == 0);
 
-		ifstream stream_file(str_filename, ios::in | ios::nocreate | ios::binary);
+		std::ifstream stream_file(str_filename, std::ios::in | std::ios::_Nocreate | std::ios::binary);
 
 		// Make sure the file was successfully opened for loading.
 		AlwaysAssert(stream_file.good());
@@ -585,7 +585,7 @@ private:
 	//******************************************************************************************
 	void CAnimationScript::CPriv::Save(const char* str_filename)
 	{
-		ofstream stream_file(str_filename, ios::out | ios::trunc | ios::binary);
+		std::ofstream stream_file(str_filename, std::ios::out | std::ios::trunc | std::ios::binary);
 
 		// Make sure the file was successfully opened for saving.
 		AlwaysAssert(stream_file.good());
@@ -639,7 +639,7 @@ private:
 //
 
 	//******************************************************************************************
-	bool NoCaseCmp::operator()(const string& s1, const string& s2) const
+	bool NoCaseCmp::operator()(const std::string& s1, const std::string& s2) const
 	{
 		int i_index;
 		for (i_index = 0; i_index < Min(s1.length(), s2.length()); i_index++)
@@ -671,7 +671,7 @@ private:
 	//******************************************************************************************
 	namespace
 	{
-		string astrKeywords[] =
+		std::string astrKeywords[] =
 		{
 			"version",
 			"forced_rate",
@@ -686,8 +686,8 @@ private:
 
 	//******************************************************************************************
 	CScriptParser::CScriptParser(const char* str_file)
-		: streamScript(str_file, ios::in | ios::nocreate),
-		  setKeywords(astrKeywords, &astrKeywords[sizeof(astrKeywords) / sizeof(string)])
+		: streamScript(str_file, std::ios::in | std::ios::_Nocreate),
+		  setKeywords(astrKeywords, &astrKeywords[sizeof(astrKeywords) / sizeof(std::string)])
 	{
 		// Ensure the file was opened successfully.
 		AlwaysAssert(!streamScript.fail());
@@ -705,9 +705,9 @@ private:
 	//******************************************************************************************
 	void CScriptParser::Parse(CAnimationScript& ras_init)
 	{
-		vector<CAnimationScript_SInstanceAnimInfo> vciai_anim_ins;
+		std::vector<CAnimationScript_SInstanceAnimInfo> vciai_anim_ins;
 
-		string str_token;
+		std::string str_token;
 
 		// Read version info.
 		if (!bReadKeyword(str_token, "version"))
@@ -732,7 +732,7 @@ private:
 			}
 			else if (str_token == "object")
 			{
-				string str_obj_name;
+				std::string str_obj_name;
 				if (!bReadIdentifier(str_obj_name))
 					goto end;
 
@@ -744,7 +744,7 @@ private:
 					u4_hash_name = u4Hash(str_obj_name.c_str());
 
 				// Read all the animation frames.
-				vector<CAnimationScript_SAnimFrame> vcafr_frames;
+				std::vector<CAnimationScript_SAnimFrame> vcafr_frames;
 
 				while (bReadKeyword(str_token, "frame"))
 				{
@@ -808,7 +808,7 @@ private:
 				iai_new.paafrFrames = CPArray<CAnimationScript::SAnimFrame>(vcafr_frames.size());
 
 				int i_index = 0;
-				for (vector<CAnimationScript_SAnimFrame>::iterator it = vcafr_frames.begin(); it != vcafr_frames.end(); ++it, ++i_index)
+				for (std::vector<CAnimationScript_SAnimFrame>::iterator it = vcafr_frames.begin(); it != vcafr_frames.end(); ++it, ++i_index)
 					iai_new.paafrFrames[i_index] = *it;
 
 				// Add animation structure to list.
@@ -820,7 +820,7 @@ private:
 		CPArray<CAnimationScript::SInstanceAnimInfo> paiai_ret(vciai_anim_ins.size());
 
 		int i_index = 0;
-		for (vector<CAnimationScript_SInstanceAnimInfo>::iterator it = vciai_anim_ins.begin(); it != vciai_anim_ins.end(); ++it, ++i_index)
+		for (std::vector<CAnimationScript_SInstanceAnimInfo>::iterator it = vciai_anim_ins.begin(); it != vciai_anim_ins.end(); ++it, ++i_index)
 			paiai_ret[i_index] = *it;
 
 		ras_init.paiaiAnimation = paiai_ret;
@@ -844,13 +844,13 @@ private:
 	}
 
 	//******************************************************************************************
-	bool CScriptParser::bIsKeyword(const string& token) const
+	bool CScriptParser::bIsKeyword(const std::string& token) const
 	{
 		return setKeywords.find(token) != setKeywords.end();
 	}
 
 	//******************************************************************************************
-	bool CScriptParser::bReadKeyword(string& token, const char* token_match)
+	bool CScriptParser::bReadKeyword(std::string& token, const char* token_match)
 	{
 		if (streamScript.eof() || streamScript.fail())
 		{
@@ -871,7 +871,7 @@ private:
 	}
 
 	//******************************************************************************************
-	bool CScriptParser::bReadIdentifier(string& token)
+	bool CScriptParser::bReadIdentifier(std::string& token)
 	{
 		if (streamScript.eof() || streamScript.fail())
 		{
@@ -903,7 +903,7 @@ private:
 
 		if (!streamScript.good())
 		{
-			string token;
+			std::string token;
 			streamScript.clear();
 			streamScript >> token;
 
@@ -915,7 +915,7 @@ private:
 	}
 
 	//******************************************************************************************
-	void CScriptParser::OutputError(const char* str_text, const string* str_token) const
+	void CScriptParser::OutputError(const char* str_text, const std::string* str_token) const
 	{
 	#if VER_TEST
 		dout << "Animation script error: '" << str_text << "' ";
@@ -947,7 +947,7 @@ private:
 	{
 		CMessageStep::UnregisterRecipient(this);
 
-		for (list<CAnimationScript*>::iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
+		for (std::list<CAnimationScript*>::iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
 			delete *it;
 	}
 
@@ -973,7 +973,7 @@ private:
 	//******************************************************************************************
 	CAnimationScript* CAnimations::pansFind(const CAnimationScript* pans) const
 	{
-		for (list<CAnimationScript*>::const_iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
+		for (std::list<CAnimationScript*>::const_iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
 			if (pans == (*it))
 				return *it;
 
@@ -983,7 +983,7 @@ private:
 	//******************************************************************************************
 	void CAnimations::Process(const CMessageStep& msgstep)
 	{
-		for (list<CAnimationScript*>::iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
+		for (std::list<CAnimationScript*>::iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
 			if ((*it)->bIsPlaying())
 				(*it)->FrameAdvance(msgstep.sStep);
 	}
@@ -991,7 +991,7 @@ private:
 	//*****************************************************************************************
 	char * CAnimations::pcSave(char *  pc_buffer) const
 	{
-		for (list<CAnimationScript*>::const_iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
+		for (std::list<CAnimationScript*>::const_iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
 			pc_buffer = (*it)->pcSave(pc_buffer);
 
 		return pc_buffer;
@@ -1000,7 +1000,7 @@ private:
 	//*****************************************************************************************
 	const char * CAnimations::pcLoad(const char *  pc_buffer)
 	{
-		for (list<CAnimationScript*>::iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
+		for (std::list<CAnimationScript*>::iterator it = ltansAnims.begin(); it != ltansAnims.end(); ++it)
 			pc_buffer = (*it)->pcLoad(pc_buffer);
 
 		return pc_buffer;

@@ -102,7 +102,7 @@ void RemoveFromIdealList
 //
 //**************************************
 
-typedef map<uint32, const CInstance*, less<uint32> >	TMapHashPins;
+typedef std::map<uint32, const CInstance*, std::less<uint32> >	TMapHashPins;
 
 
 //
