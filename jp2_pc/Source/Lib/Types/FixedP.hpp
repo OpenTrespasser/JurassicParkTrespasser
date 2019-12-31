@@ -318,6 +318,23 @@ public:
 	}
 
 
+	forceinline bool operator <=(fixed fx) const
+	{
+		return i4Fx <= fx.i4Fx;
+	}
+
+
+	forceinline bool operator >(fixed fx) const
+	{
+		return i4Fx > fx.i4Fx;
+	}
+
+
+	forceinline bool operator >=(fixed fx) const
+	{
+		return i4Fx >= fx.i4Fx;
+	}
+
 	// Shift operators.
 	forceinline fixed operator <<(int i) const
 	{
