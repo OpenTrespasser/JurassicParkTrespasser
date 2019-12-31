@@ -2844,10 +2844,10 @@ void CSaveLevelAction::Start()
 			if (bFILL_pEASYSTRING(pestr, esAnimationName))
 			{
 				// Determine directory from which we're loading this GROFF.
-				string str_name = pwWorld->strGetGroff(0);
+				std::string str_name = pwWorld->strGetGroff(0);
 
 				int i_last_slash = Min(str_name.find_last_of('/'), str_name.find_last_of('\\'));
-				string str_dir = str_name.substr(0, i_last_slash);
+				std::string str_dir = str_name.substr(0, i_last_slash);
 
 				pansAnim = new CAnimationScript(pestr->strData(), str_dir.c_str());
 				pAnimations->Add(pansAnim);

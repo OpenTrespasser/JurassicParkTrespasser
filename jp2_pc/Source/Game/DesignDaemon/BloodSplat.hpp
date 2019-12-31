@@ -63,7 +63,7 @@ class CBloodSplats : public CSubsystem
 	class CPriv;
 	friend class CPriv;
 
-	typedef list<SBloodSplatObj> TContainer;
+	typedef std::list<SBloodSplatObj> TContainer;
 
 	TContainer contSplats;
 	TContainer contStreaks;
