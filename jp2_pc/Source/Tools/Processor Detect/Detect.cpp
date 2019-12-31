@@ -1084,8 +1084,8 @@ static uint32 u4CPUSpeed(int clocks)
           		
 			total = ( freq + freq2 + freq3 );
 				
-		} while (	(tries < 3 ) || (tries < 20) && ((abs(3 * freq -total) > 3*TOLERANCE ) ||
-			(abs(3 * freq2-total) > 3*TOLERANCE ) || (abs(3 * freq3-total) > 3*TOLERANCE )));
+		} while (	(tries < 3 ) || (tries < 20) && ((abs(static_cast<int>(3 * freq -total)) > 3*TOLERANCE ) ||
+			(abs(static_cast<int>(3 * freq2-total)) > 3*TOLERANCE ) || (abs(static_cast<int>(3 * freq3-total)) > 3*TOLERANCE )));
 		
 		if ( total / 3  !=  ( total + 1 ) / 3 )
 		{
