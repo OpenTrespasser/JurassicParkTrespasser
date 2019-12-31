@@ -87,7 +87,7 @@
 #pragma warning(disable:4786)
 #include "SoundDefs.hpp"
 #include "Subtitle.hpp"
-#include "map.h"
+#include <map>
 
 #pragma pack(push,1)
 
@@ -328,11 +328,11 @@ protected:
 
 
 //**********************************************************************************************
-typedef map< uint32, SSampleFile*, less<uint32> >		TFileSampleHash;
+typedef std::map< uint32, SSampleFile*, std::less<uint32> >		TFileSampleHash;
 // prefix: fsh
 
 //**********************************************************************************************
-typedef map< uint64, SAudioCollision*, less<uint64> >	TCollisionHash;
+typedef std::map< uint64, SAudioCollision*, std::less<uint64> >	TCollisionHash;
 // prefix: ch
 
 

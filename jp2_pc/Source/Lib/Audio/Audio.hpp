@@ -218,7 +218,7 @@
 #include "Ia3d.h"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "lib/sys/memorylog.hpp"
-#include "bstring.h"
+#include <string>
 #include "AudioLoader.hpp"
 #include "Subtitle.hpp"
 #include <math.h>
@@ -433,7 +433,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	string& GetBasePathName()
+	std::string& GetBasePathName()
 	{
 		return strBasePath;
 	}
@@ -807,7 +807,7 @@ protected:
 	LPKSPROPERTYSET			pDSPropertySet;
 	uint32					u4EAXPropertySupport;
 
-	string					strBasePath;		// the path to which all samples are loaded from
+	std::string					strBasePath;		// the path to which all samples are loaded from
 
 	float					fListenerX;
 	float					fListenerY;
