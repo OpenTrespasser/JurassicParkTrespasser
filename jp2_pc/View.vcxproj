@@ -85,6 +85,7 @@
     <OutDir>.\Build\Debug\View\</OutDir>
     <IntDir>.\Build\Debug\View\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
     <OutDir>.\Build\Final\View\</OutDir>
@@ -95,6 +96,9 @@
     <OutDir>.\Build\Release\View\</OutDir>
     <IntDir>.\Build\Release\View\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
     <ClCompile>
