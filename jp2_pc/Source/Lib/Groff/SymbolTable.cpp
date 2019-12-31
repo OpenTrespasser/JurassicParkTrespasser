@@ -30,8 +30,8 @@
  *
  **********************************************************************************************/
 
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 
 //
 // Disable a number of annoying warning messages about symbol truncation, and unsigned
@@ -42,8 +42,8 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <map.h>
-#include <deque.h>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to

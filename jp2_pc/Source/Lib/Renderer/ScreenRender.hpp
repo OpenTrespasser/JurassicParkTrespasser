@@ -322,6 +322,7 @@ struct SRenderCoord
 		};
 	};
 	CVector3<>		v3Screen;			// Screen X, Y and 1/Z coords.
+	SRenderCoord() {}
 };
 
 //**********************************************************************************************

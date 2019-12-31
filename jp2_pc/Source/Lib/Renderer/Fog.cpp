@@ -173,10 +173,10 @@
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
 
 #if bPRINT_FOG_TABLE
-	#include <fstream.h>
-	#include <iomanip.h>
+	#include <fstream>
+	#include <iomanip>
 
-	ofstream stream;
+	std::ofstream stream;
 #endif
 
 extern bool        bUseOutputFiles;
@@ -212,7 +212,7 @@ extern bool        bUseOutputFiles;
             {
 			    stream.open("fog.txt");
 
-			    stream << setiosflags(ios::left) << setprecision(5);
+			    stream << setiosflags(std::ios::left) << std::setprecision(5);
  			    stream << "Fog Creation...\n\n" << "Level to Y\n";
             }
 		#endif
@@ -291,7 +291,7 @@ extern bool        bUseOutputFiles;
 			#if bPRINT_FOG_TABLE
                 if (bUseOutputFiles)
                 {
-				    stream << setw(4) << i_fog_level << " -> " << setw(5) << r_fog_end_y << "  ";
+				    stream << std::setw(4) << i_fog_level << " -> " << std::setw(5) << r_fog_end_y << "  ";
                 }
 			#endif
 
@@ -331,7 +331,7 @@ extern bool        bUseOutputFiles;
 			#if bPRINT_FOG_TABLE
                 if (bUseOutputFiles)
                 {
-				    stream << r_fog_end_y << endl;
+				    stream << r_fog_end_y << std::endl;
                 }
 			#endif
 
@@ -358,8 +358,8 @@ extern bool        bUseOutputFiles;
 
                 if (bUseOutputFiles)
                 {
-				    stream << setw(4) << i_curr_index << " [" << setw(9) << r_range_start << ", " << setw(9) << r_range_end << ")";
-				    stream << " -> " << paiYToLevel[i_curr_index] << ", " << pafYToLevel[i_curr_index] << endl;
+				    stream << std::setw(4) << i_curr_index << " [" << std::setw(9) << r_range_start << ", " << std::setw(9) << r_range_end << ")";
+				    stream << " -> " << paiYToLevel[i_curr_index] << ", " << pafYToLevel[i_curr_index] << std::endl;
                 }
 			}
 

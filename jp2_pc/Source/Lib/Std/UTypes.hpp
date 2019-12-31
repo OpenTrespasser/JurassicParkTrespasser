@@ -84,7 +84,7 @@
 
 
 // Get the STL definition of the bool type and the true and false constants.
-#include <bool.h>
+//#include <bool.h>
 
 // Get limits of built-in types needed to define the user types.
 #include <limits.h>

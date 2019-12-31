@@ -135,7 +135,7 @@
 #include "Game/AI/ActivityEnum.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgSystem.hpp"
 
-#include "map.h"
+#include <map>
 
 #include <string.h>
 #include <direct.h>

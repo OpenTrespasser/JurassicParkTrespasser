@@ -57,10 +57,10 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <iostream.h>
-#include <iomanip.h>
-#include <map.h>
-#include <deque.h>
+#include <iostream>
+#include <iomanip>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to
@@ -286,19 +286,19 @@ const EVarScope CBaseValue::evsScope
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			os_stream, 
+	std::ostream&			os_stream, 
 	const CBaseValue&	basev_value
 )
 {
 	// Display the string.
-	os_stream.setf(ios::uppercase|ios::hex);
+	os_stream.setf(std::ios::uppercase|std::ios::hex);
 
 	os_stream << "basev(val" << basev_value.hValueHandle << ", sym" 
 		<< basev_value.hSymbolHandle << ", " << strVarType[basev_value.evtVarType] << ", " 
 		<< strVarScope[basev_value.evsVarScope] << ", target" << basev_value.hTargetHandle
-		<< ", " << strVarReference[basev_value.ersRefStatus] << ")" << dec << flush;
+		<< ", " << strVarReference[basev_value.ersRefStatus] << ")" << std::dec << std::flush;
 
 	// Return the stream.
 	return os_stream;
@@ -478,29 +478,29 @@ void CBoolValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		  os_stream, 
+	std::ostream&		  os_stream, 
 	const CBoolValue& bval_value
 )
 {
 	// Display the string.
-	return os_stream << dec << strBoolValue[bval_value.bBoolValue] << " -> " << (CBaseValue) bval_value;
+	return os_stream << std::dec << strBoolValue[bval_value.bBoolValue] << " -> " << (CBaseValue) bval_value;
 }
 
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	is_stream,
+	std::istream&	is_stream,
 	CBoolValue&	bval_value
 )
 {
 	int i_temp;
 
 	// Read in the string.
-	is_stream >> dec >> i_temp;
+	is_stream >> std::dec >> i_temp;
 
 	bval_value.bBoolValue = i_temp;
 
@@ -668,27 +668,27 @@ void CCharValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		  os_stream, 
+	std::ostream&		  os_stream, 
 	const CCharValue& cval_value
 )
 {
 	// Display the string.
-	return os_stream << dec << cval_value.cCharValue << " -> " << (CBaseValue) cval_value;
+	return os_stream << std::dec << cval_value.cCharValue << " -> " << (CBaseValue) cval_value;
 }
 
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	is_stream,
+	std::istream&	is_stream,
 	CCharValue&	cval_value
 )
 {
 	// Read in the string.
-	is_stream >> dec >> cval_value.cCharValue;
+	is_stream >> std::dec >> cval_value.cCharValue;
 
 	// Pass the input stream along.
 	return is_stream;

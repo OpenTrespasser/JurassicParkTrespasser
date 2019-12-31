@@ -31,7 +31,7 @@
 #include <memory.h>
 #include <string.h>
 #include <stdio.h>
-#include <fstream.h>
+#include <fstream>
 
 #include "max.h"
 #include "bmmlib.h"

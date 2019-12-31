@@ -73,7 +73,7 @@
 #include "GeomTypes.hpp"
 #include "Shadow.hpp"
 
-#include <list.h>
+#include <list>
 
 //
 // Opaque declarations.
@@ -501,10 +501,10 @@ class CLightList
 {
 protected:
 	TLightVal						lvAmbient;		// The total ambient light in the list.
-	list< rptr<CLightDirectional> >	listpltDir;		// Directional, non-positional lights.
+	std::list< rptr<CLightDirectional> >	listpltDir;		// Directional, non-positional lights.
 													// Stored in a separate list for optimisation.
-	list< rptr<CLightDir> >			listpltPos;		// Positional lights.
-	list< rptr<CLightDir> >			listpltAll;		// Union of above two lists.
+	std::list< rptr<CLightDir> >			listpltPos;		// Positional lights.
+	std::list< rptr<CLightDir> >			listpltAll;		// Union of above two lists.
 	CDir3<>							d3Eye;			// Cached eye direction for scene.
 
 public:
@@ -515,7 +515,7 @@ public:
 
 	CLightList
 	(
-		const list<CInstance*>& listins_lights	// A list of instances whose render types are lights.
+		const std::list<CInstance*>& listins_lights	// A list of instances whose render types are lights.
 	);
 
 	//******************************************************************************************

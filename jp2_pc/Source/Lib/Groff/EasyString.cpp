@@ -42,7 +42,7 @@
 
 // Standard includes.
 #include <assert.h>
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>

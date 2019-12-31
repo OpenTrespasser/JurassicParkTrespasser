@@ -145,8 +145,8 @@
 #ifndef HEADER_ENTITYDBASE_INTSTANCE_HPP
 #define HEADER_ENTITYDBASE_INTSTANCE_HPP
 
-#include <bstring.h>
-#include <map.h>
+#include <string>
+#include <map>
 #include "Lib/GeomDBase/Partition.hpp"
 #include "Lib/Loader/Fetchable.hpp"
 #include "Lib/Sys/FastHeap.hpp"
@@ -454,7 +454,7 @@ class	CValueTable;
 
 //*********************************************************************************************
 //
-typedef map<uint32, char*, less<uint32> >	TInstanceNameMap;
+typedef std::map<uint32, char*, std::less<uint32> >	TInstanceNameMap;
 
 #define u4INSTANCE_NAMES_VIRTUALSIZE	(8*1024*1024)		// 8Mb for the instance names
 
@@ -502,7 +502,7 @@ public:
 		rptr<CRenderType>	prdtRenderInfo;		// Rendering information.
 		CPhysicsInfo*		pphiPhysicsInfo;	// Physics information.
 		CAIInfo*			paiiAIInfo;			// AI information.
-		string				strName;			// Name of the instance.
+		std::string				strName;			// Name of the instance.
 
 		//*************************************************************************************
 		//
@@ -515,7 +515,7 @@ public:
 			rptr<CRenderType>	prdt = rptr0,		// Rendering information.
 			CPhysicsInfo*       pphi = 0,			// Physics information.
 			CAIInfo*            paii = 0,			// AI information.
-			string				str_name = "InitCon"	
+			std::string				str_name = "InitCon"	
 		)
 			: prdtRenderInfo(prdt), pphiPhysicsInfo(pphi), paiiAIInfo(paii), strName(str_name)
 		{
@@ -528,7 +528,7 @@ public:
 			rptr<CRenderType>	prdt = rptr0,		// Rendering information.
 			CPhysicsInfo*		pphi = 0,			// Physics information.
 			CAIInfo*			paii = 0,			// AI information.
-			string				str_name = "InitCon"	
+			std::string				str_name = "InitCon"	
 		)
 			: pr3Presence(pr3), prdtRenderInfo(prdt), pphiPhysicsInfo(pphi), paiiAIInfo(paii), strName(str_name)
 		{

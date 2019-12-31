@@ -35,10 +35,10 @@
 
 #include "Lib/EntityDBase/Subsystem.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
-#include <list.h>
+#include <list>
 class CMeshAnimating;
 
-typedef list<CMeshAnimating*> LPMA;
+typedef std::list<CMeshAnimating*> LPMA;
 
 //**********************************************************************************************
 //

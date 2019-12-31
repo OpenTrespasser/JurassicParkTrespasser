@@ -37,8 +37,8 @@
 #ifndef HEADER_LIB_GROFF_SYMBOLTABLE_HPP
 #define HEADER_LIB_GROFF_SYMBOLTABLE_HPP
 
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 
 //
 // Disable a number of annoying warning messages about symbol truncation, and unsigned
@@ -49,8 +49,8 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <map.h>
-#include <deque.h>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to
@@ -108,18 +108,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&			os_stream, 
+		std::ostream&			os_stream, 
 		const CSymbolEntry&	se_symbol
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	  is_stream,
+		std::istream&	  is_stream,
 		CSymbolEntry& se_symbol
 	);
 
@@ -239,14 +239,14 @@ class CNewSymbolTable
 	CEasyString												estrTableName;
 
 	// Fast associative access to the symbol entry information.
-	map< CEasyString, CSymbolEntry*, less<CEasyString> >	asiSymbolIndex;
+	std::map< CEasyString, CSymbolEntry*, std::less<CEasyString> >	asiSymbolIndex;
 
 	// Fast associative access to the element through this type. 
-	map< CHandle, CSymbolEntry*, less<CHandle> >			asiHandleIndex;
+	std::map< CHandle, CSymbolEntry*, std::less<CHandle> >			asiHandleIndex;
 
 public:   // Need access to verify validity of loaded value table.
 	// Storage container for the element type.
-	deque<CSymbolEntry>										aseSymbolTable; 
+	std::deque<CSymbolEntry>										aseSymbolTable; 
 
 public:
 

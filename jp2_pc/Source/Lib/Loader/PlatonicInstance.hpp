@@ -46,8 +46,8 @@
 #define HEADER_GUIAPP_LOADER_PLATONICINSTANCE_HPP
 
 
-#include <map.h>
-#include <bstring.h>
+#include <map>
+#include <string>
 
 class CInstance;
 

@@ -558,7 +558,7 @@ template<class T> inline void* operator new(uint u_size, CDArray<T>& ma)
 
 //*********************************************************************************************
 //
-class CFastHeap: private CDArray<char>
+class CFastHeap: public CDArray<char>
 //
 // Prefix: fh
 //

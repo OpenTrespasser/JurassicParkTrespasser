@@ -58,7 +58,7 @@
 #include "Partition.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
 
-#include "map.h"
+#include <map>
 
 
 //
@@ -66,7 +66,7 @@
 //
 
 // Type representing an associative container between a spatial partition and a value.
-typedef map< uint, CPartition*, less<uint> > TPartSpaceMap;
+typedef std::map< uint, CPartition*, std::less<uint> > TPartSpaceMap;
 
 
 //

@@ -227,8 +227,8 @@ int iGetScreenBitdepth();
 		}
 
 		// We must destroy the current screen before creating a new one, or DirectDraw complains.
-		destroy(&prasMainScreen);
-
+		delete &prasMainScreen;
+		
 		// Create a new instance of prasMainScreen.
 		prasMainScreen = rptr_new CRasterWin(hwndMain, i_screen_width, i_screen_height, i_screen_bits, 
 			                                 3, Set(erasVideoMem) * !b_system_mem);

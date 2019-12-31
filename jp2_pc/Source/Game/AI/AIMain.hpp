@@ -68,7 +68,7 @@
 #ifndef HEADER_GAME_AI_AIMAIN_HPP
 #define HEADER_GAME_AI_AIMAIN_HPP
 
-#include <list.h>
+#include <list>
 #include "Lib\Std\Random.hpp"
 #include "Lib/EntityDBase/Subsystem.hpp"
 

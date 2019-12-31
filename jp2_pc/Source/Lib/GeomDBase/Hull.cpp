@@ -21,10 +21,10 @@
 #include "Lib/GeomDBase/Plane.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
-#include <list.h>
-#include <vector.h>
-#include <algo.h>
-#include <memory.h>
+#include <list>
+#include <vector>
+#include <algorithm>
+#include <memory>
 
 #include <stdio.h>
 #include <string.h>
@@ -55,7 +55,7 @@ public:
 	enum FacetFlags { Flipped = 1, Degenerate = 2 };
 
 	Vertex			verts[3];		// Vertices of the facet.
-	list<Vertex>	outside;		// Vertices outside the facet.
+	std::list<Vertex>	outside;		// Vertices outside the facet.
 	CPlane			plane;			// Plane equation for the facet.
 	int				flags;			// Flags for this facet.
 
@@ -98,7 +98,7 @@ class Edge
 {
 public:
 	Vertex vtx0, vtx1;
-	list<Facet>::iterator facet0, facet1;
+	std::list<Facet>::iterator facet0, facet1;
 
 	Edge()
 	{
@@ -120,12 +120,12 @@ public:
 		}
 	}
 
-	operator< (const Edge& edge)
+	bool operator< (const Edge& edge)
 	{
 		return (vtx0 < edge.vtx0 || (vtx0 == edge.vtx0 && vtx1 < edge.vtx1));
 	}
 
-	operator== (const Edge& edge)
+	bool operator== (const Edge& edge)
 	{
 		return (vtx0 == edge.vtx0 && vtx1 == edge.vtx1);
 	}
@@ -136,17 +136,17 @@ public:
 // A list of facets that keeps a list of edges so that adjacent facets can
 // be found quickly.
 //
-class FacetList : public list<Facet>
+class FacetList : public std::list<Facet>
 {
 private:
 	// A vector of edges.
-	vector<Edge> edges;
+	std::vector<Edge> edges;
 
 	// Return the iterator pointing to an edge.
-	vector<Edge>::iterator FindEdge(Vertex vtx0, Vertex vtx1)
+	std::vector<Edge>::iterator FindEdge(Vertex vtx0, Vertex vtx1)
 	{
 		// Binary search for edge.
-		vector<Edge>::iterator at = lower_bound(edges.begin(), edges.end(), Edge(vtx0, vtx1));
+		std::vector<Edge>::iterator at = lower_bound(edges.begin(), edges.end(), Edge(vtx0, vtx1));
 
 		Assert(*at == Edge(vtx0, vtx1));
 
@@ -157,7 +157,7 @@ private:
 	void AddEdge(Vertex vtx0, Vertex vtx1, iterator facet)
 	{
 		// Binary search for edge.
-		vector<Edge>::iterator at = lower_bound(edges.begin(), edges.end(), Edge(vtx0, vtx1));
+		std::vector<Edge>::iterator at = lower_bound(edges.begin(), edges.end(), Edge(vtx0, vtx1));
 
 		if (at != edges.end() && *at == Edge(vtx0, vtx1))
 		{
@@ -172,7 +172,7 @@ private:
 		else
 		{
 			// Insert edge (in sorted order).
-			vector<Edge>::iterator new_edge = edges.insert(at, Edge(vtx0, vtx1));
+			std::vector<Edge>::iterator new_edge = edges.insert(at, Edge(vtx0, vtx1));
 			new_edge->facet0 = facet;
 			new_edge->facet1 = end();
 		}
@@ -182,7 +182,7 @@ private:
 	void RemoveEdge(Vertex vtx0, Vertex vtx1, iterator facet)
 	{
 		// Binary search for edge.
-		vector<Edge>::iterator at = lower_bound(edges.begin(), edges.end(), Edge(vtx0, vtx1));
+		std::vector<Edge>::iterator at = lower_bound(edges.begin(), edges.end(), Edge(vtx0, vtx1));
 
 		Assert(*at == Edge(vtx0, vtx1));
 
@@ -216,7 +216,7 @@ public:
 		Assert(index1 != index2);
 
 		// Lookup edge based on index.
-		vector<Edge>::iterator edge = FindEdge((*facet).verts[index1], (*facet).verts[index2]);
+		std::vector<Edge>::iterator edge = FindEdge((*facet).verts[index1], (*facet).verts[index2]);
 
 		// Return the facet that is opposite this facet.
 		if (edge->facet0 == facet)
@@ -263,7 +263,7 @@ class Extreme
 {
 public:
 	float			fv;
-	list<Vertex>	verts;
+	std::list<Vertex>	verts;
 
 	Extreme()
 	{
@@ -324,7 +324,7 @@ bool find_visble_neighbors
 	const FacetList::iterator &facet, 
 	FacetList &facets, 
 	Vertex vtx_p, 
-	list<FacetList::iterator> &visible
+	std::list<FacetList::iterator> &visible
 )
 {
 	bool bIsVisible = 0;
@@ -334,7 +334,7 @@ bool find_visble_neighbors
 	{
 		// Degenerate facet is visisble if either of it's neighors are.
 		FacetList::iterator it_adj;
-		list<FacetList::iterator>::iterator itit_this;
+		std::list<FacetList::iterator>::iterator itit_this;
 
 		// Add facet iterator to visible list.
 		visible.push_front(facet);
@@ -601,12 +601,12 @@ int iQuickHull
 	// Create a four point simplex out of the six points with min/max co-ordinates.
 	//
 	Vertex vtx_simplex[4];
-	list<Vertex> lvtx_dont_use;
+	std::list<Vertex> lvtx_dont_use;
 
 	// Choose four different vertices.
 	int i_use_extreme = 0;
 	int i_simplex_cnt = 0;
-	list<Vertex>::iterator it_vtx_ext = extremes[i_use_extreme].verts.begin();
+	std::list<Vertex>::iterator it_vtx_ext = extremes[i_use_extreme].verts.begin();
 
 	// Find vertices to use for the simplex.
 	while (i_simplex_cnt < 4 && i_use_extreme < 6)
@@ -803,7 +803,7 @@ int iQuickHull
 						(*F).verts[0] - av3_pts, (*F).verts[1] - av3_pts, (*F).verts[2] - av3_pts));
 				
 				// initialize the visible set V to F
-				list<FacetList::iterator> V;
+				std::list<FacetList::iterator> V;
 	
 				// Find all the neighbors of F that P is visible from.
 				find_visble_neighbors(F, facets, vtx_p, V);
@@ -811,8 +811,8 @@ int iQuickHull
 				Assert(!V.empty())
 
 				// the boundary of V is the set of horizon ridges H
-				list<FacetList::iterator>::iterator itit_fac;
-				list<Edge> H;
+				std::list<FacetList::iterator>::iterator itit_fac;
+				std::list<Edge> H;
 
 				for (itit_fac = V.begin(); itit_fac != V.end(); itit_fac++)
 				{
@@ -878,7 +878,7 @@ int iQuickHull
 				// delete the facets in V  
 				// get all the points outside facets in V
 				// do it now so that new faces get proper edges
-				list<Vertex> outside;
+				std::list<Vertex> outside;
 
 				for (itit_fac = V.begin(); itit_fac != V.end(); itit_fac++)
 				{
@@ -892,7 +892,7 @@ int iQuickHull
 				V.erase(V.begin(), V.end());
 
 				// Compute pseudo centroid of polygon formed by horizon ridges H.
-				list<Edge>::iterator R = H.begin();
+				std::list<Edge>::iterator R = H.begin();
 				i = 1;
 
 				CVector3<> v3_avg = *(*R).vtx0;
@@ -969,11 +969,11 @@ int iQuickHull
 				// for each new facet F'
 				for (itit_fac = V.begin(); itit_fac != V.end(); itit_fac++)
 				{
-					list<Vertex>::iterator it_vtx_next;
+					std::list<Vertex>::iterator it_vtx_next;
 					float f_max_dist = 0.0f;
 
 					// for each unassigned point q in an outside set of a facet V
-					for (list<Vertex>::iterator it_vtx = outside.begin(); it_vtx != outside.end(); it_vtx = it_vtx_next)
+					for (std::list<Vertex>::iterator it_vtx = outside.begin(); it_vtx != outside.end(); it_vtx = it_vtx_next)
 					{
 						it_vtx_next = it_vtx;
 						it_vtx_next++;

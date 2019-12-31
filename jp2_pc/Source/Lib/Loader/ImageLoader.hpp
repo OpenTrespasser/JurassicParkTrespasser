@@ -73,9 +73,9 @@
 #include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/View/Colour.hpp"
 #include "Lib/View/Palette.hpp"
-#include "vector.h"
-#include "map.h"
-#include "set.h"
+#include <vector>
+#include <map>
+#include <set>
 
 
 //**********************************************************************************************

@@ -51,7 +51,7 @@
 #ifndef HEADER_LIB_GEOMDBASE_WAVELETQUADTREEBASETRI_HPP
 #define HEADER_LIB_GEOMDBASE_WAVELETQUADTREEBASETRI_HPP
 
-#include <pair.h>
+#include <tuple>
 #include "Lib/Std/BlockAllocator.hpp"
 #include "Lib/Renderer/ClipRegion2D.hpp"
 #include "Lib/GeomDBase/Plane.hpp"

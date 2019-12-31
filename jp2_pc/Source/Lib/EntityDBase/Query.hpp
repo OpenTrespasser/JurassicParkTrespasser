@@ -86,7 +86,7 @@
 #define HEADER_LIB_ENTITYDBASE_QUERY_HPP
 
 
-#include <list.h>
+#include <list>
 #include "Lib/EntityDBase/Container.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 

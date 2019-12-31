@@ -77,7 +77,7 @@
 #include "Lib\Physics\pelvis_def.h"
 
 // Get the STL definition of the bool type and the true and false constants.
-#include <bool.h>
+//#include <bool.h>
 
 class CInstance;
 class CEntityWater;

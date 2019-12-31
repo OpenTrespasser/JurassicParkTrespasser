@@ -31,7 +31,7 @@
 
 //*********************************************************************************************
 //
-class CWDbQueryWater: public CWDbQuery< list<CEntityWater*> >
+class CWDbQueryWater: public CWDbQuery< std::list<CEntityWater*> >
 //
 // Water object query.
 //
@@ -40,7 +40,7 @@ class CWDbQueryWater: public CWDbQuery< list<CEntityWater*> >
 //**************************************
 {
 public:
-	static list<CEntityWater*> lspetWater;	// List of all water objects in world.
+	static std::list<CEntityWater*> lspetWater;	// List of all water objects in world.
 
 public:
 

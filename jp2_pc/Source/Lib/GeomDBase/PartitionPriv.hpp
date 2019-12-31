@@ -51,7 +51,7 @@
 //
 // Required includes for this object.
 //
-#include "List.h"
+#include <list>
 #include "Lib/EntityDBase/Container.hpp"
 #include "Partition.hpp"
 #include "Lib/EntityDBase/Instance.hpp"
@@ -289,10 +289,10 @@ public:
 
 private:
 
-	class CPartition::CPriv;
+	//class CPartition::CPriv;
 
 	friend class CPartition;
-	friend class CPartition::CPriv;
+	//friend class CPartition::CPriv;
 	friend float CPartitionSpace::fDistanceFromGlobalCameraSqr() const;
 	friend float CInstance::fDistanceFromGlobalCameraSqr() const;
 
@@ -331,13 +331,13 @@ void SetPrioritySetting
 //
 
 // Type describing a container of CPartition pointers.
-class TPartitionList : public CContainer< list<SPartitionListElement> >
+class TPartitionList : public CContainer< std::list<SPartitionListElement> >
 // Prefix: partlist
 {
 };
 
 // Type describing a container of CPartition pointers.
-class TPartitionListChild : public CContainer< list<CPartition*> >
+class TPartitionListChild : public CContainer< std::list<CPartition*> >
 // Prefix: partlist
 {
 };

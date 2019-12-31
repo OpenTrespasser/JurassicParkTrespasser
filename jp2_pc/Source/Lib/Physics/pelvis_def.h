@@ -47,7 +47,7 @@
 #pragma warning(disable : 4244)
 
 // Get the STL definition of the bool type and the true and false constants.
-#include <bool.h>
+//#include <bool.h>
 
 //	Amount of shit...
 #define	NUM_PELVISES 8

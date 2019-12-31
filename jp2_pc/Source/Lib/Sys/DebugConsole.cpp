@@ -90,7 +90,7 @@ ostream					dout(&debug_stream);
 #elif (DEBUG_OUT == DEBUG_OUTPUT_BOTH)
 
 static	dbgstreambuf	debug_stream("DebugLog.txt");
-ostream					dout(&debug_stream);
+std::ostream					dout(&debug_stream);
 
 #endif
 
@@ -106,7 +106,7 @@ ostream					dout(&debug_stream);
 #ifdef __MWERKS__
 	dbgstreambuf::dbgstreambuf() : streambuf()
 #else
-	dbgstreambuf::dbgstreambuf() : streambuf(NULL,0)
+	dbgstreambuf::dbgstreambuf() : std::streambuf()
 #endif
 	{
 #if VER_DEBUG_TEXT
@@ -121,12 +121,12 @@ ostream					dout(&debug_stream);
 #ifdef __MWERKS__
 	dbgstreambuf::dbgstreambuf(char* str_name) : streambuf()
 #else
-	dbgstreambuf::dbgstreambuf(char* str_name) : streambuf(NULL,0)
+	dbgstreambuf::dbgstreambuf(char* str_name) : std::streambuf()
 #endif
 	{
 #if VER_DEBUG_TEXT
 		u4Off = 0;
-		dbgfile.open(str_name,ios::out|ios::trunc);
+		dbgfile.open(str_name,std::ios::out|std::ios::trunc);
 
 		// set the bfile flag on the state of the open file
 		bFile = dbgfile.is_open();

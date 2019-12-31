@@ -329,7 +329,7 @@
 	CSubBioMesh::~CSubBioMesh()
 	{
 		// Delete all of the substitutes.
-		list<CSubstitute*>::iterator i;
+		std::list<CSubstitute*>::iterator i;
 		for (i = lpsubSubstitutes.begin(); i != lpsubSubstitutes.end(); ++i)
 		{
 			delete *i;
@@ -340,7 +340,7 @@
 	void CSubBioMesh::Substitute(const CSubstitute* psub)
 	{
 		// Apply the substitution.
-		list<CVertexReplacement>::const_iterator i = psub->lvrVertexReplacements.begin();
+		std::list<CVertexReplacement>::const_iterator i = psub->lvrVertexReplacements.begin();
 
 		for (; i != psub->lvrVertexReplacements.end(); ++i)
 		{
@@ -353,7 +353,7 @@
 	void CSubBioMesh::Substitute(int i_index)
 	{
 		// Find the correct CSubstitute, and apply it.
-		list<CSubstitute*>::iterator i = lpsubSubstitutes.begin();
+		std::list<CSubstitute*>::iterator i = lpsubSubstitutes.begin();
 
 		for (; i != lpsubSubstitutes.end(); ++i)
 		{
@@ -374,7 +374,7 @@
 	void CSubBioMesh::MakeRelative(CSubstitute* psub, CPArray< CTransform3<> > patf3_joints)
 	{
 		// Calculate the relative attributes of the substitution.
-		list<CVertexReplacement>::iterator i = psub->lvrVertexReplacements.begin();
+		std::list<CVertexReplacement>::iterator i = psub->lvrVertexReplacements.begin();
 
 		for (; i != psub->lvrVertexReplacements.end(); ++i)
 		{

@@ -72,7 +72,7 @@
 #ifndef HEADER_LIB_GEOMDBASE_WAVELETQUADTREEQUERY_HPP
 #define HEADER_LIB_GEOMDBASE_WAVELETQUADTREEQUERY_HPP
 
-#include <list.h>
+#include <list>
 #include "Lib/Std/BlockAllocator.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/GeomDBase/Plane.hpp"
@@ -389,7 +389,7 @@ namespace NMultiResolution
 
 		//******************************************************************************************
 		//
-		pair<TReal, TReal> prrGetWorldZLimits
+		std::pair<TReal, TReal> prrGetWorldZLimits
 		(
 			const CQuadRootQuery* pqnq_root
 		);
@@ -546,7 +546,7 @@ namespace NMultiResolution
 		static CProfileStat psRayRefine;
 		static CProfileStat psRayIntersect;
 
-		list<CQueryRect*> ltpqrQueries;
+		std::list<CQueryRect*> ltpqrQueries;
 
 	public:
 		SMapping mpConversions;					// Conversions between quad - world space.

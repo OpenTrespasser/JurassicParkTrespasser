@@ -239,7 +239,7 @@ public:
 	}
 	
 	//******************************************************************************************
-	virtual esfSideOf(const CTransform3<>& tf3_box) const
+	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const
 	{
 		// Intersect with each plane in turn.
 		ESideOf esf = 0;

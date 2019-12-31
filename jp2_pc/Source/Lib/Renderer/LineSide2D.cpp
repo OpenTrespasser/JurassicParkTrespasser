@@ -93,8 +93,8 @@
 // Required includes.
 //
 #include <math.h>
-#include "algo.h"
-#include "multiset.h"
+#include <algorithm>
+//#include "multiset.h"
 #include "Common.hpp"
 #include "Lib/Std/CircularList.hpp"
 #include "LineSide2D.hpp"
@@ -606,7 +606,7 @@ void RadialOrder(CPArray< CVector2<> >& rpav2, TCList& clist)
 #endif // bOUTPUT_LINESIDE2D_DATA
 
 	// Sort the radial array using STL's QSort routine.
-	sort(parad.atArray, parad.atArray + parad.uLen, CRadial());
+	std::sort(parad.atArray, parad.atArray + parad.uLen, CRadial());
 
 	RemoveSameAnglePoints(parad, v2);
 

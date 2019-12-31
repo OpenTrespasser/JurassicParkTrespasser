@@ -39,8 +39,8 @@
 
 // Note: reording done to insure Windows.h is included before
 // io.h "disables" a subsequent include of same.
-#include "multiset.h"
-#include "map.h"
+//#include "multiset.h"
+#include <map>
 #include "Common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 
@@ -85,7 +85,7 @@ CConsoleBuffer conPreLoader;
 //
 // Map for finding duplicate spatial partitions.
 //
-typedef map< uint32, CPartition*, less<uint32> > TPartDuplicate;
+typedef std::map< uint32, CPartition*, std::less<uint32> > TPartDuplicate;
 TPartDuplicate partdupMap;
 
 //
@@ -1151,8 +1151,8 @@ static void PrintPos(CConsoleBuffer& con, const CPartition* ppart)
 	//*****************************************************************************************
 	CInstance* CPartition::pinsFindNamedInstance
 	(
-		string str_name,
-		string str_class
+		std::string str_name,
+		std::string str_class
 	) const
 	{
 		uint32 u4_handle = u4Hash(str_name.c_str());
@@ -1233,7 +1233,7 @@ static void PrintPos(CConsoleBuffer& con, const CPartition* ppart)
 	//
 	CInstance* CPartition::pinsFindInstance
 	(
-		string str_name					// Name of instance
+		std::string str_name					// Name of instance
 	) const	
 	{
 		uint32 u4_handle = u4Hash(str_name.c_str());
@@ -1284,8 +1284,8 @@ static void PrintPos(CConsoleBuffer& con, const CPartition* ppart)
 	//*****************************************************************************************
 	void CPartition::SortChildrenByVolume()
 	{
-		multiset<CPartVol, CPartVol>           mset_pvol;	// Multiset.
-		multiset<CPartVol, CPartVol>::iterator itmset;		// Multiset iterator.
+		std::multiset<CPartVol, CPartVol>           mset_pvol;	// Multiset.
+		std::multiset<CPartVol, CPartVol>::iterator itmset;		// Multiset iterator.
 
 		// Get a pointer to the child list.
 		CPartition* ppartc = (CPartition*)ppartChildren();

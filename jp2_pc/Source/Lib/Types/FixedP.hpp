@@ -147,7 +147,7 @@
 #ifndef HEADER_LIB_TYPES_FIXEDP_HPP
 #define HEADER_LIB_TYPES_FIXEDP_HPP
 
-#include <function.h>
+#include <functional>
 #include "Lib/Math/FloatDef.hpp"
 
 

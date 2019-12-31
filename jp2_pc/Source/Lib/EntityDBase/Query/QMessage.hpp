@@ -35,7 +35,7 @@ class CDaemon;
 
 //*********************************************************************************************
 //
-class CWDbQueryActiveEntities : public CWDbQuery< list<CEntity*> >
+class CWDbQueryActiveEntities : public CWDbQuery < std::list<CEntity*> >
 //
 // World database query container.
 //

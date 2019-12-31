@@ -424,7 +424,7 @@
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/EntityDBase/QualitySettings.hpp"
 
-#include "Algo.h"
+#include <algorithm>
 #include <Malloc.h>
 
 bool bNoCPPSubtriangle = false;
@@ -3532,7 +3532,7 @@ void DepthSortPolygons(CPipelineHeap& rplh, const CCamera& cam)
 #endif
 	
 	// Sort the polygons using STL's QSort routine.
-	sort(aprpoly, aprpoly + i_num_polys, CPolyFarZ());
+	std::sort(aprpoly, aprpoly + i_num_polys, CPolyFarZ());
 
 #if (DEPTH_SORT_STATS)
 	psQuickSort.Add(ctmr(), i_num_polys);
@@ -3564,7 +3564,7 @@ void DepthSortPolygons(CPipelineHeap& rplh, const CCamera& cam)
 		// Add finished polygon to scan conversion list.
 		rplh.darppolyPolygons << aprpoly[i];
 	}
-	i_num_polys = min(i_num_polys, ptsTolerances.iMaxToDepthsort);
+	i_num_polys = std::min(i_num_polys, ptsTolerances.iMaxToDepthsort);
 
 	// Push as many far away polygons as possible to the render list.
 	{

@@ -277,7 +277,7 @@ public:
 
 //*********************************************************************************************
 //
-class CWDbQueryLights : public CWDbQuery< list<CInstance*> >
+class CWDbQueryLights : public CWDbQuery< std::list<CInstance*> >
 //
 // World database query container.
 //

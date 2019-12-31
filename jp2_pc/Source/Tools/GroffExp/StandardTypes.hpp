@@ -23,7 +23,7 @@
 //
 // Define boolean type, if it hasn't been defined.
 //
-
+/*
 #ifndef bool
 #define bool int
 #endif
@@ -35,7 +35,7 @@
 #ifndef true
 #define true 1
 #endif
-
+*/
 //
 // Define signed scalar types.
 //

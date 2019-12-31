@@ -69,8 +69,8 @@
 #ifdef __MWERKS__
  #include <vector.h>
 #else
- #include "Stl/vector.h"
- #include "Stl/algo.h"
+ #include <vector>
+ #include <algorithm>
 #endif
 
 //
@@ -223,7 +223,7 @@ bool	gbNormalizeStats = true;					// set to true if stat is required in actual t
 			Assert(ppsParent->pvcList);
 
 			// Remove from list.
-			vector<CProfileStat*>::iterator vci = find(ppsParent->pvcList->begin(), ppsParent->pvcList->end(), this);
+			std::vector<CProfileStat*>::iterator vci = std::find(ppsParent->pvcList->begin(), ppsParent->pvcList->end(), this);
 			if (vci != ppsParent->pvcList->end())
 				ppsParent->pvcList->erase(vci);
 		}
@@ -268,7 +268,7 @@ bool	gbNormalizeStats = true;					// set to true if stat is required in actual t
 			// Subtract separate children from this stat before printing it.
 			TCycles cy_original = cyCycles;
 			if (pvcList)
-				for (vector<CProfileStat*>::iterator it = pvcList->begin(); it != pvcList->end(); it++)
+				for (std::vector<CProfileStat*>::iterator it = pvcList->begin(); it != pvcList->end(); it++)
 					if ((*it)->setepfFlags[epfSEPARATE])
 						cyCycles -= (*it)->cyCycles;
 
@@ -353,7 +353,7 @@ bool	gbNormalizeStats = true;					// set to true if stat is required in actual t
 			TCycles cy_other = cyCycles;
 
 			// Write non-separate children first, indented.
-			vector<CProfileStat*>::iterator it;
+			std::vector<CProfileStat*>::iterator it;
 			for (it = pvcList->begin(); it != pvcList->end(); it++)
 			{
 				if (b_show_hidden || !(*it)->setepfFlags[epfHIDDEN])
@@ -400,7 +400,7 @@ bool	gbNormalizeStats = true;					// set to true if stat is required in actual t
 		iCount = 0;
 
 		if (pvcList)
-			for (vector<CProfileStat*>::iterator it = pvcList->begin(); it != pvcList->end(); it++)
+			for (std::vector<CProfileStat*>::iterator it = pvcList->begin(); it != pvcList->end(); it++)
 				(*it)->Reset();
 	}
 
@@ -409,7 +409,7 @@ bool	gbNormalizeStats = true;					// set to true if stat is required in actual t
 	{
 		// Create list first time.
 		if (!pvcList)
-			pvcList = new vector<CProfileStat*>;
+			pvcList = new std::vector<CProfileStat*>;
 
 		// Add to list.
 		pvcList->push_back(pps);

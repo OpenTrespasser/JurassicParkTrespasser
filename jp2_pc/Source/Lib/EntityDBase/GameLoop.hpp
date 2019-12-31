@@ -35,7 +35,7 @@
 #ifndef HEADER_ENTITYDBASE_GAMELOOP_HPP
 #define HEADER_ENTITYDBASE_GAMELOOP_HPP
 
-#include <list.h>
+#include <list>
 
 #include "Container.hpp"
 #include "Instance.hpp"
@@ -73,7 +73,7 @@ public:
 	EGameMode							egmGameMode;	// Game mode.
 	bool								bPauseGame;		// Pause flag.
 	bool								bPreload;		// Performs preloading.
-	CContainer<list <CInstance*> >		lpinsTrash;		// Trash list- instances that are to
+	CContainer<std::list <CInstance*> >		lpinsTrash;		// Trash list- instances that are to
 														// be discarded at end of frame.
 
 public:

@@ -67,7 +67,7 @@
 #include "Lib/EntityDBase/Instance.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
 
-#include <list.h>
+#include <list>
 
 //
 // Definitions for CShadowBuffer.
