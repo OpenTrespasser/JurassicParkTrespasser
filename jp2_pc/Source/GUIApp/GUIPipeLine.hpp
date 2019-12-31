@@ -46,7 +46,7 @@
 // Class definitions.
 //
 
-typedef list<CPartition*> TSelectedList;
+typedef std::list<CPartition*> TSelectedList;
 
 //*********************************************************************************************
 //

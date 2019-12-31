@@ -51,8 +51,8 @@
 #include "Lib/Physics/InfoBox.hpp"
 #include "Lib/Transform/TransformIO.hpp"
 
-#include <fstream.h>
-#include <set.h>
+#include <fstream>
+#include <set>
 
 float fTolerance = 0.01f;
 
@@ -76,7 +76,7 @@ public:
 
 extern TMapHashPins tmPlatonicIdeal;
 
-typedef set<CDescription, less<CDescription> > TSetDescPins;
+typedef std::set<CDescription, std::less<CDescription> > TSetDescPins;
 TSetDescPins tsdpDescriptions;
 
 
@@ -112,7 +112,7 @@ bool bIsCandidate(const CInstance* pins)
 
 void FindDuplicates()
 {
-	ofstream ofs("Duplicates.txt");
+	std::ofstream ofs("Duplicates.txt");
 	if (!ofs.is_open())
 	{
 		// Some sort of failure.
@@ -136,12 +136,12 @@ void FindDuplicates()
 			if (bIsCandidate(pins))
 			{
 				// Yes!
-				pair<TSetDescPins::iterator, bool> p = tsdpDescriptions.insert(CDescription(pins));
+				std::pair<TSetDescPins::iterator, bool> p = tsdpDescriptions.insert(CDescription(pins));
 
 				if (!p.second)
 				{
 					// Match!
-					void DuplicateTextOut(ofstream&, const CInstance*, const CInstance*);
+					void DuplicateTextOut(std::ofstream&, const CInstance*, const CInstance*);
 					DuplicateTextOut(ofs, (*p.first).pinsBase, pins);
 				}
 			}
@@ -232,7 +232,7 @@ CRotate3<> r3FindRot(const CVector3<>& v3_master, const CVector3<>& v3_copy)
 
 
 
-void DuplicateTextOut(ofstream& ofs, const CInstance* pins_master, const CInstance* pins_copy)
+void DuplicateTextOut(std::ofstream& ofs, const CInstance* pins_master, const CInstance* pins_copy)
 {
 	// Get the physics infos:
 	const CPhysicsInfoBox* pphib_master = (CPhysicsInfoBox*)pins_master->pphiGetPhysicsInfo();
@@ -259,7 +259,7 @@ void DuplicateTextOut(ofstream& ofs, const CInstance* pins_master, const CInstan
 
 	ofs << ' ' << pins_copy->fGetScale() / pins_master->fGetScale();
 
-	ofs << endl;
+	ofs << std::endl;
 }
 
 

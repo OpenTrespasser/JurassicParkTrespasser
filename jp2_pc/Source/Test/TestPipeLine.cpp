@@ -297,6 +297,7 @@
 #include "Test/Test3DObjs.hpp"
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
 #include "Lib/EntityDBase/GameLoop.hpp"
+#include "Lib/EntityDBase/EntityLight.hpp"
 
 
 #define angFIELD_OF_VIEW_INCR	(CAngle)dDegreesToRadians(2)
