@@ -80,19 +80,19 @@
     <OutDir>.\Build\Release\Loader\</OutDir>
     <IntDir>.\Build\Release\Loader\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
     <OutDir>.\Build\Final_P6\Loader\</OutDir>
     <IntDir>.\Build\Final_P6\Loader\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
     <OutDir>.\Build\Final\Loader\</OutDir>
     <IntDir>.\Build\Final\Loader\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Build\Debug\Loader\</OutDir>

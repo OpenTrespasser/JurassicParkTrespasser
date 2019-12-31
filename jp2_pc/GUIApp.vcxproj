@@ -84,19 +84,19 @@
     <OutDir>.\Build\Final_P6\GUIApp\</OutDir>
     <IntDir>.\Build\Final_P6\GUIApp\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
     <OutDir>.\Build\Final\GUIApp\</OutDir>
     <IntDir>.\Build\Final\GUIApp\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>.\Build\Release\GUIApp\</OutDir>
     <IntDir>.\Build\Release\GUIApp\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Build\Debug\GUIApp\</OutDir>
@@ -284,6 +284,7 @@
       <AdditionalDependencies>ole32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions> /verbose:lib  /SECTION:SelfMod,ERW </AdditionalOptions>
       <StackReserveSize>1048576</StackReserveSize>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">

@@ -79,7 +79,7 @@
     <OutDir>.\build\release\trespass\</OutDir>
     <IntDir>.\build\release\trespass\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\build\debug\trespass\</OutDir>
@@ -91,13 +91,13 @@
     <OutDir>.\build\final\trespass\</OutDir>
     <IntDir>.\build\final\trespass\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
     <OutDir>.\Build\Final_P6\trespass\</OutDir>
     <IntDir>.\Build\Final_P6\trespass\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>

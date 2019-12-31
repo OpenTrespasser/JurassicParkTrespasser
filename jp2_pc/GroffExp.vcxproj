@@ -69,7 +69,7 @@
     <OutDir>.\Build\GroffExp\Release\</OutDir>
     <IntDir>.\Build\GroffExp\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Build\GroffExp\Debug\</OutDir>
@@ -81,7 +81,7 @@
     <OutDir>.\Build\GroffExp\Final\</OutDir>
     <IntDir>.\Build\GroffExp\Final\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
@@ -173,6 +173,7 @@
       <ImportLibrary>.\Build\GroffExp\Debug\GroffExp.lib</ImportLibrary>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>.\Source\Tools\GroffExp\GroffExp.def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">

@@ -66,13 +66,13 @@
     <OutDir>.\Build\Release\WinShell\</OutDir>
     <IntDir>.\Build\Release\WinShell\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
     <OutDir>.\Build\Final\WinShell\</OutDir>
     <IntDir>.\Build\Final\WinShell\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Build\Debug\WinShell\</OutDir>

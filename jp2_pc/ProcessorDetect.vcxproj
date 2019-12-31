@@ -53,7 +53,7 @@
     <OutDir>.\Build\Release\ProcessorDetect\</OutDir>
     <IntDir>.\Build\Release\ProcessorDetect\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc</IncludePath>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Build\Debug\ProcessorDetect\</OutDir>
