@@ -176,7 +176,7 @@ int iAnimalVersion = -1;
 
 		if (shHeader.iVersion < iLATEST_SAVE_VERSION)
 			dout <<"Warning: Scene file is version " <<shHeader.iVersion
-				 <<", latest version is " <<iLATEST_SAVE_VERSION << std::endl;
+				 <<", latest version is " <<iLATEST_SAVE_VERSION << "\n";
 
 		// Put the animal version somewhere that animals can find it.
 		iAnimalVersion = shHeader.iAnimalVersion;

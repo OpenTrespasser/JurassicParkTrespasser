@@ -225,7 +225,7 @@
 
 			if (CLoadWorld::bVerbose)
 			{
-				dout << "Magnet " << pgon->strObjectName << std::endl;
+				dout << "Magnet " << pgon->strObjectName << "\n";
 			}
 
 			//
@@ -342,7 +342,7 @@
 						pins_master = pins;
 					else
 					{
-						dout << "  !Extra attachment " << pins->strGetInstanceName() << std::endl;
+						dout << "  !Extra attachment " << pins->strGetInstanceName() << "\n";
 						Assert(false);
 						return 0;
 					}
@@ -363,7 +363,7 @@
 				dout << "  Attaches " << pins_master->strGetInstanceName();
 				if (pins_slave)
 					dout << " and " << pins_slave->strGetInstanceName();
-				dout << std::endl;
+				dout << "\n";
 			}
 
 			// Make a CMagnet out of the text props.

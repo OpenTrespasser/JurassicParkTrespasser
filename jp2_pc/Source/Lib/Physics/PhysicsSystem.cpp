@@ -390,7 +390,7 @@ public:
 	void CPhysicsSystem::CPriv::ApplyImpulses(const CVector3<>& v3_centre, TReal r_radius,
 		TReal r_impulse_max, bool b_ground)
 	{
-		dout <<"Impulses " <<r_impulse_max <<" radius " <<r_radius << std::endl;
+		dout <<"Impulses " <<r_impulse_max <<" radius " <<r_radius << "\n";
 
 		// Create a query sphere.
 		CPartitionSpaceQuery partsq(CPresence3<>(v3_centre), r_radius);

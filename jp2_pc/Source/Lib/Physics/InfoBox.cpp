@@ -1298,7 +1298,7 @@ inline CJoeXob& JoeXob(int i_index)
 		if (bIsTangible())
 			if (Min(Min(v3_corner.tX, v3_corner.tY), v3_corner.tZ) <= rBOX_DIM_WARN)
 				dout <<"Warning: Physics box " <<pgon->strObjectName <<" is smaller than " <<(rBOX_DIM_WARN*2.0f) <<" m: "
-					 <<(v3_corner*2.0f) << std::endl;
+					 <<(v3_corner*2.0f) << "\n";
 
 		CXob::XOBResize(afConvert(v3_corner));
 		bvbCollideVol = CBoundVolBox(v3_corner / pgon->fScale);
@@ -1497,7 +1497,7 @@ inline CJoeXob& JoeXob(int i_index)
 				// Sorry, no room.
 				if (!bFailed)
 				{
-					dout <<"Too many boxes! Cannot wake up " <<pins->strGetInstanceName() << std::endl;
+					dout <<"Too many boxes! Cannot wake up " <<pins->strGetInstanceName() << "\n";
 					bFailed = true;
 				}
 				return;
