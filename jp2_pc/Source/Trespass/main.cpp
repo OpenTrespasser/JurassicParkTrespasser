@@ -321,7 +321,7 @@ void TrespassExceptionCleanup()
 	// Remove the audio, we are about to quit.
 	delete CAudio::pcaAudio;
 
-	destroy(&prasMainScreen);
+	delete &prasMainScreen;
 
 	g_initDD.ReleaseAll();
 
@@ -669,7 +669,7 @@ Cleanup:
 	if (prasMainScreen)
 	{
 		prasMainScreen->uRefs = 1;
-		destroy(&prasMainScreen);
+		delete &prasMainScreen;
 	}
 	g_initDD.ReleaseAll();
 

@@ -344,7 +344,8 @@ void CTPassGlobals::HardScreenReset(BOOL b_reset_world)
 	if (b_reset_world)
 		wWorld.Reset();
 	prasMainScreen->uRefs = 1;
-	destroy(&prasMainScreen);
+	delete &prasMainScreen;
+
 	g_initDD.ReleaseAll();
 	g_initDD.BaseInit();
 

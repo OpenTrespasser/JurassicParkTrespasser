@@ -693,7 +693,7 @@ CEnumerateDevices::CEnumerateDevices()
 			&Devices[i].d3dDevice
 		);
 	}
-	for (i = iNumDevices - 1; i >= 0; --i)
+	for (int i = iNumDevices - 1; i >= 0; --i)
 	{
 		if (!Devices[i].bD3DDeviceFound)
 			RemoveDevice(i);

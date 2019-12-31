@@ -664,7 +664,7 @@ void CGameWnd::InnerLoopCall()
 	// Check for pending save.
 	if (wWorld.bIsSavePending())
 	{
-		const string &strName = wWorld.strGetPendingSave();
+		const std::string &strName = wWorld.strGetPendingSave();
 
 		// Stop simulation.
 		CMessageSystem(escSTOP_SIM).Dispatch();
@@ -679,7 +679,7 @@ void CGameWnd::InnerLoopCall()
 	// Check for pending level load.
 	if (wWorld.bIsLoadPending())
 	{
-		const string &strName = wWorld.strGetPendingLoad();
+		const std::string &strName = wWorld.strGetPendingLoad();
 
 		// Stop simulation.
 		CMessageSystem(escSTOP_SIM).Dispatch();

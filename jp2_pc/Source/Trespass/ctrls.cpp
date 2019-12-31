@@ -1251,9 +1251,9 @@ int CUIListbox::AddItem(LPCSTR pszText, DWORD dwParam, int iIndex, WORD wFlags)
     else
     {
         int i;
-        vector<CUILISTBOXINFO>::iterator    ppinfo;
+        std::vector<CUILISTBOXINFO>::iterator    ppinfo;
 
-        for (i = 0, ppinfo = m_vInfo.begin(); i < iIndex && ppinfo; i++, ppinfo++)
+        for (i = 0, ppinfo = m_vInfo.begin(); i < iIndex && ppinfo != m_vInfo.end(); i++, ppinfo++)
         {
             ;
         }
@@ -1267,7 +1267,7 @@ int CUIListbox::AddItem(LPCSTR pszText, DWORD dwParam, int iIndex, WORD wFlags)
 
 BOOL CUIListbox::RemoveItem(int iIndex)
 {
-    vector<CUILISTBOXINFO>::iterator    ppinfo;
+    std::vector<CUILISTBOXINFO>::iterator    ppinfo;
 
     int     i;
 
@@ -1276,7 +1276,7 @@ BOOL CUIListbox::RemoveItem(int iIndex)
         ;
     }
 
-    if (ppinfo)
+    if (ppinfo != m_vInfo.end())
     {
         delete [] (*ppinfo).psz;
         m_vInfo.erase(ppinfo);
@@ -1311,7 +1311,7 @@ BOOL CUIListbox::RemoveItem(int iIndex)
 
 BOOL CUIListbox::RemoveAllItems()
 {
-    vector<CUILISTBOXINFO>::iterator    pinfo;
+    std::vector<CUILISTBOXINFO>::iterator    pinfo;
 
     for (pinfo = m_vInfo.begin(); pinfo < m_vInfo.end(); pinfo++)
     {
@@ -1329,7 +1329,7 @@ BOOL CUIListbox::RemoveAllItems()
 
 int CUIListbox::FindItem(LPCSTR pszText)
 {
-    vector<CUILISTBOXINFO>::iterator    pinfo;
+    std::vector<CUILISTBOXINFO>::iterator    pinfo;
     int  i;
     int  iIndex = -1;
 
@@ -1385,10 +1385,10 @@ int CUIListbox::GetItem(LPSTR psz, int icText, DWORD & dwParam, WORD & wFlags, i
 
 int CUIListbox::SetItem(LPSTR psz, DWORD dwParam, WORD wFlags, int iIndex)
 {
-    vector<CUILISTBOXINFO>::iterator    pinfo;
+    std::vector<CUILISTBOXINFO>::iterator    pinfo;
 
     pinfo = m_vInfo.begin() + iIndex;
-    if (!pinfo)
+    if (pinfo == m_vInfo.end())
     {
         return -1;
     }
@@ -1485,7 +1485,7 @@ void CUIListbox::Update()
     HBRUSH              hbr;
     int                 i;
     int                 iStop;
-    vector<CUILISTBOXINFO>::iterator    pinfo;
+    CUILISTBOXINFO*     pinfo;
     LPSTR               pszText;
     HFONT               hfontOld;
     WORD                wFill;
@@ -2830,8 +2830,8 @@ void CUIEditbox::Update()
 
     SetTextColor(hdc, m_crFGColor);
 
-    psz = m_vInfo.begin();
-    if (psz == NULL)
+    psz = m_vInfo.data();
+    if (psz == NULL || m_vInfo.empty())
     {
         iLen = 0;
     }
@@ -2990,7 +2990,7 @@ LPSTR CUIEditbox::GetText()
 {
     if (!m_vInfo.empty())
     {
-        return (LPSTR)m_vInfo.begin();
+        return (LPSTR)m_vInfo.data();
     }
 
     return NULL;
@@ -3020,7 +3020,7 @@ BOOL CUIEditbox::SetText(LPSTR pszNew)
         {
             m_vInfo.erase(m_vInfo.begin(), m_vInfo.end());
             m_vInfo.insert(m_vInfo.begin(), strlen(pszNew) + 1, '\0');
-            strcpy(m_vInfo.begin(), pszNew);
+            strcpy(m_vInfo.data(), pszNew);
         }
         else
         {
@@ -3193,7 +3193,7 @@ void CUIEditbox::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
                 iSize = m_vInfo.size();
                 if (iSize > 1)
                 {
-                    vector<char>::iterator  pch;
+                    std::vector<char>::iterator  pch;
 
                     pch = m_vInfo.end() - 2;
                     m_vInfo.erase(pch);

@@ -48,13 +48,13 @@ extern HWND		    g_hwnd;
 //  History:    10-Jul-98    SHernd  Created
 //
 //---------------------------------------------------------------------------
-void AddToLoadGameVector(SAVEGAMEINFO * psgi, vector<SAVEGAMEINFO> * pInfo)
+void AddToLoadGameVector(SAVEGAMEINFO * psgi, std::vector<SAVEGAMEINFO> * pInfo)
 {
     bool                            fEntered;
-    vector<SAVEGAMEINFO>::iterator  ppinfo;
+    std::vector<SAVEGAMEINFO>::iterator  ppinfo;
 
     for (ppinfo = pInfo->begin(), fEntered = false; 
-         ppinfo <= pInfo->end() && ppinfo && !fEntered; 
+         ppinfo != pInfo->end() && !fEntered; 
          ppinfo++)
     {
         if (CompareFileTime(&ppinfo->ft, &psgi->ft) == -1)
@@ -123,7 +123,7 @@ BOOL ExtractDataFromSaveFile(LPSTR pszFile, SAVEGAMEINFO * psgi)
 //  History:    01-Jun-97    SHernd  Created
 //
 //---------------------------------------------------------------------------
-BOOL EnterSavedGamesIntoLoadGameVector(vector<SAVEGAMEINFO> * pInfo)
+BOOL EnterSavedGamesIntoLoadGameVector(std::vector<SAVEGAMEINFO> * pInfo)
 {
     char                szPath[_MAX_PATH];
     char                szBase[_MAX_PATH];
@@ -181,15 +181,15 @@ BOOL EnterSavedGamesIntoLoadGameVector(vector<SAVEGAMEINFO> * pInfo)
 }
 
 
-void FindSavedGames(CUIListbox * plist, vector<SAVEGAMEINFO> * psgi)
+void FindSavedGames(CUIListbox * plist, std::vector<SAVEGAMEINFO> * psgi)
 {
-    vector<SAVEGAMEINFO>::iterator  ppinfo;
+    std::vector<SAVEGAMEINFO>::iterator  ppinfo;
 
     EnterSavedGamesIntoLoadGameVector(psgi);
 
-    for (ppinfo = psgi->begin(); ppinfo && ppinfo != psgi->end(); ppinfo++)
+    for (ppinfo = psgi->begin(); ppinfo != psgi->end(); ppinfo++)
     {
-        plist->AddItem(ppinfo->szName, (DWORD)ppinfo, -1, 0);
+        plist->AddItem(ppinfo->szName, (DWORD)&(*ppinfo), -1, 0);
     }
 }
 
@@ -205,9 +205,9 @@ CLoadGameWnd::CLoadGameWnd(CUIManager * puimgr) : CUIDlg(puimgr)
 
 CLoadGameWnd::~CLoadGameWnd()
 {
-    vector<SAVEGAMEINFO>::iterator  ppinfo;
+    std::vector<SAVEGAMEINFO>::iterator  ppinfo;
 
-    for (ppinfo = m_vInfo.begin(); ppinfo && ppinfo != m_vInfo.end(); ppinfo++)
+    for (ppinfo = m_vInfo.begin(); ppinfo != m_vInfo.end(); ppinfo++)
     {
         delete ppinfo->pdib;
     }
@@ -311,7 +311,7 @@ void CLoadGameWnd::UIListboxClick(CUICtrl * pctrl, int iIndex)
     DWORD           dwParam;
     WORD            wFlags;
     CUIStatic *     pstatic;
-    vector<SAVEGAMEINFO>::iterator  ppinfo;
+    //std::vector<SAVEGAMEINFO>::iterator  ppinfo;
 
     if (iIndex == -1)
     {
@@ -326,7 +326,7 @@ void CLoadGameWnd::UIListboxClick(CUICtrl * pctrl, int iIndex)
 
     // Load in the correct BMP to put in the static control
     m_pSaveGameList->GetItem(sz, sizeof(sz), dwParam, wFlags, iIndex);
-    ppinfo = (SAVEGAMEINFO*)dwParam;
+	SAVEGAMEINFO* ppinfo = (SAVEGAMEINFO*)dwParam;
 
     pras = (CRasterDC *)ConvertBMP(ppinfo->pdib, true);
 
@@ -385,9 +385,9 @@ CSaveGameWnd::CSaveGameWnd(CUIManager * puimgr) : CUIDlg(puimgr)
 
 CSaveGameWnd::~CSaveGameWnd()
 {
-    vector<SAVEGAMEINFO>::iterator  ppinfo;
+    std::vector<SAVEGAMEINFO>::iterator  ppinfo;
 
-    for (ppinfo = m_vInfo.begin(); ppinfo && ppinfo != m_vInfo.end(); ppinfo++)
+    for (ppinfo = m_vInfo.begin(); ppinfo != m_vInfo.end(); ppinfo++)
     {
         delete ppinfo->pdib;
     }
@@ -540,7 +540,7 @@ void CSaveGameWnd:: UIListboxClick(CUICtrl * pctrl, int iIndex)
     DWORD           dwParam;
     WORD            wFlags;
     CUIStatic *     pstatic;
-    vector<SAVEGAMEINFO>::iterator  ppinfo;
+    //std::vector<SAVEGAMEINFO>::iterator  ppinfo;
 
     pstatic = (CUIStatic *)GetUICtrl(1003);
 
@@ -553,7 +553,7 @@ void CSaveGameWnd:: UIListboxClick(CUICtrl * pctrl, int iIndex)
 
     // Load in the correct BMP to put in the static control
     m_pSaveGameList->GetItem(sz, sizeof(sz), dwParam, wFlags, iIndex);
-    ppinfo = (SAVEGAMEINFO*)dwParam;
+    SAVEGAMEINFO* ppinfo = (SAVEGAMEINFO*)dwParam;
 
     pras = (CRasterDC *)ConvertBMP(ppinfo->pdib, true);
 

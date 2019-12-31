@@ -270,7 +270,7 @@ public:
     virtual void    SetFontSize(BOOL bFontSize) { m_bFontSize = bFontSize; m_bUpdate = TRUE;}
     
 private:
-    vector<CUILISTBOXINFO>     m_vInfo;
+    std::vector<CUILISTBOXINFO>     m_vInfo;
 
     CUIButton  *    m_pScroll[2];
     BOOL            m_bCaptured : 1;
@@ -498,7 +498,7 @@ public:
 
 protected:
     int             m_iMaxSize;
-    vector<char>    m_vInfo;
+    std::vector<char>    m_vInfo;
     CRasterDC *     m_pras;
     BOOL            m_bUpdate;
     COLORREF        m_crBkColor;

@@ -376,8 +376,10 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
             // BUGBUG:  We may have to pause/halt audio and what not
 
 			// Delete renderer stuff if required.
-			if (g_CTPassGlobals.bInGame)
-				destroy(&prasMainScreen);
+            if (g_CTPassGlobals.bInGame) {
+                delete& prasMainScreen;
+                prasMainScreen = rptr<CRasterWin>(rptr_const<CRasterWin>::EExist::eEXIST, nullptr);
+            }
         }
 
         m_pUIMgr->m_bActive = FALSE;
@@ -434,7 +436,7 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
 
 void CMainWnd::OnTimer(HWND hwnd, UINT id)
 {
-    vector<CUIWnd *>::iterator      i;
+    std::vector<CUIWnd *>::iterator      i;
 
     for (i = m_pUIMgr->m_vUIWnd.end() - 1; i >= m_pUIMgr->m_vUIWnd.begin(); i--)
     {
