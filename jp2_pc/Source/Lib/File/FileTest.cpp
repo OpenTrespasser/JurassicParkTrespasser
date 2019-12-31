@@ -55,7 +55,7 @@ CArea* write_geom(CFileImage* fi, CSection* section, SGeom* geom)
 	return g_area;
 }
 
-main()
+int main()
 {
 	// Let's construct a geom type to write and read.
 

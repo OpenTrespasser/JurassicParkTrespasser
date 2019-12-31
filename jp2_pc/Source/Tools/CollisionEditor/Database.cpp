@@ -1,6 +1,9 @@
+#include "stdafx.h"
+
+#include "Common.hpp"
 #include "Database.h"
-#include <fstream.h>
-#include <ctype.h>
+#include <fstream>
+#include <cctype>
 
 
 bool bProcessLanguageFilename

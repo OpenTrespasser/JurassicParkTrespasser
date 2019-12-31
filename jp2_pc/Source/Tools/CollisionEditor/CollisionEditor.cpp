@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "Common.hpp"
 #include "CollisionEditor.h"
 #include "CollisionEditorDlg.h"
 #include "Lib/Sys/MemoryLog.hpp"

@@ -1,13 +1,14 @@
 #include "stdafx.h"
-#include "bstring.h"
-#include "set.h"
+#include <string>
+#include <set>
+#include "Common.hpp"
 #include "Database.h"
 #include "CollisionEditor.h"
 #include "SampleListDlg.h"
 
 
-#include <fstream.h>
-#include <ctype.h>
+#include <fstream>
+#include <cctype>
 
 
 #ifdef _DEBUG

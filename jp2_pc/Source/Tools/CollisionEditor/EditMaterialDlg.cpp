@@ -1,6 +1,7 @@
 // EditMaterialDlg.cpp : implementation file
 //
 #include "stdafx.h"
+#include "Common.hpp"
 #include "CollisionEditor.h"
 #include "database.h"
 #include "EditMaterialDlg.h"
