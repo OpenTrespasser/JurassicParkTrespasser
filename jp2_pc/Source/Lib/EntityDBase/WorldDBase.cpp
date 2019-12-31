@@ -2178,7 +2178,7 @@ CRenderDB*  ps_renderDB = 0;
 		// Query the terrain partition for objects at X,Y
 		
 		// Make a tiny spatial partition.
-		CPartitionSpace ps(CBoundVolPoint());
+		CPartitionSpace ps = CPartitionSpace(CBoundVolPoint());
 		ps.SetPos(CVector3<>(r_x,r_y,0.0f));
 
 		CWDbQueryTerrainObj qto(&ps);

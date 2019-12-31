@@ -61,7 +61,7 @@
 #ifndef HEADER_TEST_AI_AITESTSHELL_HPP
 #define HEADER_TEST_AI_AITESTSHELL_HPP
 
-#include <vector.h>
+#include <vector>
 
 #include "Lib/Transform/Vector.hpp"
 

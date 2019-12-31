@@ -87,7 +87,8 @@
 
 //#include "Brain.hpp"
 #include "Influence.hpp"
-#include <multimap.h>
+//#include <multimap.h>
+#include <map>
 
 #include "Lib\Std\Set.hpp"
 
@@ -204,9 +205,9 @@ public:
 						// The brain currently using this synthesizer.
 
 private:
-	typedef multimap<const CRating, CActBundle, less<CRating> >	TMMapAct;
-	typedef pair<const CRating, CActBundle>						TPairAct;
-	typedef pair<const CRating, CActBundle>					TConstPairAct;
+	typedef std::multimap<const CRating, CActBundle, std::less<CRating> >	TMMapAct;
+	typedef std::pair<const CRating, CActBundle>						TPairAct;
+	typedef std::pair<const CRating, CActBundle>					TConstPairAct;
 
 	TMMapAct				mmapRandomActivities;
 						// The set of all registered activities,
