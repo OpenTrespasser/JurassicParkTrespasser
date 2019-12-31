@@ -72,21 +72,25 @@
     <OutDir>.\Build\Release\AI\</OutDir>
     <IntDir>.\Build\Release\AI\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
     <OutDir>.\Build\Final\AI\</OutDir>
     <IntDir>.\Build\Final\AI\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
     <OutDir>.\Build\Final_P6\AI\</OutDir>
     <IntDir>.\Build\Final_P6\AI\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Build\Debug\AI\</OutDir>
     <IntDir>.\Build\Debug\AI\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>.\Source\Lib\Sys;.\Inc\maxsdk;.\Source\Tools\GroffExp;.\Source\gblinc;.\Source;.\Inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

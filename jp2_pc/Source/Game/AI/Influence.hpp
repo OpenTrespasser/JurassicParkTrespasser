@@ -421,7 +421,7 @@ public:
 
 //*********************************************************************************************
 //
-class CInfluenceList : public set<CInfluence, less<CInfluence> >
+class CInfluenceList : public std::set<CInfluence, std::less<CInfluence> >
 //
 //	Prefix: infl
 //

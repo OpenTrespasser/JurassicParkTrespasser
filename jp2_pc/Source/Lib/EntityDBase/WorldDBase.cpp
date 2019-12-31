@@ -153,7 +153,7 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Renderer/RenderCache.hpp"
 
-#include <multimap.h>
+//#include <multimap.h>
 
 #include "Shell\WinRenderTools.hpp"
 

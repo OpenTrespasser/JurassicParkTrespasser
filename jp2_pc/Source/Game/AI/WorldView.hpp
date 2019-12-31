@@ -163,7 +163,7 @@ public:
 	TSec			sTimeOfLastTemporaryFlagReset;			
 									// When exactly did we reset the temporary flags last time?
 		
-	list<CTerrainKnowledge>  ltkKnowledge;	
+	std::list<CTerrainKnowledge>  ltkKnowledge;	
 									// Some info about the terrain, as perceived by the animal.
 
 	CVector2<>		v2CenterOfTerrainKnowledge;	
@@ -176,7 +176,7 @@ public:
 	int				iSideMerging;
 									// The side of the terrain segment we are trying to merge.
 
-	list<CTerrainKnowledge>::iterator  ptkKnowledgeMerging;	
+	std::list<CTerrainKnowledge>::iterator  ptkKnowledgeMerging;	
 									// The terrain segment that we are trying to merge.
 
 	
