@@ -3,12 +3,11 @@
 # Directories
 .vs/
 jp2_pc/Build/
+jp2_pc/GroffBuild/
+jp2_pc/Template
 
-# Visual Studio Files
-*.sln
-*.vcxproj
-*.filters
-*.user
+*.aps
+
 
 # OSX Hidden Files
 .DS_Store
