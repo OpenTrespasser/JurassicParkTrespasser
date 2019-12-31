@@ -176,7 +176,7 @@ int iAnimalVersion = -1;
 
 		if (shHeader.iVersion < iLATEST_SAVE_VERSION)
 			dout <<"Warning: Scene file is version " <<shHeader.iVersion
-				 <<", latest version is " <<iLATEST_SAVE_VERSION <<std::endl;
+				 <<", latest version is " <<iLATEST_SAVE_VERSION <<endl;
 
 		// Put the animal version somewhere that animals can find it.
 		iAnimalVersion = shHeader.iAnimalVersion;
@@ -295,7 +295,7 @@ int iAnimalVersion = -1;
 		Assert(!bRead);
 
 		// Make sure that we don't already have one of these!  Assert that the insertion is successful.
-		std::pair < std::set <uint32, std::less<uint32> >::iterator, bool > p = setHandles.insert(pins->u4GetUniqueHandle());
+		pair < set <uint32, less<uint32> >::iterator, bool > p = setHandles.insert(pins->u4GetUniqueHandle());
 		Assert(p.second);
 
 

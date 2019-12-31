@@ -395,7 +395,7 @@ CLoadImageDirectory::~CLoadImageDirectory
 	// raster should reference one of these palettes. All rasters should have created their
 	// own palettes.
 
-	for (std::vector<CPal*>::iterator i = appal.begin(); i<appal.end(); ++i)
+	for (vector<CPal*>::iterator i = appal.begin(); i<appal.end(); ++i)
 	{
 		delete (*i);
 	}
@@ -573,7 +573,7 @@ bool CLoadImageDirectory::bProcessLocalSwapFile
 	// Before we copy local ensure that we have not reached our quota for used disk space
 	char					str_wildcard[MAX_PATH];
 	_finddata_t				fnd;
-	std::vector<SDiskSwapFile>	vdsf;
+	vector<SDiskSwapFile>	vdsf;
 
 	strcpy(str_wildcard,str_local_swap_dir);
 	strcat(str_wildcard,"\\*.swp");

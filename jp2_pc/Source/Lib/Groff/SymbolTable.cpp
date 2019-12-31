@@ -101,9 +101,9 @@ CSymbolEntry& CSymbolEntry::operator=
 
 //**********************************************************************************************
 //
-std::ostream& operator<<
+ostream& operator<<
 (
-	std::ostream&			os_stream, 
+	ostream&			os_stream, 
 	const CSymbolEntry&	se_symbol
 )
 {
@@ -114,17 +114,17 @@ std::ostream& operator<<
 
 //**********************************************************************************************
 //
-std::istream& operator>>
+istream& operator>>
 (
-	std::istream&	  is_stream,
+	istream&	  is_stream,
 	CSymbolEntry& se_symbol
 )
 {
 	// Display the string.
-	std::cout << "CSymbolEntry...\nCEasyString: " << std::flush; 
-	std::cin >> se_symbol.estrSymbolName;
-	std::cin >> std::hex >> se_symbol.hSymbolHandle;
-	std::cin.setf(std::ios::dec);
+	cout << "CSymbolEntry...\nCEasyString: " << flush; 
+	cin >> se_symbol.estrSymbolName;
+	cin >> hex >> se_symbol.hSymbolHandle;
+	cin.setf(ios::dec);
 
 	return is_stream;
 }
@@ -313,7 +313,7 @@ void CSymbolEntry::Dump
 )
 {
 	// Dump the CHandle to stdout.
-	std::cout << *this << std::endl;
+	cout << *this << endl;
 }
 
 
@@ -587,7 +587,7 @@ uint CNewSymbolTable::uRead
 			else
 			{
 				// No! Assertion!  Report a big error.
-				std::cout << "Unable to add symbol to list.  Aborting.";
+				cout << "Unable to add symbol to list.  Aborting.";
 
 				// Halt the program in a user break point.
 				_asm
@@ -609,14 +609,14 @@ uint CNewSymbolTable::uRead
 void CNewSymbolTable::Dump()
 {
 	// Print out a banner.
-	std::cout << "\nCNewSymbolTable(Name: \"" << estrTableName << "\", Count: " << (int) aseSymbolTable.size() << ")\n{";
+	cout << "\nCNewSymbolTable(Name: \"" << estrTableName << "\", Count: " << (int) aseSymbolTable.size() << ")\n{";
 
 	// Dump the table.
 	for (uint u_index = 0; u_index < aseSymbolTable.size(); u_index++)
 	{
 		// Get a local copy of the symbol entry.
-		std::cout << std::endl << std::setw(4) << u_index << ": " << aseSymbolTable[u_index];
+		cout << endl << setw(4) << u_index << ": " << aseSymbolTable[u_index];
 	}
 
-	std::cout << "\n}" << std::endl;
+	cout << "\n}" << endl;
 }

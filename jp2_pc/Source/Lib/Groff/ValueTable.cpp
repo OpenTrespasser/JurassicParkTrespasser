@@ -854,27 +854,27 @@ void CIntValue::Value
 
 //**********************************************************************************************
 //
-std::ostream& operator<<
+ostream& operator<<
 (
-	std::ostream&		 os_stream, 
+	ostream&		 os_stream, 
 	const CIntValue& ival_value
 )
 {
 	// Display the string.
-	return os_stream << std::dec << ival_value.iIntValue << " -> " << (CBaseValue) ival_value;
+	return os_stream << dec << ival_value.iIntValue << " -> " << (CBaseValue) ival_value;
 }
 
 
 //**********************************************************************************************
 //
-std::istream& operator>>
+istream& operator>>
 (
-	std::istream&	is_stream,
+	istream&	is_stream,
 	CIntValue&	ival_value
 )
 {
 	// Read in the string.
-	is_stream >> std::dec >> ival_value.iIntValue;
+	is_stream >> dec >> ival_value.iIntValue;
 
 	// Pass the input stream along.
 	return is_stream;
@@ -1040,9 +1040,9 @@ void CFloatValue::Value
 
 //**********************************************************************************************
 //
-std::ostream& operator<<
+ostream& operator<<
 (
-	std::ostream&			os_stream, 
+	ostream&			os_stream, 
 	const CFloatValue&	fval_value
 )
 {
@@ -1053,9 +1053,9 @@ std::ostream& operator<<
 
 //**********************************************************************************************
 //
-std::istream& operator>>
+istream& operator>>
 (
-	std::istream&		is_stream,
+	istream&		is_stream,
 	CFloatValue&	fval_value
 )
 {
@@ -1224,9 +1224,9 @@ void CStringValue::Value
 
 //**********************************************************************************************
 //
-std::ostream& operator<<
+ostream& operator<<
 (
-	std::ostream&		    os_stream, 
+	ostream&		    os_stream, 
 	const CStringValue& sval_value
 )
 {
@@ -1237,9 +1237,9 @@ std::ostream& operator<<
 
 //**********************************************************************************************
 //
-std::istream& operator>>
+istream& operator>>
 (
-	std::istream&	  is_stream,
+	istream&	  is_stream,
 	CStringValue& sval_value
 )
 {
@@ -1415,9 +1415,9 @@ CObjectValue& CObjectValue::operator=
 
 //**********************************************************************************************
 //
-std::ostream& operator<<
+ostream& operator<<
 (
-	std::ostream&		os_stream, 
+	ostream&		os_stream, 
 	CObjectValue&	oval_value
 )
 {
@@ -1437,9 +1437,9 @@ std::ostream& operator<<
 
 //**********************************************************************************************
 //
-std::istream& operator>>
+istream& operator>>
 (
-	std::istream&	 is_stream,
+	istream&	 is_stream,
 	CObjectValue& estr_string
 )
 {
@@ -1563,7 +1563,7 @@ CValueTable::~CValueTable
 	}
 
 	// Clean up all those value table values.
-	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i = aviValueIndex.begin();
+	map< CHandle, CBaseValue*, less<CHandle> >::iterator i = aviValueIndex.begin();
 	for ( ; i != aviValueIndex.end(); i++)
 	{
 		delete (*i).second;
@@ -1651,7 +1651,7 @@ uint CValueTable::uWriteCount
 	u_count += sizeof(uint);
 
 	// Loop through all the value records and records their amounts.
-	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i;
+	map< CHandle, CBaseValue*, less<CHandle> >::iterator i;
 	for (i = aviValueIndex.begin(); i != aviValueIndex.end(); i++)
 	{
 		//
@@ -1701,7 +1701,7 @@ uint CValueTable::uWrite
 
 	// Loop through all the value records and remove any degenerate records.
 	uint u_record_count = 0;
-	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i;
+	map< CHandle, CBaseValue*, less<CHandle> >::iterator i;
 	for (i = aviValueIndex.begin(); i != aviValueIndex.end(); i++)
 	{
 		//
@@ -1867,18 +1867,18 @@ void CValueTable::Dump
 )
 {
 	// Print out a banner.
-	std::cout << "CValueTable(\"" << estrValueName << "\", hobj:" << objhHandle << std::endl;
+	cout << "CValueTable(\"" << estrValueName << "\", hobj:" << objhHandle << endl;
 
 	// Dump the symbol table.
 	CNewSymbolTable::Dump();
 
 	// Are there any entries in the value table?
 
-	std::cout << "\nValue table entries: " << aviValueIndex.size() << std::endl;
+	cout << "\nValue table entries: " << aviValueIndex.size() << endl;
 
 	// Dump the value table.
 	uint u_index;
-	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i;
+	map< CHandle, CBaseValue*, less<CHandle> >::iterator i;
 	for (u_index = 0, i = aviValueIndex.begin(); i != aviValueIndex.end(); i++, u_index++)
 	{
 		// Get a local copy of the symbol entry.
@@ -1892,38 +1892,38 @@ void CValueTable::Dump
 			{
 				case evtBOOL:
 					// Allocate and integer value record.
-					std::cout << std::setw(4) << u_index << ": " << *((CBoolValue *) pbasev_value) << std::endl;
+					cout << setw(4) << u_index << ": " << *((CBoolValue *) pbasev_value) << endl;
 
 					break;
 
 				case evtCHAR:
 					// Allocate and integer value record.
-					std::cout << std::setw(4) << u_index << ": " << *((CCharValue *) pbasev_value) << std::endl;
+					cout << setw(4) << u_index << ": " << *((CCharValue *) pbasev_value) << endl;
 
 					break;
 
 				case evtINT:
 					
 					// Allocate and integer value record.
-					std::cout << std::setw(4) << u_index << ": " << *((CIntValue *) pbasev_value) << std::endl;
+					cout << setw(4) << u_index << ": " << *((CIntValue *) pbasev_value) << endl;
 
 					break;
 
 				case evtFLOAT:
 					// Allocate and integer value record.
-					std::cout << std::setw(4) << u_index << ": " << *((CFloatValue *) pbasev_value) << std::endl;
+					cout << setw(4) << u_index << ": " << *((CFloatValue *) pbasev_value) << endl;
 
 					break;
 
 				case evtSTRING:
 					// Allocate and integer value record.
-					std::cout << std::setw(4) << u_index << ": " << *((CStringValue *) pbasev_value) << std::endl;
+					cout << setw(4) << u_index << ": " << *((CStringValue *) pbasev_value) << endl;
 
 					break;
 
 				case evtOBJECT:
 					// Allocate and integer value record.
-					std::cout << std::setw(4) << u_index << ": " << *((CObjectValue *) pbasev_value) << std::endl;
+					cout << setw(4) << u_index << ": " << *((CObjectValue *) pbasev_value) << endl;
 
 					break;
 
@@ -1934,5 +1934,5 @@ void CValueTable::Dump
 	}
 
 	// Close off the opening banner.
-	std::cout << ")\n" << std::endl;
+	cout << ")\n" << endl;
 }

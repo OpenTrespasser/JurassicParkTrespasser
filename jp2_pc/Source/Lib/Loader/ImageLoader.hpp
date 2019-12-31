@@ -176,8 +176,8 @@ public:
 	static bool							bCompressed;
 	static bool							bNewCompression;
 
-	std::map<uint64,SDirectoryFileChunk*,std::less<uint64> >	mapChunk;
-	std::vector<CPal*>									appal;
+	map<uint64,SDirectoryFileChunk*,less<uint64> >	mapChunk;
+	vector<CPal*>									appal;
 	char											strLocalImage[264];
 	char											strSourceImage[264];
 	uint64											u8SourceImageTime;
