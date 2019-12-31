@@ -7,7 +7,8 @@ jp2_pc/GroffBuild/
 jp2_pc/Template
 
 *.aps
-
+*.bak
+*.tmp
 
 # OSX Hidden Files
 .DS_Store
