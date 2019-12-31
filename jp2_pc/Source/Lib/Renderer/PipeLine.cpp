@@ -1885,7 +1885,7 @@ public:
 		CPipelineHeap plh;			// Local version of the pipeline heap.
 
 		// Create the rendering context for this scene.
-		CLightList ltl(std::list<CInstance*>());
+		CLightList ltl{ std::list<CInstance*>() };
 
 		CRenderContext renc(*this, plh, cam, ltl);
 

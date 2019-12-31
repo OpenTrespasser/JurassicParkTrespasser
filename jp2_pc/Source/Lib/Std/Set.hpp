@@ -275,6 +275,11 @@ public:
 		{
 		}
 
+		//Copy constructor
+		CSetHelper(const CSetHelper&) {
+			*this = other;
+		}
+
 		//**************************************************************************************
 		//
 		// Assignment operator.
@@ -289,6 +294,18 @@ public:
 				const_cast<uint32&>(ru4Var) |= u4Mask;
 			else
 				const_cast<uint32&>(ru4Var) &= ~u4Mask;
+		}
+
+		//Copy assignment operator
+		CSetHelper& operator=(const CSetHelper& other) {
+			if (&other == this)
+				return *this;
+
+
+			this->u4Mask = other.u4Mask;
+			const_cast<uint32&>(this->ru4Var) = other.ru4Var; //Very very awful hack to reassign const value
+
+			return *this;
 		}
 
 		//**************************************************************************************

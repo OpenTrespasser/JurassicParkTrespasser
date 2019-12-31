@@ -21,7 +21,7 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
-#include <vector.h>
+#include <vector>
 
 #include "gbuilder.h"
 
@@ -57,7 +57,7 @@ public:
                                   BOOL bDoubleClick);
 
     char                m_szGroffFile[_MAX_PATH];
-    vector<GBUILDINFO>  m_vGBuildInfo;
+    std::vector<GBUILDINFO>  m_vGBuildInfo;
 
     char        m_szSaveName[_MAX_PATH];
     HWND        m_hwndList;
@@ -82,7 +82,7 @@ public:
     BOOL    HandleInfoMsg(LPSTR pszInfo, int iInfoStyle);
 
     char            m_szGroffFile[_MAX_PATH];
-    vector<GBUILD>  m_vGBuild;
+    std::vector<GBUILD>  m_vGBuild;
 
 protected:
     void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify);
