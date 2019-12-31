@@ -25,9 +25,9 @@
 //
 // Defines and pragmas.
 //
-#include <map.h>
+#include <map>
 #include <math.h>
-#include <memory.h>
+#include <memory>
 #include "Common.hpp"
 #include "Overlay.hpp"
 

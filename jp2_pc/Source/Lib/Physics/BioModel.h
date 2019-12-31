@@ -13,7 +13,7 @@
   typedef basic_ostream<char,char_traits<char> > ostream; 
  };
 #else
- class ostream;
+#include <iostream>
 #endif
 
 #pragma warning( disable : 4244 )
@@ -46,7 +46,7 @@ public:
 					    float Y[MAX_JOINTS][3],
 					    float Z[MAX_JOINTS][3] );
 
-	void DumpState(ostream& os);
+	void DumpState(std::ostream& os);
 
 private:
 	void UpdateControl();
@@ -58,7 +58,7 @@ private:
 // Array of biomodel pointers; dynamically allocated.
 extern aptr<CBioModel>	BioModels[MAX_BIOMODELS];
 
-void DumpBioState(ostream& os);
+void DumpBioState(std::ostream& os);
 
 //	 Clear, integrates all ACTIVE Fields...
 void integrate_field( float delta_t );

@@ -36,9 +36,9 @@
 //
 // Includes.
 //
-#include "Algo.h"
-#include "vector.h"
-#include "TempBuf.cpp"
+#include <algorithm>
+#include <vector>
+//#include "TempBuf.cpp"
 #include "Common.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "ScreenRender.hpp"
@@ -60,7 +60,7 @@
 #define iMAX_POLY_VERTICES (40)
 
 // Definition of a line segment array.
-typedef vector<CLine2D> TVLines;
+typedef std::vector<CLine2D> TVLines;
 
 bool bDumpPolylist = false;
 

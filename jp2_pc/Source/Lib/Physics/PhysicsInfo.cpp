@@ -159,7 +159,7 @@ const CPlacement3<> p3VELOCITY_ZERO(CRotate3<>(0, 0, 0, 0, false), CVector3<>(0,
 
 
 	// Track the skeletons for deletion.
-	list<CPhysicsInfoSkeleton*> lppisPhysicsSkeletons;
+	std::list<CPhysicsInfoSkeleton*> lppisPhysicsSkeletons;
 
 	//*****************************************************************************************
 	const CPhysicsInfo* CPhysicsInfo::pphiFindShared

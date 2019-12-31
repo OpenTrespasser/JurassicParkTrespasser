@@ -184,7 +184,7 @@
 //
 // Includes.
 //
-#include "Algo.h"
+#include <algorithm>
 #include "Common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/W95/Direct3D.hpp"
@@ -1197,7 +1197,7 @@ public:
 		agpAGPTextureMemManager.MakeCurrentList();
 
 		// Sort the polygons by largest area first.
-		sort(arp.atArray, arp.atArray + arp.uLen, CPolyArea());
+		std::sort(arp.atArray, arp.atArray + arp.uLen, CPolyArea());
 
 		// Upload textures.
 		priv_self.UploadPolygonArray(arp);

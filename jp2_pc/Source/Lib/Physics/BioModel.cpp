@@ -13,8 +13,8 @@
 #include "Lib/Math/FastSqrt.hpp"
 
 #include <math.h>
-#include <iostream.h>
-#include <memory.h>
+#include <iostream>
+#include <memory>
  
 //	State...
 //	--------
@@ -922,7 +922,7 @@ void CBioModel::SetInput( float position[3], float roll, float intensity, int pe
 #include <stdio.h>
 
 //******************************************************************************************
-ostream& operator <<(ostream& os, CPArray<float> pa)
+std::ostream& operator <<(std::ostream& os, CPArray<float> pa)
 {
 	for (int i = 0; i < pa.size(); i++)
 	{
@@ -933,13 +933,13 @@ ostream& operator <<(ostream& os, CPArray<float> pa)
 	return os;
 }
 
-void CBioModel::DumpState(ostream& os)
+void CBioModel::DumpState(std::ostream& os)
 {
 #if VER_TEST
 	int j, k;
 
 	os	<<" DOF=" <<Dof
-		<<endl;
+		<< std::endl;
 
 	os	<<"  Field=";
 	for (j = 0; j < FIELD_DIMENSION; j++)
@@ -947,15 +947,15 @@ void CBioModel::DumpState(ostream& os)
 		os	<<"    ";
 		for (k = 0; k < 3; k++)
 			os	<<CPArray<float>(3, Field[j][k]) <<" ";
-		os	<<endl;
+		os	<< std::endl;
 	}
-	os	<<endl;
+	os	<< std::endl;
 
 	os	<<"  FieldInputs=";
 	for (j = 0; j < FIELD_DIMENSION; j++)
 		os	<<"    " <<CPArray<float>(3, FieldInputs[j])
-			<<endl;
-	os	<<endl;
+			<< std::endl;
+	os	<< std::endl;
 
 	os	<<"  Tensor=";
 	for (j = 0; j < FIELD_DIMENSION; j++)
@@ -963,33 +963,33 @@ void CBioModel::DumpState(ostream& os)
 		os	<<"    ";
 		for (k = 0; k < FIELD_DIMENSION; k++)
 			os	<<int(Tensor[j][k]) <<" ";
-		os	<<endl;
+		os	<< std::endl;
 	}
-	os	<<endl;
+	os	<< std::endl;
 
 	os	<<"  Rho=";
 	for (j = 0; j < FIELD_DIMENSION; j++)
 		os	<<"    " <<CPArray<float>(FIELD_DIMENSION, Rho[j])
-			<<endl;
-	os	<<endl;
+			<< std::endl;
+	os	<< std::endl;
 
 	os	<<"  Psi=";
 	for (j = 0; j < FIELD_DIMENSION; j++)
 		os	<<"    " <<CPArray<float>(5, Psi[j])
-			<<endl;
-	os	<<endl;
+			<< std::endl;
+	os	<< std::endl;
 
 	os	<<"  Offset=" <<CPArray<float>(3, Offset)
-		<<endl;
+		<< std::endl;
 
 	os	<<"  Control=" <<CPArray<float>(5, Control)
-		<<endl;
+		<< std::endl;
 
-	os	<<endl;
+	os	<< std::endl;
 #endif
 }
 
-void DumpBioState(ostream& os)
+void DumpBioState(std::ostream& os)
 {
 #if VER_TEST
 	int i;
@@ -997,9 +997,9 @@ void DumpBioState(ostream& os)
 	for (i = 0; i < MAX_BIOMODELS; i++)
 		if (BioModels[i])
 		{
-			os	<<"BioModel" <<i <<endl;
+			os	<<"BioModel" <<i << std::endl;
 			BioModels[i]->DumpState(os);
 		}
-	os	<<endl;
+	os	<< std::endl;
 #endif
 }

@@ -1836,7 +1836,7 @@ public:
 	}
 
 	//******************************************************************************************
-	void CRenderer::RenderScene(const CCamera& cam, const list<CInstance*>& listins_lights,
+	void CRenderer::RenderScene(const CCamera& cam, const std::list<CInstance*>& listins_lights,
 			                    CPartition* ppart_scene, const CPArray<COcclude*>& rpapoc,
 								ESideOf esf_view, CPartition* ppart_terrain)
 	{
@@ -1885,7 +1885,7 @@ public:
 		CPipelineHeap plh;			// Local version of the pipeline heap.
 
 		// Create the rendering context for this scene.
-		CLightList ltl(list<CInstance*>());
+		CLightList ltl(std::list<CInstance*>());
 
 		CRenderContext renc(*this, plh, cam, ltl);
 

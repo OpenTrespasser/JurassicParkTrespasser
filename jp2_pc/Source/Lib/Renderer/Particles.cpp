@@ -110,9 +110,9 @@
 #include "Lib/GeomDBase/Terrain.hpp"
 #include "Lib/EntityDBase/Query/QTerrain.hpp"
 
-#include <map.h>
+#include <map>
 #include <math.h>
-#include <memory.h>
+#include <memory>
 
 #define bDEBUG_PARTICLES (1 && BUILDVER_MODE != MODE_FINAL)
 
@@ -166,7 +166,7 @@ static CRandom rndParticles;
 
 //******************************************************************************************
 //
-class CTextureColours : public map< TD3DPixel, CTexture*, less<TD3DPixel> >
+class CTextureColours : public std::map< TD3DPixel, CTexture*, std::less<TD3DPixel> >
 //
 // Less than comparison class for texture colours.
 //
@@ -239,7 +239,7 @@ public:
 		#ifdef __MWERKS__
 			insert(pair<const TD3DPixel, CTexture*>(clr.d3dcolGetD3DColour(), ptex));
 		#else
-			insert(pair<TD3DPixel, CTexture*>(clr.d3dcolGetD3DColour(), ptex));
+			insert(std::pair<TD3DPixel, CTexture*>(clr.d3dcolGetD3DColour(), ptex));
 		#endif
 
 			// Find the colour back.
@@ -647,7 +647,7 @@ protected:
 
 //*********************************************************************************************
 //
-class CParticleList : public list<CParticleBase>
+class CParticleList : public std::list<CParticleBase>
 //
 // Object describes a list of particles.
 //

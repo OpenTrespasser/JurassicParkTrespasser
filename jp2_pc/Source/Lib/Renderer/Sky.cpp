@@ -242,6 +242,7 @@
 #include "Lib/View/Direct3DRenderState.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3D.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3DUtilities.hpp"
+#include <algorithm>
 
 #pragma warning(disable:4786)
 
@@ -1106,7 +1107,7 @@ LINE_DONE:
 		for (int i_pixel = iRENDER_BLOCK_SIZE; i_pixel < u4ScreenWidth; i_pixel += iRENDER_BLOCK_SIZE)
 		{
 			psv_saved = &asv_saved[0];
-			int i4_width = min(iRENDER_BLOCK_SIZE, (int)u4ScreenWidth - i_pixel);
+			int i4_width = std::min(iRENDER_BLOCK_SIZE, (int)u4ScreenWidth - i_pixel);
 
 			for (i_line = 0; i_line < i_lines_drawn; i_line++)
 			{

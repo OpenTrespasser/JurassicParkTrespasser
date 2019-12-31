@@ -90,7 +90,7 @@ class CEntityWater;
   typedef basic_ostream<char,char_traits<char> > ostream; 
  };
 #else
- class ostream;
+#include <iostream>
 #endif
 
 typedef float	TVectorPair[2][3];
@@ -258,7 +258,7 @@ public:
 	//**********************************************************************************************
 	static void DumpStateAll
 	( 
-		ostream& os 
+		std::ostream& os
 	);
 	//
 	// Dumps the state to a text file.
@@ -451,7 +451,7 @@ private:
 
 	static void PD_Integrator_Internals( float delta_t );
 
-	void DumpState(ostream& os);
+	void DumpState(std::ostream& os);
 
 	//
 	// Integration stages.

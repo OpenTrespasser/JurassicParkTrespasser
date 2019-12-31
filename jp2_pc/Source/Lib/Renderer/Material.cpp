@@ -67,8 +67,8 @@
 #include "Lib/Sys/DebugConsole.hpp"
 
 #include <math.h>
-#include <set.h>
-#include <memory.h>
+#include <set>
+#include <memory>
 
 
 //**********************************************************************************************
@@ -185,7 +185,7 @@
 		return pmatFindShared(&mat);
 	}
 
-	typedef set<CMaterial, less<CMaterial> > TSM;
+	typedef std::set<CMaterial, std::less<CMaterial> > TSM;
 	TSM tsmMaterialInstances;
 
 	//**************************************************************************************
@@ -199,7 +199,7 @@
 			return &matDEFAULT;
 
 		// Insert or find, please.
-		pair<TSM::iterator, bool> p = tsmMaterialInstances.insert(*pmat);
+		std::pair<TSM::iterator, bool> p = tsmMaterialInstances.insert(*pmat);
 
 		// If we found a duplicate, it will do.
 		// If we inserted a new one, the new one will do.

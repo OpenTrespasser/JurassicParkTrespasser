@@ -145,7 +145,7 @@ public:
 
 	//******************************************************************************************
 	//
-	N::TData operator*()
+	typename N::TData operator*()
 	//
 	// Dereferences the data associated with the iterator.
 	//
@@ -156,7 +156,7 @@ public:
 
 	//******************************************************************************************
 	//
-	N::TData operator*() const
+	typename N::TData operator*() const
 	//
 	// Dereferences the data associated with the iterator.
 	//
@@ -490,9 +490,9 @@ public:
 //
 // Static variables for memory allocation.
 //
-template<class T> CCircularList<T>::TNode* CCircularList<T>::pAllocator;
-template<class T> CCircularList<T>::TNode* CCircularList<T>::pBeginAllocation;
-template<class T> CCircularList<T>::TNode* CCircularList<T>::pMaxAllocation;
+template<class T> typename CCircularList<T>::TNode* CCircularList<T>::pAllocator;
+template<class T> typename CCircularList<T>::TNode* CCircularList<T>::pBeginAllocation;
+template<class T> typename CCircularList<T>::TNode* CCircularList<T>::pMaxAllocation;
 
 
 #endif // HEADER_STD_CIRCULARBUFFER_HPP

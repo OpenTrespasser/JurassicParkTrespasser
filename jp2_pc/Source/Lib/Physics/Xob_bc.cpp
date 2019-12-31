@@ -4266,7 +4266,7 @@ void CXob::Reset()
 
 #include "Lib/Std/ArrayIO.hpp"
 
-ostream& operator <<(ostream& os, const SCollision& coll)
+std::ostream& operator <<(std::ostream& os, const SCollision& coll)
 {
 	os	<<(int)coll.ElementCollide
 		<<" " <<(int)coll.LastElementCollide
@@ -4277,7 +4277,7 @@ ostream& operator <<(ostream& os, const SCollision& coll)
 	return os;
 }
 
-void CXob::DumpState(ostream& os)
+void CXob::DumpState(std::ostream& os)
 {
 #if VER_TEST
 	if (Instances[0])
@@ -4289,13 +4289,13 @@ void CXob::DumpState(ostream& os)
 			<< " Elems=" << Data[11]
 			<< " Moved=" << Moved << " bHitAnother=" << bHitAnother
 			<< " Pelvis=" << PelvisModel << ' ' << PelvisElem
-			<< endl;
+			<< std::endl;
 
 		os	<< "  Info=" << Info
 			<< " Movable=" << Movable
 			<< " Anchored=" << Anchored
 			<< " Ignorable_DOF=" << Ignorable_DOF[0] << ' ' << Ignorable_DOF[1] << ' ' << Ignorable_DOF[2]
-			<< endl;
+			<< std::endl;
 
 		os	<< "  State=";
 		for (j = 0; j < 3; j++)
@@ -4305,44 +4305,44 @@ void CXob::DumpState(ostream& os)
 				os	<< double(State[k][j]) << ' ';
 			os << ") ";
 		}
-		os	<< endl;
+		os	<< std::endl;
 
-		os	<< "  Data=" << CPArray<float>(20, Data) << endl;
+		os	<< "  Data=" << CPArray<float>(20, Data) << std::endl;
 
 		os	<< "  Extents=" << CPArray<float>(6, Extents)
 			<< "Radius=" <<Radius <<" ExtentRatio=" <<ExtentRatio
-			<< endl;
+			<< std::endl;
 
-		os	<< "  Tau=" << CPArray<float>(3, Tau) << endl;
+		os	<< "  Tau=" << CPArray<float>(3, Tau) << std::endl;
 
 		os	<< "  Xin=";
 		for (j = 0; j < 2; j++)
 			for (k = 0; k < 3; k++)
 				os << Xin[j][k] << ' ';
-		os	<< endl;
+		os	<< std::endl;
 
-		os	<< "  Impulse=" << CPArray<float>(6, Impulse_Queue) << endl;
+		os	<< "  Impulse=" << CPArray<float>(6, Impulse_Queue) << std::endl;
 
-		os	<< "  BC_semaphore=" << CPArray<int8>(GUYS, BC_semaphore) << endl;
+		os	<< "  BC_semaphore=" << CPArray<int8>(GUYS, BC_semaphore) << std::endl;
 
 		for (j = 0; j < COLLISIONS; j++)
 			if ((int)BoxCollisions[Index()][j].ElementCollide || (int)BoxCollisions[Index()][j].LastElementCollide)
-			os	<<"  Coll " <<j <<": " <<BoxCollisions[Index()][j] <<endl;
-		os	<<endl;
+			os	<<"  Coll " <<j <<": " <<BoxCollisions[Index()][j] << std::endl;
+		os	<< std::endl;
 
 		// Element data.
 		for (j = 0; Instances[j]; j++)
 		{
-			os	<< endl;
+			os	<< std::endl;
 			os	<< "  Elem " << j;
 			if (Instances[j])
 				os	<< " '" << strInstanceName(j) << "'";
-			os	<< endl;
+			os	<< std::endl;
 
 			os	<< "    SuperData=";
 			for (k = 0; k < 6; k++)
 				os	<< SuperData[j][k] << ' ';
-			os	<< endl;
+			os	<< std::endl;
 
 			os	<< "    SuperOrient=";
 			for (k = 0; k < 3; ++k)
@@ -4352,19 +4352,19 @@ void CXob::DumpState(ostream& os)
 					os	<< SuperOrient[j][k][l] << ' ';
 				os	<< ")";
 			}
-			os	<< endl;
+			os	<< std::endl;
 
 			os	<< "    Breakage=" << Breakages[j]
 				<< " TTotal=" << TTotal[j][0] << ' ' << TTotal[j][1] << ' ' << TTotal[j][2]
-				<< endl;
+				<< std::endl;
 		}
 
-		os	<< endl;
+		os	<< std::endl;
 	}
 #endif
 }
 
-void CXob::DumpStateAll(ostream& os)
+void CXob::DumpStateAll(std::ostream& os)
 {
 #if VER_TEST
 	int i;
@@ -4373,7 +4373,7 @@ void CXob::DumpStateAll(ostream& os)
 	// Boxes.
 	//
 
-	os	<<"Last time=" <<current_timeslice <<endl;
+	os	<<"Last time=" <<current_timeslice << std::endl;
 
 	// Active box data
 	for (i = 0; i < iMAX_PHYSICS_OBJECTS; ++i)
@@ -4382,12 +4382,12 @@ void CXob::DumpStateAll(ostream& os)
 	os	<<"OurKappa=" <<OurKappa
 		<<" OurDelta=" <<OurDelta
 		<<" OurMu=" <<OurMu
-		<<endl;
+		<< std::endl;
 	os	<<"anne_this_terrain_bit=" <<(int)anne_this_terrain_bit
 		<<" anne_last_terrain_bit=" <<(int)anne_last_terrain_bit
-		<<endl <<endl;
+		<< std::endl << std::endl;
 
-	os	<< endl;
+	os	<< std::endl;
 #endif
 }
 

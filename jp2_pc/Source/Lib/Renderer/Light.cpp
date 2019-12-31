@@ -254,11 +254,11 @@
 //
 
 	//******************************************************************************************
-	CLightList::CLightList(const list<CInstance*>& listins_lights)
+	CLightList::CLightList(const std::list<CInstance*>& listins_lights)
 	{
 		lvAmbient = 0;
 
-		list<CInstance*>::const_iterator itins = listins_lights.begin();
+		std::list<CInstance*>::const_iterator itins = listins_lights.begin();
 		for ( ; itins != listins_lights.end(); itins++)
 		{
 			// Retrieve the light from the instance.
@@ -294,7 +294,7 @@
 	void CLightList::SetViewingContext(const CPresence3<>& pr3, const CPresence3<>& pr3_eye)
 	{
 		// Set the viewing context in each of the children.
-		forall (listpltAll, list< rptr<CLightDir> >, it)
+		forall (listpltAll, std::list< rptr<CLightDir> >, it)
 		{
 			(*it)->SetViewingContext(pr3);
 		}
@@ -312,7 +312,7 @@
 	void CLightList::UpdateShadows(CPartition* ppart)
 	{
 		// Update the shadows of all children.
-		forall (listpltAll, list< rptr<CLightDir> >, it)
+		forall (listpltAll, std::list< rptr<CLightDir> >, it)
 		{
 			(*it)->UpdateShadows(ppart);
 		}
@@ -340,7 +340,7 @@
 		{
 			TLightVal lv_specular = 0;
 
-			forall_const (listpltAll, list< rptr<CLightDir> >, it)
+			forall_const (listpltAll, std::list< rptr<CLightDir> >, it)
 			{
 				if ((*it)->bShadowed(v3_pos))
 					continue;
@@ -375,7 +375,7 @@
 		else
 		{
 			// Handle Directional lights explicitly, avoiding a call to ltiGetInfo().
-			forall_const (listpltDir, list< rptr<CLightDirectional> >, it)
+			forall_const (listpltDir, std::list< rptr<CLightDirectional> >, it)
 			{
 				if ((*it)->bShadowed(v3_pos))
 					continue;
@@ -388,7 +388,7 @@
 			}
 
 			// Do the remaining lights.
-			forall_const (listpltPos, list< rptr<CLightDir> >, itd)
+			forall_const (listpltPos, std::list< rptr<CLightDir> >, itd)
 			{
 				if ((*itd)->bShadowed(v3_pos))
 					continue;
@@ -443,7 +443,7 @@
 			if (listpltAll.size() != 0)
 			{
 				// Yes!  Add them up.
-				forall_const (listpltAll, list< rptr<CLightDir> >, it)
+				forall_const (listpltAll, std::list< rptr<CLightDir> >, it)
 				{
 					if ((*it)->bShadowed(v3_pos))
 						continue;
@@ -517,7 +517,7 @@
 		blt.lvAmbient = lvAmbient;
 
 		// Iterate through directional lights, finding strongest.
-		forall_const (listpltDir, list< rptr<CLightDirectional> >, it)
+		forall_const (listpltDir, std::list< rptr<CLightDirectional> >, it)
 			SetMax(blt.lvStrength, (*it)->lvIntensity);
 
 		// We do not need light direction or width; just ignore these.
