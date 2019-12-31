@@ -85,8 +85,9 @@ namespace NMultiResolution
 		static rptr<CTexturePageManager> ptexmTexturePages;
 		static rptr<CTexturePageManager> ptexmTextureStaticShadowPages;
 
-	private:
 		class CPriv;
+
+	private:
 		friend class CPriv;
 
 		friend class CBlockAllocator<CTextureNode>;

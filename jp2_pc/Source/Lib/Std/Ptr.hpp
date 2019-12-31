@@ -492,7 +492,7 @@ public:
 	//**********************************
 		FN_TRACK_RPTR
 
-protected:
+//protected:
 
 	// delete is unavailable to the general public, because you should never delete these objects!
 	// These objects delete themselves, through the rptr.

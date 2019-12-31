@@ -138,6 +138,29 @@ public:
 	 	int i_handle,				// File handle.
 		TPartSpaceMap& rpsm			// Associative map.
 	);
+
+	//Copy constructor
+	CPartitionSpace(const CPartitionSpace& other)
+		: CPartition(other),
+		v3Position(other.v3Position),
+		bviInfinite(other.bviInfinite),
+		bvsSphere(other.bvsSphere),
+		bvbBox(other.bvbBox)
+	{
+	}
+
+	//Copy assignment operator
+	CPartitionSpace& operator=(const CPartitionSpace& other)
+	{
+		if (this == &other)
+			return *this;
+		CPartition::operator =(other);
+		v3Position = other.v3Position;
+		bviInfinite = other.bviInfinite;
+		bvsSphere = other.bvsSphere;
+		bvbBox = other.bvbBox;
+		return *this;
+	}
 	
 	// Destructor.
 	virtual ~CPartitionSpace();
@@ -325,6 +348,23 @@ public:
 		const CPresence3<>& pr3,	// Position of the centre of the volume and its scale.
 		const CBoundVol&    bv		// The bounding volume.
 	);
+
+	//Copy constructor
+	CPartitionSpaceQuery(const CPartitionSpaceQuery& other)
+		: CPartitionSpace(other),
+		pr3Pres(other.pr3Pres)
+	{
+	}
+
+	//Copy assignment operator
+	CPartitionSpaceQuery& operator=(const CPartitionSpaceQuery& other)
+	{
+		if (this == &other)
+			return *this;
+		CPartitionSpace::operator =(other);
+		pr3Pres = other.pr3Pres;
+		return *this;
+	}
 
 	//*****************************************************************************************
 	//
