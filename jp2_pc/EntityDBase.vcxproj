@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final P6|Win32">
+      <Configuration>Final P6</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/JP2_PC", WUBAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{7F27C481-33EC-423F-A8C8-37C7849AC154}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Build\Debug\EntityDBase\</OutDir>
+    <IntDir>.\Build\Debug\EntityDBase\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\Build\Final\EntityDBase\</OutDir>
+    <IntDir>.\Build\Final\EntityDBase\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Build\Release\EntityDBase\</OutDir>
+    <IntDir>.\Build\Release\EntityDBase\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <OutDir>.\Build\Final_P6\EntityDBase\</OutDir>
+    <IntDir>.\Build\Final_P6\EntityDBase\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BUILDVER_MODE=MODE_DEBUG;WIN32;_WINDOWS;VC_EXTRALEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Debug\EntityDBase\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Debug\EntityDBase\EntityDBase.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Debug\EntityDBase\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Debug\EntityDBase\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\EntityDBase\EntityDBase.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\EntityDBase\EntityDBase.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;VC_EXTRALEAN;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final\EntityDBase\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final\EntityDBase\EntityDBase.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Final\EntityDBase\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final\EntityDBase\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\EntityDBase\EntityDBase.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\EntityDBase\EntityDBase.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;VC_EXTRALEAN;NDEBUG;WIN32;BUILDVER_MODE=MODE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Release\EntityDBase\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Release\EntityDBase\EntityDBase.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Release\EntityDBase\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Release\EntityDBase\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\EntityDBase\EntityDBase.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\EntityDBase\EntityDBase.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;VC_EXTRALEAN;_WINDOWS;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;TARGET_PROCESSOR=PROCESSOR_PENTIUMPRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final_P6\EntityDBase\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final_P6\EntityDBase\EntityDBase.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Final_P6\EntityDBase\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final_P6\EntityDBase\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\EntityDBase\EntityDBase.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\EntityDBase\EntityDBase.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Lib\EntityDBase\Animal.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Animate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\AnimationScript.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\CameraPrime.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Entity.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\EntityLight.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\FrameHeap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Instance.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Message.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\MessageLog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\MessageTypes.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\MovementPrediction.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\ParticleGen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\QualitySettings.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Query.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Query\QSubsystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Query\QTerrain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\QueueMessage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="source\Lib\EntityDBase\RenderDB.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Replay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Teleport.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\Water.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\WorldDBase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\EntityDBase\WorldPort.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Lib\EntityDBase\Animal.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Animate.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\AnimationScript.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\CameraPrime.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Entity.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\EntityLight.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\FrameHeap.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Instance.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Message.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\MessageLog.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgAudio.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgCollision.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgControl.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgCreate.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgDelete.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgMagnet.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgMove.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgPaint.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgPhysicsReq.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgStep.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgSystem.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\MsgTrigger.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\MessageTypes\RegisteredMsg.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\MovementPrediction.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\ParticleGen.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\QualitySettings.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Query.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QAI.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QMessage.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QPhysics.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QRenderer.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QSolidObject.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Query\QSubsystem.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QTerrain.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QTerrainObj.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QTriggers.hpp" />
+    <ClInclude Include="Source\Lib\EntityDBase\Query\QWater.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\QueueMessage.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\RenderDB.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Replay.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Teleport.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\Water.hpp" />
+    <ClInclude Include="source\Lib\EntityDBase\WorldDBase.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final P6|Win32">
+      <Configuration>Final P6</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/JP2_PC", WUBAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{C290A095-9F18-4B26-8874-242B0423BE98}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <OutDir>.\Build\Final_P6\GUIApp\</OutDir>
+    <IntDir>.\Build\Final_P6\GUIApp\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\Build\Final\GUIApp\</OutDir>
+    <IntDir>.\Build\Final\GUIApp\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Build\Release\GUIApp\</OutDir>
+    <IntDir>.\Build\Release\GUIApp\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Build\Debug\GUIApp\</OutDir>
+    <IntDir>.\Build\Debug\GUIApp\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;PROFILE_95;_WINDOWS;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;TARGET_PROCESSOR=PROCESSOR_PENTIUMPRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final_P6\GUIApp\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final_P6\GUIApp\GUIApp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader />
+      <ObjectFileName>.\Build\Final_P6\GUIApp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final_P6\GUIApp\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\Final_P6\GUIApp\GUIApp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\GUIApp\GUIApp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Build\Final_P6\GUIApp\GUIApp.exe</OutputFile>
+      <AdditionalDependencies>ole32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /verbose:lib  /SECTION:SelfMod,ERW </AdditionalOptions>
+      <StackReserveSize>1048576</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;PROFILE_95;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final\GUIApp\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final\GUIApp\GUIApp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader />
+      <ObjectFileName>.\Build\Final\GUIApp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final\GUIApp\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\Final\GUIApp\GUIApp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\GUIApp\GUIApp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Build\Final\GUIApp\GUIApp.exe</OutputFile>
+      <AdditionalDependencies>ole32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /verbose:lib  /SECTION:SelfMod,ERW </AdditionalOptions>
+      <StackReserveSize>1048576</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;PROFILE_95;NDEBUG;WIN32;BUILDVER_MODE=MODE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Release\GUIApp\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Release\GUIApp\GUIApp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader />
+      <ObjectFileName>.\Build\Release\GUIApp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Release\GUIApp\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\Release\GUIApp\GUIApp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\GUIApp\GUIApp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Build\Release\GUIApp\GUIApp.exe</OutputFile>
+      <AdditionalDependencies>ole32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /verbose:lib  /SECTION:SelfMod,ERW </AdditionalOptions>
+      <StackReserveSize>1048576</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BUILDVER_MODE=MODE_DEBUG;WIN32;_WINDOWS;PROFILE_95;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Debug\GUIApp\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Debug\GUIApp\GUIApp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Debug\GUIApp\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Debug\GUIApp\</ProgramDataBaseFileName>
+      <AdditionalOptions> /GM </AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\Debug\GUIApp\GUIApp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\GUIApp\GUIApp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Build\Debug\GUIApp\GUIApp.exe</OutputFile>
+      <AdditionalDependencies>ole32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /verbose:lib  /SECTION:SelfMod,ERW </AdditionalOptions>
+      <StackReserveSize>1048576</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\GUIApp\AI Dialogs2Dlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\Background.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\CameraProperties.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogAlphaColour.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogBumpPack.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogCulling.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogDepthSort.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogFog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogGamma.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogGore.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogGun.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogMagnet.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogMaterial.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogMemLog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogMipmap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogObject.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogOcclusion.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogPartition.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogPhysics.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogPlayer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogRenderCache.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogScheduler.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogSky.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogSoundMaterial.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogTeleport.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogTerrain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogTexturePack.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogTexturePackOptions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogVM.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\DialogWater.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\FindDuplicates.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\GDIBitmap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\GUIApp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\GUIAppDlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\GUIControls.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\GUIPipeline.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\GUITools.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\LightProperties.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\Options.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\ParameterDlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\PerspectiveSubdivideDialog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\QualityDialog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\SoundPropertiesDlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\StdAfx.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\TerrainTest.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GUIApp\Toolbar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /GM   /GM </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /GM   /GM </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\GUIApp\GUIApp.rc">
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">Source\GUIApp;.\Source\GUIApp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">Source\GUIApp;.\Source\GUIApp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Source\GUIApp;.\Source\GUIApp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Source\GUIApp;.\Source\GUIApp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DialogTeleport.h" />
+    <ClInclude Include="Source\GUIApp\AI Dialogs2Dlg.h" />
+    <ClInclude Include="Source\GUIApp\Background.hpp" />
+    <ClInclude Include="Source\GUIApp\CameraProperties.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogAlphaColour.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogBumpPack.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogCulling.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogDepthSort.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogFog.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogGamma.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogGore.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogGun.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogMagnet.h" />
+    <ClInclude Include="Source\GUIApp\DialogMaterial.h" />
+    <ClInclude Include="Source\GUIApp\DialogMemLog.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogMipmap.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogObject.h" />
+    <ClInclude Include="Source\GUIApp\DialogOcclusion.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogPartition.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogPhysics.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogPlayer.h" />
+    <ClInclude Include="Source\GUIApp\DialogRenderCache.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogScheduler.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogSky.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogSoundMaterial.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogString.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogTeleport.h" />
+    <ClInclude Include="Source\GUIApp\DialogTerrain.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogTexturePack.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogTexturePackOptions.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogVM.hpp" />
+    <ClInclude Include="Source\GUIApp\DialogWater.hpp" />
+    <ClInclude Include="Source\GUIApp\GDIBitmap.hpp" />
+    <ClInclude Include="Source\GUIApp\GUIApp.h" />
+    <ClInclude Include="source\GUIApp\GUIAppDlg.h" />
+    <ClInclude Include="Source\GUIApp\GUIControls.hpp" />
+    <ClInclude Include="source\GUIApp\GUIPipeLine.hpp" />
+    <ClInclude Include="Source\GUIApp\GUITools.hpp" />
+    <ClInclude Include="Source\GUIApp\LightProperties.hpp" />
+    <ClInclude Include="source\GUIApp\ParameterDlg.h" />
+    <ClInclude Include="Source\GUIApp\PerspectiveSubdivideDialog.hpp" />
+    <ClInclude Include="Source\GUIApp\QualityDialog.hpp" />
+    <ClInclude Include="Source\GUIApp\SoundPropertiesDlg.hpp" />
+    <ClInclude Include="Source\GUIApp\StdAfx.h" />
+    <ClInclude Include="Source\GUIApp\TerrainTest.hpp" />
+    <ClInclude Include="Source\GUIApp\Toolbar.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Source\GUIApp\res\GUIApp.ico" />
+    <Image Include="Source\GUIApp\res\icon1.ico" />
+    <Image Include="Source\GUIApp\res\icon_rap.ico" />
+    <Image Include="Source\GUIApp\res\Palette.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Source\GUIApp\res\GUIApp.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AI.vcxproj">
+      <Project>{d41b324f-94a2-44a6-b0fa-dcee82ab847c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Audio.vcxproj">
+      <Project>{d09bdd7b-8d8f-4530-a918-92056d4b6cb4}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="EntityDBase.vcxproj">
+      <Project>{7f27c481-33ec-423f-a8c8-37c7849ac154}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Game.vcxproj">
+      <Project>{046046a6-f8d3-49c8-a94d-a525ea0ca3f8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="GeomDBase.vcxproj">
+      <Project>{92972835-fb0e-4625-9f85-fca159f72e21}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Loader.vcxproj">
+      <Project>{0b037087-835c-4779-9610-e1022c933d9d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Math.vcxproj">
+      <Project>{8585b3dd-f839-4fd5-986a-d1358dbffd0e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Physics.vcxproj">
+      <Project>{7318acf0-b2d6-4420-abca-88278e5d4b1b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Render3D.vcxproj">
+      <Project>{7bd7ccad-42be-460f-b16f-23d806870bfb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="ScreenRenderDWI.vcxproj">
+      <Project>{10c5cde6-0cf1-47bc-b61d-94f090ccfcf8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Std.vcxproj">
+      <Project>{b025a4ca-b6d4-4d6a-b0e6-da96e04c34dd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="System.vcxproj">
+      <Project>{6f4de09b-a076-4f88-9096-09af50f99d6c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="View.vcxproj">
+      <Project>{aff8dd1b-fe2c-41ee-ad7b-6f98ba327ef4}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

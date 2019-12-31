@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final P6|Win32">
+      <Configuration>Final P6</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/JP2_PC", WUBAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{0B037087-835C-4779-9610-E1022C933D9D}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Build\Release\Loader\</OutDir>
+    <IntDir>.\Build\Release\Loader\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <OutDir>.\Build\Final_P6\Loader\</OutDir>
+    <IntDir>.\Build\Final_P6\Loader\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\Build\Final\Loader\</OutDir>
+    <IntDir>.\Build\Final\Loader\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Build\Debug\Loader\</OutDir>
+    <IntDir>.\Build\Debug\Loader\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;VC_EXTRALEAN;NDEBUG;WIN32;BUILDVER_MODE=MODE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Release\Loader\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Release\Loader\Loader.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Release\Loader\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Release\Loader\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\Loader\Loader.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\Loader\Loader.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;VC_EXTRALEAN;_WINDOWS;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;TARGET_PROCESSOR=PROCESSOR_PENTIUMPRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final_P6\Loader\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final_P6\Loader\Loader.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Final_P6\Loader\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final_P6\Loader\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\Loader\Loader.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\Loader\Loader.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;VC_EXTRALEAN;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final\Loader\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final\Loader\Loader.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Final\Loader\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final\Loader\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\Loader\Loader.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\Loader\Loader.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BUILDVER_MODE=MODE_DEBUG;WIN32;_WINDOWS;VC_EXTRALEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Debug\Loader\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Debug\Loader\Loader.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Debug\Loader\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Debug\Loader\</ProgramDataBaseFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\Loader\Loader.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\Loader\Loader.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Lib\Groff\EasyString.cpp" />
+    <ClCompile Include="Source\Lib\Groff\FileIO.cpp" />
+    <ClCompile Include="Source\Lib\Groff\Groff.cpp" />
+    <ClCompile Include="Source\Lib\Groff\GroffIO.cpp" />
+    <ClCompile Include="Source\Lib\Groff\GroffLoader.cpp" />
+    <ClCompile Include="Source\Lib\Groff\ObjectHandle.cpp" />
+    <ClCompile Include="Source\Lib\Groff\SymbolTable.cpp" />
+    <ClCompile Include="Source\Lib\Groff\ValueTable.cpp" />
+    <ClCompile Include="Source\Lib\Loader\AsyncLoader.cpp" />
+    <ClCompile Include="Source\Lib\Loader\DataDaemon.cpp" />
+    <ClCompile Include="Source\Lib\Loader\ImageLoader.cpp" />
+    <ClCompile Include="Source\Lib\Loader\Loader.cpp" />
+    <ClCompile Include="Source\Lib\Loader\LoadTexture.cpp" />
+    <ClCompile Include="Source\Lib\Loader\PlatonicInstance.cpp" />
+    <ClCompile Include="Source\Lib\Loader\PVA.cpp" />
+    <ClCompile Include="Source\Lib\Loader\SaveFile.cpp" />
+    <ClCompile Include="Source\Lib\Loader\TextureManager.cpp" />
+    <ClCompile Include="Source\Lib\Loader\TexturePackSurface.cpp" />
+    <ClCompile Include="Source\Lib\Sys\SmartBuffer.cpp" />
+    <ClCompile Include="Source\Lib\Sys\Symtab.cpp" />
+    <ClCompile Include="Source\Lib\Sys\SysLog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Lib\Groff\EasyString.hpp" />
+    <ClInclude Include="source\Lib\Groff\FileIO.hpp" />
+    <ClInclude Include="source\Lib\Groff\Groff.hpp" />
+    <ClInclude Include="source\Lib\Groff\GroffIO.hpp" />
+    <ClInclude Include="source\Lib\Groff\GroffLoader.hpp" />
+    <ClInclude Include="source\Lib\Groff\ObjectHandle.hpp" />
+    <ClInclude Include="source\Lib\Groff\SymbolTable.hpp" />
+    <ClInclude Include="source\Lib\Groff\ValueTable.hpp" />
+    <ClInclude Include="source\Lib\Loader\ASyncLoader.hpp" />
+    <ClInclude Include="Source\Lib\Loader\DataDaemon.hpp" />
+    <ClInclude Include="Source\Lib\Loader\Fetchable.hpp" />
+    <ClInclude Include="source\Lib\Loader\ImageLoader.hpp" />
+    <ClInclude Include="source\Lib\Loader\Loader.hpp" />
+    <ClInclude Include="Source\lib\loader\loadtexture.hpp" />
+    <ClInclude Include="source\Lib\Loader\PlatonicInstance.hpp" />
+    <ClInclude Include="source\Lib\Loader\PVA.hpp" />
+    <ClInclude Include="source\Lib\Loader\SaveFile.hpp" />
+    <ClInclude Include="source\Lib\Loader\TextureManager.hpp" />
+    <ClInclude Include="source\Lib\Loader\TexturePackSurface.hpp" />
+    <ClInclude Include="source\Lib\Sys\SmartBuffer.hpp" />
+    <ClInclude Include="source\Lib\Sys\Symtab.hpp" />
+    <ClInclude Include="source\Lib\Sys\SysLog.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

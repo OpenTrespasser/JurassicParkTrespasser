@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final P6|Win32">
+      <Configuration>Final P6</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/JP2_PC", WUBAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{6F4DE09B-A076-4F88-9096-09AF50F99D6C}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <OutDir>.\Build\Final_P6\System\</OutDir>
+    <IntDir>.\Build\Final_P6\System\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Build\Release\System\</OutDir>
+    <IntDir>.\Build\Release\System\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\Build\Final\System\</OutDir>
+    <IntDir>.\Build\Final\System\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Build\Debug\System\</OutDir>
+    <IntDir>.\Build\Debug\System\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;VC_EXTRALEAN;_WINDOWS;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;TARGET_PROCESSOR=PROCESSOR_PENTIUMPRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final_P6\System\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final_P6\System\System.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Final_P6\System\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final_P6\System\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\System\System.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final_P6\System\System.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;VC_EXTRALEAN;NDEBUG;WIN32;BUILDVER_MODE=MODE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Release\System\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Release\System\System.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Release\System\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Release\System\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\System\System.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Release\System\System.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\inc\directx;\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BUILDVER_MODE=MODE_OPTIMISE;_WINDOWS;VC_EXTRALEAN;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Final\System\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Final\System\System.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Final\System\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Final\System\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\System\System.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Final\System\System.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\jp2_pc\source;\jp2_pc\source\gblinc;\jp2_pc\inc;\jp2_pc\inc\stl;\jp2_pc\inc\directx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BUILDVER_MODE=MODE_DEBUG;WIN32;_WINDOWS;VC_EXTRALEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\Debug\System\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\Debug\System\System.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\Debug\System\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\Debug\System\</ProgramDataBaseFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\System\System.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\Debug\System\System.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Lib\control\Control.cpp" />
+    <ClCompile Include="Source\Lib\Sys\BitBuffer.cpp" />
+    <ClCompile Include="Source\Lib\Sys\ConIO.cpp" />
+    <ClCompile Include="Source\Lib\Sys\DebugConsole.cpp" />
+    <ClCompile Include="Source\Lib\Sys\FileMapping.cpp" />
+    <ClCompile Include="Source\Lib\Sys\FixedHeap.cpp" />
+    <ClCompile Include="Source\Lib\Sys\LRU.cpp" />
+    <ClCompile Include="Source\Lib\Sys\MemoryLog.cpp" />
+    <ClCompile Include="Source\Lib\Sys\PerformanceCount.cpp" />
+    <ClCompile Include="Source\Lib\Sys\ProcessorDetect.cpp" />
+    <ClCompile Include="Source\Lib\Sys\Profile.cpp" />
+    <ClCompile Include="Source\Lib\Sys\reg.cpp" />
+    <ClCompile Include="Source\Lib\Sys\RegInit.cpp" />
+    <ClCompile Include="Source\Lib\Sys\Scheduler.cpp" />
+    <ClCompile Include="Source\Lib\Sys\StdDialog.cpp" />
+    <ClCompile Include="Source\Lib\Sys\ThreadControl.cpp" />
+    <ClCompile Include="Source\Lib\Sys\VirtualMem.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\errors.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\ExePageModify.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\FastHeap.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\FileEx.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\Render.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\textout.cpp" />
+    <ClCompile Include="Source\Lib\Sys\W95\timer.cpp" />
+    <ClCompile Include="Source\Lib\W95\Com.cpp" />
+    <ClCompile Include="Source\Shell\WinRenderTools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\DirectX\dinput.lib" />
+    <Library Include="lib\DirectX\dxguid.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\GblInc\Config.hpp" />
+    <ClInclude Include="source\lib\control\Control.hpp" />
+    <ClInclude Include="source\Lib\Sys\BitBuffer.hpp" />
+    <ClInclude Include="source\Lib\Sys\ConIO.hpp" />
+    <ClInclude Include="source\Lib\Sys\DebugConsole.hpp" />
+    <ClInclude Include="Source\Lib\Sys\Errors.hpp" />
+    <ClInclude Include="Source\Lib\Sys\ExePageModify.hpp" />
+    <ClInclude Include="Source\Lib\Sys\FastHeap.hpp" />
+    <ClInclude Include="Source\Lib\Sys\FileMapping.hpp" />
+    <ClInclude Include="source\Lib\Sys\FixedHeap.hpp" />
+    <ClInclude Include="source\Lib\Sys\LRU.hpp" />
+    <ClInclude Include="source\Lib\Sys\MemoryLog.hpp" />
+    <ClInclude Include="Source\lib\sys\performancecount.hpp" />
+    <ClInclude Include="Source\lib\sys\ProcessorDetect.hpp" />
+    <ClInclude Include="source\Lib\Sys\Profile.hpp" />
+    <ClInclude Include="Source\Lib\Sys\reg.h" />
+    <ClInclude Include="Source\lib\sys\reginit.hpp" />
+    <ClInclude Include="source\Lib\Sys\Scheduler.hpp" />
+    <ClInclude Include="source\Lib\Sys\StdDialog.hpp" />
+    <ClInclude Include="Source\Lib\Sys\ThreadControl.hpp" />
+    <ClInclude Include="source\Lib\Sys\VirtualMem.hpp" />
+    <ClInclude Include="Source\lib\sys\w95\render.hpp" />
+    <ClInclude Include="source\Lib\W95\Com.hpp" />
+    <ClInclude Include="Source\shell\winrendertools.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

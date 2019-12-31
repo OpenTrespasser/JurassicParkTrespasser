@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Final|Win32">
+      <Configuration>Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/JP2_PC", WUBAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{F170F530-4151-4BAB-918D-6E6BDE562819}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Build\GroffExp\Release\</OutDir>
+    <IntDir>.\Build\GroffExp\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Build\GroffExp\Debug\</OutDir>
+    <IntDir>.\Build\GroffExp\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <OutDir>.\Build\GroffExp\Final\</OutDir>
+    <IntDir>.\Build\GroffExp\Final\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\Jp2_pc\Source;\Jp2_pc\Inc\MaxSDK;\Jp2_pc\Source\Tools\GroffExp;\Jp2_pc\Source\Lib\Sys;\Jp2_pc\Source\Lib\Groff;\Jp2_pc\Inc\Stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_MAX_TYPES;_WINDOWS;PROFILE_95;NDEBUG;WIN32;BUILDVER_MODE=MODE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\GroffExp\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\GroffExp\Release\GroffExp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\GroffExp\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\GroffExp\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\GroffExp\Release\GroffExp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\GroffExp\Release\GroffExp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Build\GroffExp\Release\GroffExp.dle</OutputFile>
+      <ImportLibrary>.\Build\GroffExp\Release\GroffExp.lib</ImportLibrary>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\Source\Tools\GroffExp\GroffExp.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\Jp2_pc\Source;\Jp2_pc\Inc\MaxSDK;\Jp2_pc\Source\Tools\GroffExp;\Jp2_pc\Source\Lib\Sys;\Jp2_pc\Source\Lib\Groff;\Jp2_pc\Inc\Stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;USE_MAX_TYPES;WIN32;_WINDOWS;DEBUG_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\GroffExp\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\GroffExp\Debug\GroffExp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\GroffExp\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\GroffExp\Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\GroffExp\Debug\GroffExp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\GroffExp\Debug\GroffExp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Build\GroffExp\Debug\GroffExp.dle</OutputFile>
+      <ImportLibrary>.\Build\GroffExp\Debug\GroffExp.lib</ImportLibrary>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\Source\Tools\GroffExp\GroffExp.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>\Jp2_pc\Source;\Jp2_pc\Inc\MaxSDK;\Jp2_pc\Source\Tools\GroffExp;\Jp2_pc\Source\Lib\Sys;\Jp2_pc\Source\Lib\Groff;\Jp2_pc\Inc\Stl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_MAX_TYPES;_WINDOWS;PROFILE_95;NDEBUG;WIN32;BUILDVER_MODE=MODE_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Build\GroffExp\Final\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Build\GroffExp\Final\GroffExp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Build\GroffExp\Final\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Build\GroffExp\Final\</ProgramDataBaseFileName>
+      <AdditionalOptions> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Build\GroffExp\Final\GroffExp.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Build\GroffExp\Final\GroffExp.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Build\GroffExp\Final\GroffExp.dle</OutputFile>
+      <ImportLibrary>.\Build\GroffExp\Final\GroffExp.lib</ImportLibrary>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\Source\Tools\GroffExp\GroffExp.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Lib\Groff\EasyString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Groff\FileIO.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Groff\Groff.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Groff\ObjectHandle.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Sys\SmartBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Sys\Symtab.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Sys\SysLog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\Bitmap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\Export.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\Geometry.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\GroffExp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\GUIInterface.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\Mathematics.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Tools\GroffExp\ObjectDef.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Final|Win32'"> /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "  /I /Jp2_pc/Source/Tools/GroffExp" /I /jp2_pc/Inc/MaxSDK" /I /jp2_pc/Source" /I /jp2_pc/Source/Tools/GroffExp" " " " "</AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Source\Tools\GroffExp\GroffExp.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Lib\Groff\EasyString.hpp" />
+    <ClInclude Include="source\Lib\Groff\FileIO.hpp" />
+    <ClInclude Include="source\Lib\Groff\Groff.hpp" />
+    <ClInclude Include="source\Lib\Groff\ObjectHandle.hpp" />
+    <ClInclude Include="source\Lib\Sys\SmartBuffer.hpp" />
+    <ClInclude Include="source\Lib\Sys\Symtab.hpp" />
+    <ClInclude Include="source\Lib\Sys\SysLog.hpp" />
+    <ClInclude Include="Source\Tools\GroffExp\Bitmap.hpp" />
+    <ClInclude Include="Source\Tools\GroffExp\Export.hpp" />
+    <ClInclude Include="Source\Tools\GroffExp\Geometry.hpp" />
+    <ClInclude Include="Source\Tools\GroffExp\GroffExp.h" />
+    <ClInclude Include="source\Tools\GroffExp\GUIInterface.hpp" />
+    <ClInclude Include="Source\Tools\GroffExp\Mathematics.hpp" />
+    <ClInclude Include="Source\Tools\GroffExp\ObjectDef.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\Tools\GroffExp\GroffExp.rc">
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Source\Tools\GroffExp;.\Source\Tools\GroffExp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Source\Tools\GroffExp;.\Source\Tools\GroffExp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">0x0409</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">Source\Tools\GroffExp;.\Source\Tools\GroffExp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\MaxSDK\BMM.LIB" />
+    <Library Include="lib\MaxSDK\CORE.LIB" />
+    <Library Include="lib\MaxSDK\GEOM.LIB" />
+    <Library Include="lib\MaxSDK\MESH.LIB" />
+    <Library Include="lib\MaxSDK\UTIL.LIB" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
