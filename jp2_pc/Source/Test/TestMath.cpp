@@ -58,7 +58,7 @@
 #include "Shell/AppShell.hpp"
 #include "Shell/AppShell.hpp"
 #include "TestMath.hpp"
-
+#include "Lib/Sys/ConIo.hpp"
 
 #define iREFRESH_TIME	100
 #define fRANGE_MIN		.005f
@@ -67,6 +67,8 @@
 
 
 CRandom rndTest;
+
+extern CConsoleEx conStd;
 
 class CAppShellTestMath: public CAppShell
 {
