@@ -35,7 +35,7 @@
 
 #include "GblInc/Common.hpp"
 #include "CameraPrime.hpp"
-#include "set.h"
+#include <set>
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/W95/Direct3D.hpp"
@@ -153,7 +153,7 @@ namespace
 		// Iterate directly through the clut database and set the bump tables of any entries that
 		// have not already been set
 		//
-		for (set<CPalClut, CPalClutLess>::iterator it_palclut_db = pcdbMain.psetPalClut->begin(); it_palclut_db != pcdbMain.psetPalClut->end(); ++it_palclut_db)
+		for (std::set<CPalClut, CPalClutLess>::iterator it_palclut_db = pcdbMain.psetPalClut->begin(); it_palclut_db != pcdbMain.psetPalClut->end(); ++it_palclut_db)
 		{
 			// Does this clut entry have a bump table?
 			if ( (*it_palclut_db).pBumpTable )

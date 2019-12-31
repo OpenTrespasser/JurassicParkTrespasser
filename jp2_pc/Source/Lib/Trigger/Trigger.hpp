@@ -54,7 +54,7 @@
 
 #include "common.hpp"
 
-#include <list.h>
+#include <list>
 
 #include "Lib/EntityDBase/Entity.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"

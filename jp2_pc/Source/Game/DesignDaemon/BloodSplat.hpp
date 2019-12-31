@@ -34,7 +34,7 @@
 #define HEADER_GAME_DESIGNDAEMON_BLOODSPLAT_HPP
 
 #include "Lib/EntityDBase/Subsystem.hpp"
-#include <list.h>
+#include <list>
 
 class CTerrainObj;
 

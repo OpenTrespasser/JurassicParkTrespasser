@@ -81,7 +81,7 @@
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Loader/Loader.hpp"
 
-#include <set.h>
+#include <set>
 
 extern bool bIsTrespasser;
 
@@ -225,15 +225,15 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 	CPalClutDatabase::CPalClutDatabase()
 		: pceMainPalClut(0), ppalMain(0)
 	{
-		psetPalClut = new set<class CPalClut,class CPalClutLess>;
-		psetOwnedPals = new set<class CPal*,class CPalPtrLess>;
+		psetPalClut = new std::set<class CPalClut,class CPalClutLess>;
+		psetOwnedPals = new std::set<class CPal*,class CPalPtrLess>;
 	}
 
 	//*****************************************************************************************
 	CPalClutDatabase::~CPalClutDatabase()
 	{
 		// Delete the palettes we own.
-		set<class CPal*,class CPalPtrLess>::iterator it_palptr;
+		std::set<class CPal*,class CPalPtrLess>::iterator it_palptr;
 		for (it_palptr = psetOwnedPals->begin(); it_palptr != psetOwnedPals->end(); it_palptr++)
 			delete *it_palptr;
 	
@@ -263,7 +263,7 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 		Assert(ppal);
 		Assert(pmat);
 
-		set<CPalClut, CPalClutLess>::iterator it_palclut_db;
+		std::set<CPalClut, CPalClutLess>::iterator it_palclut_db;
 
 		//
 		// Search for CPalClut in the set.

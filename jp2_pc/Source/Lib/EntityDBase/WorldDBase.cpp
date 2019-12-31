@@ -132,7 +132,7 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
 
 #include "Lib\Control\Control.hpp"
 
-#include <fstream.h>
+#include <fstream>
 
 
 #include "Lib\Sys\W95\Render.hpp"

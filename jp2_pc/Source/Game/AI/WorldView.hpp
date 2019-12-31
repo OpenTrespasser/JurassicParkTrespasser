@@ -107,7 +107,7 @@
 #ifndef HEADER_GAME_AI_WORLDVIEW_HPP
 #define HEADER_GAME_AI_WORLDVIEW_HPP
 
-#include "list.h"
+#include <list>
 #include "Influence.hpp"
 #include "Rating.hpp"
 

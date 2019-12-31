@@ -77,7 +77,7 @@
  * 
  **********************************************************************************************/
 
-#include "list.h"
+#include <list>
 #include "Common.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/View/RasterD3D.hpp"

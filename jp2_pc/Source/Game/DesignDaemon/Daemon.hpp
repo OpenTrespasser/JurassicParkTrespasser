@@ -38,7 +38,7 @@
 //
 // Includes.
 //
-#include <list.h>
+#include <list>
 #include "Lib/EntityDBase/Subsystem.hpp"
 #include "Lib/Sys/Timer.hpp"
 
@@ -112,7 +112,7 @@ class CVideoOverlay: public CSubsystem
 //**************************************
 {
 private:
-	CContainer< list<SOverlay> >	lsovlOverlays;	// The set of overlays to cycle through.
+	CContainer< std::list<SOverlay> >	lsovlOverlays;	// The set of overlays to cycle through.
 	TMSec							msPeriod;		// The period of display for each overlay.
 	CTimer							tmrCycle;		// The timer used for cycling.
 	bool							bEnabled_;		// Whether to enable the overlays.

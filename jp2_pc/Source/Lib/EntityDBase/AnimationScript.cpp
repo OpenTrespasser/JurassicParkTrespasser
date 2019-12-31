@@ -48,12 +48,12 @@
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/View/Grab.hpp"
 #include "Game/DesignDaemon/Player.hpp"
-#include <bstring.h>
-#include <set.h>
-#include <ctype.h>
-#include <fstream.h>
-#include <iomanip.h>
-#include <algo.h>
+#include <string>
+#include <set>
+#include <cctype>
+#include <fstream>
+#include <iomanip>
+#include <algorithm>
 
 
 namespace
