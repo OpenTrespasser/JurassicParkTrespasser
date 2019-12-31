@@ -180,7 +180,7 @@ END
 #ifdef __MWERKS__
  IDB_DEFAULT_PALETTE     BITMAP  DISCARDABLE     "standard.bmp"
 #else
- IDB_DEFAULT_PALETTE     BITMAP  DISCARDABLE     "\\jp2_pc\\BinData\\Palettes\\standard.bmp"
+ IDB_DEFAULT_PALETTE     BITMAP  DISCARDABLE     "BinData\\Palettes\\standard.bmp"
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
@@ -213,7 +213,7 @@ END
 #ifdef __MWERKS__
  #include "Lib/W95/Errors.rc"
 #else
- #include "/JP2_PC/Source/Lib/W95/Errors.rc"
+ #include "Lib/W95/Errors.rc"
 #endif
 
 /////////////////////////////////////////////////////////////////////////////

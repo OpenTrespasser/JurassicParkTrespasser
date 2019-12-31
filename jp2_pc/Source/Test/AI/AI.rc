@@ -8,7 +8,7 @@
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "afxres.h"
-#include "/jp2_pc/source/Shell/ShellResource.h"
+#include "Shell/ShellResource.h"
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
@@ -222,7 +222,7 @@ ID_CURSOR_X             CURSOR  DISCARDABLE     "cur00002.cur"
 //
 // Generated from the TEXTINCLUDE 3 resource.
 //
-#include "/jp2_pc/source/Shell/WinShell.rc"
+#include "Shell/WinShell.rc"
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
