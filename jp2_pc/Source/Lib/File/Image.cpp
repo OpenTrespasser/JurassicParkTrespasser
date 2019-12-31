@@ -117,20 +117,20 @@ CFileImage::~CFileImage()
 	delete section_db;
 }
 
-inline void* CFileImage::get_data(TSymbol* symbol, bool resolve_to_symbols /* = true */)
+void* CFileImage::get_data(TSymbol* symbol, bool resolve_to_symbols /* = true */)
 {
 	assert(!writing);
 	assert(symbol);
 	return section_db->get_data(this, symbol->get_memref(), resolve_to_symbols);
 }
 
-inline CSection* CFileImage::create_section()
+CSection* CFileImage::create_section()
 {
 	assert(writing);
 	return section_db->create_section();
 }
 
-inline TSymbol* CFileImage::create_symbol(const char* name /* = 0 */)
+TSymbol* CFileImage::create_symbol(const char* name /* = 0 */)
 {
 	assert(writing);
 	return symbol_table->create_symbol(name);
