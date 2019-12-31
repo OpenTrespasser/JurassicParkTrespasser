@@ -143,6 +143,7 @@
       <AdditionalDependencies>lib\smacker\smackw32.lib;comctl32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions> /SECTION:SelfMod,ERW</AdditionalOptions>
       <StackReserveSize>1048576</StackReserveSize>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -187,6 +188,7 @@
       <AdditionalDependencies>lib\smacker\smackw32.lib;comctl32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions> /SECTION:SelfMod,ERW</AdditionalOptions>
       <StackReserveSize>1048576</StackReserveSize>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|Win32'">
@@ -229,6 +231,7 @@
       <AdditionalDependencies>lib\smacker\smackw32.lib;comctl32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions> /SECTION:SelfMod,ERW</AdditionalOptions>
       <StackReserveSize>1048576</StackReserveSize>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final P6|Win32'">
@@ -271,12 +274,16 @@
       <AdditionalDependencies>lib\smacker\smackw32.lib;comctl32.lib;winmm.lib;lz32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions> /SECTION:SelfMod,ERW</AdditionalOptions>
       <StackReserveSize>1048576</StackReserveSize>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <Link>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\trespass\aaaa.cpp" />
