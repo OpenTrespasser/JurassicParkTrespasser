@@ -53,7 +53,7 @@ void CEffectDatabase::SaveBinary(const char* str_filename,int i_lang)
 	strcpy(str_log, str_filename);
 	strcpy(str_log+strlen(str_log)-3,"txt");
 
-	ofstream file(str_log, ios::out|ios::trunc);	// Open and truncate.
+	std::ofstream file(str_log, std::ios::out | std::ios::trunc);	// Open and truncate.
 	Assert(file.is_open());
 	
 	h_file = CreateFile
@@ -324,7 +324,7 @@ void CEffectDatabase::SaveBinary(const char* str_filename,int i_lang)
 	//
 	// Save the sample identifiers
 	//
-	for (i = evEffects.begin(); i<evEffects.end(); ++i)
+	for (auto i = evEffects.begin(); i != evEffects.end(); ++i)
 	{
 		SSampleFile		sf;
 		SCAUHeader		cauheader;
@@ -498,7 +498,7 @@ error:
 
 
 //*********************************************************************************************
-void CEffectDatabase::SaveTextTransfer(ofstream& file, SCollisionSample& csm)
+void CEffectDatabase::SaveTextTransfer(std::ofstream& file, SCollisionSample& csm)
 {
 	SEffect* peff = peffFindEffectID(csm.u4SampleID);
 	Assert(peff);
@@ -523,7 +523,7 @@ void CEffectDatabase::SaveTextTransfer(ofstream& file, SCollisionSample& csm)
 //*********************************************************************************************
 void CEffectDatabase::SaveText(const char* str_filename)
 {
-	ofstream file(str_filename, ios::out|ios::trunc);	// Open and truncate.
+	std::ofstream file(str_filename, std::ios::out|std::ios::trunc);	// Open and truncate.
 	Assert(file.is_open());
 
 	// version number
@@ -590,7 +590,7 @@ void CEffectDatabase::SaveText(const char* str_filename)
 //*********************************************************************************************
 bool CEffectDatabase::LoadText(const char* str_filename)
 {
-	ifstream file(str_filename,ios::nocreate);
+	std::ifstream file(str_filename,std::ios::_Nocreate);
 
 	// could not open the audio file, don't complain just do nothing.
 	if (file.is_open() == false)
@@ -842,7 +842,7 @@ static char strBuffer[MAX_PATH];
 
 //**********************************************************************************************
 //
-const char* strGetLine(ifstream& file)
+const char* strGetLine(std::ifstream& file)
 {
 	// Eat any leading whitespace.
 	char c;
