@@ -640,7 +640,8 @@ bool CFileIO::bClose()
 	}
 	else
 	{
-		fsFile.fdFile =_close( fsFile.fdFile );
+		if (fsFile.fdFile != 0 && fsFile.fdFile != -1)
+			fsFile.fdFile =_close( fsFile.fdFile );
 	}
 
 	// Were we successful?
