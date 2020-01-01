@@ -97,7 +97,7 @@ inline CObjectValue* povalCast(CBaseValue* pbv)
 
 inline CBaseValue* pbvLookupValue
 (
-	const CHandle&		h_symbol,
+	const ::CHandle&		h_symbol,
 	CObjectValue*		poval_parent,
 	CValueTable*		pvtable,
 	int					i_start
@@ -143,7 +143,7 @@ inline CBaseValue* pbvLookupValue
 inline bool bFillBool
 (
 	bool *pb_value,						// The value to set.
-	const CHandle& h_symbol,			// The symbol to find.
+	const ::CHandle& h_symbol,			// The symbol to find.
 	CObjectValue* poval_parent,	// The object containing the value.
 	CValueTable* pvtable,			// The vtable to use.	
 	int *pi_best_guess_index			// The best place to start looking for the symbol.
@@ -176,7 +176,7 @@ inline bool bFillBool
 inline bool bFillChar
 (
 	char *pc_value,						// The value to set.
-	const CHandle& h_symbol,			// The symbol to find.
+	const ::CHandle& h_symbol,			// The symbol to find.
 	CObjectValue* poval_parent,	// The object containing the value.
 	CValueTable* pvtable,			// The vtable to use.	
 	int *pi_best_guess_index			// The best place to start looking for the symbol.
@@ -209,7 +209,7 @@ inline bool bFillChar
 inline bool bFillInt
 (
 	int *pi_value,						// The value to set.
-	const CHandle& h_symbol,			// The symbol to find.
+	const ::CHandle& h_symbol,			// The symbol to find.
 	CObjectValue* poval_parent,	// The object containing the value.
 	CValueTable* pvtable,			// The vtable to use.	
 	int *pi_best_guess_index			// The best place to start looking for the symbol.
@@ -242,7 +242,7 @@ inline bool bFillInt
 inline bool bFillFloat
 (
 	float *pf_value,						// The value to set.
-	const CHandle& h_symbol,			// The symbol to find.
+	const ::CHandle& h_symbol,			// The symbol to find.
 	CObjectValue* poval_parent,	// The object containing the value.
 	CValueTable* pvtable,			// The vtable to use.	
 	int *pi_best_guess_index			// The best place to start looking for the symbol.
@@ -275,7 +275,7 @@ inline bool bFillFloat
 inline bool bFillString
 (
 	const CEasyString **ppestr_value,						// The value to set.
-	const CHandle& h_symbol,			// The symbol to find.
+	const ::CHandle& h_symbol,			// The symbol to find.
 	CObjectValue* poval_parent,	// The object containing the value.
 	CValueTable* pvtable,			// The vtable to use.	
 	int *pi_best_guess_index			// The best place to start looking for the symbol.
@@ -308,7 +308,7 @@ inline bool bFillString
 bool bGetObject
 (
 	CObjectValue **ppoval_value,			// The value to set.
-	const CHandle& h_symbol,			// The symbol to find.
+	const ::CHandle& h_symbol,			// The symbol to find.
 	CObjectValue* poval_parent,	// The object containing the value.
 	CValueTable* pvtable,			// The vtable to use.	
 	int *pi_best_guess_index			// The best place to start looking for the symbol.

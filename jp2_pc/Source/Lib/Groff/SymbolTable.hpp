@@ -80,7 +80,7 @@ class CSymbolEntry
 //
 {
 	CEasyString	estrSymbolName;
-	CHandle		hSymbolHandle;
+	::CHandle		hSymbolHandle;
 
 public:
 
@@ -96,7 +96,7 @@ public:
 	CSymbolEntry
 	(
 		const CEasyString&	estr_symbol_name,
-		const CHandle&		h_handle
+		const ::CHandle&		h_handle
 	);
 
 
@@ -133,7 +133,7 @@ public:
 	
 	//******************************************************************************************
 	//
-	CHandle& hHandle
+	::CHandle& hHandle
 	(
 	);
 
@@ -242,7 +242,7 @@ class CNewSymbolTable
 	std::map< CEasyString, CSymbolEntry*, std::less<CEasyString> >	asiSymbolIndex;
 
 	// Fast associative access to the element through this type. 
-	std::map< CHandle, CSymbolEntry*, std::less<CHandle> >			asiHandleIndex;
+	std::map< ::CHandle, CSymbolEntry*, std::less<::CHandle> >			asiHandleIndex;
 
 public:   // Need access to verify validity of loaded value table.
 	// Storage container for the element type.
@@ -274,7 +274,7 @@ public:
 
 	//******************************************************************************************
 	//
-	const CHandle& operator[]
+	const ::CHandle& operator[]
 	(
 		const CEasyString& estr_symbol
 	);
@@ -285,13 +285,13 @@ public:
 
 	const CEasyString& operator[]
 	(
-		CHandle h_handle
+		::CHandle h_handle
 	);
 
 
 	//******************************************************************************************
 	//
-	CHandle hSymbol
+	::CHandle hSymbol
 	(
 		const CEasyString& estr_symbol
 	);

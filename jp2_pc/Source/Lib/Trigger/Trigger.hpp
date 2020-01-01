@@ -162,7 +162,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -312,7 +312,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -477,7 +477,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,		// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -573,7 +573,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -644,7 +644,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -692,7 +692,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -721,7 +721,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -764,7 +764,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -791,7 +791,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -829,7 +829,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -853,7 +853,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -900,7 +900,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -927,7 +927,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -964,7 +964,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -1004,7 +1004,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -1045,7 +1045,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -1078,7 +1078,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -1106,7 +1106,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -1132,7 +1132,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -1169,7 +1169,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -1201,7 +1201,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -1251,7 +1251,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);
@@ -1274,7 +1274,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				p_load,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -1314,7 +1314,7 @@ public:
 	static bool bValidateTriggerProperties
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		CLoadWorld*				p_load		// The loader.
 	);

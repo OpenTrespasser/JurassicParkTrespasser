@@ -222,7 +222,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,				// Pointer to GROFF name.
 		CLoadWorld*				pload,				// Pointer to loader.
-		const CHandle&			h_obj,				// Handle to the base object in the value table.
+		const ::CHandle&			h_obj,				// Handle to the base object in the value table.
 		CValueTable*			pvtable				// Pointer to the value table.
 	);
 	// Obtain a RenderType that has the requested data.
