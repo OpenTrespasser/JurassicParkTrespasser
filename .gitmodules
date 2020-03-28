@@ -1,4 +1,4 @@
-[submodule "jp2_pc/Tools/CMake"]
-	path = jp2_pc/Tools/CMake
+[submodule "jp2_pc/BuildTools/CMake"]
+	path = jp2_pc/BuildTools/CMake
 	url = https://github.com/OpenTrespasser/CMake
-	branch = master
+    branch = master
