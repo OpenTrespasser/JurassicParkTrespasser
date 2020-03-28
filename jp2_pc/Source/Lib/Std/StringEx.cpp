@@ -55,7 +55,7 @@
 
 #include <string.h>
 #include <stdio.h>
-#include <typeinfo.h>
+#include <typeinfo>
 
 //
 // Constants.
