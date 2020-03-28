@@ -87,12 +87,11 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 target_link_options(${PROJECT_NAME} PUBLIC "/SAFESEH:NO") #Needed only for old Smacker lib, remove when it gets replaced
-#target_link_options(${PROJECT_NAME} PUBLIC "/SECTION:SelfMod,ERW") #Needed for some of the assembly code in ScreenRenderDWI, ERW = Execute, Read, Write
 
 target_precompile_headers(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/Source/trespass/precomp.h)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX})
+if (FOUND_TRESPASS_DIR AND USE_TRESPASSER_DIRECTORY)
+    set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX})
 
-if (FOUND_TRESPASS_DIR)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT_NAME}> ${CMAKE_INSTALL_PREFIX}/$<TARGET_FILE_NAME:${PROJECT_NAME}>)
 endif()
