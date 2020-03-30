@@ -108,8 +108,10 @@ int main()
 	gsym = file_image->get_symbol("Geom_0001");
 	SGeom* pgeom = (SGeom*)file_image->get_data(gsym, true);
 #endif
+#ifdef _DEBUG
 	file_image->dump();
-
+#endif
+	
 	// Delete storage.
 
 	delete [] geom.vertices;
