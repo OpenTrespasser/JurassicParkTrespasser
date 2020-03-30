@@ -203,7 +203,7 @@ static rptr<CLightAmbient>	pamb;
 			msgpaint.renContext.RenderScene
 			(
 				cam_backdrop,					// Special backdrop camera.
-				list<CInstance*>(1, &insFullAmbient),	// Special backdrop light list.
+				std::list<CInstance*>(1, &insFullAmbient),	// Special backdrop light list.
 				wDBase.ppartBackdropsList(),	// Special backdrop partition.
 				papoc,							// Use no occlusion objects.
 				esfINTERSECT,					// Assume intersection.
@@ -670,7 +670,7 @@ static rptr<CLightAmbient>	pamb;
 			if (iVersion >= 3)
 			{
 				// Load animating mesh data.
-				list<CMeshAnimating*>::iterator i = lpmaAnimatedMeshes.begin();
+				std::list<CMeshAnimating*>::iterator i = lpmaAnimatedMeshes.begin();
 				for ( ; i != lpmaAnimatedMeshes.end(); ++i)
 				{
 					pc = (*i)->pcLoad(pc);
