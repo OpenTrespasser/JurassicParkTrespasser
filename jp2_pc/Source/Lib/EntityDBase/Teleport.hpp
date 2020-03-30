@@ -17,8 +17,8 @@
 class CTeleport : public CEntity
 {
 private:
-	static list<CTeleport*> listTeleports;
-	static list<CTeleport*>::iterator itCurrent;
+	static std::list<CTeleport*> listTeleports;
+	static std::list<CTeleport*>::iterator itCurrent;
 
 	CPresence3<> pr3_location;
 
