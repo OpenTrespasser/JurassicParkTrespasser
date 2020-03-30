@@ -1,5 +1,15 @@
 # Files to ignore when considering what GIT should commit.
 
+# Directories
+.vs/
+jp2_pc/Build/
+
+# Visual Studio Files
+*.sln
+*.vcxproj
+*.filters
+*.user
+
 # OSX Hidden Files
 .DS_Store
 ._*
