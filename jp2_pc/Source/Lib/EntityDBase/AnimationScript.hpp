@@ -38,7 +38,7 @@
 #include "Lib/Sys/Timer.hpp"
 #include "Lib/Transform/Presence.hpp"
 #include "Lib/EntityDBase/Subsystem.hpp"
-#include <list.h>
+#include <list>
 
 class CInstance;
 class CScriptParser;
@@ -193,7 +193,7 @@ class CAnimations : public CSubsystem
 //
 //**************************************
 {
-	list<CAnimationScript*> ltansAnims;
+	std::list<CAnimationScript*> ltansAnims;
 
 	//******************************************************************************************
 	//
