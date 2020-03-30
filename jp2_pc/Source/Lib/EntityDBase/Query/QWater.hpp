@@ -31,7 +31,7 @@
 
 //*********************************************************************************************
 //
-class CWDbQueryWater: public CWDbQuery< list<CEntityWater*> >
+class CWDbQueryWater: public CWDbQuery< std::list<CEntityWater*> >
 //
 // Water object query.
 //
@@ -40,7 +40,7 @@ class CWDbQueryWater: public CWDbQuery< list<CEntityWater*> >
 //**************************************
 {
 public:
-	static list<CEntityWater*> lspetWater;	// List of all water objects in world.
+	static std::list<CEntityWater*> lspetWater;	// List of all water objects in world.
 
 public:
 
@@ -80,7 +80,7 @@ public:
 	CWDbQueryWaterHeight
 	(
 		const CVector2<>& v2_world,		// World point to test water height at.
-		const list<CEntityWater*>& lspetw = CWDbQueryWater::lspetWater		
+		const std::list<CEntityWater*>& lspetw = CWDbQueryWater::lspetWater
 										// Water list to use; default is world list.
 	);
 };

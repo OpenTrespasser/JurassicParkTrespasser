@@ -36,7 +36,7 @@
 
 //*********************************************************************************************
 //
-class CWDbQueryAnimal : public CWDbQuery< list<CAnimal*> >
+class CWDbQueryAnimal : public CWDbQuery< std::list<CAnimal*> >
 //
 // World database query container.
 //
@@ -61,7 +61,7 @@ public:
 
 //*********************************************************************************************
 //
-class CWDbQueryAI : public CWDbQuery< list<CInstance*> >
+class CWDbQueryAI : public CWDbQuery< std::list<CInstance*> >
 //
 // World database query container.
 //
