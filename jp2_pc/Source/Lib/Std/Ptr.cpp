@@ -78,14 +78,14 @@
 #ifdef __MWERKS__
  #include <set.h>
 #else
- #include "Stl/Set.h"
+ #include <set>
 #endif
 
 //
 // Private variables.
 //
 
-typedef set<CRefObj*, less<CRefObj*> > TSetTracker;
+typedef std::set<CRefObj*, std::less<CRefObj*> > TSetTracker;
 
 //
 // Note: I would like to use ptr<TSetTracker> rather than TSetTracker*.  This does not work
@@ -141,7 +141,7 @@ static uint uRefs = 0;
 		// Insert the new member in the database, and ensure it wasn't there before.
 		Assert(uRefs == 0);
 		Assert(pSetTracker);
-		pair<TSetTracker::iterator, bool> pib = pSetTracker->insert(this);
+		std::pair<TSetTracker::iterator, bool> pib = pSetTracker->insert(this);
 		Assert(pib.second == true);
 #if bVER_SHOW_RPTR
 		dprintf("  rptr add %8X %s\n", this, strTypeName(*this));

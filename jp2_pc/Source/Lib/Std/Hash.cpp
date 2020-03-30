@@ -76,8 +76,8 @@
 // Includes.
 //
 
-#include <bstring.h>
-#include "Map.h"
+#include <string>
+#include <map>
 #include "Common.hpp"
 #include "Hash.hpp"
 #include "crc.hpp"
@@ -93,10 +93,10 @@
 //
 
 // Definition of a string to raster map.
-typedef map<string, uint32, less<string> > TMapHash;
+typedef std::map<std::string, uint32, std::less<std::string> > TMapHash;
 
 // Definition of a hash to a string map.
-typedef map<uint32, string, less<uint32> > TMapHashString;
+typedef std::map<uint32, std::string, std::less<uint32> > TMapHashString;
 //
 // Module variables.
 //
@@ -175,7 +175,7 @@ uint32 u4Hash(const void* pv, int i_size_bytes,	bool b_string)
 	#ifdef __MWERKS__
 		pair<TMapHashString::iterator, bool> pib = mapHashString.insert(pair<const uint32, string>(u4_hash,string(str)));
 	#else
-		pair<TMapHashString::iterator, bool> pib = mapHashString.insert(pair<uint32, string>(u4_hash,string(str)));
+		std::pair<TMapHashString::iterator, bool> pib = mapHashString.insert(std::pair<uint32, std::string>(u4_hash, std::string(str)));
 	#endif
 
 		// Did the insertion succeed?
