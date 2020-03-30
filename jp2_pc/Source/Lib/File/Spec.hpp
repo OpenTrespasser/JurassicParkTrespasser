@@ -38,9 +38,6 @@
 #ifndef HEADER_LIB_FILE_FILE_SPEC_HPP
 #define HEADER_LIB_FILE_FILE_SPEC_HPP
 
-#pragma warning(disable: 4237)
-#include <bool.h>
-
 typedef unsigned int TSectionHandle;
 typedef unsigned int TSymbolHandle;
 
