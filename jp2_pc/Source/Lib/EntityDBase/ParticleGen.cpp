@@ -37,8 +37,8 @@
 #include "Lib/Std/Random.hpp"
 #include "Lib/Audio/SoundDefs.hpp"
 
-#include <list.h>
-#include <map.h>
+#include <list>
+#include <map>
 
 //*********************************************************************************************
 //
@@ -171,9 +171,9 @@ namespace NParticleMap
 // 
 //**************************************
 {
-	list<CCreateParticles> lspcrtEffects;	// The list of effects.
+	std::list<CCreateParticles> lspcrtEffects;	// The list of effects.
 
-	typedef map< TSoundMaterial, CCreateParticles*, less<TSoundMaterial> > TParticleMap;
+	typedef std::map< TSoundMaterial, CCreateParticles*, std::less<TSoundMaterial> > TParticleMap;
 	// Prefix: prtm
 
 	TParticleMap	prtmEffectMap;			// The mapping to materials.
@@ -182,7 +182,7 @@ namespace NParticleMap
 	CCreateParticles* pcrtAddParticle(const CCreateParticles& crt)
 	{
 		// Just duplicate and add to list. Do not check for duplicates.
-		list<CCreateParticles>::iterator it = lspcrtEffects.insert(lspcrtEffects.end(), crt);
+		std::list<CCreateParticles>::iterator it = lspcrtEffects.insert(lspcrtEffects.end(), crt);
 		return &*it;
 	}
 
