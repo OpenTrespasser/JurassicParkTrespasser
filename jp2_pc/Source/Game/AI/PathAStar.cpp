@@ -230,8 +230,8 @@
 			}
 
 			// Check the terrain polys.
-			list<CTerrainKnowledge>* pltk = &pbrBrain->pwvWorldView->ltkKnowledge;
-			list<CTerrainKnowledge>::iterator ptk = pltk->begin();
+			std::list<CTerrainKnowledge>* pltk = &pbrBrain->pwvWorldView->ltkKnowledge;
+			std::list<CTerrainKnowledge>::iterator ptk = pltk->begin();
 
 			for (; ptk != pltk->end(); ++ptk)
 			{
