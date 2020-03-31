@@ -203,7 +203,7 @@
 #include "Common.hpp"
 #include "RasterD3D.hpp"
 
-#include "map.h"
+#include <map>
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/W95/DD.hpp"
 #include "Lib/Sys/Profile.hpp"
@@ -390,7 +390,7 @@ template<class T> void ReleasePObject
 
 //**********************************************************************************************
 //
-class CMapDDSurfaces : public map< uint32, LPDIRECTDRAWSURFACE4, less<uint32> >
+class CMapDDSurfaces : public std::map< uint32, LPDIRECTDRAWSURFACE4, std::less<uint32> >
 //
 // Encapsulates an STL map for DirectDraw surfaces.
 //
@@ -475,7 +475,7 @@ public:
 	#ifdef __MWERKS__
 		insert(pair<const uint32, LPDIRECTDRAWSURFACE4>(u4_hash, pdds));
 	#else
-		insert(pair<uint32, LPDIRECTDRAWSURFACE4>(u4_hash, pdds));
+		insert(std::pair<uint32, LPDIRECTDRAWSURFACE4>(u4_hash, pdds));
 	#endif
 
 		Assert(pddsFind(u4_hash));
