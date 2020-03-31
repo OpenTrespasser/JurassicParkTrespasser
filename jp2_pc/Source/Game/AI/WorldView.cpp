@@ -193,7 +193,7 @@ const CInfluence* CWorldView::pinfNotice
 		CInfluence inf_real(paniOwner, pins);
 
 		inf_real.UpdateForMove(paniOwner, s_current_time);
-		pair<CInfluenceList::iterator, bool> p = inflInfluences.insert(inf_real);
+		std::pair<CInfluenceList::iterator, bool> p = inflInfluences.insert(inf_real);
 		Assert(p.second);
 
 		return 0;
@@ -371,7 +371,7 @@ void CWorldView::RemoveSomeInfluences()
 	CInfluenceList::iterator pinf = inflInfluences.begin();
 
 	int i_discardable_count = 0;
-	list<const CInfluence*> lpinf_discard;
+	std::list<const CInfluence*> lpinf_discard;
 
 	// Find the lamest influence and remove it.
 	// For now, we only remove one bad apple each cycle.
@@ -407,7 +407,7 @@ void CWorldView::RemoveSomeInfluences()
 
 	if (i_discardable_count > 10)
 	{
-		list<const CInfluence*>::iterator itpinf;
+		std::list<const CInfluence*>::iterator itpinf;
 		for(itpinf = lpinf_discard.begin(); itpinf != lpinf_discard.end(); ++itpinf)
 		{
 			//   Is it discardable?
@@ -482,7 +482,7 @@ const CInfluence* CWorldView::pinfAddOrUpdate
 		inf_real.UpdatePositionalData(paniOwner);
 
 		// Insert the influence.
-		pair<CInfluenceList::iterator, bool> p = inflInfluences.insert(inf_real);
+		std::pair<CInfluenceList::iterator, bool> p = inflInfluences.insert(inf_real);
 
 		AlwaysAssert(!inf_real.setNodeFlags[ensfIN_GRAPH]);
 
@@ -537,7 +537,7 @@ void CWorldView::MaybeResetTempInfluenceFlags()   // Somewhat misnamed-  also re
 			pinf->ResetTemporaryFlags();
 		}
 
-		list<CTerrainKnowledge>::iterator ptk;
+		std::list<CTerrainKnowledge>::iterator ptk;
 		for (ptk = ltkKnowledge.begin(); ptk != ltkKnowledge.end(); ++ptk)
 		{
 			CTerrainKnowledge* ptk_temp = &(*ptk);
@@ -578,7 +578,7 @@ void CWorldView::ResetMergeTerrain()
 //*********************************************************************************
 void CWorldView::ClearTerrainKnowledge()
 {
-	list<CTerrainKnowledge>::iterator ptk;
+	std::list<CTerrainKnowledge>::iterator ptk;
 
 	if (paniOwner->pbrBrain->paigGraph)
 	{
@@ -596,8 +596,8 @@ void CWorldView::ClearTerrainKnowledge()
 //*********************************************************************************
 void CWorldView::ClearOutsideTerrainKnowledge()
 {
-	list<CTerrainKnowledge>::iterator ptk;
-	list<CTerrainKnowledge>::iterator ptk_last;
+	std::list<CTerrainKnowledge>::iterator ptk;
+	std::list<CTerrainKnowledge>::iterator ptk_last;
 
 	ptk = ltkKnowledge.begin();
 	ptk = ltkKnowledge.end();
