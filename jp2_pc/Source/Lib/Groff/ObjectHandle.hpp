@@ -46,7 +46,7 @@
 #ifndef HEADER_LIB_GROFF_OBJECTHANDLE_HPP
 #define HEADER_LIB_GROFF_OBJECTHANDLE_HPP
 
-#include <iostream.h>
+#include <iostream>
 
 //
 // Disable a number of annoying warning messages about symbol truncation, and unsigned
@@ -57,8 +57,8 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <map.h>
-#include <deque.h>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to
@@ -220,18 +220,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&		os_stream, 
+		std::ostream&	os_stream,
 		const CHandle&	h_handle
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream& is_stream,
+		std::istream& is_stream,
 		CHandle& h_handle
 	);
 
@@ -324,18 +324,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&			 os_stream, 
+		std::ostream&		 os_stream,
 		const CObjectHandle& objh_handle
 	);
 
 
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&		is_stream,
+		std::istream&	is_stream,
 		CObjectHandle&	objh_handle
 	);
 
@@ -420,15 +420,15 @@ class CHandleManager
 {
 	static uint					uClassCount;
 	static uint					uHandleBase;
-	static deque<CObjectHandle>	aobjhObjectHandle;
+	static std::deque<CObjectHandle>	aobjhObjectHandle;
 
 public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&			  os_stream, 
+		std::ostream&		  os_stream,
 		const CHandleManager& hmgr_handle
 	);
 
