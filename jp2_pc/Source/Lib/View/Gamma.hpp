@@ -58,7 +58,7 @@
 //*********************************************************************************************
 //
 template<class T> class CGammaCorrection: 
-	public CFloatTableRound<T, iGAMMA_TABLE_SIZE, 0.0, rvMAX_WHITE>
+	public CFloatTableRound<T, iGAMMA_TABLE_SIZE, 0, static_cast<int>(rvMAX_WHITE)>
 //
 // A gamma-correction and light-value conversion facility.  
 // Converts floating-point lighting values to gamma-corrected values, while scaling and
