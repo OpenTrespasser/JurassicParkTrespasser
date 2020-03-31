@@ -347,13 +347,13 @@ void CCAULoad::SelectDecoder
 		if (cauheaderLocal.u1Bits == 8)
 		{
 			// mono 8bit
-			u4DecompressBlock = u4DecompressMono8bit;
+			u4DecompressBlock = &CCAULoad::u4DecompressMono8bit;
 			u1SilentValue = 128;
 		}
 		else
 		{
 			// mono 16bit
-			u4DecompressBlock = u4DecompressMono16bit;
+			u4DecompressBlock = &CCAULoad::u4DecompressMono16bit;
 			u1SilentValue = 0;
 		}
 	}
@@ -364,13 +364,13 @@ void CCAULoad::SelectDecoder
 		if (cauheaderLocal.u1Bits == 8)
 		{
 			// mono 8bit
-			u4DecompressBlock = u4DecompressStereo8bit;
+			u4DecompressBlock = &CCAULoad::u4DecompressStereo8bit;
 			u1SilentValue = 128;
 		}
 		else
 		{
 			// mono 16bit
-			u4DecompressBlock = u4DecompressStereo16bit;
+			u4DecompressBlock = &CCAULoad::u4DecompressStereo16bit;
 			u1SilentValue = 0;
 		}
 	}
