@@ -55,7 +55,7 @@
 #include "Lib/Std/PrivSelf.hpp"
 #include "Lib/Std/MemLimits.hpp"
 
-#include <list.h>
+#include <list>
 
 //
 // Static constants.
@@ -269,7 +269,7 @@ namespace NMultiResolution
 		static rptr<CRaster> prasBaseTexture;
 		static CTexturePageManager::CRegionHandle rhBaseTexture;
 
-		typedef list< ptr<NMultiResolution::CTextureNode> > TList;
+		typedef std::list< ptr<NMultiResolution::CTextureNode> > TList;
 		static TList lptxnTextures;
 
 		static CClut* pclutCurrent;
@@ -395,7 +395,7 @@ namespace NMultiResolution
 		//
 		static void MergeInList
 		(
-			list< CRectangle<int> >& lrc_merged,
+			std::list< CRectangle<int> >& lrc_merged,
 			CRectangle<int> rc_new
 		);
 		//
@@ -525,7 +525,7 @@ namespace NMultiResolution
 		// Copy the ancestor's moving shadows' dirty rects if they intersect this descendant.
 		if (!rtxn_ancestor.ltrcDirtyRects.empty())
 		{
-			list< CRectangle<> >::const_iterator it;
+			std::list< CRectangle<> >::const_iterator it;
 			for (it = rtxn_ancestor.ltrcDirtyRects.begin(); it != rtxn_ancestor.ltrcDirtyRects.end(); ++it)
 				if ((*it).bIntersects(pqnt_owner->rcGetRectangle()))
 					ltrcDirtyRects.push_back(*it);
@@ -1157,7 +1157,7 @@ namespace NMultiResolution
 	{
 		if (pqntin_node->ptxnGetTextureNode() != 0)
 		{
-			list< CRectangle<> >::const_iterator it;
+			std::list< CRectangle<> >::const_iterator it;
 			for (it = pqntin_node->ptxnGetTextureNode()->ltrcDirtyRects.begin(); it != pqntin_node->ptxnGetTextureNode()->ltrcDirtyRects.end(); ++it)
 				ptxn_ancestor->ltrcDirtyRects.push_back(*it);
 		}
@@ -1793,10 +1793,10 @@ namespace NMultiResolution
 		// This list must include the dirty rectangles of the previous update and the dirty rectangles
 		// of the current frame.
 		//
-		list< CRectangle<int> > lrc_this_frame;
+		std::list< CRectangle<int> > lrc_this_frame;
 
 		// Add the dirty rects from the previous update.
-		list< CRectangle<int> >::iterator it_prev;
+		std::list< CRectangle<int> >::iterator it_prev;
 		for (it_prev = ltrcPrevDirtyRects.begin(); it_prev != ltrcPrevDirtyRects.end(); ++it_prev)
 			lrc_this_frame.push_back(*it_prev);
 
@@ -1813,9 +1813,9 @@ namespace NMultiResolution
 		{
 			CTransLinear2<> tlr2_quad_inv_raster(pqntOwner->rcGetRectangle(), CRectangle<>(0, 0, v2_size.tX, v2_size.tY));
 
-			list< CRectangle<int> > lrc_next_frame;
+			std::list< CRectangle<int> > lrc_next_frame;
 
-			list< CRectangle<> >::iterator it_curr;
+			std::list< CRectangle<> >::iterator it_curr;
 			for (it_curr = ltrcDirtyRects.begin(); it_curr != ltrcDirtyRects.end(); ++it_curr)
 			{
 				// Convert the dirty rect from quad space to texture raster coords. Add an extra few pixels in all
@@ -1837,7 +1837,7 @@ namespace NMultiResolution
 				}
 			}
 
-			for (list< CRectangle<int> >::iterator it_next = lrc_next_frame.begin(); it_next != lrc_next_frame.end(); ++it_next)
+			for (std::list< CRectangle<int> >::iterator it_next = lrc_next_frame.begin(); it_next != lrc_next_frame.end(); ++it_next)
 				ltrcPrevDirtyRects.push_back(*it_next);
 		}
 
@@ -1856,7 +1856,7 @@ namespace NMultiResolution
 		));
 
 		// Copy regions from the buffer containing the non-clut converted texture and static shadows.
-		list< CRectangle<int> >::iterator it_this = lrc_this_frame.begin();
+		std::list< CRectangle<int> >::iterator it_this = lrc_this_frame.begin();
 		for (; it_this != lrc_this_frame.end(); ++it_this)
 			CPriv::CopyRaster(pras_region, pras_shadow, &(*it_this));
 
@@ -1868,7 +1868,7 @@ namespace NMultiResolution
 		}
 		else
 		{
-			list< CRectangle<int> >::iterator it_new;
+			std::list< CRectangle<int> >::iterator it_new;
 			for (it_new = ltrcPrevDirtyRects.begin(); it_new != ltrcPrevDirtyRects.end(); ++it_new)
 			{
 				#if VER_TEST
@@ -1967,11 +1967,11 @@ namespace NMultiResolution
 
 
 	//******************************************************************************************
-	void CTextureNode::CPriv::MergeInList(list< CRectangle<int> >& lrc_merged, CRectangle<int> rc_new)
+	void CTextureNode::CPriv::MergeInList(std::list< CRectangle<int> >& lrc_merged, CRectangle<int> rc_new)
 	{
 		for (;;)
 		{
-			list< CRectangle<int> >::iterator it_merge;
+			std::list< CRectangle<int> >::iterator it_merge;
 			for (it_merge = lrc_merged.begin(); it_merge != lrc_merged.end(); ++it_merge)
 				if (rc_new.bIntersects(*it_merge))
 					break;
