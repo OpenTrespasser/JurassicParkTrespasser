@@ -73,9 +73,9 @@
 #include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/View/Colour.hpp"
 #include "Lib/View/Palette.hpp"
-#include "vector.h"
-#include "map.h"
-#include "set.h"
+#include <vector>
+#include <map>
+#include <set>
 
 
 //**********************************************************************************************
@@ -176,8 +176,8 @@ public:
 	static bool							bCompressed;
 	static bool							bNewCompression;
 
-	map<uint64,SDirectoryFileChunk*,less<uint64> >	mapChunk;
-	vector<CPal*>									appal;
+	std::map<uint64,SDirectoryFileChunk*, std::less<uint64> >	mapChunk;
+	std::vector<CPal*>									appal;
 	char											strLocalImage[264];
 	char											strSourceImage[264];
 	uint64											u8SourceImageTime;
