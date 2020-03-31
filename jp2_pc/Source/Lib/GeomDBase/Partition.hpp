@@ -65,7 +65,7 @@
 #include "Lib/Transform/Presence.hpp"
 #include "Lib/GeomDBase/Plane.hpp"
 #include "Lib/Std/Set.hpp"
-#include <bstring.h>
+#include <string>
 #include "Lib/Math/FloatShort.hpp"
 
 
@@ -1613,8 +1613,8 @@ public:
 	//
 	CInstance* pinsFindNamedInstance
 	(
-		string str_name,				// Name of instance.
-		string str_class = ""			// Optional name of C++ class, for further disambiguation.
+		std::string str_name,				// Name of instance.
+		std::string str_class = ""			// Optional name of C++ class, for further disambiguation.
 	) const;
 	//
 	// Returns the first instance found in the partition with matching name and class.
@@ -1640,7 +1640,7 @@ public:
 	//
 	CInstance* pinsFindInstance
 	(
-		string str_name					// Name of instance
+		std::string str_name					// Name of instance
 	) const;
 	//
 	// Returns the first instance found in the partition with matching name

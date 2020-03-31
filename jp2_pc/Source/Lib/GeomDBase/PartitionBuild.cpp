@@ -31,7 +31,7 @@
  * 
  **********************************************************************************************/
 
-#include "Algo.h"
+#include <algorithm>
 #include "Lib/Sys/RegInit.hpp"
 #include "Common.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
@@ -504,11 +504,11 @@ void SubdividePartition(CPartition& rpart)
 	// Divide on the X or Y axis.
 	if (Abs(v3_dim.tX) > Abs(v3_dim.tY))
 	{
-		sort(appart_main, appart_main + i_num_children, CPartitionSortX());
+		std::sort(appart_main, appart_main + i_num_children, CPartitionSortX());
 	}
 	else
 	{
-		sort(appart_main, appart_main + i_num_children, CPartitionSortY());
+		std::sort(appart_main, appart_main + i_num_children, CPartitionSortY());
 	}
 	int i_num_a = i_num_children / 2;
 	int i_num_b = i_num_children - i_num_a;

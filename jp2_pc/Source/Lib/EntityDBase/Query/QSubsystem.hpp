@@ -32,7 +32,7 @@
 
 //*********************************************************************************************
 //
-class CWDbQuerySubsystem : public CWDbQuery< list<CSubsystem*> >
+class CWDbQuerySubsystem : public CWDbQuery< std::list<CSubsystem*> >
 //
 // World database query container.
 //

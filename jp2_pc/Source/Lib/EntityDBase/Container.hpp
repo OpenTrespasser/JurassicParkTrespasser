@@ -133,7 +133,7 @@ public:
 #if _MSC_VER < 1100
 	iterator itContainer;		// Iterator for the container.
 #else
-	T::iterator itContainer;	// Iterator for the container.
+	typename T::iterator itContainer;	// Iterator for the container.
 #endif
 
 public:
@@ -214,7 +214,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	const T::value_type& tGet()
+	const typename T::value_type& tGet()
 	//
 	// Obtain a value from this container.
 	//
@@ -232,7 +232,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	T::value_type& rtGet()
+	typename T::value_type& rtGet()
 	//
 	// Obtain a value from this container.
 	//
@@ -266,7 +266,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	T::value_type& operator *()
+	typename T::value_type& operator *()
 	//
 	// Duplicate rtGet().
 	//
@@ -281,7 +281,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	T::value_type* operator ->()
+	typename T::value_type* operator ->()
 	//
 	// Return address of rtGet().
 	//

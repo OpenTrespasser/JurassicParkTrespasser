@@ -24,19 +24,19 @@
 #define HEADER_LIB_ENTITYDBASE_WORLDDPRIV_HPP
 
 
-#include <list.h>
-#include <map.h>
+#include <list>
+#include <map>
 
 
-class TMapIntPPart : public map<uint32, CPartition*, less<uint32> >
+class TMapIntPPart : public std::map<uint32, CPartition*, std::less<uint32> >
 {
 };
 
-class TListConstChar : public list<const char*>
+class TListConstChar : public std::list<const char*>
 {
 };
 
-class TListInstance : public list<CInstance*>
+class TListInstance : public std::list<CInstance*>
 {
 };
 

@@ -63,7 +63,7 @@
 
 #include "Mesh.hpp"
 
-#include <list.h>
+#include <list>
 
 class CInstance;
 class CShapePresence;
@@ -250,7 +250,7 @@ class CSubstitute
 //**************************************
 {
 public:
-	list<CVertexReplacement> lvrVertexReplacements;		// The substitute vertex positions.
+	std::list<CVertexReplacement> lvrVertexReplacements;		// The substitute vertex positions.
 															// index, vector
 };
 
@@ -270,7 +270,7 @@ class CSubBioMesh : public CBioMesh
 	//
 public:
 
-	list<CSubstitute*> lpsubSubstitutes;		// The substitute vertex positions.
+	std::list<CSubstitute*> lpsubSubstitutes;		// The substitute vertex positions.
 
 public:
 	//******************************************************************************************

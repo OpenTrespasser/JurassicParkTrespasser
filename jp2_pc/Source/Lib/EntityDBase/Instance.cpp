@@ -253,7 +253,7 @@ namespace
 	}
 
 
-	typedef set<CInfo, less<CInfo> > TSI;
+	typedef std::set<CInfo, std::less<CInfo> > TSI;
 	// This guy is here instead of in the class header to cut down on compile times.
 	TSI tsiInfo;	// A set containing all shared infos, for instancing.
 	
@@ -303,7 +303,7 @@ namespace
 		}
 
 		// Insert or find, please.
-		pair<TSI::iterator, bool> p = tsiInfo.insert(*pinfo);
+		std::pair<TSI::iterator, bool> p = tsiInfo.insert(*pinfo);
 
 		// If we found a duplicate, it will do.
 		// If we inserted a new one, the new one will do.
@@ -1464,12 +1464,12 @@ namespace
 
 					AlwaysAssert(pestr);
 
-					string str_terrain_name = pestr_terrain_file->strData();
+					std::string str_terrain_name = pestr_terrain_file->strData();
 
 					// Attempt to open a matching file with a .wtd extension.
-					string str_transformed_filename = str_terrain_name + ".wtd";
+					std::string str_transformed_filename = str_terrain_name + ".wtd";
 
-					ifstream stream_transformed(str_transformed_filename.c_str(), ios::in | ios::nocreate | ios::binary);
+					std::ifstream stream_transformed(str_transformed_filename.c_str(), std::ios::in | std::ios::_Nocreate | std::ios::binary);
 
 					if (stream_transformed.fail())
 					{
@@ -2004,11 +2004,11 @@ namespace
 				pphiGetPhysicsInfo()->bFloats());
 
 			// Get attachment list.
-			list<CMagnetPair*> lspmp;
+			std::list<CMagnetPair*> lspmp;
 			NMagnetSystem::GetAttachedMagnets(this, &lspmp);
 
 			// List any magnets.
-			for (list<CMagnetPair*>::iterator itpmp = lspmp.begin(); itpmp != lspmp.end(); ++itpmp)
+			for (std::list<CMagnetPair*>::iterator itpmp = lspmp.begin(); itpmp != lspmp.end(); ++itpmp)
 			{
 				CMagnetPair& pmp = *(*itpmp);
 

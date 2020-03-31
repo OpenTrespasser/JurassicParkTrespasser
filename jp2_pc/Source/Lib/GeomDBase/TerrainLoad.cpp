@@ -31,7 +31,7 @@
 #include "Common.hpp"
 #include "TerrainLoad.hpp"
 
-#include <iomanip.h>
+#include <iomanip>
 #include "Lib/Sys/TextOut.hpp"
 #include "Lib/GeomDBase/WaveletQuadTreeTForm.hpp"
 #include "Lib/GeomDBase/WaveletQuadTreeQuery.hpp"
@@ -45,15 +45,15 @@
 #endif
 
 //**********************************************************************************************
-NMultiResolution::CTransformedDataHeader* ptdhLoadTerrainData(const string& str_terrain_name)
+NMultiResolution::CTransformedDataHeader* ptdhLoadTerrainData(const std::string& str_terrain_name)
 {
 	using NMultiResolution::CTransformedDataHeader;
 	using NMultiResolution::CQuadRootTForm;
 
 	// Attempt to open a matching file with a .wtd extension.
-	string str_transformed_filename = str_terrain_name + ".wtd";
+	std::string str_transformed_filename = str_terrain_name + ".wtd";
 
-	ifstream stream_transformed(str_transformed_filename.c_str(), ios::in | ios::nocreate | ios::binary);
+	std::ifstream stream_transformed(str_transformed_filename.c_str(), std::ios::in | std::ios::_Nocreate | std::ios::binary);
 
 	if (stream_transformed.fail())
 	{
@@ -73,7 +73,7 @@ NMultiResolution::CTransformedDataHeader* ptdhLoadTerrainData(const string& str_
 
 
 //**********************************************************************************************
-void ConvertTerrainData(const string& str_terrain_name, int i_quant_bits, CConsoleBuffer& rcon_text_out)
+void ConvertTerrainData(const std::string& str_terrain_name, int i_quant_bits, CConsoleBuffer& rcon_text_out)
 {
 	using NMultiResolution::CTransformedDataHeader;
 	using NMultiResolution::CQuadRootTForm;
@@ -114,7 +114,7 @@ void ConvertTerrainData(const string& str_terrain_name, int i_quant_bits, CConso
 	//
 	// Save data.
 	//
-	string str_transformed_filename = str_terrain_name + ".wtd";
+	std::string str_transformed_filename = str_terrain_name + ".wtd";
 
 	rcon_text_out.Print("\nFinal data size: %4.1fKB\n", ptdh_transformed->uDataBitSize() / (1024.0 * 8.0));
 	rcon_text_out.Print("Output file    : %s\n", str_transformed_filename.c_str());
@@ -158,7 +158,7 @@ namespace
 }
 
 //**********************************************************************************************
-void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highpass, bool b_freq_as_ratio, bool b_conform, CConsoleBuffer& rcon_text_out)
+void SaveTerrainTriangulation(const std::string& str_terrain_name, TReal r_freq_highpass, bool b_freq_as_ratio, bool b_conform, CConsoleBuffer& rcon_text_out)
 {
 	rcon_text_out.SetActive(true);
 
@@ -221,9 +221,9 @@ void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highp
 		// Write the triangulation to a file.
 		//
 
-		string str_triangles_filename = str_terrain_name + ".tri";
+		std::string str_triangles_filename = str_terrain_name + ".tri";
 
-		ofstream stream_tri(str_triangles_filename.c_str(), ios::out | ios::trunc);
+		std::ofstream stream_tri(str_triangles_filename.c_str(), std::ios::out | std::ios::trunc);
 
 		if (stream_tri.fail())
 		{
@@ -249,7 +249,7 @@ void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highp
 		rcon_text_out.Print("Writing %d triangles\n", u_num_tri);
 		rcon_text_out.Show();
 
-		stream_tri << u_num_tri << endl;
+		stream_tri << u_num_tri << std::endl;
 
 		for (it.Reset(); it; ++it)
 		{
@@ -272,7 +272,7 @@ void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highp
 
 			stream_tri << au_vert_indices[0] << ' ';
 			stream_tri << au_vert_indices[1] << ' ';
-			stream_tri << au_vert_indices[2] << endl;
+			stream_tri << au_vert_indices[2] << std::endl;
 		}
 
 
@@ -280,8 +280,8 @@ void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highp
 		rcon_text_out.Print("Writing %d vertices\n", dapqvtq_used_verts.uLen);
 		rcon_text_out.Show();
 
-		stream_tri << dapqvtq_used_verts.uLen << endl;
-		stream_tri << setprecision(12);
+		stream_tri << dapqvtq_used_verts.uLen << std::endl;
+		stream_tri << std::setprecision(12);
 
 		for (uint u_vt = 0; u_vt < dapqvtq_used_verts.uLen; u_vt++)
 		{
@@ -289,7 +289,7 @@ void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highp
 
 			stream_tri << pqvt_curr->v3World(qnq_root.mpConversions).tX << ' ';
 			stream_tri << pqvt_curr->v3World(qnq_root.mpConversions).tY << ' ';
-			stream_tri << pqvt_curr->v3World(qnq_root.mpConversions).tZ << endl;
+			stream_tri << pqvt_curr->v3World(qnq_root.mpConversions).tZ << std::endl;
 		}
 	}
 
@@ -341,7 +341,7 @@ void SaveTerrainTriangulation(const string& str_terrain_name, TReal r_freq_highp
 		rcon_text_out.Print("Input file: %s\n\n", str_filename);
 		rcon_text_out.Show();
 
-		streamFile.open(str_filename, ios::in | ios::nocreate);
+		streamFile.open(str_filename, std::ios::in | std::ios::_Nocreate);
 
 		if (!streamFile)
 		{
