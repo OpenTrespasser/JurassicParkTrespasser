@@ -167,7 +167,7 @@
 
 #include <memory.h>
 #include <malloc.h>
-#include <list.h>
+#include <list>
 
 
 //**********************************************************************************************
@@ -1231,7 +1231,7 @@ CFastHeap	CMesh::fhGlobalMesh(1 << 25);		// 32Mb
 
 
 		// Point to face mapping array of lists.
-		CAArray< list<SFaceVert> > paPointToFaces(mh.mav3Points.uLen);
+		CAArray< std::list<SFaceVert> > paPointToFaces(mh.mav3Points.uLen);
 
 		// Create a point to face mapping.
 		for (int i_face = 0; i_face < mh.mampPolygons.uLen; i_face++)
@@ -1268,7 +1268,7 @@ CFastHeap	CMesh::fhGlobalMesh(1 << 25);		// 32Mb
 				uint u_index = pmv->pv3Point - mh.mav3Points;
 
 				// Look at polygons that share this point.
-				for (list<SFaceVert>::iterator it = paPointToFaces[u_index].begin(); it != paPointToFaces[u_index].end(); it++)
+				for (std::list<SFaceVert>::iterator it = paPointToFaces[u_index].begin(); it != paPointToFaces[u_index].end(); it++)
 				{
 					SPolygon& mp = mh.mampPolygons[(*it).i_face];
 
