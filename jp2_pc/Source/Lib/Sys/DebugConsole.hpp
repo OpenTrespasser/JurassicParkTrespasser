@@ -143,6 +143,8 @@ extern std::ostream	dout;
 // #if VER_TEST
 #else
 
+#include <iostream>
+
 // Make null versions of the print functions.
 
 inline void dprint(const char*)
@@ -169,6 +171,12 @@ class nullstream
 template<class T> inline nullstream& operator<<(nullstream& ns, const T&)
 {
 	return ns;
+}
+
+//This overload makes it possible to use std::endl with nullstream
+inline nullstream& operator<<(nullstream& ns, decltype(std::endl<char, std::char_traits<char>>))
+{
+    return ns;
 }
 
 // The dummy debug stream.
