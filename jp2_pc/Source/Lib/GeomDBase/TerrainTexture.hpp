@@ -40,7 +40,7 @@
 #ifndef HEADER_LIB_GEOMDBASE_TERRAINTEXTURE_HPP
 #define HEADER_LIB_GEOMDBASE_TERRAINTEXTURE_HPP
 
-#include <list.h>
+#include <list>
 #include "Lib/Std/BlockAllocator.hpp"
 #include "Lib/Transform/TransLinear.hpp"
 #include "Lib/GeomDBase/Shape.hpp"
@@ -119,8 +119,8 @@ namespace NMultiResolution
 		CTexturePageManager::CRegionHandle rhAllocShadow;
 											// Allocation handle for the texture and static shadows.
 
-		list< CRectangle<> >    ltrcDirtyRects;
-		list< CRectangle<int> > ltrcPrevDirtyRects;
+		std::list< CRectangle<> >    ltrcDirtyRects;
+		std::list< CRectangle<int> > ltrcPrevDirtyRects;
 
 		//******************************************************************************************
 		//

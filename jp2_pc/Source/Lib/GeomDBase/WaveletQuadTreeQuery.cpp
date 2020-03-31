@@ -124,7 +124,7 @@ namespace NMultiResolution
 
 
 	//******************************************************************************************
-	pair<TReal, TReal> CQuadNodeQuery::prrGetWorldZLimits(const CQuadRootQuery* pqnq_root)
+	std::pair<TReal, TReal> CQuadNodeQuery::prrGetWorldZLimits(const CQuadRootQuery* pqnq_root)
 	{
 		CTriNodeInfoQuery* ptinf = ptinfGetTriangleInfo();
 
@@ -177,7 +177,7 @@ namespace NMultiResolution
 			ptinf->rMaxZ = cf_max.rGet(pqnq_root->mpConversions.rCoefToWorld);
 		}
 
-		return pair<TReal, TReal>(ptinf->rMinZ, ptinf->rMaxZ);
+		return std::pair<TReal, TReal>(ptinf->rMinZ, ptinf->rMaxZ);
 	}
 
 	//******************************************************************************************
@@ -757,7 +757,7 @@ namespace NMultiResolution
 
 		if (bDecimateTree())
 		{
-			for (list<CQueryRect*>::iterator it = ltpqrQueries.begin(); it != ltpqrQueries.end(); ++it)
+			for (std::list<CQueryRect*>::iterator it = ltpqrQueries.begin(); it != ltpqrQueries.end(); ++it)
 				(*it)->SetEvaluateReq();
 		}
 

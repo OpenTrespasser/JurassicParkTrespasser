@@ -33,9 +33,9 @@
 #define HEADER_LIB_GEOMDBASE_TERRAINLOAD_HPP
 
 
-#include <fstream.h>
+#include <fstream>
 #include <float.h>
-#include <bstring.h>
+#include <string>
 
 #include "Lib/Transform/TransLinear.hpp"
 #include "Lib/Transform/Vector.hpp"
@@ -53,7 +53,7 @@ namespace NMultiResolution
 //
 NMultiResolution::CTransformedDataHeader* ptdhLoadTerrainData
 (
-	const string& str_terrain_name	// Filename of terrain data file, without extension.
+	const std::string& str_terrain_name	// Filename of terrain data file, without extension.
 );
 //
 // Load a terrain data file.
@@ -70,7 +70,7 @@ NMultiResolution::CTransformedDataHeader* ptdhLoadTerrainData
 //
 void ConvertTerrainData
 (
-	const string& str_terrain_name,	// Filename of terrain data file, without extension.
+	const std::string& str_terrain_name,	// Filename of terrain data file, without extension.
 	int i_quant_bits,				// Number of bits to use to quantise terrain height values.
 	CConsoleBuffer& rcon_text_out
 );
@@ -97,7 +97,7 @@ void ConvertTerrainData
 //
 void SaveTerrainTriangulation
 (
-	const string& str_terrain_name,	// Filename of terrain data file, without extension.
+	const std::string& str_terrain_name,	// Filename of terrain data file, without extension.
 	TReal r_freq_highpass,			// High pass wavelet coeficient filter, in meters or as ratio.
 	bool b_freq_as_ratio,			// Whether cutoff is represented as a ratio of a node's size.
 	bool b_conform,
@@ -199,7 +199,7 @@ class CTerrainExportedData
 
 	bool abErrorDialogDone[eerrEND];		// Flags indicating dialog has been raised for specific error.
 
-	ifstream streamFile;
+	std::ifstream streamFile;
 
 	SExportDataInfo ediInfo;
 

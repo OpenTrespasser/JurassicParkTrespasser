@@ -94,7 +94,7 @@
 #include "Lib/View/LineDraw.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
-#include <set.h>
+#include <set>
 
 //*********************************************************************************************
 //
@@ -137,7 +137,7 @@
 	{
 	public:
 		// The result list.
-		CContainer< set<SObjectLoc, less<SObjectLoc> > >	setoblResults;
+		CContainer< std::set<SObjectLoc, std::less<SObjectLoc> > >	setoblResults;
 	};
 
 	//*****************************************************************************************
