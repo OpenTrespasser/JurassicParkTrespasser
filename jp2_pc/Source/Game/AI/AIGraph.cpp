@@ -528,8 +528,8 @@ bool CAIGraph::bIsSuccessor(int i_from, int i_to)
 	{
 		TReal r_min_downhill_z = paniAnimal->pbrBrain->rMinDownHillNormalZ;
 
-		list<CTerrainKnowledge>* pltk = &paniAnimal->pbrBrain->pwvWorldView->ltkKnowledge;
-		list<CTerrainKnowledge>::iterator ptk = pltk->begin();
+		std::list<CTerrainKnowledge>* pltk = &paniAnimal->pbrBrain->pwvWorldView->ltkKnowledge;
+		std::list<CTerrainKnowledge>::iterator ptk = pltk->begin();
 
 		for ( ; ptk != pltk->end(); ++ptk)
 		{
