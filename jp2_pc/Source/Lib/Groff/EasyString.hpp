@@ -44,7 +44,7 @@
 #ifndef HEADER_LIB_GROFF_EASYSTRING_HPP
 #define HEADER_LIB_GROFF_EASYSTRING_HPP
 
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
@@ -196,7 +196,7 @@ public:
 
 	//**********************************************************************************************
 	//
-	operator[]
+	char operator[]
 	(
 		uint u_index
 	) const;
@@ -204,7 +204,7 @@ public:
 
 	//**********************************************************************************************
 	//
-	operator[]
+	char operator[]
 	(
 		int i_index
 	) const;
@@ -324,18 +324,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&			os_stream, 
+		std::ostream&		os_stream,
 		const CEasyString&	estr_string
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	 is_stream,
+		std::istream&	 is_stream,
 		CEasyString& estr_string
 	);
 

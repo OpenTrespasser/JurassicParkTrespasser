@@ -30,8 +30,8 @@
  *
  **********************************************************************************************/
 
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 
 //
 // Disable a number of annoying warning messages about symbol truncation, and unsigned
@@ -42,8 +42,8 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <map.h>
-#include <deque.h>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to
@@ -101,9 +101,9 @@ CSymbolEntry& CSymbolEntry::operator=
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			os_stream, 
+	std::ostream&		os_stream,
 	const CSymbolEntry&	se_symbol
 )
 {
@@ -114,17 +114,17 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	  is_stream,
+	std::istream& is_stream,
 	CSymbolEntry& se_symbol
 )
 {
 	// Display the string.
-	cout << "CSymbolEntry...\nCEasyString: " << flush; 
-	cin >> se_symbol.estrSymbolName;
-	cin >> hex >> se_symbol.hSymbolHandle;
-	cin.setf(ios::dec);
+	std::cout << "CSymbolEntry...\nCEasyString: " << std::flush;
+	std::cin >> se_symbol.estrSymbolName;
+	std::cin >> std::hex >> se_symbol.hSymbolHandle;
+	std::cin.setf(std::ios::dec);
 
 	return is_stream;
 }
@@ -313,7 +313,7 @@ void CSymbolEntry::Dump
 )
 {
 	// Dump the CHandle to stdout.
-	cout << *this << endl;
+	std::cout << *this << std::endl;
 }
 
 
@@ -587,7 +587,7 @@ uint CNewSymbolTable::uRead
 			else
 			{
 				// No! Assertion!  Report a big error.
-				cout << "Unable to add symbol to list.  Aborting.";
+				std::cout << "Unable to add symbol to list.  Aborting.";
 
 				// Halt the program in a user break point.
 				_asm
@@ -609,14 +609,14 @@ uint CNewSymbolTable::uRead
 void CNewSymbolTable::Dump()
 {
 	// Print out a banner.
-	cout << "\nCNewSymbolTable(Name: \"" << estrTableName << "\", Count: " << (int) aseSymbolTable.size() << ")\n{";
+	std::cout << "\nCNewSymbolTable(Name: \"" << estrTableName << "\", Count: " << (int) aseSymbolTable.size() << ")\n{";
 
 	// Dump the table.
 	for (uint u_index = 0; u_index < aseSymbolTable.size(); u_index++)
 	{
 		// Get a local copy of the symbol entry.
-		cout << endl << setw(4) << u_index << ": " << aseSymbolTable[u_index];
+		std::cout << std::endl << std::setw(4) << u_index << ": " << aseSymbolTable[u_index];
 	}
 
-	cout << "\n}" << endl;
+	std::cout << "\n}" << std::endl;
 }

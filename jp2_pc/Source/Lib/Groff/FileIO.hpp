@@ -52,8 +52,8 @@
 #undef min
 #undef max
 
-#include <vector.h>
-#include <set.h>
+#include <vector>
+#include <set>
 
 #ifndef PFNWORLDLOADNOTIFY
 typedef uint32 (__stdcall * PFNWORLDLOADNOTIFY)(uint32 dwContext, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3);
@@ -249,8 +249,8 @@ public:
 struct SSymbolTable
 // Prefix: st
 {
-	set<SSymbolEntry*, SSymbolHandleLess>	setHandle;		// Set sorted by handle.
-	set<SSymbolEntry*, SSymbolNameLess>		setName;		// Set sorted by name.
+	std::set<SSymbolEntry*, SSymbolHandleLess>	setHandle;		// Set sorted by handle.
+	std::set<SSymbolEntry*, SSymbolNameLess>		setName;		// Set sorted by name.
 
 	// Insert symbol.
 	void insert(SSymbolEntry* pse_symbol)
@@ -266,7 +266,7 @@ struct SSymbolTable
 	}
 
 	// Find string.
-	set<SSymbolEntry*, SSymbolNameLess>::iterator find(const char* str_name)
+	std::set<SSymbolEntry*, SSymbolNameLess>::iterator find(const char* str_name)
 	{
 		SSymbolEntry se_temp;
 
@@ -279,7 +279,7 @@ struct SSymbolTable
 	}
 
 	// Find handle.
-	set<SSymbolEntry*, SSymbolHandleLess>::iterator find(TSymbolHandle syh_handle)
+	std::set<SSymbolEntry*, SSymbolHandleLess>::iterator find(TSymbolHandle syh_handle)
 	{
 		SSymbolEntry se_temp;
 
@@ -320,7 +320,7 @@ struct SFileStructure
 // Prefix: fs
 {
 	SFileHeader			 fhHeader;		// The file header.
-	vector<SSectionList> slSections;	// A list of all the sections.
+	std::vector<SSectionList> slSections;	// A list of all the sections.
 	SSymbolTable		 pstSymbols;	// A list of all the symbols.
 	int					 fdFile;		// Define a handle to the file using streams.
 	EOpenModes			 omOpenMode;	// In what mode was the file opened?

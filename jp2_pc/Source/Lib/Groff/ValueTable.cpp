@@ -57,10 +57,10 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <iostream.h>
-#include <iomanip.h>
-#include <map.h>
-#include <deque.h>
+#include <iostream>
+#include <iomanip>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to
@@ -286,19 +286,19 @@ const EVarScope CBaseValue::evsScope
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			os_stream, 
+	std::ostream&			os_stream,
 	const CBaseValue&	basev_value
 )
 {
 	// Display the string.
-	os_stream.setf(ios::uppercase|ios::hex);
+	os_stream.setf(std::ios::uppercase| std::ios::hex);
 
 	os_stream << "basev(val" << basev_value.hValueHandle << ", sym" 
 		<< basev_value.hSymbolHandle << ", " << strVarType[basev_value.evtVarType] << ", " 
 		<< strVarScope[basev_value.evsVarScope] << ", target" << basev_value.hTargetHandle
-		<< ", " << strVarReference[basev_value.ersRefStatus] << ")" << dec << flush;
+		<< ", " << strVarReference[basev_value.ersRefStatus] << ")" << std::dec << std::flush;
 
 	// Return the stream.
 	return os_stream;
@@ -478,29 +478,29 @@ void CBoolValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		  os_stream, 
+	std::ostream&		  os_stream,
 	const CBoolValue& bval_value
 )
 {
 	// Display the string.
-	return os_stream << dec << strBoolValue[bval_value.bBoolValue] << " -> " << (CBaseValue) bval_value;
+	return os_stream << std::dec << strBoolValue[bval_value.bBoolValue] << " -> " << (CBaseValue) bval_value;
 }
 
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	is_stream,
+	std::istream&	is_stream,
 	CBoolValue&	bval_value
 )
 {
 	int i_temp;
 
 	// Read in the string.
-	is_stream >> dec >> i_temp;
+	is_stream >> std::dec >> i_temp;
 
 	bval_value.bBoolValue = i_temp;
 
@@ -668,27 +668,27 @@ void CCharValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		  os_stream, 
+	std::ostream&	  os_stream,
 	const CCharValue& cval_value
 )
 {
 	// Display the string.
-	return os_stream << dec << cval_value.cCharValue << " -> " << (CBaseValue) cval_value;
+	return os_stream << std::dec << cval_value.cCharValue << " -> " << (CBaseValue) cval_value;
 }
 
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	is_stream,
+	std::istream&	is_stream,
 	CCharValue&	cval_value
 )
 {
 	// Read in the string.
-	is_stream >> dec >> cval_value.cCharValue;
+	is_stream >> std::dec >> cval_value.cCharValue;
 
 	// Pass the input stream along.
 	return is_stream;
@@ -854,27 +854,27 @@ void CIntValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		 os_stream, 
+	std::ostream&	 os_stream,
 	const CIntValue& ival_value
 )
 {
 	// Display the string.
-	return os_stream << dec << ival_value.iIntValue << " -> " << (CBaseValue) ival_value;
+	return os_stream << std::dec << ival_value.iIntValue << " -> " << (CBaseValue) ival_value;
 }
 
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	is_stream,
+	std::istream&	is_stream,
 	CIntValue&	ival_value
 )
 {
 	// Read in the string.
-	is_stream >> dec >> ival_value.iIntValue;
+	is_stream >> std::dec >> ival_value.iIntValue;
 
 	// Pass the input stream along.
 	return is_stream;
@@ -1040,9 +1040,9 @@ void CFloatValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&			os_stream, 
+	std::ostream&			os_stream,
 	const CFloatValue&	fval_value
 )
 {
@@ -1053,9 +1053,9 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&		is_stream,
+	std::istream&	is_stream,
 	CFloatValue&	fval_value
 )
 {
@@ -1224,9 +1224,9 @@ void CStringValue::Value
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		    os_stream, 
+	std::ostream&		os_stream,
 	const CStringValue& sval_value
 )
 {
@@ -1237,9 +1237,9 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	  is_stream,
+	std::istream& is_stream,
 	CStringValue& sval_value
 )
 {
@@ -1415,9 +1415,9 @@ CObjectValue& CObjectValue::operator=
 
 //**********************************************************************************************
 //
-ostream& operator<<
+std::ostream& operator<<
 (
-	ostream&		os_stream, 
+	std::ostream&		os_stream,
 	CObjectValue&	oval_value
 )
 {
@@ -1437,9 +1437,9 @@ ostream& operator<<
 
 //**********************************************************************************************
 //
-istream& operator>>
+std::istream& operator>>
 (
-	istream&	 is_stream,
+	std::istream&	 is_stream,
 	CObjectValue& estr_string
 )
 {
@@ -1563,7 +1563,7 @@ CValueTable::~CValueTable
 	}
 
 	// Clean up all those value table values.
-	map< CHandle, CBaseValue*, less<CHandle> >::iterator i = aviValueIndex.begin();
+	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i = aviValueIndex.begin();
 	for ( ; i != aviValueIndex.end(); i++)
 	{
 		delete (*i).second;
@@ -1651,7 +1651,7 @@ uint CValueTable::uWriteCount
 	u_count += sizeof(uint);
 
 	// Loop through all the value records and records their amounts.
-	map< CHandle, CBaseValue*, less<CHandle> >::iterator i;
+	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i;
 	for (i = aviValueIndex.begin(); i != aviValueIndex.end(); i++)
 	{
 		//
@@ -1701,7 +1701,7 @@ uint CValueTable::uWrite
 
 	// Loop through all the value records and remove any degenerate records.
 	uint u_record_count = 0;
-	map< CHandle, CBaseValue*, less<CHandle> >::iterator i;
+	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i;
 	for (i = aviValueIndex.begin(); i != aviValueIndex.end(); i++)
 	{
 		//
@@ -1867,18 +1867,18 @@ void CValueTable::Dump
 )
 {
 	// Print out a banner.
-	cout << "CValueTable(\"" << estrValueName << "\", hobj:" << objhHandle << endl;
+	std::cout << "CValueTable(\"" << estrValueName << "\", hobj:" << objhHandle << std::endl;
 
 	// Dump the symbol table.
 	CNewSymbolTable::Dump();
 
 	// Are there any entries in the value table?
 
-	cout << "\nValue table entries: " << aviValueIndex.size() << endl;
+	std::cout << "\nValue table entries: " << aviValueIndex.size() << std::endl;
 
 	// Dump the value table.
 	uint u_index;
-	map< CHandle, CBaseValue*, less<CHandle> >::iterator i;
+	std::map< CHandle, CBaseValue*, std::less<CHandle> >::iterator i;
 	for (u_index = 0, i = aviValueIndex.begin(); i != aviValueIndex.end(); i++, u_index++)
 	{
 		// Get a local copy of the symbol entry.
@@ -1892,38 +1892,38 @@ void CValueTable::Dump
 			{
 				case evtBOOL:
 					// Allocate and integer value record.
-					cout << setw(4) << u_index << ": " << *((CBoolValue *) pbasev_value) << endl;
+					std::cout << std::setw(4) << u_index << ": " << *((CBoolValue *) pbasev_value) << std::endl;
 
 					break;
 
 				case evtCHAR:
 					// Allocate and integer value record.
-					cout << setw(4) << u_index << ": " << *((CCharValue *) pbasev_value) << endl;
+					std::cout << std::setw(4) << u_index << ": " << *((CCharValue *) pbasev_value) << std::endl;
 
 					break;
 
 				case evtINT:
 					
 					// Allocate and integer value record.
-					cout << setw(4) << u_index << ": " << *((CIntValue *) pbasev_value) << endl;
+					std::cout << std::setw(4) << u_index << ": " << *((CIntValue *) pbasev_value) << std::endl;
 
 					break;
 
 				case evtFLOAT:
 					// Allocate and integer value record.
-					cout << setw(4) << u_index << ": " << *((CFloatValue *) pbasev_value) << endl;
+					std::cout << std::setw(4) << u_index << ": " << *((CFloatValue *) pbasev_value) << std::endl;
 
 					break;
 
 				case evtSTRING:
 					// Allocate and integer value record.
-					cout << setw(4) << u_index << ": " << *((CStringValue *) pbasev_value) << endl;
+					std::cout << std::setw(4) << u_index << ": " << *((CStringValue *) pbasev_value) << std::endl;
 
 					break;
 
 				case evtOBJECT:
 					// Allocate and integer value record.
-					cout << setw(4) << u_index << ": " << *((CObjectValue *) pbasev_value) << endl;
+					std::cout << std::setw(4) << u_index << ": " << *((CObjectValue *) pbasev_value) << std::endl;
 
 					break;
 
@@ -1934,5 +1934,5 @@ void CValueTable::Dump
 	}
 
 	// Close off the opening banner.
-	cout << ")\n" << endl;
+	std::cout << ")\n" << std::endl;
 }
