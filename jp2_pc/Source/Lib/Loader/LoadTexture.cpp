@@ -127,8 +127,8 @@
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Std/stringex.hpp"
 #include "Lib/Std/hash.hpp"
-#include "map.h"
-#include <bstring.h>
+#include <map>
+#include <string>
 
 #include "Lib/Sys/Profile.hpp"
 
@@ -155,7 +155,7 @@ const char* strTEXTURE_OCCLUDE   = "Soccludet2.bmp";
 // String to bitmap instancer map.
 // Since this is a map of rptrs, all objects will be deleted properly upon the map's destruction.
 //
-typedef map< uint32, rptr<CTexture>, less<uint32> > TMapTexture;
+typedef std::map< uint32, rptr<CTexture>, std::less<uint32> > TMapTexture;
 TMapTexture mapTextures;
 
 
@@ -189,7 +189,7 @@ static rptr<CRaster> prasGetBitmap
 	if (!pras)
 	{
 		// Try ignoring leading path components.
-		char* str_new;
+		const char* str_new;
 
 		while (str_new = strpbrk(str_filename, ":/\\"))
 		{
