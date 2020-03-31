@@ -79,9 +79,9 @@
 #include "Lib/Renderer/Texture.hpp"
 #include "Lib/View/Colour.hpp"
 #include "Lib/Groff/EasyString.hpp"
-#include "vector.h"
-#include "map.h"
-#include "set.h"
+#include <vector>
+#include <map>
+#include <set>
 
 
 #define MAX_TEXTURE_PAGES			1024			//64 megs of source textures for the time being..
@@ -183,15 +183,15 @@ public:
 
 //**********************************************************************************************
 //
-typedef vector<SBumpMapListElement>		TBumpList;
+typedef std::vector<SBumpMapListElement>		TBumpList;
 
 //**********************************************************************************************
 //
-typedef vector<SVirtualImageElement>	TVirtualImageList;
+typedef std::vector<SVirtualImageElement>	TVirtualImageList;
 
 //**********************************************************************************************
 //
-typedef set<SCurvedParentElement, test_curved_parent >	TCurvedParentList;
+typedef std::set<SCurvedParentElement, test_curved_parent >	TCurvedParentList;
 
 
 //**********************************************************************************************
