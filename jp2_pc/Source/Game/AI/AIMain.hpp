@@ -68,7 +68,7 @@
 #ifndef HEADER_GAME_AI_AIMAIN_HPP
 #define HEADER_GAME_AI_AIMAIN_HPP
 
-#include <list.h>
+#include <list>
 #include "Lib\Std\Random.hpp"
 #include "Lib/EntityDBase/Subsystem.hpp"
 
@@ -161,7 +161,7 @@ public:
 	CInstance*		pinsSelected;	// Mostly for debugging-  which instance are we most interested in?
 
 	CSArray<CAnimal* ,iMAX_ACTIVE_ANIMALS>		apaniActiveAnimals;	// The set of active animals.
-	list<void*>     lpaniInactiveAnimals;		// List of all inactive animals.  void * to avoid STL stupidity.
+	std::list<void*>     lpaniInactiveAnimals;		// List of all inactive animals.  void * to avoid STL stupidity.
 
 	CSArray<CAIGraph*,iMAX_ACTIVE_ANIMALS> 		apgraphActiveGraphs;// The shared AI graphs.
 
