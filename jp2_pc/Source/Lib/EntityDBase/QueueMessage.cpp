@@ -74,8 +74,8 @@
 		pdqwmCurrentMessages = new queue< const CMessage*>();
 		pdqwmNextMessages    = new queue< const CMessage*>();
 	#else
-		pdqwmCurrentMessages = new queue< deque<const CMessage*> >();   //lint !e1732 !e1733
-		pdqwmNextMessages    = new queue< deque<const CMessage*> >();	//lint !e1732 !e1733
+		pdqwmCurrentMessages = new std::queue< std::deque<const CMessage*> >();   //lint !e1732 !e1733
+		pdqwmNextMessages    = new std::queue< std::deque<const CMessage*> >();	//lint !e1732 !e1733
 	#endif
 
 		Assert(pdqwmCurrentMessages);
@@ -103,8 +103,8 @@
 		pdqwmCurrentMessages = new queue< const CMessage*>();
 		pdqwmNextMessages    = new queue< const CMessage*>();
 	#else
-		pdqwmCurrentMessages = new queue< deque<const CMessage*> >();   //lint !e1732 !e1733
-		pdqwmNextMessages    = new queue< deque<const CMessage*> >();	//lint !e1732 !e1733
+		pdqwmCurrentMessages = new std::queue< std::deque<const CMessage*> >();   //lint !e1732 !e1733
+		pdqwmNextMessages    = new std::queue< std::deque<const CMessage*> >();	//lint !e1732 !e1733
 	#endif
 
 		frhFrameHeap.Reset();

@@ -27,14 +27,14 @@
 #ifndef HEADER_LIB_ENTITYDBASE_MESSAGETYPES_REGISTEREDMSG_HPP
 #define HEADER_LIB_ENTITYDBASE_MESSAGETYPES_REGISTEREDMSG_HPP
 
-#include <list.h>
+#include <list>
 
 class CEntity;
 
 
 
 // Prefix: rc
-typedef list<CEntity*> TRecipientsContainer;
+typedef std::list<CEntity*> TRecipientsContainer;
 
 struct SRecipientsInfo
 // Prefix: ri

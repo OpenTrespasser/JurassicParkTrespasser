@@ -46,7 +46,7 @@
 
 //*********************************************************************************************
 //
-class CWDbQueryPhysics : public CWDbQuery< list<CInstance*> >
+class CWDbQueryPhysics : public CWDbQuery< std::list<CInstance*> >
 //
 // Prefix: wqph
 //
@@ -73,7 +73,7 @@ public:
 
 //*********************************************************************************************
 //
-class CWDbQueryPhysicsMovable : public CWDbQuery< list<CInstance*> >
+class CWDbQueryPhysicsMovable : public CWDbQuery< std::list<CInstance*> >
 //
 // Prefix: wqphm
 //
@@ -94,7 +94,7 @@ public:
 
 //*********************************************************************************************
 //
-class CWDbQueryPhysicsBoxFast : public CWDbQuery< list<CInstance*> >
+class CWDbQueryPhysicsBoxFast : public CWDbQuery< std::list<CInstance*> >
 //
 // Prefix: wqph
 //

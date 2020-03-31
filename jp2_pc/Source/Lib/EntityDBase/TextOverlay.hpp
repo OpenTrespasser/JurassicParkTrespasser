@@ -35,7 +35,7 @@
 #ifndef HEADER_ENTITYDBASE_OVERLAYTEXT_HPP
 #define HEADER_ENTITYDBASE_OVERLAYTEXT_HPP
 
-#include <list.h>
+#include <list>
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 #include "Lib/EntityDBase/Entity.hpp"
 #include "Lib/EntityDBase/Subsystem.hpp"
@@ -80,7 +80,7 @@ struct STextElement
 
 //**********************************************************************************************
 // prefix: ttl
-typedef list<STextElement>		TTextList;
+typedef std::list<STextElement>		TTextList;
 
 
 //*********************************************************************************************

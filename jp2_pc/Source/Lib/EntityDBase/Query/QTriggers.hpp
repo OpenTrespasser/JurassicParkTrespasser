@@ -31,7 +31,7 @@ class CLocationTrigger;
 
 //*********************************************************************************************
 //
-class CWDbQueryLocationTrigger : public CWDbQuery< list<CLocationTrigger*> >
+class CWDbQueryLocationTrigger : public CWDbQuery< std::list<CLocationTrigger*> >
 //
 // Prefix: wqlt
 //

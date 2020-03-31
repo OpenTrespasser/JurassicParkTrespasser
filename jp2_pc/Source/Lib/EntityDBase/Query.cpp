@@ -330,12 +330,12 @@ template<class T> class CBuildList
 //
 //**************************************
 {
-	list<T*>& rlistBuild;
+	std::list<T*>& rlistBuild;
 
 public:
 
 	//******************************************************************************************
-	CBuildList(list<T*>& rlist)
+	CBuildList(std::list<T*>& rlist)
 		: rlistBuild(rlist)
 	{
 	}
@@ -655,7 +655,7 @@ public:
 	};
 */
 
-	list<CInstance*> CWDbQueryLights::lpinsActiveLights;	// The active light list, maintained by the world dbase.
+	std::list<CInstance*> CWDbQueryLights::lpinsActiveLights;	// The active light list, maintained by the world dbase.
 
 	//******************************************************************************************
 	CWDbQueryLights::CWDbQueryLights(const CPartition* ppart, const CWorld& w)
@@ -683,7 +683,7 @@ public:
 	public:
 
 		//******************************************************************************************
-		CBuildPhysics(list<CInstance*>& rlist)
+		CBuildPhysics(std::list<CInstance*>& rlist)
 			: CBuildList<CInstance>(rlist)
 		{
 		}
@@ -780,7 +780,7 @@ public:
 	public:
 
 		//******************************************************************************************
-		CBuildPhysicsMovable(list<CInstance*>& rlist)
+		CBuildPhysicsMovable(std::list<CInstance*>& rlist)
 			: CBuildPhysics(rlist)
 		{
 		}
@@ -829,7 +829,7 @@ public:
 	public:
 
 		//******************************************************************************************
-		CBuildPhysicsBoxFast(list<CInstance*>& rlist)
+		CBuildPhysicsBoxFast(std::list<CInstance*>& rlist)
 			: CBuildPhysics(rlist)
 		{
 		}
@@ -903,7 +903,7 @@ public:
 //
 
 	// The water object list, maintained by the world dbase.
-	list<CEntityWater*> CWDbQueryWater::lspetWater;
+	std::list<CEntityWater*> CWDbQueryWater::lspetWater;
 
 	//******************************************************************************************
 	CWDbQueryWater::CWDbQueryWater(const CBoundVol& bv, const CPresence3<>& pr3_boundvol, const CWorld& w)
@@ -927,14 +927,14 @@ public:
 //
 
 	//*****************************************************************************************
-	CWDbQueryWaterHeight::CWDbQueryWaterHeight(const CVector2<>& v2_world, const list<CEntityWater*>& lspetw)
+	CWDbQueryWaterHeight::CWDbQueryWaterHeight(const CVector2<>& v2_world, const std::list<CEntityWater*>& lspetw)
 	{
 		// Copy the querying vector.
 		v3Water = v2_world;
 		v3Water.tZ = rWATER_NONE;
 		petWater = 0;
 
-		forall_const (lspetw, list<CEntityWater*>, itpew)
+		forall_const (lspetw, std::list<CEntityWater*>, itpew)
 		{
 			// Ask the water its height.
 			v3Water.tZ = (*itpew)->rWaterHeight(v2_world);
@@ -978,7 +978,7 @@ public:
 	public:
 
 		//******************************************************************************************
-		CBuildAI(list<CInstance*>& rlist)
+		CBuildAI(std::list<CInstance*>& rlist)
 			: CBuildList<CInstance>(rlist)
 		{
 		}
@@ -1047,7 +1047,7 @@ public:
 //
 
 	bool CWDbQueryActiveEntities::bAlreadyExists = false;			// There can be only one of these instantiated at any one time.
-	list<CEntity*>	CWDbQueryActiveEntities::lpetActiveEntities;	// A list of active entities, maintained by the world database.
+	std::list<CEntity*>	CWDbQueryActiveEntities::lpetActiveEntities;	// A list of active entities, maintained by the world database.
 
 
 

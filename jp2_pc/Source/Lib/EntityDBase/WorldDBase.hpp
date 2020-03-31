@@ -60,7 +60,7 @@
 // Required includes.
 //
 #include "Lib/Transform/Rotate.hpp"
-#include <bstring.h>
+#include <string>
 
 
 //
@@ -121,10 +121,10 @@ private:
 	TMapIntPPart*	 pmapHandlePointer;		// A map between handles and partition/instance pointers.
 
 	bool			 bLoadPending;			// We want to load a new level.
-	string			 strLoadName;			// Level to load before the next frame.
+	std::string		 strLoadName;			// Level to load before the next frame.
 
 	bool			 bSavePending;			// We want to save.
-	string			 strSaveName;			// Level to save before the next frame.
+	std::string		 strSaveName;			// Level to save before the next frame.
 
 	bool			 bGameOver;				// Game over man, game over.
 
@@ -813,7 +813,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	const string& strGetPendingLoad
+	const std::string& strGetPendingLoad
 	(
 	);
 	//
@@ -844,7 +844,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	const string& strGetPendingSave
+	const std::string& strGetPendingSave
 	(
 	);
 	//

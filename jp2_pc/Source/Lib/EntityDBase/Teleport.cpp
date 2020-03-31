@@ -61,12 +61,12 @@
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Loader/SaveFile.hpp"
 
-#include <algo.h>
+#include <algorithm>
 
 
 //*****************************************************************************************
-list<CTeleport*> CTeleport::listTeleports;
-list<CTeleport*>::iterator CTeleport::itCurrent = CTeleport::listTeleports.end();
+std::list<CTeleport*> CTeleport::listTeleports;
+std::list<CTeleport*>::iterator CTeleport::itCurrent = CTeleport::listTeleports.end();
 
 
 //*****************************************************************************************
@@ -110,7 +110,7 @@ CTeleport::CTeleport
 CTeleport::~CTeleport()
 {
 	// Find ourselves in the teleport list.
-	list<CTeleport*>::iterator it_me = find(listTeleports.begin(), 
+	std::list<CTeleport*>::iterator it_me = find(listTeleports.begin(),
 											listTeleports.end(), this);
 
 	Assert(it_me != listTeleports.end());
@@ -129,7 +129,7 @@ char* CTeleport::pcSave(char* pc_buffer) const
 	// Save sequence number.
 	int i_seq_num = 0;
 
-	for (list<CTeleport*>::iterator it = listTeleports.begin(); it != listTeleports.end(); it++)
+	for (std::list<CTeleport*>::iterator it = listTeleports.begin(); it != listTeleports.end(); it++)
 	{
 		if (it == itCurrent)
 			break;
