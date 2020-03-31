@@ -34,7 +34,7 @@
 #undef min
 #undef max
 
-#include <vector.h>
+#include <vector>
 
 #ifdef USE_MAX_TYPES
 #include "StandardTypes.hpp"
@@ -73,7 +73,7 @@ class CSmartBuffer
 //*********************************************************************************************
 {
 	CSysLog			slLogfile;
-	vector<SBuffer>	bfBuffer;
+	std::vector<SBuffer>	bfBuffer;
 
 	TBufferHandle	bhToHandle(uint u_index)		  { return (0x40000000 + u_index); };
 	uint			uToIndex(TBufferHandle bh_handle) { return (bh_handle - 0x40000000); };

@@ -82,7 +82,7 @@
 #include "SaveBuffer.hpp"
 #include "Lib/GROFF/FileIO.hpp"
 #include "Lib/Sys/Timer.hpp"
-#include <set.h>
+#include <set>
 
 class CInstance;
 
@@ -134,7 +134,7 @@ public:
 	CFileIO			fioFile;	// The file for saving/loading.
 	bool			bValidFile;	// True if the file is valid.
 
-	set<uint32, less<uint32> > setHandles;	// The handles of instances that have been saved or loaded.
+	std::set<uint32, std::less<uint32> > setHandles;	// The handles of instances that have been saved or loaded.
 
 
 	static bool		bBrief;		// True if we are to conserve space.

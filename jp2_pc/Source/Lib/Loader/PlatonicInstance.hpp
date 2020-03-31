@@ -46,8 +46,8 @@
 #define HEADER_GUIAPP_LOADER_PLATONICINSTANCE_HPP
 
 
-#include <map.h>
-#include <bstring.h>
+#include <map>
+#include <string>
 
 class CInstance;
 
@@ -102,7 +102,7 @@ void RemoveFromIdealList
 //
 //**************************************
 
-typedef map<uint32, const CInstance*, less<uint32> >	TMapHashPins;
+typedef std::map<uint32, const CInstance*, std::less<uint32> >	TMapHashPins;
 
 
 //

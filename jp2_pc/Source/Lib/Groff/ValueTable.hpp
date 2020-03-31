@@ -66,10 +66,10 @@
 #pragma warning(disable: 4146)
 #pragma warning(disable: 4786)
 
-#include <iostream.h>
-#include <iomanip.h>
-#include <map.h>
-#include <deque.h>
+#include <iostream>
+#include <iomanip>
+#include <map>
+#include <deque>
 
 //
 // Determine which set of standard types to use based upon the environment.  This is done to
@@ -280,9 +280,9 @@ public:
 	
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&			os_stream, 
+		std::ostream&		os_stream,
 		const CBaseValue&	basev_value
 	);
 
@@ -388,18 +388,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&		  os_stream, 
+		std::ostream&	  os_stream,
 		const CBoolValue& bval_value
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	is_stream,
+		std::istream&	is_stream,
 		CBoolValue&	bval_value
 	);
 
@@ -503,18 +503,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&		  os_stream, 
+		std::ostream&	  os_stream,
 		const CCharValue& cval_value
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	is_stream,
+		std::istream&	is_stream,
 		CCharValue&	cval_value
 	);
 
@@ -617,18 +617,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&		 os_stream, 
+		std::ostream&	 os_stream,
 		const CIntValue& ival_value
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	is_stream,
+		std::istream&	is_stream,
 		CIntValue&	ival_value
 	);
 
@@ -731,18 +731,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&			os_stream, 
+		std::ostream&		os_stream,
 		const CFloatValue&	fval_value
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&		is_stream,
+		std::istream&	is_stream,
 		CFloatValue&	fval_value
 	);
 
@@ -845,18 +845,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&		    os_stream, 
+		std::ostream&		os_stream,
 		const CStringValue& sval_value
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	  is_stream,
+		std::istream& is_stream,
 		CStringValue& sval_value
 	);
 
@@ -1069,18 +1069,18 @@ public:
 
 	//**********************************************************************************************
 	//
-	friend ostream& operator<<
+	friend std::ostream& operator<<
 	(
-		ostream&		os_stream, 
+		std::ostream&	os_stream,
 		CObjectValue&	oval_value
 	);
 
 	
 	//**********************************************************************************************
 	//
-	friend istream& operator>>
+	friend std::istream& operator>>
 	(
-		istream&	 is_stream,
+		std::istream& is_stream,
 		CObjectValue& estr_string
 	);
 
@@ -1121,7 +1121,7 @@ class CValueTable : public CNewSymbolTable
 	CHandleManager								hmgrManager;
 
 	// Provide fast access to the value record through it's handle. 
-	map< CHandle, CBaseValue*, less<CHandle> >	aviValueIndex;
+	std::map< CHandle, CBaseValue*, std::less<CHandle> >	aviValueIndex;
 
 public:
 
