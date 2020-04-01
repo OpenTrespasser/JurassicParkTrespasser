@@ -90,7 +90,7 @@
 #ifdef __MWERKS__
 #include <vector.h>
 #else
-template<class T> class vector;
+#include <vector>
 #endif
 
 class CConsoleBuffer;
@@ -231,7 +231,7 @@ protected:
 	CSet<EProfileFlag> setepfFlags;		// Various flags affecting display.
 
 	// A list of references to individual stats, for automatic printing, resetting, etc.
-	vector<CProfileStat*>* pvcList;
+	std::vector<CProfileStat*>* pvcList;
 #endif
 
 public:

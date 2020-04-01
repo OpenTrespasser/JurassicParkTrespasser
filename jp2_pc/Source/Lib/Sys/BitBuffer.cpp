@@ -22,8 +22,8 @@
 #include "GblInc/Common.hpp"
 #include "BitBuffer.hpp"
 
-#include <fstream.h>
-#include <iomanip.h>
+#include <fstream>
+#include <iomanip>
 
 
 //**********************************************************************************************
@@ -42,12 +42,12 @@
 	CBitBuffer::CBitBuffer(const char* str_filename)
 		: uCurrIndex_(0)
 	{
-		ifstream stream_load(str_filename, ios::in | ios::nocreate | ios::binary);
+		std::ifstream stream_load(str_filename, std::ios::in | std::ios::_Nocreate | std::ios::binary);
 
 		AlwaysAssert(stream_load.is_open());
 
 		// Determine the size of the file and round this up to the next buffer allocation unit multiple.
-		stream_load.seekg(0, ios::end);
+		stream_load.seekg(0, std::ios::end);
 	#ifdef __MWERKS__
 		int i_file_len = stream_load.tellg().offset();
 	#else
@@ -58,7 +58,7 @@
 
 		pmbBuffer = new SMemBuffer(u_num_buffer_units);
 
-		stream_load.seekg(0, ios::beg);
+		stream_load.seekg(0, std::ios::beg);
 		stream_load.read(reinterpret_cast<char *>(&pmbBuffer->pabuData[0]), i_file_len);
 	}
 
@@ -110,7 +110,7 @@
 	//******************************************************************************************
 	void CBitBuffer::Save(const char* str_filename) const
 	{
-		ofstream stream_save(str_filename, ios::out | ios::trunc | ios::binary);
+		std::ofstream stream_save(str_filename, std::ios::out | std::ios::trunc | std::ios::binary);
 
 		AlwaysAssert(stream_save.is_open());
 

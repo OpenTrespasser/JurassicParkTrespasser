@@ -47,14 +47,14 @@
 #include "ConIO.hpp"
 #include "Shell/ShellResource.h"
 
-#include "map.h"
+#include <map>
 
 //
 // Module definitions.
 //
 
 // Definition of a string to raster map.
-typedef map<HWND, CStdDialog*, less<HWND> > TMapDialogPump;
+typedef std::map<HWND, CStdDialog*, std::less<HWND> > TMapDialogPump;
 
 
 //
