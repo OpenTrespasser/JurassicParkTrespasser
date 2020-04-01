@@ -769,6 +769,13 @@ public:
 		Grow(u_len_curr - uLen);
 	};
 
+	//Hides the operator from the base class
+	//but CFastHeap has private inheritance from that class
+	//and the operator is needed often
+	operator char* () const
+	{
+		return CDArray<char>::operator char*();
+	}
 
 	friend void* operator new(uint u_size_type, CFastHeap& fh_heap);
 	friend void* operator new(uint u_size_type, CFastHeap& fh_heap, uint u_alignment);
