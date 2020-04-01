@@ -224,6 +224,9 @@
 #include "lib/W95/WinInclude.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Sky.hpp"
+
+#include <algorithm>
+
 #include "Lib/Groff/ValueTable.hpp"
 #include "Lib/Loader/Loader.hpp"
 #include "Lib/Sys/W95/Render.hpp"
@@ -1106,7 +1109,7 @@ LINE_DONE:
 		for (int i_pixel = iRENDER_BLOCK_SIZE; i_pixel < u4ScreenWidth; i_pixel += iRENDER_BLOCK_SIZE)
 		{
 			psv_saved = &asv_saved[0];
-			int i4_width = min(iRENDER_BLOCK_SIZE, (int)u4ScreenWidth - i_pixel);
+			int i4_width = std::min(iRENDER_BLOCK_SIZE, (int)u4ScreenWidth - i_pixel);
 
 			for (i_line = 0; i_line < i_lines_drawn; i_line++)
 			{

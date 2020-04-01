@@ -115,7 +115,7 @@
 //
 // Required includes.
 //
-#include "list.h"
+#include <list>
 #include "Lib/GeomDBase/Partition.hpp"
 #include "Lib/GeomDBase/Mesh.hpp"
 #include "Lib/Sys/FastHeap.hpp"
@@ -143,7 +143,7 @@ class COcclude;
 //
 
 // Type describing a container of pointers to occluding polygons.
-typedef CContainer< list<COcclude> > TOccludeList;
+typedef CContainer< std::list<COcclude> > TOccludeList;
 // Prefix: polylist
 
 // Switch to apply a slight bias to occlusion planes to make them more tolerant.
