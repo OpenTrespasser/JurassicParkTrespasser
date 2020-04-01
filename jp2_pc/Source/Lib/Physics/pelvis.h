@@ -81,7 +81,7 @@ class CInstance;
   typedef basic_ostream<char,char_traits<char> > ostream; 
  };
 #else
- class ostream;
+#include <iostream>
 #endif
 
 //	The shit itself...
@@ -150,7 +150,7 @@ const char* pcLoadPelvis(const char* pc, int i_pel);
 void PelReset();
 
 //	Dumps the state to a text file...
-void DumpPelState( ostream& os );
+void DumpPelState(std::ostream& os );
 
 //	Tools
 //	-----
