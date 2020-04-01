@@ -74,7 +74,7 @@
 #include "Lib\Sys\Profile.hpp"
 
 
-extern map<uint32, SMeshInstance, less<uint32> > mapMeshInstances;
+extern std::map<uint32, SMeshInstance, std::less<uint32> > mapMeshInstances;
 extern uint g_u_Version_Number;
 
 
