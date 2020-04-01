@@ -345,7 +345,7 @@ public:
 		char str_num[5];
 		sprintf(str_num, "%.4d", iFrameCount);
 
-		string str_name = strBaseName + str_num + ".bmp";
+		std::string str_name = strBaseName + str_num + ".bmp";
 
 		pgrabActive->GrabBackbuffer();
 		pgrabActive->DumpBitmap(str_name.c_str());

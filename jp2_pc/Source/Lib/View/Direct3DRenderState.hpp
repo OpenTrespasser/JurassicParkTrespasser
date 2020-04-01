@@ -60,7 +60,7 @@
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/W95/DD.hpp"
 #define D3D_OVERLOADS
-#include <DirectX/d3d.h>
+#include <d3d.h>
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/Renderer/ScreenRender.hpp"
