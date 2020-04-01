@@ -53,8 +53,8 @@
 #include "Lib/Std/StringEx.hpp"
 #include "Lib/Loader/PlatonicInstance.hpp"
 
-#include "set.h"
-#include "multimap.h"
+#include <set>
+#include <map>
 
 //**********************************************************************************************
 //
@@ -62,7 +62,7 @@
 //
 
 	// Static variables.  They could be in the class, but that would just slow down the compile times.
-	typedef set<CMagnet, less<CMagnet> > TSMagnet;
+	typedef std::set<CMagnet, std::less<CMagnet> > TSMagnet;
 	TSMagnet tsmMagnet;	// A set containing all shared magnets, for instancing.
 
 	// Set this to load magnets as instances, to see where they are.
@@ -97,7 +97,7 @@
 //		CMagnet* pmag_ret = new CMagnet(mag);
 
 		// Insert or find, please.
-		pair<TSMagnet::iterator, bool> p = tsmMagnet.insert(mag);
+		std::pair<TSMagnet::iterator, bool> p = tsmMagnet.insert(mag);
 
 		// If we found a duplicate, it will do.
 		// If we inserted a new one, the new one will do.
@@ -225,7 +225,7 @@
 
 			if (CLoadWorld::bVerbose)
 			{
-				dout << "Magnet " << pgon->strObjectName << endl;
+				dout << "Magnet " << pgon->strObjectName << std::endl;
 			}
 
 			//
@@ -342,7 +342,7 @@
 						pins_master = pins;
 					else
 					{
-						dout << "  !Extra attachment " << pins->strGetInstanceName() << endl;
+						dout << "  !Extra attachment " << pins->strGetInstanceName() << std::endl;
 						Assert(false);
 						return 0;
 					}
@@ -363,7 +363,7 @@
 				dout << "  Attaches " << pins_master->strGetInstanceName();
 				if (pins_slave)
 					dout << " and " << pins_slave->strGetInstanceName();
-				dout << endl;
+				dout << std::endl;
 			}
 
 			// Make a CMagnet out of the text props.
@@ -642,9 +642,9 @@
 //
 // Typedefs: cannot be placed in NMagnetSystem, or VC 4.2 barfs.
 //
-typedef multimap<const CInstance* const, CMagnetPair*, less<const CInstance* const> >   TMagnetTable;
-typedef pair<const CInstance* const, CMagnetPair*>							TMagnetTableEntry;
-typedef pair<TMagnetTable::iterator, TMagnetTable::iterator>	TMagnetTableMatches;
+typedef std::multimap<const CInstance* const, CMagnetPair*, std::less<const CInstance* const> >   TMagnetTable;
+typedef std::pair<const CInstance* const, CMagnetPair*>							TMagnetTableEntry;
+typedef std::pair<TMagnetTable::iterator, TMagnetTable::iterator>	TMagnetTableMatches;
 
 //**********************************************************************************************
 //
@@ -693,7 +693,7 @@ namespace NMagnetSystem
 
 #if VER_DEBUG
 		// Get current list of attached magnets, to check for looping.
-		list<CMagnetPair*> lspmp;
+		std::list<CMagnetPair*> lspmp;
 		GetAttachedMagnets(pins_master, &lspmp);
 #endif
 
@@ -1028,7 +1028,7 @@ namespace NMagnetSystem
 	}
 
 	//*****************************************************************************************
-	void GetAttachedMagnets(CInstance* pins, list<CMagnetPair*>* plsmp)
+	void GetAttachedMagnets(CInstance* pins, std::list<CMagnetPair*>* plsmp)
 	{
 		static CMagnetPair mpMaster(0, 0, 0);
 
