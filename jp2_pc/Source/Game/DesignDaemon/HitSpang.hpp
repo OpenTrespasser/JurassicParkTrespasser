@@ -43,7 +43,7 @@
 #include "Lib\GeomDBase\RayCast.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 #include "Lib/EntityDBase\WorldDBase.hpp"
-#include "list.h"
+#include <list>
 
 class CHitSpang;
 
@@ -59,11 +59,11 @@ struct SHitSpangList
 
 //*********************************************************************************************
 // List of hitspangs
-typedef list<CHitSpang*>	THitSpangActive;
+typedef std::list<CHitSpang*>	THitSpangActive;
 
 //*********************************************************************************************
 // Map of hit spang lists, referenced by material value
-typedef map<uint32, SHitSpangList*, less<uint32> > TSpangMap;
+typedef std::map<uint32, SHitSpangList*, std::less<uint32> > TSpangMap;
 // prefix sm
 
 //*********************************************************************************************
