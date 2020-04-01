@@ -41,7 +41,7 @@
  **********************************************************************************************/
 
 #include "Trigger.hpp"
-#include <algo.h>
+#include <algorithm>
 
 #include "Action.hpp"
 #include "Lib/Physics/InfoBox.hpp"

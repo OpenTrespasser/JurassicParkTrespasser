@@ -72,7 +72,7 @@
 //
 // Includes.
 //
-#include "list.h"
+#include <list>
 #include "Lib/Transform/Vector.hpp"
 #include "Lib/Transform/Rotate.hpp"
 #include "Lib/Sys/FastHeap.hpp"
@@ -98,7 +98,7 @@ class CRaster;
 //
 
 // Type used to maintain a list of partition pointers.
-typedef list<CPartition*> TPPartitionList;
+typedef std::list<CPartition*> TPPartitionList;
 
 
 //

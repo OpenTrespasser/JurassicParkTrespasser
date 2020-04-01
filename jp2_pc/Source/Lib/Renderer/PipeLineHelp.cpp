@@ -85,8 +85,8 @@
 #include "RenderDefs.hpp"
 #include "Camera.hpp"
 
-#include <list.h>
-#include <multiset.h>
+#include <list>
+#include <set>
 
 //
 // Defines.
@@ -360,8 +360,8 @@ void SetCompareValues
 
 		if (bFrontToBack)
 		{
-			multiset<CRenderPolygon*, CPolyCompLess> mset_rpoly;
-			multiset<CRenderPolygon*, CPolyCompLess>::iterator itmset;
+			std::multiset<CRenderPolygon*, CPolyCompLess> mset_rpoly;
+			std::multiset<CRenderPolygon*, CPolyCompLess>::iterator itmset;
 
 			// Set the pointer values in the array.
 			int i_start = rplh.darppolyPolygons.uLen;
@@ -383,8 +383,8 @@ void SetCompareValues
 		}
 		else
 		{
-			multiset<CRenderPolygon*, CPolyCompGT> mset_rpoly;
-			multiset<CRenderPolygon*, CPolyCompGT>::iterator itmset;
+			std::multiset<CRenderPolygon*, CPolyCompGT> mset_rpoly;
+			std::multiset<CRenderPolygon*, CPolyCompGT>::iterator itmset;
 
 			// Set the pointer values in the array.
 			int i_start = rplh.darppolyPolygons.uLen;

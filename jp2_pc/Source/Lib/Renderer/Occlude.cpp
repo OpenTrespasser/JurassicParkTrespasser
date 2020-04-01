@@ -126,7 +126,7 @@
 
 #include "Common.hpp"
 #include "Lib/Sys/Profile.hpp"
-#include "Algo.h"
+#include <algorithm>
 #include "Lib/Transform/VectorRange.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
 #include "Lib/Renderer/Camera.hpp"
@@ -836,7 +836,7 @@ void CopyOccludePolygons(CPArray<COcclude*>& rpapoc, const CCamera& cam, TOcclud
 	rpapoc.uLen = uint(i);
 
 	// Sort occlusion object by size from the largest to the smallest.
-	sort(rpapoc.atArray, rpapoc.atArray + rpapoc.uLen, CSortOcclude());
+	std::sort(rpapoc.atArray, rpapoc.atArray + rpapoc.uLen, CSortOcclude());
 
 	// Cap the number of occluding objects that can be considered.
 	rpapoc.uLen = Min(rpapoc.uLen, uint(COcclude::iMaxNumOccludeObjects));

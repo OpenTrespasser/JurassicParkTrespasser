@@ -295,8 +295,8 @@ public:
 
 			// A new GROFF file has been loaded, find all blood splat terrain texture objects that
 			// it contains.
-			string str_base_splat_name("TrnObj_BloodSplat-");
-			string str_base_streak_name("TrnObj_BloodStreak-");
+			std::string str_base_splat_name("TrnObj_BloodSplat-");
+			std::string str_base_streak_name("TrnObj_BloodStreak-");
 
 			for (int i_instance = 0; ; i_instance++)
 			{

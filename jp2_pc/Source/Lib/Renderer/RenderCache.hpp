@@ -75,7 +75,7 @@
 //
 // Includes.
 //
-#include <set.h>
+#include <set>
 #include "RenderCacheInterface.hpp"
 #include "Lib/GeomDBase/Mesh.hpp"
 #include "Lib/Renderer/Pipeline.hpp"
@@ -586,7 +586,7 @@ class CRenderCacheList
 {
 public:
 
-	typedef set<CPartition*, less<CPartition*> > TCacheSet;
+	typedef std::set<CPartition*, std::less<CPartition*> > TCacheSet;
 	TCacheSet partlistCached;
 
 public:

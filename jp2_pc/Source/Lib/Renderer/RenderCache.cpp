@@ -1638,7 +1638,7 @@ static CProfileStat psFailed("Failed", &proHardware.psHardware);
 	{
 		if (rcsRenderCacheSettings.bFreezeCaches)
 			return;
-		list<CPartition*> list_partremove;	// List of partitions to remove.
+		std::list<CPartition*> list_partremove;	// List of partitions to remove.
 
 		//
 		// Iterate through the list of partitions with caches.
@@ -1659,7 +1659,7 @@ static CProfileStat psFailed("Failed", &proHardware.psHardware);
 
 		// Euthanize old caches.
 		{
-			list<CPartition*>::iterator it_partlist = list_partremove.begin();
+			std::list<CPartition*>::iterator it_partlist = list_partremove.begin();
 			for (; it_partlist != list_partremove.end(); it_partlist++)
 				(*it_partlist)->DeleteRenderCache();
 		}

@@ -33,7 +33,7 @@
 #include "Trigger.hpp"
 
 #include <string.h>
-#include <vector.h>
+#include <vector>
 #include "Lib/EntityDBase/MessageTypes/MsgTrigger.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Groff/GroffIO.hpp"
@@ -49,10 +49,10 @@ namespace
 {
 	void ParseTextProps
 	(
-		vector<string>& rvcstr_listen,
-		vector<string>& rvcstr_order,
-		vector<string>& rvcstr_eval_now,
-		string& rstr_eval_false,
+		std::vector<std::string>& rvcstr_listen,
+		std::vector<std::string>& rvcstr_order,
+		std::vector<std::string>& rvcstr_eval_now,
+		std::string& rstr_eval_false,
 		const CHandle& h_object,
 		CValueTable* pvtable,
 		CLoadWorld* p_load
@@ -68,7 +68,7 @@ namespace
 				{
 					const CEasyString* pestr = 0;
 					if (bFILL_pEASYSTRING(pestr, ESymbol(esA00 + i_index)))
-						rvcstr_listen.push_back(string(pestr->strData()));
+						rvcstr_listen.push_back(std::string(pestr->strData()));
 					else
 						break;
 				}
@@ -82,7 +82,7 @@ namespace
 				{
 					const CEasyString* pestr = 0;
 					if (bFILL_pEASYSTRING(pestr, ESymbol(esA00 + i_index)))
-						rvcstr_order.push_back(string(pestr->strData()));
+						rvcstr_order.push_back(std::string(pestr->strData()));
 					else
 						break;
 				}
@@ -96,7 +96,7 @@ namespace
 				{
 					const CEasyString* pestr = 0;
 					if (bFILL_pEASYSTRING(pestr, ESymbol(esA00 + i_index)))
-						rvcstr_eval_now.push_back(string(pestr->strData()));
+						rvcstr_eval_now.push_back(std::string(pestr->strData()));
 					else
 						break;
 				}
@@ -105,7 +105,7 @@ namespace
 
 			const CEasyString* pestr_false = 0;
 			if (bFILL_pEASYSTRING(pestr_false, esSequenceFalseTriggerName))
-				rstr_eval_false = string(pestr_false->strData());
+				rstr_eval_false = std::string(pestr_false->strData());
 		}
 		END_OBJECT;
 		END_TEXT_PROCESSING;
@@ -128,10 +128,10 @@ namespace
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	) : CTrigger(pgon, p_load, h_object, pvtable, pinfo)
 	{
-		vector<string> vcstr_listen;
-		vector<string> vcstr_order;
-		vector<string> vcstr_eval_now;
-		string str_false;
+		std::vector<std::string> vcstr_listen;
+		std::vector<std::string> vcstr_order;
+		std::vector<std::string> vcstr_eval_now;
+		std::string str_false;
 
 		ParseTextProps(vcstr_listen, vcstr_order, vcstr_eval_now, str_false, h_object, pvtable, p_load);
 
@@ -144,7 +144,7 @@ namespace
 		paptrListen = CPArray<const CTrigger*>(vcstr_listen.size());
 
 		int i = 0;
-		vector<string>::const_iterator it = vcstr_listen.begin();
+		std::vector<std::string>::const_iterator it = vcstr_listen.begin();
 		for (; it != vcstr_listen.end(); ++it)
 		{
 			CTrigger* ptr = ptCast<CTrigger>(pwWorld->ppartTriggerPartitionList()->pinsFindInstance(u4Hash((*it).c_str())));
@@ -309,18 +309,18 @@ namespace
 		CLoadWorld*				p_load		// The loader.
 	)
 	{
-		vector<string> vcstr_listen;
-		vector<string> vcstr_order;
-		vector<string> vcstr_eval_now;
-		string str_false;
+		std::vector<std::string> vcstr_listen;
+		std::vector<std::string> vcstr_order;
+		std::vector<std::string> vcstr_eval_now;
+		std::string str_false;
 
 		ParseTextProps(vcstr_listen, vcstr_order, vcstr_eval_now, str_false, h_object, pvtable, p_load);
 
 
 #if VER_DEBUG
-		for (vector<string>::const_iterator it_order = vcstr_order.begin(); it_order != vcstr_order.end(); ++it_order)
+		for (std::vector<std::string>::const_iterator it_order = vcstr_order.begin(); it_order != vcstr_order.end(); ++it_order)
 		{
-			vector<string>::const_iterator it_listen = vcstr_listen.begin();
+			std::vector<std::string>::const_iterator it_listen = vcstr_listen.begin();
 			for (; it_listen != vcstr_listen.end(); ++it_listen)
 				if ((*it_order) == (*it_listen))
 					break;
@@ -329,9 +329,9 @@ namespace
 			Assert(it_listen != vcstr_listen.end());
 		}
 
-		for (vector<string>::const_iterator it_eval = vcstr_eval_now.begin(); it_eval != vcstr_eval_now.end(); ++it_eval)
+		for (std::vector<std::string>::const_iterator it_eval = vcstr_eval_now.begin(); it_eval != vcstr_eval_now.end(); ++it_eval)
 		{
-			vector<string>::const_iterator it_listen = vcstr_listen.begin();
+			std::vector<std::string>::const_iterator it_listen = vcstr_listen.begin();
 			for (; it_listen != vcstr_listen.end(); ++it_listen)
 				if ((*it_eval) == (*it_listen))
 					break;
@@ -340,7 +340,7 @@ namespace
 			Assert(it_listen != vcstr_listen.end());
 		}
 
-		for (vector<string>::const_iterator it_ver = vcstr_listen.begin(); it_ver != vcstr_listen.end(); ++it_ver)
+		for (std::vector<std::string>::const_iterator it_ver = vcstr_listen.begin(); it_ver != vcstr_listen.end(); ++it_ver)
 		{
 			// Make sure every trigger in the sequence exists in the GROFF file.
 			CGroffObjectName* pgon = p_load->goiInfo.pgonFindObject((*it_ver).c_str());
@@ -356,7 +356,7 @@ namespace
 #endif
 
 		// Determine if each trigger in the listen sequence has been loaded.
-		for (vector<string>::const_iterator it = vcstr_listen.begin(); it != vcstr_listen.end(); ++it)
+		for (std::vector<std::string>::const_iterator it = vcstr_listen.begin(); it != vcstr_listen.end(); ++it)
 		{
 			CInstance* pins = pwWorld->ppartTriggerPartitionList()->pinsFindInstance(u4Hash((*it).c_str()));
 

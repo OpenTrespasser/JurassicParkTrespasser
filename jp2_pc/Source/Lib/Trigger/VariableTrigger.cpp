@@ -16,7 +16,7 @@
 #include "Trigger.hpp"
 
 #include <string.h>
-#include <vector.h>
+#include <vector>
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 #include "Lib/Groff/GroffIO.hpp"
 #include "Lib/Groff/ValueTable.hpp"

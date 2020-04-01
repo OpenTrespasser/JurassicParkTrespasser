@@ -86,9 +86,9 @@
 #include "Lib/Loader/SaveFile.hpp"
 #include "Lib/Std/PrivSelf.hpp"
 
-#include <fstream.h>
+#include <fstream>
 #include <stdio.h>
-#include <set.h>
+#include <set>
 
 //
 // Danger! Warning! Do no leave this enabled it can and will cause DirectSound to bag.
@@ -140,7 +140,7 @@ CProfileStat
 
 	// Hacky; this shouldn't be global, but we're lazy.
 	// The set of all instance pairs ignoring collisions.
-	typedef set<TInstancePair, CLessInstancePair> TSetInstancePair; 
+	typedef std::set<TInstancePair, CLessInstancePair> TSetInstancePair; 
 	TSetInstancePair setinsprIgnore;
 
 	int iPhysFrame = 0;							// The current physics frame.
@@ -148,7 +148,7 @@ CProfileStat
 	static bool bDump = false,					// Whether to dump phys state every frame.
 				bDumpStep = false;				// Whether to dump phys state every step.
 
-	list<CInstance*> lspinsSettle;
+	std::list<CInstance*> lspinsSettle;
 
 //**********************************************************************************************
 //
@@ -198,7 +198,7 @@ namespace
 		char str_fname[100];
 
 		sprintf(str_fname, "PhyState-%03d.txt", i_num);
-		ofstream os(str_fname);
+		std::ofstream os(str_fname);
 
 		CXob::DumpStateAll(os);
 		DumpPelState(os);
@@ -390,7 +390,7 @@ public:
 	void CPhysicsSystem::CPriv::ApplyImpulses(const CVector3<>& v3_centre, TReal r_radius,
 		TReal r_impulse_max, bool b_ground)
 	{
-		dout <<"Impulses " <<r_impulse_max <<" radius " <<r_radius <<endl;
+		dout <<"Impulses " <<r_impulse_max <<" radius " <<r_radius << std::endl;
 
 		// Create a query sphere.
 		CPartitionSpaceQuery partsq(CPresence3<>(v3_centre), r_radius);

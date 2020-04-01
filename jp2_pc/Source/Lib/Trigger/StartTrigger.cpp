@@ -35,7 +35,7 @@
  **********************************************************************************************/
 
 #include "Trigger.hpp"
-#include <algo.h>
+#include <algorithm>
 
 #include "Action.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgTrigger.hpp"
@@ -56,7 +56,7 @@
 //
 // CStartTrigger implementation.
 //
-list<CStartTrigger*> CStartTrigger::listStartTriggers;
+std::list<CStartTrigger*> CStartTrigger::listStartTriggers;
 
 
 //*********************************************************************************************
@@ -91,7 +91,7 @@ CStartTrigger::~CStartTrigger()
 	CMessageStep::UnregisterRecipient(this);
 	CMessageSystem::UnregisterRecipient(this);
 
-	list<CStartTrigger*>::iterator it_me = find(listStartTriggers.begin(), 
+	std::list<CStartTrigger*>::iterator it_me = find(listStartTriggers.begin(),
 											listStartTriggers.end(), this);
 
 	Assert(it_me != listStartTriggers.end());
@@ -103,7 +103,7 @@ CStartTrigger::~CStartTrigger()
 //******************************************************************************************
 void CStartTrigger::ResetStartTriggers()
 {
-	for (list<CStartTrigger*>::iterator it = listStartTriggers.begin();
+	for (std::list<CStartTrigger*>::iterator it = listStartTriggers.begin();
 		 it != listStartTriggers.end(); it++)
 	{
 		// Cleare fired flag.

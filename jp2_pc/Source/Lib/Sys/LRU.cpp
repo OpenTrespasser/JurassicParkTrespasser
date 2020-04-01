@@ -40,7 +40,7 @@
 #if defined(__MWERKS__)
 	#include <algorithm>
 #else
-	#include "Algo.h"
+	#include <algorithm>
 #endif
 
 //
@@ -117,7 +117,7 @@ public:
 			return;
 
 		// Use the STL Quicksort routine.
-		sort(papItems->atArray, papItems->atArray + papItems->uLen, CLRUItemCompare());
+		std::sort(papItems->atArray, papItems->atArray + papItems->uLen, CLRUItemCompare());
 
 		// Indicate that the list is now sorted.
 		bSorted = true;
