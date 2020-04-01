@@ -37,7 +37,7 @@
  **********************************************************************************************/
 
 #include "Trigger.hpp"
-#include <algo.h>
+#include <algorithm>
 
 #include "Action.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgTrigger.hpp"

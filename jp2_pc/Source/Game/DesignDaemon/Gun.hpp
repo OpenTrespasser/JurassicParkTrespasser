@@ -43,7 +43,7 @@
 #include "Lib/Loader/Loader.hpp"
 #include "Lib/Sys/Timer.hpp"
 #include "Lib/Audio/SoundDefs.hpp"
-#include "list.h"
+#include <list>
 
 //
 // Class definitions.
@@ -203,7 +203,7 @@ public:
 
 //*********************************************************************************************
 //
-typedef list<CMuzzleFlash*> TMuzzleFlashList;
+typedef std::list<CMuzzleFlash*> TMuzzleFlashList;
 // prefix: mf
 //**************************************
 

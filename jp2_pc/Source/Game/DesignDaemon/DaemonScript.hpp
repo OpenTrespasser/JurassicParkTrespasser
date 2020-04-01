@@ -52,7 +52,7 @@
 // Includes.
 //
 
-#include "map.h"
+#include <map>
 #include "Gblinc/Common.hpp"
 
 
@@ -65,7 +65,7 @@ typedef void* TPFunction;
 // Prefix: pf
 
 // Type representing a function map.
-typedef map<uint32, TPFunction, less<int> > TPFMap;
+typedef std::map<uint32, TPFunction, std::less<int> > TPFMap;
 // prefix: pfmap
 
 

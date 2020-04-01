@@ -54,7 +54,7 @@
 
 #include "common.hpp"
 
-#include <list.h>
+#include <list>
 
 #include "Lib/EntityDBase/Entity.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
@@ -907,7 +907,7 @@ public:
 protected:
 	bool bFired;		// Have we fired?
 
-	static list<CStartTrigger*> listStartTriggers;
+	static std::list<CStartTrigger*> listStartTriggers;
 						// A list of all the start triggers.
 };
 
