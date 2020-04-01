@@ -102,7 +102,7 @@
 //
 // Includes.
 //
-#include "Algo.h"
+#include <algorithm>
 #include "Common.hpp"
 #include "ScreenRenderAuxD3DBatch.hpp"
 
@@ -570,7 +570,7 @@ void RasterizeBatch(CPArray<CRenderPolygon>& parpoly)
 	}
 
 	// Sort all the opaque textures by texture.
-	sort(appoly_opaque.atArray, appoly_opaque.atArray + appoly_opaque.uLen, CSortByD3DTexture());
+	std::sort(appoly_opaque.atArray, appoly_opaque.atArray + appoly_opaque.uLen, CSortByD3DTexture());
 
 	// Initialize for hardware rasterizing.
 	srd3dRenderer.SetD3DMode(ed3drHARDWARE_LOCK);
@@ -613,7 +613,7 @@ void RasterizeCacheBatch(CPArray<CRenderPolygon>& parpoly)
 	if (d3dDriver.bIsPageManaged())
 	{
 		// Sort the list by Direct3D texture address.
-		sort(appoly.atArray, appoly.atArray + appoly.uLen, CSortByBaseTexture());
+		std::sort(appoly.atArray, appoly.atArray + appoly.uLen, CSortByBaseTexture());
 	}
 
 	// Initialize for hardware rasterizing.
@@ -705,7 +705,7 @@ void RasterizeTerrainBatch(CPArray<CRenderPolygon>& parpoly)
 	}
 
 	// Sort the list by Direct3D texture address.
-	sort(appoly.atArray, appoly.atArray + appoly.uLen, CSortByBaseTexture());
+	std::sort(appoly.atArray, appoly.atArray + appoly.uLen, CSortByBaseTexture());
 
 	// Calculate offset.
 	CScreenRenderAuxD3D::fOffsetX = float(prasMainScreen->iOffsetX) + CScreenRenderAuxD3D::fOffsetXBase;
@@ -825,7 +825,7 @@ void RemovePrerasterized(CPArray<CRenderPolygon>& parpoly)
 	//
 
 	// Sort by maximum z.
-	sort(appoly_software.atArray, appoly_software.atArray + appoly_software.uLen, CPolyFarZ());
+	std::sort(appoly_software.atArray, appoly_software.atArray + appoly_software.uLen, CPolyFarZ());
 
 	// Cull as many polygons as possible.
 	for (i_poly_pre = 0; i_poly_pre < int(appoly_prerast.uLen); ++i_poly_pre)

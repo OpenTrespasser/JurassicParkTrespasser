@@ -94,7 +94,7 @@
 #include <string.h>
 #include <memory.h>
 #include <math.h>
-#include <map.h>
+#include <map>
 
 #define bAXIS_SWAP			(1)
 
@@ -1903,7 +1903,7 @@ void MatrixFromHash
 //
 // Set of bump map matrices.
 //
-typedef map< int, CMatrix3<>*, less<int> > TMapMatrixHash;
+typedef std::map< int, CMatrix3<>*, std::less<int> > TMapMatrixHash;
 TMapMatrixHash* pmapBumpMatrices = 0;
 
 
