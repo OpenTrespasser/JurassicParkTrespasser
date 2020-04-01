@@ -307,7 +307,7 @@ struct SRenderSettingsShadow: public CRenderer::SSettings
 
 		// Render all world objects with this camera and renderer.
 		//pscren->BeginFrame();
-		ren.RenderScene(cam, list<CInstance*>(), wWorld.ppartPartitionList(), papoc);
+		ren.RenderScene(cam, std::list<CInstance*>(), wWorld.ppartPartitionList(), papoc);
 		pscren->EndFrame();
 	}
 
@@ -391,7 +391,7 @@ struct SRenderSettingsShadow: public CRenderer::SSettings
 		CLArray(COcclude*, paoc, 0);
 
 		// Render with our camera, and an empty light list.
-		ren.RenderScene(*pCamera, list<CInstance*>(), ppart, paoc);
+		ren.RenderScene(*pCamera, std::list<CInstance*>(), ppart, paoc);
 		psr_context->EndFrame();
 	}
 
