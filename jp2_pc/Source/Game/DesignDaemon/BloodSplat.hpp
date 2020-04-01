@@ -34,7 +34,7 @@
 #define HEADER_GAME_DESIGNDAEMON_BLOODSPLAT_HPP
 
 #include "Lib/EntityDBase/Subsystem.hpp"
-#include <list.h>
+#include <list>
 
 class CTerrainObj;
 
@@ -63,7 +63,7 @@ class CBloodSplats : public CSubsystem
 	class CPriv;
 	friend class CPriv;
 
-	typedef list<SBloodSplatObj> TContainer;
+	typedef std::list<SBloodSplatObj> TContainer;
 
 	TContainer contSplats;
 	TContainer contStreaks;
