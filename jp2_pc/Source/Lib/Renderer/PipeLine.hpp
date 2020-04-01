@@ -251,7 +251,7 @@
 #include "ScreenRender.hpp"
 #include "Lib/EntityDBase/Instance.hpp"
 
-#include <list.h>
+#include <list>
 
 //********************************************************************************************
 //
@@ -453,7 +453,7 @@ public:
 	void RenderScene
 	(
 		const CCamera& cam,							// Camera for this scene.
-		const list<CInstance*>& listins_lights,		// A list of lights in the scene.
+		const std::list<CInstance*>& listins_lights,		// A list of lights in the scene.
 		CPartition* ppart_scene,					// The world partition to render.
 		const CPArray<COcclude*>& rpapoc,				// Array of occluding objects.
 		ESideOf esf_view = esfINTERSECT,			// The presumed relation of the scene to the
