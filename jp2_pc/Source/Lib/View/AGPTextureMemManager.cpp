@@ -112,7 +112,7 @@
  * 
  **********************************************************************************************/
 
-#include <list.h>
+#include <list>
 #include "Common.hpp"
 #include "Lib/View/AGPTextureMemManager.hpp"
 
@@ -289,7 +289,7 @@ public:
 //
 
 // Type for maintaining a list of currently active textures.
-typedef list<CRasterWrap> TRasD3DList;
+typedef std::list<CRasterWrap> TRasD3DList;
 
 
 //

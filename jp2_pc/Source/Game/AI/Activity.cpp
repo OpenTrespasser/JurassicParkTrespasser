@@ -93,7 +93,7 @@
 
 #include "PathAStar.hpp"
 
-#include "bstring.h"
+#include <string>
 
 // The target location distance when fleeing.
 #define rFLEE_DISTANCE				50.0

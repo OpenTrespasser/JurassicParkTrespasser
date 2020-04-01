@@ -220,7 +220,7 @@
 #include "Lib/W95/Direct3DCards.hpp"
 #include "dd.hpp"
 #define D3D_OVERLOADS
-#include <DirectX/d3d.h>
+#include <d3d.h>
 
 
 //

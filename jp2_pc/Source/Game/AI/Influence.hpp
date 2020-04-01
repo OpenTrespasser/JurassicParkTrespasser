@@ -62,7 +62,7 @@
 //#include "Lib/EntityDBase/Animal.hpp"
 #include "Lib/Sys/Timer.hpp"
 
-#include <set.h>
+#include <set>
 #include "Lib/EntityDBase/Container.hpp"
 
 #include "Classes.hpp"
@@ -396,7 +396,7 @@ public:
 		virtual const char * pcLoad(const char *  pc_buffer);
 	
 
-		operator< (const CInfluence& inf) const
+		bool operator< (const CInfluence& inf) const
 		{
 			return pinsTarget < inf.pinsTarget;
 		}
@@ -421,7 +421,7 @@ public:
 
 //*********************************************************************************************
 //
-class CInfluenceList : public set<CInfluence, less<CInfluence> >
+class CInfluenceList : public std::set<CInfluence, std::less<CInfluence> >
 //
 //	Prefix: infl
 //

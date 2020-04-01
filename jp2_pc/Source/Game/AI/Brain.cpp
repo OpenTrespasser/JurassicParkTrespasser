@@ -1191,7 +1191,7 @@ extern int iAnimalVersion;
 
 
 					// Find the Z extents of the node.
-					pair<TReal, TReal> pr_minmaxZ = it.pqnqGetNode()->prrGetWorldZLimits(it.pqrContainer->pqnqRoot);
+					std::pair<TReal, TReal> pr_minmaxZ = it.pqnqGetNode()->prrGetWorldZLimits(it.pqrContainer->pqnqRoot);
 
 					// Make sure we have (min, max)
 					Assert(pr_minmaxZ.first <= pr_minmaxZ.second);
@@ -1794,7 +1794,7 @@ extern int iAnimalVersion;
 			}
 
 
-			list<CTerrainKnowledge>::iterator ptk;
+			std::list<CTerrainKnowledge>::iterator ptk;
 			ptk = pwvWorldView->ltkKnowledge.begin();
 
 			int i_tri_count = 0;

@@ -89,7 +89,7 @@
 // as well as all currently accepted notions of sanity.
 // The pragma after the include fixes the problem.
 
-#include <DirectX/DDraw.h>
+#include <ddraw.h>
 
 // Get rid of the bool reserved word warning.
 #pragma warning(disable:4237)

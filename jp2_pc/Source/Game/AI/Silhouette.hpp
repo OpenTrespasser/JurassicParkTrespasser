@@ -54,7 +54,7 @@
 #ifndef HEADER_LIB_AI_SILHOUETTE_HPP
 #define HEADER_LIB_AI_SILHOUETTE_HPP
 
-#include "vector.h"
+#include <vector>
 #include "Lib/Transform/Presence.hpp"
 #include "Lib/Transform/Vector.hpp"
 #include "Lib/EntityDBase/Container.hpp"

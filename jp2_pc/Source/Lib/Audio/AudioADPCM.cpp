@@ -33,6 +33,7 @@
 
 #include "Audio.hpp"
 #include "AudioADPCM.hpp"
+#include <algorithm>
 
 //**********************************************************************************************
 // channel header
@@ -174,7 +175,7 @@ uint32 CAudioADPCM::u4DecompressMono16bit
 			pu1Next = pu1BlockBuffer;
 		}
 		
-		u4_count = min(u4_byte_count,u4FreshBytes);
+		u4_count = std::min(u4_byte_count,u4FreshBytes);
 
 		memcpy(pu1_dst,pu1Next,u4_count);
 		pu1_dst+=u4_count;
@@ -237,7 +238,7 @@ uint32 CAudioADPCM::u4DecompressStereo16bit
 			pu1Next = pu1BlockBuffer;
 		}
 		
-		u4_count = min(u4_byte_count,u4FreshBytes);
+		u4_count = std::min(u4_byte_count,u4FreshBytes);
 
 		memcpy(pu1_dst,pu1Next,u4_count);
 		pu1_dst+=u4_count;
@@ -274,7 +275,7 @@ void CAudioADPCM::SetSampleSource
 	// Block size is the number of bytes that each decompression step should decode, it
 	// is either a multiple of the block length or a number of bytes less than the block
 	// length, This is only used for the last block.
-	u4BlockSize			= min(u4_src_len,cauheaderLocal.u4BlockAlignment);
+	u4BlockSize			= std::min(u4_src_len,cauheaderLocal.u4BlockAlignment);
 }
 
 
@@ -704,7 +705,7 @@ static uint32 u4ADPCMDecodeS16
 
     while(u4_src_length!=0)
     {
-        i4_block_length  = min((uint32)u4_block_alignment,(uint32)u4_src_length);
+        i4_block_length  = std::min((uint32)u4_block_alignment,(uint32)u4_src_length);
         u4_src_length   -= i4_block_length;
         i4_block_length -= IMAADPCM_HEADER_LENGTH * 2;
 

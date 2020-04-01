@@ -243,7 +243,7 @@ class CAutoGrabber : public CSubsystem
 
 	int iFrameCount;
 
-	string strBaseName;
+	std::string strBaseName;
 
 	//******************************************************************************************
 	//

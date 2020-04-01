@@ -292,7 +292,7 @@ float fAIDebug3 = 0.5;
 	{
 #if VER_DEBUG
 		// Make sure it isn't already in the list.
-		list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+		std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 
 		bool b_found_it = false;
 
@@ -311,7 +311,7 @@ float fAIDebug3 = 0.5;
 		DeactivateAnimal(pani);
 
 		// Make sure it isn't already in the list.
-		list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+		std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 
 		for ( ; ipani != lpaniInactiveAnimals.end(); ++ipani)
 		{
@@ -381,7 +381,7 @@ float fAIDebug3 = 0.5;
 			apaniActiveAnimals[i_free_index] = pani;
 
 			// Remove from inactive list.
-			list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+			std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 
 			bool b_found_it = false;
 
@@ -419,7 +419,7 @@ float fAIDebug3 = 0.5;
 
 			{
 				// Remove from inactive list.
-				list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+				std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 				for ( ; ipani != lpaniInactiveAnimals.end(); ++ipani)
 				{
 					if (*ipani == pani)
@@ -454,7 +454,7 @@ float fAIDebug3 = 0.5;
 #if VER_TEST
 				{
 					// Remove from inactive list.
-					list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+					std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 					for ( ; ipani != lpaniInactiveAnimals.end(); ++ipani)
 					{
 						if (*ipani == pani)
@@ -532,10 +532,10 @@ float fAIDebug3 = 0.5;
 		r_radius *= r_radius;
 
 		// Loop through inactive animals and save a pointer to them if appropriate.
-		list<void*> lpani;
+		std::list<void*> lpani;
 		
 		// Search inactive list.
-		list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+		std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 
 		for ( ; ipani != lpaniInactiveAnimals.end(); ++ipani)
 		{
@@ -821,7 +821,7 @@ float fAIDebug3 = 0.5;
 		}
 
 		// Iterate through the inactive list, and wake up the first guy within X distance.
-		list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
+		std::list<void*>::iterator ipani = lpaniInactiveAnimals.begin();
 
 		for ( ; ipani != lpaniInactiveAnimals.end(); ++ipani)
 		{
@@ -1281,7 +1281,7 @@ float fAIDebug3 = 0.5;
 		pc = pcSaveT(pc, i_inactive);
 
 		// Make sure it isn't already in the list.
-		list<void*>::const_iterator ipani = lpaniInactiveAnimals.begin();
+		std::list<void*>::const_iterator ipani = lpaniInactiveAnimals.begin();
 		for ( ; ipani != lpaniInactiveAnimals.end(); ++ipani)
 		{
 			pc = pcSaveInstancePointer(pc, (CAnimal*)*ipani);
@@ -1445,7 +1445,7 @@ float fAIDebug3 = 0.5;
 	}
 	
 	
-	typedef set<CAIInfo, less<CAIInfo> > TSAI;
+	typedef std::set<CAIInfo, std::less<CAIInfo> > TSAI;
 	// This guy is here instead of in the class header to cut down on compile times.
 	// Additionally, only the world dbase need know about it (for purging)
 	TSAI tsaiAIInfo;	// A set containing all shared AI infos, for instancing.
@@ -1457,7 +1457,7 @@ float fAIDebug3 = 0.5;
 	)
 	{
 		// Insert or find, please.
-		pair<TSAI::iterator, bool> p = tsaiAIInfo.insert(aii);
+		std::pair<TSAI::iterator, bool> p = tsaiAIInfo.insert(aii);
 
 		// If we found a duplicate, it will do.
 		// If we inserted a new one, the new one will do.

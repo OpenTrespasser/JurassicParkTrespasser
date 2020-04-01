@@ -308,9 +308,33 @@ namespace NMultiResolution
 		}
 
 
+		forceinline bool operator !=(CCoef cf) const
+		{
+			return iCoefVal != cf.iCoefVal;
+		}
+
+
 		forceinline bool operator <(CCoef cf) const
 		{
 			return iCoefVal < cf.iCoefVal;
+		}
+
+
+		forceinline bool operator <=(CCoef cf) const
+		{
+			return iCoefVal <= cf.iCoefVal;
+		}
+
+
+		forceinline bool operator >(CCoef cf) const
+		{
+			return iCoefVal > cf.iCoefVal;
+		}
+
+
+		forceinline bool operator >=(CCoef cf) const
+		{
+			return iCoefVal >= cf.iCoefVal;
 		}
 
 

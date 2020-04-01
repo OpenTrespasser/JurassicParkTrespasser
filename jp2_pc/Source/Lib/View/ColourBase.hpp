@@ -57,8 +57,7 @@
 #ifdef __MWERKS__
 #include <set.h>
 #else
-// Note that this declares ::set (not std::set).
-template <class ITEM, class COMPARE> class set;
+#include <set>
 #endif
 
 class CBumpTable;
@@ -200,9 +199,9 @@ public:
 	CPalClut* pceMainPalClut;					// Pointer to the CPalClut object for the main screen.
 	CPal*     ppalMain;							// Main palette.
 
-	set<CPalClut, CPalClutLess>* psetPalClut;	// STL Associate Container for CPalClut.
+	std::set<CPalClut, CPalClutLess>* psetPalClut;	// STL Associate Container for CPalClut.
 										
-	set<CPal*, CPalPtrLess>*	 psetOwnedPals;	// Palettes we own (and need to delete).
+	std::set<CPal*, CPalPtrLess>*	 psetOwnedPals;	// Palettes we own (and need to delete).
 
 	CPixelFormat pxfDest;						// The current pixel format that cluts convert to.
 
