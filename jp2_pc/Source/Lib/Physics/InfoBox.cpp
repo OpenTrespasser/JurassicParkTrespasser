@@ -97,7 +97,7 @@
 #include "Common.hpp"
 #include "InfoBox.hpp"
 
-#include <set.h>
+#include <set>
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 
 #include "PhysicsSystem.hpp"
@@ -122,7 +122,7 @@
 #include "Lib/Std/LocalArray.hpp"
 #include "Lib/Math/MathUtil.hpp"
 
-#include <algo.h>
+#include <algorithm>
 
 // Debugging rendering stuff.
 #include "Lib/Renderer/Camera.hpp"
@@ -187,12 +187,12 @@ extern int iPhysFrame;
 	{
 	public:
 		CVector3<>					v3Min, v3Max;	// Limits of current query box.
-		aptr< list<CInstance*> >	plspinsNear;	// List of inactive objects in this region.
+		aptr< std::list<CInstance*> >	plspinsNear;	// List of inactive objects in this region.
 		aptr<CWDbQueryTerrainTopology>	
 									pwqttopTerrain;	// The current terrain query region.
 		CTerrainObj*				ptoBase;		// The base, or default texture for this region,
 													// if any.
-		list<CTerrainObj*>			lsptoTerrainObjs;// Non-default terrain objects in this query region.
+		std::list<CTerrainObj*>			lsptoTerrainObjs;// Non-default terrain objects in this query region.
 		CAArray<TVectorPair>		pavpEdges;		// Array of terrain edges in this region.
 		aptr<CWDbQueryWater>		pwqwtrWater;	// List of water objects intersecting this region.
 
@@ -1001,7 +1001,7 @@ inline CJoeXob& JoeXob(int i_index)
 		// Find highest encompassing texture.
 		//
 		ptoBase = 0;
-		list<SPartitionListElement>::iterator it = qto.end();
+		std::list<SPartitionListElement>::iterator it = qto.end();
 		if (it != qto.begin())
 		{
 			do
@@ -1061,7 +1061,7 @@ inline CJoeXob& JoeXob(int i_index)
 		Assert(v3Max.tY - v3Min.tY <= rSANE_REGION_SIZE);
 		Assert(v3Max.tZ - v3Min.tZ <= rSANE_REGION_SIZE);
 
-		plspinsNear = new list<CInstance*>;
+		plspinsNear = new std::list<CInstance*>;
 
 		// Query nearby boxes. Add inactive ones to list.
 		CWDbQueryPhysicsBoxFast wqph(bvb, pr3);
@@ -1162,7 +1162,7 @@ inline CJoeXob& JoeXob(int i_index)
 
 		// The list contains all non-base significant textures to check,
 		// with higher textures first.
-		forall (lsptoTerrainObjs, list<CTerrainObj*>, itpto)
+		forall (lsptoTerrainObjs, std::list<CTerrainObj*>, itpto)
 		{
 			if ((*itpto)->pbvBoundingVol()->bContains(v3 / (*itpto)->pr3Presence()))
 			{
@@ -1237,7 +1237,7 @@ inline CJoeXob& JoeXob(int i_index)
 
 
 	// It could be in the class, but that would just slow down the compile times.
-	typedef set<CPhysicsInfoBox, less<CPhysicsInfoBox> > TSPB;
+	typedef std::set<CPhysicsInfoBox, std::less<CPhysicsInfoBox> > TSPB;
 	TSPB tspbPhysicsInfoBox;	// A set containing all shared box infos, for instancing.
 
 	//*****************************************************************************************
@@ -1298,7 +1298,7 @@ inline CJoeXob& JoeXob(int i_index)
 		if (bIsTangible())
 			if (Min(Min(v3_corner.tX, v3_corner.tY), v3_corner.tZ) <= rBOX_DIM_WARN)
 				dout <<"Warning: Physics box " <<pgon->strObjectName <<" is smaller than " <<(rBOX_DIM_WARN*2.0f) <<" m: "
-					 <<(v3_corner*2.0f) <<endl;
+					 <<(v3_corner*2.0f) << std::endl;
 
 		CXob::XOBResize(afConvert(v3_corner));
 		bvbCollideVol = CBoundVolBox(v3_corner / pgon->fScale);
@@ -1385,7 +1385,7 @@ inline CJoeXob& JoeXob(int i_index)
 		}
 */
 		// Insert or find, please.
-		pair<TSPB::iterator, bool> p = tspbPhysicsInfoBox.insert(phib_copy);
+		std::pair<TSPB::iterator, bool> p = tspbPhysicsInfoBox.insert(phib_copy);
 
 		// If we found a duplicate, it will do.
 		// If we inserted a new one, the new one will do.
@@ -1497,7 +1497,7 @@ inline CJoeXob& JoeXob(int i_index)
 				// Sorry, no room.
 				if (!bFailed)
 				{
-					dout <<"Too many boxes! Cannot wake up " <<pins->strGetInstanceName() <<endl;
+					dout <<"Too many boxes! Cannot wake up " <<pins->strGetInstanceName() << std::endl;
 					bFailed = true;
 				}
 				return;
@@ -1514,7 +1514,7 @@ inline CJoeXob& JoeXob(int i_index)
 		CJoeXob& xob = JoeXob(i_index);
 
 		// Get attachment list.
-		list<CMagnetPair*> lspmp;
+		std::list<CMagnetPair*> lspmp;
 		NMagnetSystem::GetAttachedMagnets(pins, &lspmp);
 
 		// Get master of this group.
@@ -1603,7 +1603,7 @@ inline CJoeXob& JoeXob(int i_index)
 		// Make a pass through the list to see what kind of magnets we have.
 		if (b_movable)
 		{
-			forall (lspmp, list<CMagnetPair*>, itpmp)
+			forall (lspmp, std::list<CMagnetPair*>, itpmp)
 			{
 				const CMagnetPair& mp = **itpmp;
 				CSet<EMagnetFlag> set = mp.setemfFlags();
@@ -1687,7 +1687,7 @@ inline CJoeXob& JoeXob(int i_index)
 		int i_elems = 0;
 
 		// Fill the a2pinsActiveBoxes array with all attached box instances.
-		forall (lspmp, list<CMagnetPair*>, itpmp)
+		forall (lspmp, std::list<CMagnetPair*>, itpmp)
 		{
 			const CMagnetPair& mp = **itpmp;
 			CInstance* pins_sub = mp.pinsSlave;
@@ -2279,7 +2279,7 @@ inline CJoeXob& JoeXob(int i_index)
 
 				for 
 				(
-					list<CInstance*>::iterator itpins = pqreg->plspinsNear->begin();
+					std::list<CInstance*>::iterator itpins = pqreg->plspinsNear->begin();
 					itpins != pqreg->plspinsNear->end();
 				)
 				{

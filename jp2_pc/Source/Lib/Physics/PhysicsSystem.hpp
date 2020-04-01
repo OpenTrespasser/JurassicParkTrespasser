@@ -330,7 +330,7 @@ public:
 	// Definitions for implementing IgnoreCollisions.
 	//
 
-	typedef pair<CInstance*, CInstance*> TInstancePair;
+	typedef std::pair<CInstance*, CInstance*> TInstancePair;
 	// Prefix: inspr.
 	// These are always stored in ascending address order, for unambiguity.
 

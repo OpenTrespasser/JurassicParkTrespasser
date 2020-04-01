@@ -12,7 +12,7 @@
 #include "Xob_BC.hpp"
 
 #include "Lib/Sys/ConIO.hpp"
-#include <iostream.h>
+#include <iostream>
 
 //	Bad, but OK for now...
 //	-=-=-=-=-=-=-=-=-=-=-=

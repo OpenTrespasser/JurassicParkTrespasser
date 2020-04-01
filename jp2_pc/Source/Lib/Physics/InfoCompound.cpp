@@ -76,7 +76,7 @@
 //
 
 #if VER_TEST
-	set<uint32, less<uint32> > setSubmodels;
+std::set<uint32, std::less<uint32> > setSubmodels;
 #endif
 
 
@@ -103,7 +103,7 @@
 
 
 	// Just a place to keep the infos in one spot.
-	list<CPhysicsInfoCompound> lphicCompoundInfos;
+std::list<CPhysicsInfoCompound> lphicCompoundInfos;
 
 	//*****************************************************************************************
 	const CPhysicsInfoCompound* CPhysicsInfoCompound::pphicFindShared
