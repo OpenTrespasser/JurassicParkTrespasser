@@ -84,7 +84,7 @@
 #include "Common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/Sys/FastHeap.hpp"
-#include "Algo.h"
+#include <algorithm>
 #include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Scheduler.hpp"
@@ -291,7 +291,7 @@ public:
 		StartTimer();
 
 		// Sort by priority using STL's QSort routine.
-		sort(dapscitItems.atArray, dapscitItems.atArray + dapscitItems.uLen,
+		std::sort(dapscitItems.atArray, dapscitItems.atArray + dapscitItems.uLen,
 			 CSchedulerItemCompare());
 
 	#if bLOG_SCHEDULE
