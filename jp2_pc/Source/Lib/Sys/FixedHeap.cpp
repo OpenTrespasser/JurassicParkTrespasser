@@ -45,8 +45,7 @@
 
 #include "Common.hpp"
 #include <malloc.h>
-#include "Set.h"
-#include "Multiset.h"
+#include <set>
 #include "Lib/W95/Direct3D.hpp"
 #include "TextOut.hpp"
 #include "FixedHeap.hpp"
@@ -179,8 +178,8 @@ public:
 // declarations; therefore 'THeapMem' and 'THeapSize' are declared as classes but use
 // Hungarian notation for typedefs.
 //
-class THeapMem  : public set<CHeapNode, CHeapNodeMemLess>{};
-class THeapSize : public multiset<CHeapNode, CHeapNodeSizeLess>{};
+class THeapMem  : public std::set<CHeapNode, CHeapNodeMemLess>{};
+class THeapSize : public std::multiset<CHeapNode, CHeapNodeSizeLess>{};
 
 
 //
