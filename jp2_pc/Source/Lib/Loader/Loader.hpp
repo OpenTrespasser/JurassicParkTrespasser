@@ -700,7 +700,7 @@ public:
 	//	Ex.      ahSymbols[esClass]  references the string "Class" in the value table,
 	//									or is NULL if "Class" does not appear in the table.
 	
-	CHandle ahSymbols[esEND];
+	::CHandle ahSymbols[esEND];
 
 
 	int iNumSelected;					// The number of objects that have been selected by the loader. (UI)
@@ -731,7 +731,7 @@ public:
 	);
 
 
-	inline const CHandle& hSymbol(ESymbol es)
+	inline const ::CHandle& hSymbol(ESymbol es)
 	{
 		return ahSymbols[es];
 	}
