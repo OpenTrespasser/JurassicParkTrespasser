@@ -298,7 +298,7 @@ public:
 	CPhysicsInfo
 	(
 		const CGroffObjectName*		pgon,
-		const CHandle&				h_obj,				// Handle to the object in the value table.
+		const ::CHandle&				h_obj,				// Handle to the object in the value table.
 		CValueTable*				pvtable,			// Pointer to the value table.
 		CLoadWorld*					pload				// the loader.
 	);
@@ -339,7 +339,7 @@ public:
 	(
 		const rptr<CRenderType>&	prdt,		// The mesh of the object needing the physics data.
 		const CGroffObjectName*	pgon,				// Object using the physics info- needed for compound info construction
-		const CHandle&		h_obj,				// Handle to the object in the value table.
+		const ::CHandle&		h_obj,				// Handle to the object in the value table.
 		CValueTable*		pvtable,			// Pointer to the value table.
 		CLoadWorld*			pload				// the loader.
 	);
