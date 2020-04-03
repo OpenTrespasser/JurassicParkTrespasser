@@ -147,7 +147,7 @@ public:
 	//
 	void ParseProps
 	(
-		const CHandle&				h_obj,				// Handle to the object in the value table.
+		const ::CHandle&				h_obj,				// Handle to the object in the value table.
 		const CGroffObjectName*		pgon,
 		CValueTable*				pvtable,			// Pointer to the value table.
 		CLoadWorld*					pload				// the loader.
