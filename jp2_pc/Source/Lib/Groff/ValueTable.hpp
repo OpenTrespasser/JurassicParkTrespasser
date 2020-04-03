@@ -156,9 +156,9 @@ class CBaseValue
 	EVarType	evtVarType;			// The type of value we are looking at.
 	EVarScope	evsVarScope;		// Variable scope classification.
 	ERefStatus	ersRefStatus;		// State of the resolution of this variable. 
-	CHandle		hValueHandle;		// Handle to this value entry record.
-	CHandle		hSymbolHandle;		// Handle to this symbol.
-	CHandle		hTargetHandle;		// Handle to the target symbol.
+	::CHandle		hValueHandle;		// Handle to this value entry record.
+	::CHandle		hSymbolHandle;		// Handle to this symbol.
+	::CHandle		hTargetHandle;		// Handle to the target symbol.
 
 public:
 
@@ -174,7 +174,7 @@ public:
 	(
 		const EVarType	evt_var_type,
 		const EVarScope evs_var_scope,
-		const CHandle	h_symbol_handle
+		const ::CHandle	h_symbol_handle
 	);
 
 
@@ -192,13 +192,13 @@ public:
 	//
 	void Handle
 	(
-		const CHandle& h_value_handle
+		const ::CHandle& h_value_handle
 	);
 
 
 	//******************************************************************************************
 	//
-	CHandle hHandle
+	::CHandle hHandle
 	(
 	) const;
 
@@ -207,13 +207,13 @@ public:
 	//
 	void Symbol
 	(
-		const CHandle& h_symbol_handle
+		const ::CHandle& h_symbol_handle
 	);
 
 
 	//******************************************************************************************
 	//
-	const CHandle& hSymbol
+	const ::CHandle& hSymbol
 	(
 	) const;
 
@@ -237,13 +237,13 @@ public:
 	//
 	void Target
 	(
-		const CHandle& h_target_handle
+		const ::CHandle& h_target_handle
 	);
 
 
 	//******************************************************************************************
 	//
-	const CHandle& hTarget
+	const ::CHandle& hTarget
 	(
 	) const;
 
@@ -349,7 +349,7 @@ public:
 	CBoolValue
 	(
 		const EVarScope	evs_var_scope,
-		const CHandle	h_symbol_handle,
+		const ::CHandle	h_symbol_handle,
 		const bool		b_value
 	);
 
@@ -465,7 +465,7 @@ public:
 	CCharValue
 	(
 		const EVarScope	evs_var_scope,
-		const CHandle	h_symbol_handle,
+		const ::CHandle	h_symbol_handle,
 		const char		c_value
 	);
 
@@ -578,7 +578,7 @@ public:
 	CIntValue
 	(
 		const EVarScope	evs_var_scope,
-		const CHandle	h_symbol_handle,
+		const ::CHandle	h_symbol_handle,
 		const int		i_value
 	);
 
@@ -692,7 +692,7 @@ public:
 	CFloatValue
 	(
 		const EVarScope	evs_var_scope,
-		const CHandle	h_symbol_handle,
+		const ::CHandle	h_symbol_handle,
 		const float		f_value
 	);
 
@@ -806,7 +806,7 @@ public:
 	CStringValue
 	(
 		const EVarScope		evs_var_scope,
-		const CHandle		h_symbol_handle,
+		const ::CHandle		h_symbol_handle,
 		const CEasyString	estr_string
 	);
 
@@ -899,15 +899,15 @@ class CHandleList
 {
 private:
 	int			i_count;					// Number of elements.
-	CHandle		ah_static[i_static_size];	// Statically allocated handles.
+	::CHandle		ah_static[i_static_size];	// Statically allocated handles.
 	int			i_buf_size;					// Allocated size.
-	CHandle*	ph_array;					// Array of allocated handles.
+	::CHandle*	ph_array;					// Array of allocated handles.
 
 	// Re-allocate the allocated array.
 	void reallocate(int i_alloc_size)
 	{
 		// Allocate new buffer.
-		CHandle* ph_new = new CHandle[i_alloc_size];
+		::CHandle* ph_new = new ::CHandle[i_alloc_size];
 
 		if (ph_array)
 		{
@@ -954,7 +954,7 @@ public:
 		delete[] ph_array;
 	}
 
-	const CHandle& operator[] (const int index) const
+	const ::CHandle& operator[] (const int index) const
 	{
 		if (index < i_static_size)
 			return ah_static[index];
@@ -983,7 +983,7 @@ public:
 		return i_count;
 	}
 
-	void push_back(const CHandle& h_handle)
+	void push_back(const ::CHandle& h_handle)
 	{
 		if (i_count < 4)
 		{
@@ -1025,7 +1025,7 @@ public:
 	CObjectValue
 	(
 		const EVarScope	evs_var_scope,		// Scope of visibility of this object.
-		const CHandle	h_symbol_handle		// Handle to the symbol for this object.
+		const ::CHandle	h_symbol_handle		// Handle to the symbol for this object.
 	);
 
 
@@ -1047,13 +1047,13 @@ public:
 	//
 	uint uAddElement
 	(
-		const CHandle& h_handle
+		const ::CHandle& h_handle
 	);
 	
 
 	//******************************************************************************************
 	//
-	const CHandle& hElementHandle
+	const ::CHandle& hElementHandle
 	(
 		const uint u_index
 	);
@@ -1121,7 +1121,7 @@ class CValueTable : public CNewSymbolTable
 	CHandleManager								hmgrManager;
 
 	// Provide fast access to the value record through it's handle. 
-	std::map< CHandle, CBaseValue*, std::less<CHandle> >	aviValueIndex;
+	std::map< ::CHandle, CBaseValue*, std::less<::CHandle> >	aviValueIndex;
 
 public:
 
@@ -1149,7 +1149,7 @@ public:
 
 	//******************************************************************************************
 	//
-	CHandle hBaseValue
+	::CHandle hBaseValue
 	(
 		CBaseValue* pbasev_value
 	);
@@ -1160,7 +1160,7 @@ public:
 
 	CBaseValue& operator[]
 	(
-		const CHandle& h_handle
+		const ::CHandle& h_handle
 	);
 
 
