@@ -25,7 +25,7 @@
 #define HEADER_LIB_TRANSFORM_TRANSFORMIO_HPP
 
 #include "Transform.hpp"
-#include <iostream.h>
+#include <iostream>
 
 //*********************************************************************************************
 //
@@ -33,13 +33,13 @@
 //
 
 	//*********************************************************************************************
-	template<class T> ostream& operator <<(ostream& os, const CVector2<T>& v2)
+	template<class T> std::ostream& operator <<(std::ostream& os, const CVector2<T>& v2)
 	{
 		return os << v2.tX << ' ' << v2.tY;
 	}
 
 	//*********************************************************************************************
-	template<class T> istream& operator >>(istream& is, CVector2<T>& v2)
+	template<class T> std::istream& operator >>(std::istream& is, CVector2<T>& v2)
 	{
 		return is >> v2.tX >> v2.tY;
 	}
@@ -50,13 +50,13 @@
 //
 
 	//*********************************************************************************************
-	template<class T> ostream& operator <<(ostream& os, const CVector3<T>& v3)
+	template<class T> std::ostream& operator <<(std::ostream& os, const CVector3<T>& v3)
 	{
 		return os << v3.tX << ' ' << v3.tY << ' ' << v3.tZ;
 	}
 
 	//*********************************************************************************************
-	template<class T> istream& operator >>(istream& is, CVector3<T>& v3)
+	template<class T> std::istream& operator >>(std::istream& is, CVector3<T>& v3)
 	{
 		return is >> v3.tX >> v3.tY >> v3.tZ;
 	}
@@ -67,13 +67,13 @@
 //
 
 	//*********************************************************************************************
-	template<class T> ostream& operator <<(ostream& os, const CRotate3<T>& r3)
+	template<class T> std::ostream& operator <<(std::ostream& os, const CRotate3<T>& r3)
 	{
 		return os << r3.tC << ' ' << r3.v3S;
 	}
 
 	//*********************************************************************************************
-	template<class T> istream& operator >>(istream& is, CRotate3<T>& r3)
+	template<class T> std::istream& operator >>(std::istream& is, CRotate3<T>& r3)
 	{
 		T t_c;
 		CVector3<T> v3;
@@ -90,13 +90,13 @@
 //
 
 	//*********************************************************************************************
-	template<class T> ostream& operator <<(ostream& os, const CPlacement3<T>& p3)
+	template<class T> std::ostream& operator <<(std::ostream& os, const CPlacement3<T>& p3)
 	{
 		return os << p3.v3Pos << ' ' << p3.r3Rot;
 	}
 
 	//*********************************************************************************************
-	template<class T> istream& operator >>(istream& is, CPlacement3<T>& p3)
+	template<class T> std::istream& operator >>(std::istream& is, CPlacement3<T>& p3)
 	{
 		return is >> p3.v3Pos >> p3.r3Rot;
 	}
