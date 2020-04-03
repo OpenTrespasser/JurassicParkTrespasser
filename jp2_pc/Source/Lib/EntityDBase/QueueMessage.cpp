@@ -138,7 +138,7 @@
 		//
 		while (!pdqwmCurrentMessages->empty())
 		{
-			(pdqwmCurrentMessages->front())->Send();
+			pdqwmCurrentMessages->front().front()->Send();
 			pdqwmCurrentMessages->pop();
 		}
 		
