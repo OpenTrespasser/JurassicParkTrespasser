@@ -289,10 +289,7 @@ public:
 
 private:
 
-	class CPartition::CPriv;
-
 	friend class CPartition;
-	friend class CPartition::CPriv;
 	friend float CPartitionSpace::fDistanceFromGlobalCameraSqr() const;
 	friend float CInstance::fDistanceFromGlobalCameraSqr() const;
 
