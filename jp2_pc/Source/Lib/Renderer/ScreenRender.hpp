@@ -323,7 +323,10 @@ struct SRenderCoord
 	};
 	CVector3<>		v3Screen;			// Screen X, Y and 1/Z coords.
 
-	SRenderCoord() : iYScr(0) {}
+	SRenderCoord() : v3Cam()
+	{
+		static_assert(sizeof(v3Cam) >= sizeof(iYScr)); //Ensure we init the biggest union member
+	}
 };
 
 //**********************************************************************************************
