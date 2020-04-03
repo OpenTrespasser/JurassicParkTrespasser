@@ -143,7 +143,7 @@ public:
 	float		   fScale;				// The scaling factor for the object.
 
 	/* Version 12 - GROFF file format changes. */
-	CHandle		   hAttributeHandle;	// A handle to the object value container.
+	::CHandle		   hAttributeHandle;	// A handle to the object value container.
 
 	//******************************************************************************************
 	//
@@ -211,7 +211,7 @@ public:
 	float		   fScale;					// Unit cube scale value.
 	
 	/* Version 12 - GROFF file format changes. */
-	CHandle		   hAttributeHandle;		// Handle to object base-value container in value table.
+	::CHandle		   hAttributeHandle;		// Handle to object base-value container in value table.
 	bool		   bDoneLoading;			// True when the object has correctly loaded.  This
 											// really does not belong in this structure!!!
 
@@ -239,7 +239,7 @@ public:
 		fvector3	   fv3_position,
 		fvector3	   fv3_rotation,
 		float		   f_scale,
-		CHandle		   h_handle				// Attribute handle.	(Version 12 Changes)
+		::CHandle		   h_handle				// Attribute handle.	(Version 12 Changes)
 	);
 	//
 	// Returns:
@@ -289,7 +289,7 @@ public:
 		fvector3		fv3_position,
 		fvector3		fv3_rotation,
 		float			f_scale,
-		CHandle			h_handle			// Attribute handle.	(Version 12 Changes)
+		::CHandle			h_handle			// Attribute handle.	(Version 12 Changes)
 	);
 	//
 	// Returns:
