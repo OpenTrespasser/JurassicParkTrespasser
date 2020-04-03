@@ -143,6 +143,32 @@ public:
 	virtual ~CPartitionSpace();
 
 
+	//Copy constructor
+	CPartitionSpace(const CPartitionSpace& other)
+		: CPartition(other),
+		v3Position(other.v3Position),
+		bvbBox(other.bvbBox)
+	{
+		//Copy only box, assuming it is the largest union member
+		static_assert(sizeof(bviInfinite) <= sizeof(bvbBox) && sizeof(bvsSphere) <= sizeof(bvbBox));
+	}
+
+	//Copy assignment operator
+	CPartitionSpace& operator=(const CPartitionSpace& other)
+	{
+		if (this == &other)
+			return *this;
+
+		CPartition::operator =(other); //Parent class
+		v3Position = other.v3Position;
+		
+		//Copy only box, assuming it is the largest union member
+		static_assert(sizeof(bviInfinite) <= sizeof(bvbBox) && sizeof(bvsSphere) <= sizeof(bvbBox));
+		bvbBox = other.bvbBox;
+		
+		return *this;
+	}
+	
 	//*****************************************************************************************
 	//
 	// Member functions.
