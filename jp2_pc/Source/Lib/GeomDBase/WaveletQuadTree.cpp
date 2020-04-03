@@ -523,7 +523,7 @@ namespace NMultiResolution
 
 
 	// Constant used in expressions to avoid crummy code generation by the fucked-up compiler.
-	static const CQuadNodeTIN::TState stMASK_TRI = Set(CQuadNodeTIN::estLEAF) + CQuadNodeTIN::estLEAF_COMBINE;
+	static const CQuadNodeTIN::TState stMASK_TRI = CQuadNodeTIN::TState() + CQuadNodeTIN::estLEAF + CQuadNodeTIN::estLEAF_COMBINE;
 
 	//******************************************************************************************
 	int CQuadNodeTIN::iEvaluateBranch(const CQuadRootTIN* pqntin_root)
