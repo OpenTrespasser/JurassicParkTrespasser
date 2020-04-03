@@ -147,7 +147,7 @@
 #ifndef HEADER_LIB_TYPES_FIXEDP_HPP
 #define HEADER_LIB_TYPES_FIXEDP_HPP
 
-#include <function.h>
+#include <functional>
 #include "Lib/Math/FloatDef.hpp"
 
 
@@ -312,9 +312,33 @@ public:
 	}
 
 
+	forceinline bool operator !=(fixed fx) const
+	{
+		return i4Fx != fx.i4Fx;
+	}
+
+
 	forceinline bool operator <(fixed fx) const
 	{
 		return i4Fx < fx.i4Fx;
+	}
+
+
+	forceinline bool operator <=(fixed fx) const
+	{
+		return i4Fx <= fx.i4Fx;
+	}
+
+
+	forceinline bool operator >(fixed fx) const
+	{
+		return i4Fx > fx.i4Fx;
+	}
+
+
+	forceinline bool operator >=(fixed fx) const
+	{
+		return i4Fx >= fx.i4Fx;
 	}
 
 
