@@ -492,6 +492,7 @@ public:
 	//**********************************
 		FN_TRACK_RPTR
 
+/*
 protected:
 
 	// delete is unavailable to the general public, because you should never delete these objects!
@@ -501,6 +502,14 @@ protected:
 		::operator delete(pv);
 	}
 
+	//Unfortunately, CRefObjs are often deleted anyway,
+	//especially when not used in an rptr context.
+	//The compiler also complains when CRefObjs are used with
+	//rptr_new and rptr_cast.
+
+	//As a workaround until all that is sorted out,
+	//using the delete operator as public is permitted.
+*/
 };
 
 #if VER_TRACK_RPTR
