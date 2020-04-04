@@ -20,21 +20,7 @@
 #ifndef HEADER_TOOLS_GROFFEXP_STANDARDTYPES_HPP
 #define HEADER_TOOLS_GROFFEXP_STANDARDTYPES_HPP
 
-//
-// Define boolean type, if it hasn't been defined.
-//
-
-#ifndef bool
-#define bool int
-#endif
-
-#ifndef false
-#define false 0
-#endif
-
-#ifndef true
-#define true 1
-#endif
+#include "Lib/Groff/Groff.hpp"
 
 //
 // Define signed scalar types.
@@ -73,61 +59,6 @@ typedef unsigned short int uint16;
 typedef unsigned int uint32;
 #endif
 
-
-//
-// Define the floating point 2 and 3 element vector types.
-//
-
-#ifndef fvector2
-typedef struct 
-//
-// Prefix: fv2
-//
-{
-	float X;
-	float Y;
-} fvector2;
-#endif
-
-#ifndef fvector3
-typedef struct 
-//
-// Prefix: fv3
-//
-{
-	float X;
-	float Y;
-	float Z;
-} fvector3;
-#endif
-
-
-//
-// Define the unsigned integer 2 and 3 element vector types.
-//
-
-#ifndef uvector2
-typedef struct 
-//
-// Prefix: uv2
-//
-{
-	uint	X;
-	uint	Y;
-} uvector2;
-#endif
-
-#ifndef uvector3
-typedef struct 
-//
-// Prefix: uv3
-//
-{
-	uint	X;
-	uint	Y;
-	uint	Z;
-} uvector3;
-#endif
 
 
 //
