@@ -19,10 +19,10 @@
 
 #include "Array.hpp"
 
-#include <iostream.h>
+#include <iostream>
 
 //******************************************************************************************
-template<class T, class A> ostream& operator <<(ostream& os, CArrayT<T, A> a)
+template<class T, class A> std::ostream& operator <<(std::ostream& os, CArrayT<T, A> a)
 {
 	for (int i = 0; i < a.size(); i++)
 		os << a[i] << ' ';
