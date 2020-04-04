@@ -1740,7 +1740,7 @@ void CObjectDefList::Dump()
 		sl_glog.Printf("\nObject faces: %d\n", pod_node->uFaceCount);
 
 		// Dump the object faces
-		for (u_i = 0; u_i < pod_node->uFaceCount; u_i++)
+		for (uint u_i = 0; u_i < pod_node->uFaceCount; u_i++)
 		{
 			// Display the vertex
 			sl_glog.Printf("Face %4d: x -> %4d, y -> %4d, z -> %4d\n", u_i, 
@@ -1750,7 +1750,7 @@ void CObjectDefList::Dump()
 		sl_glog.Printf("\nObject face normals: %d\n", pod_node->uFaceNormalCount);
 
 		// Dump the object normals
-		for (u_i = 0; u_i < pod_node->uFaceNormalCount; u_i++)
+		for (uint u_i = 0; u_i < pod_node->uFaceNormalCount; u_i++)
 		{
 			// Display the normals
 			sl_glog.Printf("Normal %4d: x -> %.3f, y -> %3.f, z -> %.3f\n", u_i, 
@@ -1760,7 +1760,7 @@ void CObjectDefList::Dump()
 		sl_glog.Printf("\nObject face vertex normals: %d\n", pod_node->uVertexNormalCount);
 
 		// Dump the object normals
-		for (u_i = 0; u_i < pod_node->uVertexNormalCount; u_i+=3)
+		for (uint u_i = 0; u_i < pod_node->uVertexNormalCount; u_i+=3)
 		{
 			// Display the vertex normals.
 			sl_glog.Printf("Face %4d: Vertex 0: x -> %.3f, y -> %.3f, z -> %.3f\n", u_i/3, 
@@ -1779,7 +1779,7 @@ void CObjectDefList::Dump()
 			sl_glog.Printf("\nObject texture vertices: %d\n", pod_node->uTextureVertexCount);
 
 			// Dump the object vertices
-			for (u_i = 0; u_i < pod_node->uTextureVertexCount; u_i++)
+			for (uint u_i = 0; u_i < pod_node->uTextureVertexCount; u_i++)
 			{
 				// Display the texture vertices
 				sl_glog.Printf("Texture vertex %4d: u -> %.3f, v -> %.3f\n", u_i, 
@@ -1793,7 +1793,7 @@ void CObjectDefList::Dump()
 			if (pod_node->uMaterialCount == 1)
 			{
 				// Dump the object faces
-				for (u_i = 0; u_i < pod_node->uTextureFaceCount; u_i++)
+				for (uint u_i = 0; u_i < pod_node->uTextureFaceCount; u_i++)
 				{
 					// Display the texture faces
 					sl_glog.Printf("Texture face %4d: x -> %4d, y -> %4d, z -> %4d\n", u_i, 
@@ -1866,7 +1866,7 @@ void CObjectDefList::Dump()
 			else
 			{
 				// Dump the object faces
-				for (u_i = 0; u_i < pod_node->uTextureFaceCount; u_i++)
+				for (uint u_i = 0; u_i < pod_node->uTextureFaceCount; u_i++)
 				{
 					// Display the texture faces
 					sl_glog.Printf("Texture face %4d: x -> %4d, y -> %4d, z -> %4d\n", u_i, 
@@ -1877,7 +1877,7 @@ void CObjectDefList::Dump()
 				sl_glog.Printf("Object materials: %d\n", (int) pod_node->uMaterialCount);
 
 				// Dump the object faces
-				for (u_i = 0; u_i < pod_node->uMaterialCount; u_i++)
+				for (uint u_i = 0; u_i < pod_node->uMaterialCount; u_i++)
 				{
 					// Display any materials which may be present.
 					if (pod_node->astrTextureMap != 0)
