@@ -40,7 +40,7 @@
 
 #define __TAB__
 
-#include <iostream.h>
+#include <iostream>
 #include <malloc.h>
 
 typedef int CNT;
