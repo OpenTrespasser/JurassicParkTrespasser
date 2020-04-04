@@ -1265,9 +1265,9 @@ void TestSilhouetteStep()
 
 // The idea is to make a box and rotate it a lot and make sure that it looks good.
 
-	static i_stage = 0;
-	static i_substage = 0;
-	static i_subsubstage = 0;
+	static int i_stage = 0;
+	static int i_substage = 0;
+	static int i_subsubstage = 0;
 
 	if (psilTestBoxSilhouette)
 		delete psilTestBoxSilhouette;
