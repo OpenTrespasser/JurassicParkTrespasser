@@ -285,6 +285,7 @@
 #include "Common.hpp"
 #include "TestPipeLine.hpp"
 
+#include "Lib/EntityDBase/EntityLight.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/ScreenRender.hpp"
 #include "Lib/Renderer/Light.hpp"
@@ -297,6 +298,7 @@
 #include "Test/Test3DObjs.hpp"
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
 #include "Lib/EntityDBase/GameLoop.hpp"
+#include "Lib/Sys/ConIO.hpp"
 
 
 #define angFIELD_OF_VIEW_INCR	(CAngle)dDegreesToRadians(2)
