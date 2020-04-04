@@ -4,6 +4,7 @@
 #include "CollisionEditor.h"
 #include "database.h"
 #include "EditMaterialDlg.h"
+#include "resource.h"
 
 
 #ifdef _DEBUG
@@ -923,7 +924,7 @@ bool bFileExist(LPCSTR fname)
 {
 	HANDLE	load;
 
-	string str_fname = CAudio::pcaAudio->GetBasePathName();
+	std::string str_fname = CAudio::pcaAudio->GetBasePathName();
 	str_fname += fname;
 
 	load=CreateFile(str_fname.c_str(),GENERIC_READ,FILE_SHARE_READ,NULL,
