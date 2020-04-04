@@ -377,7 +377,7 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
 
 			// Delete renderer stuff if required.
 			if (g_CTPassGlobals.bInGame)
-				destroy(&prasMainScreen);
+				std::destroy_at(&prasMainScreen);
         }
 
         m_pUIMgr->m_bActive = FALSE;
