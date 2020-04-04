@@ -58,6 +58,7 @@ namespace NMultiResolution
 {
 	class CQuadNodeTIN;
 	class CQuadRootTIN;
+	class CScheduleTerrainTextureItem;
 
 	//Default amount memory to allocate for terrain textures, in KB.
 	#define iDEFAULT_TERRAIN_TEXTURE_MEMORY_KB					1200
@@ -88,6 +89,7 @@ namespace NMultiResolution
 	private:
 		class CPriv;
 		friend class CPriv;
+		friend class CScheduleTerrainTextureItem;
 
 		friend class CBlockAllocator<CTextureNode>;
 		static CBlockAllocator<CTextureNode>::SStore stStore; // Storage for the types.
