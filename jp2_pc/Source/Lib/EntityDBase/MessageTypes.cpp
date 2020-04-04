@@ -283,7 +283,7 @@ extern CProfileStat psMsgSubscribe, psMoveMsgQuery;
 	{
 		CMessageTrigger* pmsg_new = new(frhFrameHeap) CMessageTrigger(ptrGetActivatedTrigger());
 		*pmsg_new = *this;
-		qmQueueMessage.pdqwmNextMessages->push(pmsg_new);
+		qmQueueMessage.pdqwmNextMessages->push({ pmsg_new });
 	}
 
 
@@ -769,5 +769,5 @@ namespace
 	{
 		CMessageAudio* pmsg_new = new(frhFrameHeap) CMessageAudio();
 		*pmsg_new = *this;
-		qmQueueMessage.pdqwmNextMessages->push(pmsg_new);
+		qmQueueMessage.pdqwmNextMessages->push({ pmsg_new });
 	}

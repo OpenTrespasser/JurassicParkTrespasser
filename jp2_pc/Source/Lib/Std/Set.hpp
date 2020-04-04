@@ -302,6 +302,18 @@ public:
 			u4Mask |= 1<<i;
 			return *this;
 		}
+
+		forceinline CSetHelper(const CSetHelper& other) : CSetHelperConst(other) {}
+
+		forceinline CSetHelper& operator=(const CSetHelper& other)
+		{
+			if (this == &other)
+				return *this;
+			
+			*this = static_cast<int>(other); //Call other copy-assignment operator
+
+			return *this;
+		}
 	};
 
 	//******************************************************************************************

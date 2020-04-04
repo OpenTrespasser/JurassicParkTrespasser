@@ -528,7 +528,7 @@ public:
 
 	//******************************************************************************************
 	//
-	forceinline N::TData operator*()
+	forceinline typename N::TData operator*()
 	//
 	// Dereferences the data associated with the iterator.
 	//
@@ -637,7 +637,7 @@ public:
 
 	//******************************************************************************************
 	//
-	forceinline N::TData operator*()
+	forceinline typename N::TData operator*()
 	//
 	// Dereferences the data associated with the iterator.
 	//
@@ -765,7 +765,7 @@ public:
 
 	//******************************************************************************************
 	//
-	forceinline N::TData& operator*()
+	forceinline typename N::TData& operator*()
 	//
 	// Dereferences the data associated with the iterator.
 	//
@@ -1286,8 +1286,8 @@ public:
 //
 // Static variables for memory allocation.
 //
-template<class K, class T> CTreeList<K, T>::TNode* CTreeList<K, T>::ptreeAllocator;
-template<class K, class T> CTreeList<K, T>::TNode* CTreeList<K, T>::ptreeMaxAllocation;
+template<class K, class T> typename CTreeList<K, T>::TNode* CTreeList<K, T>::ptreeAllocator;
+template<class K, class T> typename CTreeList<K, T>::TNode* CTreeList<K, T>::ptreeMaxAllocation;
 template<class K, class T> CFastHeap* CTreeList<K, T>::pfhAllocator;
 
 

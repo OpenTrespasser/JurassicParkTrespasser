@@ -65,7 +65,7 @@ template<class C, class T> class CIteratorFilter
 public:
 
 	C* pContainer;				// Pointer to the STL container.
-	C::iterator itContainer;	// Iterator for the STL container.
+	typename C::iterator itContainer;	// Iterator for the STL container.
 
 public:
 
