@@ -7,6 +7,12 @@ list(APPEND WaveTest_Src
 
 add_common_options()
 
+include_directories(
+    ${CMAKE_SOURCE_DIR}/Source
+    ${CMAKE_SOURCE_DIR}/Source/gblinc
+    ${CMAKE_SOURCE_DIR}/Inc
+)
+
 add_executable(${PROJECT_NAME} WIN32 ${WaveTest_Src})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER Tests)
