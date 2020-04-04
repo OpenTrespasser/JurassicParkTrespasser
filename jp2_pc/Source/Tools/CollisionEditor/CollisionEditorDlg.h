@@ -4,6 +4,8 @@
 /////////////////////////////////////////////////////////////////////////////
 // CCollisionEditorDlg dialog
 
+#include "resource.h"
+
 class CCollisionEditorDlg : public CDialog
 {
 // Construction
