@@ -1,12 +1,12 @@
 #include "stdafx.h"
-#include "bstring.h"
-#include "set.h"
+#include <string>
+#include <set>
 #include "Database.h"
 #include "CollisionEditor.h"
 #include "SampleListDlg.h"
 
 
-#include <fstream.h>
+#include <fstream>
 #include <ctype.h>
 
 
