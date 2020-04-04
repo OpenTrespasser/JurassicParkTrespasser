@@ -203,7 +203,7 @@ void CConfigureWnd::InitializeResolutions()
 	wsprintf(str_desc, "%ld x %ld", i_width, i_height);
 
     // Select this in the Adapter listing
-    i = ComboBox_SelectString(m_hwndResolutions, -1, str_desc);
+    int i = ComboBox_SelectString(m_hwndResolutions, -1, str_desc);
     if (i == CB_ERR)
     {
 	    // Set the first device as the default.
