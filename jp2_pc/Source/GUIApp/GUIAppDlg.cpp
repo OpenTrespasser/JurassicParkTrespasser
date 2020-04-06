@@ -7033,7 +7033,7 @@ void CGUIAppDlg::ExitApp()
 	// shut the performance system
 	PSClose();
 
-	destroy(&prasMainScreen);
+	std::destroy_at(&prasMainScreen);
 }
 
 BOOL CGUIAppDlg::DestroyWindow() 
