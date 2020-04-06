@@ -17,7 +17,7 @@
 #include <strbasic.h>
 #include <windows.h>
 #include <windowsx.h>
-#include <ctl3d.h>
+//#include <ctl3d.h>
 #include <commctrl.h>
 
 // Some standard library includes
