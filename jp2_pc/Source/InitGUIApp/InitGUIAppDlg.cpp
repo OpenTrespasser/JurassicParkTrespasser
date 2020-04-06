@@ -8,7 +8,7 @@
 #include "../Lib/Sys/reg.h"
 #include "../Lib/Sys/RegInit.hpp"
 #include "DDDevice.hpp"
-#include "c:/jp2_pc/source/lib/w95/Direct3DQuery.hpp"
+#include "lib/w95/Direct3DQuery.hpp"
 
 int iNumDDDevices = 0;			// Number of DD devices.
 SDDDevice addDevices[100];		// More DD devices than can exist.

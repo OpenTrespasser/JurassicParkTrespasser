@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "TweakNVidia128.h"
 #include "TweakNVidia128Dlg.h"
-#include "c:\jp2_pc\inc\directx\ddraw.h"
+#include "ddraw.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
