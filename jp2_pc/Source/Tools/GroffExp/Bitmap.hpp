@@ -29,7 +29,7 @@
 #ifndef HEADER_TOOLS_BITMAP_HPP
 #define HEADER_TOOLS_BITMAP_HPP
 
-#include <fstream.h>
+#include <fstream>
 #include <stdio.h>
 
 

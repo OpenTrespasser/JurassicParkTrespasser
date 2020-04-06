@@ -67,7 +67,7 @@ BOOL CUIManager::Attach(CUIWnd * puiwnd)
 BOOL CUIManager::Detach(CUIWnd * puiwnd)
 {
     BOOL                            bRet = FALSE;
-    vector<CUIWnd *>::iterator      i;
+    std::vector<CUIWnd *>::iterator      i;
 
     for (i = m_vUIWnd.end(); i >= m_vUIWnd.begin(); i--)
     {
@@ -120,14 +120,14 @@ void CUIManager::DrawWindowChain(LPBYTE pbDst,
                                  int iDstBytes,
                                  RECT * prcClip)
 {
-    vector<CUIWnd *>::iterator      i;
+    std::vector<CUIWnd *>::iterator      i;
 
     if (m_vUIWnd.size() == 0)
     {
         return;
     }
 
-    for (i = m_vUIWnd.begin(); i < m_vUIWnd.end() && i; i++)
+    for (i = m_vUIWnd.begin(); i < m_vUIWnd.end() && *i; i++)
     {
         (*i)->DrawIntoSurface(pbDst, 
                               iDstWidth, 
@@ -141,14 +141,14 @@ void CUIManager::DrawWindowChain(LPBYTE pbDst,
 
 void CUIManager::DrawWindowChain(CRaster * pRaster, RECT * prcClip)
 {
-    vector<CUIWnd *>::iterator      i;
+    std::vector<CUIWnd *>::iterator      i;
 
     if (m_vUIWnd.size() == 0)
     {
         return;
     }
 
-    for (i = m_vUIWnd.begin(); i < m_vUIWnd.end() && i; i++)
+    for (i = m_vUIWnd.begin(); i < m_vUIWnd.end() && *i; i++)
     {
         (*i)->DrawIntoSurface(pRaster, prcClip);
     }
@@ -157,14 +157,14 @@ void CUIManager::DrawWindowChain(CRaster * pRaster, RECT * prcClip)
 
 void CUIManager::ResizeScreen()
 {
-    vector<CUIWnd *>::iterator      i;
+    std::vector<CUIWnd *>::iterator      i;
     int                             iWidth;
     int                             iHeight;
 
     iWidth = prasMainScreen->iWidthFront;
     iHeight = prasMainScreen->iHeightFront;
 
-    for (i = m_vUIWnd.begin(); i < m_vUIWnd.end() && i; i++)
+    for (i = m_vUIWnd.begin(); i < m_vUIWnd.end() && *i; i++)
     {
         (*i)->ResizeScreen(iWidth, iHeight);
     }
@@ -525,14 +525,14 @@ BOOL CUIWnd::AddToUICtrlSet(CUICtrl * pctrl)
 
 void CUIWnd::DoUIHandling()
 {
-    vector<CUICtrl*>::iterator      i;
+    std::vector<CUICtrl*>::iterator      i;
 
     if (m_vUICtrls.size() == 0)
     {
         return;
     }
 
-    for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && i; i--)
+    for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && *i; i--)
     {
         (*i)->DoFrame(m_pUIMgr->m_ptMouse);
     }
@@ -664,14 +664,14 @@ void CUIWnd::DrawUICtrls(LPBYTE pbDst,
                          int iDstBytes,
                          RECT * prc)
 {
-    vector<CUICtrl *>::iterator     i;
+    std::vector<CUICtrl *>::iterator     i;
 
     if (m_pUIMgr->GetActiveUIWnd() != this)
     {
         return;
     }
 
-    for (i = m_vUICtrls.begin(); i < m_vUICtrls.end() && i; i++)
+    for (i = m_vUICtrls.begin(); i < m_vUICtrls.end() && *i; i++)
     {
         (*i)->Draw(pbDst, iDstWidth, iDstHeight, iDstPitch, iDstBytes, prc);
     }
@@ -680,14 +680,14 @@ void CUIWnd::DrawUICtrls(LPBYTE pbDst,
 
 void CUIWnd::DrawUICtrls(CRaster * pRaster, RECT * prc)
 {
-    vector<CUICtrl *>::iterator     i;
+    std::vector<CUICtrl *>::iterator     i;
 
     if (m_pUIMgr->GetActiveUIWnd() != this)
     {
         return;
     }
 
-    for (i = m_vUICtrls.begin(); i < m_vUICtrls.end() && i; i++)
+    for (i = m_vUICtrls.begin(); i < m_vUICtrls.end() && *i; i++)
     {
         (*i)->Draw(pRaster, prc);
     }
@@ -919,8 +919,8 @@ Error:
 
 BOOL CUIWnd::OnCreate()
 {
-    vector<CUIWnd *>::iterator  iuiwnd;
-    vector<CUICtrl*>::iterator  iuictrl;
+    std::vector<CUIWnd *>::iterator  iuiwnd;
+    std::vector<CUICtrl*>::iterator  iuictrl;
 
     BOOL        bRet;
 	POINT		pt;
@@ -931,7 +931,7 @@ BOOL CUIWnd::OnCreate()
     if (iuiwnd >= m_pUIMgr->m_vUIWnd.begin())
     {
         for (iuictrl = (*iuiwnd)->m_vUICtrls.begin();
-             iuictrl < (*iuiwnd)->m_vUICtrls.end() && iuictrl;
+             iuictrl < (*iuiwnd)->m_vUICtrls.end() && *iuictrl;
              iuictrl++)
         {
             pt.x = pt.y = -1;
@@ -961,7 +961,7 @@ Error:
 
 void CUIWnd::OnDestroy()
 {
-    vector<CUICtrl*>::iterator      iuictrl;
+    std::vector<CUICtrl*>::iterator      iuictrl;
 
     InvalidateRect(NULL);
 
@@ -979,7 +979,7 @@ void CUIWnd::OnDestroy()
 
 CUICtrl * CUIWnd::GetUICtrl(DWORD dwID)
 {
-    vector<CUICtrl*>::iterator      iuictrl;
+    std::vector<CUICtrl*>::iterator      iuictrl;
 
     for (iuictrl = m_vUICtrls.begin(); 
          iuictrl < m_vUICtrls.end();
@@ -1012,14 +1012,14 @@ void CUIWnd::OnMouseMove(int x, int y, UINT keyFlags)
 
 void CUIWnd::OnLButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags)
 {
-    vector<CUICtrl*>::iterator          i;
+    std::vector<CUICtrl*>::iterator          i;
 
     if (m_vUICtrls.size() == 0)
     {
         return;
     }
 
-    for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && i; i--)
+    for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && *i; i--)
     {
         if (*i && 
             (*i)->HitTest(m_pUIMgr->m_ptMouse.x, m_pUIMgr->m_ptMouse.y) &&
@@ -1041,14 +1041,14 @@ void CUIWnd::OnLButtonUp(int x, int y, UINT keyFlags)
     }
     else
     {
-        vector<CUICtrl*>::iterator          i;
+        std::vector<CUICtrl*>::iterator          i;
 
         if (m_vUICtrls.size() == 0)
         {
             return;
         }
 
-        for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && i; i--)
+        for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && *i; i--)
         {
             if (*i && 
                 (*i)->HitTest(m_pUIMgr->m_ptMouse.x, m_pUIMgr->m_ptMouse.y) &&

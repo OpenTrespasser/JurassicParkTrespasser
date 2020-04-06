@@ -34,7 +34,7 @@
 
 #include "Lib/Transform/Vector.hpp"
 
-#include <list.h>
+#include <list>
 
 #pragma warning(disable: 4355)
 
@@ -55,7 +55,7 @@ class CConnection
 //**************************************
 {
 public:
-	list<CController*> lsControls;
+	std::list<CController*> lsControls;
 
 	//******************************************************************************************
 	//

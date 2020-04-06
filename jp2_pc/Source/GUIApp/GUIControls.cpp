@@ -39,14 +39,14 @@
 	//******************************************************************************************
 	void CConnection::DDX(CDataExchange* pDX)
 	{
-		for (list<CController*>::iterator itls = lsControls.begin(); itls != lsControls.end(); ++itls)
+		for (std::list<CController*>::iterator itls = lsControls.begin(); itls != lsControls.end(); ++itls)
 			(*itls)->DDX(pDX);
 	}
 
 	//******************************************************************************************
 	void CConnection::Display()
 	{
-		for (list<CController*>::iterator itls = lsControls.begin(); itls != lsControls.end(); ++itls)
+		for (std::list<CController*>::iterator itls = lsControls.begin(); itls != lsControls.end(); ++itls)
 			(*itls)->Display();
 	}
 

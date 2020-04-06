@@ -31,7 +31,7 @@
 #include <memory.h>
 #include <string.h>
 #include <stdio.h>
-#include <fstream.h>
+#include <fstream>
 
 #include "max.h"
 #include "bmmlib.h"
@@ -1026,7 +1026,7 @@ CBitmapImage& CBitmapImage::operator =(CBitmapImage& bmi_src)
 		if (!bCreate(bmi_src.biBitmapInfo()))
 		{
 			// Bad situation has occurred.  We are out of heap memory.  Blow up for now.
-			assert(0);
+			Assert(0);
 		}
 
 		// Get a copy of the bitmap info for the host.
@@ -1395,7 +1395,7 @@ bool CBitmapUtil::bMeanColor(CBitmapImage& bmi_bitmap_image, SColor24& c24_mean_
 bool CBmpBitmap::bDetectBitmap(const char* str_bitmap_name)
 {
 	// Attempt to open the file and see if it exists.
-	ifstream ifile(str_bitmap_name, ios::binary | ios::nocreate);
+	std::ifstream ifile(str_bitmap_name, std::ios::binary | std::ios::_Nocreate);
 
 	// Were we able to open the file?
 	if (!ifile)
@@ -1408,7 +1408,7 @@ bool CBmpBitmap::bDetectBitmap(const char* str_bitmap_name)
 	SFileHeader fh_file_header;
 
 	// Read in the file header.
-	ifile.read((uint8 *) &fh_file_header, sizeof(SFileHeader));
+	ifile.read((char *) &fh_file_header, sizeof(SFileHeader));
 
 	ifile.close();
 
@@ -1429,7 +1429,7 @@ bool CBmpBitmap::bRead(const char* str_bitmap_name, CBitmapImage& bmi_bitmap_ima
 	}
 
 	// Attempt to open the bitmap file.
-	ifstream ifile(str_bitmap_name, ios::binary | ios::nocreate);
+	std::ifstream ifile(str_bitmap_name, std::ios::binary | std::ios::_Nocreate);
 
 	// Were we successful?
 	if (!ifile)
@@ -1442,7 +1442,7 @@ bool CBmpBitmap::bRead(const char* str_bitmap_name, CBitmapImage& bmi_bitmap_ima
 	SFileHeader fh_file_header;
 
 	// Read in the file header.
-	ifile.read((uint8 *) &fh_file_header, sizeof(SFileHeader));
+	ifile.read((char *) &fh_file_header, sizeof(SFileHeader));
 
 	// Is this a Windows bitmap?
 	if (fh_file_header.u2FileType != WINDOWS_BMP_MAGIC_NUMBER)
@@ -1457,7 +1457,7 @@ bool CBmpBitmap::bRead(const char* str_bitmap_name, CBitmapImage& bmi_bitmap_ima
 	SBitmapHeader bmh_bitmap_header;
 
 	// Read in the file header.
-	ifile.read((uint8 *) &bmh_bitmap_header, sizeof(SBitmapHeader));
+	ifile.read((char *) &bmh_bitmap_header, sizeof(SBitmapHeader));
 
 	// Is this a Windows bitmap?
 	if (bmh_bitmap_header.uHeaderSize != sizeof(SBitmapHeader))
@@ -1515,7 +1515,7 @@ bool CBmpBitmap::bRead(const char* str_bitmap_name, CBitmapImage& bmi_bitmap_ima
 	ifile.seekg(0);
 
 	// Read in the entire file.
-	ifile.read(u1_buffer, fh_file_header.uFileSize);
+	ifile.read((char*)u1_buffer, fh_file_header.uFileSize);
 
 	// Close the file since the image is now entirely located in the smart buffer.
 	ifile.close();
@@ -1601,7 +1601,7 @@ bool CBmpBitmap::bRead(const char* str_bitmap_name, CBitmapImage& bmi_bitmap_ima
 		int* pi_buffer = (int *) (u1_buffer + fh_file_header.uBitmapOffset);
 		
 		// Loop through the scanlines and load them into the image data.
-		for (u_i = 0; u_i < (uint) bmh_bitmap_header.lHeight; u_i++)
+		for (uint u_i = 0; u_i < (uint) bmh_bitmap_header.lHeight; u_i++)
 		{
 			// Attempt to write the data into the bitmap image buffer.  Were we successful?
 			if (bmi_bitmap_image.uSetPalettedPixels(0, u_i, bmh_bitmap_header.lWidth, (uint8 *) pi_buffer) != (uint) bmh_bitmap_header.lWidth)
@@ -1868,7 +1868,7 @@ bool CBmpBitmap::bWrite(CBitmapImage& bmi_bitmap_image)
 	// Is this buffer the correct size?
 
 	// Attempt to open the output file.
-	ofstream ofile(bi_bitmap_info.strName(), ios::binary | ios::trunc);
+	std::ofstream ofile(bi_bitmap_info.strName(), std::ios::binary | std::ios::trunc);
 
 	// Were we able to open the file?
 	if (!ofile)

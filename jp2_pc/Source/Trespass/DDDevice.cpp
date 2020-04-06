@@ -118,9 +118,9 @@
 #include "../Lib/Sys/Reg.h"
 
 #if (1)
-	#include "/jp2_pc/inc/DirectX/ddraw.h"
+	#include "ddraw.h"
 	#define D3D_OVERLOADS
-	#include "/jp2_pc/inc/DirectX/d3d.h"
+	#include "d3d.h"
 #endif
 
 #include "Lib/Sys/DebugConsole.hpp"
@@ -693,7 +693,7 @@ CEnumerateDevices::CEnumerateDevices()
 			&Devices[i].d3dDevice
 		);
 	}
-	for (i = iNumDevices - 1; i >= 0; --i)
+	for (int i = iNumDevices - 1; i >= 0; --i)
 	{
 		if (!Devices[i].bD3DDeviceFound)
 			RemoveDevice(i);

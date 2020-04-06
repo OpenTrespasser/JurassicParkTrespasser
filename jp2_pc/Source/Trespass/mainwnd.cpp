@@ -377,7 +377,7 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
 
 			// Delete renderer stuff if required.
 			if (g_CTPassGlobals.bInGame)
-				destroy(&prasMainScreen);
+				std::destroy_at(&prasMainScreen);
         }
 
         m_pUIMgr->m_bActive = FALSE;
@@ -434,7 +434,7 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
 
 void CMainWnd::OnTimer(HWND hwnd, UINT id)
 {
-    vector<CUIWnd *>::iterator      i;
+    std::vector<CUIWnd *>::iterator      i;
 
     for (i = m_pUIMgr->m_vUIWnd.end() - 1; i >= m_pUIMgr->m_vUIWnd.begin(); i--)
     {

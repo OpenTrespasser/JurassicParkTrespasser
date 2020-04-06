@@ -100,7 +100,7 @@ class CTestWall;
 
 //*********************************************************************************************
 //
-class CWDbQueryTestShape : CContainer< list<CInstance*> >
+class CWDbQueryTestShape : CContainer< std::list<CInstance*> >
 //class CWDbQueryTestShape : list<CInstance*>
 //
 // World database query container.
@@ -168,7 +168,7 @@ public:
 
 //*********************************************************************************************
 //
-class CWDbQueryTest : public CContainer< list<CTest*> >
+class CWDbQueryTest : public CContainer< std::list<CTest*> >
 //class CWDbQueryTest : public list<CTest*>
 //
 // World database query container.
@@ -231,7 +231,7 @@ public:
 
 //*********************************************************************************************
 //
-class CWDbQueryTestWall : public CContainer< list<CTestWall*> >
+class CWDbQueryTestWall : public CContainer< std::list<CTestWall*> >
 //class CWDbQueryTestWall : public list<CTestWall*>
 //
 // World database query container.

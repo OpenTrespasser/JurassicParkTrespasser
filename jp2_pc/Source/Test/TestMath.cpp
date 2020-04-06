@@ -55,6 +55,7 @@
 #include "Lib/Std/Random.hpp"
 #include "Lib/Math/FastSqrt.hpp"
 #include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/ConIO.hpp"
 #include "Shell/AppShell.hpp"
 #include "Shell/AppShell.hpp"
 #include "TestMath.hpp"

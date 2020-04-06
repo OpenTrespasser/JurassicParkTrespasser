@@ -903,7 +903,7 @@ LRESULT CGUIAppDlg::OnIdle(WPARAM wParam, LPARAM lParam)
 	// Check for pending save.
 	if (wWorld.bIsSavePending())
 	{
-		const string &strName = wWorld.strGetPendingSave();
+		const std::string &strName = wWorld.strGetPendingSave();
 
 		// Stop simulation.
 		CMessageSystem(escSTOP_SIM).Dispatch();
@@ -919,7 +919,7 @@ LRESULT CGUIAppDlg::OnIdle(WPARAM wParam, LPARAM lParam)
 	// Check for pending level load.
 	if (wWorld.bIsLoadPending())
 	{
-		const string &strName = wWorld.strGetPendingLoad();
+		const std::string &strName = wWorld.strGetPendingLoad();
 
 		char szFile[_MAX_PATH];
 
@@ -1291,20 +1291,20 @@ int CGUIAppDlg::OnCreate
 		// Redraw the screen.
 		PaintWindow();
 
-		string str_full = strConvertTRRFileName;
+		std::string str_full = strConvertTRRFileName;
 
 		int i_first_colon_pos  = str_full.find(':');
 		int i_second_colon_pos = str_full.find(':', i_first_colon_pos + 1);
 
 		// Remove extension from filename.
-		string str_filename     = str_full.substr(0, str_full.find('.'));
-		string str_filename_ext = str_full.substr(str_full.find('.') + 1, 3);
+		std::string str_filename     = str_full.substr(0, str_full.find('.'));
+		std::string str_filename_ext = str_full.substr(str_full.find('.') + 1, 3);
 
 		if (str_filename_ext == "trr")
 		{
 			AlwaysAssert(i_second_colon_pos == -1);
 
-			string str_number = str_full.substr(i_first_colon_pos + 1);
+			std::string str_number = str_full.substr(i_first_colon_pos + 1);
 
 			char* str_dummy;
 			double d_number = strtod(str_number.c_str(), &str_dummy);
@@ -1314,8 +1314,8 @@ int CGUIAppDlg::OnCreate
 		else if (str_filename_ext == "wtd")
 		{
 			AlwaysAssert(i_second_colon_pos != -1);
-
-			string str_number = str_full.substr(i_first_colon_pos + 1, i_second_colon_pos - i_first_colon_pos - 1);
+			
+			std::string str_number = str_full.substr(i_first_colon_pos + 1, i_second_colon_pos - i_first_colon_pos - 1);
 
 			char* str_dummy;
 			double d_number = strtod(str_number.c_str(), &str_dummy);
@@ -2191,7 +2191,7 @@ static void AbbreviateName(LPTSTR lpszCanon, int cchMax, BOOL bAtLeastName)
 	// If cchMax isn't enough to hold at least the basename, we're done
 	if (cchMax < cchFileName)
 	{
-		lstrcpy(lpszCanon, (bAtLeastName) ? lpszFileName : &afxChNil);
+		lstrcpy(lpszCanon, (bAtLeastName) ? lpszFileName : "");
 		return;
 	}
 
@@ -6452,7 +6452,7 @@ void CGUIAppDlg::OnNameSelect()
 				pins = wWorld.ppartPartitions->pinsFindInstance(u4_hash);
 			}
 			else
-				pins = wWorld.ppartPartitions->pinsFindNamedInstance(basic_string<char>(ds.strText));
+				pins = wWorld.ppartPartitions->pinsFindNamedInstance(std::basic_string<char>(ds.strText));
 		}
 
 		wWorld.Select(pins, true);
@@ -7033,7 +7033,7 @@ void CGUIAppDlg::ExitApp()
 	// shut the performance system
 	PSClose();
 
-	destroy(&prasMainScreen);
+	std::destroy_at(&prasMainScreen);
 }
 
 BOOL CGUIAppDlg::DestroyWindow() 

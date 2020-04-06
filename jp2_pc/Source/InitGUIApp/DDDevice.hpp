@@ -70,7 +70,7 @@ struct SResolution
 	int iWidth;
 	int iHeight;
 	int iRefreshHz;
-	static iResolutionsCount;
+	static int iResolutionsCount;
 };
 
 BOOL bFindResolutions(GUID& guid, SResolution* ar, int& ri_num_resolutions);

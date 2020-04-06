@@ -56,7 +56,7 @@
 #include "Lib/Std/LocalArray.hpp"
 #include <float.h>
 #include <math.h>
-#include <algo.h>
+#include <algorithm>
 
 
 extern CGUIAppDlg* pappdlgMainWindow;
@@ -208,10 +208,10 @@ void CPipeLine::Select(CPartition* ppart, bool b_augment)
 			if (pins)
 			{
 				// Auto-select other instances that are attached by magnets.
-				list<CMagnetPair*> lspmp;
+				std::list<CMagnetPair*> lspmp;
 				NMagnetSystem::GetAttachedMagnets(pins, &lspmp);
 
-				forall (lspmp, list<CMagnetPair*>, itpmp)
+				forall (lspmp, std::list<CMagnetPair*>, itpmp)
 				{
 					if ((*itpmp)->pinsSlave)
 					{
