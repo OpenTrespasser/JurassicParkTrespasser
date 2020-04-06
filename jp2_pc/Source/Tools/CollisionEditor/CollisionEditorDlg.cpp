@@ -10,7 +10,6 @@
 #include "Database.h"
 #include "EditMaterialDlg.h"
 #include "SampleListDlg.h"
-#include "resource.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
