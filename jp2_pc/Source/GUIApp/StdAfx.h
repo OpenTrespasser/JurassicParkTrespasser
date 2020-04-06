@@ -62,6 +62,10 @@
 #pragma warning(disable: 4666)
 #endif
 
+#undef DIRECT3D_VERSION //Defined somewhere in the MFC headers for Direct3D 9+
+#define DIRECT3D_VERSION 0x0700 //We must set the correct version here to use old Direct3D
+
+
 // MFC includes.
 #include <afxwin.h>         // MFC core and standard components
 #include <afxext.h>         // MFC extensions

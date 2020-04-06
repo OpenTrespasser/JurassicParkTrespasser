@@ -4,7 +4,7 @@
 #ifdef __MWERKS__
  #include "Shell\WinShell.rc"
 #else
- #include "\jp2_pc\Source\Shell\WinShell.rc"
+ #include "Shell\WinShell.rc"
 #endif
 
 #ifdef APSTUDIO_INVOKED
