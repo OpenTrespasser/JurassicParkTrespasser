@@ -279,7 +279,7 @@ public:
     void ActualLoad();
 
     CUIListbox *            m_pSaveGameList;
-    vector<SAVEGAMEINFO>    m_vInfo;
+    std::vector<SAVEGAMEINFO>    m_vInfo;
 };
 
 
@@ -306,7 +306,7 @@ public:
 
     CUIEditbox *            m_pGameName;
     CUIListbox *            m_pSaveGameList;
-    vector<SAVEGAMEINFO>    m_vInfo;
+    std::vector<SAVEGAMEINFO>    m_vInfo;
 };
 
 

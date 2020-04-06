@@ -83,7 +83,7 @@ struct SResolution
 	int iWidth;
 	int iHeight;
 	int iRefreshHz;
-	static iResolutionsCount;
+	static int iResolutionsCount;
 
 	SResolution()
 		: iWidth(0), iHeight(0), iRefreshHz(0)

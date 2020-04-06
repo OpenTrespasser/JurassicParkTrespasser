@@ -17,7 +17,7 @@
 #ifndef __UIWND_H__
 #define __UIWND_H__
 
-#include <vector.h>
+#include <vector>
 
 #include "ctrls.h"
 
@@ -68,7 +68,7 @@ public:
     WORD            m_wTransColor;
     CUICtrl *       m_pUICtrlMouseCaptured;
 
-    vector<CUIWnd *>> m_vUIWnd;
+    std::vector<CUIWnd *> m_vUIWnd;
 
 };
 
@@ -83,7 +83,7 @@ public:
     DWORD       m_dwExitValue;      // exit value of UIWnd handler
 
     RECT        m_rc;               // window rect
-    vector<CUICtrl *>> m_vUICtrls;
+    std::vector<CUICtrl *> m_vUICtrls;
 
     CRaster *   m_pRaster;          // Background To Draw
 	static BOOL bIgnoreSysKey;

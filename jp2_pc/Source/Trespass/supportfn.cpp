@@ -354,9 +354,9 @@ void CenterUIWindow(CUIWnd * puiwnd)
         return;
     }
 
-    vector<CUICtrl *>::iterator      i;
+    std::vector<CUICtrl *>::iterator      i;
 
-    for (i = puiwnd->m_vUICtrls.begin(); i < puiwnd->m_vUICtrls.end() && i; i++)
+    for (i = puiwnd->m_vUICtrls.begin(); i < puiwnd->m_vUICtrls.end() && *i; i++)
     {
         (*i)->GetRect(&rcClient);
         OffsetRect(&rcClient, x, y);
