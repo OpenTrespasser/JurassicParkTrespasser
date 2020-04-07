@@ -128,7 +128,7 @@ public:
 	//
 	static const CMagnet* pmagFindShared
 	(
-		const CHandle&	h, 
+		const ::CHandle&	h,
 		CObjectValue*	poval_cmagnet, 
 		CValueTable*	pvt, 
 		CLoadWorld*		pload
@@ -158,7 +158,7 @@ public:
 	(
 		CGroffObjectName* pgon,
 		CLoadWorld*	pload,
-		const CHandle& h,
+		const ::CHandle& h,
 		CValueTable* pvt
 	);
 	//
@@ -170,7 +170,7 @@ public:
 	(
 		CGroffObjectName* pgon,
 		CLoadWorld*	pload,
-		const CHandle& h,
+		const ::CHandle& h,
 		CValueTable* pvt
 	);
 	//

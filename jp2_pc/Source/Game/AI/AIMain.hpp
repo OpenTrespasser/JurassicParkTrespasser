@@ -353,7 +353,7 @@ public:
 		(
 			CGroffObjectName* pgon,
 			 CLoadWorld*	pload,
-			 const CHandle& h,
+			 const ::CHandle& h,
 			 CValueTable* pvt,
 			 const CInfo* pinfo
 		);
