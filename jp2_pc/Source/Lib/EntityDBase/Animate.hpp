@@ -247,7 +247,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				pload,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -265,7 +265,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				pload,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);
@@ -544,7 +544,7 @@ public:
 	(
 		const CGroffObjectName*	pgon,		// Object to load.
 		CLoadWorld*				pload,		// The loader.
-		const CHandle&			h_object,	// handle of object in value table.
+		const ::CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
 	);

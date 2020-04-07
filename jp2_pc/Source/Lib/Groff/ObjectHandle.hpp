@@ -264,7 +264,7 @@ public:
 // Define the "NULL" handle.
 //
 
-static const CHandle hNULL_HANDLE;
+static const ::CHandle hNULL_HANDLE;
 
 
 //**********************************************************************************************
@@ -349,7 +349,7 @@ public:
 
 	//******************************************************************************************
 	//
-	CHandle hNext
+	::CHandle hNext
 	(
 	);
 

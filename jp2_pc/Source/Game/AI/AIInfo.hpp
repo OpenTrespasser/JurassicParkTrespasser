@@ -148,7 +148,7 @@ public:
 	CAIInfo
 	(
 		const CGroffObjectName*		pgon,
-		const CHandle&				h_obj,				// Handle to the object in the value table.
+		const ::CHandle&				h_obj,				// Handle to the object in the value table.
 		CValueTable*				pvtable,			// Pointer to the value table.
 		CLoadWorld*					pload				// the loader.
 	);
@@ -204,7 +204,7 @@ public:
 	static const CAIInfo* paiiFindShared
 	(
 		const CGroffObjectName*			pgon,
-		const CHandle&				h_obj,				// Handle to the object in the value table.
+		const ::CHandle&				h_obj,				// Handle to the object in the value table.
 		CValueTable*				pvtable,			// Pointer to the value table.
 		CLoadWorld*					pload				// the loader.
 	);
