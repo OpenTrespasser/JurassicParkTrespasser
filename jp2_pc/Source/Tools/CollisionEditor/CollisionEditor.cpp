@@ -43,18 +43,6 @@ bool bIsTrespasser = false;
 CCollisionEditorApp theApp;
 
 
-void __cdecl dprintf(char* str,...)
-{
-	char	buf[256];
-
-	va_list argptr;
-	va_start (argptr,str);
-	vsprintf (buf,str,argptr);
-	va_end (argptr);
-
-	OutputDebugString(buf);
-}
-
 
 /////////////////////////////////////////////////////////////////////////////
 // CCollisionEditorApp initialization

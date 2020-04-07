@@ -1,6 +1,8 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CSampleListDlg dialog used for App About
+#include "resource.h"
+
 class CSampleListDlg : public CDialog
 {
 public:

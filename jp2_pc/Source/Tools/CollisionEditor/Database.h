@@ -4,12 +4,12 @@
 #include "stdafx.h"
 #include "Lib/audio/Soundtypes.hpp"
 #include "Lib/audio/audioloader.hpp"
-#include "vector.h"
-#include "set.h"
-#include "map.h"
+#include <vector>
+#include <set>
+#include <map>
 #include "Lib/std/CRC.hpp"
 #include "crtdbg.h"
-#include <fstream.h>
+#include <fstream>
 #include <ctype.h>
 
 #pragma warning(disable:4786)
@@ -149,16 +149,16 @@ struct SCollision
 
 #pragma pack (pop)
 
-typedef vector<SEffect> TEffectVector;
+typedef std::vector<SEffect> TEffectVector;
 // prefix ev
 
-typedef vector<SMaterialListElement> TMaterialVector;
+typedef std::vector<SMaterialListElement> TMaterialVector;
 // prefix mv
 
-typedef map<CString, SSampleFile*, less<CString> > TFilePosHash;
+typedef std::map<CString, SSampleFile*, std::less<CString> > TFilePosHash;
 // prefix fph
 
-typedef map<uint64, SCollision, less<uint64> > TCollisionMap;
+typedef std::map<uint64, SCollision, std::less<uint64> > TCollisionMap;
 // prefix cm
 
 
@@ -191,7 +191,7 @@ public:
 	void Reset();
 
 	//*****************************************************************************************
-	void SaveTextTransfer(ofstream& file, SCollisionSample& csm);
+	void SaveTextTransfer(std::ofstream& file, SCollisionSample& csm);
 
 	//*****************************************************************************************
 	uint32 u4Hash(const char* str)
@@ -429,7 +429,7 @@ public:
 		}
 
 		// Now erase the material from the material list
-		for (i = mvMaterials.begin(); i<mvMaterials.end(); ++i)
+		for (auto i = mvMaterials.begin(); i<mvMaterials.end(); ++i)
 		{
 			if ( (*i).u4Hash == u4_hash )
 			{
@@ -465,7 +465,7 @@ public:
 		}
 
 		// Now fill the old material list element with the new data
-		for (i = mvMaterials.begin(); i<mvMaterials.end(); ++i)
+		for (auto i = mvMaterials.begin(); i<mvMaterials.end(); ++i)
 		{
 			if ( (*i).u4Hash == u4_hash )
 			{
@@ -600,7 +600,7 @@ extern bool bFileExtension(const char* str_filename, const char* str_ext);
 extern uint32 u4FileSize(const char* str_filename);
 extern void LoadFile(const char* str_filename, void* pv_data);
 extern uint32 u4Hash(const void* pv, int i_size, bool string);
-const char* strGetLine(ifstream& file);
+const char* strGetLine(std::ifstream& file);
 
 extern CEffectDatabase	edbEffects;
 

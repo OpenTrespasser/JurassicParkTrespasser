@@ -5,8 +5,8 @@
 
 #include "CollisionEditor.h"
 #include "CollisionEditorDlg.h"
-#include "bstring.h"
-#include "set.h"
+#include <string>
+#include <set>
 #include "Database.h"
 #include "EditMaterialDlg.h"
 #include "SampleListDlg.h"
