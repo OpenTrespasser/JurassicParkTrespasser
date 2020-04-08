@@ -9,6 +9,12 @@ string(APPEND CMAKE_CXX_FLAGS " /MP /GF")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+#Linker flag required by the self-modifying assembly code in DrawSubTriangle in project ScreenRenderDWI
+#Can be removed after assembly code has been replaced
+#ERW = Execute, read, write
+string(APPEND CMAKE_EXE_LINKER_FLAGS " /SECTION:SelfMod,ERW")
+string(APPEND CMAKE_SHARED_LINKER_FLAGS " /SECTION:SelfMod,ERW")
+
 
 set(USE_TRESPASSER_DIRECTORY TRUE CACHE BOOL INTERNAL)
 
