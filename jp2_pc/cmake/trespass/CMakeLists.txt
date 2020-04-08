@@ -81,7 +81,12 @@ target_link_libraries(${PROJECT_NAME}
     View
 
     comctl32
-    lz32
+    lz32    
+    winmm
+
+    ddraw
+    dsound
+    dxguid
 
     ${CMAKE_SOURCE_DIR}/lib/smacker/SMACKW32.LIB
 )
