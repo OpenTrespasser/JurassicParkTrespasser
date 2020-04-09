@@ -37,6 +37,7 @@
 #include "Lib/Sys/W95/Render.hpp"
 #include "PhysicsTestShell.hpp"
 #include "PhysicsTest.hpp"
+#include "Lib/Loader/Loader.hpp"
 
 
 //
@@ -283,3 +284,14 @@ void WindowsEvent(uint u_message, WPARAM wp_param, LPARAM lp_param)
 			break;
 	}
 }
+
+
+//Global variables and functions declared elsewhere as extern
+//needed by the libraries
+bool bIsTrespasser = false;
+bool bUseReplayFile = false;
+bool bInvertMouse = false;
+bool bUseOutputFiles = false;
+unsigned int g_u4NotifyParam = 0;
+unsigned int u4LookupResourceString(int, char*, unsigned int) { return 0; }
+PFNWORLDLOADNOTIFY g_pfnWorldLoadNotify = nullptr;

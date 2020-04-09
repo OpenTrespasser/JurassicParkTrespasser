@@ -56,6 +56,7 @@
 #include "Lib/Math/FastSqrt.hpp"
 #include "Lib/Sys/TextOut.hpp"
 #include "Lib/Sys/ConIO.hpp"
+#include "Lib/Loader/Loader.hpp"
 #include "Shell/AppShell.hpp"
 #include "Shell/AppShell.hpp"
 #include "TestMath.hpp"
@@ -185,3 +186,15 @@ public:
 
 
 CAppShell* pappMain = new CAppShellTestMath;
+
+
+//Global variables and functions declared elsewhere as extern
+//needed by the libraries
+bool bIsTrespasser = false;
+bool bUseReplayFile = false;
+bool bInvertMouse = false;
+bool bUseOutputFiles = false;
+unsigned int g_u4NotifyParam = 0;
+unsigned int u4LookupResourceString(int, char*, unsigned int) { return 0; }
+void LineColour(int,int,int) {}
+PFNWORLDLOADNOTIFY g_pfnWorldLoadNotify = nullptr;

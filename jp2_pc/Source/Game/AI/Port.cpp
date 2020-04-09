@@ -34,8 +34,6 @@ void DrawSilhouette(const CSilhouette*){}
 
 void DrawFeeling(const CFeeling &, const CVector2<>&){}
 
-void LineColour(int,int,int){}
-
 bool IsMenuItemChecked(unsigned int){return false;}
 
 void Line(CVector2<>, CVector2<>){}
