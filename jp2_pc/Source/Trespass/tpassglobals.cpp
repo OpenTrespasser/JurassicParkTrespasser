@@ -36,6 +36,7 @@ const float                 g_afGamma[10] =
     0.0f,
 };
 
+void LineColour(int, int, int) {}
 
 uint32 __stdcall TPassLoadNotify(uint32 dwContext, 
                                  uint32 dwParam1, 
