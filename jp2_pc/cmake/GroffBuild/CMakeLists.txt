@@ -52,4 +52,9 @@ target_link_libraries(${PROJECT_NAME}
     lz32
     version
     comctl32
+    winmm
+
+    dxguid
+    dsound
+    ddraw
 )

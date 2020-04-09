@@ -43,4 +43,9 @@ target_link_libraries(${PROJECT_NAME}
     WinShell
 
     lz32
+    winmm
+
+    dxguid
+    dsound
+    ddraw
 )
