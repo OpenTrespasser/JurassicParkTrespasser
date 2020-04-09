@@ -12,6 +12,11 @@ list(APPEND WinShell_Src
     ${CMAKE_SOURCE_DIR}/Source/Shell/winshell.cpp
 )
 
+list(APPEND WinShell_Rsc
+    ${CMAKE_SOURCE_DIR}/Source/Shell/WinShell.rc
+
+)
+
 include_directories(
     ${CMAKE_SOURCE_DIR}/Source
     ${CMAKE_SOURCE_DIR}/Source/gblinc
@@ -19,6 +24,6 @@ include_directories(
 
 add_common_options()
 
-add_library(${PROJECT_NAME} STATIC ${WinShell_Inc} ${WinShell_Src} )
+add_library(${PROJECT_NAME} STATIC ${WinShell_Inc} ${WinShell_Src} ${WinShell_Rsc} )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER Tests)
