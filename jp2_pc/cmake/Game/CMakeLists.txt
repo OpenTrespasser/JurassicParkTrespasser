@@ -17,7 +17,6 @@ list(APPEND Game_Inc
 )
 
 list(APPEND Game_Src
-    ${CMAKE_SOURCE_DIR}/Source/Lib/File/Image.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Trigger/Action.cpp
     ${CMAKE_SOURCE_DIR}/Source/Game/DesignDaemon/BloodSplat.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Trigger/BooleanTrigger.cpp
