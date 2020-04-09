@@ -3714,3 +3714,18 @@ int JP2Export::DoExport(const TCHAR* tchr_export_filename, ExpInterface* pei_exp
 	// Set the GUI interface pointer to null.
 	return true;                                                  
 }
+
+
+//Global variables and functions declared elsewhere as extern
+//needed by the libraries
+bool bIsTrespasser = false;
+bool bUseReplayFile = false;
+bool bInvertMouse = false;
+bool bUseOutputFiles = false;
+unsigned int g_u4NotifyParam = 0;
+unsigned int u4LookupResourceString(int, char*, unsigned int) { return 0; }
+void LineColour(int, int, int) {}
+void* hwndGetMainHwnd() { return nullptr; }
+HINSTANCE hinstGetMainHInstance() { return nullptr; }
+void ResetAppData() {}
+PFNWORLDLOADNOTIFY g_pfnWorldLoadNotify = nullptr;
