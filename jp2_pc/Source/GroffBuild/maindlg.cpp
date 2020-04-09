@@ -22,7 +22,7 @@
 #include "dialogs.h"
 #include "main.h"
 #include "utils.h"
-#include "reg.h"
+#include "Lib/Sys/reg.h"
 
 extern HINSTANCE    g_hInst;
 

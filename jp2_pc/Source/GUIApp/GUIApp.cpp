@@ -1389,3 +1389,7 @@ float fGetFloatFromString(char* str_float)
 	Verify(sscanf(str_float, "%f", &f) == 1);
 	return f;
 }
+
+//Global variables and functions declared elsewhere as extern
+//needed by the libraries
+void LineColour(int, int, int) {}
