@@ -1,7 +1,6 @@
 project(GeomDBase)
 
 list(APPEND GeomDBase_Inc
-    ${CMAKE_SOURCE_DIR}/Source/Lib/File/Image.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/GeomDBase/ClipMesh.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/EntityDBase/Container.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/GeomTypes.hpp
@@ -37,7 +36,6 @@ list(APPEND GeomDBase_Inc
 )
 
 list(APPEND GeomDBase_Src
-    ${CMAKE_SOURCE_DIR}/Source/Lib/File/Image.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/GeomDBase/ClipMesh.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/GeomTypes.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/GeomTypesBox.cpp
