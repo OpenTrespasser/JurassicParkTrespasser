@@ -9,6 +9,10 @@ list(APPEND Audio_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/AudioVOICE.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/SoundDefs.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/SoundTypes.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/eax.h
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/Ia3d.h
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/Material.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Audio/Subtitle.hpp
 )
 
 list(APPEND Audio_Src
