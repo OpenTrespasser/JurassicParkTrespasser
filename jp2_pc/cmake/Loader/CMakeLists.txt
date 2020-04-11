@@ -23,6 +23,8 @@ list(APPEND Loader_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/Loader/TextureManager.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Loader/TexturePackSurface.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Groff/ValueTable.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Loader/SaveBuffer.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Groff/VTParse.hpp
 )
 
 list(APPEND Loader_Src
