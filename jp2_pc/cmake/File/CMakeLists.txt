@@ -3,6 +3,7 @@ project(File)
 list(APPEND File_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/File/Image.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/File/Section.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/File/Spec.hpp
 )
 
 list(APPEND File_Src
