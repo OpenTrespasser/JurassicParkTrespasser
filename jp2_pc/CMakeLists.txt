@@ -67,3 +67,25 @@ add_subdirectory(cmake/TweakTrespass)
 add_subdirectory(cmake/View)
 add_subdirectory(cmake/WaveTest)
 add_subdirectory(cmake/WinShell)
+
+
+
+set(DEACTIVATE_BROKEN_PROJECTS TRUE CACHE BOOL INTERNAL)
+
+if (DEACTIVATE_BROKEN_PROJECTS)
+    list(APPEND BROKEN_PROJECTS
+        Bugs
+        CollisionEditor
+        Examples
+        InitGUIApp
+        ProcessorDetect
+        PipelineTest
+        QuantizerToolCLI
+        TweakTrespass
+        WaveTest
+    )
+    foreach(broken ${BROKEN_PROJECTS})
+        set_target_properties(${broken} PROPERTIES EXCLUDE_FROM_ALL true)
+        set_target_properties(${broken} PROPERTIES EXCLUDE_FROM_DEFAULT_BUILD true)
+    endforeach()
+endif()
