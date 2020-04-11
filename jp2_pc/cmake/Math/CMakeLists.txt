@@ -19,6 +19,10 @@ list(APPEND Math_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Transform/TransLinear.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Transform/Vector.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Transform/VectorRange.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Types/BigFixed.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Types/FixedP.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Types/P5/FixedPEx.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Math/FloatShort.hpp
 )
 
 list(APPEND Math_Src
