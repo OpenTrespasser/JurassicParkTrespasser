@@ -84,8 +84,9 @@ if (DEACTIVATE_BROKEN_PROJECTS)
         TweakTrespass
         WaveTest
     )
+    
     foreach(broken ${BROKEN_PROJECTS})
-        set_target_properties(${broken} PROPERTIES EXCLUDE_FROM_ALL true)
-        set_target_properties(${broken} PROPERTIES EXCLUDE_FROM_DEFAULT_BUILD true)
+        set_target_properties(${broken} PROPERTIES EXCLUDE_FROM_ALL true)             #When building the ALL_BUILD project
+        set_target_properties(${broken} PROPERTIES EXCLUDE_FROM_DEFAULT_BUILD true)   #When building the entire solution
     endforeach()
 endif()
