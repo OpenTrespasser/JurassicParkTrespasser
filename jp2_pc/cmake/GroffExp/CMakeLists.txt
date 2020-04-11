@@ -15,6 +15,7 @@ list(APPEND GroffExp_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/Sys/Symtab.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Sys/SysLog.hpp
     ${CMAKE_SOURCE_DIR}/Source/Tools/GroffExp/GroffExp.h
+    ${CMAKE_SOURCE_DIR}/Source/Tools/GroffExp/StandardTypes.hpp
 )
 
 list(APPEND GroffExp_Rsc
