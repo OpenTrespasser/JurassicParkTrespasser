@@ -21,6 +21,13 @@ list(APPEND Render3D_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/Shadow.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/Sky.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/Texture.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/SkyPoly.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/ShapePresence.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/screenrenderauxd3dutilities.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/RenderDefs.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/Line2D.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/LineSide2DTest.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/Overlay.hpp
 )
 
 list(APPEND Render3D_Src
