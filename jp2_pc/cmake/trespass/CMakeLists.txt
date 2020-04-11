@@ -19,6 +19,7 @@ ${CMAKE_SOURCE_DIR}/Source/Trespass/token.h
 ${CMAKE_SOURCE_DIR}/Source/Trespass/tpassglobals.h
 ${CMAKE_SOURCE_DIR}/Source/Trespass/uidlgs.h
 ${CMAKE_SOURCE_DIR}/Source/Trespass/uiwnd.h
+${CMAKE_SOURCE_DIR}/Source/Trespass/resource.h
 )
 
 list(APPEND trespass_Src    
