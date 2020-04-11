@@ -26,6 +26,14 @@ list(APPEND System_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/ThreadControl.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Sys/VirtualMem.hpp
     ${CMAKE_SOURCE_DIR}/Source/shell/winrendertools.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/W95/Errors.h
+    ${CMAKE_SOURCE_DIR}/Source/Lib/W95/WinAlias.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/W95/WinInclude.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/Timer.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/ThreadActionBase.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/FileEx.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/TextOut.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/P5/Msr.hpp
 )
 
 list(APPEND System_Src
@@ -57,6 +65,10 @@ list(APPEND System_Src
     ${CMAKE_SOURCE_DIR}/Source/Shell/WinRenderTools.cpp
 )
 
+list(APPEND System_Rsc
+    ${CMAKE_SOURCE_DIR}/Source/Lib/W95/Errors.rc
+)
+
 include_directories(
     ${CMAKE_SOURCE_DIR}/Source
     ${CMAKE_SOURCE_DIR}/Source/gblinc
@@ -64,6 +76,6 @@ include_directories(
 
 add_common_options()
 
-add_library(${PROJECT_NAME} STATIC ${System_Inc} ${System_Src} )
+add_library(${PROJECT_NAME} STATIC ${System_Inc} ${System_Src} ${System_Rsc} )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER Lib/Util)
