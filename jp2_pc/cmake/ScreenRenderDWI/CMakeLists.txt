@@ -18,6 +18,15 @@ list(APPEND ScreenRenderDWI_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/screenrenderdwi.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/Walk.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/P6/WalkEx.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/RenderCacheInterface.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/RenderCacheLRUItem.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/ColLookupT.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/Edge.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/IndexPerspectiveT.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/LineBumpMake.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/MapT.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/ScanLine.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Renderer/Primitives/TransparencyT.hpp
 )
 
 list(APPEND ScreenRenderDWI_Src

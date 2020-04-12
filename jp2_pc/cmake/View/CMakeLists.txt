@@ -25,6 +25,9 @@ list(APPEND View_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/View/RasterPool.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/RasterVid.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/View/Viewport.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/View/ColourT.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/View/Video.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/W95//Direct3DCards.hpp
 )
 
 list(APPEND View_Src

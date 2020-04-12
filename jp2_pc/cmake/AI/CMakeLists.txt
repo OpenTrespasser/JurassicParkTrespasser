@@ -27,6 +27,14 @@ list(APPEND AI_Inc
     ${CMAKE_SOURCE_DIR}/Source/Game/AI/Synthesizer.hpp
     ${CMAKE_SOURCE_DIR}/Source/Game/AI/TestActivities.hpp
     ${CMAKE_SOURCE_DIR}/Source/Game/AI/WorldView.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/ActivityEnum.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/Classes.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/Feeling.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/Graph.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/Modifier.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/ActivityEnum.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/Rating.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/AI/PathFailure.hpp
 )
 
 list(APPEND AI_Src

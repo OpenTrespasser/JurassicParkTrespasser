@@ -1,7 +1,6 @@
 project(Physics)
 
 list(APPEND Physics_Inc
-    ${CMAKE_SOURCE_DIR}/source/Lib/Loader/ASyncLoader.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Physics/Arms.h
     ${CMAKE_SOURCE_DIR}/Source/Lib/Physics/BioModel.h
     ${CMAKE_SOURCE_DIR}/Source/Lib/Physics/BioStructure.h
@@ -26,7 +25,6 @@ list(APPEND Physics_Inc
 )
 
 list(APPEND Physics_Src
-    ${CMAKE_SOURCE_DIR}/Source/Lib/Loader/AsyncLoader.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Physics/Arms.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Physics/BioModel.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Physics/dino_biped.cpp

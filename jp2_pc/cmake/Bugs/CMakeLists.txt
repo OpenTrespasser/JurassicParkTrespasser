@@ -8,12 +8,17 @@ list(APPEND Bugs_Src
     ${CMAKE_SOURCE_DIR}/Source/Bugs/DynamicCastConst.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/FriendOperator.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/FriendSpecialise.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Bugs/MissingDefault.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Bugs/NestedTypeScope.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/NoConvert.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/PartialSpecialise.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Bugs/RandomCrash.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/TemplateAmbiguity.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/TemplateDefaultError.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/TemplateDefaultRedef.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Bugs/TemplateDefaultValue.cpp
     ${CMAKE_SOURCE_DIR}/Source/Bugs/TemplateNested.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Bugs/WackyMessage.cpp
 )
 
 add_common_options()

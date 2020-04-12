@@ -14,10 +14,10 @@ list(APPEND Game_Inc
     ${CMAKE_SOURCE_DIR}/Source/Game/DesignDaemon/PlayerSettings.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/EntityDBase/TextOverlay.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Trigger/Trigger.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/DesignDaemon/Socket.hpp
 )
 
 list(APPEND Game_Src
-    ${CMAKE_SOURCE_DIR}/Source/Lib/File/Image.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Trigger/Action.cpp
     ${CMAKE_SOURCE_DIR}/Source/Game/DesignDaemon/BloodSplat.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Trigger/BooleanTrigger.cpp

@@ -44,6 +44,11 @@ list(APPEND EntityDBase_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/Teleport.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/Water.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/WorldDBase.hpp    
+    ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/FilterIterator.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/MessageTypes.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/Instancer.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/Subsystem.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/EntityDBase/WorldPriv.hpp
 )
 
 list(APPEND EntityDBase_Src
