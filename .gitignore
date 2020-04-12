@@ -9,6 +9,7 @@ jp2_pc/Build/
 *.vcxproj
 *.filters
 *.user
+*.aps
 
 # OSX Hidden Files
 .DS_Store
