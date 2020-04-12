@@ -58,7 +58,7 @@ void inxbuild();
 
 /* Search for BGR values 0..255 (after net is unbiased) and return colour index
    ---------------------------------------------------------------------------- */
-int inxsearch(register int b, register int g, register int r);
+char inxsearch(register int b, register int g, register int r);
 
 /* Main Learning Loop
    ------------------ */
