@@ -1,7 +1,6 @@
 project(System)
 
 list(APPEND System_Inc
-    ${CMAKE_SOURCE_DIR}/Source/Lib/File/Image.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Sys/BitBuffer.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/W95/Com.hpp
     ${CMAKE_SOURCE_DIR}/Source/GblInc/Config.hpp
