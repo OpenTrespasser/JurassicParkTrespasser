@@ -29,6 +29,10 @@ list(APPEND Std_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Std/UAssert.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Std/UDefs.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Std/UTypes.hpp
+    ${CMAKE_SOURCE_DIR}/Source/GblInc/Warnings.hpp
+    ${CMAKE_SOURCE_DIR}/Source/GblInc/Version.hpp
+    ${CMAKE_SOURCE_DIR}/Source/GblInc/VerBones.hpp
+    ${CMAKE_SOURCE_DIR}/Source/GblInc/3DX.hpp
 )
 
 list(APPEND Std_Src

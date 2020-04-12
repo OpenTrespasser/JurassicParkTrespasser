@@ -14,6 +14,7 @@ list(APPEND Game_Inc
     ${CMAKE_SOURCE_DIR}/Source/Game/DesignDaemon/PlayerSettings.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/EntityDBase/TextOverlay.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Trigger/Trigger.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Game/DesignDaemon/Socket.hpp
 )
 
 list(APPEND Game_Src

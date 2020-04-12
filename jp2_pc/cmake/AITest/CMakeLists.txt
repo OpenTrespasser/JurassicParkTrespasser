@@ -9,6 +9,9 @@ list(APPEND AITest_Inc
     ${CMAKE_SOURCE_DIR}/Source/Test/AI/TestAnimal.hpp
     ${CMAKE_SOURCE_DIR}/Source/Test/AI/TestBrains.hpp
     ${CMAKE_SOURCE_DIR}/Source/Test/AI/UIModes.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Test/AI/AIResource.h
+    ${CMAKE_SOURCE_DIR}/Source/Test/AI/QueryTest.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Test/AI/TestTree.hpp
 )
 
 list(APPEND AITest_Src

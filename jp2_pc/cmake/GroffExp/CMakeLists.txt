@@ -8,6 +8,7 @@ list(APPEND GroffExp_Inc
     ${CMAKE_SOURCE_DIR}/Source/Tools/GroffExp/Mathematics.hpp
     ${CMAKE_SOURCE_DIR}/Source/Tools/GroffExp/ObjectDef.hpp
     ${CMAKE_SOURCE_DIR}/Source/Tools/GroffExp/GroffExp.h
+    ${CMAKE_SOURCE_DIR}/Source/Tools/GroffExp/StandardTypes.hpp
 )
 
 list(APPEND GroffExp_Rsc

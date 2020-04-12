@@ -6,6 +6,7 @@ list(APPEND GroffBuild_Inc
     ${CMAKE_SOURCE_DIR}/Source/GroffBuild/main.h
     ${CMAKE_SOURCE_DIR}/Source/GroffBuild/utils.h
     ${CMAKE_SOURCE_DIR}/Source/GroffBuild/precomp.h
+    ${CMAKE_SOURCE_DIR}/Source/GroffBuild/resource.h
 )
 
 list(APPEND GroffBuild_Src

@@ -33,6 +33,15 @@ list(APPEND GeomDBase_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/WaveletQuadTreeQuery.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/WaveletQuadTreeTForm.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/WaveletStaticData.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/InvisibleShape.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/LightShape.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/LineSegment.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/PartitionBuildBase.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/PartitionPrivClass.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/Plane.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/PlaneAxis.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/GeomDBase/WaveletCoef.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Renderer/GeomTypesPriv.hpp
 )
 
 list(APPEND GeomDBase_Src
