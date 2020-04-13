@@ -69,6 +69,14 @@ add_subdirectory(cmake/WaveTest)
 add_subdirectory(cmake/WinShell)
 
 
+option(INSTALL_GTEST OFF)
+add_subdirectory(gtest)
+set_target_properties(gtest PROPERTIES FOLDER "Tests/gtest")
+set_target_properties(gtest_main PROPERTIES FOLDER "Tests/gtest")
+set_target_properties(gmock PROPERTIES FOLDER "Tests/gtest")
+set_target_properties(gmock_main PROPERTIES FOLDER "Tests/gtest")
+
+
 
 set(DEACTIVATE_BROKEN_PROJECTS TRUE CACHE BOOL INTERNAL)
 
