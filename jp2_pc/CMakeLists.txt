@@ -34,11 +34,15 @@ include(cmake/CMakeCommon.cmake)
 add_subdirectory(cmake/AI)
 add_subdirectory(cmake/AITest)
 add_subdirectory(cmake/Audio)
+add_subdirectory(cmake/AudioTest)
 add_subdirectory(cmake/Bugs)
 add_subdirectory(cmake/BumpBuild)
+add_subdirectory(cmake/BumpTest)
 add_subdirectory(cmake/CollisionEditor)
+add_subdirectory(cmake/ColourTest)
 add_subdirectory(cmake/EntityDBase)
 add_subdirectory(cmake/Examples)
+add_subdirectory(cmake/FastBumpTest)
 add_subdirectory(cmake/File)
 add_subdirectory(cmake/FileTest)
 add_subdirectory(cmake/Game)
@@ -55,6 +59,7 @@ add_subdirectory(cmake/MathTest)
 add_subdirectory(cmake/Physics)
 add_subdirectory(cmake/PhysicsTest)
 add_subdirectory(cmake/PipelineTest)
+add_subdirectory(cmake/PolyTest)
 add_subdirectory(cmake/ProcessorDetect)
 add_subdirectory(cmake/QuantizerTool)
 add_subdirectory(cmake/QuantizerToolCLI)
@@ -75,10 +80,14 @@ set(DEACTIVATE_BROKEN_PROJECTS TRUE CACHE BOOL INTERNAL)
 
 if (DEACTIVATE_BROKEN_PROJECTS)
     list(APPEND BROKEN_PROJECTS
+        AudioTest
         Bugs
+        BumpTest
         CollisionEditor
         Examples
+        FastBumpTest
         InitGUIApp
+        PolyTest
         ProcessorDetect
         PipelineTest
         QuantizerToolCLI
