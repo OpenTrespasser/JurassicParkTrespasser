@@ -43,6 +43,7 @@
 #include "Shell/AppShell.hpp"
 #include "Shell/WinEvent.hpp"
 #include "Lib/Sys/W95/Render.hpp"
+#include "Lib/Sys/ConIO.hpp"
 #include "Lib/View/ColourBase.hpp"
 #include "Lib/Renderer/Primitives/FastBump.hpp"
 #include "Lib/Renderer/Primitives/FastBumpTable.hpp"
@@ -171,7 +172,7 @@ void WindowsEvent(uint u_message, WPARAM wp_param, LPARAM lp_param)
 				for (int i = 0; i < no_w; i++)
 					for (int j = 0; j < no_h; j++)
 				*/
-						DrawSpeedBump(prasMainScreen, 0, 0);
+						DrawSpeedBump(prasMainScreen.ptGet(), 0, 0);
 			}
 			break;
 	}
