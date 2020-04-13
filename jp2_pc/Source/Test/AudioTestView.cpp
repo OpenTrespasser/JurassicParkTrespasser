@@ -11,10 +11,13 @@
 
 #include <yvals.h>
 
-#include "lib/audio/audio_lib.hpp"
+#include "lib/audio/audio.hpp"
+#include "Lib/Transform/Vector.hpp"
 
 #include "AudioTestDoc.h"
 #include "AudioTestView.h"
+
+#include <list>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -113,7 +116,7 @@ void CAudioTestView::OnDraw(CDC* pDC)
 		pDC->LineTo (x,y);
 	}
 
-	list<CAuSound *> * plist_sounds = 0;
+	std::list<CAuSound *> * plist_sounds = 0;
 	if (pscene)
 		plist_sounds = pscene->GetSoundList ();
 	if (plist_sounds && !plist_sounds->empty ())
@@ -122,7 +125,7 @@ void CAudioTestView::OnDraw(CDC* pDC)
 
 		SAuSoundModel sound_model;
 
-		list<CAuSound*>::iterator i;
+		std::list<CAuSound*>::iterator i;
 		for (i = plist_sounds->begin(); i != plist_sounds->end(); i++)
 		{
 			(*i)->GetOrientation (&dir);
@@ -288,12 +291,12 @@ void CAudioTestView::OnLButtonDblClk(UINT nFlags, CPoint point)
 	int found = 0;
 	int x,y;
 	// sounds first
-	list<CAuSound *> * plist_sounds = 0;
+	std::list<CAuSound *> * plist_sounds = 0;
 	if (pscene)
 		plist_sounds = pscene->GetSoundList ();
 	if (plist_sounds && !plist_sounds->empty())
 	{
-		list<CAuSound *>::iterator i;
+		std::list<CAuSound *>::iterator i;
 		for (i = plist_sounds->begin(); i != plist_sounds->end(); ++i)
 		{
 			(*i)->GetPosition (&pos);
@@ -347,12 +350,12 @@ void CAudioTestView::OnLButtonDown(UINT nFlags, CPoint point)
 
 	// hit test
 	int x,y;
-	list<CAuSound *> * plist_sounds = 0;
+	std::list<CAuSound *> * plist_sounds = 0;
 	if (pscene)
 		plist_sounds = pscene->GetSoundList ();
 	if (plist_sounds && !plist_sounds->empty())
 	{
-		list<CAuSound*>::iterator i;
+		std::list<CAuSound*>::iterator i;
 		for (i = plist_sounds->begin(); i != plist_sounds->end(); ++i)
 		{
 			(*i)->GetPosition (&pos);
