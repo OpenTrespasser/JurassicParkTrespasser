@@ -116,6 +116,7 @@
 #include "Lib/Renderer/Texture.hpp"
 #include "Lib/Renderer/ScreenRender.hpp"
 #include "PolyTest.hpp"
+#include "Lib/Sys/ConIO.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 
 SRenderTriangle rtTestTriangle
