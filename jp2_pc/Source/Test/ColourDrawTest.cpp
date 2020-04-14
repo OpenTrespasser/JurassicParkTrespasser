@@ -47,6 +47,7 @@
 #include "ColourDrawTest.hpp"
 #include "Lib/Types/FixedP.hpp"
 #include "Lib/Sys/TextOut.hpp"
+#include "Lib/View/Raster.hpp"
 
 
 //int iIncidence  = 230;
@@ -284,7 +285,7 @@ public:
 			t[i][j] = sum;
 		}
 		
-		for (i = 1; i < iBumpmapLen-1; i++)
+		for (int i = 1; i < iBumpmapLen-1; i++)
 			for (int j = 1; j < iBumpmapLen-1; j++)
 				u1Incidence[i][j] = t[i][j];
 	}

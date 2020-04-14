@@ -69,8 +69,11 @@
 #include "Shell/AppShell.hpp"
 #include "Shell/WinEvent.hpp"
 #include "Lib/View/ColourBase.hpp"
+#include "Lib/Loader/Loader.hpp"
 #include "ColourDrawTest.hpp"
 #include "ColourTest.hpp"
+
+#include <algorithm>
 
 
 void MoveLight(int& iLight, int iAmount)
@@ -158,11 +161,11 @@ void WindowsEvent(uint u_message, WPARAM wp_param, LPARAM lp_param)
 		case AM_PAINT:
 			//prasMainScreen->Clear(0);
 			{
-				int no_w = min(prasMainScreen->iWidth / iBumpmapLen, 3);
-				int no_h = min(prasMainScreen->iHeight / iBumpmapLen, 2);
+				int no_w = std::min(prasMainScreen->iWidth / iBumpmapLen, 3);
+				int no_h = std::min(prasMainScreen->iHeight / iBumpmapLen, 2);
 				for (int i = 0; i < no_w; i++)
 					for (int j = 0; j < no_h; j++)
-						DrawSpeedBump(prasMainScreen, i, j);
+						DrawSpeedBump(prasMainScreen.ptGet(), i, j);
 			}
 			/*
 			DrawWater(prasMainScreen);
@@ -170,3 +173,15 @@ void WindowsEvent(uint u_message, WPARAM wp_param, LPARAM lp_param)
 			break;
 	}
 }
+
+
+//Global variables and functions declared elsewhere as extern
+//needed by the libraries
+bool bIsTrespasser = false;
+bool bUseReplayFile = false;
+bool bInvertMouse = false;
+bool bUseOutputFiles = false;
+unsigned int g_u4NotifyParam = 0;
+unsigned int u4LookupResourceString(int, char*, unsigned int) { return 0; }
+void LineColour(int, int, int) {}
+PFNWORLDLOADNOTIFY g_pfnWorldLoadNotify = nullptr;
