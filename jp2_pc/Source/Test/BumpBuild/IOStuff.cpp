@@ -13,8 +13,8 @@
 
 #define NOMINMAX
 #include <windows.h>
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>

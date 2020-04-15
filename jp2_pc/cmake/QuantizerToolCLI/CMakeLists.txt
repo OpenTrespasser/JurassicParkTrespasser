@@ -3,6 +3,7 @@ project(QuantizerToolCLI)
 list(APPEND QuantizerToolCLI_Src
     ${CMAKE_SOURCE_DIR}/Source/Tools/QuantizerTool/QuantMain.c
     ${CMAKE_SOURCE_DIR}/Source/Tools/QuantizerTool/NEUQUANT.C
+    ${CMAKE_SOURCE_DIR}/Source/Tools/QuantizerTool/NeuQuant.h
 )
 
 add_common_options()

@@ -48,6 +48,4 @@ private:
 	int		iYmax;
 };
 
-#include "scan.cpp"
-
 #endif

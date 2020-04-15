@@ -8,8 +8,8 @@
 
 #include <yvals.h>
 
-#include "lib/audio/audio_lib.hpp"
-
+#include "lib/audio/audio.hpp"
+#include "Lib/Transform/Vector.hpp"
 #include "AudioTestDoc.h"
 #include "AttribDlg.h"
 

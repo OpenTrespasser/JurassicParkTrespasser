@@ -185,63 +185,63 @@ static CDrawPolygon<TShadowTrans32>*		pdtriShadow32;
 
 #pragma code_seg("SelfMod")
 	#include "P5/ScanlineAsmMacros.hpp"
-	#include "P5/DrawSubTriangleEx.cpp"
-	#include "P5/DrawSubTriangleGourEx.cpp"
-	#include "P5/DrawSubTriangleTexEx.cpp"
-	#include "P5/DrawSubTriangleTexGourEx.cpp"
-	#include "P5/DrawSubTriangleBumpEx.cpp"
+	#include "P5/DrawSubTriangleEx.inl"
+	#include "P5/DrawSubTriangleGourEx.inl"
+	#include "P5/DrawSubTriangleTexEx.inl"
+	#include "P5/DrawSubTriangleTexGourEx.inl"
+	#include "P5/DrawSubTriangleBumpEx.inl"
 
 	#if iBUMPMAP_RESOLUTION == 32
-		#include "P5/DrawSubTriangleBumpTblEx.cpp"
+		#include "P5/DrawSubTriangleBumpTblEx.inl"
 	#endif // iBUMPMAP_RESOLUTION == 32
 
-	#include "P5/DrawSubTriangleTerrainEx.cpp"
-	#include "P5/DrawSubTriangleAlpha.cpp"
-	#include "P5/DrawSubTriangleTerrain.cpp"
-	#include "P5/DrawSubTriangleWater.cpp"
+	#include "P5/DrawSubTriangleTerrainEx.inl"
+	#include "P5/DrawSubTriangleAlpha.inl"
+	#include "P5/DrawSubTriangleTerrain.inl"
+	#include "P5/DrawSubTriangleWater.inl"
 #pragma code_seg()
 
 #elif TARGET_PROCESSOR == PROCESSOR_PENTIUMPRO
 
 #pragma code_seg("SelfMod")
 	#include "P6/ScanlineAsmMacros.hpp"
-	#include "P6/DrawSubTriangleEx.cpp"
-	#include "P6/DrawSubTriangleGourEx.cpp"
-	#include "P6/DrawSubTriangleTexEx.cpp"
-	#include "P6/DrawSubTriangleTexGourEx.cpp"
-	#include "P6/DrawSubTriangleBumpEx.cpp"
+	#include "P6/DrawSubTriangleEx.inl"
+	#include "P6/DrawSubTriangleGourEx.inl"
+	#include "P6/DrawSubTriangleTexEx.inl"
+	#include "P6/DrawSubTriangleTexGourEx.inl"
+	#include "P6/DrawSubTriangleBumpEx.inl"
 
 	#if iBUMPMAP_RESOLUTION == 32
-		#include "P6/DrawSubTriangleBumpTblEx.cpp"
+		#include "P6/DrawSubTriangleBumpTblEx.inl"
 	#endif // iBUMPMAP_RESOLUTION == 32
 
-	#include "P6/DrawSubTriangleTerrainEx.cpp"
-	#include "P6/DrawSubTriangleAlpha.cpp"
-	#include "P6/DrawSubTriangleTerrain.cpp"
-	#include "P6/DrawSubTriangleWater.cpp"
+	#include "P6/DrawSubTriangleTerrainEx.inl"
+	#include "P6/DrawSubTriangleAlpha.inl"
+	#include "P6/DrawSubTriangleTerrain.inl"
+	#include "P6/DrawSubTriangleWater.inl"
 #pragma code_seg()
 
 #elif TARGET_PROCESSOR == PROCESSOR_K6_3D
 	#include "AMDK6/ScanlineAsmMacros.hpp"
-	#include "AMDK6/DrawSubTriangleEx.cpp"
-	#include "AMDK6/DrawSubTriangleGourEx.cpp"
-	#include "AMDK6/DrawSubTriangleTexEx.cpp"
-	#include "AMDK6/DrawSubTriangleTexGourEx.cpp"
-	#include "AMDK6/DrawSubTriangleBumpEx.cpp"
+	#include "AMDK6/DrawSubTriangleEx.inl"
+	#include "AMDK6/DrawSubTriangleGourEx.inl"
+	#include "AMDK6/DrawSubTriangleTexEx.inl"
+	#include "AMDK6/DrawSubTriangleTexGourEx.inl"
+	#include "AMDK6/DrawSubTriangleBumpEx.inl"
 
 	#if iBUMPMAP_RESOLUTION == 32
-		#include "AMDK6/DrawSubTriangleBumpTblEx.cpp"
+		#include "AMDK6/DrawSubTriangleBumpTblEx.inl"
 	#endif // iBUMPMAP_RESOLUTION == 32
 
-	#include "AMDK6/DrawSubTriangleTerrainEx.cpp"
-	#include "AMDK6/DrawSubTriangleAlpha.cpp"
-	#include "AMDK6/DrawSubTriangleTerrain.cpp"
-	#include "AMDK6/DrawSubTriangleWater.cpp"
+	#include "AMDK6/DrawSubTriangleTerrainEx.inl"
+	#include "AMDK6/DrawSubTriangleAlpha.inl"
+	#include "AMDK6/DrawSubTriangleTerrain.inl"
+	#include "AMDK6/DrawSubTriangleWater.inl"
 #else
 	#error Invalid [No] target processor specified
 #endif
 
-#include "DrawSubTriangleFlat.cpp"
+#include "DrawSubTriangleFlat.inl"
 //**********************************************************************************************
 
 // #if VER_ASM
