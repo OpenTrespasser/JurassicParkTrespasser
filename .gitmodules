@@ -1,7 +1,7 @@
 [submodule "jp2_pc/BuildTools/CMake"]
 	path = jp2_pc/BuildTools/CMake
-	url = https://github.com/OpenTrespasser/CMake
-    branch = master
+	url = https://github.com/OpenTrespasser/CMake.git
+	branch = master
 [submodule "jp2_pc/gtest"]
 	path = jp2_pc/gtest
 	url = https://github.com/google/googletest.git
