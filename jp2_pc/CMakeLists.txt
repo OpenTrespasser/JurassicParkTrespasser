@@ -66,6 +66,7 @@ add_subdirectory(cmake/QuantizerToolCLI)
 add_subdirectory(cmake/Render3D)
 add_subdirectory(cmake/ScreenRenderDWI)
 add_subdirectory(cmake/Std)
+add_subdirectory(cmake/StdTest)
 add_subdirectory(cmake/System)
 add_subdirectory(cmake/trespass)
 add_subdirectory(cmake/TweakNvidia128)
@@ -73,6 +74,14 @@ add_subdirectory(cmake/TweakTrespass)
 add_subdirectory(cmake/View)
 add_subdirectory(cmake/WaveTest)
 add_subdirectory(cmake/WinShell)
+
+
+option(INSTALL_GTEST OFF)
+add_subdirectory(gtest)
+set_target_properties(gtest PROPERTIES FOLDER "Tests/gtest")
+set_target_properties(gtest_main PROPERTIES FOLDER "Tests/gtest")
+set_target_properties(gmock PROPERTIES FOLDER "Tests/gtest")
+set_target_properties(gmock_main PROPERTIES FOLDER "Tests/gtest")
 
 
 
