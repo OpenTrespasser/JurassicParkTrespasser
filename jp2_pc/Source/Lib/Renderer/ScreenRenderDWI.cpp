@@ -156,10 +156,10 @@
 //
 
 // Switch for compiling 24 and 32-bit primitives (takes twice as long).
-#define b8_BIT	(0)
+#define b8_BIT	(1)
 #define b16_BIT	(1)
-#define b24_BIT	(0)
-#define b32_BIT	(0)
+#define b24_BIT	(1)
+#define b32_BIT	(1)
 
 // Switch for compiling an optional wireframe view.
 #define bALLOW_WIREFRAME (1)
