@@ -434,9 +434,7 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
 
 void CMainWnd::OnTimer(HWND hwnd, UINT id)
 {
-    std::vector<CUIWnd *>::iterator      i;
-
-    for (i = m_pUIMgr->m_vUIWnd.end() - 1; i >= m_pUIMgr->m_vUIWnd.begin(); i--)
+    for (auto i = m_pUIMgr->m_vUIWnd.rbegin(); i != m_pUIMgr->m_vUIWnd.rend(); i++)
     {
         if (*i && !(*i)->m_bExitWnd)
         {
