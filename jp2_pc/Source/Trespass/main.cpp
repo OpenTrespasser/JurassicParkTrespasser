@@ -420,7 +420,7 @@ int DoWinMain(HINSTANCE hInstance,
               LPSTR lpCmdLine,
               int nCmdShow)
 {
-    int                 iRet;
+    int                 iRet = 0;
     HANDLE              hMutex;
     int                 i;
     bool                bVideoCardChosen;
