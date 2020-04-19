@@ -1039,7 +1039,7 @@ void CUIWnd::OnLButtonUp(int x, int y, UINT keyFlags)
             return;
         }
 
-        for (auto i = m_vUICtrls.rbegin(); i >= m_vUICtrls.rend() && *i; i++)
+        for (auto i = m_vUICtrls.rbegin(); i != m_vUICtrls.rend() && *i; i++)
         {
             if (*i && 
                 (*i)->HitTest(m_pUIMgr->m_ptMouse.x, m_pUIMgr->m_ptMouse.y) &&
