@@ -117,7 +117,7 @@
 
 //#include "Config.hpp"
 //#define TARGET_PROCESSOR PROCESSOR_PENTIUM
-//#define VER_ASM			0
+#define VER_ASM			0
 
 #include "AsmSupport.hpp"
 #include "Lib/Std/PrivSelf.hpp"
@@ -2011,7 +2011,7 @@ SKIP_LOOP:
 
 		// Do every odd element relative to the first calculated element.
 		// Interpolate water in x.
-		for (i_x = i_x_start; i_x < i_x_end - 1; ++i_x)
+		for (int i_x = i_x_start; i_x < i_x_end - 1; ++i_x)
 		{
 			// Get the interpolated intensity value.
 			pau1[i_x * 2 + 1] = (pau1[i_x * 2] + pau1[i_x * 2 + 2]) >> 1;

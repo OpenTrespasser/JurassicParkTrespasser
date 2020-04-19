@@ -2790,7 +2790,7 @@ void CUIEditbox::Update()
     RECT    rc;
     HBRUSH  hbr;
     LPSTR   psz;
-    int     iHeight;
+    int     iHeight = 0;
     int     iLen;
     RECT    rcWindow;
     HFONT   hfontOld;
