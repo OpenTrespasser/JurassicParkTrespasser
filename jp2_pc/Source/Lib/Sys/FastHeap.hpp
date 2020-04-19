@@ -779,10 +779,9 @@ public:
 
 	friend void* operator new(uint u_size_type, CFastHeap& fh_heap);
 	friend void* operator new(uint u_size_type, CFastHeap& fh_heap, uint u_alignment);
-#ifdef __MWERKS__
+
 	friend void* operator new [] (uint u_size_type,	CFastHeap& fh_heap);
 	friend void* operator new [] (uint u_size_type, CFastHeap& fh_heap, uint u_alignment);
-#endif
 };
 
 
@@ -833,7 +832,6 @@ inline void* operator new
 	return fh_heap.pvAllocate(u_size_type);
 }
 
-#ifdef __MWERKS__
 
 inline void* operator new []
 (
@@ -856,7 +854,6 @@ inline void* operator new []
 	return fh_heap.pvAllocate(u_size_type);
 }
 
-#endif
 
 
 

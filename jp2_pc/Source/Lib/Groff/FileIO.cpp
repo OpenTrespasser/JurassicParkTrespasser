@@ -147,7 +147,7 @@ CFileIO::CFileIO()
 CFileIO::~CFileIO()
 {
 	// Is the file currently open?  If it was opened as writeable, this should never happen.
-	if (fsFile.fdFile != -1)
+	if (fsFile.fdFile != -1 && fsFile.fdFile != 0)
 	{
 		// Then close the file.
 		fsFile.fdFile = close(fsFile.fdFile);
