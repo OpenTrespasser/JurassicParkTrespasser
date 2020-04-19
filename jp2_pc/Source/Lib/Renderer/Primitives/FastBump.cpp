@@ -984,7 +984,8 @@ rptr<CBumpMap> pbumpCreateUniqueBumpap
 				// the range 0..iWidth
 				i_x_src += (-i_x_src*pbump->iWidth);
 			}
-			pbang[i_x].br = pbang_src[i_x_src % pbump->iWidth].br;
+			if (pbump->iWidth != 0)
+				pbang[i_x].br = pbang_src[i_x_src % pbump->iWidth].br;
 		}
 	}
 
@@ -1238,6 +1239,8 @@ void ApplyCurves(rptr<CMesh> pmsh)
 
 			// did we get a bump map from the above cast
 			Assert(pbump);
+			if (!pbump)
+				return;
 
 			// Make a unique raster for the segement of the bumpmap to be curved.
 			rptr<CBumpMap> pbump_new = pbumpCreateUniqueBumpap
