@@ -76,7 +76,7 @@ BOOL ReadWndFileToken(HANDLE hFile, WNDFILETOKEN * pwft)
     BOOL    bNegative;
     BOOL    bAlwaysAccept;
     BOOL    bHex;
-    BOOL    bErr;
+    BOOL    bErr = FALSE;
     int     i;
 
     Assert(hFile != INVALID_HANDLE_VALUE);
