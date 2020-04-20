@@ -1239,8 +1239,10 @@ void ApplyCurves(rptr<CMesh> pmsh)
 
 			// did we get a bump map from the above cast
 			Assert(pbump);
-			if (!pbump)
-				return;
+			if (!pbump) {
+				pi.pmpPolygon()->pmx3ObjToTexture = SwapMatrices.pmx3GetMatrix(pi.d3Normal());
+				continue;
+			}
 
 			// Make a unique raster for the segement of the bumpmap to be curved.
 			rptr<CBumpMap> pbump_new = pbumpCreateUniqueBumpap

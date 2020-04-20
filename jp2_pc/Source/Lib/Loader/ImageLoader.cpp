@@ -814,7 +814,7 @@ uint32 CLoadImageDirectory::u4CopyLocalThread
 		DWORD dwWritten, dwRead;
 		BOOL bRet;
 		uint32 u4_file_size;
-		uint32 u4_bytes_written;
+		uint32 u4_bytes_written = 0;
 		int iPercent;
 		int iLastPercent;
 		

@@ -817,9 +817,12 @@ void MyBlt(LPBYTE pbSrc,
     }
     else
     {
+        //Use smaller size when buffer sizes do not match
+        size_t copysize = iSrcBytes == iDstBytes ? iWidthBytes : iWidth * std::min(iDstBytes, iSrcBytes);
+        
         for (y = 0; y < iHeight; y++)
         {
-            memcpy(pbDst, pbSrc, iWidthBytes);
+            memcpy(pbDst, pbSrc, copysize);
             pbDst += iDstPitch;
             pbSrc += iSrcPitch;
         }
