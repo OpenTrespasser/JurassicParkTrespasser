@@ -441,6 +441,9 @@
 			Assert(pGraph->bIsValidIndex(iStartNode));
 			Assert(pGraph->bIsValidIndex(iStopNode));
 
+			if (!pGraph->bIsValidIndex(iStartNode) || !pGraph->bIsValidIndex(iStopNode))
+				return;
+		
 			pGraph->ClearDistanceCache();
 
 			aasniInfo[iStartNode].dEstRemaining = pGraph->nNode(iStartNode).dEstimatedDistanceTo(pGraph->nNode(iStopNode));

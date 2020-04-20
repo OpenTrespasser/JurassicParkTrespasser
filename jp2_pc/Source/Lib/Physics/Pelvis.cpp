@@ -230,7 +230,7 @@ extern bool		 bKontrol_Krouch[NUM_PELVISES];
 	
 				Pel[me][MOUTH][2] = CSPRING*(knees - Pel[me][MOUTH][0]) - CDAMP*Pel[me][MOUTH][1];
 	
-				if (Pel[me][MOUTH][0] < 0.09*(Pel_Data[me][14] - .2) ) {Pel[me][MOUTH][0] = .09*(Pel_Data[me][14] - .2); Pel[me][MOUTH][1] = 0;}
+				if (Pel[me][MOUTH][0] < 0.089*(Pel_Data[me][14] - .2) ) {Pel[me][MOUTH][0] = .09*(Pel_Data[me][14] - .2); Pel[me][MOUTH][1] = 0;}
 				if (Pel[me][MOUTH][0] > 1.1*(Pel_Data[me][14] - .2) ) {Pel[me][MOUTH][0] = 1.1*(Pel_Data[me][14] - .2); Pel[me][MOUTH][1] = 0;}
 
 				hat[0] *= Pel[me][MOUTH][0];

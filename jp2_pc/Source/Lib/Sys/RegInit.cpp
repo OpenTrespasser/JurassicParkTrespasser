@@ -263,7 +263,7 @@ void SetAutoSave(BOOL b_init)
 //*********************************************************************************************
 BOOL bGetAutoSave()
 {
-	return GetRegValue(REG_KEY_AUTOSAVE, 1) != 0;
+	return GetRegValue(REG_KEY_AUTOSAVE, 0) != 0;
 }
 
 //*********************************************************************************************

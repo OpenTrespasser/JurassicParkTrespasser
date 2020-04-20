@@ -67,15 +67,12 @@ BOOL CUIManager::Attach(CUIWnd * puiwnd)
 BOOL CUIManager::Detach(CUIWnd * puiwnd)
 {
     BOOL                            bRet = FALSE;
-    std::vector<CUIWnd *>::iterator      i;
 
-    for (i = m_vUIWnd.end(); i >= m_vUIWnd.begin(); i--)
+    auto toremove = std::remove(m_vUIWnd.begin(), m_vUIWnd.end(), puiwnd);
+    if (toremove != m_vUIWnd.end())
     {
-        if (puiwnd == *i)
-        {
-            bRet = TRUE;
-            m_vUIWnd.erase(i);
-        }
+        bRet = TRUE;
+        m_vUIWnd.erase(toremove);
     }
 
     return bRet;
@@ -525,14 +522,12 @@ BOOL CUIWnd::AddToUICtrlSet(CUICtrl * pctrl)
 
 void CUIWnd::DoUIHandling()
 {
-    std::vector<CUICtrl*>::iterator      i;
-
     if (m_vUICtrls.size() == 0)
     {
         return;
     }
 
-    for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && *i; i--)
+    for (auto i = m_vUICtrls.rbegin(); i != m_vUICtrls.rend() && *i; i++)
     {
         (*i)->DoFrame(m_pUIMgr->m_ptMouse);
     }
@@ -1012,14 +1007,12 @@ void CUIWnd::OnMouseMove(int x, int y, UINT keyFlags)
 
 void CUIWnd::OnLButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags)
 {
-    std::vector<CUICtrl*>::iterator          i;
-
     if (m_vUICtrls.size() == 0)
     {
         return;
     }
 
-    for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && *i; i--)
+    for (auto i = m_vUICtrls.rbegin(); i != m_vUICtrls.rend() && *i; i++)
     {
         if (*i && 
             (*i)->HitTest(m_pUIMgr->m_ptMouse.x, m_pUIMgr->m_ptMouse.y) &&
@@ -1041,14 +1034,12 @@ void CUIWnd::OnLButtonUp(int x, int y, UINT keyFlags)
     }
     else
     {
-        std::vector<CUICtrl*>::iterator          i;
-
         if (m_vUICtrls.size() == 0)
         {
             return;
         }
 
-        for (i = m_vUICtrls.end() - 1; i >= m_vUICtrls.begin() && *i; i--)
+        for (auto i = m_vUICtrls.rbegin(); i != m_vUICtrls.rend() && *i; i++)
         {
             if (*i && 
                 (*i)->HitTest(m_pUIMgr->m_ptMouse.x, m_pUIMgr->m_ptMouse.y) &&
