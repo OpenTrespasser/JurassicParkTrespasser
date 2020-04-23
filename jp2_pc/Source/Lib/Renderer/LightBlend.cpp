@@ -985,12 +985,13 @@ public:
 	//*****************************************************************************************
 	CAlphaBlend::~CAlphaBlend()
 	{
-		delete u2ColorToAlpha;
+		delete[] u2ColorToAlpha;
 	}
 
 	//*****************************************************************************************
 	void CAlphaBlend::Setup(CRaster* pras)
 	{
+		delete[] u2ColorToAlpha;
 		u2ColorToAlpha = new uint16[4096];
 
 		AlwaysAssert(u2ColorToAlpha);

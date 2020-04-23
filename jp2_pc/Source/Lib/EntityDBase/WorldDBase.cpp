@@ -2030,6 +2030,8 @@ CRenderDB*  ps_renderDB = 0;
 		// Release texture pointers.
 		EraseTextureMap();
 
+		// Reset the texture manager
+		gtxmTexMan.Reset();
 
 		//
 		// Reset the load heap
