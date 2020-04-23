@@ -686,7 +686,7 @@ const char* strClutFileCache = "BinData/Cluts";
 
 		// Create a new clut table of the appropriate size.
 		{
-			delete aTable;
+			delete[] aTable;
 			uint32 u4_clut_size = iNumEntries * iNumRampValues * iNumDepthValues * iSizeofPixel;
 			aTable = new char[u4_clut_size];
 		}
