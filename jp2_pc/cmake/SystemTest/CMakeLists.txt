@@ -2,6 +2,7 @@ project(SystemTest)
 
 list(APPEND SystemTest_Src
     ${CMAKE_SOURCE_DIR}/Source/Test/Novel/SystemTest/FastHeapTest.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Test/Novel/SystemTest/IniFileTest.cpp
 )
 
 add_common_options()
