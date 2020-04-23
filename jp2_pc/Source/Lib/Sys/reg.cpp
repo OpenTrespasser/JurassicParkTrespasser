@@ -1,6 +1,9 @@
 
 #include <windows.h>
+
+#include "IniFile.hpp"
 #include "Reg.h"
+/*
 #include "RegInit.hpp"
 #define REGKEYPARENT HKEY_LOCAL_MACHINE
 #ifndef DEMO_BUILD
@@ -158,4 +161,54 @@ float GetRegFloat(LPCSTR lpszVal, float fDefault)
 	if (i_size != sizeof(f_retval))
 		return f_retval = fDefault;
 	return f_retval;
+}
+*/
+
+BOOL bSafeModeReg = FALSE; //Global variable used via extern
+
+
+IniFile& GetIniFile()
+{
+	//Magic static, initialisation is threadsafe
+	static IniFile theIniFile;
+	return theIniFile;
+}
+
+void  OpenKey() {}
+void  CloseKey(BOOL b_change_safemode) {}
+void  DisableSafemode() {}
+
+void DeleteValue(LPCSTR lpszVal)
+{
+	GetIniFile().deleteValue(lpszVal);
+}
+
+void SetRegValue(LPCSTR lpszVal, int nVal)
+{
+	GetIniFile().setInt(lpszVal, nVal);
+}
+
+int GetRegValue(LPCSTR lpszVal, int nDefault)
+{
+	return GetIniFile().getInt(lpszVal, nDefault);
+}
+
+void SetRegString(LPCSTR lpszVal, LPCSTR lpszString)
+{
+	GetIniFile().setString(lpszVal, lpszString);
+}
+
+int GetRegString(LPCSTR lpszVal, LPSTR lpszString, int nSize, LPCSTR lpszDefault)
+{
+	return GetIniFile().getString(lpszVal, lpszString, nSize, lpszDefault);
+}
+
+void SetRegData(LPCSTR lpszVal, LPBYTE lpszData, int nSize)
+{
+	GetIniFile().setBinary(lpszVal, lpszData, nSize);
+}
+
+int GetRegData(LPCSTR lpszVal, LPBYTE lpszData, int nSize)
+{
+	return GetIniFile().getBinary(lpszVal, lpszData, nSize);
 }
