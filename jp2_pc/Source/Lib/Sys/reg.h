@@ -1,4 +1,4 @@
-
+#pragma once
 
 void  OpenKey ();
 void  CloseKey(BOOL b_change_safemode = TRUE);
