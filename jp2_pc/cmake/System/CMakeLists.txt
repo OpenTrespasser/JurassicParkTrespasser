@@ -33,6 +33,8 @@ list(APPEND System_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/FileEx.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/TextOut.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/P5/Msr.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/IniFile.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/RegToIni.hpp
 )
 
 list(APPEND System_Src
@@ -62,6 +64,8 @@ list(APPEND System_Src
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/W95/timer.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/VirtualMem.cpp
     ${CMAKE_SOURCE_DIR}/Source/Shell/WinRenderTools.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/IniFile.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/RegToIni.cpp
 )
 
 list(APPEND System_Rsc
