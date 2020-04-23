@@ -1,8 +1,10 @@
 
 #include <windows.h>
 
+#include "reg.h"
 #include "IniFile.hpp"
-#include "Reg.h"
+#include "RegToIni.hpp"
+#include <filesystem>
 /*
 #include "RegInit.hpp"
 #define REGKEYPARENT HKEY_LOCAL_MACHINE
@@ -174,9 +176,14 @@ IniFile& GetIniFile()
 	return theIniFile;
 }
 
-void  OpenKey() {}
-void  CloseKey(BOOL b_change_safemode) {}
-void  DisableSafemode() {}
+void OpenKey()
+{
+	if (!std::filesystem::exists("OpenTrespasser.ini") && !std::filesystem::exists("tpass.ini"))
+		ConvertRegistryToIni(GetIniFile());
+}
+
+void CloseKey(BOOL b_change_safemode) {}
+void DisableSafemode() {}
 
 void DeleteValue(LPCSTR lpszVal)
 {
