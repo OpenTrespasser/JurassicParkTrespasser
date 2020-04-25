@@ -1330,7 +1330,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		// Release Direct3D before doing anything.
 		d3dDriver.Uninitialize();
 
-		if (bFullScreen)
+		if (!forceWindowMode && bFullScreen)
 		{
 			// Return to Windows screen if necessary.
 			if (DirectDraw::pdd4)
