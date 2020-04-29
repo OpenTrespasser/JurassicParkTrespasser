@@ -183,6 +183,8 @@ BOOL CMainScreenWnd::OnCreate()
         return FALSE;
     }
 
+    CenterUIWindow(this);
+
     g_CTPassGlobals.CreateMenuAudioDatabase();
     g_CTPassGlobals.SetupMenuAudio();
 
