@@ -334,11 +334,13 @@ void CGameWnd::OnDestroy()
 {
     RECT        rc;
 
-    SetRect(&rc, 0, 0, 640, 480);
+    POINT screenSize = GetCurrentClientSize();
+	
+    SetRect(&rc, 0, 0, screenSize.x, screenSize.y);
     ClipCursor(&rc);
 
 	if (!bQuitGame)
-		prnshMain->bCreateScreen(640, 480, 16, bGetSystemMem());
+		prnshMain->bCreateScreen(screenSize.x, screenSize.y, 16, bGetSystemMem());
 
     CUIWnd::OnDestroy();
 }

@@ -83,6 +83,8 @@ BOOL CMainWnd::InitSurface()
 	// set all performance timers to read clock ticks
 	iPSInit();
 
+    POINT screenSize = GetCurrentClientSize();
+
 	if (!prnshMain)
 	{
 		prnshMain = new CRenderShell(m_hwnd, g_hInst, false);
@@ -91,13 +93,13 @@ BOOL CMainWnd::InitSurface()
 			return FALSE;
 		}
 
-		if (!prnshMain->bCreateScreen(640, 480, 16, bGetSystemMem()))
+		if (!prnshMain->bCreateScreen(screenSize.x, screenSize.y, 16, bGetSystemMem()))
 		{
 			return FALSE;
 		}
 	}
 
-    SetRect(&rc, 0, 0, 640, 480);
+    SetRect(&rc, 0, 0, screenSize.x, screenSize.y);
     ClipCursor(&rc);
 
 	if (!m_pUIMgr)

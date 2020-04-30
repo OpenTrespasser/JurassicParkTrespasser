@@ -135,6 +135,7 @@ void ScreenCapture();
 void MiddleMessage(UINT uiIDS);
 void DisplayLoadingFileError(int iErr);
 void ClearInputState(bool bCenterMouse = false);
+POINT GetCurrentClientSize();
 
 
 #endif // __SUPPORTFN_H__
