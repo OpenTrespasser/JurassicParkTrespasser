@@ -102,6 +102,8 @@ void CUIManager::Draw()
 
     rc = m_rcInvalid;
 
+    prasMainScreen->Clear(0);
+	
     DrawWindowChain(prasMainScreen.ptPtrRaw(), &rc);
 
     DrawMouse(prasMainScreen.ptPtrRaw(), &rc);
