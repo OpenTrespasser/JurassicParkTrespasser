@@ -920,14 +920,18 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 	g_hwnd = NULL;
 
+    int windowWidth = 640;
+    int windowHeight = 480;
+    bGetDimensions(windowWidth, windowHeight);
+
     if (!CreateWindowEx(0,
                     g_szAppName,
                     sz,
                     WS_VISIBLE | WS_POPUP | WS_SYSMENU,
                     0,
                     0,
-                    640,
-                    480,
+                    windowWidth,
+                    windowHeight,
                     NULL,
                     NULL,
                     hInstance,

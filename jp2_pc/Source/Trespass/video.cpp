@@ -316,6 +316,8 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
         pSurface->Unlock(dds.lpSurface);
     }
 
+    POINT screenSize = GetCurrentClientSize();
+	
     if (m_fDirect)
     {
         m_pBuf = SmackBufferOpen(g_hwnd, 
@@ -333,7 +335,7 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
     }
     else
     {
-	    m_pBuff = rptr_new CRasterMem(640, 480, 16, 0);
+	    m_pBuff = rptr_new CRasterMem(screenSize.x, screenSize.y, 16, 0);
 
         m_pBuff->Clear(0);
 
@@ -341,8 +343,8 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
     }
 
     // Determine Left Top for Centering the video
-    m_iLeft = 320 - (m_pSmack->Width / 2);
-    m_iTop = 240 - (m_pSmack->Height / 2);
+    m_iLeft = (screenSize.x / 2) - (m_pSmack->Width / 2);
+    m_iTop = (screenSize.y / 2) - (m_pSmack->Height / 2);
 
     if (m_fDirect)
     {
