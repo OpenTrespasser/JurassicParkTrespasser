@@ -115,9 +115,8 @@ BOOL GetNextAvailSaveName(LPSTR pszFileName, int icFileLen, int iBaseExt)
 
 
 CTPassGlobals::CTPassGlobals()
+	: m_apsamRandoms{ nullptr }
 {
-    int     i;
-
     m_prasBkgnd = NULL;
     m_prasMiniBkgnd = NULL;
 
@@ -126,11 +125,6 @@ CTPassGlobals::CTPassGlobals()
     m_psamButton = NULL;
 	bInGame = false;
 	bHardReset = false;
-
-    for (i = 0; i < 14; i++)
-    {
-        m_apsamRandoms[i] = NULL;
-    }
 }
 
 
