@@ -346,16 +346,16 @@ bool ValidateDiskSpace(int iMB)
 {
     char szPath[_MAX_PATH] = { '\0' };
     GetFileLoc(FA_INSTALLDIR, szPath, sizeof(szPath));
-
+    
     const auto diskstat = std::filesystem::space(szPath);
-
-	//Existing swp files count as free space
+    
+    //Existing swp files count as free space
     std::uintmax_t swpFilesSize = 0;
-	for (const auto& entry : std::filesystem::directory_iterator("."))
-		if (entry.is_regular_file() && entry.path().extension() == ".swp")
+    for (const auto& entry : std::filesystem::directory_iterator("."))
+        if (entry.is_regular_file() && entry.path().extension() == ".swp")
             swpFilesSize += entry.file_size();
-
-	const std::uintmax_t neededBytes = iMB * static_cast<std::uintmax_t>(1024 * 1024);
+    
+    const std::uintmax_t neededBytes = iMB * static_cast<std::uintmax_t>(1024 * 1024);
     return diskstat.free + swpFilesSize > neededBytes;
 }
 
