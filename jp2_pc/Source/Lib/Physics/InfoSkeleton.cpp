@@ -448,7 +448,7 @@ extern int	 iKontrol_Jump[NUM_PELVISES];
 			Pelvis_Jump[2] = 1;
 			Pelvis_Jump_Voluntary = true;
 		}
-		else
+		else if (!Pelvis_Jump_Voluntary) /* If-condition part of an incomplete workaround for the jump bug */
 		{
 			// Always stop jumping if no urgency.
 			Pelvis_Jump[0] = Pelvis_Jump[1] = Pelvis_Jump[2] = 0;
