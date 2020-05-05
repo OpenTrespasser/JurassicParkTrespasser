@@ -1161,7 +1161,20 @@ int				count_dracula = 0;
 
 				while (1) 
 				{
-
+					if (!std::isfinite(L))
+					{
+						dout << "FINITY BAILOUT IN PELVIS FOR L: " << L << std::endl;
+						//This is an incomplete workaround
+						
+						//Set to valid, normalised vector
+						Pel[i][(index + 0)][0] = 0.25f;
+						Pel[i][(index + 1)][0] = 0.25f;
+						Pel[i][(index + 2)][0] = 0.25f;
+						Pel[i][(index + 3)][0] = 0.25f;
+						
+						break;
+					}
+					
 					if ( fabs(L) < lag_max ) break;
 					count_dracula++;
 
