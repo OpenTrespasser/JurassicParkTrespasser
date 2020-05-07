@@ -136,7 +136,7 @@ public:
 	CInstance* const	pinsTarget;			// The object associated with this influence
 											// or 0 if none.
 
-	CSet<EInfluenceFlag>setFlags;			// A bunch of flags for an influence.
+	mutable CSet<EInfluenceFlag> setFlags;	// A bunch of flags for an influence.
 
 //	CFeeling			feelDBGWeighted;	// The emotional baggage associated with the influence,
 
@@ -415,6 +415,10 @@ public:
 //			return (CInfluence)*this;
 //		}
 
+		static bool IsDiscardable(const CInfluence& influence)
+		{
+			return influence.setFlags[eifIS_DISCARDABLE];
+		}
 };
 
 
