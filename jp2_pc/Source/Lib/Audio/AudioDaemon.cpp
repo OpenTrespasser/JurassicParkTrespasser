@@ -403,14 +403,14 @@ void CAudioDaemon::Process(const CMessageStep& msg_step)
 			// remove from the fade list just in case it is fading
 			CAudio::pcaAudio->StopFade(psamMusic);
 
-			delete psamMusic;
-
 			// If this was a 3D music stream (of any type) then it must have been attached to an
 			// instance.
 			if (psamMusic->u4CreateFlags & (AU_CREATE_PSEUDO_3D|AU_CREATE_SPATIAL_3D))
 			{
 				RemoveSoundAttachment(psamMusic);
 			}
+
+			delete psamMusic;
 
 			bMusic = false;
 			psamMusic = NULL;
