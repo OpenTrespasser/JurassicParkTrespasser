@@ -39,6 +39,13 @@ extern HINSTANCE    g_hInst;
 extern bool         bInvertMouse;
 
 bool g_bDisplayLocation = false;
+bool g_bDisplayFPS = false;
+
+float fFrameRate = 0;           // Framerate in frames per second, calculated once per second
+int iNumFramesThisSample = 0;   // Number of frames rendered in the current sample period
+DWORD dwTimeLastSample = 0;     // Time when the framerate was last calculated
+DWORD dwTimeLastFrame = 0;      // The time when the previous frame was rendered
+float fTimeElapsed = 0;         // Milliseconds elapsed since the last frame was rendered
 
 #define COUNT_NOTICED_DEAD      20
 
@@ -61,6 +68,7 @@ enum
     CHEAT_ALLAMMO,
     CHEAT_SLOMO,
 	CHEAT_DINOS,
+    CHEAT_FPS,
 };
 
 struct
@@ -81,6 +89,7 @@ struct
     "WOO", CHEAT_ALLAMMO,
     "BIONICWOMAN", CHEAT_SLOMO,
 	"DINOS", CHEAT_DINOS,
+    "FPS", CHEAT_FPS,
 };
 
 int g_icCheats = sizeof(CHEATS) / sizeof(CHEATS[0]);
@@ -239,6 +248,10 @@ bool ExecuteCheat(LPSTR pszCheat)
 				// Toggle the boring dino bit.
 				gaiSystem.bBoring = !gaiSystem.bBoring;
 			}
+
+        case CHEAT_FPS:
+            g_bDisplayFPS = !g_bDisplayFPS;
+            break;
     }
 
     bRet = TRUE;
@@ -826,6 +839,39 @@ void CGameWnd::DrawWndInfo(CRaster * pRaster, RECT * prc)
             TextOut(hdc, 0, 30, sz, strlen(sz));
             prasMainScreen->ReleaseDC(hdc);
 
+        }
+
+        if (g_bDisplayFPS)
+        {
+            char sz[50];
+            HDC hdc;
+
+            if (dwTimeLastSample != 0)
+            {
+                DWORD dwTimeNow = timeGetTime();
+                DWORD dwTimeElapsed = dwTimeNow - dwTimeLastSample;
+                if ((dwTimeElapsed > 1000) && (iNumFramesThisSample > 0))
+                {
+                    float fTimeElapsed = (float)dwTimeElapsed / 1000.0f;
+                    fFrameRate = iNumFramesThisSample / fTimeElapsed;
+                    iNumFramesThisSample = 0;
+                    dwTimeLastSample = dwTimeNow;
+                }
+            }
+            else
+            {
+                dwTimeLastSample = timeGetTime();
+            }
+            iNumFramesThisSample++;
+
+            sprintf(sz, 
+                    "FPS: %i (%.2f ms)", 
+                    (int)fFrameRate, 
+                    1000.0f / fFrameRate);
+
+            hdc = prasMainScreen->hdcGet();
+            TextOut(hdc, 0, 0, sz, strlen(sz));
+            prasMainScreen->ReleaseDC(hdc);
         }
     }
 }
