@@ -389,7 +389,7 @@ void CWorldView::RemoveSomeInfluences()
 	}
 
 	if (lowestInstance) {
-		//Set is based on instance pointers, find result is guaranteed to the correct one
+		//Influence set is based on instance pointers, find result is guaranteed to be the correct one
 		iterFindInfluence(lowestInstance)->setFlags[eifIS_DISCARDABLE] = true;
 		todelete.push_back(lowestInstance);
 	}
