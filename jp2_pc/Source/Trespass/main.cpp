@@ -413,14 +413,6 @@ int DoWinMain(HINSTANCE hInstance,
         return -1;
     }
 
-	//
-	// Verify the processor before we allow the game to run
-	//
-	if (!VerifyProcessor())
-	{
-		goto Error;
-	}
-
     //
     // Check To see if the installed registry flag is set.  If it has not been
     // set then we haven't been installed.
