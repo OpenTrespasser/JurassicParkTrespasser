@@ -248,7 +248,7 @@
 
 #pragma warning(disable:4786)
 
-//#undef VER_ASM
+#undef VER_ASM
 //**********************************************************************************************
 // Global sky render class this should ALWAYS be NULL if there is no sky present.
 //
@@ -2707,14 +2707,14 @@ void CSkyRender::DrawSkyTexturedLinear()
 	CVector3<>*	pv3_right;
 	float		f_clip;
 	int32		i4_fog;
-	uint32		fp_u;
-	uint32		fp_v;
+	int32		fp_u;
+	int32		fp_v;
 	uint32		u4_lines = 0;
 	uint8* pu1_tex;
 	uint32 u4_x;
 	uint32 u4_adr;
-	uint32 fp_delta_u;
-	uint32 fp_delta_v;
+	int32 fp_delta_u;
+	int32 fp_delta_v;
 
 	pu1_tex = (uint8*)prasSkyTexture->pSurface;
 
@@ -2791,8 +2791,8 @@ void CSkyRender::DrawSkyTexturedLinear()
 
 		// calculate the intersection points with the sky plane, scale it and convert it to
 		// 16.16 fixed point.
-		fp_u = (uint32) ( ((v3Camera.tX+(pv3_left->tX*f_clip))*fScale) + fSkyOffsetU);
-		fp_v = (uint32) ( ((v3Camera.tY+(pv3_left->tY*f_clip))*fScale) + fSkyOffsetV);
+		fp_u = static_cast<int32>( ((v3Camera.tX+(pv3_left->tX*f_clip))*fScale) + fSkyOffsetU);
+		fp_v = static_cast<int32>( ((v3Camera.tY+(pv3_left->tY*f_clip))*fScale) + fSkyOffsetV);
 
 
 		// scale the f_clip by the screen width scale so the U,V deltas come out from below
@@ -2806,8 +2806,8 @@ void CSkyRender::DrawSkyTexturedLinear()
 		// number of steps/pixels in the screen width.
 		// These deltas are then scaled by the pixel/world size and the fixed point constant
 		// 65536.0f
-		fp_delta_u = (uint32) ( ((pv3_right->tX) - (pv3_left->tX) ) * f_clip);
-		fp_delta_v = (uint32) ( ((pv3_right->tY) - (pv3_left->tY) ) * f_clip);
+		fp_delta_u = static_cast<int32>( ((pv3_right->tX) - (pv3_left->tX) ) * f_clip);
+		fp_delta_v = static_cast<int32>( ((pv3_right->tY) - (pv3_left->tY) ) * f_clip);
 
 		// calculate the ray cast vectors for the next scan line
 		*pv3_left+=v3_delta_left;
