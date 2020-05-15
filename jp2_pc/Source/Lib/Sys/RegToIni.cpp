@@ -72,7 +72,10 @@ bool RegToIniConverter::convert()
 		strPAGEMANAGED              ,
 		strD3D_TITLE                ,
 		strZBUFFER_BITDEPTH			,
-		strHARDWARE_WATER
+		strHARDWARE_WATER			,
+		"SwapSpaceMb"				,
+		"NoCopyright"				,
+		"ShowProgressBar"
 	};
 
 	if (regkey.Open(HKEY_LOCAL_MACHINE, "Software\\DreamWorks Interactive\\Trespasser", KEY_READ) != ERROR_SUCCESS)
@@ -83,7 +86,7 @@ bool RegToIniConverter::convert()
 		DWORD type = 0;
 		ULONG size = 0;
 		auto status = regkey.QueryValue(entry.c_str(), &type, nullptr, &size);
-		if (status == ERROR_FILE_NOT_FOUND) //key does not exit
+		if (status == ERROR_FILE_NOT_FOUND) //key does not exist
 			continue;
 		if (status != ERROR_SUCCESS)
 			continue;
