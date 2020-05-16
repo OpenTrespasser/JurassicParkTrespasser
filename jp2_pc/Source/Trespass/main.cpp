@@ -71,61 +71,6 @@ void FindRunningApp(LPARAM lMsgName)
 }
 
 
-BOOL VerifyProcessor()
-{
-	CCPUDetect		detProcessor;
-	// have we managed to detect the type of the local processor??
-	if ( detProcessor.bProcessorDetected() )
-	{
-#if TARGET_PROCESSOR == PROCESSOR_PENTIUM
-		//
-		// The pentium build works on any machine
-		//
-		OutputDebugString("Target build Processor: Intel Pentium\n");
-		OutputDebugString(detProcessor.strLocalProcessorName());
-		return true;
-
-#elif TARGET_PROCESSOR == PROCESSOR_PENTIUMPRO
-		//
-		// The PentiumPro build only works on an Intel PentiumPro/Pentium II
-		//
-		OutputDebugString("Target build Processor: Intel Pentium Pro / Pentium II\n");
-		OutputDebugString(detProcessor.strLocalProcessorName());
-
-		if ((detProcessor.u4ProcessorFlags() & CPU_PENTIUMPRO) == 0)
-		{
-            ErrorDlg(NULL, IDS_ERR_NEED_P6);
-			return false;
-		}
-		return true;
-
-#elif TARGET_PROCESSOR == PROCESSOR_K6_3D
-		//
-		// The K6_3D build works on AMD,IDT and certain Cyrix processors (the 3DX bit set)
-		//
-		OutputDebugString("Target build Processor: AMD K6-3D\n");
-		OutputDebugString(detProcessor.strLocalProcessorName());
-
-		if ((detProcessor.u4ProcessorFlags() & CPU_3DNOW) == 0)
-		{
-            ErrorDlg(NULL, IDS_ERR_NEED_3DNOW);
-			return false;
-		}
-		return true;
-#endif
-	}
-	else
-	{
-        if (MsgDlg(NULL, MB_YESNO, IDS_TITLE, IDS_ERR_PDETECT_FAILED) == IDYES)
-			return true;
-
-		return false;
-	}
-
-	return TRUE;
-}
-
-
 //+--------------------------------------------------------------------------
 //
 //  Function:   GetModulePath
