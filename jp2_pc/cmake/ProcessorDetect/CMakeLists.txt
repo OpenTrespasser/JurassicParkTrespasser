@@ -17,4 +17,6 @@ add_common_options()
 
 add_library(${PROJECT_NAME} SHARED ${ProcessorDetect_Inc} ${ProcessorDetect_Src} )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "Processor")
+
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER Lib/Other)

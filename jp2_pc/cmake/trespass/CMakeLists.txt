@@ -92,6 +92,8 @@ target_link_libraries(${PROJECT_NAME}
     ${CMAKE_SOURCE_DIR}/lib/smacker/SMACKW32.LIB
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "OpenTrespasser")
+
 target_link_options(${PROJECT_NAME} PUBLIC "/SAFESEH:NO") #Needed only for old Smacker lib, remove when it gets replaced
 
 target_precompile_headers(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/Source/trespass/precomp.h)
