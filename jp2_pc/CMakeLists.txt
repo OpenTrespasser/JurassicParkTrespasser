@@ -101,7 +101,6 @@ if (DEACTIVATE_BROKEN_PROJECTS)
         FastBumpTest
         InitGUIApp
         PolyTest
-        ProcessorDetect
         PipelineTest
         QuantizerToolCLI
         TweakTrespass
