@@ -835,11 +835,7 @@ BOOL CUIWnd::LoadWindowInfo()
     GetWndFile(szWndName, sizeof(szWndName));
 
     //The Hack's hack to try and find the file first in the installed dir
-    GetRegString(REG_KEY_INSTALLED_DIR, szFile, sizeof(szFile), "");
-    if (szFile[strlen(szFile) - 1] != '\\')
-    {
-        strcat(szFile, "\\");
-    }
+    GetFileLoc(FA_INSTALLDIR, szFile, sizeof(szFile));
 
     strcat(szFile, "menu\\");
     strcat(szFile, szWndName);
@@ -857,14 +853,9 @@ BOOL CUIWnd::LoadWindowInfo()
                     "Unable to open file %s from Install Dir. Trying Data Dir.",
                     szFile));
 
-        // BUGBUG:  Hack to get data drive location
-        GetRegString(REG_KEY_DATA_DRIVE, szFile, sizeof(szFile), "");
-        if (szFile[strlen(szFile) - 1] != '\\')
-        {
-            strcat(szFile, "\\");
-        }
+        GetFileLoc(FA_DATADRIVE, szFile, sizeof(szFile));
 
-        strcat(szFile, "data\\menu\\");
+        strcat(szFile, "menu\\");
         strcat(szFile, szWndName);
 
         hFile = CreateFile(szFile,
