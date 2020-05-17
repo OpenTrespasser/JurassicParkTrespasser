@@ -248,6 +248,7 @@ bool ExecuteCheat(LPSTR pszCheat)
 				// Toggle the boring dino bit.
 				gaiSystem.bBoring = !gaiSystem.bBoring;
 			}
+            break;
 
         case CHEAT_FPS:
             g_bDisplayFPS = !g_bDisplayFPS;
