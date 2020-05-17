@@ -1226,7 +1226,7 @@ CRenderDB*  ps_renderDB = 0;
                                 if (pc_short_name &&
                                     GetRegString(REG_KEY_DATA_DRIVE, sz, sizeof(sz), "") > 0)
                                 {
-                                    strcat(sz, "data\\");
+                                    strcat(sz, "\\data\\");
                                     strcat(sz, pc_short_name);
 
                                     psz = sz;
