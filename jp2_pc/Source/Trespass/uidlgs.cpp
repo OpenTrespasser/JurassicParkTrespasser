@@ -789,8 +789,7 @@ BOOL CDirectLoadWnd::OnCreate()
         return FALSE;
     }
 
-    GetRegString("Data Drive", szFile, sizeof(szFile), "");
-    strcat(szFile, "data\\");
+    GetFileLoc(FA_DATADRIVE, szFile, sizeof(szFile));
     strcat(szFile, "*.scn");
 
     puilist = (CUIListbox*)GetUICtrl(1002);
@@ -919,8 +918,8 @@ BOOL CNewGameWnd::OnCreate()
         return FALSE;
     }
 
-    GetRegString("Data Drive", szFile, sizeof(szFile), "");
-    strcat(szFile, "data\\menu\\ngi.ddf");
+    GetFileLoc(FA_DATADRIVE, szFile, sizeof(szFile));
+    strcat(szFile, "menu\\ngi.ddf");
 
     puilist = (CUIListbox*)GetUICtrl(1002);
 
