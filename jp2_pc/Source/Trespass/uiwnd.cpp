@@ -834,7 +834,6 @@ BOOL CUIWnd::LoadWindowInfo()
 
     GetWndFile(szWndName, sizeof(szWndName));
 
-    //The Hack's hack to try and find the file first in the installed dir
     GetFileLoc(FA_INSTALLDIR, szFile, sizeof(szFile));
 
     strcat(szFile, "menu\\");
