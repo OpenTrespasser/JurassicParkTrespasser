@@ -75,7 +75,8 @@ bool RegToIniConverter::convert()
 		strHARDWARE_WATER			,
 		"SwapSpaceMb"				,
 		"NoCopyright"				,
-		"ShowProgressBar"
+		"ShowProgressBar"			,
+		"MRU Num"
 	};
 
 	if (regkey.Open(HKEY_LOCAL_MACHINE, "Software\\DreamWorks Interactive\\Trespasser", KEY_READ) != ERROR_SUCCESS)
