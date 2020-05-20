@@ -108,7 +108,7 @@ void SetProperWorkingDir()
     char        szPath[_MAX_PATH];
 
 #if VER_TEST
-    GetRegString(REG_KEY_INSTALLED_DIR, szPath, sizeof(szPath), "");
+    GetFileLoc(FA_INSTALLDIR, szPath, sizeof(szPath));
 #else
     GetModulePath(g_hInst, szPath, sizeof(szPath));
 #endif

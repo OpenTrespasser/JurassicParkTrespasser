@@ -295,9 +295,7 @@ int CTPassGlobals::LoadLevel(LPCSTR pszName)
     int     iRet;
     char    szFile[_MAX_PATH];
 
-    // BUGBUG:  Hack to get data drive location
-    GetRegString(REG_KEY_DATA_DRIVE, szFile, sizeof(szFile), "");
-    strcat(szFile, "data\\");
+    GetFileLoc(FA_DATADRIVE, szFile, sizeof(szFile));
     strcat(szFile, pszName);
 
     iRet = LoadScene(szFile, (LPSTR)pszName);
