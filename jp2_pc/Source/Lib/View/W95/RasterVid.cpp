@@ -1330,17 +1330,19 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		// Release Direct3D before doing anything.
 		d3dDriver.Uninitialize();
 
-		if (!forceWindowMode && bFullScreen)
+		if (bFullScreen)
 		{
 			// Return to Windows screen if necessary.
 			if (DirectDraw::pdd4)
 			{
-				DirectDraw::err = DirectDraw::pdd4->RestoreDisplayMode();
+				if (!forceWindowMode)
+					DirectDraw::err = DirectDraw::pdd4->RestoreDisplayMode();
 				DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(0, DDSCL_NORMAL);
 			}
 			else
 			{
-				DirectDraw::err = DirectDraw::pdd->RestoreDisplayMode();
+				if (!forceWindowMode)
+					DirectDraw::err = DirectDraw::pdd->RestoreDisplayMode();
 				DirectDraw::err = DirectDraw::pdd->SetCooperativeLevel(0, DDSCL_NORMAL);
 			}
 		}
