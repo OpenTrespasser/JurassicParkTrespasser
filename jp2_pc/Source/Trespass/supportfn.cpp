@@ -165,11 +165,12 @@ int GetFileLoc(FA_TYPE faFileLoc, char * psz, int icSize)
     {
         case FA_DATADRIVE:
             GetRegString(REG_KEY_DATA_DRIVE, psz, icSize, "");
-            strcat(psz, "data\\");
+    		strcat(psz, "\\data\\");
             break;
 
         case FA_INSTALLDIR:
             GetRegString(REG_KEY_INSTALLED_DIR, psz, icSize, "");
+            strcat(psz, "\\");
             break;
     }
 

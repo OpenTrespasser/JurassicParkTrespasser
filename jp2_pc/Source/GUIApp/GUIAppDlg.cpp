@@ -926,9 +926,9 @@ LRESULT CGUIAppDlg::OnIdle(WPARAM wParam, LPARAM lParam)
 		// HACK: to get data drive location.
 		GetRegString(REG_KEY_DATA_DRIVE, szFile, sizeof(szFile), "");
 
-		// Add on data sub-directoy to path.
+		// Add on data sub-directory to path.
 		if (*szFile)
-			strcat(szFile, "data\\");
+			strcat(szFile, "\\data\\");
 
 		// Append file name.
 		strcat(szFile, strName.c_str());
@@ -1156,7 +1156,9 @@ int CGUIAppDlg::OnCreate
         strcpy(szInstalledDir, "C:\\program files\\DreamWorks Interactive\\Trespasser\\");
         SetRegString(REG_KEY_INSTALLED_DIR, szInstalledDir);
         CreateDirAlongPath(szInstalledDir);
-    }
+	}
+    else
+        strcat(szInstalledDir, "\\");
     
 
 	//

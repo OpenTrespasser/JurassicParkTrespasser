@@ -61,8 +61,7 @@ BOOL CMainWnd::InitSurface()
 		SetupForSelfModifyingCode(g_hInst);
 	#endif
 
-    GetRegString("Data Drive", szSource, sizeof(szSource), "");
-    strcat(szSource, "data\\");
+    GetFileLoc(FA_DATADRIVE, szSource, sizeof(szSource));
 
     CAudioDaemon::SetDataPath(szSource);
 

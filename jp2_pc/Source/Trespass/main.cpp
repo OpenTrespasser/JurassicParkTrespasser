@@ -108,7 +108,7 @@ void SetProperWorkingDir()
     char        szPath[_MAX_PATH];
 
 #if VER_TEST
-    GetRegString(REG_KEY_INSTALLED_DIR, szPath, sizeof(szPath), "");
+    GetFileLoc(FA_INSTALLDIR, szPath, sizeof(szPath));
 #else
     GetModulePath(g_hInst, szPath, sizeof(szPath));
 #endif
@@ -637,7 +637,7 @@ void DumpException(LPEXCEPTION_POINTERS pep_info)
 		fprintf(pfile, "----------------\n");
 		fprintf(pfile, "Code   : 0x%08X\n", pep_info->ExceptionRecord->ExceptionCode);
 		fprintf(pfile, "Flags  : 0x%08X\n", pep_info->ExceptionRecord->ExceptionFlags);
-		fprintf(pfile, "Address: 0x%08X\n", pep_info->ExceptionRecord->ExceptionAddress);
+		fprintf(pfile, "Address: 0x%08p\n", pep_info->ExceptionRecord->ExceptionAddress);
 		for (uint u = 0; u < pep_info->ExceptionRecord->NumberParameters && u < 16; ++u)
 			fprintf(pfile, "Info %2ld: 0x%08X\n", u, pep_info->ExceptionRecord->ExceptionInformation[u]);
 	}
