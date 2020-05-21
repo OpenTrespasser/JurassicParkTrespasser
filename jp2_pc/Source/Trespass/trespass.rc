@@ -182,7 +182,7 @@ BEGIN
     IDS_ERROR_DDRAW_FATAL   "Error Initializing DirectDraw."
     IDS_NOT_INSTALLED       "Trespasser does not appear to be installed properly.  Please run the Setup program again.  If this problem appears again try uninstalling then installing."
     IDS_DATA_DRIVE_NOT_FOUND 
-                            "Please Insert the Trespasser CD into %s.  \r\n\r\nPress the OK button to continue.\r\nPress Cancel to Quit."
+                            "The configured game data directory is invalid: %s\r\nDo you want to select a different data directory?\r\nWhen in doubt, select the directory of the Trespasser CD."
     IDS_ERROR_FATAL         "A fatal error has been detected.  Press OK to exit"
     IDS_STR_KEY_MAP_UNKNOWN "????"
     IDS_RENDER_QUALITY_CHANGING "Render Quality Changing"
