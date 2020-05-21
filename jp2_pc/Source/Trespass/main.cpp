@@ -18,6 +18,7 @@
 #pragma hdrstop
 
 #include <time.h>
+#include <ShlObj.h>
 #include "resource.h"
 #include "main.h"
 #include "..\Lib\Sys\reg.h"
@@ -70,6 +71,42 @@ void FindRunningApp(LPARAM lMsgName)
     EnumWindows((WNDENUMPROC)SiblingFindProc, lMsgName);
 }
 
+std::filesystem::path OpenDirectoryChooser(const std::filesystem::path& defaultPath)
+{
+    CCom<IFileDialog> dlg = nullptr;
+    if (FAILED(CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&dlg))) || !dlg)
+        return {};
+	
+    FILEOPENDIALOGOPTIONS options;
+    if (FAILED(dlg->GetOptions(&options)))
+	    return {};
+    
+    options |= FOS_PICKFOLDERS;
+    options |= FOS_PATHMUSTEXIST;
+	if (FAILED(dlg->SetOptions(options)))
+        return {};
+
+    CCom<IShellItem> startPathItem = nullptr;
+    if (SUCCEEDED(SHCreateItemFromParsingName(defaultPath.wstring().c_str(), nullptr, IID_PPV_ARGS(&startPathItem))))
+        dlg->SetDefaultFolder(startPathItem); //Can ignore error here
+
+	
+    if (FAILED(dlg->Show(g_hwnd)))
+        return {};
+
+	
+    CCom<IShellItem> selected = nullptr;
+    if (FAILED(dlg->GetResult(&selected)) || !selected)
+	    return {};
+    
+    PWSTR pathstring = nullptr;
+	if (FAILED(selected->GetDisplayName(SIGDN_FILESYSPATH, &pathstring)) || !pathstring)
+        return {};
+	
+    std::filesystem::path result = pathstring;
+    CoTaskMemFree(pathstring);
+    return result;
+}
 
 //+--------------------------------------------------------------------------
 //
@@ -279,6 +316,8 @@ void TrespassExceptionCleanup()
 	delete g_pMainWnd;
 	g_pMainWnd = NULL;
 
+    CoUninitialize();
+
     ErrorDlg(g_hwnd, IDS_ERROR_FATAL);
 
     ExitProcess(0);
@@ -305,7 +344,51 @@ bool ValidateDiskSpace(int iMB)
 }
 
 
+bool TestDataDriveValidity()
+{
+	bool validatedDataDrive = false;
+	while (!validatedDataDrive)
+	{
+		char    sz[_MAX_PATH];
+		GetFileLoc(FA_DATADRIVE, sz, sizeof(sz));
 
+		std::filesystem::path datapath = sz;
+		
+        // This should be the unique file on the disk
+		if (!std::filesystem::exists(datapath / "menu" / "tpassintro.smk"))
+		{
+            //Without the data subpath
+            auto datadrive = datapath.has_parent_path() ? datapath.parent_path() : datapath;
+			
+			if (datadrive.has_parent_path() && datadrive.has_stem() && datadrive.stem() == "data"
+                && std::filesystem::exists(datadrive / "menu" / "tpassintro.smk"))
+			{
+				//We are in the data directory itself, correct to parent directory
+                auto parent = datadrive.parent_path();
+                SetRegString(REG_KEY_DATA_DRIVE, parent.string().c_str());
+                return true;
+			}
+			
+			if (MsgDlg(g_hwnd,
+			           MB_YESNOCANCEL | MB_SETFOREGROUND,
+			           IDS_ERROR_TITLE,
+			           IDS_DATA_DRIVE_NOT_FOUND,
+			           datadrive.string().c_str()) != IDYES)
+			{
+				Trace(("We are Cancelling from no data found"));
+				return false;
+			}
+
+			auto newpath = OpenDirectoryChooser(datadrive);
+			if (!newpath.empty())
+				SetRegString(REG_KEY_DATA_DRIVE, newpath.string().c_str());
+		}
+		else
+			validatedDataDrive = true;
+	}
+	
+	return true;
+}
 
 //+--------------------------------------------------------------------------
 //
@@ -336,6 +419,8 @@ int DoWinMain(HINSTANCE hInstance,
 
 	BOOL b_change_safemode = TRUE;
 
+    CoInitialize(nullptr);
+	
 	// Make sure the cursor can access the safe mode dialog.
 	ClipCursor(0);
 
@@ -369,32 +454,8 @@ int DoWinMain(HINSTANCE hInstance,
     }
 
 	// Check existance of file system
-CheckFS:
-    {
-        char    sz[_MAX_PATH];
-
-        GetFileLoc(FA_DATADRIVE, sz, sizeof(sz));
-        strcat(sz, "menu\\tpassintro.smk");
-
-        // This should be the unique file on the disk
-        if (GetFileAttributes(sz) == (DWORD)-1)
-        {
-            GetRegString(REG_KEY_DATA_DRIVE, sz, sizeof(sz), "");
-
-            if (MsgDlg(g_hwnd, 
-                       MB_OKCANCEL | MB_SETFOREGROUND, 
-                       IDS_ERROR_TITLE, 
-                       IDS_DATA_DRIVE_NOT_FOUND,
-                       sz) == IDCANCEL)
-            {
-                Trace(("We are Canceling from no data found"));
-                goto Cleanup;
-            }
-
-            SleepEx(1000, FALSE);
-            goto CheckFS;
-        }
-    }
+    if (!TestDataDriveValidity()) 
+        goto Cleanup;
 
     if (!ValidateDiskSpace(110))
     {
@@ -600,13 +661,15 @@ Cleanup:
 	// Remove the audio, we are about to quit.
 	delete CAudio::pcaAudio;
 
+    CoUninitialize();
+	
     PostQuitMessage(0);
 
 	// BUGBUG:  Close out file system
 
 	RestoreNVidiaRegistry();
     CloseKey(b_change_safemode);
-
+	
     return iRet;
 
 Error:
