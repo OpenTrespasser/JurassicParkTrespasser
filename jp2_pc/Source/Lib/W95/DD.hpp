@@ -153,13 +153,12 @@ public:
 namespace DirectDraw
 //
 // Encapsulation of some IDirectDraw items.
-// Contains the IDirectDraw2* pointer, and an error variable used to handle errors.
+// Contains the IDirectDraw4* pointer, and an error variable used to handle errors.
 //
 // These items are automatically initialised by CInitDD below.
 //
 //**************************************
 {
-	extern CCom<IDirectDraw2>	pdd;		// The pointer through which all functions are accessed.
 	extern CCom<IDirectDraw4>	pdd4;		// The pointer through which all functions are accessed.
 
 	//**********************************************************************************************

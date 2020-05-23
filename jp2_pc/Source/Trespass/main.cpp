@@ -627,9 +627,9 @@ DoRestartWithRenderDlg:
 
 Cleanup:
 
-    if (DirectDraw::pdd)
+    if (DirectDraw::pdd4)
     {
-    	DirectDraw::err = DirectDraw::pdd->SetCooperativeLevel(g_hwnd, DDSCL_NORMAL);
+    	DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(g_hwnd, DDSCL_NORMAL);
     }
 
 	// Release everything really well.

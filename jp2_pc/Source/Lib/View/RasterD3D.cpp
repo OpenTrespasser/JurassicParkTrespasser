@@ -673,7 +673,7 @@ public:
 		// Set the correct dimensions.
 		d3dDriver.SetTextureMinMax(iWidth, iHeight, false);
 
-		Assert(DirectDraw::pdd);
+		Assert(DirectDraw::pdd4);
 
 		iPixelBits       = 16;
 		iLinePixels      = iWidth;

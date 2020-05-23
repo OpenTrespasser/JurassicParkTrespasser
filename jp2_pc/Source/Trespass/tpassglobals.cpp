@@ -136,7 +136,7 @@ CTPassGlobals::~CTPassGlobals()
 
 void CTPassGlobals::SetupBackground()
 {
-    IDirectDrawSurface *    pSurface;
+    IDirectDrawSurface4 *   pSurface;
     HRESULT                 hr;
     HDC                     hdc;
 
@@ -176,12 +176,12 @@ void CTPassGlobals::CaptureBackground(bool bBackbuffer /* = false */)
     HDC     hdcDst;
     HDC     hdcMini;
 
-    IDirectDrawSurface *    pSurface;
+    IDirectDrawSurface4 *   pSurface;
     HRESULT                 hr;
 
     if (bBackbuffer)
     {
-        pSurface = prasMainScreen->pddsDraw;
+        pSurface = prasMainScreen->pddsDraw4;
     }
     else
     {

@@ -53,7 +53,7 @@ CVideoWnd::~CVideoWnd()
 
 void CVideoWnd::NextDirect()
 {
-    IDirectDrawSurface *    pSurface;
+    IDirectDrawSurface4 *   pSurface;
     HDC                     hdc;
     HRESULT                 hr;
 
@@ -102,8 +102,8 @@ void CVideoWnd::NextNonDirect()
     LPBYTE      pbSrc;
     LPBYTE      pbDst;
     int         iSurface;
-    IDirectDrawSurface *    pSurface;
-    DDSURFACEDESC           dds;
+    IDirectDrawSurface4 *   pSurface;
+    DDSURFACEDESC2          dds;
     HRESULT                 hr;
 
 
@@ -176,7 +176,7 @@ void CVideoWnd::NextNonDirect()
     }
 
     m_pBuff->Unlock();
-    pSurface->Unlock(dds.lpSurface);
+    pSurface->Unlock(nullptr);
 }
 
 
@@ -285,8 +285,8 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
     //
 
     {
-        IDirectDrawSurface *    pSurface;
-        DDSURFACEDESC           dds;
+        IDirectDrawSurface4 *   pSurface;
+        DDSURFACEDESC2          dds;
         HRESULT                 hr;
 
         pSurface = prasMainScreen->GetPrimarySurface();
@@ -313,7 +313,7 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
             m_fDirect = FALSE;
         }
 
-        pSurface->Unlock(dds.lpSurface);
+        pSurface->Unlock(nullptr);
     }
 
     POINT screenSize = GetCurrentClientSize();
