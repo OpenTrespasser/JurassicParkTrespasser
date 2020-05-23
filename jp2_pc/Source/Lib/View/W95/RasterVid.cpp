@@ -175,7 +175,7 @@ private:
 	//**************************************
 	{
 		HRESULT hres;
-		CDDSize<DDSURFACEDESC> sd;
+		CDDSize<DDSURFACEDESC2> sd;
 
 		//
 		// We want a flipping (double-buffered) surface in video memory.
@@ -188,30 +188,30 @@ private:
 		sd.dwBackBufferCount = i_buffers-1;
 
 		// Create the front buffer.
-		hres = DirectDraw::pdd->CreateSurface(&sd, &pddsPrimary, 0);
+		hres = DirectDraw::pdd4->CreateSurface(&sd, &pddsPrimary4, 0);
 
 		//
 		// If the front buffer could not be created, fail trying to construct a video raster
 		// with DirectDraw hardware.
 		//
-        if (FAILED(hres) || !pddsPrimary)
+        if (FAILED(hres) || !pddsPrimary4)
         {
             return false;
         }
 
 		// Retrieve back buffer.
 		sd.ddsCaps.dwCaps = DDSCAPS_BACKBUFFER;
-		hres = pddsPrimary->GetAttachedSurface(&sd.ddsCaps, &pddsDraw);
+		hres = pddsPrimary4->GetAttachedSurface(&sd.ddsCaps, &pddsDraw4);
 
-		if (FAILED(hres) || !pddsDraw)
+		if (FAILED(hres) || !pddsDraw4)
 		{
 			// Failed to create a flipping chain, try to create a double buffer.
 			sd.dwBackBufferCount = 1;
 			sd.ddsCaps.dwCaps = DDSCAPS_BACKBUFFER;
-			hres = pddsPrimary->GetAttachedSurface(&sd.ddsCaps, &pddsDraw);
-			if (FAILED(hres) || !pddsDraw)
+			hres = pddsPrimary4->GetAttachedSurface(&sd.ddsCaps, &pddsDraw4);
+			if (FAILED(hres) || !pddsDraw4)
 			{
-				pddsPrimary.SafeRelease();
+				pddsPrimary4.SafeRelease();
 				return false;
 			}
 		}
@@ -223,10 +223,10 @@ private:
 			ddbltfx.dwFillColor = u4BORDER_COLOUR;
 
 			// Clear the next backbuffer.
-			while (bRestore(pddsDraw->Blt(NULL, NULL, NULL, DDBLT_COLORFILL, &ddbltfx)));
+			while (bRestore(pddsDraw4->Blt(NULL, NULL, NULL, DDBLT_COLORFILL, &ddbltfx)));
 			
 			// Flip to the next in the chain.
-			while (bRestore(pddsPrimary->Flip(pddsDraw, DDFLIP_WAIT)));
+			while (bRestore(pddsPrimary4->Flip(pddsDraw4, DDFLIP_WAIT)));
 		}
 
 		return true;
@@ -247,11 +247,11 @@ private:
 	//
 	//**************************************
 	{
-		CDDSize<DDSURFACEDESC> sd;
+		CDDSize<DDSURFACEDESC2> sd;
 
 		sd.dwFlags = DDSD_CAPS;
 		sd.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
-		DirectDraw::err = DirectDraw::pdd->CreateSurface(&sd, &pddsPrimary, 0);
+		DirectDraw::err = DirectDraw::pdd4->CreateSurface(&sd, &pddsPrimary4, 0);
 
 		if (i_buffers > 1)
 		{
@@ -271,7 +271,7 @@ private:
 			if (!seteras[erasVideoMem])
 				// Video mem not wanted, force system memory.
 				sd.ddsCaps.dwCaps |= DDSCAPS_SYSTEMMEMORY;
-			DirectDraw::err = DirectDraw::pdd->CreateSurface(&sd, &pddsDraw, 0);
+			DirectDraw::err = DirectDraw::pdd4->CreateSurface(&sd, &pddsDraw4, 0);
 
 			//
 			// If we wanted video memory, but the suface didn't end up there, then
@@ -279,19 +279,19 @@ private:
 			// without even the benefit of video memory.
 			//
 
-			DirectDraw::err = pddsDraw->GetSurfaceDesc(&sd);
+			DirectDraw::err = pddsDraw4->GetSurfaceDesc(&sd);
 			if (!(sd.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY))
 			{
-				pddsDraw->Release();
+				pddsDraw4->Release();
 				sd.ddsCaps.dwCaps |= DDSCAPS_SYSTEMMEMORY;
-				DirectDraw::err = DirectDraw::pdd->CreateSurface(&sd, &pddsDraw, 0);
+				DirectDraw::err = DirectDraw::pdd4->CreateSurface(&sd, &pddsDraw4, 0);
 			}
 		}
 		else 
 		{
 			// Just a single buffer.
 			// Copy the COM pointer.
-			pddsDraw = pddsPrimary;
+			pddsDraw4 = pddsPrimary4;
 		}
 
 		return true;
@@ -324,15 +324,15 @@ private:
 		if (i_bits && !forceWindowMode)
 		{		
 			// Go fullscreen.  We need to call 2 DD functions to do this.
-			DirectDraw::err = DirectDraw::pdd->SetCooperativeLevel(hwnd, 
+			DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(hwnd, 
 				DDSCL_EXCLUSIVE | DDSCL_FULLSCREEN);
-			DirectDraw::err = DirectDraw::pdd->SetDisplayMode(i_width, i_height, i_bits, 0, 0);
+			DirectDraw::err = DirectDraw::pdd4->SetDisplayMode(i_width, i_height, i_bits, 0, 0);
 		}
 		else 
 		{			
 			// Go windowed in current screen mode.
 			// Return to Windows screen if necessary.
-			DirectDraw::err = DirectDraw::pdd->SetCooperativeLevel(hwnd, DDSCL_NORMAL);
+			DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(hwnd, DDSCL_NORMAL);
 		}
 
 		// Try to construct the backbuffer in video memory.
@@ -430,7 +430,6 @@ private:
 	//******************************************************************************************
 	CRasterVid::CRasterVid(int i_width, int i_height, int i_bits, CSet<ERasterFlag> seteras)
 	{
-		pddsDraw  = 0;
 		pddsDraw4 = 0;
 
 		// No default bit depth.
@@ -542,7 +541,7 @@ private:
 		}
 		else
 		{
-			CDDSize<DDSURFACEDESC> sd;
+			CDDSize<DDSURFACEDESC2> sd;
 
 			// Fill out the sd structure for the CreateSurface call.
 			sd.dwFlags = DDSD_CAPS | DDSD_WIDTH | DDSD_HEIGHT;
@@ -619,11 +618,11 @@ private:
 				sd.dwHeight	= i_height;
 			}
 
-			DirectDraw::err = DirectDraw::pdd->CreateSurface(&sd, &pddsDraw, 0);
-			AlwaysAssert(pddsDraw);
+			DirectDraw::err = DirectDraw::pdd4->CreateSurface(&sd, &pddsDraw4, 0);
+			AlwaysAssert(pddsDraw4);
 
 			// Retrieve the surface format info.
-			DirectDraw::err = pddsDraw->GetSurfaceDesc(&sd);
+			DirectDraw::err = pddsDraw4->GetSurfaceDesc(&sd);
 			u4DDSFlags = sd.ddsCaps.dwCaps;
 			bVideoMem = (sd.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY) != 0;
 
@@ -644,12 +643,7 @@ private:
 			i4ClearTiming = 0;
 		}
 
-		// Construct a version 1 DirectDraw interface.
-		AlwaysAssert(pddsDraw || pddsDraw4);
-		if (pddsDraw4 && !pddsDraw)
-		{
-			DirectDraw::err = pddsDraw4->QueryInterface(IID_IDirectDrawSurface, (void**)&pddsDraw);
-		}
+		AlwaysAssert(pddsDraw4);
 	}
 
 	//******************************************************************************************
@@ -665,7 +659,7 @@ private:
 	{
 		if (i_err == DDERR_SURFACELOST)
 		{
-			DirectDraw::err = pddsDraw->Restore();
+			DirectDraw::err = pddsDraw4->Restore();
 		}
 		else if (i_err != DDERR_WASSTILLDRAWING)
 		{
@@ -684,8 +678,8 @@ private:
 		// If back surfaces are in system memory,
 		// we don't have to worry about Lock hanging the system.
 		//
-		CDDSize<DDSURFACEDESC> sd;
-		while (bRestore(pddsDraw->Lock(0, &sd, DDLOCK_WAIT, 0)));
+		CDDSize<DDSURFACEDESC2> sd;
+		while (bRestore(pddsDraw4->Lock(0, &sd, DDLOCK_WAIT, 0)));
 		pSurface = sd.lpSurface;
 		bLocked = 1;
 	}
@@ -695,7 +689,7 @@ private:
 	{
 		if (!bLocked)
 			return;
-		DirectDraw::err = pddsDraw->Unlock(0);
+		DirectDraw::err = pddsDraw4->Unlock(0);
 		bLocked = 0;
 	}
 
@@ -735,9 +729,9 @@ private:
 			if (!pddpal)
 			{
 				// Create a custom palette, initialise it with ppal, and attach it to DD surface.
-				DirectDraw::err = DirectDraw::pdd->CreatePalette(
+				DirectDraw::err = DirectDraw::pdd4->CreatePalette(
 					DDPCAPS_8BIT | DDPCAPS_ALLOW256 | (ppal? DDPCAPS_INITIALIZE : 0), ape, &pddpal, NULL);
-				DirectDraw::err = pddsDraw->SetPalette(pddpal);
+				DirectDraw::err = pddsDraw4->SetPalette(pddpal);
 			}
 			else if (ppal)
 			{
@@ -831,7 +825,7 @@ private:
 		fx.dwFillColor = pix;
 
 		// Call Blt, with the COLORFILL operation.
-		while (bRestore(pddsDraw->Blt
+		while (bRestore(pddsDraw4->Blt
 			(
 				0,										// Dest rectangle (0 means whole surface.)
 				0,										// Source surface (none).
@@ -922,22 +916,22 @@ private:
 			// Set pras_src's colour key to pix_colour_key, if given.
 			DDCOLORKEY ddck;
 			ddck.dwColorSpaceLowValue = ddck.dwColorSpaceHighValue = pix_colour_key;
-			prasv_src->pddsDraw->SetColorKey(DDCKEY_SRCBLT, &ddck);
+			prasv_src->pddsDraw4->SetColorKey(DDCKEY_SRCBLT, &ddck);
 		}
 
 		int i_err;
-		while ((i_err = pddsDraw->BltFast
+		while ((i_err = pddsDraw4->BltFast
 			(
 				i_dx, i_dy,						// Dest position.
-				prasv_src->pddsDraw,			// Source surface.
+				prasv_src->pddsDraw4,			// Source surface.
 				&rc_src,						// Source rectangle.
 				DDBLTFAST_WAIT | (b_colour_key ? DDBLTFAST_SRCCOLORKEY : 0)
 			)
 		) == DDERR_SURFACELOST)
 		{
 			// One of the surfaces was lost; restore them both.
-			DirectDraw::err = pddsDraw->Restore();
-			DirectDraw::err = prasv_src->pddsDraw->Restore();
+			DirectDraw::err = pddsDraw4->Restore();
+			DirectDraw::err = prasv_src->pddsDraw4->Restore();
 		}
 		DirectDraw::err = i_err;
 
@@ -950,14 +944,14 @@ private:
 	{
 		// Get the DC via DirectDraw's cumbersome interface.
 		HDC hdc = 0;
-		while (bRestore(pddsDraw->GetDC(&hdc)));
+		while (bRestore(pddsDraw4->GetDC(&hdc)));
 		return hdc;
 	}
 
 	//******************************************************************************************
 	void CRasterVid::ReleaseDC(HDC hdc) 
 	{
-		DirectDraw::err = pddsDraw->ReleaseDC(hdc);
+		DirectDraw::err = pddsDraw4->ReleaseDC(hdc);
 	}
 
 	//******************************************************************************************
@@ -1173,9 +1167,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 	CRasterWin::CRasterWin(HWND hwnd, int i_width, int i_height, int i_bits, int i_buffers, 
 		                   CSet<ERasterFlag> seteras)
 	{
-		pddsDraw     = 0;
 		pddsDraw4    = 0;
-		pddsPrimary  = 0;
 		pddsPrimary4 = 0;
 		pddsZBuffer  = 0;
 
@@ -1193,25 +1185,11 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		{
 			AlwaysAssert(pddsDraw4);
 			AlwaysAssert(pddsPrimary4);
-
-			// Get the earlier interfaces.
-			if (!pddsDraw)
-			{
-				DirectDraw::err = pddsDraw4->QueryInterface(IID_IDirectDrawSurface, (void**)&pddsDraw);
-			}
-			if (!pddsPrimary)
-			{
-				DirectDraw::err = pddsPrimary4->QueryInterface(IID_IDirectDrawSurface, (void**)&pddsPrimary);
-			}
 		}
 		else
 		{
 			// Make sure that Direct3D is unitialized.
 			d3dDriver.Uninitialize();
-
-			// Get rid of DirectDraw4 stuff.
-			priv_self.DestroyDD4Surfaces();
-			DirectDraw::pdd4.SafeRelease();
 
 			// Construct a regular DirectDraw interface.
 			priv_self.ConstructSoftware(hwnd, i_width, i_height, i_bits, i_buffers, seteras);
@@ -1219,25 +1197,18 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			// Create a DirectDrawClipper object, needed for the window.
 			if (!bFullScreen)
 			{
-				DirectDraw::err = DirectDraw::pdd->CreateClipper(0, &pddclip, 0);
+				DirectDraw::err = DirectDraw::pdd4->CreateClipper(0, &pddclip, 0);
 				DirectDraw::err = pddclip->SetHWnd(0, hwnd);
-				DirectDraw::err = pddsPrimary->SetClipper(pddclip);
+				DirectDraw::err = pddsPrimary4->SetClipper(pddclip);
 			}
 			AlwaysAssert(bFullScreen || pddclip);
 		}
-		AlwaysAssert(pddsDraw);
-		AlwaysAssert(pddsPrimary);
+		AlwaysAssert(pddsDraw4);
+		AlwaysAssert(pddsPrimary4);
 
 		//
 		// Common setup.
 		//
-
-		bool b_create_interface = !DirectDraw::pdd4;
-
-		if (b_create_interface)
-		{
-			DirectDraw::pdd->QueryInterface(IID_IDirectDraw4, (LPVOID*)&DirectDraw::pdd4);
-		}
 
 		if (DirectDraw::pdd4)
 		{
@@ -1259,7 +1230,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 				{
 					// Get & save the current gamma settings.
 					LPDIRECTDRAWGAMMACONTROL pddgc = 0;
-					pddsPrimary->QueryInterface(IID_IDirectDrawGammaControl, (void**)&pddgc);
+					pddsPrimary4->QueryInterface(IID_IDirectDrawGammaControl, (void**)&pddgc);
 					if (pddgc)
 					{
 						// Only activate gamma if we successfully get the original ramp.
@@ -1272,18 +1243,13 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			}
 		}
 
-		if (b_create_interface)
-		{
-			DirectDraw::pdd4.SafeRelease();
-		}
-
-		CDDSize<DDSURFACEDESC> sd;
+		CDDSize<DDSURFACEDESC2> sd;
 
 		//
 		// Figure out the screen aspect ratio by getting the screen pixel dimensions,
 		// and dividing by the assumed monitor aspect ratio.
 		//
-		DirectDraw::err = pddsPrimary->GetSurfaceDesc(&sd);
+		DirectDraw::err = pddsPrimary4->GetSurfaceDesc(&sd);
 		u4DDSFlagsFront = sd.ddsCaps.dwCaps;
 		fAspectRatio = (float)sd.dwWidth / sd.dwHeight / fMONITOR_ASPECT ;
 		
@@ -1292,7 +1258,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		bLocked       = 0;
 
 		// Retrieve the surface format info.
-		DirectDraw::err = pddsDraw->GetSurfaceDesc(&sd);
+		DirectDraw::err = pddsDraw4->GetSurfaceDesc(&sd);
 
 		// Set up the info.
 		CPixelFormat pxf
@@ -1339,12 +1305,6 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 					DirectDraw::err = DirectDraw::pdd4->RestoreDisplayMode();
 				DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(0, DDSCL_NORMAL);
 			}
-			else
-			{
-				if (!forceWindowMode)
-					DirectDraw::err = DirectDraw::pdd->RestoreDisplayMode();
-				DirectDraw::err = DirectDraw::pdd->SetCooperativeLevel(0, DDSCL_NORMAL);
-			}
 		}
 
 
@@ -1356,10 +1316,8 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			// destroyed.  So we must prevent ~CRasterVid from trying to destroy pddsDraw.
 			// We do this by re-initialising it to 0.
 			//
-			pddsDraw.SafeRelease();
 			pddsDraw4.SafeRelease();
 			pddsZBuffer.SafeRelease();
-			pddsPrimary.SafeRelease();
 			pddsPrimary4.SafeRelease();
 		/*
 			if (DirectDraw::pdd4)
@@ -1386,7 +1344,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		// the drawing surface.
 		if (i_err == DDERR_SURFACELOST)
 		{
-			DirectDraw::err = pddsPrimary->Restore();
+			DirectDraw::err = pddsPrimary4->Restore();
 		}
 		else if (i_err != DDERR_WASSTILLDRAWING)
 		{
@@ -1427,7 +1385,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			// Palettes only work in this mode.
 			// Attach palette to primary screen as well.  This realises it on screen.
 			Assert(pddpal);
-			DirectDraw::err = pddsPrimary->SetPalette(pddpal);
+			DirectDraw::err = pddsPrimary4->SetPalette(pddpal);
 		}
 	}
 
@@ -1435,7 +1393,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 	void CRasterWin::Flip() 
 	{
 		// If single surface, return.
-		if (pddsPrimary == pddsDraw)
+		if (pddsPrimary4 == pddsDraw4)
 			return;
 
 		// Force an unlock.
@@ -1466,13 +1424,13 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			rc_dest.bottom	= rc_dest.top  + rc_src.bottom;
 
 			// do a stretch blit to fill the window
-			while (bRestore(pddsPrimary->Blt(&rc_dest, pddsDraw, &rc_src, DDBLT_WAIT, NULL)));
+			while (bRestore(pddsPrimary4->Blt(&rc_dest, pddsDraw4, &rc_src, DDBLT_WAIT, NULL)));
 		}
 		else
 		{
 			if (bFlippable) 
 			{  
-				while (bRestore(pddsPrimary->Flip(pddsDraw, DDFLIP_WAIT)));
+				while (bRestore(pddsPrimary4->Flip(pddsDraw4, DDFLIP_WAIT)));
 			}
 			else if (iWidth == iWidthFront && iHeight == iHeightFront)
 			{
@@ -1480,7 +1438,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 				// Call BltFast function, because no clipping or stretching needed.
 				//
 
-				while (bRestore(pddsPrimary->BltFast(0, 0, pddsDraw, &rc_src, DDBLTFAST_WAIT)));
+				while (bRestore(pddsPrimary4->BltFast(0, 0, pddsDraw4, &rc_src, DDBLTFAST_WAIT)));
 			}
 			else
 			{
@@ -1494,7 +1452,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 				rc_dest.right	= rc_dest.left + rc_src.right;
 				rc_dest.bottom	= rc_dest.top  + rc_src.bottom;
 
-				while (bRestore(pddsPrimary->Blt(&rc_dest, pddsDraw, &rc_src, DDBLT_WAIT, NULL)));
+				while (bRestore(pddsPrimary4->Blt(&rc_dest, pddsDraw4, &rc_src, DDBLT_WAIT, NULL)));
 			}
 		}
 
@@ -1518,7 +1476,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 
 		// Get the gamma control interface.
 		LPDIRECTDRAWGAMMACONTROL pddgc = 0;
-		pddsPrimary->QueryInterface(IID_IDirectDrawGammaControl, (void**)&pddgc);
+		pddsPrimary4->QueryInterface(IID_IDirectDrawGammaControl, (void**)&pddgc);
 		if (pddgc)
 		{
 			DDGAMMARAMP gr;
@@ -1553,7 +1511,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 
 		// Get the gamma control interface.
 		LPDIRECTDRAWGAMMACONTROL pddgc = 0;
-		pddsPrimary->QueryInterface(IID_IDirectDrawGammaControl, (void**)&pddgc);
+		pddsPrimary4->QueryInterface(IID_IDirectDrawGammaControl, (void**)&pddgc);
 		if (pddgc)
 		{
 			bGammaFlash = false;
@@ -1571,7 +1529,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			if (b_active)
 			{
 				// Make sure the palette is realized.
-				DirectDraw::err = pddsPrimary->SetPalette(pddpal);
+				DirectDraw::err = pddsPrimary4->SetPalette(pddpal);
 			}
 			//
 			// There is no corresponding action when the window is deactivated.
@@ -1596,7 +1554,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			return;
 
 		// Just call the DD function.  
-		DirectDraw::err = DirectDraw::pdd->FlipToGDISurface();
+		DirectDraw::err = DirectDraw::pdd4->FlipToGDISurface();
 	}
 
 	//******************************************************************************************
@@ -1611,7 +1569,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 	// surface
 	void CRasterWin::ClearBorder(bool bBackBuffer /* = false */)
 	{
-        IDirectDrawSurface *    pdds;
+        IDirectDrawSurface4 *    pdds;
 
 		// if the render surface and screen surface are the same size then we do not need to
 		// do anything because there is no border.
@@ -1645,11 +1603,11 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 
         if (bBackBuffer)
         {
-            pdds = pddsDraw;
+            pdds = pddsDraw4;
         }
         else
         {
-            pdds = pddsPrimary;
+            pdds = pddsPrimary4;
         }
 
 		//
@@ -1973,7 +1931,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		rect.bottom = iOffsetY + iHeight;
 
 		// Call Blt, with the COLORFILL operation.
-		while (bRestore(pddsDraw->Blt
+		while (bRestore(pddsDraw4->Blt
 			(
 				&rect,							// Dest rectangle (0 means whole surface.)
 				0,								// Source surface (none).

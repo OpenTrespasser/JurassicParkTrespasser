@@ -1120,7 +1120,7 @@ void ScreenCapture()
     int                     i;
     int                     j;
     char                    szFile[_MAX_PATH];
-    IDirectDrawSurface *    pSurface;
+    IDirectDrawSurface4 *   pSurface;
     HRESULT                 hr;
 
     pras24 = new CRasterDC(g_hwnd, 
@@ -1188,7 +1188,7 @@ void MiddleMessage(UINT uiIDS)
 {
     char                    sz[50];
     HDC                     hdcSrc;
-    IDirectDrawSurface *    pSurface;
+    IDirectDrawSurface4 *   pSurface;
     HRESULT                 hr;
     RECT                    rc;
     COLORREF                cr;

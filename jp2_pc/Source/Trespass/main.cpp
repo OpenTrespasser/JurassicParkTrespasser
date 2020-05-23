@@ -23,6 +23,8 @@
 #include "main.h"
 #include "..\Lib\Sys\reg.h"
 #include "..\lib\sys\reginit.hpp"
+#include "Lib/Sys/Permissions.hpp"
+#include "Lib/Sys/FileEx.hpp"
 #include "supportfn.hpp"
 #include "tpassglobals.h"
 #include "gblinc/buildver.hpp"
@@ -433,6 +435,13 @@ int DoWinMain(HINSTANCE hInstance,
 
     SetProperWorkingDir();
 
+    if (!bCanCreateFile("permissiontestfile.txt") && !IsProcessElevated()) {
+        if (!StartAsElevated(g_hwnd, hInstance));
+			dout << "Start with elevated permissions failed or declined by user" << std::endl;
+    	//New process started (or not), exit current one
+        goto Cleanup;
+    }
+	
     InitCommonControls();
 
     g_uiRegMsg = RegisterWindowMessage("DWI Trespasser FINDER");
@@ -618,9 +627,9 @@ DoRestartWithRenderDlg:
 
 Cleanup:
 
-    if (DirectDraw::pdd)
+    if (DirectDraw::pdd4)
     {
-    	DirectDraw::err = DirectDraw::pdd->SetCooperativeLevel(g_hwnd, DDSCL_NORMAL);
+    	DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(g_hwnd, DDSCL_NORMAL);
     }
 
 	// Release everything really well.

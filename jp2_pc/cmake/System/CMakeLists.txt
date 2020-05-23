@@ -35,6 +35,7 @@ list(APPEND System_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/P5/Msr.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/IniFile.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/RegToIni.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/Permissions.hpp
 )
 
 list(APPEND System_Src
@@ -66,6 +67,7 @@ list(APPEND System_Src
     ${CMAKE_SOURCE_DIR}/Source/Shell/WinRenderTools.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/IniFile.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/RegToIni.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/Permissions.cpp
 )
 
 list(APPEND System_Rsc

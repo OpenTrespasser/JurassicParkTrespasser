@@ -495,7 +495,7 @@ void CLoaderWnd::OnTimer(UINT uiID)
 
 void CLoaderWnd::InnerWindowLoop(bool bPaint)
 {
-    IDirectDrawSurface *    pSurface;
+    IDirectDrawSurface4 *   pSurface;
     HRESULT                 hr;
     CUIWnd *                puiwnd;
     DDBLTFX                 ddfx;
@@ -522,7 +522,7 @@ void CLoaderWnd::InnerWindowLoop(bool bPaint)
         // Now draw everthing from the back buffer to the front buffer
         pSurface = prasMainScreen->GetPrimarySurface();
         hr = pSurface->Blt(&m_pUIMgr->m_rcInvalid,
-                           prasMainScreen->pddsDraw,
+                           prasMainScreen->pddsDraw4,
                            &m_pUIMgr->m_rcInvalid,
                            DDBLT_WAIT | DDBLT_ROP,
                            &ddfx);

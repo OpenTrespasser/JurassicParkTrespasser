@@ -123,7 +123,7 @@ namespace Video
 	//
 	static HRESULT CALLBACK EnumDisplayModesCallback
 	(
-		DDSURFACEDESC* pddsd,			// Surface descriptor for a screen mode.
+		DDSURFACEDESC2* pddsd,			// Surface descriptor for a screen mode.
 		void*							// Ignored.
 	)
 	// 
@@ -197,12 +197,12 @@ namespace Video
 		EVideoCard evc;
 
 		// Get the video card type.
-		AlwaysAssert(DirectDraw::pdd);
+		AlwaysAssert(DirectDraw::pdd4);
 		if (DirectDraw::pdd4)
 			evc = evcGetCard(DirectDraw::pdd4);
 		else
-			evc = evcGetCard(DirectDraw::pdd);
-
+			return;
+		
 		// Suppress resolutions based on the video card type.
 		bSuppress512x384 = false;
 		switch (evc)
@@ -213,14 +213,14 @@ namespace Video
 		}
 
 		// Find out the total video memory for this hardware.
-		DirectDraw::err = DirectDraw::pdd->GetCaps(&ddcaps_hw, &ddcaps_sw);
+		DirectDraw::err = DirectDraw::pdd4->GetCaps(&ddcaps_hw, &ddcaps_sw);
 
 		// Bug: the following is always 0.
 		iTotalVideoMemory = ddcaps_hw.dwVidMemTotal;
 
 		// Use DirectDraw and our callback functions to list the available screen modes.
 		iModes = 0;
-		DirectDraw::err = DirectDraw::pdd->EnumDisplayModes(DDEDM_REFRESHRATES, 0, 0, EnumDisplayModesCallback);
+		DirectDraw::err = DirectDraw::pdd4->EnumDisplayModes(DDEDM_REFRESHRATES, 0, 0, EnumDisplayModesCallback);
 
 		qsort(ascrmdList, iModes, sizeof(*ascrmdList), CompareModes);
 	}
