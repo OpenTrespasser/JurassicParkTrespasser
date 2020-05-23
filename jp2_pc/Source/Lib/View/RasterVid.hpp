@@ -274,7 +274,6 @@ class CRasterVid: public CRaster
 //**************************************
 {
 public:
-	CCom<IDirectDrawSurface>	pddsDraw;	// The DD object that manages the surface.
 	CCom<IDirectDrawSurface4>	pddsDraw4;	// The DD object that manages the surface.
 	uint32						u4DDSFlags;	// DD Surface flags.
 	bool						bVideoMem;	// Surface is in videomemory.
@@ -450,8 +449,6 @@ protected:
 	//
 	// Additional DirectDraw structures needed for implementation.
 	//
-	CCom<IDirectDrawSurface>	pddsPrimary;	// The front surface, if double-buffered.
-												// If not, it's equal to pddsDraw.
 	CCom<IDirectDrawSurface4>	pddsPrimary4;	// The front surface, if double-buffered.
 	CCom<IDirectDrawClipper>	pddclip;		// Clipping object if windowed.
 
@@ -588,9 +585,9 @@ public:
 
 	//******************************************************************************************
 	//
-    IDirectDrawSurface * GetPrimarySurface()
+    IDirectDrawSurface4 * GetPrimarySurface()
     {
-        return pddsPrimary;
+        return pddsPrimary4;
     }
 	//
 	// Returns a pointer to the primary surface.  This is necessary for Videos.
