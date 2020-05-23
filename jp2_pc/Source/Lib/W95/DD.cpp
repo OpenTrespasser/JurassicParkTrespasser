@@ -42,10 +42,6 @@
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
-// forward declaration of the DirectDrawCreate function call that we will
-// forceably load later
-typedef HRESULT (__stdcall *FP_DDRAW)(LPSTR, LPDIRECTDRAW*, LPSTR);
-
 //**********************************************************************************************
 //
 // namespace DirectDraw implementation.
@@ -53,7 +49,6 @@ typedef HRESULT (__stdcall *FP_DDRAW)(LPSTR, LPDIRECTDRAW*, LPSTR);
 
 namespace DirectDraw
 {
-	CCom<IDirectDraw2>	pdd;
 	CCom<IDirectDraw4>	pdd4;
 
 	//******************************************************************************************
@@ -161,18 +156,17 @@ int32 CInitDD::BaseInit()
 	}
 
     // Extract the DirectDrawCreate address out of ddraw.dll
-    if (!DirectDraw::pdd)
+    if (!DirectDraw::pdd4)
     {
 		ReleaseAll();
-
-        FP_DDRAW fp_DDrw;
-        fp_DDrw = (FP_DDRAW) GetProcAddress(m_hDDraw, "DirectDrawCreate");
+    	
+        const auto fp_DDrw = reinterpret_cast<decltype(&::DirectDrawCreate)>(GetProcAddress(m_hDDraw, "DirectDrawCreate"));
         if (!fp_DDrw)
 		{
             return -2;
         }
 
-        DirectDraw::err = (fp_DDrw)((char*)pguid, &pdd1, 0);
+        DirectDraw::err = (fp_DDrw)(pguid, &pdd1, 0);
 
         if (!pdd1)
         {
@@ -180,25 +174,17 @@ int32 CInitDD::BaseInit()
         }
 		PrintD3D(">>>>>>New direct draw created\n");
 
-        // Query for the DirectDraw2 interface.
-        DirectDraw::err = pdd1->QueryInterface(IID_IDirectDraw2, (LPVOID*)&DirectDraw::pdd);
-        if (!DirectDraw::pdd)
+        // Query for the DirectDraw4 interface.
+        DirectDraw::err = pdd1->QueryInterface(IID_IDirectDraw4, (LPVOID*)&DirectDraw::pdd4);
+        if (!DirectDraw::pdd4)
         {
             return -4;
         }
-		PrintD3D(">>>>>>New direct draw 2 interface created\n");
+		PrintD3D(">>>>>>New direct draw 4 interface created\n");
 
 		// Fail this function if Direct3D use is not set in the registry.
 		if (bGetD3D() && IsHardwareSupported())
 		{
-			// Query for the DirectDraw4 interface.
-			hres = pdd1->QueryInterface(IID_IDirectDraw4, (LPVOID*)&DirectDraw::pdd4);
-			if (FAILED(hres))
-			{
-				DirectDraw::pdd4 = 0;
-				PrintD3D(">>>>>>DirectDraw4 Interface failed!\n");
-			}
-			PrintD3D(">>>>>>New direct draw 4 interface created.\n");
 
 			// Start up Direct3D.
 			if (!d3dDriver.bInitializeD3D())
@@ -211,7 +197,7 @@ int32 CInitDD::BaseInit()
 		}
 
         pdd1->Release();
-		PrintD3D(">>>>>>DirectDraw2 interface released\n");
+		PrintD3D(">>>>>>DirectDraw1 interface released\n");
     }
 
     return 0;
@@ -222,13 +208,10 @@ void CInitDD::ReleaseAll()
 	if (!m_hDDraw)
 		return;
 
-	if (DirectDraw::pdd)
-		PrintD3D(">>>>>>DirectDraw interface released.\n");
 	if (DirectDraw::pdd4)
 		PrintD3D(">>>>>>DirectDraw4 interface released.\n");
 
 	d3dDriver.ReleaseD3D();
-	DirectDraw::pdd.SafeRelease();
 	DirectDraw::pdd4.SafeRelease();
 
 	PrintD3D(">>>>>>Reloading DirectDraw library.\n");
@@ -250,7 +233,7 @@ bool CInitDD::IsCertified()
     memset(&ddcaps, 0, sizeof(ddcaps));
     ddcaps.dwSize = sizeof(ddcaps);
 
-    ddrval = DirectDraw::pdd->GetCaps(&ddcaps, NULL);
+    ddrval = DirectDraw::pdd4->GetCaps(&ddcaps, NULL);
     if (ddrval != DD_OK)
     {
         return false;
@@ -278,7 +261,7 @@ bool CInitDD::IsHardwareSupported()
     memset(&ddcaps, 0, sizeof(ddcaps));
     ddcaps.dwSize = sizeof(ddcaps);
 
-    ddrval = DirectDraw::pdd->GetCaps(&ddcaps, NULL);
+    ddrval = DirectDraw::pdd4->GetCaps(&ddcaps, NULL);
     if (ddrval != DD_OK)
     {
         return false;
