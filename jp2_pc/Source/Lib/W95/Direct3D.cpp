@@ -864,7 +864,7 @@ public:
 	bool CDirect3D::bD3DCapable()
 	{
 		bool b_vid_raster = true;
-		if (prasMainScreen && prasMainScreen->pddsDraw)
+		if (prasMainScreen && prasMainScreen->pddsDraw4)
 		{
 			CDDSize<DDSURFACEDESC2> sd;
 
