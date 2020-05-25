@@ -436,7 +436,7 @@ int DoWinMain(HINSTANCE hInstance,
     SetProperWorkingDir();
 
     if (!bCanCreateFile("permissiontestfile.txt") && !IsProcessElevated()) {
-        if (!StartAsElevated(g_hwnd, hInstance));
+        if (!StartAsElevated(g_hwnd, hInstance))
 			dout << "Start with elevated permissions failed or declined by user" << std::endl;
     	//New process started (or not), exit current one
         goto Cleanup;
