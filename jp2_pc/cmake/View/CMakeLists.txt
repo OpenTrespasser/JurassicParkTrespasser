@@ -28,6 +28,7 @@ list(APPEND View_Inc
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/ColourT.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/Video.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/W95//Direct3DCards.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/View/DisplayMode.hpp
 )
 
 list(APPEND View_Src
@@ -56,6 +57,7 @@ list(APPEND View_Src
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/W95/RasterVid.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/W95/Video.cpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/Viewport.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Lib/View/DisplayMode.cpp
 )
 
 include_directories(
