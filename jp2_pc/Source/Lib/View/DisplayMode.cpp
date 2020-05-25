@@ -7,7 +7,7 @@
 WindowMode GetWindowModeConfigured()
 {
 	int selection = GetRegValue("WindowMode", 0);
-	if (selection > static_cast<int>(WindowMode::EXCLUSIVE))
+	if (selection < 0 || selection > static_cast<int>(WindowMode::EXCLUSIVE))
 		selection = 0;
 	return static_cast<WindowMode>(selection);
 }
