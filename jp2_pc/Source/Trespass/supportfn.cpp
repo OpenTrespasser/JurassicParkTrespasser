@@ -936,14 +936,13 @@ CCamera* pcamGetCamera()
 
 void SetupGameScreen()
 {
-    POINT clientSize = GetCurrentClientSize();
-	
-    int             iWidth = clientSize.x;
-    int             iHeight = clientSize.y;
+    int             iWidth;
+    int             iHeight;
     BOOL            bSystemMem;
     RECT            rc;
     int             iGore;
 
+    bGetDimensions(iWidth, iHeight);
 	
     bSystemMem = bGetSystemMem();
 
