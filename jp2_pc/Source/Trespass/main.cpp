@@ -26,6 +26,7 @@
 #include "Lib/Sys/Permissions.hpp"
 #include "Lib/Sys/FileEx.hpp"
 #include "supportfn.hpp"
+#include "Lib/View/DisplayMode.hpp"
 #include "tpassglobals.h"
 #include "gblinc/buildver.hpp"
 #include "Lib/W95/Direct3DCards.hpp"
@@ -897,10 +898,14 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     int windowHeight = 480;
     bGetDimensions(windowWidth, windowHeight);
 
+    DWORD style = WS_VISIBLE | WS_POPUP | WS_SYSMENU;
+    if (GetWindowModeActual() == WindowMode::FRAMED)
+        style |= WS_OVERLAPPEDWINDOW;
+	
     if (!CreateWindowEx(0,
                     g_szAppName,
                     sz,
-                    WS_VISIBLE | WS_POPUP | WS_SYSMENU,
+                    style,
                     0,
                     0,
                     windowWidth,

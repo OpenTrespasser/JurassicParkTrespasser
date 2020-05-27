@@ -75,6 +75,7 @@
 #include "Lib/Std/PrivSelf.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3D.hpp"
 #include "Lib/W95/Direct3DCards.hpp"
+#include "Lib/View/DisplayMode.hpp"
 
 //
 // D3D inclusion is needed in order to set certain flags on structures.
@@ -100,8 +101,6 @@
 #define u4BORDER_COLOUR		0x00000000
 
 extern  bool bIsTrespasser;
-
-constexpr bool forceWindowMode = true; //Fullscreen is currently broken TODO repair
 
 //**********************************************************************************************
 //
@@ -321,7 +320,7 @@ private:
 		iWidthFront  = i_width;
 		iHeightFront = i_height;
 
-		if (i_bits && !forceWindowMode)
+		if (i_bits && GetWindowModeActual() == WindowMode::EXCLUSIVE)
 		{		
 			// Go fullscreen.  We need to call 2 DD functions to do this.
 			DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(hwnd, 
@@ -1301,7 +1300,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			// Return to Windows screen if necessary.
 			if (DirectDraw::pdd4)
 			{
-				if (!forceWindowMode)
+				if (GetWindowModeActual() == WindowMode::EXCLUSIVE)
 					DirectDraw::err = DirectDraw::pdd4->RestoreDisplayMode();
 				DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(0, DDSCL_NORMAL);
 			}
@@ -1728,7 +1727,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		CDDSize<DDSURFACEDESC2> sd;
 		HRESULT hres;
 
-		DWORD dw_flags = forceWindowMode ? DDSCL_NORMAL : DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE;
+		DWORD dw_flags = GetWindowModeActual() != WindowMode::EXCLUSIVE ? DDSCL_NORMAL : DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE;
 		DDDEVICEIDENTIFIER dddevid;
 		bool b_identifier_found = true;
 
