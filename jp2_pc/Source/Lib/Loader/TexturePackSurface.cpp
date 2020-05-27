@@ -1129,6 +1129,7 @@ void CPackedRaster::KillNode
 			if (b_delete)
 			{
 				MEMLOG_SUB_ADRSIZE(emlTextureManQuad,tqtPackQuadTree.anltFree[i_size].aptqn[u4]);
+				deletedNodes.insert(tqtPackQuadTree.anltFree[i_size].aptqn[u4]);
 				delete tqtPackQuadTree.anltFree[i_size].aptqn[u4];
 			}
 
@@ -1280,7 +1281,13 @@ bool CPackedRaster::bRemoveQuadNodeAndCompact
 			// the last node may point to the first node if it is a rectangle and the block
 			// for the first node may have been deleted and paged out when the last node
 			// references it.
-			if (ptqnDel)
+			if (deletedNodes.find(ptqnDel) != deletedNodes.end())
+			{
+				//Pointer is known to have been deleted, do not use
+				dout << "applied dead texture node link correction" << std::endl;
+				ptqnDel = nullptr;
+			}
+			else if (ptqnDel)
 			{
 				u1DelXPos = ptqnDel->u1XOrg;
 				u1DelYPos = ptqnDel->u1YOrg;
