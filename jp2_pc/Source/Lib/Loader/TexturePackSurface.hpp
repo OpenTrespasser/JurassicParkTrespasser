@@ -63,6 +63,7 @@
 #define HEADER_TEXTUREPACKSURFACE_HPP
 
 #include "Lib/View/Raster.hpp"
+#include <unordered_set>
 
 #pragma pack(push,1)
 
@@ -264,6 +265,8 @@ protected:
 	uint32					u4SmallestAllocation;
 	uint8					u1DelXPos;
 	uint8					u1DelYPos;
+
+	std::unordered_set<STextureQuadNode*> deletedNodes;
 
 	//*****************************************************************************************
 	void InitQuadTree
