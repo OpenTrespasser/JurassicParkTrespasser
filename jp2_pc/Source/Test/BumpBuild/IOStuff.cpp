@@ -27,14 +27,15 @@ BOOL  DoFileOutput;
 
 void DisplayMemory()
 {
-	MEMORYSTATUS MemStatus;
+	MEMORYSTATUSEX MemStatus = {0};
+	MemStatus.dwLength = sizeof(MEMORYSTATUSEX);
 
-	GlobalMemoryStatus(&MemStatus);
+	GlobalMemoryStatusEx(&MemStatus);
 	
 	print("");
-    print("Available Physical Memory (kb)", MemStatus.dwAvailPhys >> 10);     // DWORD free physical memory bytes 
-    print("Available Page File (Mb)",       MemStatus.dwAvailPageFile >> 20); // DWORD free bytes of paging file 
-    print("Available Virtual (Mb)",         MemStatus.dwAvailVirtual >> 20);  // DWORD free user bytes 
+    print("Available Physical Memory (kb)", MemStatus.ullAvailPhys >> 10);     // DWORD free physical memory bytes 
+    print("Available Page File (Mb)",       MemStatus.ullAvailPageFile >> 20); // DWORD free bytes of paging file 
+    print("Available Virtual (Mb)",         MemStatus.ullAvailVirtual >> 20);  // DWORD free user bytes 
 
 }
 
@@ -156,7 +157,8 @@ void DisplaySystemInfo()
 {
 	LPVOID       lpv = NULL;
 	SYSTEM_INFO  SysInfo;
-	MEMORYSTATUS MemStatus;
+	MEMORYSTATUSEX MemStatus = { 0 };
+	MemStatus.dwLength = sizeof(MEMORYSTATUSEX);
 
 	GetSystemInfo(&SysInfo);
 
@@ -172,16 +174,16 @@ void DisplaySystemInfo()
 	print("wProcessorLevel",             SysInfo.wProcessorLevel);
 	print("wProcessorRevision",          SysInfo.wProcessorRevision);
 
-	GlobalMemoryStatus(&MemStatus);
+	GlobalMemoryStatusEx(&MemStatus);
 	
 	print("");
     print("Memory Load %",                  MemStatus.dwMemoryLoad);    // DWORD percent of memory in use 
-    print("Total Physical Memory (kb)",     MemStatus.dwTotalPhys >> 10);     // DWORD bytes of physical memory 
-    print("Available Physical Memory (kb)", MemStatus.dwAvailPhys >> 10);     // DWORD free physical memory bytes 
-    print("Total Page File (Mb)",           MemStatus.dwTotalPageFile >> 20); // DWORD bytes of paging file 
-    print("Available Page File (Mb)",       MemStatus.dwAvailPageFile >> 20); // DWORD free bytes of paging file 
-    print("Total Virtual (Mb)",             MemStatus.dwTotalVirtual >> 20);  // DWORD user bytes of address space 
-    print("Available Virtual (Mb)",         MemStatus.dwAvailVirtual >> 20);  // DWORD free user bytes 
+    print("Total Physical Memory (kb)",     MemStatus.ullTotalPhys >> 10);     // DWORD bytes of physical memory 
+    print("Available Physical Memory (kb)", MemStatus.ullAvailPhys >> 10);     // DWORD free physical memory bytes 
+    print("Total Page File (Mb)",           MemStatus.ullTotalPageFile >> 20); // DWORD bytes of paging file 
+    print("Available Page File (Mb)",       MemStatus.ullAvailPageFile >> 20); // DWORD free bytes of paging file 
+    print("Total Virtual (Mb)",             MemStatus.ullTotalVirtual >> 20);  // DWORD user bytes of address space 
+    print("Available Virtual (Mb)",         MemStatus.ullAvailVirtual >> 20);  // DWORD free user bytes 
 
 }
 
