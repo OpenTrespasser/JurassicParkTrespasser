@@ -56,60 +56,52 @@ uint32 gu4SystemPageSize = 4096;
 	//******************************************************************************************
 	// Return the amount of physical memory in the machine
 	//
-	uint32 u4TotalPhysicalMemory()
+	uint64 u4TotalPhysicalMemory()
 	{
-		MEMORYSTATUS	ms;
-		ms.dwLength = sizeof(MEMORYSTATUS);
-		GlobalMemoryStatus(&ms);
+		MEMORYSTATUSEX	ms = {0};
+		ms.dwLength = sizeof(MEMORYSTATUSEX);
+		GlobalMemoryStatusEx(&ms);
 
-		MEMLOG_SET_COUNTER(emlTotalPhysical,ms.dwTotalPhys);
-
-		return ms.dwTotalPhys;
+		return ms.ullTotalPhys;
 	}
 
 
 	//******************************************************************************************
 	// Return the amount free of physical memory in the machine
 	//
-	uint32 u4FreePhysicalMemory()
+	uint64 u4FreePhysicalMemory()
 	{
-		MEMORYSTATUS	ms;
-		ms.dwLength = sizeof(MEMORYSTATUS);
-		GlobalMemoryStatus(&ms);
+		MEMORYSTATUSEX	ms = {0};
+		ms.dwLength = sizeof(MEMORYSTATUSEX);
+		GlobalMemoryStatusEx(&ms);
 
-		MEMLOG_SET_COUNTER(emlFreePhysical,ms.dwAvailPhys);
-
-		return ms.dwAvailPhys;
+		return ms.ullAvailPhys;
 	}
 
 
 	//******************************************************************************************
 	// Return the amount space of memory in the page file
 	//
-	uint32 u4FreePagefileMemory()
+	uint64 u4FreePagefileMemory()
 	{
-		MEMORYSTATUS	ms;
-		ms.dwLength = sizeof(MEMORYSTATUS);
-		GlobalMemoryStatus(&ms);
+		MEMORYSTATUSEX	ms = {0};
+		ms.dwLength = sizeof(MEMORYSTATUSEX);
+		GlobalMemoryStatusEx(&ms);
 
-		MEMLOG_SET_COUNTER(emlFreePage,ms.dwAvailPageFile);
-
-		return ms.dwAvailPageFile;
+		return ms.ullAvailPageFile;
 	}
 
 
 	//******************************************************************************************
 	// Return the amount of free (un-commited and un-reserved) virtual address space
 	//
-	uint32 u4FreeVirtualMemory()
+	uint64 u4FreeVirtualMemory()
 	{
-		MEMORYSTATUS	ms;
-		ms.dwLength = sizeof(MEMORYSTATUS);
-		GlobalMemoryStatus(&ms);
+		MEMORYSTATUSEX	ms = {0};
+		ms.dwLength = sizeof(MEMORYSTATUSEX);
+		GlobalMemoryStatusEx(&ms);
 
-		MEMLOG_SET_COUNTER(emlFreeVirtual,ms.dwAvailVirtual);
-
-		return ms.dwAvailVirtual;
+		return ms.ullAvailVirtual;
 	}
 
 
