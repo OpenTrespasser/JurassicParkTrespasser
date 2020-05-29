@@ -33,9 +33,9 @@ void DisplayMemory()
 	GlobalMemoryStatusEx(&MemStatus);
 	
 	print("");
-    print("Available Physical Memory (kb)", MemStatus.ullAvailPhys >> 10);     // DWORD free physical memory bytes 
-    print("Available Page File (Mb)",       MemStatus.ullAvailPageFile >> 20); // DWORD free bytes of paging file 
-    print("Available Virtual (Mb)",         MemStatus.ullAvailVirtual >> 20);  // DWORD free user bytes 
+    print("Available Physical Memory (kb)", MemStatus.ullAvailPhys >> 10);     // free physical memory bytes 
+    print("Available Page File (Mb)",       MemStatus.ullAvailPageFile >> 20); // free bytes of paging file 
+    print("Available Virtual (Mb)",         MemStatus.ullAvailVirtual >> 20);  // free user bytes 
 
 }
 
@@ -177,13 +177,13 @@ void DisplaySystemInfo()
 	GlobalMemoryStatusEx(&MemStatus);
 	
 	print("");
-    print("Memory Load %",                  MemStatus.dwMemoryLoad);    // DWORD percent of memory in use 
-    print("Total Physical Memory (kb)",     MemStatus.ullTotalPhys >> 10);     // DWORD bytes of physical memory 
-    print("Available Physical Memory (kb)", MemStatus.ullAvailPhys >> 10);     // DWORD free physical memory bytes 
-    print("Total Page File (Mb)",           MemStatus.ullTotalPageFile >> 20); // DWORD bytes of paging file 
-    print("Available Page File (Mb)",       MemStatus.ullAvailPageFile >> 20); // DWORD free bytes of paging file 
-    print("Total Virtual (Mb)",             MemStatus.ullTotalVirtual >> 20);  // DWORD user bytes of address space 
-    print("Available Virtual (Mb)",         MemStatus.ullAvailVirtual >> 20);  // DWORD free user bytes 
+    print("Memory Load %",                  MemStatus.dwMemoryLoad);    // percent of memory in use 
+    print("Total Physical Memory (kb)",     MemStatus.ullTotalPhys >> 10);     // bytes of physical memory 
+    print("Available Physical Memory (kb)", MemStatus.ullAvailPhys >> 10);     // free physical memory bytes 
+    print("Total Page File (Mb)",           MemStatus.ullTotalPageFile >> 20); // bytes of paging file 
+    print("Available Page File (Mb)",       MemStatus.ullAvailPageFile >> 20); // free bytes of paging file 
+    print("Total Virtual (Mb)",             MemStatus.ullTotalVirtual >> 20);  // user bytes of address space 
+    print("Available Virtual (Mb)",         MemStatus.ullAvailVirtual >> 20);  // free user bytes 
 
 }
 
