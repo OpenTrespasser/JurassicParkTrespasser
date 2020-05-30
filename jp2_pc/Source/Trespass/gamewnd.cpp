@@ -480,6 +480,57 @@ void CGameWnd::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
 
     if (!fDown)
     {
+    	if (vk == VK_ESCAPE) {
+            CInGameOptionsWnd   dlg(m_pUIMgr);
+            BOOL                bContinue = TRUE;
+
+            SetupGameStoppage();
+
+            // Popup the dialog
+            dlg.StartUIWnd();
+
+            if (dlg.m_dwExitValue == (DWORD)-1)
+            {
+                CQuitWnd        dlgQuit(m_pUIMgr);
+
+                dlgQuit.StartUIWnd();
+
+                switch (dlgQuit.m_dwExitValue)
+                {
+                    // Quit Game
+                case 1:
+                    m_pUIMgr->m_bDrawMouse = TRUE;
+                    bContinue = FALSE;
+                    bQuitGame = TRUE;
+                    EndUIWnd(-1);
+                    break;
+
+                    // Quit Menu
+                case 2:
+                    EndUIWnd(1);
+                    m_pUIMgr->m_bDrawMouse = TRUE;
+                    bContinue = FALSE;
+                    break;
+                }
+            }
+            else if (dlg.m_dwExitValue == 3)
+            {
+                // restart the game with the Render dialog
+                EndUIWnd(3);
+            }
+
+            if (dlg.m_dwExitValue == 3)
+            {
+                // If we are going to the render dialog then do not send a start
+                // message otherwise audio will be started for a fraction of a
+                // second and it sounds bad.
+                ClearGameStoppage(false);
+            }
+            else
+            {
+                ClearGameStoppage(bContinue);
+            }
+        }
         return;
     }
 
@@ -584,59 +635,6 @@ void CGameWnd::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
             }
             break;
 
-        case VK_ESCAPE:
-            {
-                CInGameOptionsWnd   dlg(m_pUIMgr);
-                BOOL                bContinue = TRUE;
-
-                SetupGameStoppage();
-
-                // Popup the dialog
-                dlg.StartUIWnd();
-
-                if (dlg.m_dwExitValue == (DWORD)-1)
-                {
-                    CQuitWnd        dlgQuit(m_pUIMgr);
-
-                    dlgQuit.StartUIWnd();
-                
-                    switch (dlgQuit.m_dwExitValue)
-                    {
-                        // Quit Game
-                        case 1:
-                            m_pUIMgr->m_bDrawMouse = TRUE;
-                            bContinue = FALSE;
-							bQuitGame = TRUE;
-                            EndUIWnd(-1);
-                            break;
-
-                        // Quit Menu
-                        case 2:
-                            EndUIWnd(1);
-                            m_pUIMgr->m_bDrawMouse = TRUE;
-                            bContinue = FALSE;
-                            break;
-                    }
-                }
-				else if (dlg.m_dwExitValue == 3)
-				{
-					// restart the game with the Render dialog
-					EndUIWnd(3);
-				}
-
-				if (dlg.m_dwExitValue == 3)
-				{
-					// If we are going to the render dialog then do not send a start
-					// message otherwise audio will be started for a fraction of a
-					// second and it sounds bad.
-					ClearGameStoppage(false);
-				}
-				else
-				{
-					ClearGameStoppage(bContinue);
-				}
-            }
-            break;
 
 #if BUILDVER_MODE != MODE_FINAL
 		case 'T':
