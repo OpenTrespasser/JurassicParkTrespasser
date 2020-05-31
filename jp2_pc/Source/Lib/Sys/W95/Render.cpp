@@ -274,8 +274,7 @@ int iGetScreenBitdepth();
 		camprop.vpViewport.SetSize(prasMainScreen->iWidth, prasMainScreen->iHeight);
 
 		// Set the physical aspect ratio to the product of the raster and pixel aspect ratios.
-		camprop.fAspectRatio = float(prasMainScreen->iWidth) / prasMainScreen->iHeight /
-								prasMainScreen->fAspectRatio;
+		camprop.fAspectRatio = prasMainScreen->GetAspectRatio();
 
 		pcam->SetProperties(camprop);
 
@@ -542,8 +541,7 @@ int iGetScreenBitdepth();
 		camprop.vpViewport.SetSize(prasMainScreen->iWidth, prasMainScreen->iHeight);
 
 		// Set the new renderer aspect ratio.
-		camprop.fAspectRatio = float(prasMainScreen->iWidth) / float(prasMainScreen->iHeight) /
-			                   prasMainScreen->fAspectRatio;
+		camprop.fAspectRatio = prasMainScreen->GetAspectRatio();
 
 		// Set the main camera's properties.
 		pcam->SetProperties(camprop);

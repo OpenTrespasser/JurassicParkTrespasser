@@ -66,7 +66,7 @@ inline uint32 u4SystemPageSize
 
 //**********************************************************************************************
 //
-uint32 u4TotalPhysicalMemory();
+uint64 u4TotalPhysicalMemory();
 //
 // Returns the total amount of physical memory (RAM) in the machine
 //
@@ -76,7 +76,7 @@ uint32 u4TotalPhysicalMemory();
 
 //**********************************************************************************************
 //
-uint32 u4FreePhysicalMemory();
+uint64 u4FreePhysicalMemory();
 //
 // Returns the total amount of free (usable) physical memory (RAM) in the machine
 //
@@ -86,7 +86,7 @@ uint32 u4FreePhysicalMemory();
 
 //**********************************************************************************************
 //
-uint32 u4FreePagefileMemory();
+uint64 u4FreePagefileMemory();
 //
 // Returns the amount of free space in the system page file
 //
@@ -96,7 +96,7 @@ uint32 u4FreePagefileMemory();
 
 //**********************************************************************************************
 //
-uint32 u4FreeVirtualMemory();
+uint64 u4FreeVirtualMemory();
 //
 // Returns the amount of free space in the apps virtual address space (2GB to start with)
 //
