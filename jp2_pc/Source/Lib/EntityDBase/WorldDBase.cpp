@@ -421,8 +421,7 @@ CRenderDB*  ps_renderDB = 0;
 			camprop.vpViewport.SetSize(prasMainScreen->iWidth, prasMainScreen->iHeight);
 
 			// Set the physical aspect ratio to the product of the raster and pixel aspect ratios.
-			camprop.fAspectRatio = float(prasMainScreen->iWidth) / prasMainScreen->iHeight /
-									prasMainScreen->fAspectRatio;
+			camprop.fAspectRatio = prasMainScreen->GetAspectRatio();
 
 			pcam->SetProperties(camprop);
 		}

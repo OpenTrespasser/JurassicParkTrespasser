@@ -436,7 +436,6 @@ class CRasterWin: public CRasterVid
 public:
 	bool   bFullScreen;		// True if in full-screen mode, else a window.
 	int    iBuffers;		// The number of buffers in the raster.
-	float  fAspectRatio;	// Ratio of pixel x size to y size.
 	uint32 u4DDSFlagsFront;
 	int    iWidthFront;		// True surface dimensions. May be different than the reported
 	int    iHeightFront;	// surface.
@@ -663,6 +662,11 @@ public:
 	//
 	//**********************************
 
+	float GetAspectRatio()
+	{
+		return fWidth / fHeight;
+	}
+	
 protected:
 
 	CRasterWin()

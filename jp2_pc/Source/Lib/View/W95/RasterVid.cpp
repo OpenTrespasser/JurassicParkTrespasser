@@ -1130,9 +1130,6 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 // Globals for CRasterWin.
 //
 
-	// Assume a standard monitor aspect ratio (width/height).
-	const float fMONITOR_ASPECT = 4.0f / 3.0f;
-
 	//************************************************************************
 	//
 	static void ClientToScreen
@@ -1250,7 +1247,6 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		//
 		DirectDraw::err = pddsPrimary4->GetSurfaceDesc(&sd);
 		u4DDSFlagsFront = sd.ddsCaps.dwCaps;
-		fAspectRatio = (float)sd.dwWidth / sd.dwHeight / fMONITOR_ASPECT ;
 		
 		eClearMethod  = ecmTEST;
 		i4ClearTiming = 0;
