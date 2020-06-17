@@ -10,6 +10,14 @@ A git-based fork of the Jurassic Park: Trespasser source code.
 </p>
 <p align="center">Link: https://discord.gg/5EngSvu</p>
 
+## Cloning/Checkout instructions
+**This is a complex repository using Git Submodules and Git LFS.**
+
+After cloning, please run the script `gitsyncscript.sh` to also checkout the externals and download the LFS data. Use this command (on Windows, use Git Bash): `sh gitsyncscript.sh`
+
+If you are using TortoiseGit to clone this repository, please check the boxes "Recursive" and "LFS" in the cloning dialog.
+
+
 ## Solution Overview
 | Projects          | Generates                         | Notes:                                                                                                                                                                                                                 |
 | :---------------- | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
