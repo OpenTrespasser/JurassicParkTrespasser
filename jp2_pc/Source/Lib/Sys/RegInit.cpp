@@ -110,6 +110,11 @@
 #include "Lib/W95/WinInclude.hpp"
 #include "Reg.h"
 #include "RegInit.hpp"
+#include "Lib/Control/KeyMapping.hpp"
+
+#include <map>
+#include <string>
+#include <variant>
 
 //
 // Macros and constants.
@@ -350,4 +355,117 @@ bool bGetPageManaged()
 void SetPageManaged(BOOL b)
 {
 	SetRegValue(strPAGEMANAGED, b);
+}
+
+const std::map<std::string, std::variant<int, const char*>> g_allsettings = {
+	{ strDDDEVICE_NAME            , "" },
+	{ strDDDEVICE_DESCRIPTION	  , "" },
+	{ strDDDEVICE_GUID			  , "" },
+	{ strD3DDEVICE_NAME			  , "" },
+	{ strD3DDEVICE_DESCRIPTION	  , "" },
+	{ strD3DDEVICE_GUID			  , "" },
+	{ strFLAG_FULLSCREEN          , DEFAULT_FULLSCREEN },
+	{ strFLAG_D3D                 , DEFAULT_D3D },
+	{ strFLAG_SYSTEMMEM           , DEFAULT_SYSTEMMEM },
+	{ strFLAG_REGINIT			  , TRUE },
+	{ strSIZE_WIDTH               , DEFAULT_SIZE_WIDTH },
+	{ strSIZE_HEIGHT              , DEFAULT_SIZE_HEIGHT },
+	{ strPARTITION_SUBDIVISION    , 200 },
+	{ strPARTITION_STUFFCHILDREN  , 0 },
+	{ strAUTOSETTINGS             , TRUE },
+	{ REG_KEY_PID                 , "" },
+	{ REG_KEY_DATA_DRIVE          , "" },
+	{ REG_KEY_INSTALLED           , TRUE },
+	{ REG_KEY_INSTALLED_DIR       , "" },
+	{ REG_KEY_NOVIDEO             , FALSE },
+	{ REG_KEY_AUDIO_LEVEL         , 0 },
+	{ REG_KEY_AUDIO_EFFECT        , DEFAULT_AUDIO_EFFECT },
+	{ REG_KEY_AUDIO_AMBIENT       , DEFAULT_AUDIO_AMBIENT },
+	{ REG_KEY_AUDIO_VOICEOVER     , DEFAULT_AUDIO_VOICEOVER },
+	{ REG_KEY_AUDIO_MUSIC         , DEFAULT_AUDIO_MUSIC },
+	{ REG_KEY_AUDIO_SUBTITLES     , DEFAULT_AUDIO_SUBTITLES },
+	{ REG_KEY_AUDIO_ENABLE		  , TRUE },
+	{ REG_KEY_AUDIO_ENABLE3D	  , DEFAULT_AUDIO_ENABLE3D },
+	{ REG_KEY_GAMMA               , DEFAULT_GAMMA },
+	{ REG_KEY_DSOUND_IGNORE       , FALSE },
+	{ REG_KEY_DDRAW_CERT_IGNORE   , FALSE },
+	{ REG_KEY_DDRAW_HARD_IGNORE   , FALSE },
+	{ REG_KEY_VIEWPORT_X          , DEFAULT_VIEWPORT_X },
+	{ REG_KEY_VIEWPORT_Y          , DEFAULT_VIEWPORT_Y },
+	{ REG_KEY_RENDERING_QUALITY   , DEFAULT_RENDERING_QUALITY },
+	{ REG_KEY_AUTOLOAD            , FALSE },
+	{ REG_KEY_SAFEMODE            , FALSE },
+	{ REG_KEY_GORE                , DEFAULT_GORE },
+	{ REG_KEY_INVERTMOUSE         , DEFAULT_INVERTMOUSE },
+	{ REG_KEY_AUTOSAVE            , FALSE },
+	{ strD3D_FILTERCACHES         , FALSE },
+	{ strD3D_DITHER               , TRUE },
+	{ strVIDEOCARD_TYPE			  , "" },
+	{ strVIDEOCARD_NAME			  , "" },
+	{ strRECOMMENDEDTEXMAX        , 128 },
+	{ strTRIPLEBUFFER             , FALSE },
+	{ strRESTORE_NVIDIA       	  , "" },
+	{ strRESTORE_NVIDIAMIPMAPS	  , "" },
+	{ strRESTORE_NVIDIASQUARE     , "" },
+	{ strPAGEMANAGED              , FALSE },
+	{ strD3D_TITLE                , "" },
+	{ strZBUFFER_BITDEPTH		  , 16 },
+	{ strHARDWARE_WATER			  , TRUE },
+	{ "SwapSpaceMb"				  , 200 },
+	{ "NoCopyright"				  , FALSE },
+	{ "ShowProgressBar"			  , TRUE },
+	{ "MRU Num"					  , 0 },
+	{ "WindowMode"                , 0 }
+};
+
+void SetKeyMappingToDefault()
+{
+	//Copypasted because km_DefaultKeyMapping is changed at runtime
+	SKeyMapping TheDefaultKeyMapping[KEYMAP_COUNT] =
+	{
+		{VK_LBUTTON,	uCMD_HAND},
+		{VK_RBUTTON,	uCMD_GRAB},
+
+		{VK_SHIFT,	    uCMD_SHIFT},
+		{VK_CONTROL,	uCMD_CONTROL},
+		{VK_SPACE,	    uCMD_USE},
+
+		{'Q',		    uCMD_JUMP},
+		{'Z',			uCMD_CROUCH},
+		{'E',			uCMD_STOW},
+		{'F',			uCMD_THROW},
+		{'R',           uCMD_REPLAYVO},     // Replays the last Voice Over
+
+		// see above DIK codes
+		{'W',			uBITKEY_RUN},
+		{'S',			uBITKEY_WALK},
+		{'X',			uBITKEY_BACKUP},
+		{'A',			uBITKEY_LEFT},
+		{'D',			uBITKEY_RIGHT},
+	};
+	SetRegData(REG_KEY_KEYMAP, reinterpret_cast<LPBYTE>(&TheDefaultKeyMapping), sizeof(TheDefaultKeyMapping));
+}
+
+void SetSettingToDefault(decltype(g_allsettings)::const_iterator& iterator)
+{
+	if (const auto* intvalue = std::get_if<int>(&iterator->second); intvalue)
+		SetRegValue(iterator->first.c_str(), *intvalue);
+	else if (const auto* stringvalue = std::get_if<const char*>(&iterator->second); stringvalue)
+		SetRegString(iterator->first.c_str(), *stringvalue);
+}
+
+void SetSettingToDefault(const char* setting)
+{
+	if (strcmp(setting, REG_KEY_KEYMAP) == 0)
+		SetKeyMappingToDefault();
+	else if (auto entry = g_allsettings.find(setting); entry != g_allsettings.end())
+		SetSettingToDefault(entry);
+}
+
+void SetAllSettingsToDefault()
+{
+	for (auto iter = g_allsettings.begin(); iter != g_allsettings.end(); ++iter)
+		SetSettingToDefault(iter);
+
+	SetSettingToDefault(REG_KEY_KEYMAP);
 }
