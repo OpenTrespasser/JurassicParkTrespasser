@@ -595,8 +595,7 @@ char *CAudioDaemon::pcSaveSample
 #if VER_TEST
 	if (u4_type == AU_PSEUDO3D)
 	{
-		if (pins == NULL)
-			_asm int 3;
+		Assert(pins);
 	}
 #endif
 
