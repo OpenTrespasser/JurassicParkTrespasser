@@ -362,6 +362,20 @@ private:
 	//
 	//**************************************
 
+	bool bConstructD3DExclusive
+	(
+		HWND hwnd,							// A previously constructed Windows HWND.
+		int i_width, int i_height,			// The desired dimensions of the raster.
+		int i_bits = 16
+	);
+
+	bool bConstructD3DWindowed
+	(
+		HWND hwnd,							// A previously constructed Windows HWND.
+		int i_width, int i_height,			// The desired dimensions of the raster.
+		int i_bits = 16
+	);
+	
 	//******************************************************************************************
 	//
 	bool bFindZBufferFormat
@@ -1189,16 +1203,8 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 
 			// Construct a regular DirectDraw interface.
 			priv_self.ConstructSoftware(hwnd, i_width, i_height, i_bits, i_buffers, seteras);
-
-			// Create a DirectDrawClipper object, needed for the window.
-			if (!bFullScreen)
-			{
-				DirectDraw::err = DirectDraw::pdd4->CreateClipper(0, &pddclip, 0);
-				DirectDraw::err = pddclip->SetHWnd(0, hwnd);
-				DirectDraw::err = pddsPrimary4->SetClipper(pddclip);
-			}
-			AlwaysAssert(bFullScreen || pddclip);
 		}
+		ConstructClipper(hwnd);
 		AlwaysAssert(pddsDraw4);
 		AlwaysAssert(pddsPrimary4);
 
@@ -1330,6 +1336,18 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			g_initDD.BaseInit();
 		}
 		*/
+	}
+
+	void CRasterWin::ConstructClipper(HWND hwnd)
+	{
+		// Create a DirectDrawClipper object, needed for the window.
+		if (!bFullScreen)
+		{
+			DirectDraw::err = DirectDraw::pdd4->CreateClipper(0, &pddclip, 0);
+			DirectDraw::err = pddclip->SetHWnd(0, hwnd);
+			DirectDraw::err = pddsPrimary4->SetClipper(pddclip);
+		}
+		AlwaysAssert(bFullScreen || pddclip);
 	}
 
 	//******************************************************************************************
@@ -1698,6 +1716,14 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 	//******************************************************************************************
 	bool CRasterWin::CPriv::bConstructD3D(HWND hwnd, int i_width, int i_height, int i_bits)
 	{
+		if (GetWindowModeActual() == WindowMode::EXCLUSIVE)
+			return bConstructD3DExclusive(hwnd, i_width, i_height, i_bits);
+		else
+			return bConstructD3DWindowed(hwnd, i_width, i_height, i_bits);
+	}
+
+	bool CRasterWin::CPriv::bConstructD3DExclusive(HWND hwnd, int i_width, int i_height, int i_bits)
+	{
 		AlwaysAssert(hwnd);
 		AlwaysAssert(i_width > 0);
 		AlwaysAssert(i_height > 0);
@@ -1723,7 +1749,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		CDDSize<DDSURFACEDESC2> sd;
 		HRESULT hres;
 
-		DWORD dw_flags = GetWindowModeActual() != WindowMode::EXCLUSIVE ? DDSCL_NORMAL : DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE;
+		DWORD dw_flags = DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE;
 		DDDEVICEIDENTIFIER dddevid;
 		bool b_identifier_found = true;
 
@@ -1822,11 +1848,97 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		}
 
 		// Set required data members.
+		iWidthFront = i_width;
+		iHeightFront = i_height;
+		iBuffers = 2;
+		bFullScreen = true;
+		bFlippable = true;
+
+		// Indicate success.
+		AlwaysAssert(pddsDraw4 && pddsPrimary4);
+		return pddsDraw4 && pddsPrimary4;
+	}
+
+	bool CRasterWin::CPriv::bConstructD3DWindowed(HWND hwnd, int i_width, int i_height, int i_bits)
+	{
+		AlwaysAssert(hwnd);
+		AlwaysAssert(i_width > 0);
+		AlwaysAssert(i_height > 0);
+		AlwaysAssert(i_bits == 16);
+
+		DDPIXELFORMAT ddpf_zbuffer;
+
+		// Fail this function if Direct3D use is not set in the registry.
+		if (!bGetD3D() || !bFullScreen || !DirectDraw::pdd4)
+		{
+			PrintD3D("\n***D3D Error***: Registry entries incorrect.\n");
+			return false;
+		}
+
+		// Find the z buffer format.
+		if (!priv_self.bFindZBufferFormat(ddpf_zbuffer))
+		{
+			PrintD3D("\n***D3D Error***: Z buffer format not found.\n");
+			return false;
+		}
+
+		CDDSize<DDSURFACEDESC2> ddsd;
+		HRESULT hres;
+
+		DWORD dw_flags = DDSCL_NORMAL;
+
+		hres = DirectDraw::pdd4->SetCooperativeLevel(hwnd, dw_flags);
+		if (FAILED(hres))
+		{
+			PrintD3D("\n***D3D Error***: Could not set cooperative level.\n");
+			AlwaysAssert(0);
+			return false;
+		}
+
+		// Get the primary display surface.
+		ddsd.dwFlags = DDSD_CAPS;
+		ddsd.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
+
+		hres = DirectDraw::pdd4->CreateSurface(&ddsd, &pddsPrimary4, NULL);
+		if (FAILED(hres))
+		{
+			PrintD3D2("Buffer creation failed %x\n", hres);
+			AlwaysAssert(0);
+			return false;
+		}
+
+		// Create a backbuffer.
+		{
+			CDDSize<DDSURFACEDESC2> backbufferddsd;
+			backbufferddsd.dwFlags = DDSD_WIDTH | DDSD_HEIGHT | DDSD_CAPS;
+			backbufferddsd.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_3DDEVICE;
+
+			backbufferddsd.dwWidth = i_width;
+			backbufferddsd.dwHeight = i_height;
+			
+			hres = DirectDraw::pdd4->CreateSurface(&backbufferddsd, &pddsDraw4, nullptr);
+			if (FAILED(hres))
+			{
+				PrintD3D2("Buffer creation failed %x\n", hres);
+				AlwaysAssert(0);
+				return false;
+			}
+		}
+
+		// Create the Z buffer.
+		if (!priv_self.bConstructZBuffer(ddpf_zbuffer))
+		{
+			PrintD3D("\n***D3D Error***: Could not create the Z buffer.\n");
+			AlwaysAssert(0);
+			return false;
+		}
+
+		// Set required data members.
 		iWidthFront  = i_width;
 		iHeightFront = i_height;
 		iBuffers     = 2;
-		bFullScreen  = true;
-		bFlippable   = true;
+		bFullScreen  = false;
+		bFlippable   = false;
 
 		// Indicate success.
 		AlwaysAssert(pddsDraw4 && pddsPrimary4);
