@@ -14,8 +14,6 @@ WindowMode GetWindowModeConfigured()
 
 WindowMode GetWindowModeActual()
 {
-	if (GetRegValue(strFLAG_D3D, DEFAULT_D3D))
-		return WindowMode::EXCLUSIVE;
-	else
-		return GetWindowModeConfigured();
+	//In some situations it can be helpful to override the configured mode
+	return GetWindowModeConfigured();
 }
