@@ -8,6 +8,7 @@ list(APPEND System_Inc
     ${CMAKE_SOURCE_DIR}/source/lib/control/Control.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Control/KeyMapping.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/Sys/DebugConsole.hpp
+    ${CMAKE_SOURCE_DIR}/source/Lib/Sys/DWSizeStruct.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/Errors.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/ExePageModify.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/Sys/FastHeap.hpp
