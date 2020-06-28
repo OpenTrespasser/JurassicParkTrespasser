@@ -41,6 +41,7 @@
 #include "Lib/Sys/RegInit.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 
 //**********************************************************************************************
 //
@@ -222,16 +223,13 @@ void CInitDD::ReleaseAll()
 
 bool CInitDD::IsCertified()
 {
-    DDCAPS  ddcaps;
+    CDDSize<DDCAPS> ddcaps;
     HRESULT ddrval;
 
     if (BaseInit() < 0)
     {
         return false;
     }
-
-    memset(&ddcaps, 0, sizeof(ddcaps));
-    ddcaps.dwSize = sizeof(ddcaps);
 
     ddrval = DirectDraw::pdd4->GetCaps(&ddcaps, NULL);
     if (ddrval != DD_OK)
@@ -250,16 +248,13 @@ bool CInitDD::IsCertified()
 
 bool CInitDD::IsHardwareSupported()
 {
-    DDCAPS  ddcaps;
+    CDDSize<DDCAPS> ddcaps;
     HRESULT ddrval;
 
     if (BaseInit() < 0)
     {
         return false;
     }
-
-    memset(&ddcaps, 0, sizeof(ddcaps));
-    ddcaps.dwSize = sizeof(ddcaps);
 
     ddrval = DirectDraw::pdd4->GetCaps(&ddcaps, NULL);
     if (ddrval != DD_OK)
