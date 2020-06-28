@@ -151,6 +151,7 @@
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3D.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 
 
 //
