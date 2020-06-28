@@ -78,6 +78,8 @@
 
 #include <mmsystem.h>
 
+#include "Lib/Sys/DWSizeStruct.hpp"
+
 #ifdef USE_DIRECTINPUT
 #include <DirectX/DInput.h>
 #endif //#ifdef USE_DIRECTINPUT
@@ -382,13 +384,12 @@ CInput::~CInput()
 //
 SInput& CInput::tinReadStandardJoystickControls()
 {
-	JOYINFOEX	ji_stick;
+	CDDSize<JOYINFOEX> ji_stick;
 
 	// Clear keys to off.
 	tin_Input.u4ButtonState = 0;
 	tin_Input.u4ButtonHit = 0;
 
-	ji_stick.dwSize=sizeof(JOYINFOEX);
 	ji_stick.dwFlags=JOY_RETURNX|JOY_RETURNY|JOY_RETURNBUTTONS|JOY_USEDEADZONE|JOY_RETURNCENTERED;
 	joyGetPosEx(JOYSTICKID1,&ji_stick);
 
@@ -853,9 +854,8 @@ bool bReadJoystickSimple(float& rf_x, float& rf_y, float& rf_z, bool& rb_trigger
 	rf_z = 0.0f;
 	rb_trigger = false;
 	rb_thumb   = false;
-	JOYINFOEX ji;
+	CDDSize<JOYINFOEX> ji;
 
-	ji.dwSize=sizeof(ji);
 	ji.dwFlags=JOY_RETURNX|JOY_RETURNY|JOY_RETURNR|JOY_RETURNBUTTONS|JOY_USEDEADZONE|JOY_RETURNCENTERED;
 	if (joyGetPosEx(0, &ji)!=JOYERR_NOERROR)
 		return false;
