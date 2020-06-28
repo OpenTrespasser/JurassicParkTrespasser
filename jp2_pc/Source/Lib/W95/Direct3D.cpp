@@ -96,7 +96,7 @@
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/View/ColourBase.hpp"
 #include "Lib/View/RasterConvertD3D.hpp"
-
+#include "Lib/Sys/DWSizeStruct.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
 
@@ -1352,8 +1352,7 @@ public:
 		iViewportHeight = int(sd.dwHeight);
 
 		// Intialize viewport values.
-		D3DVIEWPORT2 d3d_viewport;	// Viewport information..
-		d3d_viewport.dwSize       = sizeof(d3d_viewport);
+		CDDSize<D3DVIEWPORT2> d3d_viewport;	// Viewport information..
 		d3d_viewport.dwX          = 0;
 		d3d_viewport.dwY          = 0;
 		d3d_viewport.dwWidth      = iViewportWidth;
