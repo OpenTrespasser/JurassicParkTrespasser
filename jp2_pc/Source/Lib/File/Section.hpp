@@ -28,10 +28,6 @@
 #include "Image.hpp"
 #include "Section.hpp"
 
-#ifndef __MWERKS__
- #include <minmax.h>
-#endif
-
 #include <assert.h>
 #include <vector>
 
