@@ -12,7 +12,6 @@ list(APPEND View_Inc
     ${CMAKE_SOURCE_DIR}/source/Lib/View/Direct3DRenderState.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/View/Gamma.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/View/Grab.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Lib/W95/Ispvr.h
     ${CMAKE_SOURCE_DIR}/source/Lib/View/LineDraw.hpp
     ${CMAKE_SOURCE_DIR}/source/Lib/View/Palette.hpp
     ${CMAKE_SOURCE_DIR}/Source/Lib/View/pallookup.hpp
