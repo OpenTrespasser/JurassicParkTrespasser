@@ -931,7 +931,7 @@ public:
 				}
 			}
 			PrintD3D("************Upload Failed**************\n");
-			//__asm int 3
+			//Assert(false);
 		}
 		DirectDraw::err = hres;
 	#endif

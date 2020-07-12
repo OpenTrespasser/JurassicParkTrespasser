@@ -60,16 +60,6 @@ enum EVideoCard
 // Global functions.
 //
 
-//*********************************************************************************************
-//
-EVideoCard evcGetCard
-(
-	LPDIRECTDRAW2 pdd_device
-);
-//
-// Returns the video card associated with the DirectDraw device.
-//
-//**************************************
 
 //*********************************************************************************************
 //
@@ -81,36 +71,5 @@ EVideoCard evcGetCard
 // Returns the video card associated with the DirectDraw device.
 //
 //**************************************
-
-//**********************************************************************************************
-//
-BOOL bMustSetNVidiaRegistry
-(
-);
-//
-// Returns 'TRUE' if the registry must still be set for using the NVidia Riva 128.
-//
-//**************************************
-
-//**********************************************************************************************
-//
-void SetNVidiaRegistry
-(
-);
-//
-// Sets the registry for use with the NVidia Riva 128.
-//
-//**************************************
-
-//**********************************************************************************************
-//
-void RestoreNVidiaRegistry
-(
-);
-//
-// Restores the original NVidia Riva 128 settings.
-//
-//**************************************
-
 
 #endif // HEADER_LIB_RENDERER_DIRECT3DCARDS_HPP

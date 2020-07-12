@@ -435,8 +435,6 @@ int DoWinMain(HINSTANCE hInstance,
     bUseGDIForMessages = false;
 
     OpenKey();
-	if (bMustSetNVidiaRegistry())
-		SetNVidiaRegistry();
 
     SetProperWorkingDir();
 
@@ -684,8 +682,7 @@ Cleanup:
 
 	// BUGBUG:  Close out file system
 
-	RestoreNVidiaRegistry();
-    CloseKey(b_change_safemode);
+	CloseKey(b_change_safemode);
 	
     return iRet;
 

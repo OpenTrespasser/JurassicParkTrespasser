@@ -364,13 +364,17 @@ void CAIGraph::InfluenceMoved(CInfluence *pinf, const CMessageMove& msgmv)
 //*********************************************************************************************
 void CAIGraph::SetStart(CVector3<> v3)
 {
-	pnNode(0)->v3Pos = v3;
+	Assert(bIsValidIndex(0));
+	if (bIsValidIndex(0))
+		pnNode(0)->v3Pos = v3;
 }
 
 //*********************************************************************************************
 void CAIGraph::SetStop(CVector3<> v3)
 {
-	pnNode(1)->v3Pos = v3;
+	Assert(bIsValidIndex(1));
+	if (bIsValidIndex(1))
+		pnNode(1)->v3Pos = v3;
 }
 
 

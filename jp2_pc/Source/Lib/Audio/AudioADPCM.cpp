@@ -93,7 +93,7 @@ CAudioADPCM::CAudioADPCM
 	if (cauheaderLocal.u1Bits == 8)
 	{
 		// 8 bit is not supported in Trespasser....
-		_asm int 3;
+		Assert(false);
 
 		// MONO:	Block alignment of 1024 = 4 byte header + 1020 adpcm samples = (2040+1) samples = 2041 bytes.
 		// STEREO:	Block alignment of 1024 = (4 byte header*2) + 1016 adpcm samples = (2032+2) samples = 2034 bytes.
@@ -140,7 +140,7 @@ uint32 CAudioADPCM::u4DecompressMono8bit
 )
 //**************************************
 {
-	_asm int 3;
+	Assert(false);
 	return 0;
 }
 
@@ -203,7 +203,7 @@ uint32 CAudioADPCM::u4DecompressStereo8bit
 )
 //**************************************
 {
-	_asm int 3;
+	Assert(false);
 	return 0;
 }
 
