@@ -376,14 +376,6 @@ void CConfigureWnd::OnOK()
 {
 	SD3DDevice d3ddev = penumdevDevices->devGetSelectedDevice().d3dDevice;
 
-	// If the device is a NVidia Riva 128, to registry stuff.
-	if (d3ddev.evcVideoCard == evcNVidia128)
-	{
-		SetRegValue(strRESTORE_NVIDIA, 1);
-		if (bMustSetNVidiaRegistry())
-			SetNVidiaRegistry();
-	}
-
 	//
 	// Write the resolution currently selected to the registry.
 	//
