@@ -115,7 +115,7 @@ inline void CEasyString::SetupStorage
 	const char* str_string2
 )
 {
-	void* heap_storage;
+	char* heap_storage;
 
 	//
 	// Start out by determining how much memory the user requires.
