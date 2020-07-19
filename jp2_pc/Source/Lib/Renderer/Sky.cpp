@@ -3915,6 +3915,58 @@ void CSkyRender::FillD3D
 
 //******************************************************************************************
 //
+void CSkyRender::FillD3DBackdropFog
+(
+	float f_offset_x,
+	float f_offset_y
+)
+//
+// Fills the Direct3D version of the sky.
+//
+//**************************************
+{
+	// Get the screen width and height.
+	float f_screen_w = float(u4ScreenWidth);
+	float f_screen_h = float(u4ScreenHeight);
+
+	// Direct3D colour constants.
+	D3DCOLOR d3drgb_plain  = d3dDriver.d3dcolGetFogColour();
+	D3DCOLOR d3drgb_plaina = D3DRGBA(1, 1, 1, 1);
+
+	// Setup Direct3D for this polygon.
+	LPDIRECT3DDEVICE3 pdevice = d3dDriver.pGetDevice();	// Copy of the device pointer.
+	Assert(pdevice);
+
+	d3dDriver.err = pdevice->Begin
+	(
+		D3DPT_TRIANGLEFAN,
+		D3DFVF_TLVERTEX,
+		D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS
+	);
+
+	d3dDriver.err = pdevice->Vertex(&D3DTLVERTEX (D3DVECTOR(      0.0f + f_offset_x,       0.0f + f_offset_y, 0.0f), 0.0f, d3drgb_plain, d3drgb_plaina, 0.0f, 0.0f));
+	d3dDriver.err = pdevice->Vertex(&D3DTLVERTEX (D3DVECTOR(f_screen_w + f_offset_x,       0.0f + f_offset_y, 0.0f), 0.0f, d3drgb_plain, d3drgb_plaina, 0.0f, 0.0f));
+	d3dDriver.err = pdevice->Vertex(&D3DTLVERTEX (D3DVECTOR(f_screen_w + f_offset_x, f_screen_h + f_offset_y, 0.0f), 0.0f, d3drgb_plain, d3drgb_plaina, 0.0f, 0.0f));
+	d3dDriver.err = pdevice->Vertex(&D3DTLVERTEX (D3DVECTOR(      0.0f + f_offset_x, f_screen_h + f_offset_y, 0.0f), 0.0f, d3drgb_plain, d3drgb_plaina, 0.0f, 0.0f));
+
+	d3dDriver.err = pdevice->End(0);
+}
+
+void CSkyRender::StartD3DSceneForSky()
+{
+	srd3dRenderer.SetD3DMode(ed3drSOFTWARE_LOCK);
+	srd3dRenderer.FlushBatch();
+	d3dDriver.err = d3dDriver.pGetDevice()->BeginScene();
+	d3dstState.SetDefault();
+	d3dstState.SetFog(true);
+	d3dstState.SetFiltering(true);
+	d3dstState.SetTexture(prasD3DSky.ptGet());
+	d3dstState.SetShading(true);
+	d3dstState.SetAddressing(eamTileUV);
+}
+
+//******************************************************************************************
+//
 void CSkyRender::DrawD3D
 (
 )
@@ -3997,6 +4049,10 @@ void CSkyRender::DrawD3D
 				++i_num_inview;
 		if (i_num_inview < 3)
 		{
+			//No textured sky in frame, just draw backdrop filler
+			StartD3DSceneForSky();
+			FillD3DBackdropFog(f_offset_x, f_offset_y);
+			d3dDriver.err = d3dDriver.pGetDevice()->EndScene();
 			return;
 		}
 	}
@@ -4027,18 +4083,11 @@ void CSkyRender::DrawD3D
 	}
 
 	// Setup Direct3D for this polygon.
-	srd3dRenderer.SetD3DMode(ed3drSOFTWARE_LOCK);
-	srd3dRenderer.FlushBatch();
-	d3dDriver.err = d3dDriver.pGetDevice()->BeginScene();
-	d3dstState.SetDefault();
-	d3dstState.SetFog(true);
-	d3dstState.SetFiltering(true);
-	d3dstState.SetTexture(prasD3DSky.ptGet());
-	d3dstState.SetShading(true);
-	d3dstState.SetAddressing(eamTileUV);
+	StartD3DSceneForSky();
 
-	// Turn Z buffering off.
-	d3dstState.SetAllowZBuffer(false);
+	// Turn Z buffering on
+	// required to place textured sky in front of backdrop filler
+	d3dstState.SetAllowZBuffer(true);
 
 	// Set up the vertices and feed them to DrawPrimitive.
 	int i_num_vertices = 0;
@@ -4080,6 +4129,8 @@ void CSkyRender::DrawD3D
 		i_num_vertices,
 		u4DrawPrimFlags
 	);
+
+	FillD3DBackdropFog(f_offset_x, f_offset_y);
 
 	// Render the scene.
 	d3dDriver.err = d3dDriver.pGetDevice()->EndScene();
