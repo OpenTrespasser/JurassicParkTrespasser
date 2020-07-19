@@ -116,10 +116,15 @@
 #define fCLUT_TOLERANCE		0.2f
 
 // Default start and end colours for clut.
-CColour clrDefStartRamp(0, 0, 0);		// (.149, .082, .165)
-CColour clrDefEndRamp  (255, 255, 255);		// (.996, 1,    .816)
-CColour clrDefEndDepth (215, 230, 255);
-CColour clrDefReflection(166, 222, 245);
+const CColour clrDefStartRampDefault(0, 0, 0);		// (.149, .082, .165)
+const CColour clrDefEndRampDefault  (255, 255, 255);		// (.996, 1,    .816)
+const CColour clrDefEndDepthDefault (215, 230, 255);
+const CColour clrDefReflectionDefault(166, 222, 245);
+
+CColour clrDefStartRamp = clrDefEndDepthDefault;
+CColour clrDefEndRamp = clrDefEndRampDefault;
+CColour clrDefEndDepth = clrDefEndDepthDefault;
+CColour clrDefReflection = clrDefReflectionDefault;
 //CColour clrDefReflection = clrDefEndDepth;
 
 TLightVal lvDefStart = 0.2;				// Minimum expected ambient value.

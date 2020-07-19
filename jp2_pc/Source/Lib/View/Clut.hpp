@@ -162,6 +162,12 @@ extern CColour clrDefStartRamp;
 extern CColour clrDefEndRamp;
 extern CColour clrDefEndDepth;
 extern CColour clrDefReflection;
+
+extern const CColour clrDefStartRampDefault;
+extern const CColour clrDefEndRampDefault;
+extern const CColour clrDefEndDepthDefault;
+extern const CColour clrDefReflectionDefault;
+
 extern uint16  u2FogSolidCol[iDefNumDepthValues];
 
 extern TLightVal lvDefStart;
