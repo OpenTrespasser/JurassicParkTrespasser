@@ -30,6 +30,7 @@
 #include "..\Lib\Sys\reg.h"
 #include "..\lib\sys\reginit.hpp"
 #include "keyremap.h"
+#include "Lib/Sys/DWSizeStruct.hpp"
 
 
 #define FIRST_LEVEL_NAME "BE.SCN"
@@ -498,7 +499,7 @@ void CLoaderWnd::InnerWindowLoop(bool bPaint)
     IDirectDrawSurface4 *   pSurface;
     HRESULT                 hr;
     CUIWnd *                puiwnd;
-    DDBLTFX                 ddfx;
+    CDDSize<DDBLTFX>        ddfx;
 
     PreLoopCall();
 
@@ -512,9 +513,6 @@ void CLoaderWnd::InnerWindowLoop(bool bPaint)
         // Draw everything to the back buffer
         puiwnd = m_pUIMgr->GetActiveUIWnd();
         puiwnd->DrawIntoSurface(prasMainScreen.ptPtrRaw(), &m_pUIMgr->m_rcInvalid);
-
-        memset(&ddfx, 0, sizeof(ddfx));
-        ddfx.dwSize = sizeof(ddfx);
 
         ddfx.dwROP = SRCCOPY;
         ddfx.dwDDFX = DDBLTFX_NOTEARING;

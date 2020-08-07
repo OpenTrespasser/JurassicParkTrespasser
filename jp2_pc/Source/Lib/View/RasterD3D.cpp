@@ -212,6 +212,7 @@
 #include "Lib/View/Direct3DRenderState.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3D.hpp"
 #include "Lib/View/AGPTextureMemManager.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 
 #include <memory.h>
 
@@ -337,35 +338,7 @@ static CProfileStat psLockTexture("Lock Tex.", &proHardware.psHardware);
 // Local functions.
 //
 
-//**********************************************************************************************
-//
-template<class T> void InitDXStruct
-(
-	T& t
-)
-//
-// Initializes and DirectX structure.
-//
-//**************************************
-{
-	Clear(t);
-	t.dwSize = sizeof(t);
-}
 
-//**********************************************************************************************
-//
-template<class T> T& Clear
-(
-	T& t
-)
-//
-// Clears any structure.
-//
-//**************************************
-{
-	memset(&t, 0, sizeof(t));
-	return t;
-}
 
 //**********************************************************************************************
 //
@@ -1131,7 +1104,7 @@ public:
 
 		ddsd.ddsCaps.dwCaps = DDSCAPS_SYSTEMMEMORY | DDSCAPS_TEXTURE;
 
-		InitDXStruct(ddsd.ddpfPixelFormat);
+		CDDSize<DDPIXELFORMAT>::InitStruct(ddsd.ddpfPixelFormat);
 
 		// Set the pixel format.
 		if (d3dDriver.bUseD3D())
@@ -1143,7 +1116,7 @@ public:
 		{
 			// Use the screen format.
 			CDDSize<DDSURFACEDESC2> ddsd_screen;
-			InitDXStruct(ddsd_screen.ddpfPixelFormat);
+			CDDSize<DDPIXELFORMAT>::InitStruct(ddsd_screen.ddpfPixelFormat);
 
 			prasMainScreen->pddsDraw4->GetSurfaceDesc(&ddsd_screen);
 			ddsd.ddpfPixelFormat = ddsd_screen.ddpfPixelFormat;
@@ -1170,7 +1143,7 @@ public:
 
 		ddsd.ddsCaps.dwCaps = DDSCAPS_SYSTEMMEMORY | DDSCAPS_TEXTURE;
 
-		InitDXStruct(ddsd.ddpfPixelFormat);
+		CDDSize<DDPIXELFORMAT>::InitStruct(ddsd.ddpfPixelFormat);
 
 		// Set the pixel format.
 		if (d3dDriver.bUseD3D())
@@ -1191,7 +1164,7 @@ public:
 		{
 			// Use the screen format.
 			CDDSize<DDSURFACEDESC2> ddsd_screen;
-			InitDXStruct(ddsd_screen.ddpfPixelFormat);
+			CDDSize<DDPIXELFORMAT>::InitStruct(ddsd_screen.ddpfPixelFormat);
 
 			prasMainScreen->pddsDraw4->GetSurfaceDesc(&ddsd_screen);
 

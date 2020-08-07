@@ -109,47 +109,6 @@
 
 //**********************************************************************************************
 //
-template<class T> class CDDSize: public T 
-//	
-//	Handy template class for all those DD structs that require a dwSize field to be set properly.
-//
-//	Example: instead of saying:
-//
-//		DDSURFACEDESC2	sd;
-//		memset(&sd, 0, sizeof(sd));
-//		sd.dwSize = sizeof(sd);
-//
-//	Say:
-//
-//		CDDSize<DDSURFACEDESC2>	sd;
-//
-//**************************************
-{
-public:
-	// Constructor just sets everything to 0, then sets the correct dwSize field.
-	CDDSize() 
-	{
-		memset(this, 0, sizeof(*this));
-		dwSize = sizeof(*this);
-	}
-};
-
-
-#ifndef __MWERKS__
-#if _MSC_VER <= 1020
-	//
-	// Stupid compiler requires this external declaration, otherwise it will not be able to find
-	// the struct 'IDirectDraw2.'
-	//
-	extern CCom<IDirectDraw2>	pdd;		// The pointer through which all functions are accessed.
-	extern CCom<IDirectDraw4>	pdd4;		// The pointer through which all functions are accessed.
-	#error Bullcrap needed for 4.2. Remove this error message to get 4.2 to compile.
-#endif
-#endif	// MWERKS
-
-
-//**********************************************************************************************
-//
 namespace DirectDraw
 //
 // Encapsulation of some IDirectDraw items.
