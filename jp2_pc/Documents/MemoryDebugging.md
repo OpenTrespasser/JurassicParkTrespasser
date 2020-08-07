@@ -23,7 +23,9 @@ If `gflags` is missing in the Windows SDK, [download the installer for the lates
 [For a more detailed explanation of `gflags` and FPHV, please refer to the documentation by Microsoft.](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/example-12---using-page-heap-verification-to-find-a-bug)
 
 #### VS AddressSanitizer
-Visual Studio 2019 offers an *experimental* AddressSanitizer option, based on the Clang/LLVM address sanitizer library. It needs to be installed as VS package. For the time being, the AddressSanitizer only works with `Release` and `Final` 32bit builds.
+Visual Studio 2019 offers an *experimental* AddressSanitizer option, based on the Clang/LLVM address sanitizer library. It needs to be installed as a VS package and requires VS 2019 15.7 or higher to work in all configurations.
 [For more details, please refer to the documentation by Microsoft.](https://devblogs.microsoft.com/cppblog/addresssanitizer-asan-for-windows-with-msvc/)
 
 To activate AddressSanitizer via CMake, add `/fsanitize=address` to the compiler flags.
+
+When you launch Trespasser outside of Visual Studio, you may need to copy the AddressSanitizer DLLs to your execution directory. The DLLs (`clang_rt.asan*.dll`) can be found in the `bin` directory of the MSVC tools directory.  
