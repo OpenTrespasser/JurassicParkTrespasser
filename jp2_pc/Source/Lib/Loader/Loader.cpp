@@ -249,6 +249,11 @@ CProfileStat psBumpPack("Bumpmap pack", &psLoader);
 		// Disable scene saving for asserts.
 		bAutoSaveScene = false;
 
+		clrDefStartRamp = clrDefEndDepthDefault;
+		clrDefEndRamp = clrDefEndRampDefault;
+		clrDefEndDepth = clrDefEndDepthDefault;
+		clrDefReflection = clrDefReflectionDefault;
+
 		CCycleTimer ctmr_total;
 		CCycleTimer ctmr;
 		TCycles	cyc_temp = 0;
