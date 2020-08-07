@@ -488,7 +488,7 @@ char* CArea::SAreaMemory::reserve(int size)
 {
 	if (size > off_end - off_free)
 	{
-		int new_size = max(DEF_AREA_SIZE, size);
+		int new_size = std::max(DEF_AREA_SIZE, size);
 		pstart = (char*)realloc(pstart, new_size);
 		off_end += new_size;
 	}
