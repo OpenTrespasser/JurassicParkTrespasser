@@ -71,6 +71,7 @@
 #include "Lib/Sys/debugConsole.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/Sys/RegInit.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Std/PrivSelf.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3D.hpp"
@@ -1215,10 +1216,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			if (evc_type != evcPermedia2)
 			{
 				// Check for primary gamma capability.
-				DDCAPS  ddcaps;
-
-				memset(&ddcaps, 0, sizeof(ddcaps));
-				ddcaps.dwSize = sizeof(ddcaps);
+				CDDSize<DDCAPS> ddcaps;
 
 				HRESULT ddrval = DirectDraw::pdd4->GetCaps(&ddcaps, NULL);
 

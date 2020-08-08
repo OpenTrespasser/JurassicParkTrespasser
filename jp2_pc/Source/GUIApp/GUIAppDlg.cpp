@@ -202,6 +202,7 @@
 #include "Lib/sys/Reg.h"
 #include "lib/sys/reginit.hpp"
 #include "lib/loader/LoadTexture.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 
 
 #include <stdio.h>
@@ -6142,9 +6143,8 @@ void CGUIAppDlg::ToggleTextureWire()
 bool CGUIAppDlg::bDetectJoystick(EControlMethod ecm_stick)
 {
 	// ecm_joystick is ignored at the moment
-	JOYINFOEX	ji_stick;
+	CDDSize<JOYINFOEX> ji_stick;
 
-	ji_stick.dwSize=sizeof(JOYINFOEX);
 	ji_stick.dwFlags=0;
 	if (joyGetPosEx(JOYSTICKID1,&ji_stick)==JOYERR_NOERROR)
 		return(TRUE);

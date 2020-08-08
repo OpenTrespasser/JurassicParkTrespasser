@@ -19,6 +19,7 @@
 #include "point2.h"
 #include <windef.h>
 
+#define min(x,y) (((x) < (y)) ? (x) : (y))
 
 class Box2: public RECT {
 	public:
@@ -64,5 +65,7 @@ struct FBox2 {
 	DllExport FBox2& operator+=(const FBox2& b);
 	DllExport int Contains(const Point2& p) const;  // is point in this box?
 	};
+
+#undef min
 
 #endif

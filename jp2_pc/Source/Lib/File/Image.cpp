@@ -332,7 +332,7 @@ CSymbolTable::SSymbol::SSymbol(const SSymbol& symbol)
 CSymbolTable::SSymbol::SSymbol(const SSymbolEntry& sym_entry, const char* sym_name)
 {
 	handle = sym_entry.handle;
-	unused_handle = max(unused_handle, handle)+1;
+	unused_handle = std::max(unused_handle, handle)+1;
 	
 	if (sym_name && sym_name[0])
 	{

@@ -247,6 +247,7 @@
 
 #include "Lib/Sys/DebugConsole.hpp"
 #include "lib/sys/memorylog.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 #include "eax.h"			// Creative environmental audio
 
 
@@ -951,7 +952,7 @@ void CAudio::CreateAudio
 //**************************************
 {
 	HRESULT					hr;
-	CDSSize<DSBUFFERDESC>	dsbd;
+	CDDSize<DSBUFFERDESC>	dsbd;
 
 	// clear out all of the pseudo 3d sample pointers
 	uint32 u4_p_count;
@@ -1063,7 +1064,7 @@ void CAudio::CreateAudio
 	bSoundEnabled = false;
 
 	// Get the DS caps
-	CDSSize<DSCAPS>	dscaps;
+	CDDSize<DSCAPS>	dscaps;
 
 	if (pDSInterface->GetCaps(&dscaps) == DS_OK)
 	{
@@ -1382,7 +1383,7 @@ void CAudio::EnableEnvironmentalAudio
 //	
 //**************************************
 {
-	CDSSize<DSBUFFERDESC>	dsbd;
+	CDDSize<DSBUFFERDESC>	dsbd;
 	HRESULT					hr;
 	WAVEFORMATEX			format;
 
@@ -1928,7 +1929,7 @@ LPDIRECTSOUNDBUFFER	CAudio::CreateDSBuffer
 //**************************************
 {
 	LPDIRECTSOUNDBUFFER		psbuffer;
-	CDSSize<DSBUFFERDESC>	dsbd;
+	CDDSize<DSBUFFERDESC>	dsbd;
 	HRESULT					hr;
 	WAVEFORMATEX			format;
 

@@ -62,6 +62,7 @@
 #include "Common.hpp"
 #include "Lib/W95/DD.hpp"
 #include "../Video.hpp"
+#include "Lib/Sys/DWSizeStruct.hpp"
 #include "Lib/W95/Direct3DCards.hpp"
 
 

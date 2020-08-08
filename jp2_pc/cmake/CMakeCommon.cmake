@@ -12,6 +12,10 @@ add_compile_definitions(
     $<$<CONFIG:Debug>:TARGET_PROCESSOR=PROCESSOR_PENTIUM>
     $<$<CONFIG:Release>:TARGET_PROCESSOR=PROCESSOR_PENTIUMPRO>
     $<$<CONFIG:Final>:TARGET_PROCESSOR=PROCESSOR_PENTIUMPRO>
+    
+    $<$<CONFIG:Debug>:NOMINMAX>
+    $<$<CONFIG:Release>:NOMINMAX>
+    $<$<CONFIG:Final>:NOMINMAX>
 )
 
 #In CMake, the regular Release configuration has no debug info

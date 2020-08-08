@@ -334,33 +334,6 @@ struct SStreamedSample
 
 
 //**********************************************************************************************
-//
-template<class T> class CDSSize: public T 
-//	
-//	Handy template class for setting the size of structures
-//
-//	Example: instead of saying:
-//
-//		DSBUFFERDESC	sd;
-//		memset(&sd, 0, sizeof(sd));
-//		sd.dwSize = sizeof(sd);
-//
-//	Say:
-//
-//		CDSSize<DSBUFFERDESC>	sd;
-//
-//**************************************
-{
-public:
-	// Constructor just sets everything to 0, then sets the correct dwSize field.
-	CDSSize() 
-	{
-		memset(this, 0, sizeof(*this));
-		dwSize = sizeof(*this);
-	}
-};
-
-//**********************************************************************************************
 #define u4SEMAPHORE_COUNT	2
 
 //**********************************************************************************************
