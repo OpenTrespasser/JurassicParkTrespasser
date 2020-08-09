@@ -906,7 +906,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     bGetDimensions(windowWidth, windowHeight);
 
     DWORD style = WS_VISIBLE | WS_POPUP | WS_SYSMENU;
-    if (GetWindowModeActual() == WindowMode::FRAMED)
+    if (GetWindowModeConfigured() == WindowMode::FRAMED)
         style |= WS_OVERLAPPEDWINDOW;
 	
     if (!CreateWindowEx(0,
