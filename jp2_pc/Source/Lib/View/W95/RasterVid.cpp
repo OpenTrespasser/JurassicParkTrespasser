@@ -320,7 +320,7 @@ private:
 		iWidthFront  = i_width;
 		iHeightFront = i_height;
 
-		if (i_bits && GetWindowModeActual() == WindowMode::EXCLUSIVE)
+		if (i_bits && GetWindowModeConfigured() == WindowMode::EXCLUSIVE)
 		{		
 			// Go fullscreen.  We need to call 2 DD functions to do this.
 			DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(hwnd, 
@@ -1302,7 +1302,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			// Return to Windows screen if necessary.
 			if (DirectDraw::pdd4)
 			{
-				if (GetWindowModeActual() == WindowMode::EXCLUSIVE)
+				if (GetWindowModeConfigured() == WindowMode::EXCLUSIVE)
 					DirectDraw::err = DirectDraw::pdd4->RestoreDisplayMode();
 				DirectDraw::err = DirectDraw::pdd4->SetCooperativeLevel(0, DDSCL_NORMAL);
 			}
@@ -1716,7 +1716,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 	//******************************************************************************************
 	bool CRasterWin::CPriv::bConstructD3D(HWND hwnd, int i_width, int i_height, int i_bits)
 	{
-		if (GetWindowModeActual() == WindowMode::EXCLUSIVE)
+		if (GetWindowModeConfigured() == WindowMode::EXCLUSIVE)
 			return bConstructD3DExclusive(hwnd, i_width, i_height, i_bits);
 		else
 			return bConstructD3DWindowed(hwnd, i_width, i_height, i_bits);
