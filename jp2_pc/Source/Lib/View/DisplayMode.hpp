@@ -8,5 +8,3 @@ enum class WindowMode {
 };
 
 WindowMode GetWindowModeConfigured();
-
-WindowMode GetWindowModeActual();
