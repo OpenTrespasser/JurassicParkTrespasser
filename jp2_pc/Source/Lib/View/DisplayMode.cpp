@@ -11,11 +11,3 @@ WindowMode GetWindowModeConfigured()
 		selection = 0;
 	return static_cast<WindowMode>(selection);
 }
-
-WindowMode GetWindowModeActual()
-{
-	if (GetRegValue(strFLAG_D3D, DEFAULT_D3D))
-		return WindowMode::EXCLUSIVE;
-	else
-		return GetWindowModeConfigured();
-}
