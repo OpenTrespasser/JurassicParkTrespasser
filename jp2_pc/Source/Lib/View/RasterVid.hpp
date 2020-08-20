@@ -668,6 +668,7 @@ public:
 	}
 	
 protected:
+	void ConstructClipper(HWND hwnd);
 
 	CRasterWin()
 	{
