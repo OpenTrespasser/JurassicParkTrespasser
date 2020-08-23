@@ -26,6 +26,7 @@
 #include "uidlgs.h"
 #include "cdib.h"
 #include "resource.h"
+#include "Lib/View/DisplayMode.hpp"
 
 
 extern HINSTANCE    g_hInst;
@@ -936,27 +937,42 @@ CCamera* pcamGetCamera()
 
 void SetupGameScreen()
 {
-    int             iWidth;
-    int             iHeight;
+    int             iWindowWidth;
+    int             iWindowHeight;
+    int             iClientWidth;
+    int             iClientHeight;
     BOOL            bSystemMem;
     RECT            rc;
     int             iGore;
 
-    bGetDimensions(iWidth, iHeight);
+    bGetDimensions(iWindowWidth, iWindowHeight);
+	
+	if (GetWindowModeConfigured() == WindowMode::FRAMED)
+	{
+        POINT clientsize = GetCurrentClientSize();
+        iClientWidth = clientsize.x;
+        iClientHeight = clientsize.y;
+	}
+    else 
+    {
+        iClientWidth = iWindowWidth;
+        iClientHeight = iWindowHeight;
+    }
 	
     bSystemMem = bGetSystemMem();
 
-    SetRect(&rc, 0, 0, iWidth, iHeight);
+    SetRect(&rc, 0, 0, iClientWidth, iClientHeight);
     ClipCursor(&rc);
 
-    prnshMain->bCreateScreen(iWidth, 
-                             iHeight, 
+    prnshMain->bCreateScreen(iClientWidth, 
+                             iClientHeight, 
                              16, 
                              bSystemMem);
 
-    SetWindowPos(g_hwnd, NULL, -1, -1, iWidth, iHeight,  
+	
+    SetWindowPos(g_hwnd, NULL, -1, -1, iWindowWidth, iWindowHeight,  
                  SWP_NOMOVE | SWP_NOREDRAW | SWP_NOZORDER);
-
+                 
 
 	d3dDriver.Purge();
 	d3dDriver.Restore();
@@ -1325,7 +1341,7 @@ POINT GetCurrentClientSize()
 {
     RECT rect = { 0 };
     GetClientRect(g_hwnd, &rect);
-    POINT result = { rect.right, rect.bottom };
+    POINT result = { rect.right - rect.left, rect.bottom - rect.top };
     return result;
 }
 
