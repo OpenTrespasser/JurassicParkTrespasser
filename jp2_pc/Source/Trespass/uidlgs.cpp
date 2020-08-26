@@ -33,7 +33,6 @@
 #include "Lib/Sys/DWSizeStruct.hpp"
 
 
-#define FIRST_LEVEL_NAME "BE.SCN"
 
 extern HINSTANCE    g_hInst;
 extern HWND		    g_hwnd;
@@ -281,7 +280,7 @@ void CMainScreenWnd::UIButtonUp(CUIButton * pbutton)
 
                 video.Play("menu\\newgame");
 
-                iRet = g_CTPassGlobals.LoadLevel(FIRST_LEVEL_NAME);
+                iRet = g_CTPassGlobals.LoadLevel(GetFirstLevelName().c_str());
 
                 if (iRet >= 0)
                 {
