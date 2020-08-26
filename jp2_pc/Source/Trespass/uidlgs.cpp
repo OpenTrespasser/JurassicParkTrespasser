@@ -280,6 +280,7 @@ void CMainScreenWnd::UIButtonUp(CUIButton * pbutton)
                 CVideoWnd   video(m_pUIMgr);
 
                 video.Play("menu\\newgame");
+                m_pUIMgr->Detach(&video);
 
                 iRet = g_CTPassGlobals.LoadLevel(FIRST_LEVEL_NAME);
 
