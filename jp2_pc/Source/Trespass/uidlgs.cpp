@@ -614,6 +614,8 @@ void CLoaderWnd::SetupBackgroundImage()
 
     // Load the image.
     pras = ReadAndConvertBMP(szName, false);
+    if (!pras)
+        return;
 
     SetRect(&rcImage, 0, 0, pras->iWidth, pras->iHeight);
 
