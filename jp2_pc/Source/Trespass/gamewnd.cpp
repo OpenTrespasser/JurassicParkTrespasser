@@ -422,9 +422,13 @@ void CGameWnd::SetupGameStoppage()
     m_bPaused = TRUE;
     m_pUIMgr->m_bDrawMouse = TRUE;
 
+    int width = 0;
+    int height = 0;
+    GetWindowSize(g_hwnd, width, height);
+	
 	// Limit cursor movement.
 	RECT rc;
-	SetRect(&rc, 0, 0, prasMainScreen->iWidth, prasMainScreen->iHeight);
+	SetRect(&rc, 0, 0, width, height);
 	ClipCursor(&rc);
 
     SetCursorPos(prasMainScreen->iWidth / 2, 
@@ -870,7 +874,7 @@ void CGameWnd::DrawWndInfo(CRaster * pRaster, RECT * prc)
 
             hdc = prasMainScreen->hdcGet();
             TextOut(hdc, 0, 0, sz, strlen(sz));
-            prasMainScreen->ReleaseDC(hdc);
+			prasMainScreen->ReleaseDC(hdc);
         }
     }
 }

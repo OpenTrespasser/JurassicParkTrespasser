@@ -26,6 +26,7 @@
 #include "uiwnd.h"
 #include "uidlgs.h"
 #include "video.h"
+#include "Lib/View/DisplayMode.hpp"
 
 
 extern HINSTANCE        g_hInst;
@@ -410,7 +411,7 @@ void CMainWnd::OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId)
 
                 m_pUIMgr->m_bPause = FALSE;
 
-                if (prasMainScreen)
+                if (prasMainScreen && GetWindowModeConfigured() == WindowMode::EXCLUSIVE)
                 {
                     SetRect(&rc, 
                             0, 
