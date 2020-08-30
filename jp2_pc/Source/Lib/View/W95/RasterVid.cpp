@@ -317,7 +317,7 @@ private:
 		Assert(bWithin(i_buffers, 1, 3));
 
 		iBuffers    = i_buffers;
-		bFullScreen = i_bits != 0;
+		bFullScreen = i_bits != 0 && GetWindowModeConfigured() != WindowMode::FRAMED;
 		iWidthFront  = i_width;
 		iHeightFront = i_height;
 

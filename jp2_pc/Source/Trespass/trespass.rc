@@ -224,6 +224,7 @@ END
 #include "version.rc2"
 #include "res\usa_keyremap.rc2"
 #include "res\usa_hints.rc2"
+#include "res\usa_ctrls.rc2"
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 

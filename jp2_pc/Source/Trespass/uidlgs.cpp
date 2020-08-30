@@ -33,7 +33,6 @@
 #include "Lib/Sys/DWSizeStruct.hpp"
 
 
-#define FIRST_LEVEL_NAME "BE.SCN"
 
 extern HINSTANCE    g_hInst;
 extern HWND		    g_hwnd;
@@ -280,8 +279,9 @@ void CMainScreenWnd::UIButtonUp(CUIButton * pbutton)
                 CVideoWnd   video(m_pUIMgr);
 
                 video.Play("menu\\newgame");
+                m_pUIMgr->Detach(&video);
 
-                iRet = g_CTPassGlobals.LoadLevel(FIRST_LEVEL_NAME);
+                iRet = g_CTPassGlobals.LoadLevel(GetFirstLevelName().c_str());
 
                 if (iRet >= 0)
                 {
@@ -614,6 +614,8 @@ void CLoaderWnd::SetupBackgroundImage()
 
     // Load the image.
     pras = ReadAndConvertBMP(szName, false);
+    if (!pras)
+        return;
 
     SetRect(&rcImage, 0, 0, pras->iWidth, pras->iHeight);
 

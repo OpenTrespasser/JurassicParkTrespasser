@@ -192,14 +192,17 @@ void CTPassGlobals::CaptureBackground(bool bBackbuffer /* = false */)
 
     hdcDst = m_prasBkgnd->hdcGet();
 
+    POINT basepoint = { 0,0 };
+    ClientToScreen(g_hwnd, &basepoint);
+	
     BitBlt(hdcDst, 
            0, 
            0, 
            m_prasBkgnd->iWidth, 
            m_prasBkgnd->iHeight,
            hdcSrc,
-           0,
-           0,
+           basepoint.x,
+           basepoint.y,
            SRCCOPY);
 
     pSurface->ReleaseDC(hdcSrc);

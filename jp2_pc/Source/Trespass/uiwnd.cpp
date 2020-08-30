@@ -292,6 +292,9 @@ CUIWnd::CUIWnd(CUIManager * pUIMgr)
 
 CUIWnd::~CUIWnd()
 {
+    if (m_pUIMgr)
+        Assert(!m_pUIMgr->Detach(this)) //Detach should have happened before this point
+
     delete m_pRaster;
 }
 
