@@ -377,6 +377,7 @@ const std::map<std::string, std::variant<int, const char*>> g_allsettings = {
 	{ REG_KEY_DATA_DRIVE          , "" },
 	{ REG_KEY_INSTALLED           , TRUE },
 	{ REG_KEY_INSTALLED_DIR       , "" },
+	{ REG_KEY_FIRST_LEVEL         , "" },
 	{ REG_KEY_NOVIDEO             , FALSE },
 	{ REG_KEY_AUDIO_LEVEL         , 0 },
 	{ REG_KEY_AUDIO_EFFECT        , DEFAULT_AUDIO_EFFECT },

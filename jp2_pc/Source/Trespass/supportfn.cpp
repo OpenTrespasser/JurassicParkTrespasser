@@ -28,6 +28,7 @@
 #include "resource.h"
 #include "Lib/View/DisplayMode.hpp"
 
+#include <filesystem>
 
 extern HINSTANCE    g_hInst;
 extern HWND         g_hwnd;
@@ -1345,4 +1346,29 @@ POINT GetCurrentClientSize()
     return result;
 }
 
+std::string GetFirstLevelName()
+{
+    {
+        char firstlevelname[MAX_PATH] = { '\0' };
+        GetRegString(REG_KEY_FIRST_LEVEL, firstlevelname, sizeof(firstlevelname), "");
+        if (std::strlen(firstlevelname) > 0)
+            return firstlevelname;
+    }
 
+    //TODO add support for the 1.1 patch
+
+    const std::string candidates[] = { "be.scn", "demo.scn" };
+
+    char datadirstring[MAX_PATH] = { '\0' };
+    GetFileLoc(FA_TYPE::FA_DATADRIVE, datadirstring, sizeof(datadirstring));
+    const std::filesystem::path datapath = datadirstring;
+
+    for (const auto& entry : candidates)
+    {
+        const auto fullpath = datapath / entry;
+        if (std::filesystem::exists(fullpath))
+            return entry;
+    }
+
+    return "";
+}

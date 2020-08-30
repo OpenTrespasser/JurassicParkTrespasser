@@ -18,6 +18,8 @@
 #ifndef __SUPPORTFN_HPP__
 #define __SUPPORTFN_HPP__
 
+#include <string>
+
 class CRaster;
 class CCamera;
 class CUIWnd;
@@ -137,6 +139,7 @@ void DisplayLoadingFileError(int iErr);
 void ClearInputState(bool bCenterMouse = false);
 POINT GetCurrentClientSize();
 
+std::string GetFirstLevelName();
 
 #endif // __SUPPORTFN_H__
 
