@@ -259,7 +259,8 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
 #ifdef _DEBUG
         dprintf("CVideoWnd::Play() -- Unable to load/find %s", sz);
 #endif
-        return FALSE;
+        m_pUIMgr->Detach(this);
+    	return FALSE;
     }
 
     m_pSmack = SmackOpen((char *)hfile, 
@@ -267,6 +268,8 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
                          SMACKAUTOEXTRA);
     if (!m_pSmack)
     {
+        m_pUIMgr->Detach(this);
+        CloseHandle(hfile);
         return FALSE;
     }
 
