@@ -5,16 +5,25 @@ set(CMAKE_SUPPRESS_REGENERATION true) #Suppress zero-check project
 set(CMake_MSVC_PARALLEL true GLOBAL)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT trespass)
-string(APPEND CMAKE_CXX_FLAGS " /MP /GF")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /GF")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 #Linker flag required by the self-modifying assembly code in DrawSubTriangle in project ScreenRenderDWI
 #Can be removed after assembly code has been replaced
 #ERW = Execute, read, write
-string(APPEND CMAKE_EXE_LINKER_FLAGS " /SECTION:SelfMod,ERW")
-string(APPEND CMAKE_SHARED_LINKER_FLAGS " /SECTION:SelfMod,ERW")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SECTION:SelfMod,ERW")
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /SECTION:SelfMod,ERW")
 
+
+set(STATICALLY_LINK_RUNTIME_LIBRARIES TRUE CACHE BOOL INTERNAL)
+if (STATICALLY_LINK_RUNTIME_LIBRARIES)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+    set(CMAKE_MFC_FLAG 1)
+else()
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+    set(CMAKE_MFC_FLAG 2)
+endif()
 
 set(USE_TRESPASSER_DIRECTORY TRUE CACHE BOOL INTERNAL)
 
