@@ -360,8 +360,6 @@ void CTextOverlay::ResetScreen
 )
 //*************************************
 {
-	RemoveAll();
-
 	delete pfntOverlayFont;
 
 	uint32 u4_size = prasMainScreen->iWidth/20;
