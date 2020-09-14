@@ -512,11 +512,7 @@ int iGetScreenBitdepth();
 			return;
 
 
-		//
-		// Remove overlay text
-		//
-		CTextOverlay::ptovTextSystem->RemoveAll();
-
+		
 		// Constants for minimum dimensions that preserve the screen's ratio.
 		int iMinHeight = iMinWidth * prasMainScreen->iHeightFront / prasMainScreen->iWidthFront;
 

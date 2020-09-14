@@ -153,6 +153,8 @@ public:
 	//*****************************************************************************************
 	// The global text system pointer.
 	static CTextOverlay* ptovTextSystem;
+
+	static int32 CalculateFontSize();
 };
 
 extern CTextOverlay* ptovTextSystem;
