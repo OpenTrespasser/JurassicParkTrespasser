@@ -20,7 +20,6 @@
 // We want to include the resource IDs for the OEM settings as well
 #define OEMRESOURCE
 #include "..\lib\w95\wininclude.hpp"
-#include <smacker/smack.h>
 #include "..\gblinc\common.hpp"
 #include "..\Lib\GeomDBase\PartitionPriv.hpp"
 #include "..\lib\std\memlimits.hpp"
