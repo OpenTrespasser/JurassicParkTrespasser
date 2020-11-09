@@ -20,20 +20,21 @@
 
 
 #include "uiwnd.h"
-#include "smacker/SMACK.H"
 
 
-//+--------------------------------------------------------------------------
-//---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
+struct smk_t;
 
 
 typedef struct {
-  s32 x;
-  s32 y;
-  s32 w;
-  s32 h;
-} whRECT;
+    unsigned char values[3];
+} _ubytevec3;
+
+struct VideoFrame
+{
+    std::vector<unsigned char> video = std::vector<unsigned char>(640 * 348);
+    std::vector<_ubytevec3> videoPalette = std::vector<_ubytevec3>(256);
+};
+
 
 class CVideoWnd : public CUIWnd
 {
@@ -45,27 +46,44 @@ public:
     void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
 
     BOOL AllowEscape() { return FALSE; }
-    void UpdatePalette();
 
     void NextSmackerFrame();
-    void NextDirect();
-    void NextNonDirect();
+    void NextImageFrame();
 
+    bool CreateSoundBuffer();
+    bool WriteChunkIntoAudioBuffer(DWORD& lastWriteOffset);
+    bool ServiceAudioBuffer(bool force = false);
+    void LoadFrameIntoQueues();
 
     void Pause();
     void Resume();
 
     char                m_szFile[_MAX_PATH];
-    Smack *             m_pSmack;
-    SmackBuf *          m_pBuf;
-    rptr<CRasterMem>    m_pBuff;
+    smk_t*              m_pSmack;
+    std::list<VideoFrame> m_frameQueue;
+    std::list<std::vector<char>> m_audioQueue;
+    CCom<IDirectSoundBuffer> m_soundbuffer;
+
+	std::unique_ptr<CRasterVid> m_pVideoFrameBuf;
     int                 m_iLastKey;
     int                 m_iTop;
     int                 m_iLeft;
+    int                 m_framerate;
+    bool                m_fVideoLoaded;
     bool                m_fVideoOver;
     int                 m_iSurfaceType;
-    bool                m_fDirect;
-    bool                m_bFullRedraw;
+
+    struct
+    {
+        DWORD           m_soundBufferSize;
+        char            m_silenceByte;
+        size_t          m_avgBytesPerSec;
+        bool            m_audioFinished;
+        bool            m_playingFirstHalf;
+        bool            m_audioWriteFinished;
+        DWORD           m_lastWriteOffset;
+        DWORD           m_finalWriteOffset;
+    }                   m_audioState;
 };
 
 
