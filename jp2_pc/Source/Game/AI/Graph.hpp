@@ -68,9 +68,9 @@
 
 //#include <vector.h>
 
-#include "Lib\Std\SparseArray.hpp"
-#include "Lib\Std\Array2.hpp"
-#include "Lib\Transform\Vector.hpp"
+#include "Lib/Std/SparseArray.hpp"
+#include "Lib/Std/Array2.hpp"
+#include "Lib/Transform/Vector.hpp"
 
 //lint -save -e1509   // vector<int> destructor not virtual.
 //*********************************************************************************************
