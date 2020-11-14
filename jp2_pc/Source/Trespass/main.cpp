@@ -21,8 +21,8 @@
 #include <ShlObj.h>
 #include "resource.h"
 #include "main.h"
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
+#include "../Lib/Sys/reg.h"
+#include "../lib/sys/reginit.hpp"
 #include "Lib/Sys/Permissions.hpp"
 #include "Lib/Sys/FileEx.hpp"
 #include "supportfn.hpp"
