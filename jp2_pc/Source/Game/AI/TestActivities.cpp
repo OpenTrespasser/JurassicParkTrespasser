@@ -78,9 +78,9 @@
 #include "TestActivities.hpp"
 #include "AIMain.hpp"
 
-#include "Lib\EntityDBase\MessageTypes\MsgStep.hpp"
+#include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 
-#include "Game\DesignDaemon\DaemonScript.hpp"
+#include "Game/DesignDaemon/DaemonScript.hpp"
 
 #include <stdio.h>
 
