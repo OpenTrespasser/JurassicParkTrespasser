@@ -1,6 +1,6 @@
 /**********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1996
+ * Copyright Â© DreamWorks Interactive. 1996
  *
  *	Implementation of PathAStar.hpp.
  *
@@ -50,7 +50,7 @@
 #include "Lib/EntityDBase/Animal.hpp"
 
 #include <stdio.h>
-//#include "Lib\Sys\Profile.cpp"
+//#include "Lib/Sys/Profile.cpp"
 
 #include "Brain.hpp"
 #include "AIGraph.hpp"
