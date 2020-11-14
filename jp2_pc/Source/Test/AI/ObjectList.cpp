@@ -1,7 +1,7 @@
 /**********************************************************************************************
  *
  * $Source::																				  $	
- * Copyright © DreamWorks Interactive. 1996
+ * Copyright Â© DreamWorks Interactive. 1996
  *
  *		Implementation of ObjectList.hpp
  *
@@ -52,8 +52,8 @@
 
 #include <float.h>
 
-#include "Game\AI\Classes.hpp"
-#include "Game\AI\Brain.hpp"
+#include "Game/AI/Classes.hpp"
+#include "Game/AI/Brain.hpp"
 
 #include "TestAnimal.hpp"
 #include "AITestShell.hpp"
