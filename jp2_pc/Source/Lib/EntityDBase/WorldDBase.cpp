@@ -100,7 +100,7 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
 #include "Lib/EntityDBase/MessageTypes/MsgTrigger.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgPhysicsReq.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgControl.hpp"
-#include "Lib\EntityDBase\TextOverlay.hpp"
+#include "Lib/EntityDBase/TextOverlay.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/reg.h"
@@ -128,24 +128,24 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
 #include "Game/AI/AIInfo.hpp"
 #include "Game/DesignDaemon/Gun.hpp"
 
-#include "Lib\Sys\ConIO.hpp"
+#include "Lib/Sys/ConIO.hpp"
 
-#include "Lib\Control\Control.hpp"
+#include "Lib/Control/Control.hpp"
 
 #include <fstream>
 
 
-#include "Lib\Sys\W95\Render.hpp"
-#include "Lib\Loader\PlatonicInstance.hpp"
-#include "Lib\Renderer\Sky.hpp"
+#include "Lib/Sys/W95/Render.hpp"
+#include "Lib/Loader/PlatonicInstance.hpp"
+#include "Lib/Renderer/Sky.hpp"
 
 #include "Lib/View/Grab.hpp"
 
 #include "Lib/Sys/FileEx.hpp"
 #include "WorldPriv.hpp"
-#include "Lib\Loader\LoadTexture.hpp"
-#include "Lib\GeomDBase\LightShape.hpp"
-#include "Lib\EntityDBase\EntityLight.hpp"
+#include "Lib/Loader/LoadTexture.hpp"
+#include "Lib/GeomDBase/LightShape.hpp"
+#include "Lib/EntityDBase/EntityLight.hpp"
 #include "Lib/Renderer/RenderCacheInterface.hpp"
 #include "Lib/EntityDBase/AnimationScript.hpp"
 #include "Lib/EntityDBase/CameraPrime.hpp"
@@ -155,7 +155,7 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
 
 #include <map>
 
-#include "Shell\WinRenderTools.hpp"
+#include "Shell/WinRenderTools.hpp"
 
 
 #define bPRINT_PARTITION_SEARCH_TIMES	0
