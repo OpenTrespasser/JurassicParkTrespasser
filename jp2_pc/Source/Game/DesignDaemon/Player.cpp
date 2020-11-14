@@ -78,7 +78,7 @@
 #include "Lib/View/LineDraw.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/Profile.hpp"
-#include "Lib\EntityDBase\AnimationScript.hpp"
+#include "Lib/EntityDBase/AnimationScript.hpp"
 
 // PREVENT CODE GEN BUG!
 #pragma optimize("g", off)
