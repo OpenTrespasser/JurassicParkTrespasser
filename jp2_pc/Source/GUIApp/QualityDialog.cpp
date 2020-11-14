@@ -24,7 +24,7 @@
 //
 #include "stdafx.h"
 #include "QualityDialog.hpp"
-#include "Lib\EntityDBase\WorldDBase.hpp"
+#include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Sys/Reg.h"
 
 
