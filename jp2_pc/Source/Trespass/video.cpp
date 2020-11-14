@@ -25,7 +25,7 @@
 #include "../Lib/Sys/RegInit.hpp"
 #include "Lib/Sys/DWSizeStruct.hpp"
 
-#include "../../lib/libsmacker-1.1.1/smacker.h"
+#include "libsmacker-1.1.1/smacker.h"
 
 #include <thread>
 #include <chrono>
