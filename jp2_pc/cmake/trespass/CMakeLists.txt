@@ -58,6 +58,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/Source
     ${CMAKE_SOURCE_DIR}/Source/gblinc
     ${CMAKE_SOURCE_DIR}/Inc
+    ${CMAKE_SOURCE_DIR}/lib
 )
 
 add_compile_definitions(TRESPASS)
