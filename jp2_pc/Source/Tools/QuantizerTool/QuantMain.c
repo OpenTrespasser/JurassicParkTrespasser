@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "neuquant.h"
-#include "\lib\h\hybrid.h"
+#include "/lib/h/hybrid.h"
 #include <math.h>
 
 int DITHER = 5;
