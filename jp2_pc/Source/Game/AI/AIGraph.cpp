@@ -138,14 +138,14 @@
 #include "AIMain.hpp"
 #include "Brain.hpp"
 #include "Influence.hpp"
-#include "Lib\EntityDBase\Animal.hpp"
+#include "Lib/EntityDBase/Animal.hpp"
 
 #include "Lib/GeomDBase/LineSegment.hpp"
 
 
 //#include "Test/AI/QueryTest.hpp"
 
-#include "Lib\EntityDBase\Query\QTerrain.hpp"
+#include "Lib/EntityDBase/Query/QTerrain.hpp"
 
 #include "Port.hpp"
 #include "Lib/Loader/SaveFile.hpp"
