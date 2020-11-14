@@ -382,13 +382,15 @@ void CWorldView::RemoveSomeInfluences()
 			lowestInstance = entry.pinsTarget;
 		}
 
-		if (entry.setFlags[eifIS_DISCARDABLE]) {
+		if (entry.setFlags[eifIS_DISCARDABLE]) 
+		{
 			todelete.push_back(entry.pinsTarget);
 			discardable++;
 		}
 	}
 
-	if (lowestInstance) {
+	if (lowestInstance) 
+	{
 		//Influence set is based on instance pointers, find result is guaranteed to be the correct one
 		iterFindInfluence(lowestInstance)->setFlags[eifIS_DISCARDABLE] = true;
 		todelete.push_back(lowestInstance);
