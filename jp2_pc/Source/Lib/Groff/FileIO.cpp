@@ -58,8 +58,8 @@
 #include <io.h>
 #include <string.h>
 #ifndef __MWERKS__
- #include <sys\types.h>
- #include <sys\stat.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
 #endif
 #include "Lib/W95/WinInclude.hpp"
 
