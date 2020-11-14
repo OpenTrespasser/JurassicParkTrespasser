@@ -47,6 +47,7 @@ CVideoWnd::CVideoWnd(CUIManager* puimgr) : CUIWnd(puimgr)
     m_pSmack = NULL;
     m_fVideoOver = false;
     m_fVideoLoaded = false;
+    m_audioWriteFinished = false;
     m_audioState = { 0 };
     m_audioState.m_playingFirstHalf = true;
     m_iLastKey = 0;
@@ -62,7 +63,13 @@ void CVideoWnd::NextImageFrame()
     if (m_frameQueue.empty() || !m_pVideoFrameBuf)
         return;
 
-    auto& current = m_frameQueue.front();
+    VideoFrame current;
+    {
+        std::lock_guard lockguard(m_frameQueueLock);
+        std::swap(m_frameQueue.front(), current);
+        m_frameQueue.pop_front();
+        //auto& current = m_frameQueue.front();
+    }
 
     const auto& palette = current.videoPalette;
     const auto& videoframe = current.video;
@@ -111,7 +118,6 @@ void CVideoWnd::NextImageFrame()
     prasMainScreen->Blit(m_iLeft, m_iTop, *m_pVideoFrameBuf);
 
 
-    m_frameQueue.pop_front();
 
 #if 0
 //Copypasted code for the FPS overlay
@@ -210,8 +216,12 @@ bool CVideoWnd::WriteChunkIntoAudioBuffer(DWORD& lastWriteOffset)
     if (m_audioQueue.empty() || !m_soundbuffer)
         return false;
 
-    const auto current = m_audioQueue.front(); //Intentional copy, do not use reference type
-    m_audioQueue.pop_front(); //Because reference would become dangling here
+    std::vector<char> current;
+    {
+        std::lock_guard lockguard(m_audioQueueLock);
+        std::swap(m_audioQueue.front(), current); //Swap to avoid copying
+        m_audioQueue.pop_front();
+    }
     const auto size = current.size();
 
 
@@ -282,7 +292,6 @@ bool CVideoWnd::ServiceAudioBuffer(bool force)
     }
 
     const DWORD margin = m_audioState.m_soundBufferSize / 2;
-    const DWORD eighth = margin / 4;
     bool& playingFirstHalf = m_audioState.m_playingFirstHalf;
 
     if (FAILED(m_soundbuffer->GetCurrentPosition(&playOffset, &writeOffset)))
@@ -290,7 +299,7 @@ bool CVideoWnd::ServiceAudioBuffer(bool force)
         return false;
     }
 
-    if (m_audioState.m_audioWriteFinished && playOffset >= m_audioState.m_finalWriteOffset) {
+    if (m_audioWriteFinished && playOffset >= m_audioState.m_finalWriteOffset) {
         m_soundbuffer->Stop();
         m_audioState.m_audioFinished = true;
     }
@@ -310,7 +319,7 @@ bool CVideoWnd::ServiceAudioBuffer(bool force)
     {
         while (playingFirstHalf ? lastWriteOffset > margin : lastWriteOffset <= margin) {
             if (!WriteChunkIntoAudioBuffer(lastWriteOffset)) {
-                m_audioState.m_audioWriteFinished = true;
+                m_audioWriteFinished = true;
                 m_audioState.m_finalWriteOffset = lastWriteOffset;
 
                 //Write a few frames worth of silence into the buffer
@@ -335,29 +344,16 @@ bool CVideoWnd::ServiceAudioBuffer(bool force)
 void CVideoWnd::LoadFrameIntoQueues()
 {
     if (m_soundbuffer) {
+        std::lock_guard lockguard(m_audioQueueLock);
         auto& audio = m_audioQueue.emplace_back();
         audio.resize(smk_get_audio_size(m_pSmack, 0));
         std::memcpy(audio.data(), smk_get_audio(m_pSmack, 0), audio.size());
     }
     {
+        std::lock_guard lockguard(m_frameQueueLock);
         auto& frame = m_frameQueue.emplace_back();
         std::memcpy(frame.videoPalette.data(), smk_get_palette(m_pSmack), 256 * 3);
         std::memcpy(frame.video.data(), smk_get_video(m_pSmack), m_pVideoFrameBuf->iWidth * m_pVideoFrameBuf->iHeight);
-    }
-}
-
-void CVideoWnd::NextSmackerFrame()
-{
-    NextImageFrame();
-    ServiceAudioBuffer();
-
-    if (smk_next(m_pSmack) != SMK_MORE)
-    {
-        m_fVideoLoaded = true;
-    }
-    if (!m_fVideoLoaded)
-    {
-        LoadFrameIntoQueues();
     }
 }
 
@@ -481,8 +477,34 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
     prasMainScreen->Flip();
     d3dDriver.SetFlipClear(true);
 
+    std::thread loaderthread([&]()
+    {
+        while (!m_fVideoOver && !m_fVideoLoaded)
+        {
+            //Keep at most three seconds worth of data in the queues
+            if (m_audioQueue.size() > m_framerate * 3 && m_frameQueue.size() > m_framerate * 3) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+                continue;
+            }
+
+            if (smk_next(m_pSmack) != SMK_MORE)
+                m_fVideoLoaded = true;
+            else
+                LoadFrameIntoQueues();
+        }
+    });
+
+    std::thread audiothread([&]()
+    {
+        while (!m_fVideoOver && !m_audioState.m_audioFinished) {
+            ServiceAudioBuffer();
+            std::this_thread::sleep_for(std::chrono::milliseconds(0));
+        }
+    });
+
     m_soundbuffer->Play(0, 0, DSBPLAY_LOOPING);
 
+    
     while (!m_fVideoOver)
     {
         auto start = std::chrono::high_resolution_clock::now();
@@ -516,7 +538,7 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
             }
         }
 
-        NextSmackerFrame();
+        NextImageFrame();
         prasMainScreen->Flip();
 
         //Sleeping for a few milliseconds has unprecise timing
@@ -529,6 +551,8 @@ BOOL CVideoWnd::Play(LPCSTR pszFile)
 
 
 Cleanup:
+    loaderthread.join();
+    audiothread.join();
     smk_close(m_pSmack);
     if (m_soundbuffer)
         m_soundbuffer->Stop();

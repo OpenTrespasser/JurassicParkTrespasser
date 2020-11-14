@@ -21,6 +21,8 @@
 
 #include "uiwnd.h"
 
+#include <mutex>
+#include <atomic>
 
 struct smk_t;
 
@@ -47,7 +49,6 @@ public:
 
     BOOL AllowEscape() { return FALSE; }
 
-    void NextSmackerFrame();
     void NextImageFrame();
 
     bool CreateSoundBuffer();
@@ -63,16 +64,20 @@ public:
     std::list<VideoFrame> m_frameQueue;
     std::list<std::vector<char>> m_audioQueue;
     CCom<IDirectSoundBuffer> m_soundbuffer;
+    std::recursive_mutex m_frameQueueLock;
+    std::recursive_mutex m_audioQueueLock;
 
 	std::unique_ptr<CRasterVid> m_pVideoFrameBuf;
     int                 m_iLastKey;
     int                 m_iTop;
     int                 m_iLeft;
     int                 m_framerate;
-    bool                m_fVideoLoaded;
-    bool                m_fVideoOver;
+    std::atomic_bool    m_fVideoLoaded;
+    std::atomic_bool    m_fVideoOver;
     int                 m_iSurfaceType;
 
+    //Having the atomic in the struct would cause init complications
+    std::atomic_bool m_audioWriteFinished; 
     struct
     {
         DWORD           m_soundBufferSize;
@@ -80,7 +85,6 @@ public:
         size_t          m_avgBytesPerSec;
         bool            m_audioFinished;
         bool            m_playingFirstHalf;
-        bool            m_audioWriteFinished;
         DWORD           m_lastWriteOffset;
         DWORD           m_finalWriteOffset;
     }                   m_audioState;
