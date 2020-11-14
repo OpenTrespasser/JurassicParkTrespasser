@@ -69,7 +69,7 @@
 #define HEADER_GAME_AI_AIMAIN_HPP
 
 #include <list>
-#include "Lib\Std\Random.hpp"
+#include "Lib/Std/Random.hpp"
 #include "Lib/EntityDBase/Subsystem.hpp"
 
 #include "Classes.hpp"
