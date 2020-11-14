@@ -1,6 +1,6 @@
 /***********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1997
+ * Copyright Â© DreamWorks Interactive. 1997
  *
  * Definition of a thread action classes (and the reference base class)
  *
@@ -26,7 +26,7 @@
 #if 0
 
 #include "Common.hpp"
-#include "Lib\Sys\DebugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 
 
 //**********************************************************************************************
