@@ -1,7 +1,7 @@
 /**********************************************************************************************
  *
  * $Source::																				  $
- * Copyright © DreamWorks Interactive. 1996
+ * Copyright Â© DreamWorks Interactive. 1996
  *
  *	Implementation of PathObstacle.hpp.
  *
@@ -31,7 +31,7 @@
 #include "Common.hpp"
 #include "PathObstacle.hpp"
 
-#include "Lib\Sys\Textout.hpp"
+#include "Lib/Sys/Textout.hpp"
 
 #include "Influence.hpp"
 #include "Pathfinder.hpp"
