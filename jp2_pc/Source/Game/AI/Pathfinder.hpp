@@ -58,8 +58,8 @@
 
 //#include <vector.h>
 
-#include "Lib\Transform\Vector.hpp"
-#include "Lib\Std\Array.hpp"
+#include "Lib/Transform/Vector.hpp"
+#include "Lib/Std/Array.hpp"
 
 #include "Influence.hpp"
 #include "Rating.hpp"
