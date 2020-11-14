@@ -149,7 +149,7 @@
 #include "AIGraph.hpp"
 #include "Brain.hpp"
 
-#include "Lib\Sys\DebugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 
 
 //*********************************************************************************************
