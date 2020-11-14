@@ -106,7 +106,7 @@
 #include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/FileEx.hpp"
-#include "Lib\Sys\Profile.hpp"
+#include "Lib/Sys/Profile.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Groff/GroffIO.hpp"
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
@@ -119,11 +119,11 @@
 #include "Lib/Groff/ValueTable.hpp"
 #include "Lib/Groff/VTParse.hpp"
 
-#include "Lib\Audio\AudioDaemon.hpp"
+#include "Lib/Audio/AudioDaemon.hpp"
 #include "Lib/View/RasterFile.hpp"
 
-#include "Lib\Loader\LoadTexture.hpp"
-#include "Lib\Loader\PlatonicInstance.hpp"
+#include "Lib/Loader/LoadTexture.hpp"
+#include "Lib/Loader/PlatonicInstance.hpp"
 
 #include "Lib/Renderer/LightBlend.hpp"
 
