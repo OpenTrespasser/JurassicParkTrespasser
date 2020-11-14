@@ -82,7 +82,7 @@
 #include "Brain.hpp"
 #include "MentalState.hpp"
 #include "Synthesizer.hpp"
-#include "Lib\EntityDBase\Animal.hpp"
+#include "Lib/EntityDBase/Animal.hpp"
 
 #include "Lib/EntityDBase/MessageTypes/MsgAudio.hpp"
 #include "Lib/Audio/Sounddefs.hpp"
