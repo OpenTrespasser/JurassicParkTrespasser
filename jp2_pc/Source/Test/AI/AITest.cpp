@@ -271,22 +271,22 @@
  **********************************************************************************************/
 
 #include "GblInc/Common.hpp"
-#include "Lib\W95\WinInclude.hpp"
+#include "Lib/W95/WinInclude.hpp"
 
 
-#include "Lib\GeomDBase\PartitionPriv.hpp"
+#include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "AITest.hpp"
 
 
 #include "Shell/WinShell.hpp"
 #include "Lib/Sys/Timer.hpp"
-#include "Game\AI\AIMain.hpp"
+#include "Game/AI/AIMain.hpp"
 
-#include "Lib\Sys\Textout.hpp"
-#include "Lib\EntityDBase\WorldDBase.hpp"
-#include "Lib\EntityDBase\Query\QAI.hpp"
-#include "Lib\EntityDBase\MessageTypes\MsgCollision.hpp"
-#include "Lib\EntityDBase\GameLoop.hpp"
+#include "Lib/Sys/Textout.hpp"
+#include "Lib/EntityDBase/WorldDBase.hpp"
+#include "Lib/EntityDBase/Query/QAI.hpp"
+#include "Lib/EntityDBase/MessageTypes/MsgCollision.hpp"
+#include "Lib/EntityDBase/GameLoop.hpp"
 
 
 #include "TestBrains.hpp"
@@ -296,7 +296,7 @@
 #include "TestTree.hpp"
 #include "airesource.h"
 #include "QueryTest.hpp"
-#include "Lib\Loader\Loader.hpp"
+#include "Lib/Loader/Loader.hpp"
 
 #include "Game/AI/AIGraph.hpp"
 #include "Game/AI/AStar.hpp"
@@ -308,7 +308,7 @@
 #include "Lib/Audio/AudioDaemon.hpp"
 #include "Lib/Audio/Audio.hpp"
 
-#include "Lib\Sys\Profile.hpp"
+#include "Lib/Sys/Profile.hpp"
 
 CTimerLocal		tmrSimTimer;	// A timer to track simulation time.
 CTimerLocal		tmrAITimer;		// A profile timer for the entire AI cycle.
