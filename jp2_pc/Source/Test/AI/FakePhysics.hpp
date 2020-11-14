@@ -56,10 +56,10 @@
 #ifndef HEADER_TEST_AI_FAKEPHYSICS_HPP
 #define HEADER_TEST_AI_FAKEPHYSICS_HPP
 
-#include "Lib\EntityDBase\Entity.hpp"
-#include "Lib\Physics\InfoBox.hpp"
+#include "Lib/EntityDBase/Entity.hpp"
+#include "Lib/Physics/InfoBox.hpp"
 
-#include "Lib\Sys\Timer.hpp"
+#include "Lib/Sys/Timer.hpp"
 
 #include "Game/AI/Rating.hpp"
 
