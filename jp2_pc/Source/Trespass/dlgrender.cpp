@@ -24,8 +24,8 @@
 #include "uidlgs.h"
 #include "tpassglobals.h"
 #include "rasterdc.hpp"
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
+#include "../Lib/Sys/reg.h"
+#include "../lib/sys/reginit.hpp"
 #include "dddevice.hpp"
 #include "Lib/Std/MemLimits.hpp"
 
