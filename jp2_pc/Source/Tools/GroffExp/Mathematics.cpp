@@ -24,10 +24,10 @@
  * 
  *********************************************************************************************/
 
-#include "groffexp.h"
+#include "GroffExp.h"
 
 #include "Max.h"
-#include "decomp.h"
+#include "DECOMP.H"
 
 #include "Mathematics.hpp"
 #include "Lib/Groff/EasyString.hpp"
