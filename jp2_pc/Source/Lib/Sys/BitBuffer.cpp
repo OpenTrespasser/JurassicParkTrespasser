@@ -19,7 +19,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "BitBuffer.hpp"
 
 #include <fstream>
