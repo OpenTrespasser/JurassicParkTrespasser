@@ -130,7 +130,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "AIMain.hpp"
 
 #include "Lib/W95/Direct3D.hpp"
