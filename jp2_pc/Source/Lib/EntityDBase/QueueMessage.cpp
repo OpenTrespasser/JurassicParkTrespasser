@@ -52,7 +52,7 @@
 //
 // Includes.
 //
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "QueueMessage.hpp"
 
 #include "Lib/EntityDBase/FrameHeap.hpp"
