@@ -128,10 +128,10 @@
 	#include <mmsystem.h>
 #endif // bJOYSTICK_TEST
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "DepthSortTools.hpp"
 #include "Lib/Sys/Profile.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/ConIO.hpp"
 #include "Lib/Renderer/Clip.hpp"
 #include "PipeLineHeap.hpp"
