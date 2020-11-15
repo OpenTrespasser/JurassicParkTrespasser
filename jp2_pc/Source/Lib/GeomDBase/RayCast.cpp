@@ -81,7 +81,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "RayCast.hpp"
 
 #include "PartitionPriv.hpp"
