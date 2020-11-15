@@ -41,9 +41,9 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Instance.hpp"
-#include "Gameloop.hpp"
+#include "GameLoop.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/Renderer/RenderCache.hpp"
