@@ -139,7 +139,7 @@
  *
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "MoveActivities.hpp"
 #include "Lib/Std/Random.hpp"
@@ -158,7 +158,7 @@
 #include "Lib/Std/Hash.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
-#include "Lib/Renderer/Geomtypes.hpp"
+#include "Lib/Renderer/GeomTypes.hpp"
 
 
 #include "Lib/EntityDBase/Query/QTerrain.hpp"
