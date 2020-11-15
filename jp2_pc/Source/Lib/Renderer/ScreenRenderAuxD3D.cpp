@@ -185,7 +185,7 @@
 // Includes.
 //
 #include <algorithm>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/View/RasterD3D.hpp"
