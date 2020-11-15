@@ -99,7 +99,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "FastBumpMath.hpp"
 
 #include "Lib/Math/FloatDef.hpp"
