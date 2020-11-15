@@ -32,7 +32,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "GUIAppDlg.h"
 #include "GUIPipeLine.hpp"
