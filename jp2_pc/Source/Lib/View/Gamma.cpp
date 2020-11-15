@@ -34,7 +34,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Gamma.hpp"
 
 #include <math.h>
