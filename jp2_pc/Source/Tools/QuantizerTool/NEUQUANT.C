@@ -21,7 +21,7 @@
  */
 
 
-#include "neuquant.h"
+#include "NeuQuant.h"
 #include <math.h>
 
 
