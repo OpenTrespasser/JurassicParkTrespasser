@@ -36,7 +36,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Sys/Errors.hpp"
 #include "InitSys.hpp"
 
