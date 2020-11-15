@@ -66,7 +66,7 @@
 #ifdef USE_MAX_TYPES
 #include "StandardTypes.hpp"
 #else
-#include "Common.hpp"
+#include "common.hpp"
 #endif
 
 #include "Lib/Sys/SysLog.hpp"
