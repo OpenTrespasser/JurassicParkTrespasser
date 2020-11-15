@@ -59,7 +59,7 @@
  *
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "FakePhysics.hpp"
 
 //#include "Lib/EntityDBase/MessageTypes.hpp"
