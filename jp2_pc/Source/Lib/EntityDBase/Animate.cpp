@@ -49,7 +49,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Animate.hpp"
 #include "Game/DesignDaemon/Gun.hpp"
 #include "Game/DesignDaemon/BloodSplat.hpp"
