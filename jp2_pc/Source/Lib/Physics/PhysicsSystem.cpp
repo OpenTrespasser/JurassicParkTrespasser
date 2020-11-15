@@ -45,7 +45,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PhysicsSystem.hpp"
 
 #include "PhysicsImport.hpp"
@@ -55,7 +55,7 @@
 #include "PhysicsStats.hpp"
 #include "InfoBox.hpp"
 #include "InfoSkeleton.hpp"
-#include "Pelvis.h"
+#include "pelvis.h"
 #include "BioModel.h"
 
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
