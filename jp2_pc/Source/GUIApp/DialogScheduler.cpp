@@ -1,8 +1,8 @@
 // DialogScheduler.cpp : implementation file
 //
 
-#include "stdafx.h"
-#include "guiapp.h"
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "Lib/Sys/Scheduler.hpp"
 #include "DialogScheduler.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
