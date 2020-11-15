@@ -43,7 +43,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "ActivityVocal.hpp"
 #include "AIMain.hpp"
