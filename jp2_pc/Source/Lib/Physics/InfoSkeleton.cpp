@@ -93,13 +93,13 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "InfoSkeleton.hpp"
 
 #include "PhysicsSystem.hpp"
 #include "PhysicsHelp.hpp"
 #include "PhysicsStats.hpp"
-#include "human.h"
+#include "Human.h"
 #include "dino_biped.h"
 #include "pelvis_def.h"
 #include "pelvis.h"
