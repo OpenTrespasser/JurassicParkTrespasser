@@ -41,12 +41,12 @@
 //
 // Includes
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/View/RasterVid.hpp"
 #include "Lib/View/Clut.hpp"
-#include "Lib/Renderer/Primitives/Fastbump.hpp"
+#include "Lib/Renderer/Primitives/FastBump.hpp"
 #include "GDIBitmap.hpp"
 
 #include "Lib/Sys/DebugConsole.hpp"
