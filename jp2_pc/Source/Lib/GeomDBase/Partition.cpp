@@ -41,7 +41,7 @@
 // io.h "disables" a subsequent include of same.
 #include <set>
 #include <map>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 
 #include <fcntl.h>
