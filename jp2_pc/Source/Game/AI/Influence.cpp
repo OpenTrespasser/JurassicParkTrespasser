@@ -92,7 +92,7 @@
  *
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Influence.hpp"
 
 #include "AIMain.hpp"
@@ -109,7 +109,7 @@
 
 #include "Lib/Renderer/RenderType.hpp"
 
-#include "Lib/Loader/SaveBUffer.hpp"
+#include "Lib/Loader/SaveBuffer.hpp"
 
 // Used to add a little extra width around obstacles.
 #define rSLOP TReal(.1)
