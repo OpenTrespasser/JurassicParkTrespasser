@@ -220,8 +220,8 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
-#include "lib/W95/WinInclude.hpp"
+#include "common.hpp"
+#include "Lib/W95/WinInclude.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Sky.hpp"
 
