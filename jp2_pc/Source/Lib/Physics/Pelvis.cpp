@@ -2,8 +2,8 @@
 //	=============================
 
 #include <math.h>
-#include "Common.hpp"
-#include "Pelvis.h"
+#include "common.hpp"
+#include "pelvis.h"
 #include "futil.h"
 #include "Arms.h"
 #include "Xob_bc.hpp"
