@@ -46,7 +46,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "../Timer.hpp"
 
 // Uses the Windows GetCurrentTime() function.
