@@ -282,7 +282,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "TestPipeLine.hpp"
 
 #include "Lib/EntityDBase/EntityLight.hpp"
@@ -290,7 +290,7 @@
 #include "Lib/Renderer/ScreenRender.hpp"
 #include "Lib/Renderer/Light.hpp"
 #include "Lib/GeomDBase/Mesh.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Renderer/Fog.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Shell/WinRenderTools.hpp"
