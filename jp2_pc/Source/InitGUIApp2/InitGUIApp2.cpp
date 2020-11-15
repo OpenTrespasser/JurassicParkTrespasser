@@ -1,7 +1,7 @@
 // InitGUIApp2.cpp : Defines the class behaviors for the application.
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "InitGUIApp2.h"
 #include "InitGUIApp2Dlg.h"
 
