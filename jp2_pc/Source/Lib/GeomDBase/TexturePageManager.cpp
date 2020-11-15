@@ -35,7 +35,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "TexturePageManager.hpp"
 
 #include "Lib/View/RasterD3D.hpp"
