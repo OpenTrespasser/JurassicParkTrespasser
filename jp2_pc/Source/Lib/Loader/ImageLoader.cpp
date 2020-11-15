@@ -108,7 +108,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "stdio.h"
 #include "stdlib.h"
 #include "io.h"
@@ -120,7 +120,7 @@
 #include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/FileEx.hpp"
-#include "Lib/sys/Reg.h"
+#include "Lib/Sys/reg.h"
 #include "Lib/EntityDBase/RenderDB.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Sys/Profile.hpp"
