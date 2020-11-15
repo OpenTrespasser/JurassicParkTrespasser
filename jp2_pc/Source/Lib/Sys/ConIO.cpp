@@ -50,7 +50,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "ConIO.hpp"
 #include "Lib/Sys/StdDialog.hpp"
