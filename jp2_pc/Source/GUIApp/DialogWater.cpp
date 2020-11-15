@@ -23,7 +23,7 @@
  * 
  *********************************************************************************************/
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogWater.hpp"
 #include "GUIApp/GUIAppDlg.h"
 #include "Lib/EntityDBase/Water.hpp"
