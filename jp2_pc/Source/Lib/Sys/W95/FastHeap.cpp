@@ -72,7 +72,7 @@
 //
 // Includes.
 //
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/Std/MemLimits.hpp"
 #include "../FastHeap.hpp"
