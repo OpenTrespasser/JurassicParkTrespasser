@@ -94,7 +94,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "InfoBox.hpp"
 
 #include <set>
