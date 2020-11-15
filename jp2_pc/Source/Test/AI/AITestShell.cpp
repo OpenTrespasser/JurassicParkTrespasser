@@ -101,7 +101,7 @@
 
 
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "AITestShell.hpp"
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"
@@ -113,7 +113,7 @@
 #include "Lib/View/RasterVid.hpp"
 #include "Lib/View/ColourBase.hpp"
 #include "Lib/Renderer/ScreenRender.hpp"
-#include "Shell/WinShell.hpp"
+#include "Shell/winshell.hpp"
 #include "Shell/AppShell.hpp"
 #include "Shell/WinEvent.hpp"
 #include "Lib/Sys/W95/Render.hpp"
