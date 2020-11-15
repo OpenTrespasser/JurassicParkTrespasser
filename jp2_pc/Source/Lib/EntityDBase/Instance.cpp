@@ -32,9 +32,9 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Instance.hpp"
-#include "Gameloop.hpp"
+#include "GameLoop.hpp"
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/Loader/DataDaemon.hpp"
