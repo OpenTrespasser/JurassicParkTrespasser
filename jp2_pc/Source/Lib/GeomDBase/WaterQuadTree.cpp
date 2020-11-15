@@ -28,7 +28,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 
 #if VER_MULTI_RES_WATER
 
