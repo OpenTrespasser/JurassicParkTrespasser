@@ -33,7 +33,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Gun.hpp"
 #include "HitSpang.hpp"
 
@@ -45,13 +45,13 @@
 #include "Lib/Physics/PhysicsSystem.hpp"
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
 #include "Lib/Sys/Textout.hpp"
-#include "Lib/GROFF/VtParse.hpp"
+#include "Lib/Groff/VTParse.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgMove.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgAudio.hpp"
 #include "Lib/Audio/AudioDaemon.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
-#include "Lib/Std/hash.hpp"
+#include "Lib/Std/Hash.hpp"
 
 #include "Lib/EntityDBase/MessageTypes/MsgCollision.hpp"
 #include "Lib/Loader/SaveBuffer.hpp"
