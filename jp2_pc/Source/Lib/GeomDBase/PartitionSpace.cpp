@@ -82,7 +82,7 @@
 #include <stdio.h>
 #include <memory.h>
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PartitionSpace.hpp"
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"
@@ -93,7 +93,7 @@
 #include "Lib/Loader/SaveBuffer.hpp"
 #include "Lib/Std/Hash.hpp"
 #include "Lib/Sys/MemoryLog.hpp"
-#include "Lib/sys/DebugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Std/Random.hpp"
 #include "Lib/Renderer/ShapePresence.hpp"
 
