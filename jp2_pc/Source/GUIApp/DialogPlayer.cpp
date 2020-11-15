@@ -64,7 +64,7 @@
 // DialogPlayer.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogPlayer.h"
 #include "Game/DesignDaemon/PlayerSettings.hpp"
 
