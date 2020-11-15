@@ -52,7 +52,7 @@
 
 #include <list>
 #include <map>
-#include "Common.hpp"
+#include "common.hpp"
 #include "RasterPool.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
