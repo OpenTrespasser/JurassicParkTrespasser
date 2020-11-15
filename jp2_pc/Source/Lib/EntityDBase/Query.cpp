@@ -37,7 +37,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Query.hpp"
 #include "Query/QRenderer.hpp"
@@ -58,7 +58,7 @@
 #include "Lib/GeomDBase/TerrainObj.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/Light.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/Physics/Magnet.hpp"
 #include "Game/DesignDaemon/Daemon.hpp"
 #include "WorldPriv.hpp"
