@@ -4,13 +4,13 @@
 //	Everything you need to draw two legged dinosaurs...
 //	---------------------------------------------------
 
-#include "Common.hpp"
-#include "Pelvis_Def.h"
-#include "Pelvis.h"
+#include "common.hpp"
+#include "pelvis_def.h"
+#include "pelvis.h"
 #include "futil.h"
 #include <iostream>
 #include "Lib/Sys/ConIO.hpp"
-#include "Xob_BC.hpp"
+#include "Xob_bc.hpp"
 #include "BioModel.h"
 #include "BioStructure.h"
 #include "Lib/Audio/SoundDefs.hpp"
