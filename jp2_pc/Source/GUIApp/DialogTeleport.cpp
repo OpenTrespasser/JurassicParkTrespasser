@@ -1,8 +1,8 @@
 // DialogTeleport.cpp : implementation file
 //
 
-#include "stdafx.h"
-#include "guiapp.h"
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "DialogTeleport.h"
 
 #include "../Lib/GeomDBase/PartitionPriv.hpp"
