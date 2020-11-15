@@ -22,10 +22,10 @@
 
 //// Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "QualityDialog.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
-#include "Lib/Sys/Reg.h"
+#include "Lib/Sys/reg.h"
 
 
 //*********************************************************************************************
