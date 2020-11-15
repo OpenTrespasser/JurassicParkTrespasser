@@ -43,10 +43,10 @@
  **********************************************************************************************/
 
 #include <math.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "ColourDrawTest.hpp"
 #include "Lib/Types/FixedP.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/View/Raster.hpp"
 
 
