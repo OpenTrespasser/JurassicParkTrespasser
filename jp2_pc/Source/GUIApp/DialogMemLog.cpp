@@ -28,7 +28,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogMemLog.hpp"
 #include "GUIApp.h"
 #include "GUIAppDlg.h"
