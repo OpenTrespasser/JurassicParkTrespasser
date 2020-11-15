@@ -48,8 +48,8 @@
 #define HEADER_LIB_TRIGGER_GAMEACTION_HPP
 
 #include "Action.hpp"
-#include "Game/Ai/Feeling.hpp"
-#include "Game/ai/ActivityEnum.hpp"
+#include "Game/AI/Feeling.hpp"
+#include "Game/AI/ActivityEnum.hpp"
 class CWaterDisturbance;
 
 
