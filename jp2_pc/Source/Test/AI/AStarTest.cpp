@@ -26,7 +26,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 //#include "Lib/EntityDBase/Instance.hpp"
 //#include "Lib/Renderer/GeomTypes.hpp"
