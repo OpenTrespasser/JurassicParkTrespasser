@@ -1,16 +1,16 @@
 // TrespassAdvDlg.cpp : implementation file
 //
 #include <math.h>
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "TrespassAdv.h"
 #include "TrespassAdvDlg.h"
 #include "DialogName.hpp"
 #undef min
 #undef max
 #include "Lib/W95/Direct3DQuery.hpp"
-#include "Lib/Sys/Reg.h"
+#include "Lib/Sys/reg.h"
 #include "Lib/Sys/RegInit.hpp"
-#include "trespass/DDDevice.hpp"
+#include "Trespass/DDDevice.hpp"
 
 SDDDevice  ddDevice;
 SD3DDevice d3dDevice;
