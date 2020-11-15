@@ -17,3 +17,6 @@ jp2_pc/Build/
 
 #OpenTrespasser
 jp2_pc/Build/*
+
+#CLion project files
+jp2_pc/.idea/*
