@@ -25,7 +25,7 @@
  * 
  *********************************************************************************************/
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "GUIApp.h"
 #include "GUIPipeLine.hpp"
 #include "GUITools.hpp"
