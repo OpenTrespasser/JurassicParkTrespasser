@@ -79,7 +79,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PipeLineHelp.hpp"
 #include "PipeLine.hpp"
 #include "RenderDefs.hpp"
