@@ -60,12 +60,12 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
  #include <fcntl.h>
  #include <io.h>
  #include <stdio.h>
- #include "GblInc/Common.hpp"
- #include "WorldDBase.hpp"
+ #include "gblinc/common.hpp"
+#include "WorldDBase.hpp"
  #include "Lib/W95/WinInclude.hpp"
 #endif
 
-#include "Lib/sys/VirtualMem.hpp"
+#include "Lib/Sys/VirtualMem.hpp"
 #include "Lib/Loader/TextureManager.hpp"
 #include "Lib/Loader/DataDaemon.hpp"
 #include "Lib/Loader/Loader.hpp"
@@ -110,7 +110,7 @@ template<class X> class CMicrosoftsCompilerIsBuggyAndWeHateIt
 #include "Lib/GeomDBase/TerrainObj.hpp"
 
 #include "Lib/Physics/PhysicsSystem.hpp"
-#include "Lib/Physics/Infobox.hpp"
+#include "Lib/Physics/InfoBox.hpp"
 #include "Lib/Physics/InfoSkeleton.hpp"
 #include "Lib/Physics/Magnet.hpp"
 
