@@ -1,7 +1,7 @@
 //	Foot utilities...
 //	=================
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "futil.h"
 #include "PhysicsImport.hpp"
 
