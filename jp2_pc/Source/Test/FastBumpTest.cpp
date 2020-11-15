@@ -47,14 +47,14 @@
 
 #include <math.h>
 #include <memory.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "FastBumpTest.hpp"
 #include "Lib/Types/FixedP.hpp"
 #include "Lib/Renderer/Primitives/FastBump.hpp"
 #include "Lib/Renderer/Primitives/FastBumpTable.hpp"
 #include "Lib/Renderer/Primitives/P5/FastBumpEx.hpp"
 #include "Lib/Sys/W95/Render.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 
 
 rptr<CBumpMap> pBump;
