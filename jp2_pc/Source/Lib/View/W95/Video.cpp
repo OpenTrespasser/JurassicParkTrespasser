@@ -59,7 +59,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/DD.hpp"
 #include "../Video.hpp"
 #include "Lib/Sys/DWSizeStruct.hpp"
