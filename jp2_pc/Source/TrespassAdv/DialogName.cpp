@@ -1,7 +1,7 @@
 // DialogName.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "TrespassAdv.h"
 #include "DialogName.hpp"
 #undef min
