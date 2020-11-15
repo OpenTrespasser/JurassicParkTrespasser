@@ -2,12 +2,12 @@
 #define HEADER_EFFECT_DATABASE_H
 
 #include "stdafx.h"
-#include "Lib/audio/Soundtypes.hpp"
-#include "Lib/audio/audioloader.hpp"
+#include "Lib/Audio/SoundTypes.hpp"
+#include "Lib/Audio/AudioLoader.hpp"
 #include <vector>
 #include <set>
 #include <map>
-#include "Lib/std/CRC.hpp"
+#include "Lib/Std/CRC.hpp"
 #include "crtdbg.h"
 #include <fstream>
 #include <ctype.h>
