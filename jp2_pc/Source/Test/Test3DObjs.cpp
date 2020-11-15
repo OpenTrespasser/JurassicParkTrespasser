@@ -148,7 +148,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Test3DObjs.hpp"
 
 #include "Lib/View/RasterVid.hpp"
