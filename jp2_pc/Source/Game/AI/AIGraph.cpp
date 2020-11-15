@@ -130,7 +130,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "AIGraph.hpp"
 
 #include "WorldView.hpp"
