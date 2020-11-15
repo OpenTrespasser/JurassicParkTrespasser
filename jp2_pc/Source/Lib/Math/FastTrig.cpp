@@ -25,7 +25,7 @@
 
 #include <math.h>
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 
 #include "FastTrig.hpp"
 
