@@ -70,7 +70,7 @@
 // Macros, includes and definitions.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Viewport.hpp"
 
 
