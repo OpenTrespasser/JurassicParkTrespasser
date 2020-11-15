@@ -103,7 +103,7 @@
 // Includes.
 //
 #include <algorithm>
-#include "Common.hpp"
+#include "common.hpp"
 #include "ScreenRenderAuxD3DBatch.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
