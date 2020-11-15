@@ -48,8 +48,8 @@
 // Includes.
 //
 
-#include "stdafx.h"
-#include "Common.hpp"
+#include "StdAfx.h"
+#include "common.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/Loader/DataDaemon.hpp"
 
@@ -58,7 +58,7 @@
 // For all those wacky flags.
 
 #include "GUIAppDlg.h"
-#include "GUIPipeline.hpp"
+#include "GUIPipeLine.hpp"
 #include "Lib/Physics/PhysicsSystem.hpp"
 #include "Game/AI/AIMain.hpp"
 #include "Game/DesignDaemon/Daemon.hpp"
@@ -68,7 +68,7 @@
 #include "Lib/Loader/Loader.hpp"
 #include "Lib/EntityDBase/GameLoop.hpp"
 #include "Lib/Sys/StdDialog.hpp"
-#include "Resource.h"
+#include "resource.h"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/EntityDBase/Water.hpp"
 #include "Game/DesignDaemon/Player.hpp"
