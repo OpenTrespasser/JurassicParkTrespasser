@@ -22,7 +22,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 
 #include "mmsystem.h"
 #include "Lib/Audio/SoundTypes.hpp"
