@@ -56,7 +56,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "DebugConsole.hpp"
 #include "stdio.h"
