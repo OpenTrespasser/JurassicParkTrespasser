@@ -27,7 +27,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletQuadTreeBaseTri.hpp"
 
 #include "Lib/View/LineDraw.hpp"
