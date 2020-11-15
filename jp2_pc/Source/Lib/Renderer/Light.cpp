@@ -88,7 +88,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Light.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 
