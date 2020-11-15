@@ -218,7 +218,7 @@
 // Necessary includes.
 //
 #include "Lib/W95/Direct3DCards.hpp"
-#include "dd.hpp"
+#include "DD.hpp"
 #define D3D_OVERLOADS
 #include <d3d.h>
 
