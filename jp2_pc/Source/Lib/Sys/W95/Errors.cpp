@@ -62,13 +62,13 @@
 // Macros and #includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "../Errors.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/EntityDBase/GameLoop.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
-#include "Lib/Std/Stringex.hpp"
+#include "Lib/Std/StringEx.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/Sys/RegInit.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
