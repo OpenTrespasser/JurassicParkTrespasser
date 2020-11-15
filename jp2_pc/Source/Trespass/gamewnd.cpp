@@ -26,7 +26,7 @@
 #include "main.h"
 #include "keyremap.h"
 #include "../Lib/Sys/reg.h"
-#include "../lib/sys/reginit.hpp"
+#include "../Lib/Sys/RegInit.hpp"
 #include "../Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 #include "../Game/AI/AIMain.hpp"
 
