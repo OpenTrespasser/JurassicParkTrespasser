@@ -88,7 +88,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "LightBlend.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Std/StringEx.hpp"
