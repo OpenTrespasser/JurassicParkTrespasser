@@ -35,11 +35,11 @@
 #include "Lib/W95/WinInclude.hpp"
 #include <stdio.h>
 #include <stdlib.h>
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Shell/ShellResource.h"
 #include "Lib/Sys/Errors.hpp"
 #include "Lib/Sys/Textout.hpp"
-#include "Lib/W95/dd.hpp"
+#include "Lib/W95/DD.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/Std/StringEx.hpp"
 #include "Lib/View/Viewport.hpp"
@@ -56,7 +56,7 @@
 //
 #include "WinEvent.hpp"
 #include "WinRenderTools.hpp"
-#include "WinShell.hpp"
+#include "winshell.hpp"
 
 //
 // File scope constants.
