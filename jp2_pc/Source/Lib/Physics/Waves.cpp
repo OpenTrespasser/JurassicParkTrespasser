@@ -69,7 +69,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Waves.hpp"
 
 #include "Lib/Sys/Timer.hpp"
