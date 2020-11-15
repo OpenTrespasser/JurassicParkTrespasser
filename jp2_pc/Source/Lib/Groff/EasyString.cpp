@@ -60,7 +60,7 @@
 #else
 
 // Standard includes.
-#include "Common.hpp"
+#include "common.hpp"
 #define assert Assert
 
 #endif
