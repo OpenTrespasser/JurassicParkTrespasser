@@ -105,10 +105,10 @@
  **********************************************************************************************/
 
 #include "Lib/W95/WinInclude.hpp"
-#include "GblInc/Common.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "gblinc/common.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/W95/Render.hpp"
-#include "Shell/WinShell.hpp"
+#include "Shell/winshell.hpp"
 #include "Shell/AppShell.hpp"
 #include "Shell/WinEvent.hpp"
 #include "Test/PolyData.hpp"
