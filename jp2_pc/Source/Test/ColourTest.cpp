@@ -61,11 +61,11 @@
  **********************************************************************************************/
 
 #include "Lib/W95/WinInclude.hpp"
-#include <StdIO.h>
-#include <StdLib.h>
-#include "GblInc/Common.hpp"
-#include "Lib/Sys/TextOut.hpp"
-#include "Shell/WinShell.hpp"
+#include <stdio.h>
+#include <stdlib.h>
+#include "gblinc/common.hpp"
+#include "Lib/Sys/Textout.hpp"
+#include "Shell/winshell.hpp"
 #include "Shell/AppShell.hpp"
 #include "Shell/WinEvent.hpp"
 #include "Lib/View/ColourBase.hpp"
