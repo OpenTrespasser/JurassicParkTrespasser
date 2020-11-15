@@ -59,7 +59,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Renderer/Material.hpp"
 #include "Lib/Math/FastTrig.hpp"
 #include "Lib/Math/FastSqrt.hpp"
