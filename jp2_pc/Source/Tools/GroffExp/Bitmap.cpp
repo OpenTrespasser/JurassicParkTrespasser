@@ -33,7 +33,7 @@
 #include <stdio.h>
 #include <fstream>
 
-#include "max.h"
+#include "Max.h"
 #include "bmmlib.h"
 
 #include "StandardTypes.hpp"
