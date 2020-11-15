@@ -31,7 +31,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "WaterDisturbance.hpp"
 
 #include "Lib/EntityDBase/WorldDBase.hpp"
