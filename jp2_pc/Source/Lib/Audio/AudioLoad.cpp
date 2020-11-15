@@ -135,7 +135,7 @@
 
 // DO NOT INCLUDE COMMON.HPP IN ANY SOUND FILES...
 #include "Audio.hpp"
-#include "lib/sys/memorylog.hpp"
+#include "Lib/Sys/MemoryLog.hpp"
 
 #include "AudioPCM.hpp"
 #include "AudioADPCM.hpp"
