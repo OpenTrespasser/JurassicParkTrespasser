@@ -37,7 +37,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Message.hpp"
 
 #include "WorldDBase.hpp"
