@@ -36,7 +36,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/Renderer/Fog.hpp"
 #include "Lib/Renderer/LightBlend.hpp"
