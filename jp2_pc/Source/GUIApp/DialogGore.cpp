@@ -1,7 +1,7 @@
 // DialogGore.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogGore.hpp"
 #include "GUITools.hpp"
 #include "GUIAppDlg.h"
