@@ -35,11 +35,11 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Entity.hpp"
 #include "Animate.hpp"
 #include "MessageTypes/MsgMove.hpp"
-#include "Lib/GROFF/VTParse.hpp"
+#include "Lib/Groff/VTParse.hpp"
 #include "Lib/Std/Hash.hpp"
 #include "Lib/Physics/PhysicsImport.hpp"
 
