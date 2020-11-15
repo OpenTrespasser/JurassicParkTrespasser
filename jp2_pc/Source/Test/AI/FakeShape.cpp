@@ -49,7 +49,7 @@
  *
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "FakeShape.hpp"
 #include "FakePhysics.hpp"
 
