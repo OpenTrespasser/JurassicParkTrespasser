@@ -67,7 +67,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "../FileEx.hpp"
 #include <memory.h>
