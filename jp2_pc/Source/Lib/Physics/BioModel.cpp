@@ -3,7 +3,7 @@
 
 //	NOTE: ML was right, look, it all fits into one file.
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "BioModel.h"
 #include "futil.h"
 #include "PhysicsImport.hpp"
