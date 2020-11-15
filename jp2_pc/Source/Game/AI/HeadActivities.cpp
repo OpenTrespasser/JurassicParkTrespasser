@@ -65,7 +65,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "HeadActivities.hpp"
 #include "Influence.hpp"
