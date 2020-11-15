@@ -40,7 +40,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Socket.hpp"
 
 #include "Lib/EntityDBase/Query/QPhysics.hpp"
