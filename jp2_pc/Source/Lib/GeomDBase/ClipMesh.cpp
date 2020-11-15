@@ -19,7 +19,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "ClipMesh.hpp"
 #include "Lib/Renderer/Clip.hpp"
 
