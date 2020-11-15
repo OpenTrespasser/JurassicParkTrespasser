@@ -37,7 +37,7 @@
 //
 // Required includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "RenderCachePriv.hpp"
 
 #include <Lib/W95/WinInclude.hpp>
