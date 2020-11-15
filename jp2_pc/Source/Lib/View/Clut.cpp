@@ -95,7 +95,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Clut.hpp"
 #include "Raster.hpp"
 #include "ColourT.hpp"
