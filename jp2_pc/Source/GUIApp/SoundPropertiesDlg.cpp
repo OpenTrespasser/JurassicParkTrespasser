@@ -63,7 +63,7 @@
 
 //// Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "SoundPropertiesDlg.hpp"
 #include "GUIPipeLine.hpp"
 #include "GUITools.hpp"
@@ -73,9 +73,8 @@
 #include "Lib/Audio/Audio.hpp"
 #include "Lib/Audio/AudioDaemon.hpp"
 #include "Lib/Audio/Eax.h"
-#include "Lib/sys/reg.h"
-#include "Lib/sys/RegInit.hpp"
-
+#include "Lib/Sys/reg.h"
+#include "Lib/Sys/RegInit.hpp"
 
 
 //*********************************************************************************************
