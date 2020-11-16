@@ -61,12 +61,12 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "AppShell.hpp"
 
 #include "AppEvent.hpp"
-#include "WinShell.hpp"
+#include "winshell.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 
 //**********************************************************************************************

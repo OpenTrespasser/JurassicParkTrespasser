@@ -1,7 +1,7 @@
 // TweakNVidia128Dlg.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "TweakNVidia128.h"
 #include "TweakNVidia128Dlg.h"
 

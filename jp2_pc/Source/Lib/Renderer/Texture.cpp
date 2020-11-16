@@ -124,7 +124,7 @@
  *
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Texture.hpp"
 

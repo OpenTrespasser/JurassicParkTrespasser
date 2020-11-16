@@ -47,7 +47,7 @@
  **********************************************************************************************/
 
 #include <math.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "PartitionPriv.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Sys/W95/Render.hpp"

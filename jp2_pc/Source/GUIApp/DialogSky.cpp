@@ -24,7 +24,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogSky.hpp"
 #include "Lib/Renderer/Sky.hpp"
 

@@ -200,7 +200,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "RasterD3D.hpp"
 
 #include <map>

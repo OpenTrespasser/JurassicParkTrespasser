@@ -73,7 +73,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "TestActivities.hpp"
 #include "AIMain.hpp"

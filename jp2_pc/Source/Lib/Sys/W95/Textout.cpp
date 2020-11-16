@@ -142,7 +142,7 @@
 // Macros, includes and definitions.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "../Textout.hpp"
 #include "Shell/ShellResource.h"

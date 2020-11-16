@@ -133,12 +133,12 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "WorldView.hpp"
 
 #include "Pathfinder.hpp"
-#include "Lib/Renderer/Geomtypes.hpp"
+#include "Lib/Renderer/GeomTypes.hpp"
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
 #include "Lib/EntityDBase/Animal.hpp"
 #include "Lib/Loader/SaveFile.hpp"

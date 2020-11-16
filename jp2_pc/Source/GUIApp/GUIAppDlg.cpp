@@ -69,7 +69,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "mmsystem.h"
@@ -126,7 +126,7 @@
 #include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/Sys/Profile.hpp"
-#include "Lib/W95/Dd.hpp"
+#include "Lib/W95/DD.hpp"
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
 #include "DialogObject.h"
 #include "DialogMagnet.h"
@@ -199,9 +199,9 @@
 #include "Lib/Std/Hash.hpp"
 
 #include "Lib/Trigger/Trigger.hpp"
-#include "Lib/sys/Reg.h"
-#include "lib/sys/reginit.hpp"
-#include "lib/loader/LoadTexture.hpp"
+#include "Lib/Sys/reg.h"
+#include "Lib/Sys/RegInit.hpp"
+#include "Lib/Loader/LoadTexture.hpp"
 #include "Lib/Sys/DWSizeStruct.hpp"
 
 

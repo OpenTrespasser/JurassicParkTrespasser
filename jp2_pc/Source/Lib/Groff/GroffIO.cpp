@@ -149,7 +149,7 @@
 
 // #include "GUIApp/StdAfx.h"
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "GroffIO.hpp"
 #include "Lib/Sys/SysLog.hpp"
 #include "Lib/Sys/SmartBuffer.hpp"

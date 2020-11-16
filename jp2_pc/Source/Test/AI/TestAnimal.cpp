@@ -65,7 +65,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "TestAnimal.hpp"
 
 #include "Game/AI/Classes.hpp"

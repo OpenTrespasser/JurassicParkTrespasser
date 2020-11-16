@@ -55,8 +55,8 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "gblinc/common.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Test/PolyData.hpp"
 
 const uint uMaxNoVertices = 4;

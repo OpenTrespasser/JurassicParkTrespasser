@@ -91,7 +91,7 @@
 #ifndef HEADER_LIB_AUDIO_DEFS_HPP
 #define HEADER_LIB_AUDIO_DEFS_HPP
 
-#include "Lib/std/utypes.hpp"
+#include "Lib/Std/UTypes.hpp"
 
 
 //**********************************************************************************************

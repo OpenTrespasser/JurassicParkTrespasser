@@ -83,7 +83,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/Light.hpp"

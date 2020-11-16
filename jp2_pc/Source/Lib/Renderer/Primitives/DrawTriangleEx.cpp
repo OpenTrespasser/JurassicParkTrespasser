@@ -112,7 +112,7 @@
  **********************************************************************************************/
 
 // Includes.
-#include "Common.hpp"
+#include "common.hpp"
 #include "Config.hpp"
 #include "DrawTriangle.hpp"
 #include "AsmSupport.hpp"

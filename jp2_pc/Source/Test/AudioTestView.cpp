@@ -1,7 +1,7 @@
 // AudioTestView.cpp : implementation of the CAudioTestView class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 
 #include "AudioTest.h"
 
@@ -11,7 +11,7 @@
 
 #include <yvals.h>
 
-#include "lib/audio/audio.hpp"
+#include "Lib/Audio/Audio.hpp"
 #include "Lib/Transform/Vector.hpp"
 
 #include "AudioTestDoc.h"

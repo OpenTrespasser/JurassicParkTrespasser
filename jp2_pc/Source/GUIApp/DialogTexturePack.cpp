@@ -40,8 +40,8 @@
 //
 // Includes.
 //
-#include "stdafx.h"
-#include "dialogTexturePack.hpp"
+#include "StdAfx.h"
+#include "DialogTexturePack.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/Loader/TextureManager.hpp"
 #include "GUIApp.h"

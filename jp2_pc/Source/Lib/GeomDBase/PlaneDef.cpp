@@ -43,7 +43,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Plane.hpp"
 #include "Lib/Math/FastSqrt.hpp"
 #include "AsmSupport.hpp"

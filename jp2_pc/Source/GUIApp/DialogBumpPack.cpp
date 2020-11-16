@@ -47,13 +47,13 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogBumpPack.hpp"
 #include "GUITools.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/View/RasterVid.hpp"
 #include "Lib/View/Clut.hpp"
-#include "Lib/Renderer/Primitives/Fastbump.hpp"
+#include "Lib/Renderer/Primitives/FastBump.hpp"
 #include "Lib/Sys/MemoryLog.hpp"
 
 

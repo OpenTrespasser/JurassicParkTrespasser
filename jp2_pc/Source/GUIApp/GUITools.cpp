@@ -96,7 +96,7 @@
  * 
  **********************************************************************************************/
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "GUITools.hpp"
 #include "Lib/GeomDBase/Terrain.hpp"
 #include "Lib/GeomDBase/WaveletQuadTree.hpp"

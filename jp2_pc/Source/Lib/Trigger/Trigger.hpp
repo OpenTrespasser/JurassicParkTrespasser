@@ -58,8 +58,8 @@
 
 #include "Lib/EntityDBase/Entity.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
-#include "Lib/std/random.hpp"
-#include "Lib/sys/timer.hpp"
+#include "Lib/Std/Random.hpp"
+#include "Lib/Sys/Timer.hpp"
 #include "Lib/Groff/GroffIO.hpp"
 
 #include "Action.hpp"

@@ -62,13 +62,13 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "../RasterVid.hpp"
-#include "Lib/W95/Dd.hpp"
+#include "Lib/W95/DD.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/Sys/FileEx.hpp"
-#include "Lib/Sys/debugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/Sys/RegInit.hpp"
 #include "Lib/Sys/DWSizeStruct.hpp"

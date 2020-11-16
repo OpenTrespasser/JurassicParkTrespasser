@@ -208,13 +208,13 @@
 #pragma warning(disable:4237)
 #pragma warning(disable:4786)
 
-#include "BuildVer.hpp"
+#include "buildver.hpp"
 #include "SoundTypes.hpp"
 #include "SoundDefs.hpp"
 #include "dsound.h"
 #include "Ia3d.h"
 #include "Lib/Sys/DebugConsole.hpp"
-#include "lib/sys/memorylog.hpp"
+#include "Lib/Sys/MemoryLog.hpp"
 #include <string>
 #include "AudioLoader.hpp"
 #include "Subtitle.hpp"

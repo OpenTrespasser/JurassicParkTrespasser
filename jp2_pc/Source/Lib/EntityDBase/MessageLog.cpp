@@ -17,7 +17,7 @@
 //
 // Includes.
 //
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "MessageLog.hpp"
 
 

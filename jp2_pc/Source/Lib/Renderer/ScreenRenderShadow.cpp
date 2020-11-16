@@ -51,7 +51,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Primitives/DrawTriangle.hpp"
 #include "ScreenRenderShadow.hpp"
 #include "Shadow.hpp"

@@ -32,9 +32,9 @@
  * 
  *********************************************************************************************/
 
-#include <Math.h>
-#include "stdafx.h"
-#include "guiapp.h"
+#include <math.h>
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "DialogDepthSort.hpp"
 #include "Lib/Renderer/DepthSort.hpp"
 #include "GUITools.hpp"

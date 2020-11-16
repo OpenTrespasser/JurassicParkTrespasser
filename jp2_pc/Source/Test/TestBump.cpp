@@ -100,7 +100,7 @@
 // #include <math.h>
 #include <memory.h>
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Std/Array.hpp"
 #include "Lib/View/RasterVid.hpp"
 #include "Lib/Transform/Transform.hpp"
@@ -110,7 +110,7 @@
 #include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Shell/AppShell.hpp"
-#include "Scan.hpp"
+#include "scan.hpp"
 
 #pragma warning(disable: 4244)
 #define GAMMATEST	0

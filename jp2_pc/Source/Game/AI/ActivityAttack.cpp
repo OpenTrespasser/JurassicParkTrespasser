@@ -77,7 +77,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "ActivityAttack.hpp"
 #include "AIMain.hpp"

@@ -149,7 +149,7 @@
 
 #include "Lib/W95/WinAlias.hpp"
 #include "Lib/View/RasterVid.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 
 class CConsoleBuffer;
 

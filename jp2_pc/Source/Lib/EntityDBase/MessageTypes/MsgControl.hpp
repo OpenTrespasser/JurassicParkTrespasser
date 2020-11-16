@@ -46,7 +46,7 @@
 #include "Lib/EntityDBase/Message.hpp"
 #include "Lib/EntityDBase/MessageTypes/RegisteredMsg.hpp"
 #include "Lib/EntityDBase/QueueMessage.hpp"
-#include "lib/control/Control.hpp"
+#include "Lib/Control/Control.hpp"
 
 
 //**********************************************************************************************

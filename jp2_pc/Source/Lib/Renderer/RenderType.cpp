@@ -57,7 +57,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Renderer/RenderType.hpp"
 
 #include "Lib/Loader/Loader.hpp"

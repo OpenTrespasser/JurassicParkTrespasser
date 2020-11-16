@@ -39,7 +39,7 @@
 #define bVIEWER_INFINITY		(0)
 #define bDISTANCE_CULL_TERRAIN	(0)
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "D3DTypes.h"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
@@ -72,7 +72,7 @@
 #include "Lib/Sys/W95/Render.hpp"
 #include "ShapePresence.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3DBatch.hpp"
-#include "Game/Ai/AIMain.hpp"
+#include "Game/AI/AIMain.hpp"
 #include "Particles.hpp"
 #include "Lib/View/Direct3DRenderState.hpp"
 

@@ -126,7 +126,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "AsmSupport.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/Renderer/Primitives/DrawTriangle.hpp"

@@ -92,11 +92,11 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/View/Raster.hpp"
 #include "TexturePackSurface.hpp"
-#include "Lib/sys/MemoryLog.hpp"
-#include "Lib/sys/DebugConsole.hpp"
+#include "Lib/Sys/MemoryLog.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 
 
 //*********************************************************************************************

@@ -90,13 +90,13 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "VirtualMem.hpp"
 #include "Lib/Std/MemLimits.hpp"
 #include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
-#include "lib/sys/RegInit.hpp"
+#include "Lib/Sys/RegInit.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 
 

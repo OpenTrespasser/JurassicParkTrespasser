@@ -18,11 +18,11 @@
 #ifndef __PRECOMP_H__
 #define __PRECOMP_H__
 
-#include "../lib/w95/wininclude.hpp"
+#include "../Lib/W95/WinInclude.hpp"
 #include <windows.h>
 #include <windowsx.h>
 #include <commctrl.h>
 
-#include "lib/groff/groff.hpp"
+#include "Lib/Groff/Groff.hpp"
 
 #endif // __PRECOMP_H__

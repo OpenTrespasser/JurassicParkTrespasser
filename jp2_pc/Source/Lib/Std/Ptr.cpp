@@ -64,7 +64,7 @@
 
 
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Ptr.hpp"
 #include "StringEx.hpp"
 #include "Lib/Sys/DebugConsole.hpp"

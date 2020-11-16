@@ -44,7 +44,7 @@
 
 #include "Lib/EntityDBase/Message.hpp"
 #include "Lib/EntityDBase/MessageTypes/RegisteredMsg.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 
 //**********************************************************************************************
 //

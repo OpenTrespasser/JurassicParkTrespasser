@@ -35,7 +35,7 @@
 //
 // Includes.
 //
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/Math/FloatDef.hpp"
 #include "FastInverse.hpp"
 

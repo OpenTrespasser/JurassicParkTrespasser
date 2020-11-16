@@ -26,7 +26,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletQuadTreeBase.hpp"
 
 #include "Lib/Sys/ConIO.hpp"

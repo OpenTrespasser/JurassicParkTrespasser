@@ -26,7 +26,7 @@
  * 
  ***********************************************************************************************/
 
-#include "lib/renderer/LightBlend.hpp"
+#include "Lib/Renderer/LightBlend.hpp"
 
 
 static uint32 u4AlphaColourMask;

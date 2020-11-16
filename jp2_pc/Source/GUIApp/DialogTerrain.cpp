@@ -47,7 +47,7 @@
  * 
  *********************************************************************************************/
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogTerrain.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "GUIApp/GUIAppDlg.h"

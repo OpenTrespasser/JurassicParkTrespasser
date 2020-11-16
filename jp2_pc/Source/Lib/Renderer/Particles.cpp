@@ -83,7 +83,7 @@
 //
 // Defines and pragmas.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Particles.hpp"
 
 #include "Lib/W95/Direct3D.hpp"

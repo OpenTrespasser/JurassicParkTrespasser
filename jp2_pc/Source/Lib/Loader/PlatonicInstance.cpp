@@ -28,10 +28,10 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PlatonicInstance.hpp"
 #include "Lib/Std/Hash.hpp"
-#include "Lib/sys/MemoryLog.hpp"
+#include "Lib/Sys/MemoryLog.hpp"
 
 //
 // Module specific variables.

@@ -19,7 +19,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletConv.hpp"
 
 #include "Lib/GeomDBase/TerrainLoad.hpp"

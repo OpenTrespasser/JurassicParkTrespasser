@@ -65,7 +65,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Audio/AudioDaemon.hpp"
 #include "Lib/Audio/Audio.hpp"
 
@@ -85,7 +85,7 @@
 #include "Lib/EntityDBase/Animal.hpp"
 
 #include "Lib/EntityDBase/MessageTypes/MsgAudio.hpp"
-#include "Lib/Audio/Sounddefs.hpp"
+#include "Lib/Audio/SoundDefs.hpp"
 #include "Lib/Audio/AudioLoader.hpp"
 
 #include "Lib/Loader/SaveFile.hpp"

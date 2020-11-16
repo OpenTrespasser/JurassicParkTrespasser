@@ -27,7 +27,7 @@
  **********************************************************************************************/
 
 #include <stdio.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Grab.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/View/ColourT.hpp"

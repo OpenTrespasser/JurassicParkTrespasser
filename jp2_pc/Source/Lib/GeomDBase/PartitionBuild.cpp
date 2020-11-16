@@ -33,7 +33,7 @@
 
 #include <algorithm>
 #include "Lib/Sys/RegInit.hpp"
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
 #include "Partition.hpp"
 #include "PartitionSpace.hpp"

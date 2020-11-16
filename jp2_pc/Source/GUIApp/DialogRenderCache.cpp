@@ -115,7 +115,7 @@
 #include "StdAfx.h"
 #include "DialogRenderCache.hpp"
 #include "Lib/Renderer/RenderCacheInterface.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Sys/Scheduler.hpp"
 

@@ -113,7 +113,7 @@
  * 
  ***********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "LoadTexture.hpp"
 #include "ImageLoader.hpp"
@@ -125,8 +125,8 @@
 #include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/Sys/VirtualMem.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
-#include "Lib/Std/stringex.hpp"
-#include "Lib/Std/hash.hpp"
+#include "Lib/Std/StringEx.hpp"
+#include "Lib/Std/Hash.hpp"
 #include <map>
 #include <string>
 

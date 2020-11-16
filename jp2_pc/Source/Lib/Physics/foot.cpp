@@ -2,10 +2,10 @@
 //	===========================
 
 #include <iostream>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Sys/ConIO.hpp"
-#include "Pelvis.h"
-#include "Futil.h"
+#include "pelvis.h"
+#include "futil.h"
 #include "Xob_bc.hpp"
 #include "PhysicsImport.hpp"
 #include "Lib/Std/Set.hpp"

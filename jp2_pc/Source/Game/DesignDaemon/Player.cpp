@@ -36,7 +36,7 @@
 // Includes.
 //
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Player.hpp"
 
 #include "PlayerSettings.hpp"
@@ -64,7 +64,7 @@
 #include "Lib/Control/Control.hpp"
 #include "Lib/Physics/InfoPlayer.hpp"
 #include "Lib/Physics/Magnet.hpp"
-#include "Lib/Physics/Pelvis.h"
+#include "Lib/Physics/pelvis.h"
 #include "Lib/Physics/PhysicsSystem.hpp"
 #include "Lib/Physics/PhysicsHelp.hpp"
 #include "Lib/Renderer/Camera.hpp"

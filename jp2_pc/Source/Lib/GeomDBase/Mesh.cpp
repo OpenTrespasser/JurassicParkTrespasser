@@ -140,7 +140,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Mesh.hpp"
 #include "MeshIterator.hpp"
 
@@ -153,7 +153,7 @@
 #include "Lib/Renderer/Line2D.hpp"
 #include "Lib/Renderer/Clip.hpp"
 #include "Lib/Renderer/Camera.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/Renderer/Primitives/FastBump.hpp"
 #include "Lib/GeomDBase/Plane.hpp"
 #include "Lib/GeomDBase/Terrain.hpp"

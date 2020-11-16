@@ -50,7 +50,7 @@
 #include "Lib/Sys/ProcessorDetect.hpp"
 #include "Lib/Sys/Timer.hpp"
 #include "Lib/Renderer/RenderDefs.hpp"
-#include "Lib/control/control.hpp"
+#include "Lib/Control/Control.hpp"
 
 //
 // Opaque declarations.

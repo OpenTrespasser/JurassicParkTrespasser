@@ -22,7 +22,7 @@
 #include "main.h"
 #include "tpassglobals.h"
 #include "../Lib/Sys/reg.h"
-#include "../lib/sys/reginit.hpp"
+#include "../Lib/Sys/RegInit.hpp"
 #include "uiwnd.h"
 #include "uidlgs.h"
 #include "video.h"

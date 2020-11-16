@@ -83,13 +83,13 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Silhouette.hpp"
 
 #include "Lib/Renderer/GeomTypes.hpp"
 #include "Lib/GeomDBase/LineSegment.hpp"
 
-#include "Lib/Std/stdlibex.hpp"
+#include "Lib/Std/StdLibEx.hpp"
 #include "Lib/Types/FixedP.hpp"
 
 

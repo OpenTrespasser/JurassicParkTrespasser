@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "neuquant.h"
+#include "NeuQuant.h"
 #include "/lib/h/hybrid.h"
 #include <math.h>
 

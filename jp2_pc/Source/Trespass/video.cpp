@@ -23,7 +23,7 @@
 #include "resource.h"
 #include "video.h"
 #include "../Lib/Sys/reg.h"
-#include "../lib/sys/reginit.hpp"
+#include "../Lib/Sys/RegInit.hpp"
 #include "Lib/Sys/DWSizeStruct.hpp"
 
 

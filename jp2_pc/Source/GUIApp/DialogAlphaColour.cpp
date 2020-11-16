@@ -35,9 +35,9 @@
 //
 // Includes.
 //
-#include "stdafx.h"
-#include "guiapp.h"
-#include "Common.hpp"
+#include "StdAfx.h"
+#include "GUIApp.h"
+#include "common.hpp"
 #include "GUIPipeLine.hpp"
 #include "GUITools.hpp"
 #include "GUIApp.h"

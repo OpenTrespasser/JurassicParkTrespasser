@@ -28,7 +28,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletQuadTreeBaseRecalc.hpp"
 
 namespace NMultiResolution

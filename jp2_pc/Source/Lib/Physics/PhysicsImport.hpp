@@ -55,7 +55,7 @@
 class CInstance;
 class CEntityWater;
 
-#include "Pelvis.h"
+#include "pelvis.h"
 #include "Xob_bc.hpp"
 
 //*****************************************************************************************

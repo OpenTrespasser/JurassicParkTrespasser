@@ -56,8 +56,7 @@
 
 #include "Lib/GeomDBase/Shape.hpp"
 #include "Lib/GeomDBase/Mesh.hpp"
-#include "GUIApp/PredefinedShapes.hpp"
-
+#include "GUIApp/PreDefinedShapes.hpp"
 
 
 #include "Lib/Sys/Timer.hpp"

@@ -87,7 +87,7 @@
 #include "AITypes.hpp"
 #include "AIMain.hpp"
 #include "Feeling.hpp"
-#include "Lib/sys/MemoryLog.hpp"
+#include "Lib/Sys/MemoryLog.hpp"
 
 
 class CObjectValue;

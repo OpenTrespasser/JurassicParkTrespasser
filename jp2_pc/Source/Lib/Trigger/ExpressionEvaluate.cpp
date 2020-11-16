@@ -49,7 +49,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Trigger.hpp"
 #include "Lib/Groff/VTParse.hpp"
 #include "Lib/GeomDBase/Partition.hpp"

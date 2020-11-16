@@ -98,15 +98,15 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
-#include "Lib/sys/VirtualMem.hpp"
+#include "Lib/Sys/VirtualMem.hpp"
 #include "Raster.hpp"
 #include "Lib/Loader/TextureManager.hpp"
 #include "Lib/Loader/ImageLoader.hpp"
 #include "Lib/Loader/DataDaemon.hpp"
 #include "Lib/Loader/TexturePackSurface.hpp"
-#include "Lib/Renderer/Primitives/Fastbump.hpp"
+#include "Lib/Renderer/Primitives/FastBump.hpp"
 #include "Lib/Std/Mem.hpp"
 #include "Lib/Sys/FixedHeap.hpp"
 #include "Lib/Sys/Profile.hpp"

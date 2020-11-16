@@ -44,7 +44,7 @@
 #define HEADER_LIB_RENDERER_CLIP_HPP
 
 #include "ScreenRender.hpp"
-#include "PipelineHeap.hpp"
+#include "PipeLineHeap.hpp"
 #include "Lib/GeomDBase/Plane.hpp"
 #include "Lib/GeomDBase/Mesh.hpp"
 

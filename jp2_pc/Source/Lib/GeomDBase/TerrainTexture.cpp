@@ -29,7 +29,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "TerrainTexture.hpp"
 
@@ -37,7 +37,7 @@
 #include "Lib/GeomDBase/TerrainObj.hpp"
 #include "Lib/GeomDBase/WaveletQuadTree.hpp"
 #include "Lib/Renderer/Texture.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/Light.hpp"
 #include "Lib/Renderer/Primitives/DrawTriangle.hpp"

@@ -38,7 +38,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"

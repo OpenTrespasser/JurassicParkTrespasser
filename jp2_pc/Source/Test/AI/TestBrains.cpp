@@ -26,7 +26,7 @@
 
 
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "TestBrains.hpp"
 #include "Game/AI/ActivityCompound.hpp"

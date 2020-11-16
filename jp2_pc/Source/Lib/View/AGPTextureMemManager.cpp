@@ -113,7 +113,7 @@
  **********************************************************************************************/
 
 #include <list>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/View/AGPTextureMemManager.hpp"
 
 #include "Lib/W95/WinInclude.hpp"

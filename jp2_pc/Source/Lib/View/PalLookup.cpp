@@ -21,8 +21,8 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
-#include "PalLookup.hpp"
+#include "common.hpp"
+#include "pallookup.hpp"
 
 #include <memory.h>
 

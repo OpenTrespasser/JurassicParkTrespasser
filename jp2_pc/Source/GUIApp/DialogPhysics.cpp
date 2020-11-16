@@ -68,7 +68,7 @@
  * 
  *********************************************************************************************/
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogPhysics.hpp"
 #include "GUIAppDlg.h"
 

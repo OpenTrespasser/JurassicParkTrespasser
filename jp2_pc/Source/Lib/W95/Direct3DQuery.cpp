@@ -141,12 +141,12 @@
 #include <ddraw.h>
 #define D3D_OVERLOADS
 #include <d3d.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Direct3DQuery.hpp"
 
 #include "Lib/Std/Ptr.hpp"
 #include "Lib/Sys/RegInit.hpp"
-#include "Lib/Sys/Reg.h"
+#include "Lib/Sys/reg.h"
 #include "Lib/Std/PrivSelf.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Sys/W95/Render.hpp"

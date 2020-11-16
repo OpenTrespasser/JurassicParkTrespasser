@@ -23,7 +23,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Random.hpp"
 
 #include <stdlib.h>

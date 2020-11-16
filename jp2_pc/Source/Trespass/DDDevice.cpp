@@ -115,7 +115,7 @@
 #include <assert.h>
 #endif
 #include "../Lib/Sys/RegInit.hpp"
-#include "../Lib/Sys/Reg.h"
+#include "../Lib/Sys/reg.h"
 
 #if (1)
 	#include "ddraw.h"

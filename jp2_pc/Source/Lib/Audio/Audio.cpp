@@ -246,9 +246,9 @@
 #include "AudioLoader.hpp"
 
 #include "Lib/Sys/DebugConsole.hpp"
-#include "lib/sys/memorylog.hpp"
+#include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/Sys/DWSizeStruct.hpp"
-#include "eax.h"			// Creative environmental audio
+#include "Eax.h"			// Creative environmental audio
 
 
 

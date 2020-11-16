@@ -270,7 +270,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 
 
@@ -278,7 +278,7 @@
 #include "AITest.hpp"
 
 
-#include "Shell/WinShell.hpp"
+#include "Shell/winshell.hpp"
 #include "Lib/Sys/Timer.hpp"
 #include "Game/AI/AIMain.hpp"
 

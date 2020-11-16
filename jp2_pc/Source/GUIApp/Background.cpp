@@ -29,7 +29,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "Lib/Renderer/Light.hpp"
 #include "GUITools.hpp"
 #include "Background.hpp"

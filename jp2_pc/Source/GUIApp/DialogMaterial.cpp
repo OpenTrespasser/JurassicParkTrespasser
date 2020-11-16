@@ -25,8 +25,8 @@
  * 
  *********************************************************************************************/
 
-#include "stdafx.h"
-#include "guiapp.h"
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "DialogMaterial.h"
 
 #include "Lib/EntityDBase/Instance.hpp"

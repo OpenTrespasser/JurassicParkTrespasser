@@ -232,7 +232,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "DrawTriangle.hpp"
 #include "DrawSubTriangle.hpp"
 

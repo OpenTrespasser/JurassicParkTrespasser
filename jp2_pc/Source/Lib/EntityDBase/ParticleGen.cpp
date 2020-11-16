@@ -32,7 +32,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "ParticleGen.hpp"
 #include "Lib/Std/Random.hpp"
 #include "Lib/Audio/SoundDefs.hpp"

@@ -58,7 +58,7 @@
 #include "Lib/EntityDBase/Message.hpp"
 #include "Lib/EntityDBase/MessageTypes/RegisteredMsg.hpp"
 #include "Lib/EntityDBase/Entity.hpp"
-#include "lib/audio/SoundDefs.hpp"
+#include "Lib/Audio/SoundDefs.hpp"
 
 
 //*********************************************************************************************

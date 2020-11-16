@@ -56,7 +56,7 @@
  * 
  ***********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Transform/Transform.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 

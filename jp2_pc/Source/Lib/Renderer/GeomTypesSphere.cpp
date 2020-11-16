@@ -76,7 +76,7 @@
 #include <io.h>
 #include <stdio.h>
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "GeomTypes.hpp"
 #include "GeomTypesPriv.hpp"
 

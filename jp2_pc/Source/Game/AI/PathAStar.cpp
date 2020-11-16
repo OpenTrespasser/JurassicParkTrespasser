@@ -45,7 +45,7 @@
  **********************************************************************************************/
 
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PathAStar.hpp"
 #include "Lib/EntityDBase/Animal.hpp"
 

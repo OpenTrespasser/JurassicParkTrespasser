@@ -66,7 +66,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Skeleton.hpp"
 #include "SkeletonIterator.hpp"
 
