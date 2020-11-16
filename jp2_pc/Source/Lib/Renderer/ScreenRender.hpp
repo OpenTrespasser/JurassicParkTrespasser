@@ -128,7 +128,7 @@
 #include "Texture.hpp"
 #include "Lib/View/RasterVid.hpp"
 #include "Lib/GeomDBase/Plane.hpp"
-#include "Lib\Math\FastInverse.hpp"
+#include "Lib/Math/FastInverse.hpp"
 
 
 //**********************************************************************************************

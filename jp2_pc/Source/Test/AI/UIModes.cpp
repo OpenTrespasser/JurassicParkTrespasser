@@ -57,7 +57,7 @@
 #include "UIModes.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
-#include "Shell\WinShell.hpp"
+#include "Shell/WinShell.hpp"
 
 #include "airesource.h"
 

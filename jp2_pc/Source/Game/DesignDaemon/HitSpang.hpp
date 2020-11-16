@@ -40,9 +40,9 @@
 #include "Lib/Groff/VTParse.hpp"
 #include "Lib/Groff/ObjectHandle.hpp"
 #include "Lib/Loader/Loader.hpp"
-#include "Lib\GeomDBase\RayCast.hpp"
+#include "Lib/GeomDBase/RayCast.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
-#include "Lib/EntityDBase\WorldDBase.hpp"
+#include "Lib/EntityDBase/WorldDBase.hpp"
 #include <list>
 
 class CHitSpang;

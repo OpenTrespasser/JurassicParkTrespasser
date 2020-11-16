@@ -84,7 +84,7 @@
 #include "lib/control/Control.hpp"
 
 // so we can send menu messages to the GUIApp....
-#include "GUIApp\resource.h"
+#include "GUIApp/resource.h"
 
 //**********************************************************************************************
 //

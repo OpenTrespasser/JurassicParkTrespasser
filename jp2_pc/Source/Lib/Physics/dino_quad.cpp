@@ -13,7 +13,7 @@
 #include "Xob_BC.hpp"
 #include "BioModel.h"
 #include "BioStructure.h"
-#include "Lib\Audio\SoundDefs.hpp"
+#include "Lib/Audio/SoundDefs.hpp"
 
 #define NUM_BIO_PER_RAPTOR 2
 #define QUAD_SKELETAL_ELEMENTS 28

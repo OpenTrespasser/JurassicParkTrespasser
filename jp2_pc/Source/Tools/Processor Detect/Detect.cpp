@@ -1,6 +1,6 @@
 /***********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1997
+ * Copyright Â© DreamWorks Interactive. 1997
  *
  * Contents:
  *	Processor detect DLL
@@ -38,8 +38,8 @@
 #include "Windows.h"
 
 #ifdef _BUILD_EXTERNAL_
-#include "..\DWITypes.h"
-#include "..\Processor.hpp"
+#include "../DWITypes.h"
+#include "../Processor.hpp"
 #else
 #include "Lib/Std/UTypes.hpp"
 #include "Lib/Sys/Processor.hpp"

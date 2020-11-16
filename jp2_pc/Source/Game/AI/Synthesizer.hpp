@@ -89,7 +89,7 @@
 #include "Influence.hpp"
 #include <map>
 
-#include "Lib\Std\Set.hpp"
+#include "Lib/Std/Set.hpp"
 
 
 class CBrain;

@@ -120,8 +120,8 @@
 #include <float.h>
 
 #include "Game/AI/AIMain.hpp"
-#include "Lib\EntityDBase\Instance.hpp"
-#include "Lib\EntityDBase\Query\QRenderer.hpp"
+#include "Lib/EntityDBase/Instance.hpp"
+#include "Lib/EntityDBase/Query/QRenderer.hpp"
 
 #include "Game/AI/Silhouette.hpp"
 

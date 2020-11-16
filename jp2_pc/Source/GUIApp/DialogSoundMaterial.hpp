@@ -20,7 +20,7 @@
 #ifndef HEADER_GUIAPP_DIALOGSOUNDMAT_HPP
 #define HEADER_GUIAPP_DIALOGSOUNDMAT_HPP
 
-#include "Lib\EntityDBase\Instance.hpp"
+#include "Lib/EntityDBase/Instance.hpp"
 
 class CSample;
 //

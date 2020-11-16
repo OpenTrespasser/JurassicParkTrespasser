@@ -136,10 +136,10 @@
 #include "Lib/W95/Direct3D.hpp"
 #include "MentalState.hpp"
 
-#include "Lib\EntityDBase\WorldDBase.hpp"
-#include "Lib\EntityDBase\Query\QAI.hpp"
-#include "Lib\EntityDBase\MessageTypes\MsgStep.hpp"
-#include "Lib\EntityDBase\MessageTypes\MsgPaint.hpp"
+#include "Lib/EntityDBase/WorldDBase.hpp"
+#include "Lib/EntityDBase/Query/QAI.hpp"
+#include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
+#include "Lib/EntityDBase/MessageTypes/MsgPaint.hpp"
 
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/Sys/ConIO.hpp"

@@ -18,8 +18,8 @@
 #pragma hdrstop
 
 #include "supportfn.hpp"
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
+#include "../Lib/Sys/reg.h"
+#include "../lib/sys/reginit.hpp"
 #include "rasterdc.hpp"
 #include "main.h"
 #include "uiwnd.h"
