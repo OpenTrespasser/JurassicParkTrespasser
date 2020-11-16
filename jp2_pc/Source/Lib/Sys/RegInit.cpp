@@ -108,7 +108,7 @@
 #include <assert.h>
 #include <memory.h>
 #include "Lib/W95/WinInclude.hpp"
-#include "Reg.h"
+#include "reg.h"
 #include "RegInit.hpp"
 #include "Lib/Control/KeyMapping.hpp"
 

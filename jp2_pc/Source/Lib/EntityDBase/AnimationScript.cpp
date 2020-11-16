@@ -33,7 +33,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "AnimationScript.hpp"
 
 #include "Lib/Sys/DebugConsole.hpp"

@@ -3,12 +3,12 @@
 #include "precomp.h"
 #pragma hdrstop
 
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
+#include "../Lib/Sys/reg.h"
+#include "../Lib/Sys/RegInit.hpp"
 #include "resource.h"
 #include "tpassglobals.h"
 #include "rasterdc.hpp"
-#include "cdib.h"
+#include "Cdib.h"
 #include "uiwnd.h"
 #include "uidlgs.h"
 #include "main.h"

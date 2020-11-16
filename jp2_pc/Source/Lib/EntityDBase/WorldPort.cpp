@@ -19,7 +19,7 @@
 //
 // Includes.
 //
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WorldDBase.hpp"
 
 #include "Instance.hpp"

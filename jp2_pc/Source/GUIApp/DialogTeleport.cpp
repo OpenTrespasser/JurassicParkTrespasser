@@ -1,14 +1,14 @@
 // DialogTeleport.cpp : implementation file
 //
 
-#include "stdafx.h"
-#include "guiapp.h"
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "DialogTeleport.h"
 
-#include "..\Lib\GeomDBase\PartitionPriv.hpp"
-#include "..\Lib\Renderer\Camera.hpp"
-#include "..\Lib\EntityDBase\WorldDBase.hpp"
-#include "..\Lib\EntityDBase\Query\QRenderer.hpp"
+#include "../Lib/GeomDBase/PartitionPriv.hpp"
+#include "../Lib/Renderer/Camera.hpp"
+#include "../Lib/EntityDBase/WorldDBase.hpp"
+#include "../Lib/EntityDBase/Query/QRenderer.hpp"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

@@ -1,6 +1,6 @@
 /***********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1997
+ * Copyright Â© DreamWorks Interactive. 1997
  *
  * Contents:
  *	CSilhouette class for AI library.
@@ -59,7 +59,7 @@
 #include "Lib/Transform/Vector.hpp"
 #include "Lib/EntityDBase/Container.hpp"
 #include "Lib/GeomDBase/LineSegment.hpp"
-//#include "Lib\Renderer\Geomtypes.hpp"
+//#include "Lib/Renderer/Geomtypes.hpp"
 
 
 class CBoundVol;

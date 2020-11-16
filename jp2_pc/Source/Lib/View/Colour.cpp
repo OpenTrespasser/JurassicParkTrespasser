@@ -40,7 +40,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Colour.hpp"
 
 #include "Lib/Math/FloatDef.hpp"

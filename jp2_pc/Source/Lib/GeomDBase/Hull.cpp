@@ -17,7 +17,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/GeomDBase/Plane.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 

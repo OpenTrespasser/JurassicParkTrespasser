@@ -29,7 +29,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "RenderDB.hpp"

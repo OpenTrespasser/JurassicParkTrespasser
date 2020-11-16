@@ -43,17 +43,17 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include <malloc.h>
 #include <set>
 #include "Lib/W95/Direct3D.hpp"
-#include "TextOut.hpp"
+#include "Textout.hpp"
 #include "FixedHeap.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/MemoryLog.hpp"
 #include "Lib/Std/LocalArray.hpp"
 #include "Lib/Std/MemLimits.hpp"
-#include "Lib/Sys/debugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Renderer/RenderCache.hpp"
 
 

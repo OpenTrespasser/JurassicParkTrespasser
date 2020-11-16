@@ -34,7 +34,7 @@
 // Includes.
 //
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Daemon.hpp"
 

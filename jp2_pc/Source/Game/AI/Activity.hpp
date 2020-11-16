@@ -169,8 +169,8 @@
 #ifndef HEADER_LIB_AI_ACTIVITY_HPP
 #define HEADER_LIB_AI_ACTIVITY_HPP
 
-#include "Lib\Std\Array.hpp"
-#include "Lib\Std\Set.hpp"
+#include "Lib/Std/Array.hpp"
+#include "Lib/Std/Set.hpp"
 
 #include "Lib/Transform/Vector.hpp"
 #include "Classes.hpp"
@@ -178,7 +178,7 @@
 #include "Rating.hpp"
 #include "Feeling.hpp"
 
-#include "Lib\Audio\SoundDefs.hpp"
+#include "Lib/Audio/SoundDefs.hpp"
 
 #include "Lib/Sys/Timer.hpp"
 

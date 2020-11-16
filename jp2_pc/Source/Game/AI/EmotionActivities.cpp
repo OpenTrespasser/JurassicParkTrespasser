@@ -61,7 +61,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "EmotionActivities.hpp"
 #include "Influence.hpp"

@@ -72,7 +72,7 @@
 #ifndef HEADER_LIB_LOADER_TEXTUREMANAGER_HPP
 #define HEADER_LIB_LOADER_TEXTUREMANAGER_HPP
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Sys/VirtualMem.hpp"
 #include "TexturePackSurface.hpp"
 #include "Lib/View/RasterVid.hpp"

@@ -17,8 +17,8 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "gblinc/common.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "PhysicsTestShell.hpp"
 #include "PhysicsTest.hpp"
 

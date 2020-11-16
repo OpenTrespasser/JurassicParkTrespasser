@@ -1,7 +1,7 @@
 // TweakNVidia128.cpp : Defines the class behaviors for the application.
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "TweakNVidia128.h"
 #include "TweakNVidia128Dlg.h"
 #include "ddraw.h"

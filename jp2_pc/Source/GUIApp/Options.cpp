@@ -48,8 +48,8 @@
 // Includes.
 //
 
-#include "stdafx.h"
-#include "Common.hpp"
+#include "StdAfx.h"
+#include "common.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/Loader/DataDaemon.hpp"
 
@@ -58,28 +58,28 @@
 // For all those wacky flags.
 
 #include "GUIAppDlg.h"
-#include "GUIPipeline.hpp"
+#include "GUIPipeLine.hpp"
 #include "Lib/Physics/PhysicsSystem.hpp"
 #include "Game/AI/AIMain.hpp"
 #include "Game/DesignDaemon/Daemon.hpp"
-#include "Lib\Renderer\RenderCacheInterface.hpp"
+#include "Lib/Renderer/RenderCacheInterface.hpp"
 #include "Lib/Renderer/PipeLine.hpp"
-#include "Lib\Renderer\RenderCacheInterface.hpp"
+#include "Lib/Renderer/RenderCacheInterface.hpp"
 #include "Lib/Loader/Loader.hpp"
 #include "Lib/EntityDBase/GameLoop.hpp"
 #include "Lib/Sys/StdDialog.hpp"
-#include "Resource.h"
+#include "resource.h"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/EntityDBase/Water.hpp"
-#include "Game\DesignDaemon\Player.hpp"
+#include "Game/DesignDaemon/Player.hpp"
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
 
-#include "Lib\EntityDBase\MessageTypes\MsgControl.hpp"
-#include "Lib\EntityDBase\MessageTypes\MsgStep.hpp"
+#include "Lib/EntityDBase/MessageTypes/MsgControl.hpp"
+#include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 
-#include "Lib\View\Clut.hpp"
-#include "Lib\Renderer\LightBlend.hpp"
-#include "Lib\Renderer\Fog.hpp"
+#include "Lib/View/Clut.hpp"
+#include "Lib/Renderer/LightBlend.hpp"
+#include "Lib/Renderer/Fog.hpp"
 
 #include "Lib/Loader/TextureManager.hpp"
 #include "Lib/Loader/ImageLoader.hpp"

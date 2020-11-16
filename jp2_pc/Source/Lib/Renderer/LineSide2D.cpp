@@ -95,10 +95,10 @@
 #include <math.h>
 #include <algorithm>
 #include <set>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Std/CircularList.hpp"
 #include "LineSide2D.hpp"
-#include "Lib/Sys/textout.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/Renderer/RenderCacheInterface.hpp"
 #include "LineSide2DTest.hpp"

@@ -162,7 +162,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Fog.hpp"
 
 #include "ScreenRender.hpp"

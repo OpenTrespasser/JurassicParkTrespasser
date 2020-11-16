@@ -49,7 +49,7 @@
 
 #else
 
-#include "Common.hpp"
+#include "common.hpp"
 
 
 // Define the floating point 3D vector

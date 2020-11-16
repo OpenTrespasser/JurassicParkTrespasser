@@ -47,7 +47,7 @@
 
 
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "TerrainObj.hpp"
 
 #include "Lib/Audio/Material.hpp"

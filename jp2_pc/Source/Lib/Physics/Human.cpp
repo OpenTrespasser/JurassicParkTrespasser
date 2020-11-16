@@ -6,10 +6,10 @@
 
 
 //	Includes...
-#include "Common.hpp"
+#include "common.hpp"
 #include "Human.h"
-#include "Pelvis_Def.h"
-#include "Pelvis.h"
+#include "pelvis_def.h"
+#include "pelvis.h"
 #include "futil.h"
 #include "Arms.h"
 #include "Xob_bc.hpp"

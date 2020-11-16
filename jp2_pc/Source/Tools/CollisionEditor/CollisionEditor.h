@@ -8,13 +8,13 @@
 #ifdef COLLISION_EDITOR
 #include "resource.h"		// main symbols
 #else
-#include "GUIApp/Resource.h"
+#include "GUIApp/resource.h"
 #endif
 
 #include "mmsystem.h"
 #include "Lib/Audio/SoundTypes.hpp"
 #include "Lib/Audio/Audio.hpp"
-#include "Lib/audio/Material.hpp"
+#include "Lib/Audio/Material.hpp"
 
 
 /////////////////////////////////////////////////////////////////////////////

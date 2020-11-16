@@ -41,9 +41,9 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Instance.hpp"
-#include "Gameloop.hpp"
+#include "GameLoop.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/Renderer/RenderCache.hpp"
@@ -56,7 +56,7 @@
 #include "Lib/EntityDBase/Teleport.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
-#include "Lib\EntityDBase\Query\QTerrain.hpp"
+#include "Lib/EntityDBase/Query/QTerrain.hpp"
 #include "Lib/EntityDBase/RenderDB.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Loader/SaveFile.hpp"

@@ -45,7 +45,7 @@
 
 #else
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Groff/EasyString.hpp"
 #include "Lib/Groff/ObjectHandle.hpp"
 

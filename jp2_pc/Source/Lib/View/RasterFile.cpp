@@ -43,7 +43,7 @@
 #include <string.h>
 #include <malloc.h>
 #include <direct.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Raster.hpp"
 #include "Lib/Sys/FileEx.hpp"
 #include "RasterFile.hpp"

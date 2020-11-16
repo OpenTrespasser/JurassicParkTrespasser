@@ -33,7 +33,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "CameraPrime.hpp"
 #include <set>
 
@@ -45,7 +45,7 @@
 #include "Lib/EntityDBase/GameLoop.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/Light.hpp"
-#include "Lib/Renderer/Primitives/FastbumpTable.hpp"
+#include "Lib/Renderer/Primitives/FastBumpTable.hpp"
 #include "Lib/View/ColourBase.hpp"
 #include "Query/QRenderer.hpp"
 #include "Lib/Math/FastTrig.hpp"

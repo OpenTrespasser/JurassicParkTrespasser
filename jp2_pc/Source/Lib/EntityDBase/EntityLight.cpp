@@ -41,7 +41,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "EntityLight.hpp"
 #include "Lib/Renderer/Light.hpp"
 

@@ -49,7 +49,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Animate.hpp"
 #include "Game/DesignDaemon/Gun.hpp"
 #include "Game/DesignDaemon/BloodSplat.hpp"
@@ -70,7 +70,7 @@
 #include "Lib/GeomDBase/Skeleton.hpp"
 #include "Lib/GeomDBase/RayCast.hpp"
 #include "Game/DesignDaemon/Player.hpp"
-#include "Lib\EntityDBase\Query\QTerrain.hpp"
+#include "Lib/EntityDBase/Query/QTerrain.hpp"
 
 //
 // Constants.

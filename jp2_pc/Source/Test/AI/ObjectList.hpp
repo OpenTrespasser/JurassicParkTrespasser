@@ -1,6 +1,6 @@
 /**********************************************************************************************
  *
- * Copyright © DreamWorks Interactive, 1996
+ * Copyright Â© DreamWorks Interactive, 1996
  *
  * Contents:
  *		An object list class for the AI Test App
@@ -54,7 +54,7 @@
 
 #include <list.h>
 
-#include "Game\AI\Brain.hpp"
+#include "Game/AI/Brain.hpp"
 
 #include "TestObject.hpp"
 #include "TestAnimal.hpp"

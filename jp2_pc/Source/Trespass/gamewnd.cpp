@@ -25,10 +25,10 @@
 #include "ctrls.h"
 #include "main.h"
 #include "keyremap.h"
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
-#include "..\Lib\EntityDBase\MessageTypes\MsgStep.hpp"
-#include "..\Game\AI\AIMain.hpp"
+#include "../Lib/Sys/reg.h"
+#include "../Lib/Sys/RegInit.hpp"
+#include "../Lib/EntityDBase/MessageTypes/MsgStep.hpp"
+#include "../Game/AI/AIMain.hpp"
 
 BOOL bQuitGame = FALSE;
 

@@ -23,7 +23,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "GUIApp.h"
 #include "GUITools.hpp"
 #include "DialogTexturePackOptions.hpp"

@@ -59,7 +59,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "MentalState.hpp"
 
 #include "AIInfo.hpp"

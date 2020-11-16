@@ -65,7 +65,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
 
 #include "InfoBox.hpp"

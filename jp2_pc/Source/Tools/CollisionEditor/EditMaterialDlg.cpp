@@ -2,7 +2,7 @@
 //
 #include "stdafx.h"
 #include "CollisionEditor.h"
-#include "database.h"
+#include "Database.h"
 #include "EditMaterialDlg.h"
 #include "resource.h"
 

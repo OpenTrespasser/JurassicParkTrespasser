@@ -37,7 +37,7 @@
 #define HEADER_TEST_POLYDATA_HPP
 
 #include "Lib/Renderer/ScreenRender.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 
 extern SRenderVertex arvTestVertices[];
 

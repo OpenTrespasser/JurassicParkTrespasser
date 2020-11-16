@@ -26,10 +26,10 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletQuadTreeTForm.hpp"
 
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Math/FloatDef.hpp"
 #include "Lib/Std/Random.hpp"
 #include "Lib/View/Raster.hpp"

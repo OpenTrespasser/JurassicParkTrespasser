@@ -42,14 +42,14 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "Lib/W95/Direct3D.hpp"
-#include <StdIO.h>
+#include <stdio.h>
 #include "Config.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/Light.hpp"
 #include "Lib/Sys/W95/Render.hpp"
-#include "Lib/Sys/debugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Renderer/PipeLine.hpp"
 #include "Shell/WinRenderTools.hpp"
 #include "GUIPipeLine.hpp"
@@ -72,14 +72,14 @@
 #include "Lib/Sys/ProcessorDetect.hpp"
 #include "Lib/Audio/Material.hpp"
 #include "Lib/Sys/Scheduler.hpp"
-#include "lib\w95\dd.hpp"
-#include "lib\view\video.hpp"
-#include "Lib/Sys/Reg.h"
+#include "Lib/W95/DD.hpp"
+#include "Lib/View/Video.hpp"
+#include "Lib/Sys/reg.h"
 #include "Lib/Sys/RegInit.hpp"
 #include "Lib/View/Grab.hpp"
 #include "Lib/EntityDBase/Water.hpp"
 #include "Lib/Sys/RegInit.hpp"
-#include "Version.hpp"
+#include "version.hpp"
 #include "Lib/Renderer/LightBlend.hpp"
 
 

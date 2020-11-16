@@ -31,7 +31,7 @@
 #include "GameActions.hpp"
 #include "Trigger.hpp"
 
-#include "Lib/GROFF/VTParse.hpp"
+#include "Lib/Groff/VTParse.hpp"
 #include "Lib/EntityDBase/Animal.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/EntityDBase/PhysicsInfo.hpp"

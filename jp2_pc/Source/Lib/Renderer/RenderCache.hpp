@@ -78,7 +78,7 @@
 #include <set>
 #include "RenderCacheInterface.hpp"
 #include "Lib/GeomDBase/Mesh.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Sys/Scheduler.hpp"
 #include "Lib/GeomDBase/TexturePageManager.hpp"

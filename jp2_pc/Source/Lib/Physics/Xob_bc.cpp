@@ -1,12 +1,12 @@
 //	BC intensive stuff...
 //	=====================
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Xob_bc.hpp"
 
 #include "PhysicsImport.hpp"
 #include "PhysicsStats.hpp"
-#include "Pelvis.h"
+#include "pelvis.h"
 
 #include "Lib/Audio/SoundDefs.hpp"
 #include "Lib/Std/Set.hpp"

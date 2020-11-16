@@ -50,7 +50,7 @@
 // Macros and #includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "StringEx.hpp"
 
 #include <string.h>

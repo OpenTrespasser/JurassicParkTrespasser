@@ -66,7 +66,7 @@
 //
 // Macros, includes and definitions.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Render.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
@@ -77,7 +77,7 @@
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/ScreenRender.hpp"
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
-#include "Lib/W95/dd.hpp"
+#include "Lib/W95/DD.hpp"
 #include "Lib/View/Raster.hpp"
 #include "Lib/Std/StringEx.hpp"
 #include "Lib/View/Viewport.hpp"
@@ -512,11 +512,7 @@ int iGetScreenBitdepth();
 			return;
 
 
-		//
-		// Remove overlay text
-		//
-		CTextOverlay::ptovTextSystem->RemoveAll();
-
+		
 		// Constants for minimum dimensions that preserve the screen's ratio.
 		int iMinHeight = iMinWidth * prasMainScreen->iHeightFront / prasMainScreen->iWidthFront;
 

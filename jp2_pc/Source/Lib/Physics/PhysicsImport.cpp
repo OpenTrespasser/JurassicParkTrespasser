@@ -52,7 +52,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PhysicsImport.hpp"
 
 #include "PhysicsSystem.hpp"

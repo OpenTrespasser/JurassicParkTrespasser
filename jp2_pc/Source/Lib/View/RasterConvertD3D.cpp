@@ -43,7 +43,7 @@
 //
 #include <set>
 #include "Memory.h"
-#include "Common.hpp"
+#include "common.hpp"
 #include "RasterConvertD3D.hpp"
 #include <algorithm>
 

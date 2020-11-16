@@ -36,7 +36,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Magnet.hpp"
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"

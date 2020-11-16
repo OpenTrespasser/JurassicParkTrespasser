@@ -52,7 +52,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "NodeSource.hpp"
 #include "AIMain.hpp"
 #include "AIGraph.hpp"

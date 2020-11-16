@@ -70,14 +70,14 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Shadow.hpp"
 
 #include <float.h>
 #include "Primitives/DrawTriangle.hpp"
 #include "Camera.hpp"
 #include "ScreenRenderShadow.hpp"
-#include "Pipeline.hpp"
+#include "PipeLine.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/Math/FloatDef.hpp"
 #include "Lib/Std/LocalArray.hpp"

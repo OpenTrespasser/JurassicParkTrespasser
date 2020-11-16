@@ -28,11 +28,11 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "TerrainLoad.hpp"
 
 #include <iomanip>
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/GeomDBase/WaveletQuadTreeTForm.hpp"
 #include "Lib/GeomDBase/WaveletQuadTreeQuery.hpp"
 #include "Lib/GeomDBase/WaveletQuadTree.hpp"

@@ -20,7 +20,7 @@
 
 
 #include "uiwnd.h"
-#include "smacker/smack.h"
+#include "smacker/SMACK.H"
 
 
 //+--------------------------------------------------------------------------

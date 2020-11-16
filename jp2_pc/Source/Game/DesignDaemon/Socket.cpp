@@ -40,10 +40,10 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Socket.hpp"
 
-#include "Lib\EntityDBase\Query\QPhysics.hpp"
+#include "Lib/EntityDBase/Query/QPhysics.hpp"
 #include "Lib/Groff/VTParse.hpp"
 #include "Lib/Physics/Magnet.hpp"
 #include "Lib/Physics/InfoBox.hpp"

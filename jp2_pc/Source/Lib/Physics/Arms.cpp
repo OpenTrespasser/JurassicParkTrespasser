@@ -4,12 +4,12 @@
 //	Calculates the arm dynamics for the player model, and perhaps the dinoes...
 
 //	Includes...
-#include "Common.hpp"
+#include "common.hpp"
 #include "Arms.h"
-#include "Pelvis_Def.h"
-#include "Pelvis.h"
+#include "pelvis_def.h"
+#include "pelvis.h"
 #include "futil.h"
-#include "Xob_BC.hpp"
+#include "Xob_bc.hpp"
 
 #include "Lib/Sys/ConIO.hpp"
 #include <iostream>

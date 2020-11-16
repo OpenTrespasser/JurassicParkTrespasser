@@ -26,8 +26,8 @@
  * 
  **********************************************************************************************/
 
-#include "stdafx.h"
-#include "GblInc/Common.hpp"
+#include "StdAfx.h"
+#include "gblinc/common.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"

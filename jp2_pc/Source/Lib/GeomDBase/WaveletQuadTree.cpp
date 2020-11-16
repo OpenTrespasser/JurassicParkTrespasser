@@ -27,7 +27,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "WaveletQuadTree.hpp"
 

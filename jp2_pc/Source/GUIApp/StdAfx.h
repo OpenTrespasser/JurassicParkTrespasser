@@ -78,7 +78,7 @@
 
 // Project includes.
 #include "resource.h"
-#include "Common.hpp"
+#include "common.hpp"
 
 // GUIApp helper functions.
 #include "GUITools.hpp"

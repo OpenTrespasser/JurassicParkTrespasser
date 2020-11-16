@@ -1,6 +1,6 @@
 /***********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1997
+ * Copyright Â© DreamWorks Interactive. 1997
  *
  * Implementation of the thread system defined in ThreadContro.hpp
  *
@@ -45,7 +45,7 @@
 #include "ThreadControl.hpp"
 
 #include "Lib/Sys/Profile.hpp"
-#include "Lib\Sys\VirtualMem.hpp"
+#include "Lib/Sys/VirtualMem.hpp"
 
 //**********************************************************************************************
 // Thread function is a C function which is passed a 'this' pointer as a parameter...

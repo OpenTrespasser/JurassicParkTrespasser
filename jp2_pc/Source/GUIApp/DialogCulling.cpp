@@ -2,8 +2,8 @@
 //
 
 #include <math.h>
-#include "stdafx.h"
-#include "guiapp.h"
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "DialogCulling.hpp"
 #include "Lib/GeomDBase/Partition.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"

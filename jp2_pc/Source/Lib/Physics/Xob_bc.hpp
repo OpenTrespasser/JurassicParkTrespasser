@@ -74,7 +74,7 @@
 #define HEADER_LIB_PHYSICS_XOBBC_HPP
 
 
-#include "Lib\Physics\pelvis_def.h"
+#include "Lib/Physics/pelvis_def.h"
 
 class CInstance;
 class CEntityWater;

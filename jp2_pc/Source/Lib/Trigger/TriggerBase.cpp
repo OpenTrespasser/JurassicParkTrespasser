@@ -39,7 +39,7 @@
  * a warning so you know the default is being used,
  * 
  **********************************************************************************************/
-#include "Common.hpp"
+#include "common.hpp"
 #include "Trigger.hpp"
 #include <algorithm>
 #include "Action.hpp"
@@ -57,7 +57,7 @@
 #include "Lib/Groff/ObjectHandle.hpp"
 #include "Lib/Loader/Loader.hpp"
 #include "Lib/Loader/SaveBuffer.hpp"
-#include "Lib/sys/DebugConsole.hpp"
+#include "Lib/Sys/DebugConsole.hpp"
 
 
 //*********************************************************************************************

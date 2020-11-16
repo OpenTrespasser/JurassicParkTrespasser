@@ -52,7 +52,7 @@
  * 
  **********************************************************************************************/
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "Lib/Renderer/Camera.hpp"
 #include "Lib/Renderer/Light.hpp"
 #include "GUIPipeLine.hpp"

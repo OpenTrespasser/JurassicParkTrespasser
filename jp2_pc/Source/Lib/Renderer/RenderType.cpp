@@ -57,13 +57,13 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Renderer/RenderType.hpp"
 
 #include "Lib/Loader/Loader.hpp"
 #include "Lib/Loader/LoadTexture.hpp"
 
-#include "Lib\Renderer\LightBlend.hpp"
+#include "Lib/Renderer/LightBlend.hpp"
 
 #include "Lib/Groff/VTParse.hpp"
 
@@ -71,7 +71,7 @@
 
 #include "Lib/Sys/DebugConsole.hpp"
 
-#include "Lib\Sys\Profile.hpp"
+#include "Lib/Sys/Profile.hpp"
 
 
 extern std::map<uint32, SMeshInstance, std::less<uint32> > mapMeshInstances;

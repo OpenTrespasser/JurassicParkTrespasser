@@ -46,7 +46,7 @@
 #include "Game/AI/Activity.hpp"
 #include "Game/AI/ActivityEnum.hpp"
 
-#include "GUIApp\GUIPipeLine.hpp"
+#include "GUIApp/GUIPipeLine.hpp"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

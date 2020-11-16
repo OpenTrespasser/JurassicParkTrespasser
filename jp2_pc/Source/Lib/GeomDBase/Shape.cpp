@@ -79,10 +79,10 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Shape.hpp"
 #include "Lib/View/Raster.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"
 #include "Lib/EntityDBase/QualitySettings.hpp"
 

@@ -97,7 +97,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Matrix.hpp"
 
 // Give this module run-time init priority.

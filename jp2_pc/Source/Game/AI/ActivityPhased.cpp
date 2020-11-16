@@ -22,7 +22,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "ActivityPhased.hpp"
 
 #include "AIMain.hpp"

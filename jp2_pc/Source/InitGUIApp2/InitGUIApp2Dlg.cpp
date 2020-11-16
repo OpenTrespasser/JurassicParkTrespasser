@@ -1,10 +1,10 @@
 // InitGUIApp2Dlg.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "InitGUIApp2.h"
 #include "InitGUIApp2Dlg.h"
-#include "Lib/Sys/Reg.h"
+#include "Lib/Sys/reg.h"
 #include "Lib/Sys/RegInit.hpp"
 
 #ifdef _DEBUG

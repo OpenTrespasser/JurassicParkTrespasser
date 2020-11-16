@@ -42,7 +42,7 @@
  * Initial Implementation
  * 
  **********************************************************************************************/
-#include "Common.hpp"
+#include "common.hpp"
 #include "HitSpang.hpp"
 #include "Lib/Trigger/Trigger.hpp"
 #include "Lib/Sys/DebugConsole.hpp"

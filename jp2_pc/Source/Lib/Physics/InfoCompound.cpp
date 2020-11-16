@@ -57,7 +57,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "InfoCompound.hpp"
 
 #include "VerBones.hpp"

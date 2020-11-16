@@ -1,6 +1,6 @@
 /***********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1996
+ * Copyright Â© DreamWorks Interactive. 1996
  *
  * Contents:
  *		CActivity child classes for head movement behaviors.
@@ -62,7 +62,7 @@
 #ifndef HEADER_GAME_AI_HEADACTIVITIES_HPP
 #define HEADER_GAME_AI_HEADACTIVITIES_HPP
 
-//#include "Lib\Std\Random.hpp"
+//#include "Lib/Std/Random.hpp"
 
 #include "Activity.hpp"
 #include "ActivityVocal.hpp"

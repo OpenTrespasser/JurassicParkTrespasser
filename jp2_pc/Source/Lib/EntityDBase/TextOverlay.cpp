@@ -41,7 +41,7 @@
  ***********************************************************************************************/
 
 #include "common.hpp"
-#include "Lib/W95\winInclude.hpp"
+#include "Lib/W95/WinInclude.hpp"
 #include "TextOverlay.hpp"
 #include "Lib/View/RasterVid.hpp"
 #include "Lib/W95/DDFont.hpp"
@@ -66,7 +66,7 @@ CTextOverlay::CTextOverlay
 	Assert(ptovTextSystem == NULL);
 	ptovTextSystem = this;
 
-	pfntOverlayFont = new CDDFont(24);
+	pfntOverlayFont = new CDDFont(CalculateFontSize());
 
 	SetInstanceName("TextOverlay");
 
@@ -360,17 +360,14 @@ void CTextOverlay::ResetScreen
 )
 //*************************************
 {
-	RemoveAll();
-
 	delete pfntOverlayFont;
+	pfntOverlayFont = new CDDFont(CalculateFontSize());
+}
 
-	uint32 u4_size = prasMainScreen->iWidth/20;
+int32 CTextOverlay::CalculateFontSize()
+{
+	if (!prasMainScreen || prasMainScreen->iWidth <= 0)
+		return 24;
 
-	if (u4_size>32)
-		u4_size = 32;
-
-	if (u4_size<12)
-		u4_size = 12;
-
-	pfntOverlayFont = new CDDFont(u4_size);
+	return std::clamp(prasMainScreen->iWidth / 20, 12, 32);
 }

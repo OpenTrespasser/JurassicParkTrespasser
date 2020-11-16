@@ -75,7 +75,7 @@
 #ifndef HEADER_TEST_AI_TESTBRAIN_HPP
 #define HEADER_TEST_AI_TESTBRAIN_HPP
 
-#include "Game\AI\Brain.hpp"
+#include "Game/AI/Brain.hpp"
 
 #include "TestAnimal.hpp"
 

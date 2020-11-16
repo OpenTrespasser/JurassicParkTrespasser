@@ -80,7 +80,7 @@
 
 #include "Lib/EntityDBase/Instance.hpp"
 #include "Lib/View/Colour.hpp"
-#include "Lib\Audio\SoundDefs.hpp"
+#include "Lib/Audio/SoundDefs.hpp"
 
 class CClut;
 

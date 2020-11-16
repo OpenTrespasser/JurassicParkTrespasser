@@ -31,14 +31,14 @@
  *
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "WaveletStaticData.hpp"
 
 #include "Lib/GeomDBase/WaveletQuadTree.hpp"
 #include "Lib/GeomDBase/WaveletQuadTreeQuery.hpp"
 #include "Lib/GeomDBase/TerrainTexture.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/Sys/FastHeap.hpp"
 

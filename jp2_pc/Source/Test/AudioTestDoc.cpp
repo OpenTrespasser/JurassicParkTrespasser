@@ -1,17 +1,17 @@
 // AudioTestDoc.cpp : implementation of the CAudioTestDoc class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "AudioTest.h"
 
 #include <assert.h>
 
 #include <yvals.h>
 
-#include "lib/audio/audio.hpp"
+#include "Lib/Audio/Audio.hpp"
 #include "Lib/Transform/Vector.hpp"
 #include "AudioTestDoc.h"
-#include "AttribDlg.h"
+#include "attribdlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

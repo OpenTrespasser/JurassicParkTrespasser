@@ -57,7 +57,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "Lib/View/Raster.hpp"
 #include "Lib/Renderer/Primitives/DrawTriangle.hpp"

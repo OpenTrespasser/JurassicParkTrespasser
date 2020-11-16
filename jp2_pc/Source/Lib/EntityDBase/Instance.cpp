@@ -32,9 +32,9 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Instance.hpp"
-#include "Gameloop.hpp"
+#include "GameLoop.hpp"
 
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 #include "Lib/Loader/DataDaemon.hpp"
@@ -70,7 +70,7 @@
 #include "Game/DesignDaemon/HitSpang.hpp"
 #include "Game/DesignDaemon/Socket.hpp"
 
-#include "Lib\Std\Hash.hpp"
+#include "Lib/Std/Hash.hpp"
 
 #include "Lib/Sys/Profile.hpp"
 

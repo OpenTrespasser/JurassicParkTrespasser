@@ -26,7 +26,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "QTerrain.hpp"
 
 #include "Lib/Math/FloatDef.hpp"

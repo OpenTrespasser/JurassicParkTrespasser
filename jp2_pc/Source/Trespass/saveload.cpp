@@ -25,9 +25,9 @@
 #include "main.h"
 #include "uiwnd.h"
 #include "uidlgs.h"
-#include "cdib.h"
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
+#include "Cdib.h"
+#include "../Lib/Sys/reg.h"
+#include "../Lib/Sys/RegInit.hpp"
 
 
 extern HINSTANCE    g_hInst;

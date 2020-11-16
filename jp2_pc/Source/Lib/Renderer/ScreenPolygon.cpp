@@ -38,7 +38,7 @@
 //
 #include <algorithm>
 #include <vector>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "ScreenRender.hpp"
 #include "DepthSortTools.hpp"
@@ -46,8 +46,8 @@
 #include "Line.hpp"
 
 #if bOUTPUT_POLYINTERSECT || bOUTPUT_POLYLIST
-	#include "Lib/Sys/TextOut.hpp"
-	CConsoleBuffer conPolys(120, 80);
+	#include "Lib/Sys/Textout.hpp"
+CConsoleBuffer conPolys(120, 80);
 #endif
 
 

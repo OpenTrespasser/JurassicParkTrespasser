@@ -21,8 +21,8 @@
 #include <ShlObj.h>
 #include "resource.h"
 #include "main.h"
-#include "..\Lib\Sys\reg.h"
-#include "..\lib\sys\reginit.hpp"
+#include "../Lib/Sys/reg.h"
+#include "../Lib/Sys/RegInit.hpp"
 #include "Lib/Sys/Permissions.hpp"
 #include "Lib/Sys/FileEx.hpp"
 #include "supportfn.hpp"
@@ -30,7 +30,7 @@
 #include "tpassglobals.h"
 #include "gblinc/buildver.hpp"
 #include "Lib/W95/Direct3DCards.hpp"
-#include "Version.hpp"
+#include "version.hpp"
 #include <filesystem>
 
 #if TARGET_PROCESSOR == PROCESSOR_PENTIUM

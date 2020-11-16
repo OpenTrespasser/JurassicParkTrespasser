@@ -78,9 +78,9 @@
 
 #include <string>
 #include <map>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Hash.hpp"
-#include "crc.hpp"
+#include "CRC.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 
 

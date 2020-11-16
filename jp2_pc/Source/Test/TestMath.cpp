@@ -51,10 +51,10 @@
 
 #include <float.h>
 #include <math.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Std/Random.hpp"
 #include "Lib/Math/FastSqrt.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 #include "Lib/Sys/ConIO.hpp"
 #include "Lib/Loader/Loader.hpp"
 #include "Shell/AppShell.hpp"

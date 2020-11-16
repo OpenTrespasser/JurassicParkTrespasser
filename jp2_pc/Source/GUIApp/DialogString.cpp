@@ -22,7 +22,7 @@
 //
 // Includes.
 //
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "DialogString.hpp"
 
 

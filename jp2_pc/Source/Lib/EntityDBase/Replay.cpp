@@ -73,18 +73,18 @@
 
 #include "Lib/W95/WinInclude.hpp"
 
-#include <String.h>
-#include "GblInc/Common.hpp"
+#include <string.h>
+#include "gblinc/common.hpp"
 #include "Replay.hpp"
 
 #include "Lib/EntityDBase/Message.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgControl.hpp"
 
-#include "lib/control/Control.hpp"
+#include "Lib/Control/Control.hpp"
 
 // so we can send menu messages to the GUIApp....
-#include "GUIApp\resource.h"
+#include "GUIApp/resource.h"
 
 //**********************************************************************************************
 //

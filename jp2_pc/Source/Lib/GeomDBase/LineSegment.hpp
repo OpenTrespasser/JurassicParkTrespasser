@@ -47,7 +47,7 @@
 #ifndef HEADER_LIB_GEOMDBASE_LINESEGMENT_HPP
 #define HEADER_LIB_GEOMDBASE_LINESEGMENT_HPP
 
-#include "Lib\Std\stdlibex.hpp"
+#include "Lib/Std/StdLibEx.hpp"
 
 //**********************************************************************************************
 //

@@ -89,7 +89,7 @@
 
 #include "Lib/W95/WinInclude.hpp"
 #include "Config.hpp"
-#include "Common.hpp"
+#include "common.hpp"
 #include "DrawTriangle.hpp"
 #include "DrawSubTriangle.hpp"
 

@@ -27,7 +27,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletDataFormat.hpp"
 
 #include "Lib/GeomDBase/WaveletQuadTreeTForm.hpp"

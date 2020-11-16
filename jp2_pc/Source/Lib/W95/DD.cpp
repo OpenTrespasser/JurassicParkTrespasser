@@ -35,9 +35,9 @@
  *
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
-#include "Dd.hpp"
+#include "DD.hpp"
 #include "Lib/Sys/RegInit.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/Sys/DebugConsole.hpp"

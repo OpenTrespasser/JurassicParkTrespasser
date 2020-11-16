@@ -26,12 +26,12 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "WaveletQuadTreeQuery.hpp"
 
 #include "Lib/GeomDBase/WaveletStaticData.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
-#include "Lib/Sys/TextOut.hpp"
+#include "Lib/Sys/Textout.hpp"
 
 #include "Lib/Physics/PhysicsStats.hpp"
 

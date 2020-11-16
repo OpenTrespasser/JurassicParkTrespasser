@@ -58,15 +58,15 @@
 #include <io.h>
 #include <string.h>
 #ifndef __MWERKS__
- #include <sys\types.h>
- #include <sys\stat.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
 #endif
 #include "Lib/W95/WinInclude.hpp"
 
 #ifdef USE_MAX_TYPES
 #include "StandardTypes.hpp"
 #else
-#include "Common.hpp"
+#include "common.hpp"
 #endif
 
 #include "Lib/Sys/SysLog.hpp"

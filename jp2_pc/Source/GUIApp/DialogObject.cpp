@@ -119,7 +119,7 @@
 #include "GUIPipeLine.hpp"
 #include "LightProperties.hpp"
 #include "GUITools.hpp"
-#include "guiapp.h"
+#include "GUIApp.h"
 
 #include "Lib/EntityDBase/Instance.hpp"
 #include "Lib/EntityDBase/Animate.hpp"

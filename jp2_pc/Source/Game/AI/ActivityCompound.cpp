@@ -58,7 +58,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 #include "ActivityCompound.hpp"
 #include "AIMain.hpp"

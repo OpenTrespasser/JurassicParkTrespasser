@@ -75,7 +75,7 @@
 
 // Project includes.
 #include "resource.h"
-#include "Common.hpp"
+#include "common.hpp"
 
 //**********************************************************************************************
 
@@ -85,7 +85,7 @@
 #include "GUIAppDlg.h"
 #include "DialogVM.hpp"
 #include "Lib/Sys/VirtualMem.hpp"
-#include "Lib/sys/fileEx.hpp"
+#include "Lib/Sys/FileEx.hpp"
 #include "Lib/Loader/TextureManager.hpp"
 #include "Lib/Loader/ImageLoader.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"

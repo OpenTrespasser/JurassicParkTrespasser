@@ -55,10 +55,10 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 
 // Uses the Windows GetCurrentTime() function.
-#include <Lib\W95\WinInclude.hpp>
+#include <Lib/W95/WinInclude.hpp>
 #include "Profile.hpp"
 
 #include "Lib/Sys/Textout.hpp"

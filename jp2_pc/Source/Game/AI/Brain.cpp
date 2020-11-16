@@ -187,7 +187,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Brain.hpp"
 #include "Lib/GeomDBase/PartitionPriv.hpp"
 
@@ -216,7 +216,7 @@
 
 //#include "Test/AI/TestAnimal.hpp"
 
-#include "Game\AI\MoveActivities.hpp"
+#include "Game/AI/MoveActivities.hpp"
 #include "Game/AI/ActivityAttack.hpp"
 #include "Game/AI/ActivityVocal.hpp"
 #include "Game/AI/TestActivities.hpp"
@@ -224,12 +224,12 @@
 #include "Game/AI/EmotionActivities.hpp"
 #include "Game/AI/AIInfo.hpp"
 
-#include "Lib\EntityDBase\Animal.hpp"
+#include "Lib/EntityDBase/Animal.hpp"
 
 #include "Lib/Sys/ConIO.hpp"
 #include "Lib/Std/Hash.hpp"
 
-#include "Lib/GROFF\VtParse.hpp"
+#include "Lib/Groff/VTParse.hpp"
 #include "Lib/Loader/SaveFile.hpp"
 
 #include "Game/DesignDaemon/Player.hpp"

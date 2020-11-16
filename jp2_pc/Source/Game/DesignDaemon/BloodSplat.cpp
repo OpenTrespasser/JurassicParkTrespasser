@@ -26,7 +26,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "BloodSplat.hpp"
 
 #include "Game/DesignDaemon/Player.hpp"

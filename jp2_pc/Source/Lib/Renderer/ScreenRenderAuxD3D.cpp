@@ -185,7 +185,7 @@
 // Includes.
 //
 #include <algorithm>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/View/RasterD3D.hpp"
@@ -198,7 +198,7 @@
 #include "Lib/Renderer/Sky.hpp"
 #include "Lib/View/AGPTextureMemManager.hpp"
 #include "Lib/View/RasterConvertD3D.hpp"
-#include "Lib\Std\LocalArray.hpp"
+#include "Lib/Std/LocalArray.hpp"
 #include "ScreenRenderAuxD3DBatch.hpp"
 #include "ScreenRenderAuxD3DUtilities.hpp"
 #include "Lib/Sys/W95/Render.hpp"

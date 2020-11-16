@@ -53,11 +53,11 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "UIModes.hpp"
 
 #include "Lib/W95/WinInclude.hpp"
-#include "Shell\WinShell.hpp"
+#include "Shell/winshell.hpp"
 
 #include "airesource.h"
 

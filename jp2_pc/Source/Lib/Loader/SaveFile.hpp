@@ -80,7 +80,7 @@
 //
 
 #include "SaveBuffer.hpp"
-#include "Lib/GROFF/FileIO.hpp"
+#include "Lib/Groff/FileIO.hpp"
 #include "Lib/Sys/Timer.hpp"
 #include <set>
 

@@ -164,7 +164,7 @@
  **********************************************************************************************/
 
 //#include "stdafx.h"
-#include "Common.hpp"
+#include "common.hpp"
 #include "PreDefinedShapes.hpp"
 
 

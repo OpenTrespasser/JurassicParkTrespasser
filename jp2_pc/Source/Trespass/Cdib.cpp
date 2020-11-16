@@ -23,7 +23,7 @@
 #include "precomp.h"
 #pragma hdrstop
 
-#include "cdib.h"
+#include "Cdib.h"
 
 
 #define BFT_BITMAP 0x4d42

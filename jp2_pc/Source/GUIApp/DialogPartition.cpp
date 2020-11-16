@@ -44,8 +44,8 @@
  * 
  *********************************************************************************************/
 
-#include "stdafx.h"
-#include "guiapp.h"
+#include "StdAfx.h"
+#include "GUIApp.h"
 #include "DialogPartition.hpp"
 #include "Lib/EntityDBase/Instance.hpp"
 #include "Lib/EntityDBase/WorldDBase.hpp"

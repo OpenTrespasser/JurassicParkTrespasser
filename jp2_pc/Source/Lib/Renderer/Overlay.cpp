@@ -28,7 +28,7 @@
 #include <map>
 #include <math.h>
 #include <memory.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Overlay.hpp"
 
 #include "Lib/W95/Direct3D.hpp"

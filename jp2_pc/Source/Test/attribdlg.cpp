@@ -1,9 +1,9 @@
 // AttribDlg.cpp : implementation file
 //
 
-#include "stdafx.h"
-#include "audiotest.h"
-#include "AttribDlg.h"
+#include "StdAfx.h"
+#include "AudioTest.h"
+#include "attribdlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

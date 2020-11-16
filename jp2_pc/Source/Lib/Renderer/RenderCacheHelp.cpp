@@ -100,7 +100,7 @@
 // Includes.
 //
 #include <math.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "RenderCacheHelp.hpp"
 
 #include "RenderCachePriv.hpp"

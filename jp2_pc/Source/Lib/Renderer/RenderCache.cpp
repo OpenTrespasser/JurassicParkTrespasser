@@ -128,7 +128,7 @@
 //
 #include <math.h>
 #include <Lib/W95/WinInclude.hpp>
-#include "Common.hpp"
+#include "common.hpp"
 #include "RenderCache.hpp"
 
 #include "RenderCachePriv.hpp"
@@ -139,7 +139,7 @@
 #include "Lib/Math/FloatDef.hpp"
 #include "Lib/Transform/VectorRange.hpp"
 #include "RenderCacheHelp.hpp"
-#include "Pipeline.hpp"
+#include "PipeLine.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/EntityDBase/Query/QRenderer.hpp"
 #include "Lib/GeomDBase/Partition.hpp"

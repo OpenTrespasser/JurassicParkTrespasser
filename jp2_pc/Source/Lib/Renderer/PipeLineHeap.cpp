@@ -51,7 +51,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "PipeLineHeap.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 

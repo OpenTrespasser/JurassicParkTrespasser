@@ -24,7 +24,7 @@
 #define HEADER_GUIAPP_DIALOGTEXPACK_HPP
 
 #include "GDIBitmap.hpp"
-#include "Lib\Loader\TexturePackSurface.hpp"
+#include "Lib/Loader/TexturePackSurface.hpp"
 
 //
 // Class definitions.

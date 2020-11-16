@@ -60,13 +60,13 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "InfoPlayer.hpp"
 
 #include "VerBones.hpp"
 #include "PhysicsHelp.hpp"
 #include "PhysicsSystem.hpp"
-#include "Pelvis.h"
+#include "pelvis.h"
 
 #include "Lib/GeomDBase/Shape.hpp"
 #include "Game/DesignDaemon/Player.hpp"

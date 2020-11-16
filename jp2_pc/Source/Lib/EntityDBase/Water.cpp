@@ -78,7 +78,7 @@
  **********************************************************************************************/
 
 #include <list>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/Direct3D.hpp"
 #include "Lib/View/RasterD3D.hpp"
 #include "Water.hpp"
@@ -91,7 +91,7 @@
 #endif
 
 #include "Lib/GeomDBase/Mesh.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/Physics/Waves.hpp"
 #include "Lib/Groff/VTParse.hpp"
 #include "Lib/EntityDBase/MessageTypes/MsgStep.hpp"

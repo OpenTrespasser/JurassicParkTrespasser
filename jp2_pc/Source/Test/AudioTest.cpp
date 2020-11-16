@@ -1,14 +1,14 @@
 // AudioTest.cpp : Defines the class behaviors for the application.
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "AudioTest.h"
 
 #include <assert.h>
 
 #include <yvals.h>
 
-#include "lib/audio/audio.hpp"
+#include "Lib/Audio/Audio.hpp"
 
 #include "MainFrm.h"
 #include "AudioTestDoc.h"

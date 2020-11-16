@@ -93,12 +93,12 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Palette.hpp"
 
-#include "PalLookup.hpp"
-#include <Lib\W95\WinInclude.hpp>
-#include <Stdio.h>
+#include "pallookup.hpp"
+#include <Lib/W95/WinInclude.hpp>
+#include <stdio.h>
 
 
 //*********************************************************************************************

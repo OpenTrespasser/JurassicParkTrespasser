@@ -47,7 +47,7 @@
 //
 // Includes.
 //
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/W95/WinInclude.hpp"
 
 //
@@ -55,7 +55,7 @@
 //
 #include "WinEvent.hpp"
 #include "AppShell.hpp"
-#include "WinShell.hpp"
+#include "winshell.hpp"
 
 //******************************************************************************************
 //

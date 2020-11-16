@@ -73,7 +73,7 @@
 // Includes.
 //
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "ColourBase.hpp"
 
 #include "Lib/Renderer/Primitives/FastBumpTable.hpp"

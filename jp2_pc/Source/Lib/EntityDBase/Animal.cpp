@@ -28,7 +28,7 @@
  * 
  *********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Animal.hpp"
 
 #include "Lib/EntityDBase/MessageLog.hpp"

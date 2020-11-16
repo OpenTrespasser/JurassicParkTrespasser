@@ -72,7 +72,7 @@
  * 
  **********************************************************************************************/
 
-#include "Common.hpp"
+#include "common.hpp"
 #include "Lib/Sys/Profile.hpp"
 #include "Lib/Renderer/GeomTypes.hpp"
 #include "Line2D.hpp"

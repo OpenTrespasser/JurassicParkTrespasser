@@ -70,7 +70,7 @@
  **********************************************************************************************/
 
 #include <memory.h>
-#include "Common.hpp"
+#include "common.hpp"
 #include "Direct3D.hpp"
 
 #include "Lib/View/Clut.hpp"
@@ -81,7 +81,7 @@
 #include "Lib/EntityDBase/Query/QTerrain.hpp"
 #include "Lib/Renderer/Sky.hpp"
 #include "Lib/EntityDBase/Water.hpp"
-#include "Lib/Renderer/Pipeline.hpp"
+#include "Lib/Renderer/PipeLine.hpp"
 #include "Lib/Sys/W95/Render.hpp"
 #include "Lib/Renderer/RenderCache.hpp"
 #include "Lib/Std/MemLimits.hpp"
@@ -90,7 +90,7 @@
 #include "Lib/View/AGPTextureMemManager.hpp"
 #include "Lib/View/RasterPool.hpp"
 #include "Lib/Renderer/ScreenRenderAuxD3D.hpp"
-#include "Lib/Sys/Reg.h"
+#include "Lib/Sys/reg.h"
 #include "Lib/View/Direct3DRenderState.hpp"
 #include "Lib/W95/Direct3DQuery.hpp"
 #include "Lib/Sys/Profile.hpp"

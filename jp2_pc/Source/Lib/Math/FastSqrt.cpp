@@ -41,7 +41,7 @@
 
 #include <math.h>
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "Lib/Sys/DebugConsole.hpp"
 #include "Lib/Sys/Profile.hpp"
 

@@ -25,7 +25,7 @@
  * 
  **********************************************************************************************/
 
-#include "GblInc/Common.hpp"
+#include "gblinc/common.hpp"
 #include "QSubsystem.hpp"
 #include "Lib/EntityDBase/Subsystem.hpp"
 #include "Lib/EntityDBase/WorldPriv.hpp"
