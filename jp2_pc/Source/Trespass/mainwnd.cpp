@@ -174,6 +174,8 @@ void CMainWnd::OnKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags)
 
     if (vk == VK_SNAPSHOT)
     {
+        //Repaint in case we have a cleared framebuffer right now
+        this->OnPaint(hwnd);
         ScreenCapture();
         return;
     }
