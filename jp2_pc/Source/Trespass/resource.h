@@ -44,6 +44,7 @@
 #define IDS_ERR_PDETECT_FAILED          40
 #define IDS_ERR_NO_ACCELERATORS         41
 #define IDS_ERR_DISPLAY_README          42
+#define IDS_ERR_INVALID_DISPLAY_CONFIGURATION 43
 #define IDI_APP                         101
 #define IDTIMER_MAINRANDOM              101
 #define IDB_DEF_PAL                     102
