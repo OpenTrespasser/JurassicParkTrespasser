@@ -1147,7 +1147,7 @@ void ScreenCapture()
 
 	// Save out a blank bitmap if a real one cannot be found.
 
-    pSurface = prasMainScreen->GetPrimarySurface();
+    pSurface = prasMainScreen->GetRenderTargetSurface();
     hr = pSurface->GetDC(&hdcSrc);
 
 	SetStretchBltMode(hdcDst, COLORONCOLOR);
