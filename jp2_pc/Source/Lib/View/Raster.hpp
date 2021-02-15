@@ -1197,7 +1197,7 @@ public:
 	(
 		rptr<CRasterMem>	pras_ref,
 		bool				b_transparent = false
-	);
+	) override;
 
 	//******************************************************************************************
 	void DeleteRasterMemory
