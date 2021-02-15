@@ -97,7 +97,7 @@ private:
 	//
 
 	//******************************************************************************************
-	virtual void BeginFrame()
+	virtual void BeginFrame() override
 	{
 		Assert(prasScreen);
 
@@ -112,13 +112,13 @@ private:
 	}
 
 	//******************************************************************************************
-	virtual void EndFrame()
+	virtual void EndFrame() override
 	{
 		prasScreen->Unlock();
 	}
 
 	//******************************************************************************************
-	virtual void DrawPolygons(CPArray<CRenderPolygon*> paprpoly)
+	virtual void DrawPolygons(CPArray<CRenderPolygon*> paprpoly) override
 	{
 		//CZBufferShadow::SetConversion(fSHADOW_Z_MULTIPLIER, 0);
 
