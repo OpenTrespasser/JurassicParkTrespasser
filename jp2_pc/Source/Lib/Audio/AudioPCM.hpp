@@ -90,7 +90,7 @@ protected:
 	//
 	// Output Mono 8 Bit data, the u4_byte count will be a multiple of 1
 	//
-	virtual uint32 u4DecompressMono8bit(uint8* pu1_dst, uint32 u4_byte_count)
+	virtual uint32 u4DecompressMono8bit(uint8* pu1_dst, uint32 u4_byte_count) override
 	{
 		uint32	u4_bytes;
 
@@ -109,7 +109,7 @@ protected:
 	// Output Mono 16 Bit data, the u4_byte count will be a multiple of 2
 	// Returns the number of bytes put into the output buffer
 	//
-	virtual uint32 u4DecompressMono16bit(uint8* pu1_dst, uint32 u4_byte_count)
+	virtual uint32 u4DecompressMono16bit(uint8* pu1_dst, uint32 u4_byte_count) override
 	{
 		uint32	u4_bytes;
 
@@ -128,7 +128,7 @@ protected:
 	// Output Stereo 8 Bit data, the u4_byte count will be a multiple of 2
 	// Returns the number of bytes put into the output buffer
 	//
-	virtual uint32 u4DecompressStereo8bit(uint8* pu1_dst, uint32 u4_byte_count)
+	virtual uint32 u4DecompressStereo8bit(uint8* pu1_dst, uint32 u4_byte_count) override
 	{
 		uint32	u4_bytes;
 
@@ -147,7 +147,7 @@ protected:
 	// Output Stereo 16 Bit data, the u4_byte count will be a multiple of 4
 	// Returns the number of bytes put into the output buffer
 	//
-	virtual uint32 u4DecompressStereo16bit(uint8* pu1_dst, uint32 u4_byte_count)
+	virtual uint32 u4DecompressStereo16bit(uint8* pu1_dst, uint32 u4_byte_count) override
 	{
 		uint32	u4_bytes;
 
@@ -166,7 +166,7 @@ protected:
 	// Set the base address and size of the current block that is avaliable for decompressing
 	// Returns the number of bytes put into the output buffer
 	//
-	virtual void SetSampleSource(uint8* pu1_src, uint32 u4_src_len)
+	virtual void SetSampleSource(uint8* pu1_src, uint32 u4_src_len) override
 	{
 		pu1SourceData		= pu1_src;
 		u4SourceDataSize	= u4_src_len;
@@ -175,7 +175,7 @@ protected:
 	//******************************************************************************************
 	// get the number of bytes remaining in the current block, or 0 if none.
 	//
-	virtual uint32 u4GetRemainingData()
+	virtual uint32 u4GetRemainingData() override
 	{
 		return u4SourceDataSize;
 	}
