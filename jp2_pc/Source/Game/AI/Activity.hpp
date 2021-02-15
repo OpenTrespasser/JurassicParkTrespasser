@@ -1045,13 +1045,13 @@ public:
 	(
 		const CFeeling&	feel,		// The feeling used to evaluate the action.
 		CInfluence*		pinf		// The direct object of the action.
-	);
+	) override;
 	//
 	//******************************
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
