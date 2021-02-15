@@ -21,7 +21,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDialogName)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -32,7 +32,7 @@ protected:
 	// Generated message map functions
 	//{{AFX_MSG(CDialogName)
 	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
-	virtual void OnOK();
+	virtual void OnOK() override;
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
