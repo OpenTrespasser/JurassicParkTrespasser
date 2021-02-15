@@ -312,22 +312,22 @@ public:
 	// Overrides.
 	//
 
-	virtual void Lock();
+	virtual void Lock() override;
 
 	//******************************************************************************************
-	virtual bool bIsLocked()
+	virtual bool bIsLocked() override
 	{
 		return bLocked;
 	}
 
-	virtual void Unlock();
+	virtual void Unlock() override;
 
-	void AttachPalette(CPal* ppal, CPixelFormat* ppxf = 0);
+	void AttachPalette(CPal* ppal, CPixelFormat* ppxf = 0) override;
 
-	void Clear(TPixel pix);
+	void Clear(TPixel pix) override;
 
 	void Blit(int i_dx, int i_dy, CRaster& ras_src, SRect* prect_src = 0,			
-		bool b_clip = true, bool b_colour_key = 0, TPixel pix_colour_key = 0);
+		bool b_clip = true, bool b_colour_key = 0, TPixel pix_colour_key = 0) override;
 
 	//******************************************************************************************
 	//
@@ -506,11 +506,11 @@ public:
 
 	~CRasterWin();
 
-	bool bRestore(int i_dderr);
+	bool bRestore(int i_dderr) override;
 
 	bool bRestoreLostSurfaces();
 
-	void AttachPalette(CPal* ppal, CPixelFormat* ppxf = 0);
+	void AttachPalette(CPal* ppal, CPixelFormat* ppxf = 0) override;
 
 	//******************************************************************************************
 	//
@@ -639,7 +639,7 @@ public:
 	//**********************************
 	
 	//******************************************************************************************
-	virtual void Lock();
+	virtual void Lock() override;
 	
 	//******************************************************************************************
 	//
