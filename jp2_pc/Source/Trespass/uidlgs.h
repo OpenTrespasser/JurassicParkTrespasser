@@ -33,12 +33,12 @@ public:
     CUIDlg(CUIManager * puimgr);
     virtual ~CUIDlg();
 
-    virtual void InnerLoopCall() 
+    virtual void InnerLoopCall() override
     { 
         CUIWnd::InnerLoopCall();
     }
 
-    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
+    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags) override
     {
         if (!fDown && vk == VK_ESCAPE)
         {
@@ -50,10 +50,10 @@ public:
         }
     }
 
-    BOOL UIButtonAudioCmd(CUIButton * pbutton, BUTTONCMD bc);
+    BOOL UIButtonAudioCmd(CUIButton * pbutton, BUTTONCMD bc) override;
 
-    BOOL OnCreate();
-    void OnDestroy();
+    BOOL OnCreate() override;
+    void OnDestroy() override;
 
     virtual BOOL AllowEscape() { return m_bKeyStyle & KEYSTYLE_ESCAPE; }
     virtual BOOL AllowEnter() { return m_bKeyStyle & KEYSTYLE_ENTER; }
@@ -69,13 +69,13 @@ public:
     CMainScreenWnd(CUIManager * puimgr);
     virtual ~CMainScreenWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
-    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
-    void OnTimer(UINT uiID);
+    void GetWndFile(LPSTR psz, int ic) override;
+    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags) override;
+    void OnTimer(UINT uiID) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 
 private:
     UINT                m_uiInitial;
@@ -96,10 +96,10 @@ public:
     void DestroyUIWnd();
     void InnerWindowLoop(bool bPaint);
 
-    BOOL OnCreate();
-    void OnTimer(UINT uiID);
+    BOOL OnCreate() override;
+    void OnTimer(UINT uiID) override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
     DWORD   HandleNotify(DWORD dwParam1, DWORD dwParam2, DWORD dwParam3);
 
@@ -130,13 +130,13 @@ public:
     CDirectLoadWnd(CUIManager * puimgr);
     virtual ~CDirectLoadWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
-    void UIListboxClick(CUICtrl * pctrl, int iIndex);
-    void UIListboxDblClk(CUICtrl * pctrl, int iIndex);
+    void UIButtonUp(CUIButton * pbutton) override;
+    void UIListboxClick(CUICtrl * pctrl, int iIndex) override;
+    void UIListboxDblClk(CUICtrl * pctrl, int iIndex) override;
 };
 
 
@@ -146,11 +146,11 @@ public:
     CNewGameWnd(CUIManager * puimgr);
     virtual ~CNewGameWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 };
 
 
@@ -160,18 +160,18 @@ public:
     CGameWnd(CUIManager * puimgr);
     virtual ~CGameWnd();
 
-    BOOL OnCreate();
-    void OnDestroy();
+    BOOL OnCreate() override;
+    void OnDestroy() override;
 
-    void GetWndFile(LPSTR psz, int ic);
-    void OnKey(UINT vk, BOOL fDown, int cRepet, UINT flags);
-    void OnChar(TCHAR ch, int cRepeat);
-    BOOL OnEraseBkgnd(HWND hwnd, HDC hdc);
-    void DrawWndInfo(CRaster * pRaster, RECT * prc);
-    void ResizeScreen(int iWidth, int iHeight);
-    void InnerLoopCall();
+    void GetWndFile(LPSTR psz, int ic) override;
+    void OnKey(UINT vk, BOOL fDown, int cRepet, UINT flags) override;
+    void OnChar(TCHAR ch, int cRepeat) override;
+    BOOL OnEraseBkgnd(HWND hwnd, HDC hdc) override;
+    void DrawWndInfo(CRaster * pRaster, RECT * prc) override;
+    void ResizeScreen(int iWidth, int iHeight) override;
+    void InnerLoopCall() override;
 
-    void UIEditboxKey(CUICtrl * pctrl, UINT vk, int cRepeat, UINT flags);
+    void UIEditboxKey(CUICtrl * pctrl, UINT vk, int cRepeat, UINT flags) override;
 
     void SetupGameStoppage();
     void ClearGameStoppage(BOOL bStartSim);
@@ -189,11 +189,11 @@ public:
     CQuitWnd(CUIManager * puimgr);
     virtual ~CQuitWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 };
 
 class COptionsWnd : public CUIDlg
@@ -202,11 +202,11 @@ public:
     COptionsWnd(CUIManager * puimgr);
     virtual ~COptionsWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 };
 
 class CInGameOptionsWnd : public CUIDlg
@@ -215,11 +215,11 @@ public:
     CInGameOptionsWnd(CUIManager * puimgr);
     virtual ~CInGameOptionsWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 };
 
 
@@ -229,13 +229,13 @@ public:
     CAudioWnd(CUIManager * puimgr);
     virtual ~CAudioWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
-    void UISliderChange(CUISlider * pctrl, int iNewValue);
-    void UIHotspotClick(CUIHotspot * pctrl, BOOL bDown);
+    void UIButtonUp(CUIButton * pbutton) override;
+    void UISliderChange(CUISlider * pctrl, int iNewValue) override;
+    void UIHotspotClick(CUIHotspot * pctrl, BOOL bDown) override;
 
     void OnOk();
     void OnCancel();
@@ -267,13 +267,13 @@ public:
     CLoadGameWnd(CUIManager * puimgr);
     virtual ~CLoadGameWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
-    void UIListboxClick(CUICtrl * pctrl, int iIndex);
-    void UIListboxDblClk(CUICtrl * pctrl, int iIndex);
+    void UIButtonUp(CUIButton * pbutton) override;
+    void UIListboxClick(CUICtrl * pctrl, int iIndex) override;
+    void UIListboxDblClk(CUICtrl * pctrl, int iIndex) override;
 
     void UpdateButtons();
     void ActualLoad();
@@ -289,17 +289,17 @@ public:
     CSaveGameWnd(CUIManager * puimgr);
     virtual ~CSaveGameWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
-    void UIEditboxKey(CUICtrl * pctrl, UINT vk, int cRepeat, UINT flags);
-    void UIEditboxMaxText(CUICtrl * pctrl);
-    void UIListboxClick(CUICtrl * pctrl, int iIndex);
+    void UIButtonUp(CUIButton * pbutton) override;
+    void UIEditboxKey(CUICtrl * pctrl, UINT vk, int cRepeat, UINT flags) override;
+    void UIEditboxMaxText(CUICtrl * pctrl) override;
+    void UIListboxClick(CUICtrl * pctrl, int iIndex) override;
 
-    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
-    void OnChar(TCHAR ch, int cRepeat);
+    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags) override;
+    void OnChar(TCHAR ch, int cRepeat) override;
 
     void UpdateButtons(BOOL bIgnoreText = FALSE);
     void ActualSave();
@@ -316,11 +316,11 @@ public:
     CRenderWnd(CUIManager * puimgr);
     virtual ~CRenderWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 
     void OnOk();
     void Persist();
@@ -370,11 +370,11 @@ public:
     CHintWnd(CUIManager * puimgr);
     virtual ~CHintWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
+    void GetWndFile(LPSTR psz, int ic) override;
 
-    void UIButtonUp(CUIButton * pbutton);
+    void UIButtonUp(CUIButton * pbutton) override;
 };
 
 
@@ -389,8 +389,8 @@ public:
     CMsgDlg(CUIManager * puimgr);
     virtual ~CMsgDlg();
 
-    BOOL OnCreate();
-    void UIButtonUp(CUIButton * pbutton);
+    BOOL OnCreate() override;
+    void UIButtonUp(CUIButton * pbutton) override;
 
     virtual int JustStatement() { return -1;}
     virtual BOOL GetText(LPSTR pszText, int icLen) { return FALSE; }
@@ -406,12 +406,12 @@ public:
     CYesNo(CUIManager * puimgr) : CMsgDlg(puimgr) { m_bKeyStyle = KEYSTYLE_ESCAPE;}
     virtual ~CYesNo() {;}
 
-    void GetWndFile(LPSTR psz, int ic)
+    void GetWndFile(LPSTR psz, int ic) override
     {
         strcpy(psz, "yesno.ddf");
     }
 
-    virtual BOOL GetText(LPSTR pszText, int icLen) 
+    virtual BOOL GetText(LPSTR pszText, int icLen) override
     { 
         return FALSE; 
     }
@@ -426,7 +426,7 @@ public:
         m_iMsgId = iMsgId;
     }
     
-    int JustStatement() { return m_iMsgId;}
+    int JustStatement() override { return m_iMsgId;}
 
 private:
     int     m_iMsgId;
@@ -441,7 +441,7 @@ public:
         m_pszMsg = pszMsg;
     }
 
-    virtual BOOL GetText(LPSTR pszText, int icLen)
+    virtual BOOL GetText(LPSTR pszText, int icLen) override
     {
         if (!m_pszMsg || (int)strlen(m_pszMsg) + 1 > icLen)
         {
@@ -464,12 +464,12 @@ public:
     COKDlg(CUIManager * puimgr) : CMsgDlg(puimgr) { m_bKeyStyle = KEYSTYLE_ESCAPE;}
     virtual ~COKDlg() {;}
 
-    void GetWndFile(LPSTR psz, int ic)
+    void GetWndFile(LPSTR psz, int ic) override
     {
         strcpy(psz, "okdlg.ddf");
     }
 
-    virtual BOOL GetText(LPSTR pszText, int icLen) { return FALSE; }
+    virtual BOOL GetText(LPSTR pszText, int icLen) override { return FALSE; }
 };
 
 
@@ -482,7 +482,7 @@ public:
         m_pszMsg = pszMsg;
     }
 
-    virtual BOOL GetText(LPSTR pszText, int icLen)
+    virtual BOOL GetText(LPSTR pszText, int icLen) override
     {
         if (!m_pszMsg || (int)strlen(m_pszMsg) + 1 > icLen)
         {
@@ -508,7 +508,7 @@ public:
         m_iMsgId = iMsgId;
     }
     
-    int JustStatement() { return m_iMsgId;}
+    int JustStatement() override { return m_iMsgId;}
 
 private:
     int     m_iMsgId;
