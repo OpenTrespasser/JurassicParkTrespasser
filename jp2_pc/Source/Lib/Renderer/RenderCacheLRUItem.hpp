@@ -71,7 +71,7 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void Delete()
+	virtual void Delete() override
 	{
 		if (rcsRenderCacheSettings.bFreezeCaches)
 			return;
