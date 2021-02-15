@@ -184,7 +184,7 @@ public:
 	//
 	int ExtCount
 	(
-	)
+	) override
 	{
 		// Currently there is only one format supported.
 		return 1;
@@ -197,7 +197,7 @@ public:
 	const TCHAR* Ext
 	(
 		int n
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -205,14 +205,14 @@ public:
 	//
 	const TCHAR* LongDesc
 	(
-	);
+	) override;
 
 	//******************************************************************************************
 	// Short ASCII file export description.
 	//
 	const TCHAR* ShortDesc
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -220,7 +220,7 @@ public:
 	//
 	const TCHAR* AuthorName
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -228,7 +228,7 @@ public:
 	//
 	const TCHAR* CopyrightMessage
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -236,7 +236,7 @@ public:
 	//
 	const TCHAR* OtherMessage1
 	(
-	)
+	) override
 	{ 
 		return _T(""); 
 	}
@@ -247,7 +247,7 @@ public:
 	//
 	const TCHAR* OtherMessage2
 	(
-	)
+	) override
 	{ 
 		return _T(""); 
 	}
@@ -258,7 +258,7 @@ public:
 	//
 	unsigned int Version
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -267,7 +267,7 @@ public:
 	void ShowAbout
 	(
 		HWND hWnd
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -278,7 +278,7 @@ public:
 		const TCHAR*  tchr_export_name,		// File name and path to export to.
 		ExpInterface* pei_export_interface,	// Class for enumerating the nodes in the scene.
 		Interface*    pip_interface			// Interface pointer for calling MAX API's.
-	);
+	) override;
 };
 
 
@@ -301,7 +301,7 @@ public:
 	//
 	int IsPublic
 	(
-	)
+	) override
 	{ 
 		return true;
 	}
@@ -312,7 +312,7 @@ public:
 	void* Create
 	(
 		BOOL loading = false
-	)
+	) override
 	{ 
 		return new JP2Export;
 	}
@@ -322,7 +322,7 @@ public:
 	//
 	const TCHAR* ClassName
 	(
-	)
+	) override
 	{ 
 		return guiInterface.strGetString(IDS_JP2_CLASSNAME); 
 	}
@@ -332,7 +332,7 @@ public:
 	//
 	SClass_ID SuperClassID
 	(
-	)
+	) override
 	{ 
 		return SCENE_EXPORT_CLASS_ID; 
 	}
@@ -342,7 +342,7 @@ public:
 	//
 	Class_ID ClassID
 	(
-	)
+	) override
 	{ 
 		return Class_ID(0x297455F, 0x17C9693D); 
 	}
@@ -352,7 +352,7 @@ public:
 	//
 	const TCHAR* Category
 	(
-	)
+	) override
 	{ 
 		return guiInterface.strGetString(IDS_JP2_EXPORTER);  
 	}
@@ -468,7 +468,7 @@ public:
 	int callback
 	(
 		INode* pin_inode
-	);
+	) override;
 	
 
 	//*****************************************************************************************
