@@ -270,7 +270,7 @@ public:
 	//
 	virtual bool bCanHaveChildren
 	(
-	);
+	) override;
 	//
 	// Returns 'false.'
 	//
@@ -570,20 +570,20 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void Cast(CCamera** ppcam)
+	virtual void Cast(CCamera** ppcam) override
 	{
 		*ppcam = this;
 	}
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvBoundingVol() const
+	virtual const CBoundVol* pbvBoundingVol() const override
 	// Returns the bounding volume for the camera's partition.
 	{
 		return pbvVolume;
 	}
 
 	//*****************************************************************************************
-	virtual bool bIncludeInBuildPart() const
+	virtual bool bIncludeInBuildPart() const override
 	{
 		return false;
 	}
@@ -676,10 +676,10 @@ protected:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 private:
 
