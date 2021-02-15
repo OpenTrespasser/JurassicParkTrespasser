@@ -324,74 +324,74 @@
 
 		//******************************************************************************************
 		void TransformPoints(const CTransform3<>& tf3_shape_camera, const CCamera& cam,
-			CPArray<SClipPoint> paclpt_points, bool b_outcodes);
+			CPArray<SClipPoint> paclpt_points, bool b_outcodes) override;
 
-		void Reset_()
+		void Reset_() override
 		{
 			Reset();
 		}
 
-		bool bNext_()
+		bool bNext_() override
 		{
 			return bNext();
 		}
 
-		bool bBackface_(const CVector3<>& v3_cam)
+		bool bBackface_(const CVector3<>& v3_cam) override
 		{
 			return bBackface(v3_cam);
 		}
 
-		CPlane plPlane_()
+		CPlane plPlane_() override
 		{
 			return plPlane();
 		}
 
-		CVector3<> v3Point_()
+		CVector3<> v3Point_() override
 		{
 			return v3Point();
 		}
 
-		bool bCurved_()
+		bool bCurved_() override
 		{
 			return bCurved();
 		}
 
-		CMatrix3<> mx3ObjToTexture_()
+		CMatrix3<> mx3ObjToTexture_() override
 		{
 			return mx3ObjToTexture();
 		}
 
-		const CTexture* ptexTexture_()
+		const CTexture* ptexTexture_() override
 		{
 			return ptexTexture();
 		}
 
-		int iNumVertices_()
+		int iNumVertices_() override
 		{
 			return iNumVertices();
 		}
 
-		CVector3<> v3Point_(int i_poly_vertex)
+		CVector3<> v3Point_(int i_poly_vertex) override
 		{
 			return v3Point(i_poly_vertex);
 		}
 
-		CDir3<> d3Normal_(int i_poly_vertex)
+		CDir3<> d3Normal_(int i_poly_vertex) override
 		{
 			return d3Normal(i_poly_vertex);
 		}
 
-		CTexCoord tcTexCoord_(int i_poly_vertex)
+		CTexCoord tcTexCoord_(int i_poly_vertex) override
 		{
 			return tcTexCoord(i_poly_vertex);
 		}
 
-		int iShapeVertex_(int i_poly_vertex)
+		int iShapeVertex_(int i_poly_vertex) override
 		{
 			return iShapeVertex(i_poly_vertex);
 		}
 
-		int iShapePoint_(int i_poly_vertex)
+		int iShapePoint_(int i_poly_vertex) override
 		{
 			return iShapePoint(i_poly_vertex);
 		}
