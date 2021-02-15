@@ -839,7 +839,7 @@ public:
 	//
 	// Overrides.
 	//
-	virtual void Cast(rptr_const<CShape>* ppsh) const
+	virtual void Cast(rptr_const<CShape>* ppsh) const override
 	{
 		*ppsh = rptr_const_this(this);
 	}
