@@ -105,10 +105,10 @@ public:
 
     virtual BOOL AddToUICtrlSet(CUICtrl * pctrl);
     virtual CUICtrl * GetUICtrl(DWORD dwID);
-    virtual CUICtrl *   CaptureMouse(CUICtrl * pctrl);
-    virtual void        ReleaseMouse(CUICtrl * pctrl);
+    virtual CUICtrl *   CaptureMouse(CUICtrl * pctrl) override;
+    virtual void        ReleaseMouse(CUICtrl * pctrl) override;
     virtual void InvalidateRect(RECT * prc);
-    virtual void CtrlInvalidateRect(RECT * prc) { InvalidateRect(prc); }
+    virtual void CtrlInvalidateRect(RECT * prc) override { InvalidateRect(prc); }
     virtual void DoUIHandling();
 
     virtual void DrawWndInfo(LPBYTE pbDst,
