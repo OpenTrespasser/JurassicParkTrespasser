@@ -91,17 +91,17 @@ protected:
 	//
 	// Overides.
 	//
-	virtual void Queue() const;
+	virtual void Queue() const override;
 
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Trigger";
 	}
@@ -161,13 +161,13 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Move Trigger To";
 	}
@@ -286,13 +286,13 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Pick Up";
 	}
@@ -346,13 +346,13 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Use";
 	}
@@ -402,13 +402,13 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "I am dying!";
 	}
@@ -477,13 +477,13 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Damage";
 	}
