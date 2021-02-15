@@ -148,22 +148,22 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvGetBoundVol() const
+	virtual const CBoundVol* pbvGetBoundVol() const override
 	{
 		return &bvbBound;
 	}
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvGetCollideVol() const
+	virtual const CBoundVol* pbvGetCollideVol() const override
 	{
 		return &bvbCollide;
 	}
 
 	//*****************************************************************************************
-	virtual TReal fVolume(CInstance* pins) const;
+	virtual TReal fVolume(CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual TReal fMass(const CInstance* pins) const;
+	virtual TReal fMass(const CInstance* pins) const override;
 
 	//*****************************************************************************************
 	virtual void Activate
@@ -171,44 +171,44 @@ public:
 		CInstance *pins, 
 		bool b_just_update = false, 
 		const CPlacement3<>& p3_vel = p3VELOCITY_ZERO
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual void Deactivate(CInstance *pins) const;
+	virtual void Deactivate(CInstance *pins) const override;
 
 	//*****************************************************************************************
-	virtual bool bIsActive(const CInstance* pins) const;
+	virtual bool bIsActive(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual bool bIsMoving(const CInstance* pins) const;
+	virtual bool bIsMoving(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3GetVelocity(const CInstance* pins) const;
+	virtual CPlacement3<> p3GetVelocity(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual void UpdateWDBase(CInstance* pins, int i_index,	int	i_element) const;
+	virtual void UpdateWDBase(CInstance* pins, int i_index,	int	i_element) const override;
 
 	//**********************************************************************************************
 	virtual void RayIntersect(CInstance* pins, int i_subobj, CRayCast& rc,
-							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const;
+							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const override;
 
 	//*****************************************************************************************
-	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const;
+	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const override;
 
 	//*****************************************************************************************
-	virtual void ForceVelocity(CInstance* pins_target, const CVector3<>& v3_new_velocity) const;
+	virtual void ForceVelocity(CInstance* pins_target, const CVector3<>& v3_new_velocity) const override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3Base(CInstance* pins) const;
+	virtual CPlacement3<> p3Base(CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual CPresence3<> pr3Collide(CInstance* pins) const;
+	virtual CPresence3<> pr3Collide(CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual void HandleMessage(const CMessagePhysicsReq& msgpr, CInstance *pins) const;
+	virtual void HandleMessage(const CMessagePhysicsReq& msgpr, CInstance *pins) const override;
 
 	//*****************************************************************************************
-	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const;
+	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const override;
 
 	//**********************************************************************************************
 	virtual void SetupSuperBox
@@ -225,12 +225,12 @@ public:
 		int ai_sound[],						// Sounds.
 		float aaf_magnet_pos[][3],			// Magnet positions.
 		float af_breaking[]					// Magnet strengths.
-	) const;
+	) const override;
 	//**************************
 
 
-	virtual CPhysicsInfoCompound* pphicCast() { return this; }
-	virtual const CPhysicsInfoCompound* pphicCast() const { return this; }
+	virtual CPhysicsInfoCompound* pphicCast() override { return this; }
+	virtual const CPhysicsInfoCompound* pphicCast() const override { return this; }
 };
 
 #endif
