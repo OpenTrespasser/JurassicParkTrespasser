@@ -130,7 +130,7 @@ public:
 	}
 
 
-	virtual void Process(const CMessageStep& msgstep)
+	virtual void Process(const CMessageStep& msgstep) override
 	{
 		if (!v3RotateVelocity.bIsZero())
 			pr3Presence().r3Rot *= v3RotateVelocity;
