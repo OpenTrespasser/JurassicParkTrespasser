@@ -143,14 +143,14 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual float fGet() const
+	virtual float fGet() const override
 	{
 		Assert(pfVar);
 		return *pfVar;
 	}
 
 	//******************************************************************************************
-	virtual void Set(float f)
+	virtual void Set(float f) override
 	{
 		Assert(pfVar);
 		*pfVar = f;
@@ -175,14 +175,14 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual float fGet() const
+	virtual float fGet() const override
 	{
 		Assert(pfVar);
 		return pphibBox ? pphibBox->*pfVar : 0.0;
 	}
 
 	//******************************************************************************************
-	virtual void Set(float f)
+	virtual void Set(float f) override
 	{
 		Assert(pfVar);
 		if (pphibBox)
@@ -207,7 +207,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual float fGet() const
+	virtual float fGet() const override
 	{
 		// Return calculated value.
 		if (CItemFloatBox::pphibBox)
@@ -220,7 +220,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual void Set(float f)
+	virtual void Set(float f) override
 	{
 		if (CItemFloatBox::pphibBox)
 		{
