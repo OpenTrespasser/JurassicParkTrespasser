@@ -209,7 +209,7 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual CSet<ERenderFeature> seterfModify()
+	virtual CSet<ERenderFeature> seterfModify() override
 	{
 		static const CSet<ERenderFeature> seterf_modify = Set
 		     (erfLIGHT)
@@ -246,7 +246,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual CSet<ERenderFeature> seterfDefault()
+	virtual CSet<ERenderFeature> seterfDefault() override
 	{
 		static const CSet<ERenderFeature> seterf_default = Set
 		     (erfZ_BUFFER)
@@ -281,7 +281,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual void UpdateSettings()
+	virtual void UpdateSettings() override
 	{
 		CorrectRenderState(pSettings->seterfState);
 		Assert(prasScreen);
@@ -290,19 +290,19 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual bool bTargetHardware() const
+	virtual bool bTargetHardware() const override
 	{
 		return prasScreen == prasMainScreen.ptGet() && d3dDriver.bUseD3D();
 	}
 
 	//******************************************************************************************
-	virtual bool bTargetMainScreen() const
+	virtual bool bTargetMainScreen() const override
 	{
 		return prasScreen == prasMainScreen.ptGet();
 	}
 
 	//******************************************************************************************
-	virtual TPixel pixSetBackground(TPixel pix_background)
+	virtual TPixel pixSetBackground(TPixel pix_background) override
 	{
 		TPixel pix_old = pixBackground;
 		pixBackground  = pix_background;
@@ -310,7 +310,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual void SetHardwareOut(bool b_allow_hardware)
+	virtual void SetHardwareOut(bool b_allow_hardware) override
 	{
 		bHardwareOut = false;
 
@@ -331,7 +331,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual void BeginFrame()
+	virtual void BeginFrame() override
 	{
 		Assert(prasScreen);
 
@@ -350,7 +350,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual void ClearMemSurfaces()
+	virtual void ClearMemSurfaces() override
 	{
 		if (pSettings->bClearBackground)
 		{
@@ -380,7 +380,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual void EndFrame()
+	virtual void EndFrame() override
 	{
 		// Double the lines on the screen.
 		if (pSettings->bDoubleVertical)
@@ -394,7 +394,7 @@ public:
 	virtual void DrawPolygons
 	(
 		CPArray<CRenderPolygon*> paprpoly
-	)
+	) override
 	{
 		// Set even scanlines only flag.
 		bEvenScanlinesOnly = pSettings->bHalfScanlines;
@@ -516,14 +516,14 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual CScreenRender* psrCreateCompatible(rptr<CRaster> pras_screen)
+	virtual CScreenRender* psrCreateCompatible(rptr<CRaster> pras_screen) override
 	{
 		Assert(pras_screen->iPixelBits == prasScreen->iPixelBits);
 		return new CScreenRenderDWIT<TPIX>(pSettings, pras_screen);
 	}
 
 	//******************************************************************************************
-	virtual void DrawPolygon(CRenderPolygon& rp);
+	virtual void DrawPolygon(CRenderPolygon& rp) override;
 };
 
 
