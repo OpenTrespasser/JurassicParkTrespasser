@@ -59,7 +59,7 @@ public:
 	(
 		CScreenRender::SSettings* pscrenset,	// Settings.
 		rptr<CRaster> pras_screen				// Screen raster.
-	);
+	) override;
 };
 
 // Global instance of this render descriptor.
