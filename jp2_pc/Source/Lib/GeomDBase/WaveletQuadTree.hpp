@@ -866,12 +866,12 @@ namespace NMultiResolution
 			const CPArray<COcclude*>& papoc,			// Array of occluding objects.
 			ESideOf				      esf_view			// Shape's relation to the view volume
 														// (for trivial acceptance).
-		) const;
+		) const override;
 		//
 		// Defined in Pipeline.cpp.
 		//
 
-		virtual const CBoundVol& bvGet() const
+		virtual const CBoundVol& bvGet() const override
 		{
 			//
 			// The terrain basically encompasses the entire world, so just return infinity.
@@ -883,29 +883,29 @@ namespace NMultiResolution
 			return bvi;
 		}
 
-		virtual rptr<CRenderType> prdtCopy()
+		virtual rptr<CRenderType> prdtCopy() override
 		{
 			Assert(false);
 			return rptr0;
 		}
 
-		int iNumPolygons() const
+		int iNumPolygons() const override
 		{
 			// Return an upper bound on the triangle count.
 			return iNumPoints() * 2;
 		}
 
-		int iNumTriangles() const
+		int iNumTriangles() const override
 		{
 			return iNumPolygons();
 		}
 
-		int iNumPoints() const
+		int iNumPoints() const override
 		{
 			return CQuadVertexTIN::uMaxAlloc();
 		}
 
-		int iNumVertices() const
+		int iNumVertices() const override
 		{
 			// We do not share vertices, so there are 3 per polygon.
 			return iNumPolygons() * 3;
@@ -917,7 +917,7 @@ namespace NMultiResolution
 			return iNumPolygons() * 3;
 		}
 
-		virtual TReal rPolyPlaneThickness() const;
+		virtual TReal rPolyPlaneThickness() const override;
 
 
 		//******************************************************************************************
@@ -1014,7 +1014,7 @@ namespace NMultiResolution
 				const CCamera&			cam,
 				CPArray<SClipPoint>		paclpt_points,
 				bool					b_outcodes
-			);
+			) override;
 
 			//******************************************************************************************
 			bool bNext()
@@ -1115,22 +1115,22 @@ namespace NMultiResolution
 			// Virtual overrides.
 			//
 
-			void Reset_()
+			void Reset_() override
 			{
 				Reset();
 			}
 
-			bool bNext_()
+			bool bNext_() override
 			{
 				return bNext();
 			}
 
-			CPlane plPlane_()
+			CPlane plPlane_() override
 			{
 				return plPlane();
 			}
 
-			CVector3<> v3Point_()
+			CVector3<> v3Point_() override
 			{
 				return v3Point();
 			}
@@ -1140,54 +1140,54 @@ namespace NMultiResolution
 				return d3Normal();
 			}
 
-			bool bCurved_()
+			bool bCurved_() override
 			{
 				return bCurved();
 			}
 
-			CMatrix3<> mx3ObjToTexture_()
+			CMatrix3<> mx3ObjToTexture_() override
 			{
 				return mx3ObjToTexture();
 			}
 
-			const CTexture* ptexTexture_()
+			const CTexture* ptexTexture_() override
 			{
 				return ptexTexture();
 			}
 
-			int iNumVertices_()
+			int iNumVertices_() override
 			{
 				return iNumVertices();
 			}
 
-			CVector3<> v3Point_(int i_poly_vertex)
+			CVector3<> v3Point_(int i_poly_vertex) override
 			{
 				return v3Point(i_poly_vertex);
 			}
 
-			CDir3<> d3Normal_(int i_poly_vertex)
+			CDir3<> d3Normal_(int i_poly_vertex) override
 			{
 				return d3Normal(i_poly_vertex);
 			}
 
-			CTexCoord tcTexCoord_(int i_poly_vertex)
+			CTexCoord tcTexCoord_(int i_poly_vertex) override
 			{
 				return tcTexCoord(i_poly_vertex);
 			}
 
-			int iShapeVertex_(int i_poly_vertex)
+			int iShapeVertex_(int i_poly_vertex) override
 			{
 				return iShapeVertex(i_poly_vertex);
 			}
 
-			int iShapePoint_(int i_poly_vertex)
+			int iShapePoint_(int i_poly_vertex) override
 			{
 				return iShapePoint(i_poly_vertex);
 			}
 		};
 
 		//******************************************************************************************
-		CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const
+		CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const override
 		{
 			return new CPolyIterator(*this, pins, prenc);
 		}
