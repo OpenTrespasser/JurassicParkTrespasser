@@ -620,7 +620,7 @@ public:
 	void Process
 	(
 		const CMessageNewRaster& msgnewr
-	);
+	) override;
 	//
 	// Processes CMessageNewRaster messages.
 	//
@@ -738,12 +738,12 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CGUIAppDlg)
 	public:
-	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
-	virtual BOOL DestroyWindow();
+	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo) override;
+	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	virtual BOOL DestroyWindow() override;
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
-	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam);
+	virtual void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
+	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 	//}}AFX_VIRTUAL
 
 
@@ -816,10 +816,10 @@ protected:
 
 	// Overridden from CInstance...
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char* pcLoad(const char* pc_buffer);
+	virtual const char* pcLoad(const char* pc_buffer) override;
 
 
 
@@ -852,7 +852,7 @@ protected:
 public:
 
 	//{{AFX_MSG(CGUIAppDlg)
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog() override;
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
