@@ -107,22 +107,22 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Step";
 	}
 
-	virtual const char* strData() const;
+	virtual const char* strData() const override;
 
 	//******************************************************************************************
 	//
-	virtual void Send() const;
+	virtual void Send() const override;
 	//
 	// Send this message.
 	//
@@ -134,7 +134,7 @@ protected:
 
 	//******************************************************************************************
 	//
-	virtual void ExtractReplayData() const;
+	virtual void ExtractReplayData() const override;
 	//
 	// Extract replay data specific to this message
 	//
