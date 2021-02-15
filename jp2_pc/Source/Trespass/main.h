@@ -93,10 +93,10 @@ public:
     CConfigureWnd();
     virtual ~CConfigureWnd();
 
-    BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam);
-    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify);
-    void OnCancel();
-    void OnOK();
+    BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) override;
+    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) override;
+    void OnCancel() override;
+    void OnOK() override;
 
 private:
 
