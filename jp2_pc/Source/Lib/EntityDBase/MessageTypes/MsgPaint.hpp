@@ -88,13 +88,13 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Paint";
 	}
@@ -102,7 +102,7 @@ protected:
 public:
 	//******************************************************************************************
 	//
-	virtual void Send() const;
+	virtual void Send() const override;
 	//
 	// Send this message.
 	//
