@@ -80,7 +80,7 @@ public:
 
 	int iRefreshCount;
 
-	void Init()
+	void Init() override
 	{
 		iRefreshCount = 0;
 
@@ -95,7 +95,7 @@ public:
 		SetContinuous(true);
 	}
 
-	void Step()
+	void Step() override
 	{
 		float f_approx_sqrt, f_accurate_sqrt, f_diff_sqrt;
 		float f_approx_inv_sqrt, f_accurate_inv_sqrt, f_diff_inv_sqrt;
@@ -158,7 +158,7 @@ public:
 
 
 	//******************************************************************************************
-	void Paint()
+	void Paint() override
 	{
 		//
 		// Test random number generator.
