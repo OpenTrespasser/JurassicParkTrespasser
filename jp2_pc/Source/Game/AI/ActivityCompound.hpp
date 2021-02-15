@@ -158,7 +158,7 @@ public:
 		(
 			CRating,			//rt_importance,	// The importance of the activity.
 			CInfluence*		//pinf			// The direct object of the action.
-		)
+		) override
 		//
 		//	
 		//	Notes:  
@@ -202,7 +202,7 @@ public:
 		//
 		virtual void ResetTempFlags
 		(
-		);
+		) override;
 		//
 		//******************************
 
@@ -212,7 +212,7 @@ public:
 		(
 			const CFeeling&	feel,		// The feeling used to evaluate the action.
 			CInfluence*		pinf		// The direct object of the action.
-		);
+		) override;
 		//
 		//	Rates and Registers the activity with the synthesizer.
 		//
@@ -228,7 +228,7 @@ public:
 		(
 			const CFeeling&	feel,		// The emotional state used to evaluate the action.
 			CInfluenceList*	pinfl		// All influences known.
-		);
+		) override;
 		//
 		//	Rates and Registers the activity with the synthesizer.
 		//
@@ -292,7 +292,7 @@ public:
 		(
 			const CFeeling&	feel_self,		// How the animal feels inside.
 			CInfluence*		pinf			// What influence we are analyzing.
-		);
+		) override;
 		//
 		//	Notes:
 		//		The CActivityDOSubBrain performs a bunch of internal processing on the 
@@ -309,7 +309,7 @@ public:
 		(
 			const CFeeling&	feel_self,		// How the animal feels inside.
 			CInfluence*		pinf			// What influence we are analyzing.
-		);
+		) override;
 		//
 		//	Notes:
 		//		Uses an adjusted feeling to determine the sub-activities ratings.
@@ -393,7 +393,7 @@ public:
 		(
 			const CFeeling&	feel,		// The feeling used to evaluate the action.
 			CInfluence*		pinf		// The direct object of the action.
-		);
+		) override;
 		//
 		//******************************
 
@@ -403,7 +403,7 @@ public:
 		(
 			const CFeeling&	feel,		// The emotional state used to evaluate the action.
 			CInfluenceList*	pinfl		// All influences known.
-		);
+		) override;
 		//
 		//******************************
 };
@@ -473,7 +473,7 @@ public:
 		(
 			const CFeeling&	feel,		// The feeling used to evaluate the action.
 			CInfluence*		pinf		// The direct object of the action.
-		);
+		) override;
 		//
 		//******************************
 
@@ -483,7 +483,7 @@ public:
 		(
 			const CFeeling&	feel,		// The emotional state used to evaluate the action.
 			CInfluenceList*	pinfl		// All influences known.
-		);
+		) override;
 		//
 		//******************************
 };
