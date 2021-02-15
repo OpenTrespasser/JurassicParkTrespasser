@@ -201,7 +201,7 @@ public:
 		(
 			int i_parent,
 			int i_successor_maybe
-		);
+		) override;
 		//
 		//	Returns true if the second arg is a successor of the first.
 		//
@@ -749,7 +749,7 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual void RemoveNode(int i_node_index);
+		virtual void RemoveNode(int i_node_index) override;
 
 		//*********************************************************************************
 		//
@@ -757,7 +757,7 @@ public:
 		(
 			int i_parent,
 			int i_successor_maybe
-		);
+		) override;
 		//
 		//	Returns true if the second arg is a successor of the first.
 		//
@@ -770,7 +770,7 @@ public:
 		virtual void AddNode
 		(
 			CAIGraphNode& node
-		);
+		) override;
 		//
 		//	Adds a node to the graph.
 		//
