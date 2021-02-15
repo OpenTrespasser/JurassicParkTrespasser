@@ -253,8 +253,8 @@ private:
 	// Overrides.
 	//
 
-	void Process(const CMessageStep&);
-	void Process(const CMessagePaint& msgpaint);
+	void Process(const CMessageStep&) override;
+	void Process(const CMessagePaint& msgpaint) override;
 };
 
 
