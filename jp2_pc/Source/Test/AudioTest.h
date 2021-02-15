@@ -21,7 +21,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CAudioTestApp)
 	public:
-	virtual BOOL InitInstance();
+	virtual BOOL InitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation
