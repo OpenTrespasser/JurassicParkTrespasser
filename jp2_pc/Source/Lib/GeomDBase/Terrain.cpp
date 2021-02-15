@@ -75,13 +75,13 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual TSoundMaterial smatGetMaterialType() const
+	virtual TSoundMaterial smatGetMaterialType() const override
 	{
 		return tmatSoundMaterial;
 	}
 
 	//*****************************************************************************************
-	virtual TSoundMaterial smatGetMaterialType(const CVector3<>& v3_world) const
+	virtual TSoundMaterial smatGetMaterialType(const CVector3<>& v3_world) const override
 	{
 		// Get the sound material at this location.
 		const CTerrainObj* ptobj = wWorld.ptobjGetTopTerrainObjAt(v3_world.tX, v3_world.tY);
@@ -96,7 +96,7 @@ public:
 
 	//**********************************************************************************************
 	virtual void RayIntersect(CInstance* pins, int i_subobj, CRayCast& rc,
-							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const
+							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const override
 	{
 		CTerrain* ptrr = ptCast<CTerrain>(pins);
 		AlwaysAssert(ptrr);
