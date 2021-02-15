@@ -101,7 +101,7 @@ public:
 	protected:
 	//}}AFX_VIRTUAL
 
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 // Implementation
 protected:
