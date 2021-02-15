@@ -257,7 +257,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CEditMaterialDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -265,7 +265,7 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CEditMaterialDlg)
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog() override;
 	afx_msg void OnPaint();
 	afx_msg	void OnTestS1();
 	afx_msg	void OnTestS2();
@@ -279,7 +279,7 @@ protected:
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 
-	virtual void OnOK();
+	virtual void OnOK() override;
 	afx_msg void OnSelChangeList();
 	afx_msg void OnTestSample();
 	afx_msg void OnStopSample();
