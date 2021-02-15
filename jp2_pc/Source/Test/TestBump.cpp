@@ -316,7 +316,7 @@ public:
 	(
 		CScanPoly<real, CCoord>& scanp,		// Scan-polygon iterator.
 		int i_light							// The lighting value to use.
-	);
+	) override;
 
 	//******************************************************************************************
 	//
@@ -325,7 +325,7 @@ public:
 		CScanPoly<real, CCoord>& scanp,			// Scan-polygon iterator.
 		CRasterSimple<CBumpDir>& ras_normals,	// Normal-map encoding bumps.
 		CLight& lt								// The lighting to apply.
-	);
+	) override;
 };
 
 //**********************************************************************************************
@@ -871,7 +871,7 @@ protected:
 	}
 
 public:
-	void Init()
+	void Init() override
 	{
 #if GAMMATEST
 		u1Intensity = 128;
@@ -886,7 +886,7 @@ public:
 #endif
 	}
 
-	void NewRaster()
+	void NewRaster() override
 	{
 #if !GAMMATEST
 		Init();
@@ -905,7 +905,7 @@ public:
 	}
 */
 
-	void Step()
+	void Step() override
 	{
 #if !GAMMATEST
 		::Step();
@@ -913,7 +913,7 @@ public:
 #endif
 	}
 
-	void Paint()
+	void Paint() override
 	{
 #if GAMMATEST
 		prasMainScreen->Clear(0);
@@ -963,7 +963,7 @@ public:
 #endif
 	}
 
-	void KeyPress(int i_key)
+	void KeyPress(int i_key) override
 	{
 #if GAMMATEST
 		switch (i_key)
