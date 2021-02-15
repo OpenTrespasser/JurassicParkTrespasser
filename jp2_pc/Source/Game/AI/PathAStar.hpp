@@ -108,7 +108,7 @@ public:
 			CPath*				ppath,
 			CRating				rt_solidity, // The max solidity through which the dino will go
 			TReal				r_close_enough	// Accept a path bringing you this close to destination
-		);
+		) override;
 		//
 		//	Notes:
 		//		Assumes that the influence list is up to date, including target distaces,
@@ -128,7 +128,7 @@ public:
 			CVector2<>			v2_direction,	// Direction of travel.
 			CPath*				ppath,			// The path to be filled by the pathfinder.
 			CRating				rt_solidity // The max solidity through which the dino will go
-		);
+		) override;
 		//
 		//	Fills "ppath" with a path leading in the general direction "v2_direction".
 		//
