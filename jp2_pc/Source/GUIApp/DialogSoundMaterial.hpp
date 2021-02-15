@@ -166,7 +166,7 @@ public:
 	void TestPlay(TSoundHandle sndhnd, bool b_loop);
 
 	//*****************************************************************************************
-	virtual void OnOK();
+	virtual void OnOK() override;
 
 	//*****************************************************************************************
 	//
@@ -224,7 +224,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDialogSoundMaterial)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 	//*****************************************************************************************
