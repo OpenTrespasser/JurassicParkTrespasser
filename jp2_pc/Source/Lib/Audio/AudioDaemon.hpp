@@ -361,17 +361,17 @@ public:
 	//******************************************************************************************
 	// The messages that we respond to.
 	//
-	void Process(const CMessageStep& msg_step);
-	void Process(const CMessageMove& msg);
-	void Process(const CMessageCollision& msg);
-	void Process(const CMessageAudio& msg_audio);
-	void Process(const CMessageSystem& msg);
+	void Process(const CMessageStep& msg_step) override;
+	void Process(const CMessageMove& msg) override;
+	void Process(const CMessageCollision& msg) override;
+	void Process(const CMessageAudio& msg_audio) override;
+	void Process(const CMessageSystem& msg) override;
 
 	//*****************************************************************************************
-	char* pcSave(char*  pc) const;
+	char* pcSave(char*  pc) const override;
 
 	//*****************************************************************************************
-	const char* pcLoad(const char*  pc);
+	const char* pcLoad(const char*  pc) override;
 
 	//*****************************************************************************************
 	char *pcSaveSample
@@ -390,7 +390,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	void SaveDefaults();
+	void SaveDefaults() override;
 	//
 	// Save the default values of the user modifiable settings.
 	//
@@ -398,7 +398,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	void RestoreDefaults();
+	void RestoreDefaults() override;
 	//
 	// Restore the default values of the user modifiable settings.
 	//
