@@ -63,13 +63,13 @@ public:
     HWND        m_hwndList;
 
 protected:
-    void OnClose(HWND hwnd);
-    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify);
-    void OnDestroy(HWND hwnd);
-    BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam);
-    LRESULT OnNotify(HWND hwnd, int idCtrl, LPNMHDR pnmhdr);
-    void OnParentNotify(HWND hwnd, UINT msg, HWND hwndChild, int idChild);
-    void OnDropFiles(HWND hwnd, HDROP hdrop);
+    void OnClose(HWND hwnd) override;
+    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) override;
+    void OnDestroy(HWND hwnd) override;
+    BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) override;
+    LRESULT OnNotify(HWND hwnd, int idCtrl, LPNMHDR pnmhdr) override;
+    void OnParentNotify(HWND hwnd, UINT msg, HWND hwndChild, int idChild) override;
+    void OnDropFiles(HWND hwnd, HDROP hdrop) override;
 };
 
 
@@ -85,8 +85,8 @@ public:
     std::vector<GBUILD>  m_vGBuild;
 
 protected:
-    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify);
-    BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam);
+    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) override;
+    BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) override;
 };
 
 
