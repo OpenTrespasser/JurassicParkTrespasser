@@ -99,16 +99,16 @@ public:
 		CInstance *pins, 
 		bool b_just_update = false, 
 		const CPlacement3<>& p3_vel = p3VELOCITY_ZERO
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual void Deactivate(CInstance *pins) const;
+	virtual void Deactivate(CInstance *pins) const override;
 
 	//*****************************************************************************************
-	virtual void UpdateWDBase(CInstance* pins, int i_index) const;
+	virtual void UpdateWDBase(CInstance* pins, int i_index) const override;
 
 	//*****************************************************************************************
-	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const;
+	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const override;
 };
 
 #endif
