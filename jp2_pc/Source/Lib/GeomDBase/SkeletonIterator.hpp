@@ -174,34 +174,34 @@
 
 		//******************************************************************************************
 		void TransformPoints(const CTransform3<>& tf3_shape_camera, const CCamera& cam,
-			CPArray<SClipPoint> paclpt_points, bool b_outcodes);
+			CPArray<SClipPoint> paclpt_points, bool b_outcodes) override;
 
-		bool bBackface_(const CVector3<>& v3_cam)
+		bool bBackface_(const CVector3<>& v3_cam) override
 		{
 			return bBackface();
 		}
 
-		CPlane plPlane_()
+		CPlane plPlane_() override
 		{
 			return plPlane();
 		}
 
-		bool bCurved_()
+		bool bCurved_() override
 		{
 			return bCurved();
 		}
 
-		CVector3<> v3Point_()
+		CVector3<> v3Point_() override
 		{
 			return v3Point();
 		}
 
-		CVector3<> v3Point_(int i_poly_vertex)
+		CVector3<> v3Point_(int i_poly_vertex) override
 		{
 			return v3Point(i_poly_vertex);
 		}
 
-		CDir3<> d3Normal_(int i_poly_vertex)
+		CDir3<> d3Normal_(int i_poly_vertex) override
 		{
 			return d3Normal(i_poly_vertex);
 		}
