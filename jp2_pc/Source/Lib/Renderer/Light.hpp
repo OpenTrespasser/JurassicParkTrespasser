@@ -204,20 +204,20 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual const CBoundVol& bvGet() const
+	virtual const CBoundVol& bvGet() const override
 	{
 		// Not implemented yet.
 		return bviVolume;
 	}
 
 	//******************************************************************************************
-	virtual void Cast(rptr_const<CLight>* pplt) const
+	virtual void Cast(rptr_const<CLight>* pplt) const override
 	{
 		*pplt = rptr_const_this(this);
 	}
 
 	//******************************************************************************************
-	virtual rptr<CRenderType> prdtCopy()
+	virtual rptr<CRenderType> prdtCopy() override
 	{
 		// Not implemented yet.
 		Assert(false);
@@ -260,7 +260,7 @@ public:
 	// Overrides.
 	//
 
-	virtual SLightInfo ltiGetInfo(const CVector3<>&) const
+	virtual SLightInfo ltiGetInfo(const CVector3<>&) const override
 	{
 		// Returns constant, non-directional light.
 		return SLightInfo(lvIntensity);
@@ -300,12 +300,12 @@ public:
 	// Overrides.
 	//
 
-	virtual bool bIsDirectional() const
+	virtual bool bIsDirectional() const override
 	{
 		return true;
 	}
 
-	virtual void SetViewingContext(const CPresence3<>& pr3);
+	virtual void SetViewingContext(const CPresence3<>& pr3) override;
 
 	//******************************************************************************************
 	//
@@ -364,15 +364,15 @@ public:
 	// Overrides.
 	//
 
-	virtual void SetViewingContext(const CPresence3<>& pr3);
+	virtual void SetViewingContext(const CPresence3<>& pr3) override;
 
-	virtual SLightInfo ltiGetInfo(const CVector3<>&) const
+	virtual SLightInfo ltiGetInfo(const CVector3<>&) const override
 	{
 		return SLightInfo(lvIntensity, d3Dir, angwSize);
 	}
 
 	//******************************************************************************************
-	virtual void UpdateShadows(CPartition* ppart);
+	virtual void UpdateShadows(CPartition* ppart) override;
 	//
 	// Currently, this merely creates the buffer the first time this is called only.  
 	// Truly updating it comes later.
@@ -427,14 +427,14 @@ public:
 	// Overrides.
 	//
 
-	virtual bool bIsPositional() const
+	virtual bool bIsPositional() const override
 	{
 		return true;
 	}
 
-	virtual void SetViewingContext(const CPresence3<>& pr3);
+	virtual void SetViewingContext(const CPresence3<>& pr3) override;
 
-	virtual SLightInfo ltiGetInfo(const CVector3<>& v3) const;
+	virtual SLightInfo ltiGetInfo(const CVector3<>& v3) const override;
 };
 
 
@@ -483,9 +483,9 @@ public:
 	// Overrides.
 	//
 
-	virtual void SetViewingContext(const CPresence3<>& pr3);
+	virtual void SetViewingContext(const CPresence3<>& pr3) override;
 
-	virtual SLightInfo ltiGetInfo(const CVector3<>& v3) const;
+	virtual SLightInfo ltiGetInfo(const CVector3<>& v3) const override;
 };
 
 //**********************************************************************************************
