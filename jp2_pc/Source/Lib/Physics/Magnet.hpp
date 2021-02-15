@@ -322,55 +322,55 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual const char* strPartType() const
+	virtual const char* strPartType() const override
 	{ 
 		return "CMagnetPair"; 
 	}
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvBoundingVol() const;
+	virtual const CBoundVol* pbvBoundingVol() const override;
 
 	//*****************************************************************************************
-	virtual CPresence3<> pr3Presence() const;
+	virtual CPresence3<> pr3Presence() const override;
 
 	//*****************************************************************************************
-	virtual void SetPresence(const CPresence3<> &pr3);
+	virtual void SetPresence(const CPresence3<> &pr3) override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3Placement() const;
+	virtual CPlacement3<> p3Placement() const override;
 
 	//*****************************************************************************************
-	virtual void SetPlacement(const CPlacement3<>& p3);
+	virtual void SetPlacement(const CPlacement3<>& p3) override;
 
 	//*****************************************************************************************
-	virtual CVector3<> v3Pos() const;
+	virtual CVector3<> v3Pos() const override;
 	
 	//*****************************************************************************************
-	virtual void SetPos(const CVector3<>& v3_pos);
+	virtual void SetPos(const CVector3<>& v3_pos) override;
 
 	//*****************************************************************************************
-	virtual CRotate3<> r3Rot() const;
+	virtual CRotate3<> r3Rot() const override;
 	
 	//*****************************************************************************************
-	virtual void SetRot(const CRotate3<>& r3_rot);
+	virtual void SetRot(const CRotate3<>& r3_rot) override;
 
 	//*****************************************************************************************
-	virtual float fGetScale() const;
+	virtual float fGetScale() const override;
 
 	//*****************************************************************************************
-	virtual void SetScale(float f_new_scale);
+	virtual void SetScale(float f_new_scale) override;
 
 	//*****************************************************************************************
-	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0);
+	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0) override;
 
 	//*****************************************************************************************
-	virtual int iSizeOf() const;
+	virtual int iSizeOf() const override;
 
 	//*****************************************************************************************
-	virtual char* pcSave(char* pc_buffer) const;  // See instance.hpp
+	virtual char* pcSave(char* pc_buffer) const override;  // See instance.hpp
 
 	//*****************************************************************************************
-	virtual const char* pcLoad(const char* pc_buffer);  // See instance.hpp
+	virtual const char* pcLoad(const char* pc_buffer) override;  // See instance.hpp
 
 	class CPriv;
 };
