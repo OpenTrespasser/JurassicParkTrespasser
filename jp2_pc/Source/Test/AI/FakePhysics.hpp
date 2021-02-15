@@ -159,7 +159,7 @@ public:
 		(
 			const CMessagePhysicsReq& msgpr,
 			CInstance *pins
-		) const;
+		) const override;
 };
 
 
@@ -202,7 +202,7 @@ public:
 		(
 			TSec secElapsedTime,
 			CInstance*	pins
-		) const;
+		) const override;
 		//
 		//	Adds intentionality to animal movement.
 		//
