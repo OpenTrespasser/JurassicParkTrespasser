@@ -269,7 +269,7 @@ public:
 	virtual void Process
 	(
 		const CMessageStep& msgstep
-	)
+	) override
 	{
 		if (pphiGetPhysicsInfo())
 		{
