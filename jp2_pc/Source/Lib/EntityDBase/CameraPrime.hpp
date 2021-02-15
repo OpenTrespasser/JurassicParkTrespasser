@@ -83,8 +83,8 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void Process(const CMessagePaint&);
-	virtual void Process(const CMessageSystem&);
+	virtual void Process(const CMessagePaint&) override;
+	virtual void Process(const CMessageSystem&) override;
 };
 
 // Single global instance.
