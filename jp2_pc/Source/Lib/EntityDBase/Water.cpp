@@ -324,7 +324,7 @@ public:
 
 	//**********************************************************************************************
 	virtual void RayIntersect(CInstance* pins, int i_subobj, CRayCast& rc,
-							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const
+							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const override
 	{
 		// Collide with rendering bounding box.
 		SObjectLoc obl;
@@ -337,7 +337,7 @@ public:
 	}
 
 	//**********************************************************************************************
-	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const
+	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const override
 	{
 		CEntityWater* petw = dynamic_cast<CEntityWater*>(pins);
 		if (!petw)
@@ -355,7 +355,7 @@ public:
 	}
 
 	//*****************************************************************************************
-	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const;
+	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const override;
 };
 
 //*********************************************************************************************
