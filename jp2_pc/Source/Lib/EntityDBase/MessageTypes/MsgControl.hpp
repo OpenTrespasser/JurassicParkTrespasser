@@ -73,12 +73,12 @@ protected:
 	// Overrides.
 	//
 
-	void DeliverTo(CEntity* pet) const { pet->Process(*this); }
-	const char* strName() const { return "Control"; }
+	void DeliverTo(CEntity* pet) const override { pet->Process(*this); }
+	const char* strName() const override { return "Control"; }
 
 	//******************************************************************************************
 	//
-	virtual void Send() const;
+	virtual void Send() const override;
 	//
 	// Send this message.
 	//
@@ -90,7 +90,7 @@ protected:
 
 	//******************************************************************************************
 	//
-	virtual void ExtractReplayData() const;
+	virtual void ExtractReplayData() const override;
 	//
 	// Extract replay data specific to this message
 	//
@@ -142,20 +142,20 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "NewRaster";
 	}
 
 	//******************************************************************************************
 	//
-	virtual void Send() const;
+	virtual void Send() const override;
 	//
 	// Send this message.
 	//
@@ -167,7 +167,7 @@ protected:
 
 	//******************************************************************************************
 	//
-	virtual void ExtractReplayData() const;
+	virtual void ExtractReplayData() const override;
 	//
 	// Extract replay data specific to this message
 	//
