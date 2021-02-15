@@ -69,10 +69,10 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const;
+	virtual void DeliverTo(CEntity* pet) const override;
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Delete";
 	}
@@ -81,7 +81,7 @@ protected:
 	//
 	virtual void Queue
 	(
-	) const;
+	) const override;
 	//
 	// Put this message on the queue.
 	//
@@ -91,7 +91,7 @@ protected:
 	//
 	virtual void Send
 	(
-	) const;
+	) const override;
 	//
 	// Send this message.
 	//
