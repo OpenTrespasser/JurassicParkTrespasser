@@ -1,3 +1,5 @@
+#pragma once
+
 // AI Dialogs2Dlg.h : header file
 //
 
