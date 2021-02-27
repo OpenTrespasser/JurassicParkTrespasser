@@ -21,9 +21,9 @@
  * 
  **********************************************************************************************/
 
-#if 0
 #ifndef HEADER_GAME_AI_PATHFAILURE_HPP
 #define HEADER_GAME_AI_PATHFAILURE_HPP
+#if 0
 
 class CFailureObstacle;
 #include "Pathfinder.hpp"
