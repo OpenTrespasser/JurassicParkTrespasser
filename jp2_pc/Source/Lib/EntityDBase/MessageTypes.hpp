@@ -131,12 +131,13 @@
  * 
  **********************************************************************************************/
 
-#error MessageTypes.hpp is now obsolete! Use MessageTypes/foo.hpp
-
-#if 0
 
 #ifndef HEADER_LIB_ENTITYDBASE_MESSAGETYPES_HPP
 #define HEADER_LIB_ENTITYDBASE_MESSAGETYPES_HPP
+
+#error MessageTypes.hpp is now obsolete! Use MessageTypes/foo.hpp
+
+#if 0
 
 #include "Lib/EntityDBase/Entity.hpp"
 #include "Lib/EntityDBase/Message.hpp"
