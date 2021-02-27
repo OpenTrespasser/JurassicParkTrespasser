@@ -25,9 +25,9 @@
  * 
  **********************************************************************************************/
 
-#if 0
 #ifndef HEADER_GAME_AI_PATHAVOIDER_HPP
 #define HEADER_GAME_AI_PATHAVOIDER_HPP
+#if 0
 
 #include "Pathfinder.hpp"
 
