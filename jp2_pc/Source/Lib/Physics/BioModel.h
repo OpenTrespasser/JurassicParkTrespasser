@@ -1,3 +1,5 @@
+#pragma once
+
 //	BioModel.h, a list of interesting stuff...
 //	==========================================
 
