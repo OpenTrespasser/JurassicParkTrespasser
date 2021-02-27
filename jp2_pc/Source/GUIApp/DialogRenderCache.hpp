@@ -1,3 +1,5 @@
+#pragma once
+
 // DialogRenderCache.hpp : header file
 //
 
