@@ -1,3 +1,5 @@
+#pragma once
+
 // DialogGamma.hpp : header file
 //
 
