@@ -1,3 +1,5 @@
+#pragma once
+
 // AttribDlg.h : header file
 //
 
