@@ -1,3 +1,5 @@
+#pragma once
+
 // TrespassAdv.h : main header file for the TRESPASSADV application
 //
 
