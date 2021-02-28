@@ -1,3 +1,5 @@
+#pragma once
+
 // AudioTest.h : main header file for the AUDIOTEST application
 //
 
