@@ -134,13 +134,13 @@
  * 
  **********************************************************************************************/
 
+#ifndef HEADER_LIB_RENDERER_PRIMITIVES_LINEBUMPMAKE_HPP
+#define HEADER_LIB_RENDERER_PRIMITIVES_LINEBUMPMAKE_HPP
+
 // Make sure this file is being included after 'FastBump.hpp.'
 #ifndef HEADER_LIB_RENDERER_PRIMITIVES_FASTBUMP_HPP
 	#error The header file FastBump.hpp has not been included!
 #endif
-
-#ifndef HEADER_LIB_RENDERER_PRIMITIVES_LINEBUMPMAKE_HPP
-#define HEADER_LIB_RENDERER_PRIMITIVES_LINEBUMPMAKE_HPP
 
 #include "Lib/Renderer/Primitives/DrawTriangle.hpp"
 #include "Lib/Renderer/Primitives/Scanline.hpp"
