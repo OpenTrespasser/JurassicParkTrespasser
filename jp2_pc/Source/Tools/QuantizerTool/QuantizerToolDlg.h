@@ -1,3 +1,5 @@
+#pragma once
+
 // QuantizerToolDlg.h : header file
 //
 
