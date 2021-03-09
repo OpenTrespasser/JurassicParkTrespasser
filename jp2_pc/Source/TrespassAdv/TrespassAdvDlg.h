@@ -1,3 +1,5 @@
+#pragma once
+
 // TrespassAdvDlg.h : header file
 //
 
@@ -34,7 +36,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CTrespassAdvDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -52,12 +54,12 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CTrespassAdvDlg)
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog() override;
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	afx_msg void OnButtonAddCard();
-	virtual void OnOK();
+	virtual void OnOK() override;
 	afx_msg void OnDblclkListCards();
 	afx_msg void OnCheckAlphaColour();
 	afx_msg void OnCheckAlphaTextures();

@@ -500,7 +500,7 @@ public:
 	(
 		const CCamera& cam,
 		const CTransform3<>& tf3_to_norm_cam
-	);
+	) override;
 	//
 	// Prepares the particle to add to the renderer.
 	//
@@ -567,7 +567,7 @@ public:
 	(
 		const CCamera& cam,
 		const CTransform3<>& tf3_to_norm_cam
-	);
+	) override;
 	//
 	// Prepares the particle to add to the renderer.
 	//
@@ -629,7 +629,7 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual CVector3<> v3Position(TSec sec) const;
+	virtual CVector3<> v3Position(TSec sec) const override;
 
 protected:
 
@@ -637,7 +637,7 @@ protected:
 	void Setup();
 
 	//*****************************************************************************************
-	virtual float fCamSize(const CCamera& cam, float f_cam_y) const
+	virtual float fCamSize(const CCamera& cam, float f_cam_y) const override
 	{
 		// fSize refers to screen pixels, so convert to camera space.
 		return fSize * f_cam_y / (fScreenWidth * 0.5f);

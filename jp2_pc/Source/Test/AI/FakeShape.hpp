@@ -136,7 +136,7 @@ class CShapeTree : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//
@@ -164,7 +164,7 @@ class CShapeWall : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//
@@ -193,7 +193,7 @@ class CShapeDinosaur : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//
@@ -221,7 +221,7 @@ class CShapeSheep : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//
@@ -251,7 +251,7 @@ class CShapeWolf : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//
@@ -280,7 +280,7 @@ class CShapeMeat : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//
@@ -308,7 +308,7 @@ class CShapeGrass : public CTestShapeInfo
 		virtual void Draw
 		(
 			CInstance*	pins	// The object that is being drawn.
-		) const;
+		) const override;
 		//
 		//	Draws the object at current location with "this" shape.
 		//

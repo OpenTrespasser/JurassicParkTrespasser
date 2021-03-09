@@ -158,36 +158,36 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual bool bUse(bool b_repeat);
+	virtual bool bUse(bool b_repeat) override;
 
 	//*****************************************************************************************
-	virtual void PickedUp();
+	virtual void PickedUp() override;
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageMove& msg);
+	virtual void Process(const CMessageMove& msg) override;
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageStep& msg);
+	virtual void Process(const CMessageStep& msg) override;
 
 	//*****************************************************************************************
-	virtual CInstance* pinsCopy() const;
+	virtual CInstance* pinsCopy() const override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
-	virtual void Cast(CGun** ppgun)
+	virtual void Cast(CGun** ppgun) override
 	{
 		*ppgun = this;
 	}
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 	//*****************************************************************************************
 	// Return true if all referenced names are loaded, otherwise return false to prevent the
@@ -236,7 +236,7 @@ public:
 	static void ResetMuzzleFlash();
 
 	//*****************************************************************************************
-	virtual bool bCanHaveChildren();
+	virtual bool bCanHaveChildren() override;
 
 //	CInstance* pinsCopy() const;
 

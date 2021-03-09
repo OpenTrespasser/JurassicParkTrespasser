@@ -1,3 +1,5 @@
+#pragma once
+
 // AudioTest.h : main header file for the AUDIOTEST application
 //
 
@@ -21,7 +23,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CAudioTestApp)
 	public:
-	virtual BOOL InitInstance();
+	virtual BOOL InitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation

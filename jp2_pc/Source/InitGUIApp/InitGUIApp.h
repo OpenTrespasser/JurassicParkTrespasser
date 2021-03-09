@@ -1,3 +1,5 @@
+#pragma once
+
 // InitGUIApp.h : main header file for the INITGUIAPP application
 //
 
@@ -21,7 +23,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CInitGUIAppApp)
 	public:
-	virtual BOOL InitInstance();
+	virtual BOOL InitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation

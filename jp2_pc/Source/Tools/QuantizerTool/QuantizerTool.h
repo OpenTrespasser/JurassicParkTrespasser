@@ -1,3 +1,5 @@
+#pragma once
+
 // QuantizerTool.h : main header file for the QUANTIZERTOOL application
 //
 
@@ -21,7 +23,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CQuantizerToolApp)
 	public:
-	virtual BOOL InitInstance();
+	virtual BOOL InitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation

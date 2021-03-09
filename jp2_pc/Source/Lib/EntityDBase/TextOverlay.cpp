@@ -242,7 +242,7 @@ void CTextOverlay::Process
 					(*i).ptelNext->u4Flags &=~TEXT_FORMAT_IGNORE;		// make visible
 					(*i).ptelNext->sRemove+=CMessageStep::sElapsedRealTime;	// set the remove time
 				}
-				delete (void*) ((*i).strString);		// delete the memory as a naked pointer
+				delete [] ((*i).strString);		// delete the memory as a naked pointer
 				ttlTextItems.erase(i);
 				break;
 			}
@@ -346,7 +346,7 @@ void CTextOverlay::RemoveAll
 	for (TTextList::iterator i = ttlTextItems.begin(); i != ttlTextItems.end(); ++i)
 	{
 		// delete the memory as a naked pointer
-		delete (void*) ((*i).strString);
+		delete [] ((*i).strString);
 	}
 
 	// erase the actual items items in the list

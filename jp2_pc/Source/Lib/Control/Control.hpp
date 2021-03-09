@@ -193,8 +193,8 @@ public:
 	//
 	//	Message that we need to process
 	//
-	void Process(const CMessageStep& msg_step);
-	void Process(const CMessageSystem& msg_system);
+	void Process(const CMessageStep& msg_step) override;
+	void Process(const CMessageSystem& msg_system) override;
 
 	// start and stop input capture, initial state is not captured
 	void Capture(bool b_state = true);

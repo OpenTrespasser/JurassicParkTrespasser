@@ -178,7 +178,7 @@ public:
 	// Overrides.
 	//
 
-	void Process(const CMessagePaint& msgpaint);
+	void Process(const CMessagePaint& msgpaint) override;
 };
 
 // Single global instance.

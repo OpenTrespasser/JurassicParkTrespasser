@@ -223,7 +223,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data needs to be saved...
@@ -255,11 +255,11 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 	// override the action time function and return the time in seconds that the voiceover
 	// takes to play.
-	virtual TSec sGetActionTime()
+	virtual TSec sGetActionTime() override
 	{
 		return sActionLength;
 	}
@@ -310,7 +310,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No action needs to be saved
@@ -341,7 +341,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -367,7 +367,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -409,7 +409,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data needs to be saved
@@ -447,7 +447,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -496,7 +496,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -555,7 +555,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -607,7 +607,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -648,7 +648,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -685,7 +685,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -715,7 +715,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -742,7 +742,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -768,7 +768,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -806,7 +806,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data needs to be saved
@@ -845,7 +845,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data needs to be saved
@@ -883,7 +883,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data needs to be saved
@@ -924,7 +924,7 @@ public:
 
 	virtual ~CScriptedAnimationAction();
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data needs to be saved
@@ -954,13 +954,13 @@ public:
 
 	//*****************************************************************************************
 	// The start function of this action does nothing at all
-	virtual void Start()
+	virtual void Start() override
 	{
 	}
 
 	//*****************************************************************************************
 	// Return the preset delay
-	virtual TSec sGetActionTime()
+	virtual TSec sGetActionTime() override
 	{
 		return sDelay;
 	}
@@ -994,7 +994,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	uint32	u4Handle;								// Trigger to affect.
@@ -1025,7 +1025,7 @@ public:
 
 	//*****************************************************************************************
 	// The start function of this action does nothing at all
-	virtual void Start();
+	virtual void Start() override;
 
 
 protected:
@@ -1065,11 +1065,11 @@ public:
 
 	//*****************************************************************************************
 	// The start function of this action does nothing at all
-	virtual void Start();
+	virtual void Start() override;
 
 	//*****************************************************************************************
 	// The length of a text action is the display period
-	virtual TSec sGetActionTime()
+	virtual TSec sGetActionTime() override
 	{
 		return TSec(fTime);
 	}

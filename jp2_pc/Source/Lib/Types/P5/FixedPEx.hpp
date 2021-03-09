@@ -43,13 +43,13 @@
  *
  **********************************************************************************************/
 
+#ifndef HEADER_LIB_TYPES_P5_FIXEDPEX_HPP
+#define HEADER_LIB_TYPES_P5_FIXEDPEX_HPP
+
 // Make sure this file is being included from 'FixedP.hpp'.
 #ifndef HEADER_LIB_TYPES_FIXEDP_HPP
 	#error The header file FixedP.hpp has not been included!
 #endif
-
-#ifndef HEADER_LIB_TYPES_P5_FIXEDPEX_HPP
-#define HEADER_LIB_TYPES_P5_FIXEDPEX_HPP
 
 
 //**********************************************************************************************

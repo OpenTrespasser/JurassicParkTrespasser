@@ -435,7 +435,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	BOOL OnInitDialog()
+	BOOL OnInitDialog() override
 	//
 	// Set the version and date strings.
 	//

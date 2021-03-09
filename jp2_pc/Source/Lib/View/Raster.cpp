@@ -335,26 +335,26 @@
 		//
 
 		//******************************************************************************************
-		TPixel pixGet(int i_index) const
+		TPixel pixGet(int i_index) const override
 		{
 			return *ppixAddress(i_index);
 		}
 
 		//******************************************************************************************
-		void PutPixel(int i_index, TPixel pix)
+		void PutPixel(int i_index, TPixel pix) override
 		{
 			*ppixAddress(i_index) = pix;
 		}
 
 		//******************************************************************************************
-		virtual void Fill(int i_index, int i_count, TPixel pix)
+		virtual void Fill(int i_index, int i_count, TPixel pix) override
 		{
 			Assert(i_index + i_count <= rasbOwner.iTotalPixels());
 			::Fill(ppixAddress(i_index), i_count, PIX(pix));
 		}
 
 		//******************************************************************************************
-		virtual void Rect(const SRect& rect, TPixel pix)
+		virtual void Rect(const SRect& rect, TPixel pix) override
 		{
 			Assert(uint(rect.iY + rect.iHeight) <= rasbOwner.iHeight);
 
@@ -772,7 +772,7 @@
 			switch (emtHeapType)
 			{
 			case emtNormal:
-				delete[] pSurface;
+				delete[] static_cast<uint8*>(pSurface);
 				break;
 
 			case emtFixed:

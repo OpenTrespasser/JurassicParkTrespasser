@@ -53,7 +53,7 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void SetVal(T val)
+	virtual void SetVal(T val) override
 	//
 	// Converts the angle (in degrees) to a cosine.
 	//
@@ -62,7 +62,7 @@ protected:
 	}
 
 	//******************************************************************************************
-	virtual T tGetVal() const
+	virtual T tGetVal() const override
 	//
 	// Converts the cosine to an angle (in degrees).
 	//
@@ -109,7 +109,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDialogMaterial)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -134,7 +134,7 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void Update(CController& ctrl);
+	virtual void Update(CController& ctrl) override;
 };
 
 

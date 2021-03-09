@@ -90,7 +90,7 @@ public:
 
 	//******************************************************************************************
 	//
-	virtual void Send() const;
+	virtual void Send() const override;
 	//
 	// Send this message.
 	//
@@ -102,12 +102,12 @@ public:
 protected:
 	static bool bSimGoing;
 
-	void DeliverTo(CEntity* pet) const 
+	void DeliverTo(CEntity* pet) const override
 	{ 
 		pet->Process(*this); 
 	}
 
-	const char* strName() const 
+	const char* strName() const override
 	{ 
 		return "System"; 
 	}

@@ -276,7 +276,7 @@ public:
 	(
 		CAIGraph*,	//paig,			// The graph the node is in.
 		int			//i_node_index	// The index of the node.
-	)
+	) override
 	//
 	//******************************
 	{
@@ -289,7 +289,7 @@ public:
 	(
 		CAIGraphNode*,	//paig,		// The node to update.
 		TSec			//s_when_used // The time the node was used.
-	)
+	) override
 	//
 	//******************************
 	{
@@ -298,7 +298,7 @@ public:
 //
 //  Cast functions.
 //
-	virtual CNHStart*			pCastNHStart()			{ return this; };
+	virtual CNHStart*			pCastNHStart() override { return this; };
 };
 
 //*********************************************************************************************
@@ -333,7 +333,7 @@ public:
 	(
 		CAIGraph*,	//paig,			// The graph the node is in.
 		int			//i_node_index	// The index of the node.
-	)
+	) override
 	//
 	//	Examines aign to determine its importance.
 	//
@@ -352,7 +352,7 @@ public:
 	(
 		CAIGraphNode*,	//paig,		// The node to update.
 		TSec			//s_when_used // The time the node was used.
-	)
+	) override
 	//
 	//******************************
 	{
@@ -362,7 +362,7 @@ public:
 //  Cast functions.
 //
 
-	virtual CNHStop*			pCastNHStop()			{ return this; };
+	virtual CNHStop*			pCastNHStop() override { return this; };
 
 };
 
@@ -402,7 +402,7 @@ public:
 	(
 		CAIGraph*,	//paig,			// The graph the node is in.
 		int			//i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
@@ -411,7 +411,7 @@ public:
 	(
 		CAIGraph*	paig,			// The graph the node is in.
 		int			i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
@@ -420,16 +420,16 @@ public:
 	(
 		CAIGraphNode*	paig,		// The node to update.
 		TSec			s_when_used // The time the node was used.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
-	virtual CNodeSource* pnsReferences();
+	virtual CNodeSource* pnsReferences() override;
 
 //
 //  Cast functions.
 //
-	virtual CNHNodeSource*		pCastNHNodeSource()		{ return this; };
+	virtual CNHNodeSource*		pCastNHNodeSource() override { return this; };
 };
 
 #ifdef TRACK_OLD_NODES
@@ -532,7 +532,7 @@ public:
 	(
 		CAIGraph*,	//paig,			// The graph the node is in.
 		int			//i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
@@ -541,7 +541,7 @@ public:
 	(
 		CAIGraph*	paig,			// The graph the node is in.
 		int			i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
@@ -550,7 +550,7 @@ public:
 	(
 		CAIGraphNode*	paig,		// The node to update.
 		TSec			s_when_used // The time the node was used.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
@@ -558,15 +558,15 @@ public:
 	virtual bool bReferences
 	(
 		const CInstance*	pins
-	) const;
+	) const override;
 	//******************************
 
 	//*************************************************************************************
-	virtual CNodeSource* pnsReferences();
+	virtual CNodeSource* pnsReferences() override;
 //
 //  Cast functions.
 //
-	virtual CNHInfluence*		pCastNHInfluence()		{ return this; };
+	virtual CNHInfluence*		pCastNHInfluence() override { return this; };
 };
 
 #ifdef TRACK_OLD_NODES
@@ -676,7 +676,7 @@ public:
 	(
 		CAIGraph*,	//paig,			// The graph the node is in.
 		int			//i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
 	//*************************************************************************************
@@ -685,10 +685,10 @@ public:
 	(
 		CAIGraph*	paig,			// The graph the node is in.
 		int			i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
-	virtual CNHInfluenceSurface*pCastNHInfluenceSurface()	{ return this; };
+	virtual CNHInfluenceSurface*pCastNHInfluenceSurface() override { return this; };
 
 };
 
@@ -719,15 +719,15 @@ public:
 //
 
 	//*************************************************************************************
-	virtual float fRate(CAIGraph*	paig, int i_node_index);
+	virtual float fRate(CAIGraph*	paig, int i_node_index) override;
 
 	//*************************************************************************************
-	virtual void Delete(CAIGraph*	paig, int i_node_index);
+	virtual void Delete(CAIGraph*	paig, int i_node_index) override;
 
 //
 //  Cast functions.
 //
-	virtual CNHRandom*			pCastNHRandom()			{ return this; };
+	virtual CNHRandom*			pCastNHRandom() override { return this; };
 };
 
 //*********************************************************************************************
@@ -762,7 +762,7 @@ public:
 	(
 		CAIGraph*	paig,			// The graph the node is in.
 		int			i_node_index	// The index of the node.
-	)
+	) override
 	//
 	//	Examines aign to determine its importance.
 	//
@@ -784,7 +784,7 @@ public:
 	(
 		CAIGraph*	paig,			// The graph the node is in.
 		int			i_node_index	// The index of the node.
-	);
+	) override;
 	//
 	//	Updates any external data structs that need it when a node is deleted.
 	//
@@ -795,7 +795,7 @@ public:
 //
 //  Cast functions.
 //
-	virtual CNHDesigner*		pCastNHDesigner()		{ return this; };
+	virtual CNHDesigner*		pCastNHDesigner() override { return this; };
 };
 
 //*********************************************************************************************
@@ -826,14 +826,14 @@ public:
 	(
 		CAIGraph*,	//paig,			// The graph the node is in.
 		int			//i_node_index	// The index of the node.
-	);
+	) override;
 	//******************************
 
 //
 //  Cast functions.
 //
 	
-	virtual CNHUnknown*			pCastNHUnknown()		{ return this; };
+	virtual CNHUnknown*			pCastNHUnknown() override { return this; };
 };
 
 //*********************************************************************************************
@@ -866,7 +866,7 @@ public:
 //  Cast functions.
 //
 	
-	virtual CNHInvalid*			pCastNHInvalid()		{ return this; };
+	virtual CNHInvalid*			pCastNHInvalid() override { return this; };
 };
 
 #define ENTRY(type, name) char name [sizeof(type)]

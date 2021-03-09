@@ -721,24 +721,6 @@ namespace NMultiResolution
 		//		This function does not clear the console before printing.
 		//
 		//**************************************
-
-
-		//******************************************************************************************
-		//
-		// Overloaded operators.
-		//
-
-		//******************************************************************************************
-		void* operator new(size_t i_size)
-		{
-			return ::operator new(i_size);
-		}
-
-		//******************************************************************************************
-		void operator delete(void* pv)
-		{
-			::delete pv;
-		}
 	};
 };
 

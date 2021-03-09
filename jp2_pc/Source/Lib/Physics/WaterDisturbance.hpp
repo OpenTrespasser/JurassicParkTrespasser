@@ -90,16 +90,16 @@ public:
 	//
 
 	// Step message might disturb some water!
-	virtual void Process(const CMessageStep& msgstep);
+	virtual void Process(const CMessageStep& msgstep) override;
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 	//*****************************************************************************************
-	virtual void Cast(CWaterDisturbance** pwd)
+	virtual void Cast(CWaterDisturbance** pwd) override
 	{
 		*pwd = this;
 	}
@@ -107,7 +107,7 @@ public:
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 

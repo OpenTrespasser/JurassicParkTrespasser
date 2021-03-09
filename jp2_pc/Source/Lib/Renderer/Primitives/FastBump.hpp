@@ -932,7 +932,7 @@ public:
 	//
 
 	//******************************************************************************************
-	TPixel pixFromColour(CColour clr) const
+	TPixel pixFromColour(CColour clr) const override
 	{
 		// Do a palette search to find best match to clr.  
 		// Return a CBumpAnglePair with default angles.
@@ -947,7 +947,7 @@ public:
 	}
 
 	//******************************************************************************************
-	CColour clrFromPixel(TPixel pix) const
+	CColour clrFromPixel(TPixel pix) const override
 	{
 		// Just extract colour from bump angle, and look up in palette.
 		int i_index = ((CBumpAnglePair&)pix).u1GetColour();

@@ -143,19 +143,19 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual float fMaxExtent() const
+	virtual float fMaxExtent() const override
 	{
 		return FLT_MAX;
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override
 	{
 		AlwaysAssert(0);
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override
 	{
 		if (clpLeft. bContains(v3) &&
 			clpRight.bContains(v3) &&
@@ -169,7 +169,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override
 	{
 		ESideOf esf = 0;
 		ESideOf esf_sub;
@@ -198,7 +198,7 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const
+		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const override
 	{
 		// If the volume is esfOUTSIDE, so is the plane.  Otherwise, they intersect.
 		return bvpl.esfSideOf(*this, ppr3_it, ppr3_this) == esfOUTSIDE ? esfOUTSIDE : esfINTERSECT;
@@ -206,7 +206,7 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const
+		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const override
 	{
 		// Transform the sphere.
 		CVolSphere vs_it(bvs.rRadius, ppr3_it);
@@ -239,7 +239,7 @@ public:
 	}
 	
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const
+	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const override
 	{
 		// Intersect with each plane in turn.
 		ESideOf esf = 0;
@@ -269,7 +269,7 @@ public:
 
 	//******************************************************************************************
 	ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const
+		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const override
 	{
 		// Get the box transform, transform by the required presence.
 		CTransform3<> tf3_box = ppr3_this || ppr3_it ? 
@@ -282,14 +282,14 @@ public:
 
 	//******************************************************************************************
 	ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const
+		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const override
 	{
 		return bvp.esfIsSideOfPoints(*this, ppr3_it, ppr3_this);
 	}
 
 	//******************************************************************************************
 	ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const
+		const CPresence3<>* ppr3_this, const CPresence3<>* ppr3_it) const override
 	{
 		return esfINTERSECT;
 	}
@@ -307,7 +307,7 @@ public:
 	//
 
 	//******************************************************************************************
-	CSet<EOutCode> seteocOutCodes(const CVector3<>& v3) const
+	CSet<EOutCode> seteocOutCodes(const CVector3<>& v3) const override
 	{
 		CSet<EOutCode> eoc;
 
@@ -342,7 +342,7 @@ public:
 
 	//******************************************************************************************
 	ESideOf esfClipPolygonInside(CRenderPolygon& rpoly, CPipelineHeap& plh, bool b_perspective,
-		CSet<EOutCode> seteoc_poly) const
+		CSet<EOutCode> seteoc_poly) const override
 	{
 		//
 		// This is pretty simple.  Clip the polygon against each plane in turn, returning
@@ -822,8 +822,8 @@ public:
 	}
 
 	//******************************************************************************************
-	TReal rEdgeT(const CVector3<>& v3_0, const CVector3<>& v3_1) const
-	{
+	TReal rEdgeT(const CVector3<>& v3_0, const CVector3<>& v3_1) const override
+    {
 		// Override this to avoid divide by 0 in template version.
 		return 0;
 	}

@@ -1,3 +1,5 @@
+#pragma once
+
 // CollisionEditorDlg.h : header file
 //
 
@@ -29,8 +31,8 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CCollisionEditorDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
-	virtual void OnCancel();
+	virtual void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
+	virtual void OnCancel() override;
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -39,7 +41,7 @@ protected:
 	bool	bModified;
 	// Generated message map functions
 	//{{AFX_MSG(CCollisionEditorDlg)
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog() override;
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();

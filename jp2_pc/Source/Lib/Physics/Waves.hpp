@@ -569,17 +569,17 @@ public:
 	// Overrides.
 	//
 
-	virtual void SwapPrev();
+	virtual void SwapPrev() override;
 
-	virtual void CopyPrev();
+	virtual void CopyPrev() override;
 
 protected:
 
-	virtual void Iterate(TSeconds s_step_cur);
+	virtual void Iterate(TSeconds s_step_cur) override;
 
-	virtual void ApplyBoundary();
+	virtual void ApplyBoundary() override;
 
-	virtual void SetMaxStep();
+	virtual void SetMaxStep() override;
 };
 
 
@@ -691,9 +691,9 @@ public:
 	// Overrides.
 	//
 
-	virtual void Iterate(TSeconds s_step_cur);
+	virtual void Iterate(TSeconds s_step_cur) override;
 
-	virtual bool bElementActive(int i_y, int i_x) const
+	virtual bool bElementActive(int i_y, int i_x) const override
 	{
 		return pa2mrVelocityFactor[i_y][i_x] > 0;
 	}

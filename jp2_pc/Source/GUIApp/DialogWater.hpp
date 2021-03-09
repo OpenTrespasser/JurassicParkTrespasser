@@ -1,3 +1,5 @@
+#pragma once
+
 /**********************************************************************************************
  *
  * Copyright © DreamWorks Interactive, 1998.
@@ -52,7 +54,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDialogWater)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation

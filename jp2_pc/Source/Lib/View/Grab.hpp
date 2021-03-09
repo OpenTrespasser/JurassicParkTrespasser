@@ -298,7 +298,7 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Process(const CMessagePaint& msgpaint);
+	virtual void Process(const CMessagePaint& msgpaint) override;
 };
 
 

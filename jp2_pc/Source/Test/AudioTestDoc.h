@@ -1,3 +1,5 @@
+#pragma once
+
 // AudioTestDoc.h : interface of the CAudioTestDoc class
 //
 /////////////////////////////////////////////////////////////////////////////
@@ -29,17 +31,17 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CAudioTestDoc)
 	public:
-	virtual BOOL OnNewDocument();
-	virtual void Serialize(CArchive& ar);
-	virtual void OnCloseDocument();
+	virtual BOOL OnNewDocument() override;
+	virtual void Serialize(CArchive& ar) override;
+	virtual void OnCloseDocument() override;
 	//}}AFX_VIRTUAL
 
 // Implementation
 public:
 	virtual ~CAudioTestDoc();
 #ifdef _DEBUG
-	virtual void AssertValid() const;
-	virtual void Dump(CDumpContext& dc) const;
+	virtual void AssertValid() const override;
+	virtual void Dump(CDumpContext& dc) const override;
 #endif
 
 	CAuScene * GetScene () { return pscene; }

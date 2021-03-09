@@ -26,9 +26,9 @@ public:
     CRasterDC(HDC hdcBase, int iWidth, int iHeight, int iBits);
     virtual ~CRasterDC();
 
-    void Lock();
-    void Unlock();
-    void Clear(TPixel pix);
+    void Lock() override;
+    void Unlock() override;
+    void Clear(TPixel pix) override;
 
     void Blit(int idx, 
               int idy, 
@@ -36,7 +36,7 @@ public:
               SRect* prect_src = 0,
               bool b_clip = true, 
               bool b_colour_key = 0,
-              TPixel pix_colour_key = 0);
+              TPixel pix_colour_key = 0) override;
 
     HDC hdcGet();
     void ReleaseDC(HDC hdc);

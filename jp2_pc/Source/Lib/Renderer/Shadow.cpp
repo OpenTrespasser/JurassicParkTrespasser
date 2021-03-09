@@ -116,13 +116,13 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void BeginFrame()
+	virtual void BeginFrame() override
 	{
 		prasScreen->Lock();
 	}
 
 	//******************************************************************************************
-	virtual void EndFrame()
+	virtual void EndFrame() override
 	{
 		prasScreen->Unlock();
 	}
@@ -133,7 +133,7 @@ public:
 	//
 
 	//******************************************************************************************
-	void DrawPolygon(CRenderPolygon& rp)
+	void DrawPolygon(CRenderPolygon& rp) override
 	{
 		CCycleTimer ctmr;
 

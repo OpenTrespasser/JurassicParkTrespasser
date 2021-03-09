@@ -367,56 +367,38 @@ void CWorldView::RemoveSomeInfluences()
 							// unimportant enough, go ahead.
 
 	// If we have a bunch of influences, remove one.
-	CInfluenceList::iterator pinf_lowest = inflInfluences.end();
-	CInfluenceList::iterator pinf = inflInfluences.begin();
+	size_t discardable = 0;
 
-	int i_discardable_count = 0;
-	std::list<const CInfluence*> lpinf_discard;
-
-	// Find the lamest influence and remove it.
-	// For now, we only remove one bad apple each cycle.
-	for (; pinf != inflInfluences.end(); pinf++)
+	CInstance* lowestInstance = nullptr;
+	std::list<CInstance*> todelete;
+	
+	for (const auto& entry : inflInfluences)
 	{
-		TReal r_importance = (*pinf).rImportance;
-		
-		if (gaiSystem.sNow - (*pinf).sLastSeen > paniOwner->pbrBrain->sForgetInfluence)
+		if (gaiSystem.sNow - entry.sLastSeen > paniOwner->pbrBrain->sForgetInfluence)
+			entry.setFlags[eifIS_DISCARDABLE] = true;
+		else if (entry.rImportance < r_lowest)
 		{
-			// It's been a while.  Forget me, please.
-			((CInfluence*)&(*pinf))->setFlags[eifIS_DISCARDABLE] = true;
-		}
-		else if ( r_importance < r_lowest)
-		{
-			r_lowest = r_importance;
-			pinf_lowest = pinf;
+			r_lowest = entry.rImportance;
+			lowestInstance = entry.pinsTarget;
 		}
 
-		if ((*pinf).setFlags[eifIS_DISCARDABLE])
+		if (entry.setFlags[eifIS_DISCARDABLE]) 
 		{
-			// Add to discard list!
-			lpinf_discard.push_back(&(*pinf));
-			++i_discardable_count;
+			todelete.push_back(entry.pinsTarget);
+			discardable++;
 		}
 	}
 
-	if (pinf_lowest != inflInfluences.end())
-	{	
-		// Add to discard list!
-		lpinf_discard.push_back(&(*pinf_lowest));
-		((CInfluence*)&(*pinf_lowest))->setFlags[eifIS_DISCARDABLE] = true;
-	}
-
-	if (i_discardable_count > 10)
+	if (lowestInstance) 
 	{
-		std::list<const CInfluence*>::iterator itpinf;
-		for(itpinf = lpinf_discard.begin(); itpinf != lpinf_discard.end(); ++itpinf)
-		{
-			//   Is it discardable?
-			Assert((*itpinf)->setFlags[eifIS_DISCARDABLE]);
-
-			// Discard it.
-			bRemoveInfluence((*itpinf)->pinsTarget);
-		}
+		//Influence set is based on instance pointers, find result is guaranteed to be the correct one
+		iterFindInfluence(lowestInstance)->setFlags[eifIS_DISCARDABLE] = true;
+		todelete.push_back(lowestInstance);
 	}
+	
+	if (discardable > 10)
+		for (auto* entry : todelete)
+			bRemoveInfluence(entry);
 }
 
 //*********************************************************************************

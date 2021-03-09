@@ -55,25 +55,25 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual CVector3<> v3GetPhysicsBox() const
+	virtual CVector3<> v3GetPhysicsBox() const override
 	{
 		return bvbVolume.v3GetMax();
 	}
 
 	//*****************************************************************************************
-	virtual CVector3<> v3GetPivot() const
+	virtual CVector3<> v3GetPivot() const override
 	{
 		return v3Pivot;
 	}
 
 	//******************************************************************************************
-	virtual const CBoundVol& bvGet() const
+	virtual const CBoundVol& bvGet() const override
 	{
 		return bvbVolume;
 	}
 
 	//******************************************************************************************
-	virtual rptr<CRenderType> prdtCopy()
+	virtual rptr<CRenderType> prdtCopy() override
 	{
 		Assert(false);
 		return rptr0;

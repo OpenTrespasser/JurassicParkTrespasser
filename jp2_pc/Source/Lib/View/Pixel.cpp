@@ -78,7 +78,7 @@ public:
 	}
 
 	//******************************************************************************************
-	TPixel pixFromColour(CColour clr) const
+	TPixel pixFromColour(CColour clr) const override
 	{
 		// Do a palette search to find best match to clr.
 		Assert(ppalAttached);
@@ -86,7 +86,7 @@ public:
 	}
 
 	//******************************************************************************************
-	CColour clrFromPixel(TPixel pix) const
+	CColour clrFromPixel(TPixel pix) const override
 	{
 		// Just look up the palette colour.
 		Assert(ppalAttached);
@@ -113,13 +113,13 @@ public:
 	}
 
 	//******************************************************************************************
-	TPixel pixFromColour(CColour clr) const
+	TPixel pixFromColour(CColour clr) const override
 	{
 		return clr.u4Value;
 	}
 
 	//******************************************************************************************
-	CColour clrFromPixel(TPixel pix) const
+	CColour clrFromPixel(TPixel pix) const override
 	{
 		return CColour(pix, 0);
 	}
@@ -143,7 +143,7 @@ public:
 	}
 
 	//******************************************************************************************
-	TPixel pixFromColour(CColour clr) const
+	TPixel pixFromColour(CColour clr) const override
 	{
 		return (uShift1R(clr.u1Red,   3) << 11) |
 			   (uShift1R(clr.u1Green, 2) <<  5) |
@@ -151,7 +151,7 @@ public:
 	}
 
 	//******************************************************************************************
-	CColour clrFromPixel(TPixel pix) const
+	CColour clrFromPixel(TPixel pix) const override
 	{
 		return CColour
 		(
@@ -180,7 +180,7 @@ public:
 	}
 
 	//******************************************************************************************
-	TPixel pixFromColour(CColour clr) const
+	TPixel pixFromColour(CColour clr) const override
 	{
 		return (uShift1R(clr.u1Red,   3) << 10) |
 			   (uShift1R(clr.u1Green, 3) <<  5) |
@@ -188,7 +188,7 @@ public:
 	}
 
 	//******************************************************************************************
-	CColour clrFromPixel(TPixel pix) const
+	CColour clrFromPixel(TPixel pix) const override
 	{
 		return CColour
 		(
@@ -217,7 +217,7 @@ public:
 	}
 
 	//******************************************************************************************
-	TPixel pixFromColour(CColour clr) const
+	TPixel pixFromColour(CColour clr) const override
 	{
 		return (uShift1R(clr.u1Red,   4) << 8) |
 			   (uShift1R(clr.u1Green, 4) << 4) |
@@ -225,7 +225,7 @@ public:
 	}
 
 	//******************************************************************************************
-	CColour clrFromPixel(TPixel pix) const
+	CColour clrFromPixel(TPixel pix) const override
 	{
 		return CColour
 		(

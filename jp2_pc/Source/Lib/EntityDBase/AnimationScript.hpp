@@ -255,13 +255,13 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageStep&);
+	virtual void Process(const CMessageStep&) override;
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 };
 
 // Single global instance.

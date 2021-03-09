@@ -104,9 +104,9 @@ public:
 	//
 	// Overrides
 	//
-	void Process(const CMessageStep& msg_step);
-	void Process(const CMessagePaint& msgpaint);
-	void Process(const CMessageSystem& msg);
+	void Process(const CMessageStep& msg_step) override;
+	void Process(const CMessagePaint& msgpaint) override;
+	void Process(const CMessageSystem& msg) override;
 
 	
 	//*****************************************************************************************

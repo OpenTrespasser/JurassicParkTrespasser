@@ -296,7 +296,7 @@ public:
 	//
 	virtual bool bCanHaveChildren
 	(
-	);
+	) override;
 	//
 	// Returns 'false.'
 	//
@@ -430,27 +430,27 @@ public:
 
 
 	//*****************************************************************************************
-	virtual int iGetTeam() const;
+	virtual int iGetTeam() const override;
 
 	//*****************************************************************************************
-	virtual const CAnimate* paniGetOwner() const;
+	virtual const CAnimate* paniGetOwner() const override;
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvBoundingVol() const;
+	virtual const CBoundVol* pbvBoundingVol() const override;
 
 	//*****************************************************************************************
-	virtual CInstance* pinsCopy() const;
+	virtual CInstance* pinsCopy() const override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 	//
 	// Message processing overrides.
@@ -461,31 +461,31 @@ public:
 	(
 		const CPlacement3<>& p3_new,
 		CEntity* pet_sender = 0
-	);
+	) override;
 
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessagePhysicsReq& msgpr
-	);
+	) override;
 
 	//*****************************************************************************************
 	virtual void Process
 	(
 		const CMessageCollision& msgcoll	// A collision event.
-	);
+	) override;
 
 	//*****************************************************************************************
 	virtual void PreRender
 	(
 		CRenderContext& renc			// Target, camera, settings, etc.
-	);
+	) override;
 
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessageStep& msgstep
-	);
+	) override;
 
 	//
 	// Identifier functions.
@@ -493,7 +493,7 @@ public:
 
 	//*****************************************************************************************
 	//lint -save -e1411
-	virtual void Cast(CAnimate** ppant)
+	virtual void Cast(CAnimate** ppant) override
 	{
 		*ppant = this;
 	}
@@ -589,15 +589,15 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual int iGetTeam() const;
+	virtual int iGetTeam() const override;
 
 	//*****************************************************************************************
-	virtual const CAnimate* paniGetOwner() const;
+	virtual const CAnimate* paniGetOwner() const override;
 
 	//*****************************************************************************************
-	virtual CInstance* pinsCopy() const;
+	virtual CInstance* pinsCopy() const override;
 
-	virtual void Cast(CBoundaryBox** ppbb)
+	virtual void Cast(CBoundaryBox** ppbb) override
 	{
 		*ppbb = this;
 	}

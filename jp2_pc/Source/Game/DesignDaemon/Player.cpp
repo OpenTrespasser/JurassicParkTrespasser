@@ -1246,7 +1246,7 @@ private:
 		const CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
-	)
+	) override
 	{
 		// Woo.  Hellish.
 		Assert(!pinfo);
@@ -1371,7 +1371,7 @@ private:
 		const CHandle&			h_object,	// handle of object in value table.
 		CValueTable*			pvtable,	// Value Table.
 		const CInfo*			pinfo		// The info to copy.  Create a new one if 0.
-	)
+	) override
 	{
 
 #define PARSE_SAMPLE_SET(ss)\
@@ -1593,13 +1593,13 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual CInstance* pinsHeldObject() const
+	virtual CInstance* pinsHeldObject() const override
 	{
 		return bWithin(eHandHolding, ehhHOLDING, ehhDROPPING) ? pinsHeld : 0;
 	}
 	
 	//*****************************************************************************************
-	virtual bool bHandInteract(const CInstance* pins) const
+	virtual bool bHandInteract(const CInstance* pins) const override
 	{
 		if (eHandActivity == ehaINACTIVE && eHandHolding < ehhHOLDING)
 			// Hand is inactive, and thus interacts with NOTHING, do you hear?
@@ -1614,7 +1614,7 @@ private:
 	}
 	
 	//*****************************************************************************************
-	virtual void MaybeTalkAboutAmmo(int i_current, int i_max)
+	virtual void MaybeTalkAboutAmmo(int i_current, int i_max) override
   	{
 		// Bad, Bad, Bad, No negative ammo counts please.
 		if (i_current < 0)
@@ -1641,7 +1641,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void TalkAboutApproximateAmmo(int i_sample)
+	virtual void TalkAboutApproximateAmmo(int i_sample) override
   	{
 		// ALWAYS say approximates, because they happen so rarely.
 
@@ -1670,7 +1670,7 @@ private:
 		int i_current, 
 		int i_maximum, 
 		bool b_approximate
-	)
+	) override
 	{
 		// Bad, Bad, Bad, No negative ammo counts please.
 		if (i_current < 0)
@@ -1731,7 +1731,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual bool bCanTalk()
+	virtual bool bCanTalk() override
 	{
 	    // Is Anne already speaking?
 		Assert(padAudioDaemon);
@@ -1746,7 +1746,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void StopTalking()
+	virtual void StopTalking() override
 	{
 		// Kill all voiceovers and music.
 		AlwaysAssert(padAudioDaemon);
@@ -1764,13 +1764,13 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void JumpSound()
+	virtual void JumpSound() override
 	{
 		Say(&ssJump);
 	}
 
 	//*****************************************************************************************
-	virtual void Pickup(CInstance* pins_obj)
+	virtual void Pickup(CInstance* pins_obj) override
 	{
 		// If there is a preference, set the hand mesh.
 		// Must be done before magneting, so new hand box takes effect.
@@ -1814,7 +1814,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Drop(CVector3<> v3_throw = v3Zero)
+	virtual void Drop(CVector3<> v3_throw = v3Zero) override
 	{
 		// See if we're holding.
 		if (!bWithin(eHandHolding, ehhHOLDING, ehhDROPPING))
@@ -1883,7 +1883,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void CheckForDrop()
+	virtual void CheckForDrop() override
 	{
 		// See if we're holding.
 		if (!PlayerSettings.bAllowDrop)
@@ -1926,7 +1926,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void DrawPhysics(CDraw& draw, CCamera& cam) const
+	virtual void DrawPhysics(CDraw& draw, CCamera& cam) const override
 	{
 #if bVER_BONES()
 		CTransform3<> tf3_screen = cam.tf3ToHomogeneousScreen();
@@ -1972,13 +1972,13 @@ private:
 	//
 
 	//*****************************************************************************************
-	virtual bool bIncludeInBuildPart() const
+	virtual bool bIncludeInBuildPart() const override
 	{
 		return false;
 	}
 
 	//*****************************************************************************************
-	virtual void HandleDamage(float f_damage, const CInstance* pins_aggressor, const CInstance* pins_me)
+	virtual void HandleDamage(float f_damage, const CInstance* pins_aggressor, const CInstance* pins_me) override
 	{
 		// What were my hit points before?
 		Assert(fMaxHitPoints > 0.0f);
@@ -2086,7 +2086,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual float fWieldDamage(const CInstance* pins_weapon, float f_coll_damage) const
+	virtual float fWieldDamage(const CInstance* pins_weapon, float f_coll_damage) const override
 	{
 		if (iSwinging == 2)
 			f_coll_damage *= PlayerSettings.fSwingDamageMul;
@@ -2094,7 +2094,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Substitute(int i_sub)
+	virtual void Substitute(int i_sub) override
 	{
 		// Save our requested substitution.
 		// Actually perform the substitution next control message.
@@ -2107,7 +2107,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3HeadPlacement() const
+	virtual CPlacement3<> p3HeadPlacement() const override
 	{
 		return p3Head;
 	}
@@ -2118,7 +2118,7 @@ private:
 	//
 
 	//******************************************************************************************
-	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender)
+	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender) override
 	{
 		if (pet_sender == pphSystem)
 		{
@@ -2223,7 +2223,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageSystem& msgsys)
+	virtual void Process(const CMessageSystem& msgsys) override
 	{
 		if (msgsys.escCode == escSTOP_SIM)
 		{
@@ -2240,7 +2240,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageStep& msgstep)
+	virtual void Process(const CMessageStep& msgstep) override
 	{
 		// Invoke base class message handling.
 		CAnimate::Process(msgstep);
@@ -2334,7 +2334,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageControl& msgc)
+	virtual void Process(const CMessageControl& msgc) override
 	{
 		bool b_use = false;
 
@@ -3108,7 +3108,7 @@ private:
 	}
 
 	//******************************************************************************************
-	virtual void Process(const CMessageCollision& msgcoll)
+	virtual void Process(const CMessageCollision& msgcoll) override
 	{
 		CTimeBlock tmb(&psCollisionMsgPlayer);
 
@@ -3197,7 +3197,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Process(const CMessagePhysicsReq& msgpr)
+	virtual void Process(const CMessagePhysicsReq& msgpr) override
 	{
 		if (!bPhysics)
 			return;
@@ -3237,7 +3237,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageMove& msgmv)
+	virtual void Process(const CMessageMove& msgmv) override
 	{
 		CTimeBlock tmb(&psMoveMsgPlayer);
 
@@ -3269,7 +3269,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual char* pcSave(char* pc) const
+	virtual char* pcSave(char* pc) const override
 	{
 		// Save the instance location data.
 		pc = CAnimate::pcSave(pc);
@@ -3316,7 +3316,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual const char* pcLoad(const char* pc)
+	virtual const char* pcLoad(const char* pc) override
 	{
 		pc = CAnimate::pcLoad(pc);
 
@@ -3388,7 +3388,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void Cast(CPlayer** ppplay)
+	virtual void Cast(CPlayer** ppplay) override
 	{
 		*ppplay = this;
 	}
@@ -3397,7 +3397,7 @@ private:
 	//
 	virtual const char* strPartType
 	(
-	) const
+	) const override
 	//
 	// Returns a partition type string.
 	//
@@ -3407,7 +3407,7 @@ private:
 	}
 
 	//*****************************************************************************************
-	virtual void InitializeDataStatic()
+	virtual void InitializeDataStatic() override
 	{
 		SetFlagHardwareAble(true);
 		CPartition::InitializeDataStatic();

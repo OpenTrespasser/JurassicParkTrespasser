@@ -42,6 +42,7 @@ include(cmake/CMakeCommon.cmake)
 
 add_subdirectory(cmake/AI)
 add_subdirectory(cmake/AITest)
+add_subdirectory(cmake/AIUnitTest)
 add_subdirectory(cmake/Audio)
 add_subdirectory(cmake/AudioTest)
 add_subdirectory(cmake/Bugs)

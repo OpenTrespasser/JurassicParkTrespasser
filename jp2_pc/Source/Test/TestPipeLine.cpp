@@ -365,7 +365,7 @@ public:
 	}
 
 	//******************************************************************************************
-	void Init()
+	void Init() override
 	{
 		// Set flag to initialize only once.
 		if (bIsInitialized)
@@ -410,7 +410,7 @@ public:
 
 
 	//******************************************************************************************
-	void Step()
+	void Step() override
 	{
 		// Print general render stats.
 		conStd.SetCursorPosition(0, uStatLine);
@@ -438,7 +438,7 @@ public:
 
 
 	//******************************************************************************************
-	void Paint()
+	void Paint() override
 	{
 		prasMainScreen->Clear(0);
 
@@ -486,7 +486,7 @@ public:
 	}
 
 	//******************************************************************************************
-	void KeyPress(int c_key_code)
+	void KeyPress(int c_key_code) override
 	{
 /*
 		// Get a pointer to the main camera.
@@ -956,7 +956,7 @@ public:
 */
 	}
 
-	void NewRaster()
+	void NewRaster() override
 	{
 		ShowMenuAndStats();
 

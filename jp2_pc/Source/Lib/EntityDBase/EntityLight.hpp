@@ -81,10 +81,10 @@ public:
 	//
 
 	// Invalidate shadow buffer when objects added.
-	void Process(const CMessageCreate& msgcreate);  //lint !e1411  //Yes, this had the same name as other functions.
+	void Process(const CMessageCreate& msgcreate) override;  //lint !e1411  //Yes, this had the same name as other functions.
 
 	// Invalidate shadow buffer when I myself am moved.
-	void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0);
+	void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0) override;
 
 	//******************************************************************************************
 	//
@@ -107,25 +107,25 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual bool bIncludeInBuildPart() const
+	virtual bool bIncludeInBuildPart() const override
 	{
 		return false;
 	}
 
 	//*****************************************************************************************
-	virtual bool bCanHaveChildren()
+	virtual bool bCanHaveChildren() override
 	{
 		return false;
 	}
 
 	//*****************************************************************************************
-	virtual const char* strPartType() const;
+	virtual const char* strPartType() const override;
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 
 };

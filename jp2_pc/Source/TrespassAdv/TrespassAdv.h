@@ -1,3 +1,5 @@
+#pragma once
+
 // TrespassAdv.h : main header file for the TRESPASSADV application
 //
 
@@ -21,7 +23,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CTrespassAdvApp)
 	public:
-	virtual BOOL InitInstance();
+	virtual BOOL InitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation

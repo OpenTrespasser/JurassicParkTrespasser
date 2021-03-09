@@ -62,7 +62,7 @@ public:
     virtual ~CMultiWnd() {;}
 
 protected:
-    virtual LRESULT BaseHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
+    virtual LRESULT BaseHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) override;
 };
 
 
@@ -83,10 +83,10 @@ public:
     virtual void    OnOK();
 
 protected:
-    virtual LRESULT BaseHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
+    virtual LRESULT BaseHandler(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) override;
 
-    virtual void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify);
-    virtual BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam);
+    virtual void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) override;
+    virtual BOOL OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) override;
 };
 
 

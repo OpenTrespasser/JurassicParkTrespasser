@@ -468,7 +468,7 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void WriteToBuffer(CStrBuffer& strbuf, int i_indent = 0, bool b_show_hidden = false)
+	virtual void WriteToBuffer(CStrBuffer& strbuf, int i_indent = 0, bool b_show_hidden = false) override
 	//
 	// Outputs self and children to the buffer, with header.
 	//

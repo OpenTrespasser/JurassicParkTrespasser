@@ -245,7 +245,7 @@ public:
 	}
 
 	//*****************************************************************************************
-	virtual void Queue() const;
+	virtual void Queue() const override;
 
 	//*****************************************************************************************
 	//
@@ -278,14 +278,14 @@ public:
 protected:
 	//*****************************************************************************************
 	//
-	void DeliverTo(CEntity* pet) const 
+	void DeliverTo(CEntity* pet) const override
 	{ 
 		pet->Process(*this); 
 	}
 
 	//*****************************************************************************************
 	//
-	const char* strName() const 
+	const char* strName() const override
 	{
 		return "Audio"; 
 	}

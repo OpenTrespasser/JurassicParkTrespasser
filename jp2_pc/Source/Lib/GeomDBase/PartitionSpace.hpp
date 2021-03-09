@@ -176,7 +176,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	virtual void Cast(CPartitionSpace** ppparts)
+	virtual void Cast(CPartitionSpace** ppparts) override
 	//
 	// Assigns a 'this' pointer for the CPartitionSpace or descendant object.
 	//
@@ -189,7 +189,7 @@ public:
 	//
 	virtual const CBoundVol* pbvBoundingVol
 	(
-	) const;
+	) const override;
 	//
 	// Returns the bounding volume for the partition.
 	//
@@ -199,7 +199,7 @@ public:
 	//
 	virtual const char* strPartType
 	(
-	) const;
+	) const override;
 	//
 	// Returns a partition type string.
 	//
@@ -253,67 +253,67 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual float fDistanceFromGlobalCameraSqr() const;
+	virtual float fDistanceFromGlobalCameraSqr() const override;
 
 	//*****************************************************************************************
-	virtual uint32 u4GetUniqueHandle() const;
+	virtual uint32 u4GetUniqueHandle() const override;
 
 	//*****************************************************************************************
-	virtual CPresence3<> pr3Presence() const;
+	virtual CPresence3<> pr3Presence() const override;
 
 	//*****************************************************************************************
-	virtual void SetPresence(const CPresence3<> &pr3);
+	virtual void SetPresence(const CPresence3<> &pr3) override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3Placement() const;
+	virtual CPlacement3<> p3Placement() const override;
 
 	//*****************************************************************************************
-	virtual void SetPlacement(const CPlacement3<>& p3);
+	virtual void SetPlacement(const CPlacement3<>& p3) override;
 
 	//*****************************************************************************************
-	virtual CVector3<> v3Pos() const;
+	virtual CVector3<> v3Pos() const override;
 	
 	//*****************************************************************************************
-	virtual void SetPos(const CVector3<>& v3_pos);
+	virtual void SetPos(const CVector3<>& v3_pos) override;
 
 	//*****************************************************************************************
-	virtual CRotate3<> r3Rot() const;
+	virtual CRotate3<> r3Rot() const override;
 	
 	//*****************************************************************************************
-	virtual void SetRot(const CRotate3<>& r3_rot);
+	virtual void SetRot(const CRotate3<>& r3_rot) override;
 
 	//*****************************************************************************************
-	virtual float fGetScale() const;
+	virtual float fGetScale() const override;
 
 	//*****************************************************************************************
-	virtual void SetScale(float f_new_scale);
+	virtual void SetScale(float f_new_scale) override;
 	
 	//*****************************************************************************************
-	virtual int iSizeOf() const;
+	virtual int iSizeOf() const override;
 
 	//*****************************************************************************************
-	virtual bool bIsPureSpatial() const;
+	virtual bool bIsPureSpatial() const override;
 	
 	//*****************************************************************************************
 	//virtual void Save(int i_handle) const;
 	
 	//*****************************************************************************************
-	virtual char* pcSaveSpatial(char *pc_buffer) const;
+	virtual char* pcSaveSpatial(char *pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;  // See instance.hpp
+	virtual char * pcSave(char *  pc_buffer) const override;  // See instance.hpp
 
 	//*****************************************************************************************
-	virtual const char* pcLoad(const char *  pc_buffer);  // See instance.hpp
+	virtual const char* pcLoad(const char *  pc_buffer) override;  // See instance.hpp
 
 	//*****************************************************************************************
-	virtual void SetParent(CPartition* ppart = 0);
+	virtual void SetParent(CPartition* ppart = 0) override;
 	
 	//*****************************************************************************************
-	virtual void GetMinMaxDistance(float& rf_min, float& rf_max, CShapePresence& rsp);
+	virtual void GetMinMaxDistance(float& rf_min, float& rf_max, CShapePresence& rsp) override;
 
 	//*****************************************************************************************
-	virtual bool bIsEqualToSpatial(const CPartition* ppart) const;
+	virtual bool bIsEqualToSpatial(const CPartition* ppart) const override;
 
 };
 
@@ -358,22 +358,22 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual CPresence3<> pr3Presence() const;
+	virtual CPresence3<> pr3Presence() const override;
 
 	//*****************************************************************************************
-	virtual void SetPresence(const CPresence3<> &pr3);
+	virtual void SetPresence(const CPresence3<> &pr3) override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3Placement() const;
+	virtual CPlacement3<> p3Placement() const override;
 
 	//*****************************************************************************************
-	virtual void SetPlacement(const CPlacement3<>& p3);
+	virtual void SetPlacement(const CPlacement3<>& p3) override;
 
 	//*****************************************************************************************
-	virtual CVector3<> v3Pos() const;
+	virtual CVector3<> v3Pos() const override;
 	
 	//*****************************************************************************************
-	virtual void SetPos(const CVector3<>& v3_pos);
+	virtual void SetPos(const CVector3<>& v3_pos) override;
 
 };
 

@@ -784,61 +784,61 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual float fDistanceFromGlobalCameraSqr() const;
+	virtual float fDistanceFromGlobalCameraSqr() const override;
 
 	//*****************************************************************************************
-	virtual CPresence3<> pr3Presence() const;
+	virtual CPresence3<> pr3Presence() const override;
 
 	//*****************************************************************************************
-	virtual void SetPresence(const CPresence3<> &pr3);
+	virtual void SetPresence(const CPresence3<> &pr3) override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3Placement() const;
+	virtual CPlacement3<> p3Placement() const override;
 
 	//*****************************************************************************************
-	virtual void SetPlacement(const CPlacement3<> &p3);
+	virtual void SetPlacement(const CPlacement3<> &p3) override;
 
 	//*****************************************************************************************
-	virtual CVector3<> v3Pos() const;
+	virtual CVector3<> v3Pos() const override;
 	
 	//*****************************************************************************************
-	virtual void SetPos(const CVector3<>& v3_pos);
+	virtual void SetPos(const CVector3<>& v3_pos) override;
 
 	//*****************************************************************************************
-	virtual CRotate3<> r3Rot() const;
+	virtual CRotate3<> r3Rot() const override;
 	
 	//*****************************************************************************************
-	virtual void SetRot(const CRotate3<>& r3_rot);
+	virtual void SetRot(const CRotate3<>& r3_rot) override;
 
 	//*****************************************************************************************
-	virtual float fGetScale() const;
+	virtual float fGetScale() const override;
 
 	//*****************************************************************************************
-	virtual void SetScale(float f_new_scale);
+	virtual void SetScale(float f_new_scale) override;
 
 	//*****************************************************************************************
-	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0);
+	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0) override;
 
 	//*****************************************************************************************
-	virtual rptr_const<CRenderType> prdtGetRenderType() const;
+	virtual rptr_const<CRenderType> prdtGetRenderType() const override;
 
 	//*****************************************************************************************
-	virtual rptr<CShape> pshGetShape() const;
+	virtual rptr<CShape> pshGetShape() const override;
 
 	//*****************************************************************************************
-	virtual rptr<CMesh> pmshGetMesh() const;
+	virtual rptr<CMesh> pmshGetMesh() const override;
 
 	//*****************************************************************************************
-	virtual bool bContainsMovingObject() const;
+	virtual bool bContainsMovingObject() const override;
 
 	//*****************************************************************************************
-	virtual void Cast(CInstance** ppins)
+	virtual void Cast(CInstance** ppins) override
 	{
 		*ppins = this;
 	}
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvBoundingVol() const;
+	virtual const CBoundVol* pbvBoundingVol() const override;
 
 
 	//*****************************************************************************************
@@ -1015,7 +1015,7 @@ public:
 	//
 	virtual bool bIsMoving
 	(
-	) const;
+	) const override;
 	//
 	// Returns 'true' if the instance is moving or is likely to move.
 	//
@@ -1025,7 +1025,7 @@ public:
 	//
 	virtual bool bCanHaveChildren
 	(
-	);
+	) override;
 	//
 	// Returns 'true' if the instance is immovable.
 	//
@@ -1035,7 +1035,7 @@ public:
 	//
 	virtual const char* strPartType
 	(
-	) const;
+	) const override;
 	//
 	// Returns a partition type string.
 	//
@@ -1045,7 +1045,7 @@ public:
 	//
 	virtual bool bEmptyPart
 	(
-	) const
+	) const override
 	//
 	// Returns 'true' if the partition is empty, otherwise returns 'false.'
 	//
@@ -1059,7 +1059,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	virtual bool bIsInstance() const
+	virtual bool bIsInstance() const override
 	//
 	// Returns true if this is an instance object.
 	//
@@ -1161,7 +1161,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	virtual bool bPreload(const CBoundVol* pbv, const CPresence3<>* pr3, bool b_is_contained = false);
+	virtual bool bPreload(const CBoundVol* pbv, const CPresence3<>* pr3, bool b_is_contained = false) override;
 	//
 	// Preloads object into memory.
 	//
@@ -1171,7 +1171,7 @@ public:
 	//
 	virtual uint32 u4GetUniqueHandle
 	(
-	) const;
+	) const override;
 	//
 	// Returns a value uniquely representing the object.
 	//
@@ -1193,7 +1193,7 @@ public:
 	virtual char * pcSave
 	(
 		char *  pc_buffer
-	) const;
+	) const override;
 	//
 	// Saves the instance delta into buffer.
 	//
@@ -1207,7 +1207,7 @@ public:
 	virtual const char* pcLoad
 	(
 		const char *  pc_buffer
-	);
+	) override;
 	//
 	// Sets the instance internal variables based on info in buffer.
 	//
@@ -1306,7 +1306,7 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual bool bIsBackdrop()
+	virtual bool bIsBackdrop() override
 	{
 		return true;
 	}

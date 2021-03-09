@@ -239,7 +239,7 @@ public:
 	//
 	// Overides.
 	//	
-	virtual const CBoundVol* pbvBoundingVol() const
+	virtual const CBoundVol* pbvBoundingVol() const override
 	{ 
 		return bv_BoundingVolume; 
 	}
@@ -250,7 +250,7 @@ public:
 	// trigger requires step messages it may overload this function, but this must be 
 	// called when the ewn function has finished so that delayed messages still get fired
 	//
-	virtual void Process(const CMessageStep& msgstep);
+	virtual void Process(const CMessageStep& msgstep) override;
 
 
 	//*****************************************************************************************
@@ -260,17 +260,17 @@ public:
 	// The defaul implemntation of this virtual function just calls the Move member
 	// of the instance base class.
 	//
-	virtual void Process(const CMessageMoveTriggerTo& msgmtrigto);
+	virtual void Process(const CMessageMoveTriggerTo& msgmtrigto) override;
 
 
 	//*****************************************************************************************
 	// the base class handles all boolean expressions through this message.
 	//
-	virtual void Process(const CMessageTrigger& trigmsg);
+	virtual void Process(const CMessageTrigger& trigmsg) override;
 
 
 	//*****************************************************************************************
-	virtual bool bIncludeInBuildPart() const
+	virtual bool bIncludeInBuildPart() const override
 	{
 		return false;
 	}
@@ -285,20 +285,20 @@ public:
 	virtual void Move(const CPlacement3<>& p3_new);
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
 	// override the default implementation in CPartition which assigns NULL.
 	//
-	virtual void Cast(CTrigger** pptr)
+	virtual void Cast(CTrigger** pptr) override
 	{
 		*pptr=this;
 	}
@@ -513,32 +513,32 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual bool bIncludeInBuildPart() const
+	virtual bool bIncludeInBuildPart() const override
 	{
 		return true;
 	}
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageStep& msgstep);
+	virtual void Process(const CMessageStep& msgstep) override;
 
 	//*****************************************************************************************
-	virtual bool bEvaluateNow();
+	virtual bool bEvaluateNow() override;
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
-	virtual CInstance* pinsCopy() const;
+	virtual CInstance* pinsCopy() const override;
 	
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CLocationTrigger"; 
 	}
@@ -546,7 +546,7 @@ public:
 	//*****************************************************************************************
 	// override the default implementation in CPartition which assigns NULL.
 	//
-	virtual void Cast(CLocationTrigger** pptr)
+	virtual void Cast(CLocationTrigger** pptr) override
 	{
 		*pptr=this;
 	}
@@ -566,8 +566,8 @@ public:
 
 	// Messages to process.
 	//void Process(const CMessageHere& msg);
-	void Process(const CMessageMove& msg);
-	virtual void Process(const CMessageMoveTriggerTo& msgmtrigto);
+	void Process(const CMessageMove& msg) override;
+	virtual void Process(const CMessageMoveTriggerTo& msgmtrigto) override;
 
 	//*****************************************************************************************
 	static bool bValidateTriggerProperties
@@ -659,20 +659,20 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 	//*****************************************************************************************
-	virtual bool bEvaluateNow();
+	virtual bool bEvaluateNow() override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CCreatureTrigger"; 
 	}
@@ -684,9 +684,9 @@ public:
 
 	//******************************************************************************************
 	// Messages to process.
-	void Process(const CMessageDeath& msg);
-	void Process(const CMessageDamage& msg);
-	void Process(const CMessageMove& msg);
+	void Process(const CMessageDeath& msg) override;
+	void Process(const CMessageDamage& msg) override;
+	void Process(const CMessageMove& msg) override;
 
 	//*****************************************************************************************
 	static bool bValidateTriggerProperties
@@ -735,25 +735,25 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CObjectTrigger"; 
 	}
 
 	//******************************************************************************************
 	// these are the messages that this trigger will respond to..
-	void Process(const CMessagePickUp& msgpu);
-	void Process(const CMessageUse& msguse);
+	void Process(const CMessagePickUp& msgpu) override;
+	void Process(const CMessageUse& msguse) override;
 
 	//******************************************************************************************
 	// List control functions
@@ -805,25 +805,25 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CMagnetTrigger"; 
 	}
 
 	//******************************************************************************************
 	// these are the messages that this trigger will respond to..
-	void Process(const CMessageMagnetMove& msgmagm);
-	void Process(const CMessageMagnetBreak& msgmagb);
+	void Process(const CMessageMagnetMove& msgmagm) override;
+	void Process(const CMessageMagnetBreak& msgmagb) override;
 
 	//*****************************************************************************************
 	static bool bValidateTriggerProperties
@@ -875,26 +875,26 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char* pcSave(char* pc_buffer) const;
+	virtual char* pcSave(char* pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char* pcLoad(const char*  pc_buffer);
+	virtual const char* pcLoad(const char*  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char* buffer, int i_buffer_length);
+	virtual int iGetDescription(char* buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CStartTrigger";
 	}
 
 	//******************************************************************************************
 	// these are the messages that this trigger will respond to..
-	void Process(const CMessageStep& msgstep);
+	void Process(const CMessageStep& msgstep) override;
 
-	void Process(const CMessageSystem& msgsys);
+	void Process(const CMessageSystem& msgsys) override;
 
 	//*****************************************************************************************
 	static bool bValidateTriggerProperties
@@ -941,24 +941,24 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CCollisionTrigger"; 
 	}
 
 	//******************************************************************************************
 	// these are the messages that this trigger will respond to..
-	void Process(const CMessageCollision& msg);
+	void Process(const CMessageCollision& msg) override;
 
 	//*****************************************************************************************
 	static bool bValidateTriggerProperties
@@ -1018,24 +1018,24 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CSequenceTrigger"; 
 	}
 
 	//******************************************************************************************
 	// these are the messages that this trigger will respond to..
-	void Process(const CMessageTrigger& trigmsg);
+	void Process(const CMessageTrigger& trigmsg) override;
 
 	//*****************************************************************************************
 	// function will return true or false with regards to all the object references contained
@@ -1087,17 +1087,17 @@ public:
 
 	//******************************************************************************************
 	// these are the messages that this trigger will respond to..
-	void Process(const CMessageStep& msg);
+	void Process(const CMessageStep& msg) override;
 
 	//*****************************************************************************************
-	virtual bool bEvaluateNow();
+	virtual bool bEvaluateNow() override;
 	//
 	// Simply returns the current evaluate state of the trigger.
 	//
 	//*********************************
 
 	//******************************************************************************************
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CBooleanTrigger"; 
 	}
@@ -1140,27 +1140,27 @@ public:
 	~CTimerTrigger();
 
 	//******************************************************************************************
-	void Process(const CMessageStep& msg);
+	void Process(const CMessageStep& msg) override;
 
 	//******************************************************************************************
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CTimerTrigger"; 
 	}
 
 	//*****************************************************************************************
-	virtual char* pcSave(char*  pc_buffer) const;
+	virtual char* pcSave(char*  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
-	virtual bool bEvaluateNow()
+	virtual bool bEvaluateNow() override
 	{
 		return bState;
 	}
@@ -1209,20 +1209,20 @@ public:
 	~CVariableTrigger();
 
 	//******************************************************************************************
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CVariableTrigger"; 
 	}
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
 	virtual bool bEvaluateNow
 	(
-	);
+	) override;
 	//
 	// Simply returns the current value of the trigger.
 	//
@@ -1292,20 +1292,20 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 	//*****************************************************************************************
-	virtual bool bEvaluateNow();
+	virtual bool bEvaluateNow() override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
-	const char* strPartType() const
+	const char* strPartType() const override
 	{ 
 		return "CMoreMassTrigger"; 
 	}
