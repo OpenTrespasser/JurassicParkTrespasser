@@ -83,23 +83,23 @@ public:
 	//
 
 	//*****************************************************************************************
-	void Process(const CMessagePaint& msgpaint);  //lint !e1411
+	void Process(const CMessagePaint& msgpaint) override;  //lint !e1411
 
 	//******************************************************************************************
-	void Process(const CMessageMove& msgmv);
+	void Process(const CMessageMove& msgmv) override;
 
 	//******************************************************************************************
-	void Process(const CMessageSystem& msg_system);
+	void Process(const CMessageSystem& msg_system) override;
 
 	//*****************************************************************************************
-	char* pcSave(char*  pc) const;
+	char* pcSave(char*  pc) const override;
 
 	//*****************************************************************************************
-	const char* pcLoad(const char*  pc);
+	const char* pcLoad(const char*  pc) override;
 
 	//*****************************************************************************************
 	//
-	void SaveDefaults();
+	void SaveDefaults() override;
 	//
 	// Save the default values of the user modifiable settings.
 	//
@@ -107,7 +107,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	void RestoreDefaults();
+	void RestoreDefaults() override;
 	//
 	// Restore the default values of the user modifiable settings.
 	//

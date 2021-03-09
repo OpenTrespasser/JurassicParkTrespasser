@@ -98,12 +98,12 @@ public:
 	// underflow and overflow are pure virtual and are the only 2 members that must be
 	// implemented.
 	//
-	int underflow();
+	int underflow() override;
 
 	//******************************************************************************************
 	// Makes a string out of a char and sends it to the debugger and optionally a file
 	//
-	int overflow(int ch);
+	int overflow(int ch) override;
 
 	//******************************************************************************************
 	// data members

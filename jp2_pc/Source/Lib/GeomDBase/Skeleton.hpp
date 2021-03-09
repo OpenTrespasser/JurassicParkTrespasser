@@ -145,7 +145,7 @@ public:
 
 	//******************************************************************************************
 	virtual void GetExtents(CInstance* pins, const CTransform3<>& tf3_shape,
-		CVector3<>& rv3_min, CVector3<>& rv3_max) const;
+		CVector3<>& rv3_min, CVector3<>& rv3_max) const override;
 
 	//
 	// Inherit Render and CPolyIterator.
@@ -175,7 +175,7 @@ public:
 		const CPArray<COcclude*>&	papoc,				// Array of occluding objects.
 		ESideOf						esf_view			// Shape's relation to the view volume
 														// (for trivial acceptance).
-	) const;
+	) const override;
 
 	//
 	// Forward nested class declaration; include "SkeletonIterator.hpp" for definition.
@@ -183,16 +183,16 @@ public:
 	class CPolyIterator;
 
 	//******************************************************************************************
-	virtual CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const;
+	virtual CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const override;
 
 	//******************************************************************************************
-	virtual rptr_const<CBioMesh> rpbmCast() const
+	virtual rptr_const<CBioMesh> rpbmCast() const override
 	{
 		return rptr_const_this(this);
 	}
 
 	//******************************************************************************************
-	virtual CPArray< CVector3<> > pav3GetWrap() const
+	virtual CPArray< CVector3<> > pav3GetWrap() const override
 	{
 		return CPArray< CVector3<> >(0, 0);
 	}
@@ -201,7 +201,7 @@ public:
 	//  Cast override:
 
 	//*****************************************************************************************
-	virtual void Cast(rptr_const<CBioMesh>* ppbm) const
+	virtual void Cast(rptr_const<CBioMesh>* ppbm) const override
 	{
 		*ppbm = rptr_const_this(this);
 	}

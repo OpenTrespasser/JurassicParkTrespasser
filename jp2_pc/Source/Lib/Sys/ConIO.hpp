@@ -127,7 +127,7 @@ public:
 	//
 	virtual void Show
 	(
-	) const;
+	) const override;
 	//
 	// Displays characters in buffer onto the text output dialog box. Sizes the font to fit
 	// the entire buffer in the standard dialog box. Does nothing if the dialog box is closed.

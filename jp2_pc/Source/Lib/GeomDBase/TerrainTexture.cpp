@@ -151,19 +151,19 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void BeginFrame()
+	virtual void BeginFrame() override
 	{
 		prasScreen->Lock();
 	}
 
 	//******************************************************************************************
-	virtual void EndFrame()
+	virtual void EndFrame() override
 	{
 		prasScreen->Unlock();
 	}
 
 	//******************************************************************************************
-	virtual void DrawPolygon(CRenderPolygon& rp)
+	virtual void DrawPolygon(CRenderPolygon& rp) override
 	{
 		// Invoke the CDrawPolygon code, using the screen as both screen and Z buffer.
 		if (rp.seterfFace[erfTRANSPARENT])
@@ -458,13 +458,13 @@ namespace NMultiResolution
 
 
 		//*****************************************************************************************
-		virtual void Execute()
+		virtual void Execute() override
 		{
 			static_cast<CTextureNode::CPriv*>(ptxnItem)->DoTextureUpdate(pqntinRoot);
 		}
 
 		//*****************************************************************************************
-		virtual void PostScheduleExecute()
+		virtual void PostScheduleExecute() override
 		{
 		}
 	};

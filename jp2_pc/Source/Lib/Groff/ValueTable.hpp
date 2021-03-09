@@ -408,7 +408,7 @@ public:
 	//
 	virtual uint uWriteCount
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -416,7 +416,7 @@ public:
 	virtual uint uWrite
 	(
 		char** ppc_buffer
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -424,7 +424,7 @@ public:
 	virtual uint uRead
 	(
 		char** ppc_buffer
-	);
+	) override;
 };
 
 
@@ -523,7 +523,7 @@ public:
 	//
 	virtual uint uWriteCount
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -531,7 +531,7 @@ public:
 	virtual uint uWrite
 	(
 		char** ppc_buffer
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -539,7 +539,7 @@ public:
 	virtual uint uRead
 	(
 		char** ppc_buffer
-	);
+	) override;
 };
 
 
@@ -637,7 +637,7 @@ public:
 	//
 	virtual uint uWriteCount
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -645,7 +645,7 @@ public:
 	virtual uint uWrite
 	(
 		char** ppc_buffer
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -653,7 +653,7 @@ public:
 	virtual uint uRead
 	(
 		char** ppc_buffer
-	);
+	) override;
 };
 
 
@@ -751,7 +751,7 @@ public:
 	//
 	virtual uint uWriteCount
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -759,7 +759,7 @@ public:
 	virtual uint uWrite
 	(
 		char** ppc_buffer
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -767,7 +767,7 @@ public:
 	virtual uint uRead
 	(
 		char** ppc_buffer
-	);
+	) override;
 };
 
 
@@ -865,7 +865,7 @@ public:
 	//
 	virtual uint uWriteCount
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -873,7 +873,7 @@ public:
 	virtual uint uWrite
 	(
 		char** ppc_buffer
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -881,7 +881,7 @@ public:
 	virtual uint uRead
 	(
 		char** ppc_buffer
-	);
+	) override;
 };
 
 
@@ -1089,7 +1089,7 @@ public:
 	//
 	virtual uint uWriteCount
 	(
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -1097,7 +1097,7 @@ public:
 	virtual uint uWrite
 	(
 		char** ppc_buffer
-	);
+	) override;
 
 
 	//******************************************************************************************
@@ -1105,7 +1105,7 @@ public:
 	virtual uint uRead
 	(
 		char** ppc_buffer
-	);
+	) override;
 };
 
 

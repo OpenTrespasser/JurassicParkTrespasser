@@ -213,7 +213,7 @@ public:
 		int   i_steps = 100,	// Number of discrete steps the scrollbar uses.
 		int	  i_text_id = 0,	// Associated static text control for display.
 		CWnd* pwnd_dialog = 0	// Containing dialog.
-	)
+	) override
 	//
 	// Sets the scrollbar's internal values.
 	//
@@ -244,7 +244,7 @@ public:
 	(
 		float f_current_value,	// Current value of the parameter.
 		CWnd* pwnd_dialog = 0	// Containing dialog.
-	)
+	) override
 	//
 	// Sets the scrollbar to the specified value.
 	//
@@ -266,7 +266,7 @@ public:
 	virtual float fGet
 	(
 		CWnd* pwnd_dialog = 0			// Containing dialog.
-	)
+	) override
 	//
 	// Gets the value specified by the scrollbar.
 	//

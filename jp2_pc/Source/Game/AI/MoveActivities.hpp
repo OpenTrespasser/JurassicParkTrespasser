@@ -97,14 +97,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -143,14 +143,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -186,14 +186,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -234,14 +234,14 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -277,11 +277,11 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -313,14 +313,14 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -356,14 +356,14 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual CRating rtRate(	const CFeeling&	feel,CInfluence*		pinf);
+		virtual CRating rtRate(	const CFeeling&	feel,CInfluence*		pinf) override;
 
 		//*********************************************************************************
-		virtual void Act(CRating			rt_importance,	CInfluence*		pinf);
+		virtual void Act(CRating			rt_importance,	CInfluence*		pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -403,20 +403,20 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual CRating rtRate(	const CFeeling&	feel,CInfluence*		pinf);
+		virtual CRating rtRate(	const CFeeling&	feel,CInfluence*		pinf) override;
 
 		//*********************************************************************************
-		virtual void Act(CRating			rt_importance,	CInfluence*		pinf);
+		virtual void Act(CRating			rt_importance,	CInfluence*		pinf) override;
 
 		//*****************************************************************************************
-		virtual char * pcSave(char *  pc_buffer) const;
+		virtual char * pcSave(char *  pc_buffer) const override;
 
 		//*****************************************************************************************
-		virtual const char * pcLoad(const char *  pc_buffer);
+		virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -456,20 +456,20 @@ public:
 	//
 
 		//*********************************************************************************
-		virtual CRating rtRate(	const CFeeling&	feel,CInfluence*		pinf);
+		virtual CRating rtRate(	const CFeeling&	feel,CInfluence*		pinf) override;
 
 		//*********************************************************************************
-		virtual void Act(CRating			rt_importance,	CInfluence*		pinf);
+		virtual void Act(CRating			rt_importance,	CInfluence*		pinf) override;
 
 		//*****************************************************************************************
-		virtual char * pcSave(char *  pc_buffer) const;
+		virtual char * pcSave(char *  pc_buffer) const override;
 
 		//*****************************************************************************************
-		virtual const char * pcLoad(const char *  pc_buffer);
+		virtual const char * pcLoad(const char *  pc_buffer) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -505,14 +505,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -548,14 +548,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -596,14 +596,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -641,14 +641,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -684,14 +684,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -729,14 +729,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -772,14 +772,14 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 
@@ -826,17 +826,17 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance, CInfluence* pinf);
+		virtual void Act(CRating rt_importance, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf);
+		virtual CRating rtRate(const CFeeling&	feel, CInfluence* pinf) override;
 
 		//*************************************************************************************
-		virtual void Activate(bool b_active_state);
+		virtual void Activate(bool b_active_state) override;
 
 #if VER_TEST
 		//*****************************************************************************************
-		virtual int iGetDescription(char *buffer, int i_buffer_length);
+		virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 

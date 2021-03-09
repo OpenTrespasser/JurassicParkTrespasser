@@ -193,14 +193,14 @@ public:
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 
 	//
@@ -211,56 +211,56 @@ public:
 	virtual void PreRender
 	(
 		CRenderContext& renc			// Target, camera, settings, etc.
-	);
+	) override;
 
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessagePhysicsReq& msgpr
-	);
+	) override;
 
 	//lint -save -e1411
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessageCollision& msgcoll
-	);
+	) override;
 
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessageMove& msgmv
-	);
+	) override;
 
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessageDelete& msgdel
-	);
+	) override;
 
 	//******************************************************************************************
 	virtual void Process
 	(
 		const CMessageDeath& msgdeath
-	);
+	) override;
 
 	//*****************************************************************************************
 	virtual void HandleDamage
 	(
 		float f_damage, const CInstance* pins_aggressor = 0, const CInstance* pins_me = 0
-	);
+	) override;
 
 	//*****************************************************************************************
 	virtual CInstance* pinsCopy
 	(
-	) const;		// Makes a copy of this
+	) const override;		// Makes a copy of this
 
 	//
 	// Identifier functions.
 	//
 
 	//*****************************************************************************************
-	virtual void Cast(CAnimal** ppani)
+	virtual void Cast(CAnimal** ppani) override
 	{
 		*ppani = this;
 	}

@@ -562,13 +562,13 @@ public:
 	}
 
 	//******************************************************************************************
-	int iNumPoints() const
+	int iNumPoints() const override
 	{
 		return pav3Points.uLen;
 	}
 
 	//******************************************************************************************
-	int iNumVertices() const
+	int iNumVertices() const override
 	{
 		return pamvVertices.uLen;
 	}
@@ -580,13 +580,13 @@ public:
 	}
 
 	//******************************************************************************************
-	int iNumPolygons() const
+	int iNumPolygons() const override
 	{
 		return pampPolygons.uLen;
 	}
 
 	//******************************************************************************************
-	int iNumTriangles() const;
+	int iNumTriangles() const override;
 
 
 	//******************************************************************************************
@@ -608,32 +608,32 @@ public:
 		const CPArray<COcclude*>&	papoc,				// Array of occluding objects.
 		ESideOf						esf_view			// Shape's relation to the view volume
 														// (for trivial acceptance).
-	) const;
+	) const override;
 	//
 	// Defined in Pipeline.cpp.
 	//
 
 	//******************************************************************************************
-	virtual const CBoundVol& bvGet() const
+	virtual const CBoundVol& bvGet() const override
 	{
 		return bvbVolume;
 	}
 
 	//*****************************************************************************************
-	virtual CVector3<> v3GetPhysicsBox() const
+	virtual CVector3<> v3GetPhysicsBox() const override
 	{
 		return v3Max;
 	}
 
 	//*****************************************************************************************
-	virtual CVector3<> v3GetPivot() const
+	virtual CVector3<> v3GetPivot() const override
 	{
 		return v3Pivot;
 	}
 
 	//******************************************************************************************
 	virtual void GetExtents(CInstance* pins, const CTransform3<>& tf3_shape,
-		CVector3<>& rv3_min, CVector3<>& rv3_max) const;
+		CVector3<>& rv3_min, CVector3<>& rv3_max) const override;
 
 	//******************************************************************************************
 	void AdjustBoundingVolumeForDetailReducedVersions();
@@ -656,20 +656,20 @@ public:
 
 
 	//******************************************************************************************
-	virtual rptr<CRenderType> prdtCopy()
+	virtual rptr<CRenderType> prdtCopy() override
 	{
 		Assert(false);
 		return rptr0;
 	}
 
 	//******************************************************************************************
-	virtual CPArray< CVector3<> > pav3GetWrap() const;
+	virtual CPArray< CVector3<> > pav3GetWrap() const override;
 
 	//******************************************************************************************
-	virtual void CreateWrap();
+	virtual void CreateWrap() override;
 
 	//******************************************************************************************
-	virtual void CreateWrapBox();
+	virtual void CreateWrapBox() override;
 
 	//******************************************************************************************
 	virtual void CreateMipMaps
@@ -677,7 +677,7 @@ public:
 		uint32 u4_smallest = 0xffffffff			// Generate all mips by default
 	);
 	//******************************************************************************************
-	virtual bool bSimpleShape();
+	virtual bool bSimpleShape() override;
 
 	//
 	// CFetchable overrides.  (for prefetching)
@@ -703,7 +703,7 @@ public:
 	class CPolyIterator;
 
 	//******************************************************************************************
-	virtual CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const;
+	virtual CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const override;
 
 	//******************************************************************************************
 	//
@@ -741,7 +741,7 @@ public:
 	//
 	virtual void MakeNoTexture
 	(
-	);
+	) override;
 	//
 	// Makes the surface apply flat-shading.
 	//
@@ -756,7 +756,7 @@ public:
 	//**********************************
 
 	//******************************************************************************************
-	virtual void Validate() const;
+	virtual void Validate() const override;
 
 protected:
 
@@ -815,7 +815,7 @@ public:
 	//  Cast override:
 
 	//*****************************************************************************************
-	virtual void Cast(rptr_const<CMesh>* ppmesh) const
+	virtual void Cast(rptr_const<CMesh>* ppmesh) const override
 	{
 		*ppmesh = rptr_const_this(this);
 	}
@@ -916,26 +916,26 @@ public:
 	);
 
 	//******************************************************************************************
-	virtual const CBoundVol& bvGet() const
+	virtual const CBoundVol& bvGet() const override
 	{
 		return bvbVolume;
 	}
 
 	//******************************************************************************************
-	virtual rptr<CRenderType> prdtCopy()
+	virtual rptr<CRenderType> prdtCopy() override
 	{
 		Assert(false);
 		return rptr0;
 	}
 
 	//******************************************************************************************
-	int iNumPoints() const
+	int iNumPoints() const override
 	{
 		return pamvVertices.uLen;
 	}
 
 	//******************************************************************************************
-	int iNumVertices() const
+	int iNumVertices() const override
 	{
 		return pamvVertices.uLen;
 	}
@@ -947,19 +947,19 @@ public:
 	}
 
 	//******************************************************************************************
-	int iNumPolygons() const
+	int iNumPolygons() const override
 	{
 		return 1;
 	}
 
 	//******************************************************************************************
-	int iNumTriangles() const
+	int iNumTriangles() const override
 	{
 		return 1;
 	}
 
 	//******************************************************************************************
-	virtual CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const
+	virtual CShape::CPolyIterator* pPolyIterator(const CInstance* pins, const CRenderContext* prenc) const override
 	{
 		Assert(false);
 		return NULL;
@@ -1122,7 +1122,7 @@ public:
 	//
 	virtual bool bIsAnimated
 	(
-	) const
+	) const override
 	//
 	// Returns 'true' if the shape is animated (e.g., is an animating mesh).
 	//
@@ -1152,7 +1152,7 @@ public:
 		const CPArray<COcclude*>&	papoc,				// Array of occluding objects.
 		ESideOf						esf_view			// Shape's relation to the view volume
 														// (for trivial acceptance).
-	) const;
+	) const override;
 	//
 	//	Overridden to enable the mesh to decide when to animate itself.
 	//
@@ -1210,7 +1210,7 @@ public:
 		const CPArray<COcclude*>&	papoc,				// Array of occluding objects.
 		ESideOf						esf_view			// Shape's relation to the view volume
 														// (for trivial acceptance).
-	) const;
+	) const override;
 	//
 	//	Overridden to enable the mesh to decide when to animate itself.
 	//

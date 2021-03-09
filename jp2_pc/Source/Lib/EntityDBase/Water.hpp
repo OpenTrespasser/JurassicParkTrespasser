@@ -156,22 +156,22 @@ public:
 	virtual bool bContainsCacheableMeshes();
 
 	//*****************************************************************************************
-	virtual void InitializeDataStatic();
+	virtual void InitializeDataStatic() override;
 
 	//*****************************************************************************************
-	virtual void PreRender(CRenderContext& renc);
+	virtual void PreRender(CRenderContext& renc) override;
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageStep& msgstep);
+	virtual void Process(const CMessageStep& msgstep) override;
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageSystem& msgsys);
+	virtual void Process(const CMessageSystem& msgsys) override;
 
 	//*****************************************************************************************
-	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0);
+	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0) override;
 
 	//*****************************************************************************************
-	virtual void Cast(CEntityWater** ppetw)
+	virtual void Cast(CEntityWater** ppetw) override
 	{
 		*ppetw = this;
 	}
@@ -216,7 +216,7 @@ public:
 	//
 	virtual bool bIsMoving
 	(
-	) const;
+	) const override;
 	//
 	// Returns 'true' always, as water is always dynamic.
 	//

@@ -140,7 +140,7 @@ public:
 	//
 	virtual CPhysicsInfo* pphiCopy
 	(
-	);
+	) override;
 	//
 	// Copies this, returning a unique, non-instanced object outside of the instancing system.
 	//
@@ -167,20 +167,20 @@ public:
 
 	//******************************************************************************************
 	//
-	virtual void ZeroRefs();
+	virtual void ZeroRefs() override;
 	// 
 	//	Overridden to allow pphibFindShared to handle its own memory.
 	//
 	//**********************************
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvGetBoundVol() const
+	virtual const CBoundVol* pbvGetBoundVol() const override
 	{
 		return &bvbBoundVol;
 	}
 
 	//*****************************************************************************************
-	virtual const CBoundVol* pbvGetCollideVol() const
+	virtual const CBoundVol* pbvGetCollideVol() const override
 	{
 		return &bvbCollideVol;
 	}
@@ -191,25 +191,25 @@ public:
 		CInstance *pins, 
 		bool b_just_update = false, 
 		const CPlacement3<>& p3_vel = p3VELOCITY_ZERO
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual void Deactivate(CInstance *pins) const;
+	virtual void Deactivate(CInstance *pins) const override;
 
 	//*****************************************************************************************
-	virtual bool bIsActive(const CInstance* pins) const;
+	virtual bool bIsActive(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual bool bIsMoving(const CInstance* pins) const;
+	virtual bool bIsMoving(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3GetVelocity(const CInstance* pins) const;
+	virtual CPlacement3<> p3GetVelocity(const CInstance* pins) const override;
 
 	//*****************************************************************************************
 	static void UpdateWDBase(int i_index);
 
 	//*****************************************************************************************
-	virtual void UpdateWDBase(CInstance* pins, int i_index, int i_element) const;
+	virtual void UpdateWDBase(CInstance* pins, int i_index, int i_element) const override;
 
 	//**********************************************************************************************
 	//
@@ -227,25 +227,25 @@ public:
 		int ai_sound[],						// Sounds.
 		float aaf_magnet_pos[][3],			// Magnet positions.
 		float af_breaking[]					// Magnet strengths.
-	) const;
+	) const override;
 	//
 	//  Initializes arrays for call to CreateBoxModel.
 	//
 	//**************************
 
 	//**********************************************************************************************
-	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const;
+	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const override;
 
 	//*****************************************************************************************
-	virtual void ForceVelocity(CInstance* pins_target, const CVector3<>& v3_new_velocity) const;
+	virtual void ForceVelocity(CInstance* pins_target, const CVector3<>& v3_new_velocity) const override;
 	
 	//*****************************************************************************************
-	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const;
+	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const override;
 
-	virtual CPhysicsInfoBox* ppibCast()
+	virtual CPhysicsInfoBox* ppibCast() override
 	{ return this; }
 
-	virtual CPhysicsInfoBox const * ppibCast() const
+	virtual CPhysicsInfoBox const * ppibCast() const override
 	{ return this; }
 
 
@@ -255,10 +255,10 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual TReal fVolume(CInstance* pins) const;
+	virtual TReal fVolume(CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual TReal fMass(const CInstance* pins) const;
+	virtual TReal fMass(const CInstance* pins) const override;
 
 	//*****************************************************************************************
 	//

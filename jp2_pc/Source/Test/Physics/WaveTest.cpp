@@ -340,7 +340,7 @@ public:
 	// Overrides.
 	//
 
-	void Init()
+	void Init() override
 	{
 		vpScr.SetVirtualSize(mLength, -mLength);
 		vpScr.SetVirtualOrigin(0, -mLength/2);
@@ -348,12 +348,12 @@ public:
 		SetContinuous(true);
 	}
 
-	void NewRaster()
+	void NewRaster() override
 	{
 		vpScr.SetSize(prasMainScreen->iWidth, prasMainScreen->iHeight);
 	}
 
-	void Paint()
+	void Paint() override
 	{ 
 		prasMainScreen->Clear(CColour(0, 0, 0));
 
@@ -381,7 +381,7 @@ public:
 		}
 	}
 
-	void Step()
+	void Step() override
 	{
 		if (bFirst)
 		{
@@ -398,13 +398,13 @@ public:
 		conStd.Show();
 	}
 
-	void MouseMove(int i_x, int i_y)
+	void MouseMove(int i_x, int i_y) override
 	{
 		// Call function handling virtual coordinates.
 		MouseMove(CVector2<>(vpScr.vcVirtualX(i_x), vpScr.vcVirtualY(i_y)));
 	}
 
-	void KeyPress(int i_key)
+	void KeyPress(int i_key) override
 	{
 		switch (i_key)
 		{
@@ -866,7 +866,7 @@ public:
 	};
 
 	//********************************************************************************************
-	void Init()
+	void Init() override
 	{
 #if GREY
 		vpScr.SetVirtualSize(mLength, mWidth, true);
@@ -889,7 +889,7 @@ public:
 	}
 
 	//********************************************************************************************
-	void NewRaster()
+	void NewRaster() override
 	{
 		vpScr.SetSize(prasMainScreen->iWidth, prasMainScreen->iHeight);
 #if GREY
@@ -901,7 +901,7 @@ public:
 	}
 
 	//********************************************************************************************
-	void Paint()
+	void Paint() override
 	{ 
 #if GREY
 		// Fill the screen with the water map, showing height via colour.
@@ -1026,7 +1026,7 @@ public:
 	}
 
 	//********************************************************************************************
-	void Step()
+	void Step() override
 	{
 		if (bFirst)
 		{
@@ -1045,7 +1045,7 @@ public:
 	}
 
 	//********************************************************************************************
-	void KeyPress(int i_key)
+	void KeyPress(int i_key) override
 	{
 		switch (i_key)
 		{
@@ -1106,14 +1106,14 @@ public:
 	}
 
 	//********************************************************************************************
-	void MouseMove(int i_x, int i_y)
+	void MouseMove(int i_x, int i_y) override
 	{
 		// Call function handling virtual coordinates.
 		MouseMove(CVector2<>(vpScr.vcVirtualX(i_x), vpScr.vcVirtualY(i_y)));
 	}
 
 	//********************************************************************************************
-	void MenuCommand(int i_command, bool*)
+	void MenuCommand(int i_command, bool*) override
 	{
 		switch (i_command)
 		{

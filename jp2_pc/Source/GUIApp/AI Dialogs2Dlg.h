@@ -26,7 +26,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CAIDialogs2Dlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -35,11 +35,11 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CAIDialogs2Dlg)
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog() override;
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
-	virtual void OnOK();
-	virtual void OnCancel();
+	virtual void OnOK() override;
+	virtual void OnCancel() override;
 	afx_msg void OnAll();
 	afx_msg void OnNone();
 	afx_msg void OnDblclkActivities();

@@ -79,7 +79,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	CFeeling	feelNewEmotions;	// The new emotional state of the animal.  If an entry is negative, do not change it.
@@ -106,7 +106,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	CAnimal*	paniTarget;			// The animal to affect.  Zero if none.
@@ -131,7 +131,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	
 protected:
 	// No data needs to be saved
@@ -164,8 +164,8 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
-	virtual void Stop();
+	virtual void Start() override;
+	virtual void Stop() override;
 	
 protected:
 	// No data needs to be saved
@@ -197,7 +197,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	// No data to save
@@ -229,7 +229,7 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
+	virtual void Start() override;
 	//virtual void Stop();
 	
 protected:
@@ -262,9 +262,9 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
-	virtual const char* pcLoad(const char* pc);
-	virtual char* pcSave(char* pc) const;
+	virtual void Start() override;
+	virtual const char* pcLoad(const char* pc) override;
+	virtual char* pcSave(char* pc) const override;
 	
 protected:
 	// bVisible needs to be saved
@@ -291,9 +291,9 @@ public:
 		CLoadWorld*				pload				// the loader.
 	);
 
-	virtual void Start();
-	virtual const char* pcLoad(const char* pc);
-	virtual char* pcSave(char* pc) const;
+	virtual void Start() override;
+	virtual const char* pcLoad(const char* pc) override;
+	virtual char* pcSave(char* pc) const override;
 	
 	static int iCurrentHint;						// Global hint ID (need to save).
 
@@ -324,9 +324,9 @@ public:
 
 	virtual ~CSubstituteAIAction();
 
-	virtual void Start();
-	virtual const char* pcLoad(const char* pc);
-	virtual char* pcSave(char* pc) const;
+	virtual void Start() override;
+	virtual const char* pcLoad(const char* pc) override;
+	virtual char* pcSave(char* pc) const override;
 
 protected:
 	uint32 u4HashTarget;		// Hash of names of instances to modify.
@@ -361,7 +361,7 @@ public:
 
 	//*****************************************************************************************
 	// The start function of this action tells the world the game is over.
-	virtual void Start();
+	virtual void Start() override;
 };
 
 //*********************************************************************************************
@@ -386,7 +386,7 @@ public:
 
 	//*****************************************************************************************
 	// The start function of this action tells the world the game is over.
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	bool bDropHeldItem;		// True if player should drop the thing she's holding
@@ -414,7 +414,7 @@ public:
 
 	//*****************************************************************************************
 	// The start function of this action tells the world the game is over.
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	bool bWakeUp;			// True if AI system should wake up, false if AI system should go to sleep.
@@ -444,7 +444,7 @@ public:
 
 	virtual ~CWaterDisturbanceAction ();
 
-	virtual void Start();
+	virtual void Start() override;
 
 protected:
 	uint32 u4Target;		// Hash of names of instances to modify.

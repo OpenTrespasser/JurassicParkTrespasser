@@ -124,9 +124,9 @@ public:
     CUIStatic(CUICtrlCallback * pParent);
     virtual ~CUIStatic();
 
-    BOOL    TokenLoad(HANDLE hFile);
+    BOOL    TokenLoad(HANDLE hFile) override;
 
-    void    Draw(CRaster * pDst, RECT * prcClip);
+    void    Draw(CRaster * pDst, RECT * prcClip) override;
     BOOL    SetRaster(CRaster * pRaster, bool bTrans = TRUE);
 
     void    Init();
@@ -154,21 +154,21 @@ public:
     CUIButton(CUICtrlCallback * pParent);
     virtual ~CUIButton();
 
-    virtual void    DoFrame(POINT ptMouse);
-    virtual void    Draw(CRaster * pRaster, RECT * prcClip);
+    virtual void    DoFrame(POINT ptMouse) override;
+    virtual void    Draw(CRaster * pRaster, RECT * prcClip) override;
 
-    virtual void    MouseMove(int x, int y, UINT keyFlags);
-    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
-    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags);
+    virtual void    MouseMove(int x, int y, UINT keyFlags) override;
+    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
+    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
 
-    virtual BOOL    TokenLoad(HANDLE hFile);
+    virtual BOOL    TokenLoad(HANDLE hFile) override;
     virtual BOOL    SetRaster(CRaster * psprite, int iState);
     virtual CRaster * GetRaster();
 
-    virtual BOOL    HitTest(POINT pt);
+    virtual BOOL    HitTest(POINT pt) override;
     virtual void    Init();
 
-    virtual void    ReleaseCapture();
+    virtual void    ReleaseCapture() override;
 
 protected:
     UINT             m_uiCmd;
@@ -200,19 +200,19 @@ public:
     CUIListbox(CUICtrlCallback * pParent);
     virtual ~CUIListbox();
 
-    virtual CUICtrl *   CaptureMouse(CUICtrl * pctrl){return m_pParent->CaptureMouse(pctrl);}
-    virtual void        ReleaseMouse(CUICtrl * pctrl){m_pParent->ReleaseMouse(pctrl);}
-    virtual void        UIButtonUp(CUIButton * pbutton);
-    virtual void        CtrlInvalidateRect(RECT * prc) {m_pParent->CtrlInvalidateRect(prc);}
-    virtual void        ReleaseCapture();
+    virtual CUICtrl *   CaptureMouse(CUICtrl * pctrl) override {return m_pParent->CaptureMouse(pctrl);}
+    virtual void        ReleaseMouse(CUICtrl * pctrl) override {m_pParent->ReleaseMouse(pctrl);}
+    virtual void        UIButtonUp(CUIButton * pbutton) override;
+    virtual void        CtrlInvalidateRect(RECT * prc) override {m_pParent->CtrlInvalidateRect(prc);}
+    virtual void        ReleaseCapture() override;
 
-    virtual void    DoFrame(POINT ptMouse);
-    virtual void    Draw(CRaster * pRaster, RECT * prcClip);
+    virtual void    DoFrame(POINT ptMouse) override;
+    virtual void    Draw(CRaster * pRaster, RECT * prcClip) override;
 
-    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
-    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags);
+    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
+    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
 
-    virtual BOOL    TokenLoad(HANDLE hFile);
+    virtual BOOL    TokenLoad(HANDLE hFile) override;
 
             BOOL    Initialize();
 
@@ -325,18 +325,18 @@ public:
     CUICheckbox(CUICtrlCallback * pParent);
     virtual ~CUICheckbox();
 
-    virtual void    DoFrame(POINT ptMouse);
-    virtual void    Draw(CRaster * pRaster, RECT * prcClip);
+    virtual void    DoFrame(POINT ptMouse) override;
+    virtual void    Draw(CRaster * pRaster, RECT * prcClip) override;
 
-    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
-    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags);
+    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
+    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
 
-    virtual BOOL    TokenLoad(HANDLE hFile);
+    virtual BOOL    TokenLoad(HANDLE hFile) override;
 
     virtual BOOL    GetDown() { return m_bDown; }
     virtual void    SetDown(BOOL bDown) { if (bDown != m_bDown) { m_bDown = bDown; InvalidateSelf(); } }
 
-    virtual void    ReleaseCapture();
+    virtual void    ReleaseCapture() override;
 
 private:
     UINT            m_uiCmd;
@@ -354,13 +354,13 @@ public:
     CUITextbox(CUICtrlCallback * pParent);
     virtual ~CUITextbox();
 
-    virtual void    Draw(CRaster * pRaster, RECT * prcClip);
+    virtual void    Draw(CRaster * pRaster, RECT * prcClip) override;
     virtual void    Draw(LPBYTE pbDst,
                          int iDstWidth,
                          int iDstHeight,
                          int iDstPitch,
                          int iDstBytes,
-                         RECT * prcClip);
+                         RECT * prcClip) override;
 
     virtual void    SetPalette(HPALETTE hpal);
     virtual void    SetPalette(LOGPALETTE * plogpal);
@@ -392,7 +392,7 @@ public:
     virtual BYTE    GetBackLitOffset() { return m_bBackLitOffset;}
     virtual void    SetBackLitOffset(BYTE bOffset) { m_bBackLitOffset = bOffset; m_pParent->CtrlInvalidateRect(&m_rc); m_bUpdate = TRUE; }
 
-    virtual BOOL    TokenLoad(HANDLE hFile);
+    virtual BOOL    TokenLoad(HANDLE hFile) override;
 
     virtual BOOL InitSurface();
 private:
@@ -422,8 +422,8 @@ public:
     CUISlider(CUICtrlCallback * pParent);
     virtual ~CUISlider();
 
-    virtual void    DoFrame(POINT ptMouse);
-    virtual void    Draw(CRaster * pRaster, RECT * prcClip);
+    virtual void    DoFrame(POINT ptMouse) override;
+    virtual void    Draw(CRaster * pRaster, RECT * prcClip) override;
 
     virtual BOOL    GetBorder() { return m_bBorder;}
     virtual void    SetBorder(BOOL bBorder) { m_bBorder = bBorder;}
@@ -434,13 +434,13 @@ public:
     virtual int     GetCurrUnit() { return m_iCurrUnit; }
     virtual void    SetCurrUnit(int iUnit);
 
-    virtual void    MouseMove(int x, int y, UINT keyFlags);
-    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
-    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags);
+    virtual void    MouseMove(int x, int y, UINT keyFlags) override;
+    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
+    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
 
-    virtual BOOL    TokenLoad(HANDLE hFile);
+    virtual BOOL    TokenLoad(HANDLE hFile) override;
 
-    virtual void    ReleaseCapture();
+    virtual void    ReleaseCapture() override;
 
 private:
     UINT            m_uiCmd;
@@ -464,11 +464,11 @@ public:
     CUIEditbox(CUICtrlCallback * pParent);
     virtual ~CUIEditbox();
 
-    virtual void    DoFrame(POINT ptMouse);
-    virtual void    Draw(CRaster * pRaster, RECT * prcClip);
+    virtual void    DoFrame(POINT ptMouse) override;
+    virtual void    Draw(CRaster * pRaster, RECT * prcClip) override;
 
-    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
-    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags);
+    virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
+    virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
 
     virtual void    OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
     virtual void    OnChar(TCHAR tch, int cRepeat);
@@ -494,7 +494,7 @@ public:
     virtual BOOL    GetBorder() { return m_bBorder;}
     virtual void    SetBorder(BOOL bBorder) { m_bBorder = bBorder; m_bUpdate = TRUE;}
 
-    virtual BOOL    TokenLoad(HANDLE hFile);
+    virtual BOOL    TokenLoad(HANDLE hFile) override;
 
 protected:
     int             m_iMaxSize;
@@ -526,14 +526,14 @@ public:
     CUIProgressBar(CUICtrlCallback * pParent);
     virtual ~CUIProgressBar();
 
-    BOOL  TokenLoad(HANDLE hFile);
-    void  Draw(CRaster * pRaster, RECT * prcClip);
+    BOOL  TokenLoad(HANDLE hFile) override;
+    void  Draw(CRaster * pRaster, RECT * prcClip) override;
     void  Draw(LPBYTE pbDst,
                int iDstWidth,
                int iDstHeight,
                int iDstPitch,
                int iDstBytes,
-               RECT * prcClip);
+               RECT * prcClip) override;
 
     int   DeltaPos(int iIncrement);
     int   SetPos(int iNewPos);
@@ -559,12 +559,12 @@ public:
     CUIHotspot(CUICtrlCallback * pParent);
     virtual ~CUIHotspot();
 
-    BOOL  TokenLoad(HANDLE hFile);
-    void  Draw(CRaster * pRaster, RECT * prcClip);
+    BOOL  TokenLoad(HANDLE hFile) override;
+    void  Draw(CRaster * pRaster, RECT * prcClip) override;
 
-    void    MouseMove(int x, int y, UINT keyFlags);
-    BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
-    BOOL    LButtonUp(int x, int y, UINT keyFlags);
+    void    MouseMove(int x, int y, UINT keyFlags) override;
+    BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
+    BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
 
 protected:
     bool        m_bFrame;

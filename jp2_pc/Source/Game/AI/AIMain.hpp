@@ -654,7 +654,7 @@ public:
 		virtual void Process
 		(
 			const CMessageStep& ms
-		);
+		) override;
 		//
 		//	Runs the AI system for one cycle.
 		//
@@ -672,7 +672,7 @@ public:
 
 		//*********************************************************************************************
 		//
-		virtual void Process(const CMessagePaint& msgpaint);
+		virtual void Process(const CMessagePaint& msgpaint) override;
 		//
 		//	Draws any AI debugging info.
 		//
@@ -680,10 +680,10 @@ public:
 
 
 		//*****************************************************************************************
-		virtual char * pcSave(char *  pc_buffer) const;
+		virtual char * pcSave(char *  pc_buffer) const override;
 
 		//*****************************************************************************************
-		virtual const char * pcLoad(const char *  pc_buffer);
+		virtual const char * pcLoad(const char *  pc_buffer) override;
 
 
 

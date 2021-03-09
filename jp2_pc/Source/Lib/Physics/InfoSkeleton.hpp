@@ -167,7 +167,7 @@ public:
 	//
 	virtual CPhysicsInfo* pphiCopy
 	(
-	)
+	) override
 	//
 	// Copies this, returning a unique, non-instanced object outside of the instancing system.
 	//
@@ -182,19 +182,19 @@ public:
 
 	//*****************************************************************************************
 	//
-	virtual const CBoundVol* pbvGetBoundVol() const
+	virtual const CBoundVol* pbvGetBoundVol() const override
 	{
 		return &phibBounding.bvbBoundVol;
 	}
 
 	//*****************************************************************************************
-	virtual TReal fVolume(CInstance* pins) const
+	virtual TReal fVolume(CInstance* pins) const override
 	{
 		return phibBounding.fVolume(pins);
 	}
 
 	//*****************************************************************************************
-	virtual TReal fMass(const CInstance* pins) const
+	virtual TReal fMass(const CInstance* pins) const override
 	{
 		return phibBounding.fMass(pins);
 	}
@@ -206,42 +206,42 @@ public:
 		CInstance *pins,
 		bool b_just_update = false,
 		const CPlacement3<>& p3_vel = p3VELOCITY_ZERO
-	) const;
+	) const override;
 	//
 	//**************************
 
 	//*****************************************************************************************
-	virtual void Deactivate(CInstance *pins) const;
+	virtual void Deactivate(CInstance *pins) const override;
 
 	//*****************************************************************************************
-	virtual bool bIsActive(const CInstance* pins) const;
+	virtual bool bIsActive(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual bool bIsMoving(const CInstance* pins) const;
+	virtual bool bIsMoving(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual CPlacement3<> p3GetVelocity(const CInstance* pins) const;
+	virtual CPlacement3<> p3GetVelocity(const CInstance* pins) const override;
 
 	//*****************************************************************************************
-	virtual void HandleMessage(const CMessagePhysicsReq& msgpr,	CInstance *pins) const;
+	virtual void HandleMessage(const CMessagePhysicsReq& msgpr,	CInstance *pins) const override;
 
 	//*****************************************************************************************
-	virtual void UpdateWDBase(CInstance * pins,	int	i_index) const;
+	virtual void UpdateWDBase(CInstance * pins,	int	i_index) const override;
 
 	//**********************************************************************************************
 	virtual void RayIntersect(CInstance* pins, int i_subobj, CRayCast& rc,
-							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const;
+							  const CPlacement3<>& p3, TReal r_length, TReal r_diameter) const override;
 
 	//*****************************************************************************************
-	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const;
+	virtual void ApplyImpulse(CInstance* pins, int i_subobj, const CVector3<>& v3_pos, const CVector3<>& v3_impulse) const override;
 
 	//*****************************************************************************************
-	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const;
+	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const override;
 
-	virtual CPhysicsInfoSkeleton* ppisCast()
+	virtual CPhysicsInfoSkeleton* ppisCast() override
 	{ return this; }
 
-	virtual const CPhysicsInfoSkeleton* ppisCast() const
+	virtual const CPhysicsInfoSkeleton* ppisCast() const override
 	{ return this; }
 
 	//******************************************************************************************
@@ -394,24 +394,24 @@ public:
 	(
 		const CInstance* pins = 0,
 		TSoundMaterial tsmat = 0
-	) const;
+	) const override;
 
 	//*****************************************************************************************
 	virtual float fArmourMultiplier
 	(
 		const CInstance* pins = 0,
 		TSoundMaterial tsmat = 0
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual void Init(CAnimate* pani) const;
+	virtual void Init(CAnimate* pani) const override;
 
 	//*****************************************************************************************
 	virtual void HandleMessage
 	(
 		const CMessagePhysicsReq& msgpr,
 		CInstance *pins
-	) const;
+	) const override;
 
 	//*****************************************************************************************
 	virtual void DrawPhysics
@@ -419,24 +419,24 @@ public:
 		CInstance* pins, 		// Owning instance.
 		CDraw& draw,			// Line draw object.
 		CCamera& cam			// Current view camera.
-	) const;
+	) const override;
 
 	//*****************************************************************************************
 	virtual CVector3<> v3GetHeadPosition
 	(
 		const CInstance* pins
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual CVector3<> v3GetTailPosition
+	virtual   CVector3<> v3GetTailPosition
 	(
 		const CInstance* pins
-	) const;
+	) const override;
 
 protected:
 
 	//*****************************************************************************************
-	virtual void CreatePhysics(CInstance* pins, int i_index, float aaf_state[7][3]) const;
+	virtual void CreatePhysics(CInstance* pins, int i_index, float aaf_state[7][3]) const override;
 
 	//*****************************************************************************************
 	virtual void GetData
@@ -445,7 +445,7 @@ protected:
 		float loc[7],
 		float points[iMAX_SKELETAL_ELEMENTS][3], float matrices[iMAX_SKELETAL_ELEMENTS][3][3],
 		int Am_I_Supported[iMAX_SKELETAL_ELEMENTS]
-	) const;
+	) const override;
 };
 
 //**********************************************************************************************
@@ -480,24 +480,24 @@ public:
 	(
 		const CInstance* pins = 0,
 		TSoundMaterial tsmat = 0
-	) const;
+	) const override;
 
 	//*****************************************************************************************
 	virtual float fArmourMultiplier
 	(
 		const CInstance* pins = 0,
 		TSoundMaterial tsmat = 0
-	) const;
+	) const override;
 
 	//*****************************************************************************************
 	virtual void HandleMessage
 	(
 		const CMessagePhysicsReq& msgpr,
 		CInstance *pins
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual void Init(CAnimate* pani) const;
+	virtual void Init(CAnimate* pani) const override;
 
 	//*****************************************************************************************
 	virtual void DrawPhysics
@@ -505,12 +505,12 @@ public:
 		CInstance* pins, 		// Owning instance.
 		CDraw& draw,			// Line draw object.
 		CCamera& cam			// Current view camera.
-	) const;
+	) const override;
 
 protected:
 
 	//*****************************************************************************************
-	virtual void CreatePhysics(CInstance* pins, int i_index, float aaf_state[7][3]) const;
+	virtual void CreatePhysics(CInstance* pins, int i_index, float aaf_state[7][3]) const override;
 
 	//*****************************************************************************************
 	virtual void GetData
@@ -519,7 +519,7 @@ protected:
 		float loc[7],
 		float points[iMAX_SKELETAL_ELEMENTS][3], float matrices[iMAX_SKELETAL_ELEMENTS][3][3],
 		int Am_I_Supported[iMAX_SKELETAL_ELEMENTS]
-	) const;
+	) const override;
 };
 
 //**********************************************************************************************
@@ -551,7 +551,7 @@ public:
 	(
 		const CMessagePhysicsReq& msgpr,
 		CInstance *pins
-	) const;
+	) const override;
 	//
 	//**************************
 
@@ -562,7 +562,7 @@ public:
 		CInstance *	pins,		// The instance to update
 		int			i_index		// The index of that instance in the appropriate physics
 								// system array.
-	) const;
+	) const override;
 	//
 	//**************************
 
@@ -571,24 +571,24 @@ public:
 	(
 		const CInstance* pins = 0,
 		TSoundMaterial tsmat = 0
-	) const;
+	) const override;
 
 	//*****************************************************************************************
 	virtual float fArmourMultiplier
 	(
 		const CInstance* pins = 0,
 		TSoundMaterial tsmat = 0
-	) const;
+	) const override;
 
 	//*****************************************************************************************
-	virtual void Init(CAnimate* pani) const;
+	virtual void Init(CAnimate* pani) const override;
 
 	//*****************************************************************************************
-	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const;
+	virtual void DrawPhysics(CInstance* pins, CDraw& draw, CCamera& cam) const override;
 
 protected:
 	//*****************************************************************************************
-	virtual void CreatePhysics(CInstance* pins, int i_index, float aaf_state[7][3]) const;
+	virtual void CreatePhysics(CInstance* pins, int i_index, float aaf_state[7][3]) const override;
 
 	//*****************************************************************************************
 	//
@@ -598,7 +598,7 @@ protected:
 		float loc[7],
 		float points[iMAX_SKELETAL_ELEMENTS][3], float matrices[iMAX_SKELETAL_ELEMENTS][3][3],
 		int Am_I_Supported[iMAX_SKELETAL_ELEMENTS] 
-	) const;
+	) const override;
 };
 
 #endif

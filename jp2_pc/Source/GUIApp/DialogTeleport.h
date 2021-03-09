@@ -32,9 +32,9 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDialogTeleport)
 	public:
-	virtual BOOL Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID, CCreateContext* pContext = NULL);
+	virtual BOOL Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID, CCreateContext* pContext = NULL) override;
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -42,7 +42,7 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CDialogTeleport)
-	virtual void OnOK();
+	virtual void OnOK() override;
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

@@ -133,7 +133,7 @@ public:
 
 	//*****************************************************************************************
 	// override the default implementation in cPartition which assigns NULL.
-	virtual void Cast(CTerrainObj** ptrrobj)
+	virtual void Cast(CTerrainObj** ptrrobj) override
 	{
 		*ptrrobj=this;
 	}
@@ -144,21 +144,21 @@ public:
 	}
 
 	//*****************************************************************************************
-	virtual void SetPos(const CVector3<>& v3_pos)
+	virtual void SetPos(const CVector3<>& v3_pos) override
 	{
 		pr3Pres.v3Pos = v3_pos;
 	}
 
 	//*****************************************************************************************
-	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0);
+	virtual void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0) override;
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 
 	//*****************************************************************************************
-	virtual CInstance* pinsCopy() const;
+	virtual CInstance* pinsCopy() const override;
 	
 	//******************************************************************************************
 	//

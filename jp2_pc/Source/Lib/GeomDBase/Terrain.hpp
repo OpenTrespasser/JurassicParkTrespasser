@@ -216,25 +216,25 @@ public:
 	// Overrides.
 	//
 
-	void Cast(CTerrain** ptrr)
+	void Cast(CTerrain** ptrr) override
 	{
 		*ptrr = this;
 	}
 
-	bool bGetWorldExtents(CVector3<>& v3_min, CVector3<>& v3_max) const;
+	bool bGetWorldExtents(CVector3<>& v3_min, CVector3<>& v3_max) const override;
 
-	void Process(const CMessageMove& msgmv);
-	void Process(const CMessagePaint& msgpaint);
-
-	//*****************************************************************************************
-	char* pcSave(char* pc) const;
+	void Process(const CMessageMove& msgmv) override;
+	void Process(const CMessagePaint& msgpaint) override;
 
 	//*****************************************************************************************
-	const char* pcLoad(const char* pc);
+	char* pcSave(char* pc) const override;
+
+	//*****************************************************************************************
+	const char* pcLoad(const char* pc) override;
 
 	//*****************************************************************************************
 	//
-	void SaveDefaults();
+	void SaveDefaults() override;
 	//
 	// Save the default values of the user modifiable settings.
 	//
@@ -242,7 +242,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	void RestoreDefaults();
+	void RestoreDefaults() override;
 	//
 	// Restore the default values of the user modifiable settings.
 	//

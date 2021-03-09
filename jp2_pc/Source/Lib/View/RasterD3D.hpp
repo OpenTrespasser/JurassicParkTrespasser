@@ -315,7 +315,7 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Lock();
+	virtual void Lock() override;
 
 	//******************************************************************************************
 	static bool bIsLockedAll()
@@ -324,13 +324,13 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual bool bIsLocked()
+	virtual bool bIsLocked() override
 	{
 		return bLocked;
 	}
 
 	//******************************************************************************************
-	virtual void Unlock();
+	virtual void Unlock() override;
 
 	//******************************************************************************************
 	//
@@ -338,7 +338,7 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void* pd3dtexGet()
+	virtual void* pd3dtexGet() override
 	{
 		Assert(pd3dtexTex);
 
@@ -348,34 +348,34 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual bool bUpload();
+	virtual bool bUpload() override;
 
 	//******************************************************************************************
-	virtual bool bUpload(int i_x, int i_y, int i_width, int i_height);
+	virtual bool bUpload(int i_x, int i_y, int i_width, int i_height) override;
 
 	//******************************************************************************************
-	virtual void RemoveFromVideo();
+	virtual void RemoveFromVideo() override;
 
 	//******************************************************************************************
-	virtual void RemoveFromSystem();
+	virtual void RemoveFromSystem() override;
 
 	//******************************************************************************************
-	virtual uint32 u4GetTypeID() const;
+	virtual uint32 u4GetTypeID() const override;
 
 	//******************************************************************************************
-	virtual bool bRestore();
+	virtual bool bRestore() override;
 
 	//******************************************************************************************
-	virtual bool bVerifyConstruction() const;
+	virtual bool bVerifyConstruction() const override;
 
 	//******************************************************************************************
-	virtual bool bD3DRaster() const
+	virtual bool bD3DRaster() const override
 	{
 		return true;
 	}
 
 	//******************************************************************************************
-	virtual CRasterD3D* prasd3dGet();
+	virtual CRasterD3D* prasd3dGet() override;
 
 	//******************************************************************************************
 	//

@@ -85,16 +85,16 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual bool bUse(bool b_repeat);
+	virtual bool bUse(bool b_repeat) override;
 
 	//*****************************************************************************************
-	virtual void PickedUp();
+	virtual void PickedUp() override;
 
 	//*****************************************************************************************
-	virtual CInstance* pinsCopy() const;
+	virtual CInstance* pinsCopy() const override;
 
 	//*****************************************************************************************
-	virtual void Cast(CSocket** psock)
+	virtual void Cast(CSocket** psock) override
 	{
 		*psock = this;
 	}
@@ -102,7 +102,7 @@ public:
 
 #if VER_TEST
 	//*****************************************************************************************
-	virtual int iGetDescription(char *buffer, int i_buffer_length);
+	virtual int iGetDescription(char *buffer, int i_buffer_length) override;
 #endif
 };
 

@@ -189,7 +189,7 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual void DDX(CDataExchange* pDX)
+	virtual void DDX(CDataExchange* pDX) override
 	{
 		::DDX_Control(pDX, iID, *this);
 		Display();
@@ -204,7 +204,7 @@ protected:
 	}
  */
 	//******************************************************************************************
-	virtual BOOL OnChildNotify( UINT message, WPARAM wParam, LPARAM lParam, LRESULT* pLResult )
+	virtual BOOL OnChildNotify( UINT message, WPARAM wParam, LPARAM lParam, LRESULT* pLResult ) override
 	{
 		// Dispatch messages.
 		if (message == WM_NOTIFY)
@@ -230,7 +230,7 @@ protected:
 
 	//******************************************************************************************
 	//
-	virtual void Display() const
+	virtual void Display() const override
 	//
 	// Display the current value.
 	//
@@ -298,7 +298,7 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual BOOL OnDeltaPos( NM_UPDOWN* pNMUpDown )
+	virtual BOOL OnDeltaPos( NM_UPDOWN* pNMUpDown ) override
 	{
 		//
 		// Handle spinner control.
@@ -353,7 +353,7 @@ protected:
 	}
 
 	//******************************************************************************************
-	virtual void Format(char str_text[]) const;
+	virtual void Format(char str_text[]) const override;
 };
 
 	//******************************************************************************************
@@ -404,7 +404,7 @@ protected:
 	//
 
 	//******************************************************************************************
-	virtual BOOL OnDeltaPos( NM_UPDOWN* pNMUpDown )
+	virtual BOOL OnDeltaPos( NM_UPDOWN* pNMUpDown ) override
 	{
 		if (MinMax == emmMIN)
 			tMin = *ptVarClamp * tDisplayFactor;

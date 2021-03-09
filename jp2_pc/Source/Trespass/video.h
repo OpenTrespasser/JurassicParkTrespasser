@@ -42,7 +42,7 @@ public:
     virtual ~CVideoWnd();
 
     BOOL Play(LPCSTR pszFile);
-    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
+    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags) override;
 
     BOOL AllowEscape() { return FALSE; }
     void UpdatePalette();

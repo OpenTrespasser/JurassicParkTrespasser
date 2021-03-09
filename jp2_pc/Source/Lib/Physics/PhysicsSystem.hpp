@@ -274,11 +274,11 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void Process(const CMessageSystem& msgsys);
+	virtual void Process(const CMessageSystem& msgsys) override;
 
 	//*****************************************************************************************
 	//
-	virtual void Process(const CMessageStep& msgstep);
+	virtual void Process(const CMessageStep& msgstep) override;
 	//
 	// Gives the physics system a few clock cycles to process object motion.
 	//
@@ -286,7 +286,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	void Process(const CMessageMove& msgmv);
+	void Process(const CMessageMove& msgmv) override;
 	//
 	// Updates active objects which are moved elsewhere.
 	//
@@ -294,7 +294,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	void Process(const CMessageCollision& msgcoll);
+	void Process(const CMessageCollision& msgcoll) override;
 	//
 	// Provides auxilliary effects for collisions.
 	//
@@ -302,7 +302,7 @@ public:
 
 	//*****************************************************************************************
 	//
-	virtual void Process(const CMessageDelete& msgdel);
+	virtual void Process(const CMessageDelete& msgdel) override;
 	//
 	// Handles removal of world objects.
 	//
@@ -310,17 +310,17 @@ public:
 
 	//*****************************************************************************************
 	//
-	virtual void Process(const CMessagePaint& msgpaint);
+	virtual void Process(const CMessagePaint& msgpaint) override;
 	//
 	// If bShowBones is on, draws physics boxes, bones, other debugging info.
 	//
 	//**********************************
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 	class CPriv;
 };

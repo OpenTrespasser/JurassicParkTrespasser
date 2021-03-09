@@ -198,7 +198,7 @@ public:
 	}
 
 	//******************************************************************************************
-	TReal rEdgeT(const CVector3<>& v3_0, const CVector3<>& v3_1) const
+	TReal rEdgeT(const CVector3<>& v3_0, const CVector3<>& v3_1) const override
 	{
 		// Implemented with rDistance().
 		TReal r_0 = rDistance(v3_0);
@@ -207,7 +207,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfIntersectPolygon(CPArray<SRenderVertex*> paprv_poly, ESideOf aesf_sides[]) const
+	virtual ESideOf esfIntersectPolygon(CPArray<SRenderVertex*> paprv_poly, ESideOf aesf_sides[]) const override
 	{
 		// Return combination of all points.  Use esfSideOf, to return esfON when appropriate,
 		// for storage in array.
@@ -222,7 +222,7 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfIntersectPolygonMesh(CPArray<CMesh::SVertex*> papmv_poly, ESideOf aesf_sides[]) const
+	virtual ESideOf esfIntersectPolygonMesh(CPArray<CMesh::SVertex*> papmv_poly, ESideOf aesf_sides[]) const override
 	{
 		// Return combination of all points.  Use esfSideOf, to return esfON when appropriate,
 		// for storage in array.

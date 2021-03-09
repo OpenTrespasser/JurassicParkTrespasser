@@ -20,7 +20,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CInitGUIApp2Dlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -29,10 +29,10 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CInitGUIApp2Dlg)
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog() override;
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
-	virtual void OnOK();
+	virtual void OnOK() override;
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
 	afx_msg void OnCheckStuffChildren();

@@ -66,7 +66,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBackground)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);
+	virtual void DoDataExchange(CDataExchange* pDX) override;
 	//}}AFX_VIRTUAL
 
 protected:

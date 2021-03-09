@@ -147,7 +147,7 @@ public:
 		CRenderContext& renc, CShapePresence& rsp,
 		const CTransform3<>& tf3_shape_camera, const CPArray<COcclude*>& papoc,
 		ESideOf esf_view
-	) const;
+	) const override;
 	//
 	// Defined in Pipeline.cpp.
 	//
@@ -734,13 +734,13 @@ public:
 	//
 
 	//*****************************************************************************************
-	virtual void Execute();
+	virtual void Execute() override;
 
 	//*****************************************************************************************
-	virtual void PostScheduleExecute();
+	virtual void PostScheduleExecute() override;
 
 	//*****************************************************************************************
-	virtual void LogItem(CConsoleBuffer& con) const;
+	virtual void LogItem(CConsoleBuffer& con) const override;
 
 };
 

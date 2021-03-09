@@ -528,19 +528,19 @@ public:
 	//
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvINFINITE;
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override
 	{
 		rv3_min = CVector3<>(FLT_MIN, FLT_MIN, FLT_MIN);
 		rv3_max = CVector3<>(FLT_MAX, FLT_MAX, FLT_MAX);
@@ -549,88 +549,88 @@ public:
 	//******************************************************************************************
 	virtual float fMaxExtent
 	(
-	) const
+	) const override
 	{
 		return FLT_MAX;
 	}
 
 	//******************************************************************************************
-	virtual TReal rGetVolume(TReal) const
+	virtual TReal rGetVolume(TReal) const override
 	{
 		return FLT_MAX;
 	}
 
 	//******************************************************************************************
-	virtual const CBoundVolInfinite* pbviCast() const { return this; }
+	virtual const CBoundVolInfinite* pbviCast() const override { return this; }
 
 	//
 	// Any volume whatsoever is inside the infinite volume.
 	//
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINSIDE;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINTERSECT;
 	}
@@ -680,79 +680,79 @@ public:
 	//
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvPOINT;
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override
 	{
 		rv3_min = rv3_max = tf3.v3Pos;
 	}
 
 	//******************************************************************************************
-	virtual float fMaxExtent() const
+	virtual float fMaxExtent() const override
 	{
 		return 0;
 	}
 
 	//******************************************************************************************
-	virtual TReal rGetVolume(TReal) const
+	virtual TReal rGetVolume(TReal) const override
 	{
 		return 0;
 	}
 
 	//******************************************************************************************
-	virtual const CBoundVolPoint* pbvptCast() const { return this; }
+	virtual const CBoundVolPoint* pbvptCast() const override { return this; }
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const;
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const;
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPoint& bvpt, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return bv.esfSideOf(*this, ppr3_it, ppr3_this);
 	}
@@ -802,42 +802,42 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Save(int i_handle) const;
+	virtual void Save(int i_handle) const override;
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvSPHERE;
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const;
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override;
 
 	//******************************************************************************************
 	virtual float fMaxExtent
 	(
-	) const
+	) const override
 	{
 		return rRadius;
 	}
 
-	virtual const CBoundVolSphere* pbvsCast() const { return this; }
+	virtual const CBoundVolSphere* pbvsCast() const override { return this; }
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const;
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const;
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Invoke helper function for double dispatch.
 		return bv.esfSideOfHelp(*this, ppr3_it, ppr3_this);
@@ -845,41 +845,41 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINTERSECT;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPoint& bvpt, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return CBoundVol::esfSideOf(bvpt, ppr3_this, ppr3_it);
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Implement helper function for double dispatch.
 		return bv.esfSideOf(*this, ppr3_it, ppr3_this);
@@ -997,54 +997,54 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Save(int i_handle) const
+	virtual void Save(int i_handle) const override
 	{
 		Assert(0);
 	}
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvPLANE;
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override
 	{
 		rv3_min = CVector3<>(FLT_MIN, FLT_MIN, FLT_MIN);
 		rv3_max = CVector3<>(FLT_MAX, FLT_MAX, FLT_MAX);
 	}
 	
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const;
+	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const override;
 
 	//******************************************************************************************
-	virtual float fMaxExtent() const
+	virtual float fMaxExtent() const override
 	{
 		return FLT_MAX;
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override
 	{
 		return CPlaneTolerance::esfSideOf(v3);
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override
 	{
 		return CPlaneTolerance::esfSideOf(pav3_solid);
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Invoke helper function for double dispatch.
 		return bv.esfSideOfHelp(*this, ppr3_it, ppr3_this);
@@ -1052,48 +1052,48 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINTERSECT;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPoint& bvpt, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return CBoundVol::esfSideOf(bvpt, ppr3_this, ppr3_it);
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Implement helper function for double dispatch.
 		return bv.esfSideOf(*this, ppr3_it, ppr3_this);
 	}
 
 	//******************************************************************************************
-	virtual TReal rGetVolume(TReal) const
+	virtual TReal rGetVolume(TReal) const override
 	{
 		return FLT_MAX;
 	}
@@ -1231,10 +1231,10 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Save(int i_handle) const;
+	virtual void Save(int i_handle) const override;
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvBOX;
 	}
@@ -1253,16 +1253,16 @@ public:
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const;
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override;
 
 	//******************************************************************************************
-	virtual float fMaxExtent() const
+	virtual float fMaxExtent() const override
 	{
 		return rExtent;
 	}
@@ -1275,28 +1275,28 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual const CBoundVolBox* pbvbCast() const { return this; }
+	virtual const CBoundVolBox* pbvbCast() const override { return this; }
 
 	//
 	// Intersection functions.
 	//
 	
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const;
+	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const override;
 	
 	//******************************************************************************************
 	virtual bool bRayIntersect(SVolumeLoc* pvl_result, const CPresence3<>& pr3_this,
-		const CPlacement3<>& p3_origin, TReal r_length, TReal r_diameter) const;
+		const CPlacement3<>& p3_origin, TReal r_length, TReal r_diameter) const override;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const;
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const;
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Invoke helper function for double dispatch.
 		return bv.esfSideOfHelp(*this, ppr3_it, ppr3_this);
@@ -1304,41 +1304,41 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINTERSECT;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPoint& bvpt, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return CBoundVol::esfSideOf(bvpt, ppr3_this, ppr3_it);
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Implement helper function for double dispatch.
 		return bv.esfSideOf(*this, ppr3_it, ppr3_this);
@@ -1348,7 +1348,7 @@ public:
 	//
 	virtual CTransform3<> tf3Box
 	(
-	) const;
+	) const override;
 	//
 	// Returns:
 	//		A transform which converts the unit cube (0..1) to this box (in object space).
@@ -1362,7 +1362,7 @@ public:
 	virtual CTransform3<> tf3Box
 	(
 		const CTransform3<>& tf3
-	) const;
+	) const override;
 	//
 	// Returns:
 	//		A transform which converts the unit cube (0..1) to this box (in object space).
@@ -1372,7 +1372,7 @@ public:
 	//**********************************
 
 	//******************************************************************************************
-	virtual TReal rGetVolume(TReal r_scale) const;
+	virtual TReal rGetVolume(TReal r_scale) const override;
 
 	//******************************************************************************************
 	//
@@ -1446,49 +1446,49 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Save(int i_handle) const
+	virtual void Save(int i_handle) const override
 	{
 		Assert(0);
 	}
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvPOLYHEDRON;
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const;
+	virtual void GetWorldExtents(const CTransform3<>& tf3, CVector3<>& rv3_min, CVector3<>& rv3_max) const override;
 
 	//******************************************************************************************
 	virtual float fMaxExtent
 	(
-	) const
+	) const override
 	{
 		return bvsSphere.rRadius;
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const;
+	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const override;
 
 	//******************************************************************************************
-	virtual const CBoundVolPolyhedron* pbvpCast() const { return this; }
+	virtual const CBoundVolPolyhedron* pbvpCast() const override { return this; }
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const;
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const;
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Invoke helper function for double dispatch.
 		return bv.esfSideOfHelp(*this, ppr3_it, ppr3_this);
@@ -1496,41 +1496,41 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINTERSECT;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPoint& bvpt, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return CBoundVol::esfSideOf(bvpt, ppr3_this, ppr3_it);
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Implement helper function for double dispatch.
 		return bv.esfSideOf(*this, ppr3_it, ppr3_this);
@@ -1599,35 +1599,35 @@ public:
 	//
 
 	//******************************************************************************************
-	virtual void Save(int i_handle) const
+	virtual void Save(int i_handle) const override
 	{
 		Assert(0);
 	}
 	
 	//******************************************************************************************
-	virtual EBVType ebvGetType() const
+	virtual EBVType ebvGetType() const override
 	{
 		return ebvCAMERA;
 	}
 
 	//******************************************************************************************
-	virtual int iSizeOf() const
+	virtual int iSizeOf() const override
 	{
 		return sizeof(*this);
 	}
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const = 0;
+	virtual ESideOf esfSideOf(const CTransform3<>& tf3_box) const override = 0;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(const CVector3<>& v3) const = 0;
+	virtual ESideOf esfSideOf(const CVector3<>& v3) const override = 0;
 
 	//******************************************************************************************
-	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const = 0;
+	virtual ESideOf esfSideOf(CPArray< CVector3<> > pav3_solid) const override = 0;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Invoke helper function for double dispatch.
 		return bv.esfSideOfHelp(*this, ppr3_it, ppr3_this);
@@ -1635,47 +1635,47 @@ public:
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolInfinite& bvi, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return esfINTERSECT;
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPoint& bvpt, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		return CBoundVol::esfSideOf(bvpt, ppr3_this, ppr3_it);
 	}
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolSphere& bvs, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const = 0;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override = 0;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPlane& bvpl, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const = 0;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override = 0;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolBox& bvb, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const = 0;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override = 0;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolPolyhedron& bvp, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const = 0;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override = 0;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOf(const CBoundVolCamera& bvcam, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const = 0;
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override = 0;
 
 	//******************************************************************************************
 	virtual ESideOf esfSideOfHelp(const CBoundVol& bv, 
-		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const
+		const CPresence3<>* ppr3_this = 0, const CPresence3<>* ppr3_it = 0) const override
 	{
 		// Implement helper function for double dispatch.
 		return bv.esfSideOf(*this, ppr3_it, ppr3_this);
 	}
 
-	virtual const CBoundVolCamera* pbvcamCast() const { return this; }
+	virtual const CBoundVolCamera* pbvcamCast() const override { return this; }
 
 	//
 	// Helper function for other classes intersecting with CBoundVolCamera.

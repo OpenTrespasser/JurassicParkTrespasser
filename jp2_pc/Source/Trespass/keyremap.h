@@ -26,17 +26,17 @@ public:
     CControlsWnd(CUIManager * puimgr);
     virtual ~CControlsWnd();
 
-    BOOL OnCreate();
+    BOOL OnCreate() override;
 
-    void GetWndFile(LPSTR psz, int ic);
-    void UIButtonUp(CUIButton * pbutton);
-    void UIHotspotClick(CUIHotspot * pctrl, BOOL bDown);
-    void OnActivateApp(BOOL fActivate, DWORD dwThreadId);
+    void GetWndFile(LPSTR psz, int ic) override;
+    void UIButtonUp(CUIButton * pbutton) override;
+    void UIHotspotClick(CUIHotspot * pctrl, BOOL bDown) override;
+    void OnActivateApp(BOOL fActivate, DWORD dwThreadId) override;
 
-    void OnMButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags);
-    void OnLButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags);
-    void OnRButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags);
-    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
+    void OnMButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags) override;
+    void OnLButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags) override;
+    void OnRButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags) override;
+    void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags) override;
 
 protected:
     bool        m_bKeyWait;

@@ -113,7 +113,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDialogPhysics)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 protected:
@@ -137,9 +137,9 @@ protected:
 	//{{AFX_MSG(CDialogPhysics)
 	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
-	virtual void OnOK();
+	virtual void OnOK() override;
 	afx_msg void OnReset();
-	virtual void OnCancel();
+	virtual void OnCancel() override;
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

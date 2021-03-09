@@ -153,7 +153,7 @@ public:
 	//
 	
 		//*********************************************************************************
-		virtual void Act(CRating rt_importance,	CInfluence*	pinf);
+		virtual void Act(CRating rt_importance,	CInfluence*	pinf) override;
 
 };
 

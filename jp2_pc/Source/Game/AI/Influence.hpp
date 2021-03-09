@@ -277,7 +277,7 @@ public:
 		virtual int iAddToGraph
 		(
 			CBrain* pbr	// Brain to which this influence belongs.
-		);
+		) override;
 		//
 		//	Adds nodes to the pathfinding graph based on shape of the target.
 		//
@@ -317,7 +317,7 @@ public:
 		//
 		virtual void CalculateNodeSuitability
 		(
-		);
+		) override;
 		//
 		//	Decides how important the influence is for node construction (pathfinding).
 		//
@@ -327,7 +327,7 @@ public:
 		//
 		virtual TReal rRateNodeSuitability
 		(
-		) const;
+		) const override;
 		//
 		//	Decided how important the influence is right now (based on rNodeSuitability).
 		//
@@ -352,7 +352,7 @@ public:
 		//
 		void ResetTemporaryFlags
 		(
-		);
+		) override;
 		//
 		//	Resets the flags which are short-lived.
 		//

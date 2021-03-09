@@ -185,14 +185,14 @@ public:
 	//
 
 	//lint -save -e1411
-	virtual void Cast(CEntity** ppet)
+	virtual void Cast(CEntity** ppet) override
 	{
 		*ppet = this;
 	}
 	//lint -restore
 
 	//*****************************************************************************************
-	virtual const char* strPartType() const;
+	virtual const char* strPartType() const override;
 };
 
 
@@ -287,20 +287,20 @@ public:
 	// Overrides.
 	//
 
-	void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0);
+	void Move(const CPlacement3<>& p3_new, CEntity* pet_sender = 0) override;
 
 	// Respond to move messages by moving myself if my parent moves.
-	void Process(const CMessageMove& msgmove);
+	void Process(const CMessageMove& msgmove) override;
 
 	//*****************************************************************************************
-	virtual char * pcSave(char *  pc_buffer) const;
+	virtual char * pcSave(char *  pc_buffer) const override;
 
 	//*****************************************************************************************
-	virtual const char * pcLoad(const char *  pc_buffer);
+	virtual const char * pcLoad(const char *  pc_buffer) override;
 
 
 	//*****************************************************************************************
-	virtual const char* strPartType() const;
+	virtual const char* strPartType() const override;
 
 //protected:
 	// How can we update attached guys when we aren't in run mode if this is protected?

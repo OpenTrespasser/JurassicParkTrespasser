@@ -66,17 +66,17 @@ protected:
 	//
 	// Overides.
 	//
-	virtual void Queue() const;
+	virtual void Queue() const override;
 
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Magnet Break";
 	}
@@ -121,17 +121,17 @@ protected:
 	//
 	// Overides.
 	//
-	virtual void Queue() const;
+	virtual void Queue() const override;
 
 
 	//******************************************************************************************
-	virtual void DeliverTo(CEntity* pet) const
+	virtual void DeliverTo(CEntity* pet) const override
 	{
 		pet->Process(*this);
 	}
 
 	//******************************************************************************************
-	virtual const char* strName() const
+	virtual const char* strName() const override
 	{
 		return "Magnet Move";
 	}
