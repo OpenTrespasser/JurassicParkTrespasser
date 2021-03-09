@@ -525,7 +525,7 @@ bool CSymTab::bData(void** symtab, uint* u_size)
 	if (pstHead == 0)
 	{
 		// No! Allocate a small node with a zero in it, to represent 0 symbols.
-		SymtabImage = (void *) new char[4];
+		SymtabImage = new char[4];
 
 		// Were we successful?
 		if (SymtabImage == 0)
@@ -587,7 +587,7 @@ bool CSymTab::bData(void** symtab, uint* u_size)
 
 		// Attempt to allocate the memory for the symbol table image.
 		uSymtabImageSize = u_symtab_image_size;
-		SymtabImage = (void *) new char[uSymtabImageSize];
+		SymtabImage = new char[uSymtabImageSize];
 
 		// Were we successful?
 		if (SymtabImage == 0)

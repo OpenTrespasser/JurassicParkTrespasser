@@ -772,7 +772,7 @@
 			switch (emtHeapType)
 			{
 			case emtNormal:
-				delete[] pSurface;
+				delete[] static_cast<uint8*>(pSurface);
 				break;
 
 			case emtFixed:

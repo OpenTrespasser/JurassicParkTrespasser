@@ -63,7 +63,7 @@ class CSymTab
 {
 private:
 	uint			uSymtabImageSize;						// Size of the internal table image.
-	void*			SymtabImage;							// Internal representation of the symbol table.
+	char*			SymtabImage;							// Internal representation of the symbol table.
 
 	SSymtab*		pstHead;								// Pointer to the front of the list.
 
