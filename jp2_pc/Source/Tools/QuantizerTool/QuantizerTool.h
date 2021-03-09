@@ -1,3 +1,5 @@
+#pragma once
+
 // QuantizerTool.h : main header file for the QUANTIZERTOOL application
 //
 

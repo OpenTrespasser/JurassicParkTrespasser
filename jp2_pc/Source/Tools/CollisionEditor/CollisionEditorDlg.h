@@ -1,3 +1,5 @@
+#pragma once
+
 // CollisionEditorDlg.h : header file
 //
 

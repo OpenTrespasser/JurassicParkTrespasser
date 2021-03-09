@@ -1,3 +1,5 @@
+#pragma once
+
 // DialogScheduler.hpp : header file
 //
 

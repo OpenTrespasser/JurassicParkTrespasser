@@ -1,3 +1,5 @@
+#pragma once
+
 //**********************************************************************************************
 //
 // Following are example declarations for each type of item.

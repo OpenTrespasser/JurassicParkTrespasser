@@ -1,3 +1,5 @@
+#pragma once
+
 // TrespassAdvDlg.h : header file
 //
 

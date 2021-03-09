@@ -35,8 +35,8 @@
  * 
  **********************************************************************************************/
 
-#ifndef HEADER_LIB_RENDERER_PRIMITIVES_P5_FASTBUMPEX_HPP
-#define HEADER_LIB_RENDERER_PRIMITIVES_P5_FASTBUMPEX_HPP
+#ifndef HEADER_LIB_RENDERER_PRIMITIVES_AMDK6_FASTBUMPEX_HPP
+#define HEADER_LIB_RENDERER_PRIMITIVES_AMDK6_FASTBUMPEX_HPP
 
 // Make sure this file is being included from 'FastBump.hpp'.
 #ifndef HEADER_LIB_RENDERER_PRIMITIVES_FASTBUMP_HPP

@@ -1,3 +1,5 @@
+#pragma once
+
 // ParameterDlg.h : header file
 //
 

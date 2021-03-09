@@ -1,3 +1,5 @@
+#pragma once
+
 // DialogName.hpp : header file
 //
 

@@ -1,3 +1,5 @@
+#pragma once
+
 // DialogMipmap.hpp : header file
 //
 

@@ -1,5 +1,3 @@
-#pragma once
-
 #include "DisplayMode.hpp"
 #include "Lib/Sys/RegInit.hpp"
 #include "Lib/Sys/reg.h"

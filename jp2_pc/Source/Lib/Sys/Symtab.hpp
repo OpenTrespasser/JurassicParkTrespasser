@@ -19,7 +19,7 @@
  *********************************************************************************************/
 
 #ifndef HEADER_LIB_COMMON_SYMTAB_HPP
-#define HEADER_COMMON_SYMTAB_HPP
+#define HEADER_LIB_COMMON_SYMTAB_HPP
 
 #ifdef USE_MAX_TYPES
 #include "StandardTypes.hpp"

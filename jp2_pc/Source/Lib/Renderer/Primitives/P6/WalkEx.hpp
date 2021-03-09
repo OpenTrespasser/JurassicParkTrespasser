@@ -44,8 +44,8 @@
  * 
  **********************************************************************************************/
 
-#ifndef HEADER_LIB_RENDERER_PRIMITIVES_P5_WALKEX_HPP
-#define HEADER_LIB_RENDERER_PRIMITIVES_P5_WALKEX_HPP
+#ifndef HEADER_LIB_RENDERER_PRIMITIVES_P6_WALKEX_HPP
+#define HEADER_LIB_RENDERER_PRIMITIVES_P6_WALKEX_HPP
 
 // Make sure this file is being included from 'FixedP.hpp'.
 #ifndef HEADER_LIB_RENDERER_PRIMITIVES_WALK_HPP

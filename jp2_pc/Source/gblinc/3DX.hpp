@@ -1,3 +1,5 @@
+#pragma once
+
 /***************************************************************************
  * CONFIDENTIAL 
  * Copyright (c) 1997 ADVANCED MICRO DEVICES, INC.  All Rights Reserved.

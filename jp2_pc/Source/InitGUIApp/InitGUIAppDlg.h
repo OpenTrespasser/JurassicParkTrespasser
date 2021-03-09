@@ -1,3 +1,5 @@
+#pragma once
+
 // InitGUIAppDlg.h : header file
 //
 

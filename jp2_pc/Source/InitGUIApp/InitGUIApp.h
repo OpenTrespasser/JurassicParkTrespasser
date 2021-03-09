@@ -1,3 +1,5 @@
+#pragma once
+
 // InitGUIApp.h : main header file for the INITGUIAPP application
 //
 

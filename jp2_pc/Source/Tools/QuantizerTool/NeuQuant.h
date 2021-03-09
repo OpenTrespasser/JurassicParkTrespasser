@@ -1,3 +1,5 @@
+#pragma once
+
 /* NeuQuant Neural-Net Quantization Algorithm Interface
  * ----------------------------------------------------
  *
