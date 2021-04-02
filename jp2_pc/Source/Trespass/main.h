@@ -70,6 +70,7 @@ public:
     void OnKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags);
     void OnChar(HWND hwnd, TCHAR ch, int cRepeat);
     void OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags);
+    void OnMouseWheel(HWND hwnd, int x, int y, int zDelta, UINT fwKeys);
     void OnLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags);
     void OnLButtonUp(HWND hwnd, int x, int y, UINT keyFlags);
     void OnRButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags);

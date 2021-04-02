@@ -237,6 +237,11 @@ void CMainWnd::OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags)
     }
 }
 
+void CMainWnd::OnMouseWheel(HWND hwnd, int x, int y, int zDelta, UINT fwKeys)
+{
+    if (CUIWnd* puiwnd = m_pUIMgr->GetActiveUIWnd(); puiwnd && !puiwnd->m_bExitWnd)
+        puiwnd->OnMouseWheel(x, y, zDelta, fwKeys);
+}
 
 void CMainWnd::OnRButtonDown(HWND hwnd,
                              BOOL fDoubleClick,
@@ -723,6 +728,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uiMsg, WPARAM wParam, LPARAM lParam)
         HANDLE_MSG(hwnd, WM_KEYUP,          g_pMainWnd->OnKey);
         HANDLE_MSG(hwnd, WM_CHAR,           g_pMainWnd->OnChar);
         HANDLE_MSG(hwnd, WM_MOUSEMOVE,      g_pMainWnd->OnMouseMove);
+        HANDLE_MSG(hwnd, WM_MOUSEWHEEL,     g_pMainWnd->OnMouseWheel);
         HANDLE_MSG(hwnd, WM_LBUTTONDOWN,    g_pMainWnd->OnLButtonDown);
         HANDLE_MSG(hwnd, WM_LBUTTONDBLCLK,  g_pMainWnd->OnLButtonDown);
         HANDLE_MSG(hwnd, WM_LBUTTONUP,      g_pMainWnd->OnLButtonUp);
