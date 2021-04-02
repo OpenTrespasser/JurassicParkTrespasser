@@ -730,6 +730,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uiMsg, WPARAM wParam, LPARAM lParam)
         HANDLE_MSG(hwnd, WM_ERASEBKGND,     g_pMainWnd->OnEraseBkgnd);
         HANDLE_MSG(hwnd, WM_RBUTTONDOWN,    g_pMainWnd->OnRButtonDown);
         HANDLE_MSG(hwnd, WM_RBUTTONDBLCLK,  g_pMainWnd->OnRButtonDown);
+        HANDLE_MSG(hwnd, WM_MBUTTONDOWN,    g_pMainWnd->OnMButtonDown);
         HANDLE_MSG(hwnd, WM_TIMER,          g_pMainWnd->OnTimer);
         HANDLE_MSG(hwnd, WM_SYSCOMMAND,     g_pMainWnd->OnSysCommand);
     }
