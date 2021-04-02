@@ -2646,6 +2646,19 @@ BOOL CUISlider::LButtonUp(int x, int y, UINT keyFlags)
     return TRUE;
 }
 
+BOOL CUISlider::MouseWheel(int x, int y, int zDelta, UINT keyFlags)
+{
+    //zDeltas are multiples of 120, see WM_MOUSEWHEEL documentation
+    int scrollstep = static_cast<int>(std::round(static_cast<double>(m_iUnits) / 20));
+    int scrolldistance = scrollstep * (zDelta / 120);
+    m_iCurrUnit = std::clamp(m_iCurrUnit + scrolldistance, 0, m_iUnits);
+    
+    m_pParent->UISliderChange(this, m_iCurrUnit);
+    m_pParent->CtrlInvalidateRect(&m_rc);
+
+    return TRUE;
+}
+
 BOOL CUISlider::TokenLoad(HANDLE hFile)
 {
     BOOL            bRet;

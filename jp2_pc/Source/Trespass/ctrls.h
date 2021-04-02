@@ -442,6 +442,7 @@ public:
     virtual void    MouseMove(int x, int y, UINT keyFlags) override;
     virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
     virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
+    virtual BOOL    MouseWheel(int x, int y, int zDelta, UINT keyFlags) override;
 
     virtual BOOL    TokenLoad(HANDLE hFile) override;
 
