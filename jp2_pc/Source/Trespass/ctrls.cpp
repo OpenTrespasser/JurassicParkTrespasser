@@ -1069,28 +1069,42 @@ BOOL CUIListbox::LButtonUp(int x, int y, UINT keyFlags)
     return TRUE;
 }
 
+void CUIListbox::ScrollUp()
+{
+    if (int iNewTop = m_iTop - 1; iNewTop >= 0)
+    {
+        m_iTop = iNewTop;
+        m_bUpdate = TRUE;
+    }
+}
+
+void CUIListbox::ScrollDown()
+{
+    if (int iNewTop = m_iTop + 1; iNewTop <= m_vInfo.size() - m_iItemsMaxVis)
+    {
+        m_iTop = iNewTop;
+        m_bUpdate = TRUE;
+    }
+}
+
+BOOL CUIListbox::MouseWheel(int x, int y, int zDelta, UINT keyFlags)
+{
+    if (zDelta > 0)
+        ScrollUp();
+    else if (zDelta < 0)
+        ScrollDown();
+    return TRUE;
+}
 
 void CUIListbox::UIButtonUp(CUIButton * pbutton)
 {
-    int iNewTop;
-
     if ((pbutton->GetID() == IDSCROLLUP) && (pbutton->GetActive()))
     {
-        iNewTop = m_iTop - 1;
-        if (iNewTop >= 0)
-        {
-            m_iTop = iNewTop;
-            m_bUpdate = TRUE;
-        }
+        ScrollUp();
     }
     else if ((pbutton->GetID() == IDSCROLLDN) && (pbutton->GetActive()))
     {
-        iNewTop = m_iTop + 1;
-        if (iNewTop <= m_vInfo.size()- m_iItemsMaxVis)
-        {
-            m_iTop = iNewTop;
-            m_bUpdate = TRUE;
-        }
+        ScrollDown();
     }
 
     if (m_bUpdate)
