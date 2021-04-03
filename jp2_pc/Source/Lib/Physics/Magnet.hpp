@@ -38,7 +38,7 @@
 #include <list>
 #include "Lib/EntityDBase/PhysicsInfo.hpp"
 
-#define VER_PARTITION_MAGNETS VER_TEST
+#define VER_PARTITION_MAGNETS 1
 
 enum EMagnetFlag		// Used for flags in CMagnet
 // Prefix: emf
