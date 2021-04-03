@@ -843,7 +843,7 @@ void CUIListbox::DoFrame(POINT ptMouse)
     iThumbHeight = (m_rc.bottom - m_rc.top) - (2 + (2 * m_iScrollWidth));
     y = (ptMouse.y - m_rc.top) - (m_iScrollWidth + 1);
 
-    iNewTop = (int)((double)((y - m_iMouseFromTop) * m_vInfo.size()) / (double) iThumbHeight);
+    iNewTop = (int)((double)((y - m_iMouseFromTop) * (int) m_vInfo.size()) / (double) iThumbHeight);
     if (iNewTop < 0)
     {
         iNewTop = 0;
@@ -1069,28 +1069,42 @@ BOOL CUIListbox::LButtonUp(int x, int y, UINT keyFlags)
     return TRUE;
 }
 
+void CUIListbox::ScrollUp()
+{
+    if ((m_iTop - 1) >= 0)
+    {
+        m_iTop--;
+        m_bUpdate = TRUE;
+    }
+}
+
+void CUIListbox::ScrollDown()
+{
+    if ((m_iTop + 1) <= (m_vInfo.size() - m_iItemsMaxVis))
+    {
+        m_iTop++;
+        m_bUpdate = TRUE;
+    }
+}
+
+BOOL CUIListbox::MouseWheel(int x, int y, int zDelta, UINT keyFlags)
+{
+    if (zDelta > 0)
+        ScrollUp();
+    else if (zDelta < 0)
+        ScrollDown();
+    return TRUE;
+}
 
 void CUIListbox::UIButtonUp(CUIButton * pbutton)
 {
-    int iNewTop;
-
     if ((pbutton->GetID() == IDSCROLLUP) && (pbutton->GetActive()))
     {
-        iNewTop = m_iTop - 1;
-        if (iNewTop >= 0)
-        {
-            m_iTop = iNewTop;
-            m_bUpdate = TRUE;
-        }
+        ScrollUp();
     }
     else if ((pbutton->GetID() == IDSCROLLDN) && (pbutton->GetActive()))
     {
-        iNewTop = m_iTop + 1;
-        if (iNewTop <= m_vInfo.size()- m_iItemsMaxVis)
-        {
-            m_iTop = iNewTop;
-            m_bUpdate = TRUE;
-        }
+        ScrollDown();
     }
 
     if (m_bUpdate)
@@ -2628,6 +2642,19 @@ BOOL CUISlider::LButtonUp(int x, int y, UINT keyFlags)
     }
 
     m_bDown = FALSE;
+
+    return TRUE;
+}
+
+BOOL CUISlider::MouseWheel(int x, int y, int zDelta, UINT keyFlags)
+{
+    //zDeltas are multiples of 120, see WM_MOUSEWHEEL documentation
+    int scrollstep = static_cast<int>(std::round(static_cast<double>(m_iUnits) / 20));
+    int scrolldistance = scrollstep * (zDelta / 120);
+    m_iCurrUnit = std::clamp(m_iCurrUnit + scrolldistance, 0, m_iUnits);
+    
+    m_pParent->UISliderChange(this, m_iCurrUnit);
+    m_pParent->CtrlInvalidateRect(&m_rc);
 
     return TRUE;
 }

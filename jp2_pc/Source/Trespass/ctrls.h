@@ -102,6 +102,7 @@ public:
     virtual void    ReleaseCapture() {;}
 
     virtual void    MouseMove(int x, int y, UINT keyFlags);
+    virtual BOOL    MouseWheel(int x, int y, int zDelta, UINT keyFlags) { return FALSE; }
     virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags);
     virtual BOOL    LButtonUp(int x, int y, UINT keyFlags);
 
@@ -211,6 +212,7 @@ public:
 
     virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
     virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
+    virtual BOOL    MouseWheel(int x, int y, int zDelta, UINT keyFlags) override;
 
     virtual BOOL    TokenLoad(HANDLE hFile) override;
 
@@ -305,6 +307,9 @@ private:
 
     void Update();
     BOOL InitSurface();
+
+    void ScrollUp();
+    void ScrollDown();
 };
 
 
@@ -437,6 +442,7 @@ public:
     virtual void    MouseMove(int x, int y, UINT keyFlags) override;
     virtual BOOL    LButtonDown(int x, int y, BOOL bDoubleClick, UINT keyFlags) override;
     virtual BOOL    LButtonUp(int x, int y, UINT keyFlags) override;
+    virtual BOOL    MouseWheel(int x, int y, int zDelta, UINT keyFlags) override;
 
     virtual BOOL    TokenLoad(HANDLE hFile) override;
 

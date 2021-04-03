@@ -143,6 +143,7 @@ public:
     virtual void OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags);
     virtual void OnChar(TCHAR ch, int cRepeat);
     virtual void OnMouseMove(int x, int y, UINT keyFlags);
+    virtual void OnMouseWheel(int x, int y, int zDelta, UINT fwKeys);
     virtual void OnLButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags);
     virtual void OnLButtonUp(int x, int y, UINT keyFlags);
     virtual void OnRButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags);
