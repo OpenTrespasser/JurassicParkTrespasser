@@ -1000,6 +1000,25 @@ void CUIWnd::OnMouseMove(int x, int y, UINT keyFlags)
 {
 }
 
+void CUIWnd::OnMouseWheel(int x, int y, int zDelta, UINT fwKeys)
+{
+    if (m_vUICtrls.empty())
+        return;
+
+    for (auto i = m_vUICtrls.rbegin(); i != m_vUICtrls.rend() && *i; i++)
+    {
+        if (*i &&
+            (*i)->HitTest(m_pUIMgr->m_ptMouse.x, m_pUIMgr->m_ptMouse.y) &&
+            (*i)->MouseWheel(m_pUIMgr->m_ptMouse.x,
+                m_pUIMgr->m_ptMouse.y,
+                zDelta,
+                fwKeys))
+        {
+            return;
+        }
+    }
+}
+
 void CUIWnd::OnLButtonDown(BOOL fDoubleClick, int x, int y, UINT keyFlags)
 {
     if (m_vUICtrls.size() == 0)
