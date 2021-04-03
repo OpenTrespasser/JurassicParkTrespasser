@@ -843,7 +843,7 @@ void CUIListbox::DoFrame(POINT ptMouse)
     iThumbHeight = (m_rc.bottom - m_rc.top) - (2 + (2 * m_iScrollWidth));
     y = (ptMouse.y - m_rc.top) - (m_iScrollWidth + 1);
 
-    iNewTop = (int)((double)((y - m_iMouseFromTop) * m_vInfo.size()) / (double) iThumbHeight);
+    iNewTop = (int)((double)((y - m_iMouseFromTop) * (int) m_vInfo.size()) / (double) iThumbHeight);
     if (iNewTop < 0)
     {
         iNewTop = 0;
