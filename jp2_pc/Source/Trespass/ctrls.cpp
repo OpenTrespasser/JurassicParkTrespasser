@@ -1071,18 +1071,18 @@ BOOL CUIListbox::LButtonUp(int x, int y, UINT keyFlags)
 
 void CUIListbox::ScrollUp()
 {
-    if (int iNewTop = m_iTop - 1; iNewTop >= 0)
+    if ((m_iTop - 1) >= 0)
     {
-        m_iTop = iNewTop;
+        m_iTop--;
         m_bUpdate = TRUE;
     }
 }
 
 void CUIListbox::ScrollDown()
 {
-    if (int iNewTop = m_iTop + 1; iNewTop <= m_vInfo.size() - m_iItemsMaxVis)
+    if ((m_iTop + 1) <= (m_vInfo.size() - m_iItemsMaxVis))
     {
-        m_iTop = iNewTop;
+        m_iTop++;
         m_bUpdate = TRUE;
     }
 }
