@@ -25,6 +25,11 @@ else()
     set(CMAKE_MFC_FLAG 2)
 endif()
 
+set(ENABLE_SANITIZERS FALSE CACHE BOOL INTERNAL)
+if (ENABLE_SANITIZERS)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
+endif()
+
 set(USE_TRESPASSER_DIRECTORY TRUE CACHE BOOL INTERNAL)
 
 get_filename_component(TRESPASS_INSTALL_DIR "[HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\DreamWorks Interactive\\Trespasser;Installed Directory]" ABSOLUTE)
