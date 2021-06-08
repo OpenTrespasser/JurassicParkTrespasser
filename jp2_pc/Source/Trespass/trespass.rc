@@ -208,6 +208,8 @@ BEGIN
     IDS_ERR_PDETECT_FAILED  "Failed to detect local processor. Do you want to continue?"
     IDS_ERR_NO_ACCELERATORS "No hardware accelerators compatible with Trespasser have been found.\r\nConsult the 'Readme.txt' file for more information on supported\r\nhardware accelerators."
     IDS_ERR_DISPLAY_README  "Unable to display the 'Readme.txt' file. Please open the file\nmanually from the 'Setup' directory on your distribution CD-ROM\nusing a program like Notepad or Wordpad."
+    IDS_ERR_INVALID_DISPLAY_CONFIGURATION
+                            "The current combination of display settings is invalid. This error involves a combination of these settings:\r\n\r\n- 16bit color depth compatibility mode\r\n- Window Mode\r\n- D3D enabled\r\n\r\nIf you continue, then the game will have visual errors and not run stable.\r\nDo you want to continue?"
 END
 
 #endif    // English (U.S.) resources

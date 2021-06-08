@@ -130,6 +130,18 @@ static HRESULT WINAPI EnumZBufferFormats
 	return D3DENUMRET_OK;
 }
 
+static void Set16BitPixelFormat(DDSURFACEDESC2& desc)
+{
+	desc.dwFlags |= DDSD_PIXELFORMAT;
+	CDDSize<DDPIXELFORMAT>::InitStruct(desc.ddpfPixelFormat);
+	desc.ddpfPixelFormat.dwRGBBitCount = 16;
+	desc.ddpfPixelFormat.dwFlags = DDPF_RGB;
+
+	desc.ddpfPixelFormat.dwRBitMask = 0xF800;
+	desc.ddpfPixelFormat.dwGBitMask = 0x07E0;
+	desc.ddpfPixelFormat.dwBBitMask = 0x001F;
+}
+
 
 //
 // Private class definitions.
@@ -240,6 +252,7 @@ private:
 		int i_height,
 		int i_bits,					// How many bits deep for full-screen, 0 for windowed.
 		int i_buffers,				// How many buffers to construct.
+		bool force16Bit,
 		CSet<ERasterFlag> seteras	// Any special flags for the raster.
 	)
 	//
@@ -253,7 +266,7 @@ private:
 		sd.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
 		DirectDraw::err = DirectDraw::pdd4->CreateSurface(&sd, &pddsPrimary4, 0);
 
-		if (i_buffers > 1)
+		if (i_buffers > 1 || force16Bit)
 		{
 			sd.dwFlags = DDSD_WIDTH | DDSD_HEIGHT | DDSD_CAPS;
 
@@ -267,6 +280,9 @@ private:
 			sd.dwWidth	= RoundUp(i_width, 8);
 			sd.dwHeight = i_height;
 			sd.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN;
+
+			if (force16Bit)
+				Set16BitPixelFormat(sd);
 
 			if (!seteras[erasVideoMem])
 				// Video mem not wanted, force system memory.
@@ -306,7 +322,8 @@ private:
 		int i_height,
 		int i_bits,					// How many bits deep for full-screen, 0 for windowed.
 		int i_buffers,				// How many buffers to construct.
-		CSet<ERasterFlag> seteras	// Any special flags for the raster.
+		CSet<ERasterFlag> seteras,  // Any special flags for the raster.
+		bool force16Bit = false
 	)
 	//
 	// Creates a screen raster for use with the software rasterizer.
@@ -336,7 +353,7 @@ private:
 		}
 
 		// Try to construct the backbuffer in video memory.
-		if (i_bits && i_buffers > 1 && seteras[erasVideoMem])
+		if (i_bits && !force16Bit && i_buffers > 1 && seteras[erasVideoMem])
 		{
 			if (bConstructSoftwareVidRam(i_width, i_height, i_bits, i_buffers))
 			{
@@ -346,7 +363,7 @@ private:
 		}
 
 		// Creating a buffer in video memory failed. Create one in system memory.
-		bConstructSoftwareSysRam(i_width, i_height, i_bits, i_buffers, seteras);
+		bConstructSoftwareSysRam(i_width, i_height, i_bits, i_buffers, force16Bit, seteras);
 		bFlippable = false;
 	}
 
@@ -356,7 +373,8 @@ private:
 	(
 		HWND hwnd,							// A previously constructed Windows HWND.
 		int i_width, int i_height,			// The desired dimensions of the raster.
-		int i_bits = 16
+		int i_bits = 16,
+		bool force16Bit = false
 	);
 	//
 	// Creates a screen raster for use with Direct3D.
@@ -374,7 +392,8 @@ private:
 	(
 		HWND hwnd,							// A previously constructed Windows HWND.
 		int i_width, int i_height,			// The desired dimensions of the raster.
-		int i_bits = 16
+		int i_bits = 16,
+		bool force16Bit = false
 	);
 	
 	//******************************************************************************************
@@ -1191,8 +1210,10 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 
 		bFullScreen = i_bits != 0;
 
+		bool force16Bit = GetSystemBitDepth(hwnd) != 16;
+
 		// Use separate creation code for Direct3D.
-		if (priv_self.bConstructD3D(hwnd, i_width, i_height, 16))
+		if (priv_self.bConstructD3D(hwnd, i_width, i_height, 16, force16Bit))
 		{
 			AlwaysAssert(pddsDraw4);
 			AlwaysAssert(pddsPrimary4);
@@ -1203,7 +1224,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 			d3dDriver.Uninitialize();
 
 			// Construct a regular DirectDraw interface.
-			priv_self.ConstructSoftware(hwnd, i_width, i_height, i_bits, i_buffers, seteras);
+			priv_self.ConstructSoftware(hwnd, i_width, i_height, i_bits, i_buffers, seteras, force16Bit);
 		}
 		ConstructClipper(hwnd);
 		AlwaysAssert(pddsDraw4);
@@ -1712,12 +1733,12 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 	}
 
 	//******************************************************************************************
-	bool CRasterWin::CPriv::bConstructD3D(HWND hwnd, int i_width, int i_height, int i_bits)
+	bool CRasterWin::CPriv::bConstructD3D(HWND hwnd, int i_width, int i_height, int i_bits, bool force16Bit)
 	{
 		if (GetWindowModeConfigured() == WindowMode::EXCLUSIVE)
 			return bConstructD3DExclusive(hwnd, i_width, i_height, i_bits);
 		else
-			return bConstructD3DWindowed(hwnd, i_width, i_height, i_bits);
+			return bConstructD3DWindowed(hwnd, i_width, i_height, i_bits, force16Bit);
 	}
 
 	bool CRasterWin::CPriv::bConstructD3DExclusive(HWND hwnd, int i_width, int i_height, int i_bits)
@@ -1857,7 +1878,7 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 		return pddsDraw4 && pddsPrimary4;
 	}
 
-	bool CRasterWin::CPriv::bConstructD3DWindowed(HWND hwnd, int i_width, int i_height, int i_bits)
+	bool CRasterWin::CPriv::bConstructD3DWindowed(HWND hwnd, int i_width, int i_height, int i_bits, bool force16Bit)
 	{
 		AlwaysAssert(hwnd);
 		AlwaysAssert(i_width > 0);
@@ -1913,6 +1934,9 @@ rptr<CRaster> prasReadBMP(const char* str_bitmap_name, bool b_vid)
 
 			backbufferddsd.dwWidth = i_width;
 			backbufferddsd.dwHeight = i_height;
+
+			if (force16Bit)
+				Set16BitPixelFormat(backbufferddsd);
 			
 			hres = DirectDraw::pdd4->CreateSurface(&backbufferddsd, &pddsDraw4, nullptr);
 			if (FAILED(hres))

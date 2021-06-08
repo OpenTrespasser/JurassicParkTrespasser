@@ -856,7 +856,7 @@ public:
 			return false;
 		}
 		LPDIRECTDRAWSURFACE4 pdds_back  = prasMainScreen->pddsDraw4;
-		LPDIRECTDRAWSURFACE4 pdds_front = prasMainScreen->GetPrimarySurface4();
+		LPDIRECTDRAWSURFACE4 pdds_front = prasMainScreen->GetPrimarySurface();
 		return bInitialize(pdds_back, pdds_front);
 	}
 	

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Windows.h>
+
 enum class WindowMode {
 	UNDEFINED = 0,
 	FRAMED = 1,
@@ -8,3 +10,8 @@ enum class WindowMode {
 };
 
 WindowMode GetWindowModeConfigured();
+
+int GetSystemBitDepth(HWND wnd);
+int GetSystemBitDepth(HDC dc);
+
+bool IsDisplayConfigurationValid(int colorDepth, bool d3dEnabled, WindowMode mode);

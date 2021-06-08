@@ -40,9 +40,10 @@ Depending on your system configuration, a program running in the Trespasser dire
 
 ### 16bit color depth mode
 
-The renderer only supports 16bit color depth. Adding 32bit support is an open issue.
+The game works in both 16bit and 32bit color depth. 
+An exception applies to D3D rendering together with exclusive fullscreen mode: this combination only works with 16bit color depth. 
 
-Running the game with 32bit color depth is possible, but the graphics are faulty and it will inevitably crash after a few minutes. Some apps like GUIApp completely refuse to start in 32bit color depth mode.
+Additional tools like GUIApp have not yet been tested in 32bit color depth and might completely refuse to start in that configuration.
 
 We do not know how to make VS start a program in 16bit color depth mode. Perhaps it can be done by starting VS with 16bit color depth, but that would be very inconvenient.
 

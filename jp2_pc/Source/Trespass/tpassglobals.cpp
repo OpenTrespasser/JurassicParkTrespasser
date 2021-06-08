@@ -181,7 +181,7 @@ void CTPassGlobals::CaptureBackground(bool bBackbuffer /* = false */)
 
     if (bBackbuffer)
     {
-        pSurface = prasMainScreen->pddsDraw4;
+        pSurface = prasMainScreen->GetRenderTargetSurface();
     }
     else
     {
@@ -193,7 +193,8 @@ void CTPassGlobals::CaptureBackground(bool bBackbuffer /* = false */)
     hdcDst = m_prasBkgnd->hdcGet();
 
     POINT basepoint = { 0,0 };
-    ClientToScreen(g_hwnd, &basepoint);
+    //Enable this if the background is shifted in windowed mode
+    //ClientToScreen(g_hwnd, &basepoint);
 	
     BitBlt(hdcDst, 
            0, 

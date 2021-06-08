@@ -455,6 +455,15 @@ int DoWinMain(HINSTANCE hInstance,
         return -1;
     }
 
+    if ( !IsDisplayConfigurationValid( GetSystemBitDepth(g_hwnd), bGetD3D(), GetWindowModeConfigured()))
+    {
+        if (MsgDlg(g_hwnd,
+            MB_YESNOCANCEL | MB_SETFOREGROUND,
+            IDS_ERROR_TITLE,
+            IDS_ERR_INVALID_DISPLAY_CONFIGURATION) != IDYES)
+            goto Cleanup;
+    }
+
     //
     // Check To see if the installed registry flag is set.  If it has not been
     // set then we haven't been installed.
