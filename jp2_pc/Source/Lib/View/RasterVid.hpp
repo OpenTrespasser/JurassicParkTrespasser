@@ -595,14 +595,14 @@ public:
 
 	//******************************************************************************************
 	//
-    IDirectDrawSurface4 * GetPrimarySurface4()
+    IDirectDrawSurface4 * GetRenderTargetSurface()
     {
-        return pddsPrimary4;
+        return pddsDraw4;
     }
 	//
-	// Returns a pointer to the primary surface.  This is necessary for Videos.
-	//
-	//**********************************
+    // Returns a pointer to the backbuffer, which generally should be the rendering target.
+    //
+    //**********************************
 
 
 	//******************************************************************************************

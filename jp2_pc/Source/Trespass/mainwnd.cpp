@@ -174,6 +174,8 @@ void CMainWnd::OnKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags)
 
     if (vk == VK_SNAPSHOT)
     {
+        //Repaint in case we have a cleared framebuffer right now
+        this->OnPaint(hwnd);
         ScreenCapture();
         return;
     }
@@ -239,6 +241,8 @@ void CMainWnd::OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags)
 
 void CMainWnd::OnMouseWheel(HWND hwnd, int x, int y, int zDelta, UINT fwKeys)
 {
+    if (!m_pUIMgr)
+        return;
     if (CUIWnd* puiwnd = m_pUIMgr->GetActiveUIWnd(); puiwnd && !puiwnd->m_bExitWnd)
         puiwnd->OnMouseWheel(x, y, zDelta, fwKeys);
 }

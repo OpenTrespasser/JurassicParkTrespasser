@@ -107,7 +107,7 @@ void CVideoWnd::NextNonDirect()
     CDDSize<DDSURFACEDESC2> dds;
     HRESULT                 hr;
 
-    pSurface = prasMainScreen->GetPrimarySurface();
+    pSurface = prasMainScreen->GetRenderTargetSurface();
     do
     {
         hr = pSurface->Lock(NULL, 
@@ -179,6 +179,10 @@ void CVideoWnd::NextNonDirect()
 
 void CVideoWnd::NextSmackerFrame()
 {
+    CDDSize<DDBLTFX> fx;
+    fx.dwFillColor = 0;
+    HRESULT blt = prasMainScreen->GetRenderTargetSurface()->Blt(nullptr, nullptr, nullptr, DDBLT_WAIT | DDBLT_COLORFILL, &fx);
+
     if (m_fDirect)
     {
         NextDirect();
@@ -187,6 +191,9 @@ void CVideoWnd::NextSmackerFrame()
     {
         NextNonDirect();
     }
+
+    prasMainScreen->Flip();
+
 
     if (m_pSmack->FrameNum == m_pSmack->Frames - 1)
     {

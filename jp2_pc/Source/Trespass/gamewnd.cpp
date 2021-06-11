@@ -419,6 +419,9 @@ void CGameWnd::SetupGameStoppage()
     // Stop the simulation
     msg.Dispatch();
 
+    //Repaint in case we have a cleared framebuffer right now
+    this->OnPaint(g_hwnd);
+
     m_bPaused = TRUE;
     m_pUIMgr->m_bDrawMouse = TRUE;
 
@@ -434,7 +437,7 @@ void CGameWnd::SetupGameStoppage()
     SetCursorPos(prasMainScreen->iWidth / 2, 
                  prasMainScreen->iHeight / 2);
 
-    g_CTPassGlobals.CaptureBackground();
+    g_CTPassGlobals.CaptureBackground(true);
 	g_CTPassGlobals.bHardReset = false;
 }
 
