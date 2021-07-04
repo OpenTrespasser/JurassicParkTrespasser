@@ -2,7 +2,6 @@
 
 # Directories
 .vs/
-jp2_pc/Build/
 
 # Visual Studio Files
 *.sln
@@ -16,7 +15,9 @@ jp2_pc/Build/
 ._*
 
 #OpenTrespasser
-jp2_pc/Build/*
+jp2_pc/Build
+jp2_pc/Archive
+jp2_pc/Source/gblinc/versionGit.hpp
 
 #CLion project files
 jp2_pc/.idea/*
