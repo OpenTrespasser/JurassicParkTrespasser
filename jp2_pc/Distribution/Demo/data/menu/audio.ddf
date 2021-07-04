@@ -1,0 +1,175 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 -1 0 0 -1 -1 1 "menu\\sound_bg.tga"
+
+UICTRL "BUTTON" 1 1 1000 185 155 -1 -1
+        1 "menu\\cancel_0.tga"
+          "menu\\cancel_1.tga"
+          "menu\\cancel_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1001 22 155 -1 -1
+        1 "menu\\ok_0.tga"
+          "menu\\ok_1.tga "
+          "menu\\ok_2.tga"
+          "menu\\ok_3.tga"
+
+UICTRL "slider" 1 1 1004 144 20 290 43
+        "menu\\slider.tga"
+        101 ; # of units
+        0 ; Default Unit value
+        0 ; Border/Ticks
+
+;
+; Play Sound Effects
+;
+
+UICTRL "checkbox" 1 1 1020 80 65 30 80
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 120 63 300 80
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        50 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1100 80 65 300 80 0
+
+;
+; Play Ambient Sounds
+;
+
+UICTRL "checkbox" 1 1 1021 80 80 30 95
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 120 78 300 95
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        51 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1101 80 80 300 95 0
+
+;
+; Play Voice Overs
+;
+
+UICTRL "checkbox" 1 1 1022 80 95 30 110
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 120 93 300 110
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        52 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1102 80 95 300 110 0
+
+
+;
+; Play Background Music
+;
+
+
+UICTRL "checkbox" 1 1 1023 80 110 30 125
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 120 108 300 125
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        53 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1103 80 110 300 125 0
+
+;
+; Show Subtitles
+;
+
+UICTRL "checkbox" 1 1 1024 80 125 30 140
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 120 123 300 140
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        54 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1104 80 125 300 140 0
+
+
+;
+; 3D Audio Enabled
+;
+
+UICTRL "checkbox" 1 1 1025 80 140 30 155
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 120 138 300 155
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        55 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1105 80 140 300 155 0
+

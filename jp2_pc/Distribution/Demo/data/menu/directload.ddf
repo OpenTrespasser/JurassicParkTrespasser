@@ -1,0 +1,29 @@
+BACKGROUND 0 0 320 240 ""
+
+UICTRL "BUTTON" 1 1 1000 120 190 -1 -1
+        1 "menu\\cancel_0.tga"
+          "menu\\cancel_1.tga"
+          "menu\\cancel_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1001 230 190 -1 -1
+        1 "menu\\ok_0.tga"
+          "menu\\ok_1.tga"
+          "menu\\ok_2.tga"
+          "menu\\ok_3.tga"
+
+UICTRL "listbox" 1 1 1002 10 10 300 180
+        12 ; Point Size
+        500; Font Weight
+        1  ; Allow Selection
+        1  ; Transparent Bkgnd
+        0 255 0 ; Transparent Bkgnd Color
+        1  ; BackLit Text
+        1  ; BackLit Offset
+        0 0 0;  BackLit Color
+        128 128 128 ; Background color
+        255 255 255 ; Foreground color
+        1  ; Show VScroll Always
+        0  ; Display Border
+
+

@@ -1,0 +1,41 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 -1 0 0 -1 -1 1 "menu\\generic_bg.tga"
+
+UICTRL "BUTTON" 1 1 1000 95 74 -1 -1
+        1 "menu\\gm_controls_0.tga"
+          "menu\\gm_controls_1.tga"
+          "menu\\gm_controls_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1001 162 33 -1 -1
+        1 "menu\\gm_video_0.tga"
+          "menu\\gm_video_1.tga"
+          "menu\\gm_video_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1002 71 33 -1 -1
+        1 "menu\\gm_audio_0.tga"
+          "menu\\gm_audio_1.tga"
+          "menu\\gm_audio_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1003 0 0 -1 -1
+        1 ""
+         ""
+         ""
+         ""
+
+;UICTRL "BUTTON" 1 1 1003 162 75 -1 -1
+;        1 "menu\\gm_credits_0.tga"
+;         "menu\\gm_credits_1.tga"
+;         "menu\\gm_credits_2.tga"
+;         ""
+
+UICTRL "BUTTON" 1 1 1004 116 122 -1 -1
+        1 "menu\\close_0.tga"
+          "menu\\close_1.tga"
+          "menu\\close_2.tga"
+          ""
+
+

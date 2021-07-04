@@ -1,0 +1,21 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "BUTTON" 1 1 1000 250 170 0 0
+      1 "menu\\ok_0.tga"
+        "menu\\ok_1.tga"
+        "menu\\ok_2.tga"
+        ""
+
+UICTRL "textbox" 1 1 1002 10 10 310 150
+        1; transparent background
+        1; back lit text
+        1; Back Lit offset
+        0 0 0; back lit color ref
+        "" ; initial text
+        14; Point Size
+        600; Weight
+        0 255 0; BK Colorref
+        255 255 255; FG ColorRef
+        0x11 ;format dword flags (DT_WORDBREAK | DT_CENTER)
+        0 ; border
+

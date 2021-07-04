@@ -1,0 +1,572 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 -1 0 0 -1 -1 1 "menu\\Controls_bg.tga"
+
+UICTRL "BUTTON" 1 1 1001 4 157 -1 -1
+        1 "menu\\ok_0.tga"
+          "menu\\ok_1.tga"
+          "menu\\ok_2.tga"
+          "menu\\ok_3.tga"
+
+UICTRL "BUTTON" 1 1 1002 67 157 -1 -1
+        1 "menu\\defaults_0.tga"
+          "menu\\defaults_1.tga"
+          "menu\\defaults_2.tga"
+          ""
+UICTRL "BUTTON" 1 1 1000 198 158 -1 -1
+        1 "menu\\cancel_0.tga"
+          "menu\\cancel_1.tga"
+          "menu\\cancel_2.tga"
+          ""
+
+;
+;  Walkforward Text
+;
+
+UICTRL "textbox" 1 1 -1 10 46 90 60
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        20 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1030 94 46 164 60
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1010 10 46 164 60 0
+
+; Run Forward Items
+
+UICTRL "textbox" 1 1 -1 10 60 90 74
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        21 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1031 94 60 164 74
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1011 10 60 164 74 0
+
+;
+; Walk Backwards items
+;
+
+UICTRL "textbox" 1 1 -1 10 74 90 88
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        22 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1032 94 74 164 88
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1012 10 74 164 88 0
+
+;
+; Side Step Left
+;
+
+UICTRL "textbox" 1 1 -1 10 88 90 102
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        23 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1033 94 88 164 102
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1013 10 88 164 102 0
+
+;
+; Side Step Right
+;
+
+UICTRL "textbox" 1 1 -1 10 102 90 116
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        24 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1034 94 102 164 116
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1014 10 102 164 116 0
+
+;
+; Jump
+;
+
+UICTRL "textbox" 1 1 -1 10 116 90 130
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        25 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1035 94 116 164 130
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1015 10 116 164 130 0
+
+;
+; Crouch
+;
+
+UICTRL "textbox" 1 1 -1 10 130 90 144
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        26 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1036 94 130 164 144
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 1016 10 130 164 144 0
+
+;
+; Throw
+;
+
+UICTRL "textbox" 1 1 1043 164 46 246 60
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 46 320 60
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        27 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1023 164 46 320 60 0
+
+;
+; Use/Fire
+;
+
+UICTRL "textbox" 1 1 1037 164 60 246 74
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 60 320 74
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        28 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1017 164 60 320 74 0
+
+;
+; Rotate Wrist
+;
+
+UICTRL "textbox" 1 1 1038 164 74 246 88
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 74 320 88
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        29 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1018 164 74 320 88 0
+
+;
+; Move Hand
+;
+
+UICTRL "textbox" 1 1 1039 164 88 246 102
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 88 320 102
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        30 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1019 164 88 320 102 0
+
+;
+; Grab / Drop
+;
+
+UICTRL "textbox" 1 1 1040 164 102 246 116
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 102 320 116
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        31 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1020 164 102 320 116 0
+
+;
+; Stow / Retrieve
+;
+
+UICTRL "textbox" 1 1 1041 164 116 246 130
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 116 320 130
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        32 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1021 164 116 320 130 0
+;
+; Replay Voice Over
+;
+
+UICTRL "textbox" 1 1 1042 164 130 246 144
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 130 320 144
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        33 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 144 320 160
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        34 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1022 164 130 320 144 0
+
+
+
+;
+; Gore
+;
+
+;UICTRL "textbox" 1 1 1030 94 46 164 60
+
+UICTRL "textbox" 1 1 -1 10 32 90 46
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        35 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 100 94 32 164 46
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "hotspot" 1 1 101 10 32 164 46 0
+
+;
+; Inverse Mouse
+;
+
+UICTRL "checkbox" 1 1 102 170 18 -1 -1
+        "menu\\check_0.tga"
+        "menu\\check_1.tga"
+        "menu\\check_2.tga"
+        "menu\\check_3.tga"
+
+UICTRL "textbox" 1 1 -1 80 18 168 32
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        36 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x26 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 103 90 18 200 32 0
+
+;
+; Rotate Arm
+;
+UICTRL "textbox" 1 1 1044 164 32 246 46
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        1 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 248 32 320 46
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        37 ; Initial Text
+        10 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "hotspot" 1 1 1024 166 32 320 46 0
+
+

@@ -1,0 +1,20 @@
+;UICTRL "static" 1 1 100 0 0 -1 -1
+;        1 "menu\\ea.tga"
+
+;UICTRL "static" 1 1 101 120 0 -1 -1
+;        1 "menu\\dwi_sm.tga"
+
+UICTRL "editbox" 1 0 102 0 0 300 20
+        14 ; Point Size
+        500 ; Weight
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        0 ; Draw Border
+
+
