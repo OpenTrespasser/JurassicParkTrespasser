@@ -106,6 +106,7 @@ set_target_properties(gmock PROPERTIES FOLDER "Tests/gtest")
 set_target_properties(gmock_main PROPERTIES FOLDER "Tests/gtest")
 
 enable_testing()
+list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
 
 set(DEACTIVATE_BROKEN_PROJECTS TRUE CACHE BOOL INTERNAL)
 
