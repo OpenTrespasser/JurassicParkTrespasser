@@ -26,8 +26,12 @@ function Build-Solution([string] $config)
 
 function Bundle-Demo([string] $config){
     Push-Location $builddir
-    cpack -G ZIP -C $config -D CPACK_PACKAGE_FILE_NAME=OTP.$config --verbose
-    Move-Item -Path OTP.$config.zip -Destination $archivedir\OTP.$config.zip -Force
+    $version = (Get-Item .\cmake\trespass\$config\OpenTrespasser.exe).VersionInfo.ProductVersion
+    $packagename = "OTP.$version.$config"
+    $packagefile = "$packagename.zip"
+    
+    cpack -G ZIP -C $config -D CPACK_PACKAGE_FILE_NAME=$packagename --verbose
+    Move-Item -Path $packagefile -Destination $archivedir\$packagefile -Force
     Pop-Location
 }
 
