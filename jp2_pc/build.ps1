@@ -32,6 +32,8 @@ function Bundle-Demo([string] $config){
 }
 
 function Bundle-Debuginfo(){
+    Write-Host "Bundling debug info"
+
     Push-Location $builddir
     $tempdir = New-Item -ItemType Directory -Force -Path packaging\Debuginfo
     foreach ($config in $configurations) {
@@ -51,3 +53,5 @@ foreach($config in $configurations){
     Bundle-Demo $config
 }
 Bundle-Debuginfo
+
+Write-Host "Build completed"
