@@ -1080,7 +1080,7 @@ void CUIListbox::ScrollUp()
 
 void CUIListbox::ScrollDown()
 {
-    if ((m_iTop + 1) <= (m_vInfo.size() - m_iItemsMaxVis))
+    if ((m_vInfo.size() > m_iItemsMaxVis) && ((m_iTop + 1) <= (m_vInfo.size() - m_iItemsMaxVis)))
     {
         m_iTop++;
         m_bUpdate = TRUE;
