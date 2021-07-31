@@ -1,0 +1,33 @@
+BACKGROUND 0 0 640 480 "menu\\ms_bkgnd.tga"
+
+UICTRL "BUTTON" 1 1 1000 205 70 -1 -1
+        1 "menu\\ms_new_0.tga"
+          "menu\\ms_new_1.tga"
+          "menu\\ms_new_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1001 205 160 -1 -1
+        1 "menu\\ms_load_0.tga"
+          "menu\\ms_load_1.tga"
+          "menu\\ms_load_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1002 205 250 -1 -1
+        1 "menu\\ms_options_0.tga"
+          "menu\\ms_options_1.tga"
+          "menu\\ms_options_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1003 205 340 -1 -1
+        1 "menu\\ms_quit_0.tga"
+          "menu\\ms_quit_1.tga"
+          "menu\\ms_quit_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1004 0 430 100 479
+        "" "" "" ""
+
+;this is the static control for the AMD logo
+;just comment this control out to make it inactive
+;UICTRL "STATIC" 1 1 1005 550 393 -1 -1
+;        1 "menu\\sndelux.tga"

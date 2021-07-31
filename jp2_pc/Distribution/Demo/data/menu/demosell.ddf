@@ -1,0 +1,7 @@
+BACKGROUND 0 0 640 480"menu\\win_cond.tga"
+
+UICTRL "BUTTON" 1 1 1000 325 400 0 0
+      1 "menu\\continue_0.tga"
+        "menu\\continue_1.tga"
+        "menu\\continue_2.tga"
+        ""

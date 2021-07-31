@@ -2,7 +2,7 @@
 
 /***********************************************************************************************
  *
- * Copyright © DreamWorks Interactive. 1998
+ * Copyright Â© DreamWorks Interactive. 1998
  *
  * Contents:
  *		Version string.
@@ -20,6 +20,8 @@
  * 
  **********************************************************************************************/
 
+#include "versionGit.hpp"
+
 #define prep_iconv_str(s)  # s
 #define prep_conv_str(s)   prep_iconv_str(s)
 
@@ -31,4 +33,5 @@
 #define STR_BUILD_MINOR prep_conv_str(BUILD_MINOR)
 #define STR_BUILD_NUM   prep_conv_str(BUILD_NUM)
 
-#define BUILD_VERSION   STR_BUILD_MAJOR "." STR_BUILD_MINOR "." STR_BUILD_NUM
+#define BUILD_VERSION       STR_BUILD_MAJOR "." STR_BUILD_MINOR "." STR_BUILD_NUM
+#define BUILD_VERSION_HASH  BUILD_VERSION "." GIT_HASH_SHORT

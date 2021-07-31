@@ -1,1 +1,1 @@
-.\BuildTools\CMake\bin\cmake-gui.exe -S . -B "Build/cmake-x86" 
+start .\BuildTools\CMake\bin\cmake-gui.exe -S . -B "Build/cmake-x86" 

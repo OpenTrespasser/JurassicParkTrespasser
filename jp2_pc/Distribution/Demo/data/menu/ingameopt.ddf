@@ -1,0 +1,40 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 100 0 0 -1 -1
+        1 "menu\\InGameOpt.tga"
+
+UICTRL "BUTTON" 1 1 1002 93 135 -1 -1
+        1 "menu\\gm_rstartlvl_0.TGA"
+          "menu\\gm_rstartlvl_1.tga"
+          "menu\\gm_rstartlvl_2.tga"
+          ""
+UICTRL "BUTTON" 1 1 1003 118 26 -1 -1
+        1 "menu\\gm_save_0.tga"
+          "menu\\gm_save_1.tga"
+          "menu\\gm_save_2.tga"
+          ""
+UICTRL "BUTTON" 1 1 1004 22 29 -1 -1
+        1 "menu\\gm_load_0.tga"
+          "menu\\gm_load_1.tga"
+          "menu\\gm_load_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1005 38 82 -1 -1
+        1 "menu\\gm_options_0.tga"
+          "menu\\gm_options_1.tga"
+          "menu\\gm_options_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1000 211 27 -1 -1
+        1 "menu\\gm_quit_0.tga"
+          "menu\\gm_quit_1.tga"
+          "menu\\gm_quit_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1001 160 82 -1 -1
+        1 "menu\\gm_resume_0.tga"
+          "menu\\gm_resume_1.tga"
+          "menu\\gm_resume_2.tga"
+          ""
+
+

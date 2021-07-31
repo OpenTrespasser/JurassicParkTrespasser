@@ -4,6 +4,23 @@
 #include "..\gblinc\config.hpp"
 #include "..\gblinc\version.hpp"
 
+#if (TARGET_PROCESSOR == PROCESSOR_PENTIUM)
+#define PROCESSOR "Pentium"
+#elif (TARGET_PROCESSOR == PROCESSOR_PENTIUMPRO)
+#define PROCESSOR "Pentium Pro"
+#elif (TARGET_PROCESSOR == PROCESSOR_K6_3D)
+#define PROCESSOR "K6-2"
+#endif
+
+#if (BUILDVER_MODE == MODE_FINAL)
+#define MODE "Final"
+#elif (BUILDVER_MODE == MODE_RELEASE)
+#define MODE "Release"
+#elif (BUILDVER_MODE == MODE_DEBUG)
+#define MODE "Debug"
+#endif
+
+
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -28,19 +45,13 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "DreamWorks Interactive\0"
-#if (TARGET_PROCESSOR == PROCESSOR_PENTIUM)
-            VALUE "FileDescription", "Trespasser Pentium build\0"
-#elif (TARGET_PROCESSOR == PROCESSOR_PENTIUMPRO)
-            VALUE "FileDescription", "Trespasser Pentium Pro build\0"
-#elif (TARGET_PROCESSOR == PROCESSOR_K6_3D)
-            VALUE "FileDescription", "Trespasser K6-2 build\0"
-#endif
+            VALUE "FileDescription", "OpenTrespasser " PROCESSOR " / " MODE " build\0"
             VALUE "FileVersion", BUILD_VERSION
             VALUE "InternalName", "trespass\0"
             VALUE "LegalCopyright", "Copyright © 1998\0"
-            VALUE "OriginalFilename", "trespass.exe\0"
-            VALUE "ProductName", "Trespasser\0"
-            VALUE "ProductVersion", BUILD_VERSION
+            VALUE "OriginalFilename", "OpenTrespasser.exe\0"
+            VALUE "ProductName", "OpenTrespasser\0"
+            VALUE "ProductVersion", BUILD_VERSION_HASH
         END
     END
     BLOCK "VarFileInfo"
