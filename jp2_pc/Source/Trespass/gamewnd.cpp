@@ -94,6 +94,7 @@ struct
 
 int g_icCheats = sizeof(CHEATS) / sizeof(CHEATS[0]);
 
+const char* g_cheatPrompt = " > ";
 
 bool ExecuteCheat(LPSTR pszCheat)
 {
@@ -101,6 +102,14 @@ bool ExecuteCheat(LPSTR pszCheat)
     bool    bRet;
     int     i;
     bool    bFound;
+    char terminator = '\0';
+
+    auto promptlen = std::strlen(g_cheatPrompt);
+    if (std::strlen(pszCheat) < promptlen)
+    {
+        return false;
+    }
+    pszCheat += promptlen;
 
     psz = strchr(pszCheat, ' ');
 
@@ -108,6 +117,10 @@ bool ExecuteCheat(LPSTR pszCheat)
     {
         *psz = '\0';
         psz++;
+    }
+    else
+    {
+        psz = &terminator; //Avoid string literals for non-const char*
     }
 
     for (i = 0, bFound = false; i < g_icCheats && !bFound; i++)
@@ -334,6 +347,7 @@ BOOL CGameWnd::OnCreate()
     CMessageSystem(escSTART_SIM).Dispatch();
 
     m_puictlCheat = (CUIEditbox *)GetUICtrl(102);
+    m_puictlCheat->SetPrompt(g_cheatPrompt);
 
     ResizeScreen(prasMainScreen->iWidthFront, prasMainScreen->iHeightFront);
 
@@ -376,14 +390,14 @@ void CGameWnd::UIEditboxKey(CUICtrl * pctrl, UINT vk, int cRepeat, UINT flags)
         case VK_RETURN:
             {
                 char    sz[255];
-                LPSTR   psz;
+                LPCSTR   psz;
 
                 psz = m_puictlCheat->GetText();
                 strcpy(sz, psz);
 
                 if (ExecuteCheat(sz))
                 {
-                    m_puictlCheat->SetText(NULL);
+                    m_puictlCheat->SetText(g_cheatPrompt);
                 }
             }
             break;
@@ -481,6 +495,9 @@ void CGameWnd::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
 {
     if (m_puictlCheat->GetVisible())
     {
+        if (fDown && (vk == VK_ESCAPE))
+            return;
+        
         m_puictlCheat->OnKey(vk, fDown, cRepeat, flags);
         return;
     }
@@ -620,7 +637,7 @@ void CGameWnd::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
 
                     gpInputDeemone->Capture(false);
                     m_puictlCheat->SetVisible(TRUE);
-                    m_puictlCheat->SetText(NULL);
+                    m_puictlCheat->SetText(g_cheatPrompt);
                 }
 
                 m_iClear = 3;

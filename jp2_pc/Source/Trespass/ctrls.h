@@ -485,8 +485,8 @@ public:
     virtual int     SetMaxCharNum(int icMax);
     virtual int     GetMaxCharNum();
 
-    virtual LPSTR   GetText();
-    virtual BOOL    SetText(LPSTR psz);
+    virtual LPCSTR   GetText();
+    virtual BOOL     SetText(LPCSTR psz);
 
     virtual COLORREF GetBkColor() { return m_crBkColor; }
     virtual void     SetBkColor(COLORREF cr) { m_crBkColor = cr; m_bUpdate = TRUE;}
@@ -501,6 +501,8 @@ public:
     virtual void    SetBorder(BOOL bBorder) { m_bBorder = bBorder; m_bUpdate = TRUE;}
 
     virtual BOOL    TokenLoad(HANDLE hFile) override;
+
+    void            SetPrompt(const char* prompt);
 
 protected:
     int             m_iMaxSize;
@@ -520,6 +522,7 @@ protected:
     BOOL            m_bBackLit;
     BOOL            m_bTransBk;
     WORD            m_wTransColor;
+    std::string     m_prompt;
 
     void Update();
     BOOL InitSurface();
