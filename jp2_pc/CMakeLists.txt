@@ -92,6 +92,7 @@ add_subdirectory(cmake/trespass)
 add_subdirectory(cmake/TweakNvidia128)
 add_subdirectory(cmake/TweakTrespass)
 add_subdirectory(cmake/View)
+add_subdirectory(cmake/ViewTest)
 add_subdirectory(cmake/WaveTest)
 add_subdirectory(cmake/WinShell)
 
