@@ -28,6 +28,7 @@
 #include "Raster.hpp"
 #include "RasterComposite.hpp"
 
+#undef VER_ASM
 
 //
 // Function prototypes.
@@ -38,7 +39,7 @@
 void ApplyClut16
 (
 	uint16* pu2,		// Surface to apply clut to.
-	uint16* au2_clut,	// Clut table.
+	const uint16* au2_clut,	// Clut table.
 	int     i_width,	// Width of the surface in pixels.
 	int     i_height,	// Height of the surface in pixels.
 	int     i_stride,	// Stride of the surface in pixels.
@@ -90,7 +91,7 @@ void ApplyClut(rptr<CRaster> pras, const CClut& clut, int i_fog, uint16 u2_mask,
 }
 
 //**********************************************************************************************
-void ApplyClut16(uint16* pu2, uint16* au2_clut, int i_width, int i_height, int i_stride,
+void ApplyClut16(uint16* pu2, const uint16* au2_clut, int i_width, int i_height, int i_stride,
 				 uint16 u2_mask)
 {
 
@@ -209,7 +210,7 @@ PIXEL_LOOP:
 		for (int i_x = -i_width; i_x != 0; ++i_x)
 		{
 			// Transform the pixel.
-			pu2[i_x] = au2_clut[pu2[i_x] & 0x01FF] /*& u2_mask*/;
+			pu2[i_x] = au2_clut[pu2[i_x] & 0x1FFF] /*& u2_mask*/;
 		}
 	}
 
