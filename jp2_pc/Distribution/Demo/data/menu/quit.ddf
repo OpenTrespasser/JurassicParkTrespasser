@@ -1,0 +1,22 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 -1 0 0 -1 -1 1 "menu\\quit_bg.tga"
+
+UICTRL "BUTTON" 1 1 1001 108 55 -1 -1
+        1 "menu\\desktop_0.tga"
+          "menu\\desktop_1.tga"
+          "menu\\desktop_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1002 90 95 -1 -1
+        1 "menu\\qt_menu_0.tga"
+          "menu\\qt_menu_1.tga"
+          "menu\\qt_menu_2.tga"
+          ""
+UICTRL "BUTTON" 1 1 1000 104 140 -1 -1
+        1 "menu\\cancel_0.tga"
+          "menu\\cancel_1.tga"
+          "menu\\cancel_2.tga"
+          ""
+
+

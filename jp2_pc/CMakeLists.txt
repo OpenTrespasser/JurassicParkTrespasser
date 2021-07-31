@@ -44,6 +44,7 @@ endif()
 set(CMAKE_CONFIGURATION_TYPES Debug Release Final CACHE STRING INTERNAL FORCE) 
 
 include(cmake/CMakeCommon.cmake)
+createGitVersionFile()
 
 add_subdirectory(cmake/AI)
 add_subdirectory(cmake/AITest)
@@ -92,9 +93,11 @@ add_subdirectory(cmake/trespass)
 add_subdirectory(cmake/TweakNvidia128)
 add_subdirectory(cmake/TweakTrespass)
 add_subdirectory(cmake/View)
+add_subdirectory(cmake/ViewTest)
 add_subdirectory(cmake/WaveTest)
 add_subdirectory(cmake/WinShell)
 
+add_subdirectory(cmake/DistDemo)
 
 option(INSTALL_GTEST OFF)
 add_subdirectory(gtest)
@@ -103,7 +106,8 @@ set_target_properties(gtest_main PROPERTIES FOLDER "Tests/gtest")
 set_target_properties(gmock PROPERTIES FOLDER "Tests/gtest")
 set_target_properties(gmock_main PROPERTIES FOLDER "Tests/gtest")
 
-
+enable_testing()
+list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
 
 set(DEACTIVATE_BROKEN_PROJECTS TRUE CACHE BOOL INTERNAL)
 

@@ -1080,7 +1080,7 @@ void CUIListbox::ScrollUp()
 
 void CUIListbox::ScrollDown()
 {
-    if ((m_iTop + 1) <= (m_vInfo.size() - m_iItemsMaxVis))
+    if ((m_vInfo.size() > m_iItemsMaxVis) && ((m_iTop + 1) <= (m_vInfo.size() - m_iItemsMaxVis)))
     {
         m_iTop++;
         m_bUpdate = TRUE;
@@ -2757,6 +2757,7 @@ CUIEditbox::CUIEditbox(CUICtrlCallback * pParent) :
     m_bBackLit = FALSE;
     m_bBackLitOffset = 0;
     m_bTransBk = FALSE;
+    m_prompt = "";
 }
 
 
@@ -3013,11 +3014,11 @@ int CUIEditbox::GetMaxCharNum()
 
 
 
-LPSTR CUIEditbox::GetText()
+LPCSTR CUIEditbox::GetText()
 {
     if (!m_vInfo.empty())
     {
-        return (LPSTR)m_vInfo.data();
+        return m_vInfo.data();
     }
 
     return NULL;
@@ -3025,7 +3026,7 @@ LPSTR CUIEditbox::GetText()
 
 
 
-BOOL CUIEditbox::SetText(LPSTR pszNew)
+BOOL CUIEditbox::SetText(LPCSTR pszNew)
 {
     int     iLen;
 
@@ -3190,6 +3191,11 @@ Error:
 }
 
 
+void CUIEditbox::SetPrompt(const char* prompt)
+{
+    m_prompt = prompt;
+}
+
 
 void CUIEditbox::SetPalette(HPALETTE hpal)
 {
@@ -3206,7 +3212,11 @@ void CUIEditbox::SetPalette(LOGPALETTE * plogpal)
 
 void CUIEditbox::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
 {
-    if (!fDown)
+    if (fDown && (vk == VK_ESCAPE)) //ignore key down for ESC 
+    {
+        return;
+    }
+    if (!fDown && (vk != VK_ESCAPE)) //ignore key up except for ESC
     {
         return;
     }
@@ -3215,10 +3225,7 @@ void CUIEditbox::OnKey(UINT vk, BOOL fDown, int cRepeat, UINT flags)
     {
         case VK_BACK:
             {
-                int iSize;
-
-                iSize = m_vInfo.size();
-                if (iSize > 1)
+                if (m_vInfo.size() > m_prompt.size() + 1)
                 {
                     std::vector<char>::iterator  pch;
 

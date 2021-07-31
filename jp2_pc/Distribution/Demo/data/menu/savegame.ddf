@@ -1,0 +1,53 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 -1 0 0 -1 -1 -1 "menu\\SaveGame_bg.tga"
+UICTRL "static" 1 1 1003 17 41 110 85 0 "menu\\img_tmp.tga"
+UICTRL "static" 1 1 -1 17 41 -1 -1 -1 "menu\\SaveGame_fg.tga"
+
+UICTRL "listbox" 1 1 1002 125 41 297 155
+        12 ; Point Size
+        500; Font Weight
+        1  ; Allow Selection
+        1  ; Transparent Bkgnd
+        0 255 0 ; Transparent Bkgnd Color
+        1  ; BackLit Text
+        1  ; BackLit Offset
+        0 0 0;  BackLit Color
+        128 128 128 ; Background color
+        255 255 255 ; Foreground color
+        1  ; Show VScroll Always
+        0  ; Display Border
+
+;UICTRL "editbox" 1 1 1004 10 10 310 35
+UICTRL "editbox" 1 1 1004 25 11 297 31
+        12 ; Point Size
+        500 ; Weight
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        "" ; Initial Text
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x24 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "BUTTON" 1 1 1000 190 159 -1 -1
+        1 "menu\\cancel_0.tga"
+          "menu\\cancel_1.tga"
+          "menu\\cancel_2.tga"
+          ""
+
+UICTRL "BUTTON" 0 1 1001 15 159 -1 -1
+        1 "menu\\ok_0.tga"
+          "menu\\ok_1.tga"
+          "menu\\ok_2.tga"
+          "menu\\ok_3.tga"
+
+UICTRL "BUTTON" 0 1 1005 82 159 -1 -1
+        1 "menu\\delete_0.tga"
+          "menu\\delete_1.tga"
+          "menu\\delete_2.tga"
+          "menu\\delete_3.tga"
+
+

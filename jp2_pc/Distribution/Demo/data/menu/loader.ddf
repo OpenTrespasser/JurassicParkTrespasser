@@ -1,0 +1,49 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "textbox" 1 1 1000 0 45 320 60
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        10 ; Initial Text
+        14 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x21 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "static" 1 1 -1 23 67 -1 -1 1 "menu\\ProgressBar1.tga"
+
+UICTRL "progress" 1 0 100 29 81 288 84
+        0; Frame Rect
+        0; Min Range
+        99; Max Range
+        0; Curr
+        1; Step
+        255 65 0 ; FG Color
+
+UICTRL "textbox" 1 1 1001 0 95 320 110
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        11 ; Initial Text
+        14 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x21 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "static" 1 1 -1 23 110 -1 -1 1 "menu\\ProgressBar2.tga"
+
+UICTRL "progress" 1 0 101 29 116 288 119
+        0; Frame Rect
+        0; Min Range
+        99; Max Range
+        99; Curr
+        1; Step
+        255 65 0 ; FG Color
+
+

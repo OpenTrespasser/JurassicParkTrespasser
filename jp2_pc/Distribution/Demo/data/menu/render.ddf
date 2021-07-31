@@ -1,0 +1,128 @@
+BACKGROUND 0 0 320 200 ""
+
+UICTRL "static" 1 1 -1 0 0 -1 -1 1 "menu\\video_bg.tga"
+
+UICTRL "BUTTON" 1 1 1000 184 154 -1 -1
+        1 "menu\\cancel_0.tga"
+          "menu\\cancel_1.tga"
+          "menu\\cancel_2.tga"
+          ""
+
+UICTRL "BUTTON" 1 1 1001 21 153 -1 -1
+        1 "menu\\ok_0.tga"
+          "menu\\ok_1.tga"
+          "menu\\ok_2.tga"
+          "menu\\ok_3.tga"
+
+;UICTRL "textbox" 1 1 1005 0 0 320 20
+;        1 ; Transparent Bk
+;        1 ; Back Lit
+;        1 ; Back lit offset
+;        0 0 0; Back lit color
+;        "Video Settings" ; Initial Text
+;        16 ; Point Size
+;        600 ; Weight
+;        0 255 0 ; Bk Color
+;        255 255 255 ; FG Color
+;        0x25 ; DT Flags
+;        0 ; Draw Border
+
+UICTRL "listbox" 1 1 1002 150 36 298 71
+        12 ; Point Size
+        500; Font Weight
+        1  ; Allow Selection
+        1  ; Transparent Bkgnd
+        0 255 0 ; Transparent Bkgnd Color
+        1  ; BackLit Text
+        1  ; BackLit Offset
+        0 0 0;  BackLit Color
+        128 128 128 ; Background color
+        255 255 255 ; Foreground color
+        1  ; Show VScroll Always
+        0  ; Display Border
+
+UICTRL "button" 1 1 1003 150 19 -1 -1
+        0 "menu\\Driver_0.tga"
+          "menu\\Driver_1.tga"
+          "menu\\Driver_2.tga"
+          ""
+
+;UICTRL "static" 1 1 100 150 29 -1 -1
+;        1 "menu\\gutter_150.tga"
+
+UICTRL "slider" 1 1 1006 39 83 185 97
+        "menu\\slider.tga"
+        5 ; # of units
+        0 ; Default Unit value
+        0 ; Border/Ticks
+
+UICTRL "textbox" 1 1 1007 202 84 300 102
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        0 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+;UICTRL "static" 1 1 101 150 49 -1 -1
+;        1 "menu\\gutter_150.tga"
+
+UICTRL "slider" 1 1 1008 39 107 185 121
+        "menu\\slider.tga"
+        10 ; # of units
+        0 ; Default Unit value
+        0 ; Border/Ticks
+
+UICTRL "textbox" 1 1 1009 202 108 300 126
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        1 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 -1 202 132 300 150
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        2 ; Initial Text
+        12 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x0 ; DT Flags
+        0 ; Draw Border
+
+UICTRL "textbox" 1 1 1011 24 20 140 80
+        1 ; Transparent Bk
+        1 ; Back Lit
+        1 ; Back lit offset
+        0 0 0; Back lit color
+        3 ; Initial Text
+        14 ; Point Size
+        500 ; Weight
+        0 255 0 ; Bk Color
+        255 255 255 ; FG Color
+        0x2015 ; DT Flags
+        0 ; Draw Border
+
+;UICTRL "static" 1 1 -1 150 69 -1 -1
+;        1 "menu\\gutter_150.tga"
+
+UICTRL "slider" 1 1 1012 39 131 185 145
+        "menu\\slider.tga"
+        10 ; # of units
+        0 ; Default Unit value
+        0 ; Border/Ticks
+

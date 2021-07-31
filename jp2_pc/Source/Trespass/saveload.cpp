@@ -571,7 +571,7 @@ void CSaveGameWnd::ActualSave()
     char            szExt[255];
     char            szMsg[255];
     char            szFName[_MAX_PATH];
-    LPSTR           psz;
+    LPCSTR          psz;
     DWORD           dwParam;
     WORD            wFlags;
     BOOL            bValidName = FALSE;
@@ -662,7 +662,7 @@ void CSaveGameWnd::ActualSave()
 
 void CSaveGameWnd::UpdateButtons(BOOL bIgnoreText)
 {
-    LPSTR           psz;
+    LPCSTR          psz;
     int             i;
     char            sz[40];
     DWORD           dwParam;
