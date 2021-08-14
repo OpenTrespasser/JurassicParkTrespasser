@@ -105,10 +105,12 @@ private:
     HWND m_hwndD3DDriver;
     HWND m_hwndList;
     HWND m_hwndTextureSizes;
+    HWND m_hwndWindowModes;
 
 	void InitializeCardSelection();
 	void InitializeResolutions();
 	void InitializeTextureSizes();
+    void InitializeWindowModes();
     void OnSelchangeListCard();
 };
 
