@@ -455,7 +455,7 @@ int DoWinMain(HINSTANCE hInstance,
         return -1;
     }
 
-    if ( !IsDisplayConfigurationValid( GetSystemBitDepth(g_hwnd), bGetD3D(), GetWindowModeConfigured()))
+    if ( !IsDisplayConfigurationValid( GetSystemBitDepth(g_hwnd), bGetD3D(), GetWindowModeActive()))
     {
         if (MsgDlg(g_hwnd,
             MB_YESNOCANCEL | MB_SETFOREGROUND,
@@ -912,7 +912,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     bGetDimensions(windowWidth, windowHeight);
 
     DWORD style = WS_VISIBLE | WS_POPUP | WS_SYSMENU;
-    if (GetWindowModeConfigured() == WindowMode::FRAMED)
+    if (GetWindowModeActive() == WindowMode::FRAMED)
         style |= WS_OVERLAPPEDWINDOW;
 	
     if (!CreateWindowEx(0,
