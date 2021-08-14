@@ -286,6 +286,8 @@ CProfileStat	psCluts/*("Cluts", &proProfile.psMain)*/;
 	{
 		Assert(ppal);
 		Assert(pmat);
+		if (!ppal)
+			return nullptr;
 
 		//
 		// Search for palette & material in the array.
