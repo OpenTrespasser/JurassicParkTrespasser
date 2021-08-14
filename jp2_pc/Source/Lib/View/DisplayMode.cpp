@@ -10,6 +10,19 @@ WindowMode GetWindowModeConfigured()
 	return static_cast<WindowMode>(selection);
 }
 
+void SetWindowModeConfigured(WindowMode mode)
+{
+	int value = static_cast<int>(mode);
+	if (value >= 0 && value <= static_cast<int>(WindowMode::EXCLUSIVE))
+		SetRegValue("WindowMode", value);
+}
+
+WindowMode GetWindowModeActive()
+{
+	static WindowMode active = GetWindowModeConfigured();
+	return active;
+}
+
 int GetSystemBitDepth(HWND wnd)
 {
 	return GetSystemBitDepth(GetDC(wnd));
