@@ -10,6 +10,8 @@ enum class WindowMode {
 };
 
 WindowMode GetWindowModeConfigured();
+void SetWindowModeConfigured(WindowMode mode);
+WindowMode GetWindowModeActive();
 
 int GetSystemBitDepth(HWND wnd);
 int GetSystemBitDepth(HDC dc);
