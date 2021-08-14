@@ -948,7 +948,7 @@ void SetupGameScreen()
 
     bGetDimensions(iWindowWidth, iWindowHeight);
 	
-	if (GetWindowModeConfigured() == WindowMode::FRAMED)
+	if (GetWindowModeActive() == WindowMode::FRAMED)
 	{
         POINT clientsize = GetCurrentClientSize();
         iClientWidth = clientsize.x;
