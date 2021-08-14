@@ -216,16 +216,8 @@ static HRESULT CALLBACK EnumDisplayMode
 	assert(pddsd);
 	assert(pv_context);
 
-	// If the mode is not 16 bits, ignore it.
-	if (pddsd->ddpfPixelFormat.dwRGBBitCount != 16)
-		return DDENUMRET_OK;
-
-	// Suppress resolutions if required.
-	if (bSuppress512 && pddsd->dwWidth == 512)
-		return DDENUMRET_OK;
-
-	// Do not enumerate screen resolutions higher than 640x480.
-	if (pddsd->dwWidth > 800)
+	// Do not enumerate screen resolutions lower than 640x480.
+	if (pddsd->dwWidth < 640 || pddsd->dwHeight < 480)
 		return DDENUMRET_OK;
 
 	// Get the next available element.
