@@ -1440,6 +1440,15 @@ BOOL CUIListbox::SetFont(HFONT hfont)
     return TRUE;
 }
 
+void CUIListbox::ScrollToActive()
+{
+    if (m_iCurrSel != -1 && m_iCurrSel < m_vInfo.size())
+    {
+        m_iTop = m_iCurrSel;
+        m_bUpdate = true;
+    }
+}
+
 BOOL CUIListbox::InitSurface()
 {
     int     iWidth;
