@@ -538,6 +538,14 @@ DoRestartWithRenderDlg:
         dlg.MultiDialogBox(g_hInst, MAKEINTRESOURCE(IDD_INITIALIZATION), g_hwnd);
         g_pMainWnd->m_bRelaunch = true;
         bVideoCardChosen = true;
+
+        int windowWidth = 0;
+        int windowHeight = 0;
+        if (bGetDimensions(windowWidth, windowHeight))
+        {
+            SetWindowPos(g_hwnd, NULL, -1, -1, windowWidth, windowHeight,
+                SWP_NOMOVE | SWP_NOREDRAW | SWP_NOZORDER);
+        }
     }
 
     EnableMenuItem(GetSystemMenu(g_hwnd, FALSE),
