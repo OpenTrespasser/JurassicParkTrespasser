@@ -270,7 +270,9 @@ public:
 
     virtual BOOL    GetFontSize() { return m_bFontSize;}
     virtual void    SetFontSize(BOOL bFontSize) { m_bFontSize = bFontSize; m_bUpdate = TRUE;}
-    
+
+    void            ScrollToActive();
+
 private:
     std::vector<CUILISTBOXINFO>     m_vInfo;
 
