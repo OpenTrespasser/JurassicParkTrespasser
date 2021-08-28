@@ -771,6 +771,7 @@ void CRenderWnd::SelectCurrentResolution()
     }
 
     plistbox->SetCurrSel(i);
+	plistbox->ScrollToActive();
 }
 
 
