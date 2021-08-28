@@ -1083,6 +1083,14 @@ void COptionsWnd::UIButtonUp(CUIButton * pbutton)
                 if (dlg.m_dwExitValue != 0)
                 {
                     EndUIWnd(dlg.m_dwExitValue);
+                    if (dlg.m_dwExitValue == 2)
+                    {
+                        g_CTPassGlobals.ResetScreen();
+                        for (auto* wnd : m_pUIMgr->m_vUIWnd)
+                        {
+                            CenterUIWindow(wnd);
+                        }
+                    }
                 }
             }
             break;
