@@ -623,7 +623,7 @@ DoRestartWithRenderDlg:
         }
     }
 
-    Video::EnumerateDisplayModes(false);
+    Video::EnumerateDisplayModes();
 
 	//
 	// If safe mode is not active, set some defaults that depend on the CPU speed.
