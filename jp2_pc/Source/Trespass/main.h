@@ -78,6 +78,7 @@ public:
     void OnPaint(HWND hwnd);
     void OnTimer(HWND hwnd, UINT id);
     void OnSysCommand(HWND hwnd, UINT cmd, int x, int y);
+    void OnWindowPosChanged(HWND hwnd, LPWINDOWPOS pos);
 
     void GameLoop();
     void CopyrightScreen();
