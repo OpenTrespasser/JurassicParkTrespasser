@@ -569,6 +569,18 @@ void CUIWnd::ResizeScreen(int iWidth, int iHeight)
 }
 
 
+void CUIWnd::OnWindowPosChanged()
+{
+    if (!m_pUIMgr)
+        return;
+    for (auto* wnd : m_pUIMgr->m_vUIWnd)
+    {
+        if (wnd)
+            CenterUIWindow(wnd);
+    }
+}
+
+
 void CUIWnd::DrawIntoSurface(LPBYTE pbDst, 
                              int iDstWidth, 
                              int iDstHeight,
