@@ -151,6 +151,7 @@ public:
     virtual void OnTimer(UINT uiID);
     virtual void OnPaint(HWND hwnd);
     virtual BOOL OnEraseBkgnd(HWND hwnd, HDC hdc);
+    virtual void OnWindowPosChanged();
 };
 
 

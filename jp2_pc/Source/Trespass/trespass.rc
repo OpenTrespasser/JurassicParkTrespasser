@@ -70,7 +70,7 @@ IDB_DEF_PAL             BITMAP  DISCARDABLE     "res\\smallPal.bmp"
 // Dialog
 //
 
-IDD_INITIALIZATION DIALOG DISCARDABLE  0, 0, 272, 185
+IDD_INITIALIZATION DIALOG DISCARDABLE  0, 0, 292, 225
 STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_VISIBLE | WS_CAPTION | 
     WS_SYSMENU
 CAPTION "Trespasser 3D Video Driver Setup"
@@ -78,31 +78,34 @@ FONT 8, "MS Sans Serif"
 BEGIN
     LISTBOX         IDC_LIST_CARD,16,24,142,52,LBS_NOINTEGRALHEIGHT | 
                     WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_COMBO_RESOLUTION,184,24,72,78,CBS_DROPDOWNLIST | 
+    COMBOBOX        IDC_COMBO_RESOLUTION,184,24,85,78,CBS_DROPDOWNLIST | 
                     CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    DEFPUSHBUTTON   "OK",IDOK,7,131,48,18
-    PUSHBUTTON      "Cancel",IDCANCEL,63,131,48,18
-    GROUPBOX        "Screen Resolution",IDC_STATIC,176,8,88,36
+    DEFPUSHBUTTON   "OK",IDOK,7,165,48,18
+    PUSHBUTTON      "Cancel",IDCANCEL,63,165,48,18
+    GROUPBOX        "Screen Resolution",IDC_STATIC,176,8,103,36
     LTEXT           "Unknown",IDC_STATIC_D3D,77,93,78,15
     GROUPBOX        "Select 3D Video Driver",IDC_STATIC,5,8,163,113
     LTEXT           "Error",IDC_STATIC_VIDEODRIVER,77,83,78,8
     RTEXT           "3D Driver Name:",IDC_STATIC,17,83,56,8
     RTEXT           "Description:",IDC_STATIC,33,92,40,8
-    GROUPBOX        "Features",IDC_STATIC,176,88,88,65
+    GROUPBOX        "Features",IDC_STATIC,176,128,103,65
     CONTROL         "Hardware Water",IDC_CHECK_HARDWAREWATER,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,184,100,68,10
-    COMBOBOX        IDC_COMBO_TEXTURESIZE,184,64,72,78,CBS_DROPDOWN | 
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,140,68,10
+    COMBOBOX        IDC_COMBO_TEXTURESIZE,184,64,85,78,CBS_DROPDOWN | 
                     CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Texture Resolution",IDC_STATIC,176,48,88,36
-    PUSHBUTTON      "Help",IDHELP,119,131,48,18
+    GROUPBOX        "Texture Resolution",IDC_STATIC,176,48,103,36
+    PUSHBUTTON      "Help",IDHELP,119,165,48,18
     CONTROL         "Triple Buffer",IDC_CHECK_TRIPLEBUFFER,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,184,112,54,10
-    CTEXT           "For notes on maximizing performance on hardware, click on the 'Help' button and view the hardware section in the 'Readme.txt' file.",
-                    IDC_STATIC,8,160,253,17
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,152,54,10
+    CTEXT           "Applying changes to window mode requires a game restart.",
+                    IDC_STATIC,7,200,268,17
     CONTROL         "Dither",IDC_CHECK_DITHER,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,184,124,35,10
+                    WS_TABSTOP,184,164,35,10
     CONTROL         "Page Manager",IDC_CHECK_PAGEMANAGED,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,184,136,63,10
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,176,63,10
+    GROUPBOX        "Window Mode",IDC_STATIC,176,88,103,36
+    COMBOBOX        IDC_COMBO_WINDOWMODE,184,104,85,78,CBS_DROPDOWN | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
 END
 
 IDD_DXERROR DIALOG DISCARDABLE  0, 0, 252, 101
@@ -132,9 +135,9 @@ BEGIN
     IDD_INITIALIZATION, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 265
+        RIGHTMARGIN, 285
         TOPMARGIN, 7
-        BOTTOMMARGIN, 178
+        BOTTOMMARGIN, 218
     END
 
     IDD_DXERROR, DIALOG

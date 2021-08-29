@@ -126,7 +126,6 @@ namespace Video
 	//
 	void EnumerateDisplayModes
 	(
-		bool b_highres = true	// Enables the enumeration of screen modes higher than 640x480.
 	);
 	//
 	// Enumerates screen resolutions, and stores the results in 'ascrmdList.'

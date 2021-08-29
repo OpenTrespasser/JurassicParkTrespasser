@@ -28,6 +28,7 @@
 #include "../Lib/Sys/RegInit.hpp"
 #include "DDDevice.hpp"
 #include "Lib/Std/MemLimits.hpp"
+#include "Lib/View/DisplayMode.hpp"
 
 
 //
@@ -92,6 +93,7 @@ BOOL CConfigureWnd::OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam)
 
     m_hwndResolutions = GetDlgItem(m_hwnd, IDC_COMBO_RESOLUTION);
     m_hwndTextureSizes = GetDlgItem(m_hwnd, IDC_COMBO_TEXTURESIZE);
+	m_hwndWindowModes = GetDlgItem(m_hwnd, IDC_COMBO_WINDOWMODE);
     m_hwndList = GetDlgItem(m_hwnd, IDC_LIST_CARD);
 
 	InitializeCardSelection();
@@ -245,6 +247,16 @@ void CConfigureWnd::InitializeTextureSizes()
     ComboBox_SetCurSel(m_hwndTextureSizes, i_sel);
 }
 
+void CConfigureWnd::InitializeWindowModes()
+{
+	ComboBox_ResetContent(m_hwndWindowModes);
+	ComboBox_AddString(m_hwndWindowModes, "Window");
+	ComboBox_AddString(m_hwndWindowModes, "Borderless Window");
+	ComboBox_AddString(m_hwndWindowModes, "Exclusive Fullscreen");
+
+	int selected = static_cast<int>(GetWindowModeConfigured()) - 1;
+	ComboBox_SetCurSel(m_hwndWindowModes, selected);
+}
 
 void CConfigureWnd::InitializeCardSelection()
 {
@@ -338,6 +350,7 @@ void CConfigureWnd::OnSelchangeListCard()
 	// Set up the resolution combo box.
 	InitializeResolutions();
 	InitializeTextureSizes();
+	InitializeWindowModes();
 
 	// Set up dither check box.
 	CheckDlgButton(m_hwnd, IDC_CHECK_DITHER, (bGetDither()) ? (BST_CHECKED) : (BST_UNCHECKED));
@@ -410,12 +423,15 @@ void CConfigureWnd::OnOK()
 	// Set the dither flag.
 	SetDither(IsDlgButtonChecked(m_hwnd, IDC_CHECK_DITHER));
 
+	int selectedWindowMode = ComboBox_GetCurSel(m_hwndWindowModes);
+	SetWindowModeConfigured(static_cast<WindowMode>(selectedWindowMode + 1));
+
 	// Close the registry and exit.
     CMultiDlg::OnOK();
 
 	// Remove the device enumeration object.
 	delete penumdevDevices;
-	penumdevDevices = 0;
+	penumdevDevices = nullptr;
 
 	//exit(0);
 }
@@ -755,6 +771,7 @@ void CRenderWnd::SelectCurrentResolution()
     }
 
     plistbox->SetCurrSel(i);
+	plistbox->ScrollToActive();
 }
 
 

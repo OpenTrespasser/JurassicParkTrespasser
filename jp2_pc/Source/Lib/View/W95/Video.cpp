@@ -81,7 +81,6 @@ namespace Video
 	int				iTotalVideoMemory;
 	SScreenMode		ascrmdList[iMAX_MODES];
 	int				iModes;
-	bool bEnumHighResolutions = true;
 
 	//
 	// Functions needed by CInitVideo.
@@ -98,10 +97,6 @@ namespace Video
 	//
 	//**********************************
 	{
-		// We now only support 16-bit rendering.
-		if (i_bits != 16)
-			return;
-
 		// Search list to see if already there.
 		for (int i = 0; i < iModes; i++)
 		{
@@ -136,10 +131,6 @@ namespace Video
 	//
 	//**********************************
 	{
-		if (!bEnumHighResolutions)
-			if (pddsd->dwWidth > 800)
-				return DDENUMRET_OK;
-
 		// Suppress resolutions if required.
 		if (bSuppress512x384 && pddsd->dwWidth == 512)
 			return DDENUMRET_OK;
@@ -179,7 +170,7 @@ namespace Video
 
 	//******************************************************************************************
 	//
-	void EnumerateDisplayModes(bool b_highres)
+	void EnumerateDisplayModes()
 	// 
 	// Generate the list of available display modes.  Store it sorted in ascrmdList.
 	//
@@ -194,7 +185,6 @@ namespace Video
 	//**********************************
 	{
 		CDDSize<DDCAPS> ddcaps_hw, ddcaps_sw;
-		bEnumHighResolutions = b_highres;
 		EVideoCard evc;
 
 		// Get the video card type.

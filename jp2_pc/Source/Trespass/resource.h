@@ -80,6 +80,7 @@
 #define IDC_COMBO_TEXTURESIZE           1005
 #define IDC_STATIC_SIZES                1006
 #define IDC_COMBO_D3D                   1006
+#define IDC_COMBO_WINDOWMODE            1006
 #define IDC_STATIC_BOX                  1007
 #define IDC_D3D                         1008
 #define IDC_LIST_CARD                   1008
@@ -132,7 +133,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        122
+#define _APS_NEXT_RESOURCE_VALUE        123
 #define _APS_NEXT_COMMAND_VALUE         40001
 #define _APS_NEXT_CONTROL_VALUE         1039
 #define _APS_NEXT_SYMED_VALUE           105
