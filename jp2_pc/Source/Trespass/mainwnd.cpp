@@ -338,6 +338,15 @@ void CMainWnd::OnSysCommand(HWND hwnd, UINT cmd, int x, int y)
     }
 }
 
+void CMainWnd::OnWindowPosChanged(HWND hwnd, LPWINDOWPOS pos)
+{
+    if (!m_pUIMgr)
+        return;
+
+    auto* puiwnd = m_pUIMgr->GetActiveUIWnd();
+    if (puiwnd)
+        puiwnd->OnWindowPosChanged();
+}
 
 
 void CMainWnd::SendActivate(BOOL fActivate, DWORD dwThreadId)
@@ -745,6 +754,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uiMsg, WPARAM wParam, LPARAM lParam)
         HANDLE_MSG(hwnd, WM_MBUTTONDOWN,    g_pMainWnd->OnMButtonDown);
         HANDLE_MSG(hwnd, WM_TIMER,          g_pMainWnd->OnTimer);
         HANDLE_MSG(hwnd, WM_SYSCOMMAND,     g_pMainWnd->OnSysCommand);
+        HANDLE_MSG(hwnd, WM_WINDOWPOSCHANGED, g_pMainWnd->OnWindowPosChanged);
     }
 
     return DefWindowProc(hwnd, uiMsg, wParam, lParam);
