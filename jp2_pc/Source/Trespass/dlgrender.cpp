@@ -273,6 +273,11 @@ void CConfigureWnd::InitializeCardSelection()
 		penumdevDevices->GetTitle(i, str);
 		ListBox_AddString(m_hwndList, str);
 	}
+	
+	penumdevDevices->LoadSelectedDeviceFromRegistry();
+	int selectedDevice = penumdevDevices->GetSelectedDeviceIndex();
+	if (selectedDevice >= 0 && selectedDevice < iMaxDevices)
+	    penumdevDevices->GetTitle(penumdevDevices->GetSelectedDeviceIndex(), str);
 
 	// Attempt to select a string.
 	ListBox_SelectString(m_hwndList, 0, str);
