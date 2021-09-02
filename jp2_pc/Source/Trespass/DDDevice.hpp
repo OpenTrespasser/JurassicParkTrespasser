@@ -150,8 +150,10 @@ public:
 		return Devices[iSelectedDevice];
 	}
 
+	void LoadSelectedDeviceFromRegistry();
 	void WriteSelectedDeviceToRegistry();
 
+	int GetSelectedDeviceIndex() const { return iSelectedDevice; }
 	void SelectDevice(char* str);
 
 	void GetTitle(int i, char* str) const;
