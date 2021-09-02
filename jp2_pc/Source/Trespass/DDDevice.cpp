@@ -771,6 +771,14 @@ void CEnumerateDevices::WriteSelectedDeviceToRegistry()
 	SetZBufferBitdepth(dev.d3dDevice.iZBufferBitDepth);
 }
 
+void CEnumerateDevices::LoadSelectedDeviceFromRegistry()
+{
+	char str_title[2048] = { '\0' };
+	GetRegString(strD3D_TITLE, str_title, sizeof(str_title), "");
+
+	SelectDevice(str_title);
+}
+
 
 //
 // Global variables.
